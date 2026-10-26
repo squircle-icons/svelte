@@ -29,7 +29,7 @@ Install browser engines once with `pnpm exec playwright install chromium firefox
 <Folder open />
 ```
 
-Common props are `size=24`, `color="currentColor"`, `strokeWidth=1.75`, optional `label`, and `class`. Decorative icons omit `label`; meaningful icons receive one accessible name. Animated icons accept opt-in `hover` and `reducedMotion="system" | "always"`. Folder is controlled through `open` and exposes `reset()`; bell exposes `play()` and `reset()` through `bind:this`. Nothing autoplays or loops by default.
+Common props are `size=24`, `color="currentColor"`, `strokeWidth=1.70`, optional `label`, and `class`. Decorative icons omit `label`; meaningful icons receive one accessible name. Animated icons accept opt-in `hover` and `reducedMotion="system" | "always"`. Folder is controlled through `open` and exposes `reset()`; bell exposes `play()` and `reset()` through `bind:this`. Nothing autoplays or loops by default.
 
 ## Update core
 
@@ -45,6 +45,6 @@ The package name `squircle-icons-svelte` is provisional and **not published to n
 
 ## Filled style
 
-Folder is the first original filled review candidate, imported with `import Folder from 'squircle-icons-svelte/filled/folder'` (or the `squircle-icons-svelte/filled` barrel). It accepts `size`, `color`, `strokeWidth`, `label`, and `class`. For this filled Folder, `strokeWidth` controls the inner divider gap (default 1.75) while the outside remains fill-only and unchanged. The source gap is bounded to 0.25–6 units. `FilledIconProps` is exported from the filled barrel. Its negative-space divider is authored in core and preserved through SVG validation/optimization and packaging. Other filled icons are not implemented yet.
+Folder is the first original filled review candidate, imported with `import Folder from 'squircle-icons-svelte/filled/folder'` (or the `squircle-icons-svelte/filled` barrel). It accepts `size`, `color`, `strokeWidth`, `label`, and `class`. For this filled Folder, `strokeWidth` controls the inner divider gap (default 1.70) while the outside remains fill-only and unchanged. The source gap is bounded to 0.25–6 units. `FilledIconProps` is exported from the filled barrel. Its negative-space divider is authored in core and preserved through SVG validation/optimization and packaging. Other filled icons are not implemented yet.
 
 Motion development is paused while the static family is reviewed. Existing animated exports are retained; no new animation behavior is added.

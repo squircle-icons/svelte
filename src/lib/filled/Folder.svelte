@@ -4,19 +4,19 @@
   let {
     size = 24,
     color = 'currentColor',
-    strokeWidth = 1.75,
+    strokeWidth = 1.7,
     label,
     class: className,
   }: FilledIconProps = $props();
   const gapWidth = $derived(
-    Number.isFinite(strokeWidth) ? Math.min(6, Math.max(0.25, strokeWidth)) : 1.75,
+    Number.isFinite(strokeWidth) ? Math.min(6, Math.max(0.25, strokeWidth)) : 1.7,
   );
   const cutoutPath = $derived(
-    'M 5.5 4.125 H 8.2 C 9.2 4.125 9.9 4.6 10.6 5.3 L 11.6 6.625 H 18.5 C 20.8 6.625 21.875 7.8 21.875 10 V 16.5 C 21.875 18.8 20.8 19.875 18.5 19.875 H 5.5 C 3.2 19.875 2.125 18.8 2.125 16.5 V 7.5 C 2.125 5.2 3.2 4.125 5.5 4.125 Z' +
+    'M 5.5 3.3375 H 8.2 C 9.2 3.3375 9.9 3.86 10.6 4.63 L 11.6 6.0875 H 18.5 C 20.8 6.0875 21.875 7.38 21.875 9.8 V 16.95 C 21.875 19.48 20.8 20.6625 18.5 20.6625 H 5.5 C 3.2 20.6625 2.125 19.48 2.125 16.95 V 7.05 C 2.125 4.52 3.2 3.3375 5.5 3.3375 Z' +
       ' M 4.75 ' +
-      (11 - gapWidth / 2) +
+      (10.9 - gapWidth / 2) +
       ' H 19.25 V ' +
-      (11 + gapWidth / 2) +
+      (10.9 + gapWidth / 2) +
       ' H 4.75 Z',
   );
 </script>

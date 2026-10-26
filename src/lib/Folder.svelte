@@ -4,7 +4,7 @@
   let {
     size = 24,
     color = 'currentColor',
-    strokeWidth = 1.75,
+    strokeWidth = 1.7,
     label,
     class: className,
   }: IconProps = $props();
@@ -28,8 +28,8 @@
 >
   <g data-part="body"
     ><path
-      d="M 3 16.5 V 7.5 C 3 5.8 3.8 5 5.5 5 H 8.2 C 9 5 9.4 5.3 9.9 5.9 L 11.1 7.5 H 18.5 C 20.2 7.5 21 8.3 21 10 V 16.5 C 21 18.2 20.2 19 18.5 19 H 5.5 C 3.8 19 3 18.2 3 16.5 Z"
+      d="M 3 16.95 V 7.05 C 3 5.18 3.8 4.3 5.5 4.3 H 8.2 C 9 4.3 9.4 4.63 9.9 5.29 L 11.1 7.05 H 18.5 C 20.2 7.05 21 7.93 21 9.8 V 16.95 C 21 18.82 20.2 19.7 18.5 19.7 H 5.5 C 3.8 19.7 3 18.82 3 16.95 Z"
     ></path></g
   >
-  <g data-part="lid"><path d="M 3 11 H 21"></path></g>
+  <g data-part="lid"><path d="M 3 10.9 H 21"></path></g>
 </svg>

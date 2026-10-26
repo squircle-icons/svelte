@@ -19,7 +19,7 @@
         "stroke": "currentColor",
         "stroke-linecap": "round",
         "stroke-linejoin": "round",
-        "stroke-width": "1.75",
+        "stroke-width": "1.7",
         "viewBox": "0 0 24 24"
       },
       "children": [
@@ -182,7 +182,7 @@
         "stroke": "currentColor",
         "stroke-linecap": "round",
         "stroke-linejoin": "round",
-        "stroke-width": "1.75",
+        "stroke-width": "1.7",
         "viewBox": "0 0 24 24"
       },
       "children": [
@@ -251,7 +251,19 @@
         "directory"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Original horizontal folder silhouette with one outer contour and a recognizable tab. Bounds x=3..21 and y=5..19 preserve the rectangular aspect ratio: at stroke 1.75, visible left/right padding is 2.125 units and top/bottom padding is 4.125 units. Opposite sides match exactly; horizontal and vertical pairs may differ. The front-panel upper edge is a single straight stroke at y=11, without retracing the sides or bottom. Existing body/lid names, stroke defaults and motion recipe are retained for static review."
+      "construction": "Owner-approved horizontal Folder. Single rounded outer contour with a straight front-panel edge at y=10.9. Bounds x=3..21, y=4.3..19.7; default stroke is 1.7, with visible left/right padding 2.15 and top/bottom 3.45. The approved X=100%, Y=110% geometry is baked into the path coordinates, preserving constant stroke width and the existing part names.",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-26",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 110,
+          "strokeWidth": 1.7
+        },
+        "note": "Owner approved both styles. Y scaling and constant stroke/gap have been baked into the source; the approved shape is now 100% in the Lab."
+      }
     },
     "root": {
       "tag": "svg",
@@ -261,7 +273,7 @@
         "stroke": "currentColor",
         "stroke-linecap": "round",
         "stroke-linejoin": "round",
-        "stroke-width": "1.75",
+        "stroke-width": "1.7",
         "viewBox": "0 0 24 24"
       },
       "children": [
@@ -274,7 +286,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 3 16.5 V 7.5 C 3 5.8 3.8 5 5.5 5 H 8.2 C 9 5 9.4 5.3 9.9 5.9 L 11.1 7.5 H 18.5 C 20.2 7.5 21 8.3 21 10 V 16.5 C 21 18.2 20.2 19 18.5 19 H 5.5 C 3.8 19 3 18.2 3 16.5 Z"
+                "d": "M 3 16.95 V 7.05 C 3 5.18 3.8 4.3 5.5 4.3 H 8.2 C 9 4.3 9.4 4.63 9.9 5.29 L 11.1 7.05 H 18.5 C 20.2 7.05 21 7.93 21 9.8 V 16.95 C 21 18.82 20.2 19.7 18.5 19.7 H 5.5 C 3.8 19.7 3 18.82 3 16.95 Z"
               },
               "children": []
             }
@@ -289,7 +301,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 3 11 H 21"
+                "d": "M 3 10.9 H 21"
               },
               "children": []
             }
@@ -336,11 +348,23 @@
           "filled"
         ],
         "authorship": "Original filled geometry constructed for Squircle Icons; no third-party icon paths used.",
-        "construction": "A fill-only companion to Outline Folder. The outer bounds x=2.125..21.875 and y=4.125..19.875 match the visible Outline bounds at its default 1.75 stroke. One evenodd compound path contains a straight divider slot, 1.75 units by default. strokeWidthCutout targets the named body part so adapters can vary the inner gap with strokeWidth while preserving the outer contour. The adjustable source gap is bounded to 0.25–6 units so it remains inside the solid body. Rounded outer corners preserve the real folder tab; no stroke is layered over the fill.",
+        "construction": "Owner-approved filled Folder. Bounds x=2.125..21.875, y=3.3375..20.6625 preserve the approved Y=110% silhouette; default gap is 1.7 around y=10.9, independent of that scaling. A named compound path retains a straight rectangular counter adjustable with strokeWidth without changing the outside. The approved shape is baked into source and starts at 100% in the Lab.",
         "strokeWidthCutout": {
           "part": "body",
           "minWidth": 0.25,
           "maxWidth": 6
+        },
+        "review": {
+          "status": "approved",
+          "reviewedBy": "palamto",
+          "date": "2026-10-26",
+          "style": "filled",
+          "preview": {
+            "x": 100,
+            "y": 110,
+            "strokeWidth": 1.7
+          },
+          "note": "Owner approved both styles. Y scaling and constant stroke/gap have been baked into the source; the approved shape is now 100% in the Lab."
         }
       },
       "root": {
@@ -362,7 +386,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M 5.5 4.125 H 8.2 C 9.2 4.125 9.9 4.6 10.6 5.3 L 11.6 6.625 H 18.5 C 20.8 6.625 21.875 7.8 21.875 10 V 16.5 C 21.875 18.8 20.8 19.875 18.5 19.875 H 5.5 C 3.2 19.875 2.125 18.8 2.125 16.5 V 7.5 C 2.125 5.2 3.2 4.125 5.5 4.125 Z M 4.75 10.125 H 19.25 V 11.875 H 4.75 Z"
+                  "d": "M 5.5 3.3375 H 8.2 C 9.2 3.3375 9.9 3.86 10.6 4.63 L 11.6 6.0875 H 18.5 C 20.8 6.0875 21.875 7.38 21.875 9.8 V 16.95 C 21.875 19.48 20.8 20.6625 18.5 20.6625 H 5.5 C 3.2 20.6625 2.125 19.48 2.125 16.95 V 7.05 C 2.125 4.52 3.2 3.3375 5.5 3.3375 Z M 4.75 10.05 H 19.25 V 11.75 H 4.75 Z"
                 },
                 "children": []
               }
@@ -375,11 +399,11 @@
       ],
       "cutout": {
         "part": "body",
-        "outerPath": "M 5.5 4.125 H 8.2 C 9.2 4.125 9.9 4.6 10.6 5.3 L 11.6 6.625 H 18.5 C 20.8 6.625 21.875 7.8 21.875 10 V 16.5 C 21.875 18.8 20.8 19.875 18.5 19.875 H 5.5 C 3.2 19.875 2.125 18.8 2.125 16.5 V 7.5 C 2.125 5.2 3.2 4.125 5.5 4.125 Z",
+        "outerPath": "M 5.5 3.3375 H 8.2 C 9.2 3.3375 9.9 3.86 10.6 4.63 L 11.6 6.0875 H 18.5 C 20.8 6.0875 21.875 7.38 21.875 9.8 V 16.95 C 21.875 19.48 20.8 20.6625 18.5 20.6625 H 5.5 C 3.2 20.6625 2.125 19.48 2.125 16.95 V 7.05 C 2.125 4.52 3.2 3.3375 5.5 3.3375 Z",
         "left": 4.75,
         "right": 19.25,
-        "centerY": 11,
-        "defaultWidth": 1.75,
+        "centerY": 10.9,
+        "defaultWidth": 1.7,
         "minWidth": 0.25,
         "maxWidth": 6
       }
@@ -405,7 +429,7 @@
         "stroke": "currentColor",
         "stroke-linecap": "round",
         "stroke-linejoin": "round",
-        "stroke-width": "1.75",
+        "stroke-width": "1.7",
         "viewBox": "0 0 24 24"
       },
       "children": [
@@ -450,7 +474,7 @@
         "stroke": "currentColor",
         "stroke-linecap": "round",
         "stroke-linejoin": "round",
-        "stroke-width": "1.75",
+        "stroke-width": "1.7",
         "viewBox": "0 0 24 24"
       },
       "children": [
@@ -513,7 +537,7 @@
         "stroke": "currentColor",
         "stroke-linecap": "round",
         "stroke-linejoin": "round",
-        "stroke-width": "1.75",
+        "stroke-width": "1.7",
         "viewBox": "0 0 24 24"
       },
       "children": [
