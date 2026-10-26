@@ -18,8 +18,17 @@ it('consumes validated fill-only Folder geometry with a deliberate cutout', () =
   expect(filled?.parts).toEqual(['body']);
 });
 
-it('keeps the next six draft pairs out of the approved set', () => {
-  const draftNames = ['arrow-left', 'arrow-right', 'menu', 'download', 'upload', 'trash'];
+it('keeps the seven pending pairs out of the owner-approved set', () => {
+  const draftNames = [
+    'arrow-left',
+    'arrow-right',
+    'check',
+    'chevron-down',
+    'chevron-up',
+    'download',
+    'upload',
+  ];
+  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(13);
   for (const name of draftNames) {
     const icon = icons.find((icon) => icon.name === name);
     expect(icon?.metadata.review?.status ?? 'draft').toBe('draft');
