@@ -56,23 +56,24 @@
       "description": "A compact camera with a continuous curved body and circular lens.",
       "tags": ["photo", "image"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner-requested rounder unboxed camera with the left/right primary edge pair at exactly 2 native units. Both style exteriors span x=2..22 and y=3.49175127..20.50824873, centered at 12,12. The natural horizontal body proportions are retained (20 by 17.01649746); the shorter vertical axis is not stretched to force 2px top/bottom margins. Outline uses circular tangent fillets and unchanged Regular 1.70 stroke. Filled exterior is the exact 0.85 outward offset of the same lines and arcs, increasing convex radii and reducing concave radii while keeping arc centers fixed. No enclosing box is added. Camera body corner radii are 2.75 at shoulders and 3.25 at the base; the raised housing has softened .8/1.05 transitions. The owner then requested lowering the raised housing by .75 unit relative to the body. The complete drawing is recentered upward by .375 unit, including lens and indicator; circle radii remain unchanged; Filled counters remain their established fixed geometry. Native X/Y=100%, rotation=0. Revision awaits owner visual review.",
+      "construction": "Owner-requested rounder unboxed camera with the left/right primary edge pair at exactly 2 native units. Both style exteriors span x=2..22 and y=3.49175127..20.50824873, centered at 12,12. The natural horizontal body proportions are retained (20 by 17.01649746); the shorter vertical axis is not stretched to force 2px top/bottom margins. Outline uses circular tangent fillets and unchanged Regular 1.70 stroke. Filled exterior is the exact 0.85 outward offset of the same lines and arcs, increasing convex radii and reducing concave radii while keeping arc centers fixed. No enclosing box is added. Camera body corner radii are 2.75 at shoulders and 3.25 at the base; the raised housing has softened .8/1.05 transitions. The owner then requested lowering the raised housing by .75 unit relative to the body. The complete drawing is recentered upward by .375 unit, including lens and indicator; circle radii remain unchanged; Filled counters remain their established fixed geometry. Native X/Y=100%, rotation=0. Owner-approved source.",
       "review": {
-        "status": "draft",
+        "status": "approved",
         "reviewedBy": "palamto",
         "date": "2026-10-27",
         "style": "outline",
         "preview": {
           "x": 100,
           "y": 100,
-          "strokeWidth": 1.7
+          "strokeWidth": 1.7,
+          "rotation": 0
         },
-        "note": "Review reopened for the owner-requested rounder corners and 2px primary-pair spacing. Previous approval applies to the earlier geometry; this revision awaits review."
+        "note": "Owner approved both Outline and Filled after rounder corners, exact 2px left/right primary margins, and the .75-unit lower raised housing. Reviewed at native proportions and Regular 1.70."
       },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "draft"
+      "reviewStatus": "approved"
     },
     {
       "name": "check",
@@ -134,23 +135,24 @@
       "description": "A horizontal rounded folder with a distinct tab and a straight movable front-panel edge.",
       "tags": ["files", "directory"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner-requested rounder unboxed folder with the left/right primary edge pair at exactly 2 native units. Both style exteriors span x=2..22 and y=3.31979695..20.68020305, centered at 12,12. Visible aspect ratio is retained from the established Outline family (20 by 17.36040609); the shorter vertical axis is not stretched to force 2px top/bottom margins. Outline uses circular tangent fillets and unchanged Regular 1.70 stroke. Filled exterior is the exact 0.85 outward offset of the same lines and arcs, increasing convex radii and reducing concave radii while keeping arc centers fixed. No enclosing box is added. Folder body corner radii increase to 2.8/3.0 at the top and 3.25 at the base. The tab stays recognizable and its front-panel divider remains straight at y=10.9. The Filled divider gap remains strokeWidth-controlled, independent of the fixed exterior. Native X/Y=100%, rotation=0. Revision awaits owner visual review.",
+      "construction": "Owner-requested rounder unboxed folder with the left/right primary edge pair at exactly 2 native units. Both style exteriors span x=2..22 and y=3.31979695..20.68020305, centered at 12,12. Visible aspect ratio is retained from the established Outline family (20 by 17.36040609); the shorter vertical axis is not stretched to force 2px top/bottom margins. Outline uses circular tangent fillets and unchanged Regular 1.70 stroke. Filled exterior is the exact 0.85 outward offset of the same lines and arcs, increasing convex radii and reducing concave radii while keeping arc centers fixed. No enclosing box is added. Folder body corner radii increase to 2.8/3.0 at the top and 3.25 at the base. The tab stays recognizable and its front-panel divider remains straight at y=10.9. The Filled divider gap remains strokeWidth-controlled, independent of the fixed exterior. Native X/Y=100%, rotation=0. Owner-approved source.",
       "review": {
-        "status": "draft",
+        "status": "approved",
         "reviewedBy": "palamto",
         "date": "2026-10-27",
         "style": "outline",
         "preview": {
           "x": 100,
           "y": 100,
-          "strokeWidth": 1.7
+          "strokeWidth": 1.7,
+          "rotation": 0
         },
-        "note": "Review reopened for the owner-requested rounder corners and 2px primary-pair spacing. Previous approval applies to the earlier geometry; this revision awaits review."
+        "note": "Owner approved both Outline and Filled after rounder body corners, exact 2px left/right primary margins, retained horizontal proportions and matching unboxed outer contours. Reviewed at native proportions and Regular 1.70."
       },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": 1.7,
-      "reviewStatus": "draft"
+      "reviewStatus": "approved"
     },
     {
       "name": "heart",
@@ -215,12 +217,25 @@
       "description": "A centered plus mark with four equally sized arms.",
       "tags": ["add", "new", "create"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner clarified that Plus and X use all four sides as their primary margin pairs. Plus Filled box now spans 2..22 with radius-4 corners, exactly like X. Both Plus glyphs share perpendicular centerlines M4.85 12 H19.15 M12 4.85 V19.15, visible bounds 4..20, unchanged Regular 1.70 stroke and .85 round caps. This leaves 2px from the box to the artboard and another 2px from the shared glyph to each box side. Outline is exactly the mark inside Filled, with no style-specific scaling or translation. Native X/Y=100%, rotation=0. Round 3 draft awaiting owner review.",
+      "construction": "Owner clarified that Plus and X use all four sides as their primary margin pairs. Plus Filled box now spans 2..22 with radius-4 corners, exactly like X. Both Plus glyphs share perpendicular centerlines M4.85 12 H19.15 M12 4.85 V19.15, visible bounds 4..20, unchanged Regular 1.70 stroke and .85 round caps. This leaves 2px from the box to the artboard and another 2px from the shared glyph to each box side. Outline is exactly the mark inside Filled, with no style-specific scaling or translation. Native X/Y=100%, rotation=0. Owner-approved source.",
       "filledTreatment": "boxed-cutout",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-27",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7,
+          "rotation": 0
+        },
+        "note": "Owner approved both Outline and Filled with radius-4 box corners, 2px around the Filled box, 2px between the box and shared glyph, and identical Outline/cutout position and weight. Reviewed at native proportions and Regular 1.70."
+      },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "draft"
+      "reviewStatus": "approved"
     },
     {
       "name": "search",
@@ -320,12 +335,25 @@
       "description": "A centered close mark with two balanced diagonal strokes.",
       "tags": ["close", "dismiss", "cancel"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner clarified that the Filled box must keep 2px outside clearance and Outline is exactly the X inside that Filled box, following Plus. The upright rounded box spans 2..22 on the native 24 by 24 grid, with radius-4 corners. Its negative-space X and the standalone Outline share diagonal centerline endpoints 4.85..19.15 on each axis, giving visible glyph bounds 4..20. The shared glyph retains Regular-equivalent width 1.70 and .85 round caps. This leaves exactly 2 units between the glyph and each box side, plus 2 units between the box and each artboard side. The cutout is the exact analytical union of the Outline stroke exterior. Both glyphs are centered at 12,12 with identical position, size and contours; no style-specific scaling or translation. Native X/Y=100%, rotation=0. Round 3 draft awaiting owner review. The owner subsequently requested rounder Filled box corners: radius is 4, with box bounds, glyph contour, stroke weight and the measured 2-unit side clearances retained.",
+      "construction": "Owner clarified that the Filled box must keep 2px outside clearance and Outline is exactly the X inside that Filled box, following Plus. The upright rounded box spans 2..22 on the native 24 by 24 grid, with radius-4 corners. Its negative-space X and the standalone Outline share diagonal centerline endpoints 4.85..19.15 on each axis, giving visible glyph bounds 4..20. The shared glyph retains Regular-equivalent width 1.70 and .85 round caps. This leaves exactly 2 units between the glyph and each box side, plus 2 units between the box and each artboard side. The cutout is the exact analytical union of the Outline stroke exterior. Both glyphs are centered at 12,12 with identical position, size and contours; no style-specific scaling or translation. Native X/Y=100%, rotation=0. Owner-approved source. The owner subsequently requested rounder Filled box corners: radius is 4, with box bounds, glyph contour, stroke weight and the measured 2-unit side clearances retained.",
       "filledTreatment": "boxed-cutout",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-27",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7,
+          "rotation": 0
+        },
+        "note": "Owner approved both Outline and Filled with radius-4 box corners, 2px around the Filled box, 2px between the box and shared glyph, and identical Outline/cutout position and weight. Reviewed at native proportions and Regular 1.70."
+      },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "draft"
+      "reviewStatus": "approved"
     }
   ]
 }
