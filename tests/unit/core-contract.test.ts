@@ -18,10 +18,13 @@ it('consumes validated fill-only Folder geometry with a deliberate cutout', () =
   expect(filled?.parts).toEqual(['body']);
 });
 
-it('consumes all twenty owner-approved pairs from the pinned source', () => {
-  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(20);
+it('keeps only Download and Upload pending after owner approval clarification', () => {
+  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(18);
+  expect(
+    icons.filter((icon) => icon.metadata.review?.status !== 'approved').map((icon) => icon.name),
+  ).toEqual(['download', 'upload']);
   for (const icon of icons) {
     expect(icon.filled).toBeDefined();
-    expect(icon.filled?.metadata.review?.status).toBe('approved');
+    expect(icon.filled?.metadata.review?.status).toBe(icon.metadata.review?.status);
   }
 });
