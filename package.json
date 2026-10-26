@@ -16,6 +16,26 @@
       "svelte": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./arrow-left": {
+      "types": "./dist/ArrowLeft.svelte.d.ts",
+      "svelte": "./dist/ArrowLeft.svelte",
+      "default": "./dist/ArrowLeft.svelte"
+    },
+    "./filled/arrow-left": {
+      "types": "./dist/filled/ArrowLeft.svelte.d.ts",
+      "svelte": "./dist/filled/ArrowLeft.svelte",
+      "default": "./dist/filled/ArrowLeft.svelte"
+    },
+    "./arrow-right": {
+      "types": "./dist/ArrowRight.svelte.d.ts",
+      "svelte": "./dist/ArrowRight.svelte",
+      "default": "./dist/ArrowRight.svelte"
+    },
+    "./filled/arrow-right": {
+      "types": "./dist/filled/ArrowRight.svelte.d.ts",
+      "svelte": "./dist/filled/ArrowRight.svelte",
+      "default": "./dist/filled/ArrowRight.svelte"
+    },
     "./bell": {
       "types": "./dist/Bell.svelte.d.ts",
       "svelte": "./dist/Bell.svelte",
@@ -76,6 +96,16 @@
       "svelte": "./dist/filled/Copy.svelte",
       "default": "./dist/filled/Copy.svelte"
     },
+    "./download": {
+      "types": "./dist/Download.svelte.d.ts",
+      "svelte": "./dist/Download.svelte",
+      "default": "./dist/Download.svelte"
+    },
+    "./filled/download": {
+      "types": "./dist/filled/Download.svelte.d.ts",
+      "svelte": "./dist/filled/Download.svelte",
+      "default": "./dist/filled/Download.svelte"
+    },
     "./folder": {
       "types": "./dist/Folder.svelte.d.ts",
       "svelte": "./dist/Folder.svelte",
@@ -95,6 +125,16 @@
       "types": "./dist/filled/Heart.svelte.d.ts",
       "svelte": "./dist/filled/Heart.svelte",
       "default": "./dist/filled/Heart.svelte"
+    },
+    "./menu": {
+      "types": "./dist/Menu.svelte.d.ts",
+      "svelte": "./dist/Menu.svelte",
+      "default": "./dist/Menu.svelte"
+    },
+    "./filled/menu": {
+      "types": "./dist/filled/Menu.svelte.d.ts",
+      "svelte": "./dist/filled/Menu.svelte",
+      "default": "./dist/filled/Menu.svelte"
     },
     "./moon": {
       "types": "./dist/Moon.svelte.d.ts",
@@ -140,6 +180,26 @@
       "types": "./dist/filled/Sun.svelte.d.ts",
       "svelte": "./dist/filled/Sun.svelte",
       "default": "./dist/filled/Sun.svelte"
+    },
+    "./trash": {
+      "types": "./dist/Trash.svelte.d.ts",
+      "svelte": "./dist/Trash.svelte",
+      "default": "./dist/Trash.svelte"
+    },
+    "./filled/trash": {
+      "types": "./dist/filled/Trash.svelte.d.ts",
+      "svelte": "./dist/filled/Trash.svelte",
+      "default": "./dist/filled/Trash.svelte"
+    },
+    "./upload": {
+      "types": "./dist/Upload.svelte.d.ts",
+      "svelte": "./dist/Upload.svelte",
+      "default": "./dist/Upload.svelte"
+    },
+    "./filled/upload": {
+      "types": "./dist/filled/Upload.svelte.d.ts",
+      "svelte": "./dist/filled/Upload.svelte",
+      "default": "./dist/filled/Upload.svelte"
     },
     "./x": {
       "types": "./dist/X.svelte.d.ts",
@@ -198,7 +258,7 @@
     "vitest": "5.0.5",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
-    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-1c1d7d74dd93.tgz"
+    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-65c7a2336ff6.tgz"
   },
   "description": "Original Outline and Filled icons as native Svelte 5 components.",
   "repository": {

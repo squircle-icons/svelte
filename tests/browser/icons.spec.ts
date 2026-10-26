@@ -182,6 +182,12 @@ for (const icon of [
   'plus',
   'check',
   'chevron-up',
+  'arrow-left',
+  'arrow-right',
+  'menu',
+  'download',
+  'upload',
+  'trash',
 ])
   test(`Filled ${icon} matches the Regular Outline exterior and openings at native and rotated poses`, async ({
     page,
@@ -200,8 +206,26 @@ for (const icon of [
         if (outline) {
           svg.setAttribute('stroke-width', '1.7');
           // Line marks keep an open interior; Filled Copy paints only its front page solid.
-          if (['x', 'plus', 'check', 'chevron-down', 'chevron-up'].includes(icon))
+          if (
+            [
+              'x',
+              'plus',
+              'check',
+              'chevron-down',
+              'chevron-up',
+              'arrow-left',
+              'arrow-right',
+              'menu',
+              'download',
+              'upload',
+              'trash',
+            ].includes(icon)
+          )
             svg.setAttribute('fill', 'none');
+          if (icon === 'trash') {
+            svg.querySelector('[data-part="body"]')?.setAttribute('fill', '#000');
+            svg.querySelector('[data-part="slots"]')?.setAttribute('stroke', '#fff');
+          }
           if (icon === 'copy')
             svg.querySelector('[data-part="back"]')?.setAttribute('fill', 'none');
 
@@ -417,5 +441,17 @@ test('X is the extended Plus rotated exactly 45 degrees in both packed styles', 
     await page
       .getByTestId('plus-x-rotation-sheet')
       .screenshot({ path: '.artifacts/previews/plus-x-derived.png' });
+  }
+});
+
+test('Round 4 exposes six draft pairs on light and dark review sheets', async ({ page }, info) => {
+  for (const surface of ['light', 'dark']) {
+    const sheet = page.getByTestId('round-four-' + surface);
+    await expect(sheet.locator('article')).toHaveCount(6);
+    await expect(sheet.locator('svg')).toHaveCount(48);
+    if (info.project.name === 'chromium') {
+      await mkdir('.artifacts/previews', { recursive: true });
+      await sheet.screenshot({ path: '.artifacts/previews/round-four-' + surface + '.png' });
+    }
   }
 });

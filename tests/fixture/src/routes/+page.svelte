@@ -12,6 +12,18 @@
   import FilledCheck from '@squircle-icons/svelte/filled/check';
   import ChevronUp from '@squircle-icons/svelte/chevron-up';
   import FilledChevronUp from '@squircle-icons/svelte/filled/chevron-up';
+  import ArrowLeft from '@squircle-icons/svelte/arrow-left';
+  import FilledArrowLeft from '@squircle-icons/svelte/filled/arrow-left';
+  import ArrowRight from '@squircle-icons/svelte/arrow-right';
+  import FilledArrowRight from '@squircle-icons/svelte/filled/arrow-right';
+  import Menu from '@squircle-icons/svelte/menu';
+  import FilledMenu from '@squircle-icons/svelte/filled/menu';
+  import Download from '@squircle-icons/svelte/download';
+  import FilledDownload from '@squircle-icons/svelte/filled/download';
+  import Upload from '@squircle-icons/svelte/upload';
+  import FilledUpload from '@squircle-icons/svelte/filled/upload';
+  import Trash from '@squircle-icons/svelte/trash';
+  import FilledTrash from '@squircle-icons/svelte/filled/trash';
   import Camera from '@squircle-icons/svelte/camera';
   import Sun from '@squircle-icons/svelte/sun';
   import Moon from '@squircle-icons/svelte/moon';
@@ -25,6 +37,14 @@
     Settings as FilledSettings,
   } from '@squircle-icons/svelte/filled';
   import { Heart, Search, Settings, Bell, Folder } from '@squircle-icons/svelte';
+  const roundFour = [
+    { name: 'arrow-left', label: 'Arrow Left', Outline: ArrowLeft, Filled: FilledArrowLeft },
+    { name: 'arrow-right', label: 'Arrow Right', Outline: ArrowRight, Filled: FilledArrowRight },
+    { name: 'menu', label: 'Menu', Outline: Menu, Filled: FilledMenu },
+    { name: 'download', label: 'Download', Outline: Download, Filled: FilledDownload },
+    { name: 'upload', label: 'Upload', Outline: Upload, Filled: FilledUpload },
+    { name: 'trash', label: 'Trash', Outline: Trash, Filled: FilledTrash },
+  ];
   let hovered = $state(false);
   let focused = $state(false);
   let preset = $state<'thin' | 'regular' | 'bold'>('regular');
@@ -154,6 +174,39 @@
     {/each}
   </div>
 </section>
+
+{#each roundFour as item}
+  <div data-testid={item.name + '-outline-contour'}>
+    <item.Outline size={96} label={'Outline ' + item.label + ' contour'} />
+  </div>
+  <div data-testid={item.name + '-filled-contour'}>
+    <item.Filled size={96} label={'Filled ' + item.label + ' contour'} />
+  </div>
+{/each}
+{#each ['light', 'dark'] as surface}
+  <section
+    class="round-three"
+    class:dark={surface === 'dark'}
+    data-testid={'round-four-' + surface}
+  >
+    <header>
+      <span>ROUND 4 / 6 DRAFT ICONS</span>
+      <h2>Navigation and files.</h2>
+      <p>Outline & Filled · Regular 1.70</p>
+    </header>
+    <div class="round-grid">
+      {#each roundFour as item}<article>
+          <h3>{item.label}</h3>
+          <div class="round-main"><item.Outline size={48} /><item.Filled size={48} /></div>
+          <div class="round-sizes">
+            {#each [16, 20, 24] as size}<div>
+                <item.Outline {size} /><item.Filled {size} /><small>{size}px</small>
+              </div>{/each}
+          </div>
+        </article>{/each}
+    </div>
+  </section>
+{/each}
 
 <section data-testid="unified-api">
   <button onclick={() => (iconStyle = iconStyle === 'filled' ? 'outline' : 'filled')}

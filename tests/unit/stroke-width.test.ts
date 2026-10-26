@@ -6,6 +6,11 @@ it.each([
   ['regular', 1.7],
   ['bold', 2.25],
   [1.9, 1.9],
+  [0, 0],
+  [-1, 1.7],
+  [NaN, 1.7],
+  [Infinity, 1.7],
+  [-Infinity, 1.7],
 ] as const)('resolves stroke width %s to %s', (value, expected) =>
   expect(resolveStrokeWidth(value)).toBe(expected),
 );

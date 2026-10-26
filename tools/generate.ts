@@ -3,6 +3,7 @@ import { mkdir, readFile, writeFile, readdir } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { format, resolveConfig } from 'prettier';
 import { root } from './paths.js';
+import { componentNames } from './icon-names.js';
 import { fileURLToPath } from 'node:url';
 import type { CoreIcon } from '@squircle-icons/core/catalog-types';
 type SvgNode = CoreIcon['root'];
@@ -13,11 +14,7 @@ const files = new Map<string, string>();
 const icons: CoreIcon[] = JSON.parse(
   await readFile(fileURLToPath(import.meta.resolve('@squircle-icons/core/catalog.json')), 'utf8'),
 );
-const pascal = (name: string) =>
-  name
-    .split('-')
-    .map((part) => part[0].toUpperCase() + part.slice(1))
-    .join('');
+const names = componentNames(icons.map((icon) => icon.name));
 const render = (node: SvgNode): string => {
   const attrs = Object.entries(node.attrs)
     .map(([key, value]) => `${key}=${JSON.stringify(value)}`)
@@ -36,8 +33,8 @@ const filledRootAttrs = rootAttrs.replace(
   'fill="none" stroke={color} stroke-width={resolvedStrokeWidth}',
   'fill={color} stroke="none" fill-rule="evenodd"',
 );
-for (const icon of icons) {
-  const component = pascal(icon.name);
+for (const [index, icon] of icons.entries()) {
+  const component = names[index];
   const body = icon.root.children.map((child) => render(child)).join('\n  ');
   staticIndex += `export { default as ${component} } from './${component}.svelte';\n`;
   exports[`./${icon.name}`] = {
@@ -105,7 +102,7 @@ files.set(
     `import type { IconStrokeWidth } from './props.js';
 const weights = ${JSON.stringify(STROKE_WEIGHTS)} as const;
 export function resolveStrokeWidth(value: IconStrokeWidth): number {
-  if (typeof value === 'number') return value;
+  if (typeof value === 'number' && Number.isFinite(value) && value >= 0) return value;
   return value === 'thin' ? weights.thin : value === 'bold' ? weights.bold : weights.regular;
 }
 `,

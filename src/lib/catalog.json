@@ -7,6 +7,28 @@
   },
   "icons": [
     {
+      "name": "arrow-left",
+      "description": "A left-facing navigation arrow with a straight shaft and open chevron head.",
+      "tags": ["back", "previous", "navigation"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "arrow-right",
+      "description": "A right-facing navigation arrow with a straight shaft and open chevron head.",
+      "tags": ["forward", "next", "navigation"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
       "name": "bell",
       "description": "A gently squared bell with a separate hanging clapper.",
       "tags": ["notification", "alert"],
@@ -97,6 +119,17 @@
       "reviewStatus": "draft"
     },
     {
+      "name": "download",
+      "description": "A downward arrow meeting an open receiving tray.",
+      "tags": ["save", "receive", "file"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
       "name": "folder",
       "description": "A horizontal rounded folder with a distinct tab and a straight movable front-panel edge.",
       "tags": ["files", "directory"],
@@ -141,6 +174,17 @@
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
       "reviewStatus": "approved"
+    },
+    {
+      "name": "menu",
+      "description": "Three equal horizontal menu strokes with rounded free ends.",
+      "tags": ["navigation", "list", "hamburger"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. Three equal strokes sit at y=6,12,18. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
     },
     {
       "name": "moon",
@@ -247,6 +291,28 @@
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
       "reviewStatus": "approved"
+    },
+    {
+      "name": "trash",
+      "description": "A tapered waste bin with an open handle and two internal slots.",
+      "tags": ["delete", "remove", "bin"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "A subtly tapered bucket meets a level lid, with a separate raised handle. Total centerline bounds x=4..20/y=2.5..21.5 give balanced visible padding 3.15 horizontally and 1.65 vertically. The Filled bucket is solid; its two radius-.85 capsule slots are explicit transparent counters aligned with the Outline internal slot strokes. The outer bucket stroke expansion is added around its solid centerline polygon; the lid covers the common top edge once visually. The handle keeps its real opening. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "upload",
+      "description": "An upward arrow rising above an open sending tray.",
+      "tags": ["send", "share", "file"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
     },
     {
       "name": "x",

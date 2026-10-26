@@ -73,6 +73,6 @@ pnpm sync:core ../core
 pnpm sync:svelte ../svelte
 ```
 
-Sync requires a committed, clean upstream checkout. It builds and packs the source, records its full commit and SHA-256 in `dependency-lock.json`, refreshes the installed dependency and lockfile, and regenerates components/catalogs. Review the artifact, provenance and generated output together.
+Sync requires a committed, clean upstream checkout and exclusive use of the downstream checkout while it runs. It builds and packs the source, records its full commit and SHA-256 in `dependency-lock.json`, refreshes the installed dependency and lockfile, and regenerates components/catalogs. Artifacts use content-addressed filenames so updates do not require a destructive reinstall. Failed installation, generation or provenance checks restore downstream files and the previously installed dependency. If automatic recovery also fails, the error prints the preserved backup location. Review the artifact, provenance and generated output together.
 
 The public package is `@squircle-icons/svelte`; alpha releases use the `alpha` distribution tag. Original artwork and code are licensed under [MIT](LICENSE). See [migration provenance](MIGRATION.md).
