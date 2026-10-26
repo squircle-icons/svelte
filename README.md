@@ -24,6 +24,22 @@ Or use `pnpm add @squircle-icons/svelte@alpha`. The first alpha is `0.1.0-alpha.
 
 Six Outline icons and five Filled icons are included. Search is intentionally Outline-only. Svelte 5.57.1+ is required. Animated Folder/Bell entry points remain experimental in this alpha; static design approval does not certify their motion. APIs and artwork may change before a stable release.
 
+## Keep application builds small
+
+Prefer a direct entry point for each icon you use:
+
+```ts
+import Bell from '@squircle-icons/svelte/bell';
+import FilledBell from '@squircle-icons/svelte/filled/bell';
+import AnimatedBell from '@squircle-icons/svelte/animated/bell';
+```
+
+Each direct path resolves to that component without traversing a collection barrel or catalog. Static paths transform only the selected icon and no motion modules. Animated Bell transforms its component, Bell recipe and shared motion helpers; it does not traverse other icons or the Folder recipe.
+
+Root named imports such as `import { Camera } from '@squircle-icons/svelte'` remain supported. Production tree shaking removes unused geometry, but a build tool may still transform unused components first. The Vite production regression currently observes six transformed icon components for that root import, compared with one for a direct path. Final bundle size and compilation work are separate checks.
+
+Native `.svelte` files are compiled by the consuming Svelte application, including its client/server targets. The selected component still needs compilation. Copying the same files locally does not remove that work. Package installation downloads the collection into `node_modules`; direct imports keep unused icons outside the application build graph. `pnpm test:bundle` asserts both transformed files and retained modules in `.artifacts/bundle-report.json`. These results describe the tested Vite toolchain, not every possible bundler configuration.
+
 ## Develop and verify
 
 Requires Node.js 24.19.0 and pnpm 10.10.0. A reviewed core artifact is included under `vendor/`, so a normal clone and CI run do not require credentials for another repository.

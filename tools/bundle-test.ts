@@ -7,17 +7,30 @@ import { root } from './paths.js';
 await mkdir(resolve(root, '.artifacts/bundle'), { recursive: true });
 const reports = [];
 for (const [name, statement] of [
-  ['individual', "import Camera from '@squircle-icons/svelte/camera';"],
-  ['filled', "import Camera from '@squircle-icons/svelte/filled/folder';"],
-  ['barrel', "import { Camera } from '@squircle-icons/svelte';"],
-  ['animated', "import Camera from '@squircle-icons/svelte/animated/bell';"],
+  ['bell-static', "import Icon from '@squircle-icons/svelte/bell';"],
+  ['individual', "import Icon from '@squircle-icons/svelte/camera';"],
+  ['filled', "import Icon from '@squircle-icons/svelte/filled/folder';"],
+  ['barrel', "import { Camera as Icon } from '@squircle-icons/svelte';"],
+  ['animated', "import Icon from '@squircle-icons/svelte/animated/bell';"],
 ] as const) {
+  const transformedPackageModules = new Set<string>();
   const entry = resolve(root, `.artifacts/bundle/${name}.js`);
-  await writeFile(entry, statement + '\nexport default Camera;\n');
+  await writeFile(entry, statement + '\nexport default Icon;\n');
   const result = await build({
     configFile: false,
     root,
-    plugins: [svelte({ configFile: false })],
+    plugins: [
+      {
+        name: 'record-icon-compilation-graph',
+        enforce: 'pre',
+        transform(_code, id) {
+          const file = id.split('?')[0];
+          const prefix = resolve(root, 'dist') + '/';
+          if (file.startsWith(prefix)) transformedPackageModules.add(file.slice(prefix.length));
+        },
+      },
+      svelte({ configFile: false }),
+    ],
     logLevel: 'error',
     build: { write: false, minify: false, lib: { entry, formats: ['es'] } },
   });
@@ -33,10 +46,45 @@ for (const [name, statement] of [
       .map(([id]) => id),
   );
   const iconModules = modules.filter((id) => /dist\/.*\.svelte$/.test(id));
+  const transformedIconModules = [...transformedPackageModules]
+    .filter((file) => file.endsWith('.svelte'))
+    .sort();
+  const expectedIcon =
+    name === 'animated'
+      ? 'animated/Bell.svelte'
+      : name === 'filled'
+        ? 'filled/Folder.svelte'
+        : name === 'bell-static'
+          ? 'Bell.svelte'
+          : 'Camera.svelte';
+  if (name !== 'barrel') {
+    assert.deepEqual(
+      transformedIconModules,
+      [expectedIcon],
+      'Per-icon imports must transform only the selected icon, before tree shaking',
+    );
+    assert(
+      ![...transformedPackageModules].some(
+        (file) => file.endsWith('/index.js') || file === 'index.js' || file === 'catalog.json',
+      ),
+      'Per-icon imports must bypass collection barrels and the catalog',
+    );
+    if (name === 'animated')
+      assert(
+        !transformedPackageModules.has('_internal/folder-motion.js'),
+        'Animated Bell traversed Folder motion',
+      );
+    else
+      assert(
+        ![...transformedPackageModules].some((file) =>
+          /controller|adapter\.svelte|motion\.(js|ts)/.test(file),
+        ),
+        'Static imports must not transform any motion runtime',
+      );
+  }
   if (name !== 'animated') {
     assert(
-      iconModules.length === 1 &&
-        iconModules[0].endsWith(name === 'filled' ? '/filled/Folder.svelte' : '/Camera.svelte'),
+      iconModules.length === 1 && iconModules[0].endsWith('/' + expectedIcon),
       'Unused icon code was retained',
     );
     assert(
@@ -56,6 +104,8 @@ for (const [name, statement] of [
   reports.push({
     name,
     bytes: Buffer.byteLength(code),
+    transformedIconModules,
+    transformedPackageModules: [...transformedPackageModules].sort(),
     iconModules: iconModules.map((id) => id.split('/dist/')[1]),
     motionRuntime: modules.some((id) => id.includes('/controller.js')),
     modules,
@@ -66,9 +116,10 @@ await writeFile(
   JSON.stringify(reports, null, 2) + '\n',
 );
 console.log(
-  reports.map(({ name, bytes, iconModules, motionRuntime }) => ({
+  reports.map(({ name, bytes, transformedIconModules, iconModules, motionRuntime }) => ({
     name,
     bytes,
+    transformedIconModules,
     iconModules,
     motionRuntime,
   })),
