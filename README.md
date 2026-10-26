@@ -14,11 +14,11 @@ The current npm alpha is `0.1.0-alpha.1`. The expanded compatibility below is a 
 
 ### Recommended
 
-- Svelte 5.57.2.
-- Node.js 22.23.4 LTS.
-- npm 10.9.9, bundled with Node.js 22.23.4. A compatible pnpm version is an alternative.
+- Svelte 5.
+- Node.js 22 LTS.
+- npm 10. A compatible pnpm version is an alternative.
 
-Use the [official Node.js LTS download](https://nodejs.org/en/download). The recommendation follows maintained LTS releases; it does not require the newest Current release.
+Use an up-to-date patch within these version lines and the [official Node.js LTS download](https://nodejs.org/en/download). The recommendation does not require an exact patch or the newest Current release.
 
 ### Tested older versions
 
