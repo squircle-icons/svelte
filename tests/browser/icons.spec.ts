@@ -501,7 +501,7 @@ test('X shares identical Outline and Filled glyphs inside a box with 2px outer m
   }
 });
 
-test('Round 4 exposes six draft pairs on light and dark review sheets', async ({ page }, info) => {
+test('Round 4 exposes six pairs on light and dark review sheets', async ({ page }, info) => {
   for (const surface of ['light', 'dark']) {
     const sheet = page.getByTestId('round-four-' + surface);
     await expect(sheet.locator('article')).toHaveCount(6);
@@ -770,9 +770,7 @@ for (const icon of ['download', 'upload'])
       expect(value).toBeCloseTo([3.15, 15.15, 17.7, 6.2][index], 4);
   });
 
-test('Moon moves the visible concave point to local two two with centered source bounds', async ({
-  page,
-}) => {
+test('Moon bakes the owner-approved minus thirty degree pose as native zero', async ({ page }) => {
   const values = await page.evaluate(() => {
     const path = document.querySelector(
       '[data-testid="moon-filled-contour"] path',
@@ -781,24 +779,31 @@ test('Moon moves the visible concave point to local two two with centered source
     const outline = document.querySelector(
       '[data-testid="moon-outline-contour"] path',
     ) as SVGPathElement;
-    const outer = [12.65789151, 12];
-    const start = Math.atan2(4.27646948 - outer[1], 14.74285586 - outer[0]);
-    const end = Math.atan2(16.39559362 - outer[1], 19.34210849 - outer[0]);
+    const outer = [12.00675074, 11.86562791];
+    const approvedPose = (x: number, y: number) => {
+      const angle = -Math.PI / 6;
+      return new DOMPoint(
+        12 + (x - 12) * Math.cos(angle) - (y - 12) * Math.sin(angle) - 0.563000020547463,
+        12 + (x - 12) * Math.sin(angle) + (y - 12) * Math.cos(angle) + 0.19457365946641936,
+      );
+    };
+    const start = Math.atan2(4.13437209 - outer[1], 9.95061758 - outer[0]);
+    const end = Math.atan2(12.33021515 - outer[1], 19.99324926 - outer[0]);
     const outerLength = 8 * (2 * Math.PI - (end - start));
     const middle = outline.getPointAtLength(
       outerLength + (outline.getTotalLength() - outerLength) / 2,
     );
     return {
       horns: [
-        [14.74285586, 4.27646948],
-        [19.34210849, 16.39559362],
+        [9.95061758, 4.13437209],
+        [19.99324926, 12.33021515],
       ].every(([x, y]) => path.isPointInFill(new DOMPoint(x, y))),
-      openingSideClear: !path.isPointInFill(new DOMPoint(14.03, 13.97)),
-      bodySideSolid: path.isPointInFill(new DOMPoint(13.97, 14.03)),
-      openingClear: !path.isPointInFill(new DOMPoint(15, 8)),
-      deeperOpening: !path.isPointInFill(new DOMPoint(14.12, 9.88)),
-      bodySolid: path.isPointInFill(new DOMPoint(8, 17)),
-      innerRadius: Math.hypot(middle.x - 18.04407765, middle.y - 9.95592235),
+      openingSideClear: !path.isPointInFill(approvedPose(14.03, 13.97)),
+      bodySideSolid: path.isPointInFill(approvedPose(13.97, 14.03)),
+      openingClear: !path.isPointInFill(approvedPose(15, 8)),
+      deeperOpening: !path.isPointInFill(approvedPose(14.12, 9.88)),
+      bodySolid: path.isPointInFill(approvedPose(8, 17)),
+      innerRadius: Math.hypot(middle.x - 15.64928594, middle.y - 7.40231166),
       margins: [box.x, box.y, 24 - box.x - box.width, 24 - box.y - box.height],
     };
   });
@@ -810,5 +815,5 @@ test('Moon moves the visible concave point to local two two with centered source
   expect(values.bodySolid).toBe(true);
   expect(values.innerRadius).toBeCloseTo(6.56918946, 2);
   for (const [index, margin] of values.margins.entries())
-    expect(margin).toBeCloseTo([3.80789151, 3.15, 3.80789151, 3.15][index], 4);
+    expect(margin).toBeCloseTo([3.15675074, 3.28437209, 3.15675074, 3.28437209][index], 4);
 });

@@ -1062,10 +1062,10 @@
         "file"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft geometry is retained; the tray follows the standard roundness below. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner clarified on2026-10-27 that this transfer icon remains awaiting review in both styles. Owner requested the Camera/Folder standard roundness for both transfer trays on2026-10-27. The tray now uses tangent radius3.25 centerline base corners, with vertical sides x4/20, corner centers7.25/16.75 at y17.25, and bottom y20.5. Both open ends remain at y16. Filled is the exact Regular1.70 stroke band: outer radius4.10, inner radius2.40 and free caps .85. Tray visible bounds x3.15..20.85/y15.15..21.35 and complete icon bounds x3.15..20.85/y2.65..21.35 are retained. The open Outline V and solid Filled arrowhead remain unchanged. Both styles await owner review.",
+      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft geometry is retained; the tray follows the standard roundness below. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. The owner subsequently approved both transfer styles on2026-10-27. Owner requested the Camera/Folder standard roundness for both transfer trays on2026-10-27. The tray now uses tangent radius3.25 centerline base corners, with vertical sides x4/20, corner centers7.25/16.75 at y17.25, and bottom y20.5. Both open ends remain at y16. Filled is the exact Regular1.70 stroke band: outer radius4.10, inner radius2.40 and free caps .85. Tray visible bounds x3.15..20.85/y15.15..21.35 and complete icon bounds x3.15..20.85/y2.65..21.35 are retained. The open Outline V and solid Filled arrowhead remain unchanged. Both styles were owner-approved on2026-10-27.",
       "filledTreatment": "solid-head",
       "review": {
-        "status": "draft",
+        "status": "approved",
         "reviewedBy": "palamto",
         "date": "2026-10-27",
         "style": "outline",
@@ -1075,7 +1075,7 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Download and Upload remain pending. Current revision adds standard Camera/Folder radius3.25 centerline tray corners with matching Filled exterior, retaining the accepted arrow treatment and original overall bounds."
+        "note": "Owner explicitly approved Download and Upload Outline/Filled on2026-10-27 with the current standard radius3.25 centerline tray corners, aligned Filled exterior and accepted arrowheads. Native X/Y100%, Regular1.70, rotation0; source geometry is unchanged by this approval."
       }
     },
     "root": {
@@ -1137,10 +1137,10 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft geometry is retained; the tray follows the standard roundness below. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner clarified on2026-10-27 that this transfer icon remains awaiting review in both styles. Owner requested the Camera/Folder standard roundness for both transfer trays on2026-10-27. The tray now uses tangent radius3.25 centerline base corners, with vertical sides x4/20, corner centers7.25/16.75 at y17.25, and bottom y20.5. Both open ends remain at y16. Filled is the exact Regular1.70 stroke band: outer radius4.10, inner radius2.40 and free caps .85. Tray visible bounds x3.15..20.85/y15.15..21.35 and complete icon bounds x3.15..20.85/y2.65..21.35 are retained. The open Outline V and solid Filled arrowhead remain unchanged. Both styles await owner review.",
+        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft geometry is retained; the tray follows the standard roundness below. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. The owner subsequently approved both transfer styles on2026-10-27. Owner requested the Camera/Folder standard roundness for both transfer trays on2026-10-27. The tray now uses tangent radius3.25 centerline base corners, with vertical sides x4/20, corner centers7.25/16.75 at y17.25, and bottom y20.5. Both open ends remain at y16. Filled is the exact Regular1.70 stroke band: outer radius4.10, inner radius2.40 and free caps .85. Tray visible bounds x3.15..20.85/y15.15..21.35 and complete icon bounds x3.15..20.85/y2.65..21.35 are retained. The open Outline V and solid Filled arrowhead remain unchanged. Both styles were owner-approved on2026-10-27.",
         "filledTreatment": "solid-head",
         "review": {
-          "status": "draft",
+          "status": "approved",
           "reviewedBy": "palamto",
           "date": "2026-10-27",
           "style": "filled",
@@ -1150,7 +1150,7 @@
             "strokeWidth": 1.7,
             "rotation": 0
           },
-          "note": "Download and Upload remain pending. Current revision adds standard Camera/Folder radius3.25 centerline tray corners with matching Filled exterior, retaining the accepted arrow treatment and original overall bounds."
+          "note": "Owner explicitly approved Download and Upload Outline/Filled on2026-10-27 with the current standard radius3.25 centerline tray corners, aligned Filled exterior and accepted arrowheads. Native X/Y100%, Regular1.70, rotation0; source geometry is unchanged by this approval."
         }
       },
       "root": {
@@ -1608,9 +1608,9 @@
         "weather"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner corrected the interpretation: move the concave edge point, not the circle center, to local2,2 relative to the artboard center. The requested visible edge point is14,14. Keep inner center18.04407765 9.95592235 and centerline radius6.569189459166889. Preserve the radius8 outer-circle shape, Regular1.70 and .85 horn joins; place the outer center at12.65789151 12 and recompute intersections so the complete source is centered without moving the requested edge point. Filled uses exact outer8.85 and inner5.719189459166889 offsets and .85 joins. Native visible margins are left/right3.80789151 and top/bottom3.15. Both styles remain pending owner review. Horns 14.74285586 4.27646948 and 19.34210849 16.39559362; outer-circle center 12.65789151 12, inner-circle center 18.04407765 9.95592235. X/Y100%, rotation0.",
+      "construction": "Owner approved Moon Outline and Filled at the reviewed -30-degree pose on2026-10-27, with X/Y100% and Regular1.70. Bake that counterclockwise pose into both SVG sources, then uniformly recenter their shared visible bounds. The accepted orientation is now native0 degrees; opening/resetting Lab uses100/100 and rotation0. Preserve the approved circular contours, radius8 outer centerline, radius6.569189459166889 inner centerline and .85 joins. Filled is the exact Regular exterior with outer8.85 and inner5.719189459166889. No style-specific scaling or preview rotation override. New native horns 9.95061758 4.13437209 and 19.99324926 12.33021515; outer-circle center 12.00675074 11.86562791, inner-circle center 15.64928594 7.40231166. Left/right margins3.15675074, top/bottom3.28437209.",
       "review": {
-        "status": "draft",
+        "status": "approved",
         "reviewedBy": "palamto",
         "date": "2026-10-27",
         "style": "outline",
@@ -1620,7 +1620,7 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner corrected the interpretation: move the concave edge point, not the circle center, to local2,2 relative to the artboard center. The requested visible edge point is14,14. Keep inner center18.04407765 9.95592235 and centerline radius6.569189459166889. Preserve the radius8 outer-circle shape, Regular1.70 and .85 horn joins; place the outer center at12.65789151 12 and recompute intersections so the complete source is centered without moving the requested edge point. Filled uses exact outer8.85 and inner5.719189459166889 offsets and .85 joins. Native visible margins are left/right3.80789151 and top/bottom3.15. Both styles remain pending owner review."
+        "note": "Owner approved Moon Outline and Filled at the reviewed -30-degree pose on2026-10-27, with X/Y100% and Regular1.70. Bake that counterclockwise pose into both SVG sources, then uniformly recenter their shared visible bounds. The accepted orientation is now native0 degrees; opening/resetting Lab uses100/100 and rotation0. Preserve the approved circular contours, radius8 outer centerline, radius6.569189459166889 inner centerline and .85 joins. Filled is the exact Regular exterior with outer8.85 and inner5.719189459166889. No style-specific scaling or preview rotation override."
       }
     },
     "root": {
@@ -1644,7 +1644,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M14.74285586 4.27646948 A8 8 0 1 0 19.34210849 16.39559362 A6.56918946 6.56918946 0 0 1 14.74285586 4.27646948 Z"
+                "d": "M9.95061758 4.13437209 A8 8 0 1 0 19.99324926 12.33021515 A6.56918946 6.56918946 0 0 1 9.95061758 4.13437209 Z"
               },
               "children": []
             }
@@ -1666,9 +1666,9 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner corrected the interpretation: move the concave edge point, not the circle center, to local2,2 relative to the artboard center. The requested visible edge point is14,14. Keep inner center18.04407765 9.95592235 and centerline radius6.569189459166889. Preserve the radius8 outer-circle shape, Regular1.70 and .85 horn joins; place the outer center at12.65789151 12 and recompute intersections so the complete source is centered without moving the requested edge point. Filled uses exact outer8.85 and inner5.719189459166889 offsets and .85 joins. Native visible margins are left/right3.80789151 and top/bottom3.15. Both styles remain pending owner review. Horns 14.74285586 4.27646948 and 19.34210849 16.39559362; outer-circle center 12.65789151 12, inner-circle center 18.04407765 9.95592235. X/Y100%, rotation0.",
+        "construction": "Owner approved Moon Outline and Filled at the reviewed -30-degree pose on2026-10-27, with X/Y100% and Regular1.70. Bake that counterclockwise pose into both SVG sources, then uniformly recenter their shared visible bounds. The accepted orientation is now native0 degrees; opening/resetting Lab uses100/100 and rotation0. Preserve the approved circular contours, radius8 outer centerline, radius6.569189459166889 inner centerline and .85 joins. Filled is the exact Regular exterior with outer8.85 and inner5.719189459166889. No style-specific scaling or preview rotation override. New native horns 9.95061758 4.13437209 and 19.99324926 12.33021515; outer-circle center 12.00675074 11.86562791, inner-circle center 15.64928594 7.40231166. Left/right margins3.15675074, top/bottom3.28437209.",
         "review": {
-          "status": "draft",
+          "status": "approved",
           "reviewedBy": "palamto",
           "date": "2026-10-27",
           "style": "filled",
@@ -1678,7 +1678,7 @@
             "strokeWidth": 1.7,
             "rotation": 0
           },
-          "note": "Owner corrected the interpretation: move the concave edge point, not the circle center, to local2,2 relative to the artboard center. The requested visible edge point is14,14. Keep inner center18.04407765 9.95592235 and centerline radius6.569189459166889. Preserve the radius8 outer-circle shape, Regular1.70 and .85 horn joins; place the outer center at12.65789151 12 and recompute intersections so the complete source is centered without moving the requested edge point. Filled uses exact outer8.85 and inner5.719189459166889 offsets and .85 joins. Native visible margins are left/right3.80789151 and top/bottom3.15. Both styles remain pending owner review."
+          "note": "Owner approved Moon Outline and Filled at the reviewed -30-degree pose on2026-10-27, with X/Y100% and Regular1.70. Bake that counterclockwise pose into both SVG sources, then uniformly recenter their shared visible bounds. The accepted orientation is now native0 degrees; opening/resetting Lab uses100/100 and rotation0. Preserve the approved circular contours, radius8 outer centerline, radius6.569189459166889 inner centerline and .85 joins. Filled is the exact Regular exterior with outer8.85 and inner5.719189459166889. No style-specific scaling or preview rotation override."
         }
       },
       "root": {
@@ -1700,7 +1700,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M14.96438333 3.45584437 A8.85 8.85 0 0 0 12.65789151 3.15 A8.85 8.85 0 0 0 3.80789151 12 A8.85 8.85 0 0 0 12.65789151 20.85 A8.85 8.85 0 0 0 20.05230655 16.86262544 A0.85 0.85 0 0 0 20.19210849 16.39559362 A0.85 0.85 0 0 0 19.34210849 15.54559362 A0.85 0.85 0 0 0 19.1741538 15.56235223 A5.71918946 5.71918946 0 0 1 18.04407765 15.67511181 A5.71918946 5.71918946 0 0 1 12.32488819 9.95592235 A5.71918946 5.71918946 0 0 1 15.17000727 5.01134476 A0.85 0.85 0 0 0 15.59285586 4.27646948 A0.85 0.85 0 0 0 14.96438333 3.45584437 Z"
+                  "d": "M9.73215343 3.31292616 A8.85 8.85 0 0 0 3.15675074 11.86562791 A8.85 8.85 0 0 0 12.00675074 20.71562791 A8.85 8.85 0 0 0 20.84181473 12.37957755 A0.85 0.85 0 0 0 20.84324926 12.33021515 A0.85 0.85 0 0 0 19.99324926 11.48021515 A0.85 0.85 0 0 0 19.43117553 11.69258429 A5.71918946 5.71918946 0 0 1 15.64928594 13.12150112 A5.71918946 5.71918946 0 0 1 9.93009648 7.40231166 A5.71918946 5.71918946 0 0 1 10.68797919 4.55721705 A0.85 0.85 0 0 0 10.80061758 4.13437209 A0.85 0.85 0 0 0 9.95061758 3.28437209 A0.85 0.85 0 0 0 9.73215343 3.31292616 Z"
                 },
                 "children": []
               }
@@ -2457,10 +2457,10 @@
         "file"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft geometry is retained; the tray follows the standard roundness below. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner clarified on2026-10-27 that this transfer icon remains awaiting review in both styles. Owner requested the Camera/Folder standard roundness for both transfer trays on2026-10-27. The tray now uses tangent radius3.25 centerline base corners, with vertical sides x4/20, corner centers7.25/16.75 at y17.25, and bottom y20.5. Both open ends remain at y16. Filled is the exact Regular1.70 stroke band: outer radius4.10, inner radius2.40 and free caps .85. Tray visible bounds x3.15..20.85/y15.15..21.35 and complete icon bounds x3.15..20.85/y2.65..21.35 are retained. The open Outline V and solid Filled arrowhead remain unchanged. Both styles await owner review.",
+      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft geometry is retained; the tray follows the standard roundness below. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. The owner subsequently approved both transfer styles on2026-10-27. Owner requested the Camera/Folder standard roundness for both transfer trays on2026-10-27. The tray now uses tangent radius3.25 centerline base corners, with vertical sides x4/20, corner centers7.25/16.75 at y17.25, and bottom y20.5. Both open ends remain at y16. Filled is the exact Regular1.70 stroke band: outer radius4.10, inner radius2.40 and free caps .85. Tray visible bounds x3.15..20.85/y15.15..21.35 and complete icon bounds x3.15..20.85/y2.65..21.35 are retained. The open Outline V and solid Filled arrowhead remain unchanged. Both styles were owner-approved on2026-10-27.",
       "filledTreatment": "solid-head",
       "review": {
-        "status": "draft",
+        "status": "approved",
         "reviewedBy": "palamto",
         "date": "2026-10-27",
         "style": "outline",
@@ -2470,7 +2470,7 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Download and Upload remain pending. Current revision adds standard Camera/Folder radius3.25 centerline tray corners with matching Filled exterior, retaining the accepted arrow treatment and original overall bounds."
+        "note": "Owner explicitly approved Download and Upload Outline/Filled on2026-10-27 with the current standard radius3.25 centerline tray corners, aligned Filled exterior and accepted arrowheads. Native X/Y100%, Regular1.70, rotation0; source geometry is unchanged by this approval."
       }
     },
     "root": {
@@ -2532,10 +2532,10 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft geometry is retained; the tray follows the standard roundness below. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner clarified on2026-10-27 that this transfer icon remains awaiting review in both styles. Owner requested the Camera/Folder standard roundness for both transfer trays on2026-10-27. The tray now uses tangent radius3.25 centerline base corners, with vertical sides x4/20, corner centers7.25/16.75 at y17.25, and bottom y20.5. Both open ends remain at y16. Filled is the exact Regular1.70 stroke band: outer radius4.10, inner radius2.40 and free caps .85. Tray visible bounds x3.15..20.85/y15.15..21.35 and complete icon bounds x3.15..20.85/y2.65..21.35 are retained. The open Outline V and solid Filled arrowhead remain unchanged. Both styles await owner review.",
+        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft geometry is retained; the tray follows the standard roundness below. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. The owner subsequently approved both transfer styles on2026-10-27. Owner requested the Camera/Folder standard roundness for both transfer trays on2026-10-27. The tray now uses tangent radius3.25 centerline base corners, with vertical sides x4/20, corner centers7.25/16.75 at y17.25, and bottom y20.5. Both open ends remain at y16. Filled is the exact Regular1.70 stroke band: outer radius4.10, inner radius2.40 and free caps .85. Tray visible bounds x3.15..20.85/y15.15..21.35 and complete icon bounds x3.15..20.85/y2.65..21.35 are retained. The open Outline V and solid Filled arrowhead remain unchanged. Both styles were owner-approved on2026-10-27.",
         "filledTreatment": "solid-head",
         "review": {
-          "status": "draft",
+          "status": "approved",
           "reviewedBy": "palamto",
           "date": "2026-10-27",
           "style": "filled",
@@ -2545,7 +2545,7 @@
             "strokeWidth": 1.7,
             "rotation": 0
           },
-          "note": "Download and Upload remain pending. Current revision adds standard Camera/Folder radius3.25 centerline tray corners with matching Filled exterior, retaining the accepted arrow treatment and original overall bounds."
+          "note": "Owner explicitly approved Download and Upload Outline/Filled on2026-10-27 with the current standard radius3.25 centerline tray corners, aligned Filled exterior and accepted arrowheads. Native X/Y100%, Regular1.70, rotation0; source geometry is unchanged by this approval."
         }
       },
       "root": {
