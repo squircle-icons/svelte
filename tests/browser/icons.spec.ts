@@ -770,7 +770,7 @@ for (const icon of ['download', 'upload'])
       expect(value).toBeCloseTo([3.15, 15.15, 17.7, 6.2][index], 4);
   });
 
-test('Moon moves the visible concave point to local two two without moving the outer circle', async ({
+test('Moon moves the visible concave point to local two two with centered source bounds', async ({
   page,
 }) => {
   const values = await page.evaluate(() => {
@@ -781,17 +781,17 @@ test('Moon moves the visible concave point to local two two without moving the o
     const outline = document.querySelector(
       '[data-testid="moon-outline-contour"] path',
     ) as SVGPathElement;
-    const outer = [12.05252287, 11.94747713];
-    const start = Math.atan2(4.36322239 - outer[1], 14.59792657 - outer[0]);
-    const end = Math.atan2(16.49877655 - outer[1], 18.63170775 - outer[0]);
+    const outer = [12.65789151, 12];
+    const start = Math.atan2(4.27646948 - outer[1], 14.74285586 - outer[0]);
+    const end = Math.atan2(16.39559362 - outer[1], 19.34210849 - outer[0]);
     const outerLength = 8 * (2 * Math.PI - (end - start));
     const middle = outline.getPointAtLength(
       outerLength + (outline.getTotalLength() - outerLength) / 2,
     );
     return {
       horns: [
-        [14.59792657, 4.36322239],
-        [18.63170775, 16.49877655],
+        [14.74285586, 4.27646948],
+        [19.34210849, 16.39559362],
       ].every(([x, y]) => path.isPointInFill(new DOMPoint(x, y))),
       openingSideClear: !path.isPointInFill(new DOMPoint(14.03, 13.97)),
       bodySideSolid: path.isPointInFill(new DOMPoint(13.97, 14.03)),
@@ -810,5 +810,5 @@ test('Moon moves the visible concave point to local two two without moving the o
   expect(values.bodySolid).toBe(true);
   expect(values.innerRadius).toBeCloseTo(6.56918946, 2);
   for (const [index, margin] of values.margins.entries())
-    expect(margin).toBeCloseTo([3.20252287, 3.09747713, 4.51829225, 3.20252287][index], 4);
+    expect(margin).toBeCloseTo([3.80789151, 3.15, 3.80789151, 3.15][index], 4);
 });
