@@ -161,6 +161,11 @@
       "svelte": "./dist/Search.svelte",
       "default": "./dist/Search.svelte"
     },
+    "./filled/search": {
+      "types": "./dist/filled/Search.svelte.d.ts",
+      "svelte": "./dist/filled/Search.svelte",
+      "default": "./dist/filled/Search.svelte"
+    },
     "./settings": {
       "types": "./dist/Settings.svelte.d.ts",
       "svelte": "./dist/Settings.svelte",
@@ -258,7 +263,7 @@
     "vitest": "5.0.5",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
-    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-4b8ad593d5fb.tgz"
+    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-dd6e2b4e0200.tgz"
   },
   "description": "Original Outline and Filled icons as native Svelte 5 components.",
   "repository": {

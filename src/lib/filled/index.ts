@@ -14,6 +14,7 @@ export { default as Heart } from './Heart.svelte';
 export { default as Menu } from './Menu.svelte';
 export { default as Moon } from './Moon.svelte';
 export { default as Plus } from './Plus.svelte';
+export { default as Search } from './Search.svelte';
 export { default as Settings } from './Settings.svelte';
 export { default as Sun } from './Sun.svelte';
 export { default as Trash } from './Trash.svelte';

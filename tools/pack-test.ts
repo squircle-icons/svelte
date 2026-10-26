@@ -54,11 +54,17 @@ assert(!installedPackage.private, 'Release package must permit publication');
 assert.equal(installedPackage.publishConfig.access, 'public');
 assert.equal(installedPackage.publishConfig.tag, 'alpha');
 assert.equal(installedPackage.license, 'MIT', 'Packed manifest must declare MIT');
-assert(!installedPackage.exports['./filled/search'], 'Search must not expose a Filled entry point');
-await assert.rejects(readFile(resolve(installed, 'dist/filled/Search.svelte')), { code: 'ENOENT' });
 assert(
-  !(await readFile(resolve(installed, 'dist/filled/index.js'), 'utf8')).includes('Search.svelte'),
-  'Filled barrel retained removed Search',
+  installedPackage.exports['./filled/search'],
+  'Search must expose its owner-requested Filled entry point',
+);
+assert(
+  (await readFile(resolve(installed, 'dist/filled/Search.svelte'), 'utf8')).includes('evenodd'),
+  'Packed Filled Search is missing its compound cutout',
+);
+assert(
+  (await readFile(resolve(installed, 'dist/filled/index.js'), 'utf8')).includes('Search.svelte'),
+  'Filled barrel must export Search',
 );
 assert(
   !Object.keys(installedPackage.exports).some((path) => path.includes('animated')),

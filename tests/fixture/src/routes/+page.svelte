@@ -4,6 +4,7 @@
   import FilledX from '@squircle-icons/svelte/filled/x';
   import Copy from '@squircle-icons/svelte/copy';
   import FilledCopy from '@squircle-icons/svelte/filled/copy';
+  import FilledSearch from '@squircle-icons/svelte/filled/search';
   import ChevronDown from '@squircle-icons/svelte/chevron-down';
   import FilledChevronDown from '@squircle-icons/svelte/filled/chevron-down';
   import Plus from '@squircle-icons/svelte/plus';
@@ -135,6 +136,28 @@
 <div data-testid="gap-preset"><Folder style="filled" strokeWidth={preset} /></div>
 <div data-testid="x-outline-contour"><X size={96} label="Outline X contour" /></div>
 <div data-testid="x-filled-contour"><FilledX size={96} label="Filled X contour" /></div>
+<div data-testid="search-outline-contour"><Search size={96} label="Outline Search contour" /></div>
+<div data-testid="search-filled-contour">
+  <FilledSearch size={96} label="Filled Search contour" />
+</div>
+<section class="rotation-sheet" data-testid="search-boxed-sheet">
+  <header>
+    <span>BOXED FILLED / SEARCH</span>
+    <h2>Search</h2>
+    <p>Shared magnifier glyph · 2px outside + 2px inside · Regular 1.70</p>
+  </header>
+  <div class="rotation-grid">
+    {#each ['outline', 'filled'] as style}<article>
+        <Search size={72} style={style as 'outline' | 'filled'} /><small>{style}</small>
+        <div>
+          {#each [16, 20, 24, 48] as size}<Search
+              {size}
+              style={style as 'outline' | 'filled'}
+            />{/each}
+        </div>
+      </article>{/each}
+  </div>
+</section>
 <div data-testid="copy-outline-contour"><Copy size={96} label="Outline Copy contour" /></div>
 <div data-testid="copy-filled-contour"><FilledCopy size={96} label="Filled Copy contour" /></div>
 <div data-testid="chevron-down-outline-contour">

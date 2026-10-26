@@ -180,6 +180,7 @@ for (const icon of [
   'moon',
   'x',
   'copy',
+  'search',
   'chevron-down',
   'plus',
   'check',
@@ -205,13 +206,14 @@ for (const icon of [
         svg.setAttribute('height', String(size));
         svg.setAttribute('fill', '#000');
         svg.setAttribute('stroke', outline ? '#000' : 'none');
-        if (!outline && ['plus', 'x'].includes(icon)) {
+        if (!outline && ['plus', 'x', 'search'].includes(icon)) {
           // Owner-requested Filled boxes are a deliberate exterior exception.
           // The negative-space glyph matches the unchanged Outline exterior for both marks.
           const path = svg.querySelector('path')!;
           const parts = path.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
-          if (parts.length !== 2) throw new Error('Expected a box and a glyph cutout');
-          path.setAttribute('d', parts[1]);
+          if (parts.length !== (icon === 'search' ? 3 : 2))
+            throw new Error('Expected a box and glyph cutout subpaths');
+          path.setAttribute('d', parts.slice(1).join(' '));
         }
 
         if (['camera', 'folder'].includes(icon)) {
@@ -229,6 +231,7 @@ for (const icon of [
             [
               'x',
               'plus',
+              'search',
               'check',
               'chevron-down',
               'chevron-up',
@@ -635,4 +638,43 @@ test('Copy has 1px junction breaks, 4px inter-page spacing and standard corners'
     await page
       .getByTestId('copy-review-sheet')
       .screenshot({ path: '.artifacts/previews/copy-spaced-rounded.png' });
+});
+
+test('Search exposes a matching boxed Filled glyph with a solid lens center and 2px frame margins', async ({
+  page,
+}, info) => {
+  const values = await page.evaluate(() => {
+    const svg = document.querySelector(
+      '[data-testid="search-filled-contour"] svg',
+    ) as SVGSVGElement;
+    const path = svg.querySelector('path') as SVGPathElement;
+    const box = path.getBBox();
+    const outline = document.querySelector(
+      '[data-testid="search-outline-contour"] svg',
+    ) as SVGSVGElement;
+    const glyph = outline.getBBox();
+    const half = 0.85;
+    return {
+      margins: [box.x, box.y, 24 - box.x - box.width, 24 - box.y - box.height],
+      clearances: [
+        glyph.x - half - box.x,
+        glyph.y - half - box.y,
+        box.x + box.width - glyph.x - glyph.width - half,
+        box.y + box.height - glyph.y - glyph.height - half,
+      ],
+      lensCenterSolid: path.isPointInFill(new DOMPoint(10.35632184, 10.35632184)),
+      ringCutout: !path.isPointInFill(new DOMPoint(4.85, 10.35632184)),
+      handleCutout: !path.isPointInFill(new DOMPoint(19.15, 19.15)),
+      borderSolid: path.isPointInFill(new DOMPoint(2.5, 12)),
+    };
+  });
+  for (const value of [...values.margins, ...values.clearances]) expect(value).toBeCloseTo(2, 4);
+  expect(values.lensCenterSolid).toBe(true);
+  expect(values.ringCutout).toBe(true);
+  expect(values.handleCutout).toBe(true);
+  expect(values.borderSolid).toBe(true);
+  if (info.project.name === 'chromium')
+    await page
+      .getByTestId('search-boxed-sheet')
+      .screenshot({ path: '.artifacts/previews/search-boxed.png' });
 });

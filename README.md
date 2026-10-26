@@ -24,7 +24,7 @@ The current npm alpha is `0.1.0-alpha.0`. The changes described below are in the
 <Camera strokeWidth="bold" />
 ```
 
-Use the same import for both styles. `style="outline"` is the default; `style="filled"` selects the separately authored solid drawing. Search is Outline-only, and its component type rejects `style="filled"`. Dedicated imports such as `@squircle-icons/svelte/filled/camera` and the Filled barrel remain supported.
+Use the same import for both styles. `style="outline"` is the default; `style="filled"` selects the separately authored solid drawing. Search now provides the owner-requested boxed Filled variant through the same style prop, matching its revised Outline glyph. Dedicated imports such as `@squircle-icons/svelte/filled/camera` and the Filled barrel remain supported.
 
 Common props are `size=24`, `color="currentColor"`, `style="outline"`, `strokeWidth="regular"`, optional `label` and `class`. Decorative icons omit `label`; meaningful icons receive one accessible name. Components add no tab stop or duplicate SVG title. Stroke presets are `thin` (1.25), `regular` (1.70), and `bold` (2.25); numbers remain supported for fine adjustments. Filled Folder uses `strokeWidth` for its bounded 0.25–6-unit divider gap; other Filled drawings have fixed geometry.
 

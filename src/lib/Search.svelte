@@ -9,7 +9,7 @@
     label,
     class: className,
     style: iconStyle = 'outline',
-  }: Omit<IconProps, 'style'> & { style?: 'outline' } = $props();
+  }: IconProps = $props();
   const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));
 </script>
 
@@ -18,9 +18,10 @@
   viewBox="0 0 24 24"
   width={size}
   height={size}
-  fill="none"
-  stroke={color}
-  stroke-width={resolvedStrokeWidth}
+  fill={iconStyle === 'filled' ? color : 'none'}
+  stroke={iconStyle === 'filled' ? 'none' : color}
+  stroke-width={iconStyle === 'filled' ? undefined : resolvedStrokeWidth}
+  fill-rule={iconStyle === 'filled' ? 'evenodd' : undefined}
   stroke-linecap="round"
   stroke-linejoin="round"
   class={className}
@@ -29,6 +30,14 @@
   aria-hidden={label ? undefined : true}
   focusable="false"
 >
-  <g data-part="lens"><circle cx="10" cy="10" r="6.7"></circle></g>
-  <g data-part="handle"><path d="M14.73762 14.73762 L20.7 20.7"></path></g>
+  {#if iconStyle === 'filled'}
+    <g data-part="body"
+      ><path
+        d="M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M14.20951094 15.41159246 A6.35632184 6.35632184 0 1 1 15.41159246 14.20951094 L19.75104076 18.54895924 A.85 .85 0 0 1 18.54895924 19.75104076 L14.20951094 15.41159246 Z M5.7 10.35632184 A4.65632184 4.65632184 0 1 0 15.01264368 10.35632184 A4.65632184 4.65632184 0 1 0 5.7 10.35632184 Z"
+      ></path></g
+    >
+  {:else}
+    <g data-part="lens"><circle cx="10.35632184" cy="10.35632184" r="5.50632184"></circle></g>
+    <g data-part="handle"><path d="M14.24987935 14.24987935 L19.15 19.15"></path></g>
+  {/if}
 </svg>

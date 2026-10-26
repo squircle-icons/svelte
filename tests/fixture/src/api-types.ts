@@ -9,7 +9,6 @@ const camera: ComponentProps<typeof Camera> = {
   strokeWidth: 'bold',
 };
 const search: ComponentProps<typeof Search> = { style: 'outline' };
-// @ts-expect-error Search has no filled artwork.
 const filledSearch: ComponentProps<typeof Search> = { style: 'filled' };
 // @ts-expect-error Animation is not part of the public API.
 const animatedCamera: ComponentProps<typeof Camera> = { animate: 'on' };
