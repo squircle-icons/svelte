@@ -189,7 +189,7 @@ for (const icon of [
   'upload',
   'trash',
 ])
-  test(`Filled ${icon} matches the Regular Outline exterior and openings at native and rotated poses`, async ({
+  test(`Filled ${icon} preserves Regular Outline reference contours and openings at native and rotated poses`, async ({
     page,
   }) => {
     const results = await page.evaluate(async (icon) => {
@@ -203,6 +203,15 @@ for (const icon of [
         svg.setAttribute('height', String(size));
         svg.setAttribute('fill', '#000');
         svg.setAttribute('stroke', outline ? '#000' : 'none');
+        if (!outline && ['plus', 'x'].includes(icon)) {
+          // Owner-requested Filled boxes are a deliberate exterior exception.
+          // The unchanged negative-space mark must match the Outline exterior.
+          const path = svg.querySelector('path')!;
+          const parts = path.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
+          if (parts.length !== 2) throw new Error('Expected a box and a glyph cutout');
+          path.setAttribute('d', parts[1]);
+        }
+
         if (outline) {
           svg.setAttribute('stroke-width', '1.7');
           // Line marks keep an open interior; Filled Copy paints only its front page solid.
@@ -362,7 +371,7 @@ test('Round 3 exposes six packed Outline/Filled pairs on light and dark surfaces
   }
 });
 
-test('X is the extended Plus rotated exactly 45 degrees in both packed styles', async ({
+test('X glyph is the extended Plus rotated exactly 45 degrees in both packed styles', async ({
   page,
 }, info) => {
   const result = await page.evaluate(async () => {
@@ -377,6 +386,13 @@ test('X is the extended Plus rotated exactly 45 degrees in both packed styles', 
       svg.setAttribute('fill', style === 'outline' ? 'none' : '#000');
       svg.setAttribute('stroke', style === 'outline' ? '#000' : 'none');
       if (style === 'outline') svg.setAttribute('stroke-width', '1.7');
+      else {
+        const path = svg.querySelector('path')!;
+        const parts = path.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
+        if (parts.length !== 2) throw new Error('Expected a box and a glyph cutout');
+        path.setAttribute('d', parts[1]);
+      }
+
       for (const group of svg.querySelectorAll(':scope > g'))
         group.setAttribute('transform', `rotate(${angle} 12 12)`);
       const url = URL.createObjectURL(
@@ -440,7 +456,7 @@ test('X is the extended Plus rotated exactly 45 degrees in both packed styles', 
     await mkdir('.artifacts/previews', { recursive: true });
     await page
       .getByTestId('plus-x-rotation-sheet')
-      .screenshot({ path: '.artifacts/previews/plus-x-derived.png' });
+      .screenshot({ path: '.artifacts/previews/plus-x-boxes.png' });
   }
 });
 
@@ -455,3 +471,37 @@ test('Round 4 exposes six draft pairs on light and dark review sheets', async ({
     }
   }
 });
+
+for (const icon of ['plus', 'x'])
+  test(`Filled ${icon} has a solid rounded box with exactly 2px around its unchanged cutout`, async ({
+    page,
+  }) => {
+    const result = await page.evaluate((icon) => {
+      const outline = document.querySelector(
+        `[data-testid="${icon}-outline-contour"] path`,
+      ) as SVGPathElement;
+      const filled = document.querySelector(
+        `[data-testid="${icon}-filled-contour"] path`,
+      ) as SVGPathElement;
+      const glyph = outline.getBBox(),
+        box = filled.getBBox();
+      const half = 1.7 / 2;
+      return {
+        padding: [
+          glyph.x - half - box.x,
+          box.x + box.width - glyph.x - glyph.width - half,
+          glyph.y - half - box.y,
+          box.y + box.height - glyph.y - glyph.height - half,
+        ],
+        emptyCenter: !filled.isPointInFill(new DOMPoint(12, 12)),
+        solidBorder: filled.isPointInFill(new DOMPoint(box.x + 0.75, 12)),
+        clearOutside: !filled.isPointInFill(new DOMPoint(box.x - 0.25, 12)),
+        roundedCorner: !filled.isPointInFill(new DOMPoint(box.x + 0.1, box.y + 0.1)),
+      };
+    }, icon);
+    for (const padding of result.padding) expect(padding).toBeCloseTo(2, 4);
+    expect(result.emptyCenter).toBe(true);
+    expect(result.solidBorder).toBe(true);
+    expect(result.clearOutside).toBe(true);
+    expect(result.roundedCorner).toBe(true);
+  });

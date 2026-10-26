@@ -154,21 +154,16 @@
 
 <section class="rotation-sheet" data-testid="plus-x-rotation-sheet">
   <header>
-    <span>ROUND 3 / REVISION</span>
+    <span>ROUND 3 / FILLED REVISION</span>
     <h2>Plus & X</h2>
-    <p>Same stroke lengths · 45° rotation · Regular 1.70</p>
+    <p>Solid rounded boxes · 2px around each symbol</p>
   </header>
   <div class="rotation-grid">
     <h3>Plus</h3>
-    <h3>Plus rotated 45°</h3>
     <h3>X</h3>
     {#each ['outline', 'filled'] as style}
       <article>
         <Plus size={64} style={style as 'outline' | 'filled'} /><small>{style}</small>
-      </article>
-      <article>
-        <div class="turned"><Plus size={64} style={style as 'outline' | 'filled'} /></div>
-        <small>{style}</small>
       </article>
       <article><X size={64} style={style as 'outline' | 'filled'} /><small>{style}</small></article>
     {/each}
@@ -251,7 +246,7 @@
   }
   .rotation-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
   .rotation-grid h3 {
@@ -271,9 +266,6 @@
   .rotation-grid small {
     font-size: 10px;
     color: #92929e;
-  }
-  .rotation-grid .turned {
-    transform: rotate(45deg);
   }
 
   .round-three {

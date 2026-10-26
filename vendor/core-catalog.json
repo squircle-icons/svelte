@@ -1529,7 +1529,8 @@
         "create"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "At the owner request, each perpendicular centerline is extended by 1 unit total, from length 13 to length 14. Endpoints move equally from 5.5/18.5 to 5/19 about the shared center 12,12. All four free ends retain radius-.85 caps at Regular 1.70. Visible native dimensions are 15.70 by 15.70, with equal margins of 4.15 units. This drawing is the construction source for X. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review."
+      "construction": "At the owner request, each perpendicular centerline is extended by 1 unit total, from length 13 to length 14. Endpoints move equally from 5.5/18.5 to 5/19 about the shared center 12,12. All four free ends retain radius-.85 caps at Regular 1.70. Visible native dimensions are 15.70 by 15.70, with equal margins of 4.15 units. This drawing is the construction source for X. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review. The owner subsequently requested a Filled-only solid rounded box with a negative-space glyph and 2-unit clearance. Outline retains this unboxed drawing; its visible Regular exterior matches the Filled glyph cutout, not the added box.",
+      "filledTreatment": "boxed-cutout"
     },
     "root": {
       "tag": "svg",
@@ -1566,15 +1567,17 @@
     "filled": {
       "metadata": {
         "name": "plus",
-        "description": "A centered plus mark with four equally sized arms in a solid filled style.",
+        "description": "A solid rounded square with a centered plus cutout and two-unit clearance.",
         "tags": [
           "add",
           "new",
           "create",
-          "filled"
+          "filled",
+          "boxed"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "At the owner request, each perpendicular centerline is extended by 1 unit total, from length 13 to length 14. Endpoints move equally from 5.5/18.5 to 5/19 about the shared center 12,12. All four free ends retain radius-.85 caps at Regular 1.70. Visible native dimensions are 15.70 by 15.70, with equal margins of 4.15 units. This drawing is the construction source for X. The fill-only exterior is the exact width-1.70 union around the centerlines. The X Filled contour is obtained by rotating the entire revised Plus Filled contour, including its rounded end caps, with no independently redrawn geometry or artificial counter. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review."
+        "construction": "Owner-requested Filled-only boxed treatment. The solid upright rounded square has bounds 2.15..21.85 on both axes and radius-2.85 corners. Its negative-space glyph is the unchanged Regular 1.70 stroke exterior of the Outline mark. There is exactly 2 units of clearance from the visible glyph to each of the four box sides at native 24px, X/Y=100%, rotation=0. X keeps the Plus glyph rotated 45 degrees with no rescaling; each box is sized independently to its own glyph bounds and remains upright. The body is one evenodd compound path: the outer square followed by the original glyph as a cutout. This owner-requested exception deliberately adds a box only to Filled; the Outline glyph remains unboxed. The glyph cutout, rather than the new box exterior, matches Outline at Regular 1.70. Round 3 draft awaiting owner review.",
+        "filledTreatment": "boxed-cutout"
       },
       "root": {
         "tag": "svg",
@@ -1595,7 +1598,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M5 11.15 H11.15 V5 A.85 .85 0 0 1 12.85 5 V11.15 H19 A.85 .85 0 0 1 19 12.85 H12.85 V19 A.85 .85 0 0 1 11.15 19 V12.85 H5 A.85 .85 0 0 1 5 11.15 Z"
+                  "d": "M5 2.15 H19 A2.85 2.85 0 0 1 21.85 5 V19 A2.85 2.85 0 0 1 19 21.85 H5 A2.85 2.85 0 0 1 2.15 19 V5 A2.85 2.85 0 0 1 5 2.15 Z M5 11.15 H11.15 V5 A.85 .85 0 0 1 12.85 5 V11.15 H19 A.85 .85 0 0 1 19 12.85 H12.85 V19 A.85 .85 0 0 1 11.15 19 V12.85 H5 A.85 .85 0 0 1 5 11.15 Z"
                 },
                 "children": []
               }
@@ -2333,7 +2336,8 @@
         "cancel"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "X is derived directly from the revised Plus by a 45-degree clockwise rotation about 12,12, with no rescaling. Each diagonal centerline is exactly 14 units long, sharing Plus arm length, intersections, Regular 1.70 weight and rounded end caps. The rotation is baked into the original SVG coordinates so the native Lab rotation remains 0 degrees. The diagonal projection is intentionally smaller than the unrotated Plus bounding box; there is no style-specific enlargement. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review."
+      "construction": "X is derived directly from the revised Plus by a 45-degree clockwise rotation about 12,12, with no rescaling. Each diagonal centerline is exactly 14 units long, sharing Plus arm length, intersections, Regular 1.70 weight and rounded end caps. The rotation is baked into the original SVG coordinates so the native Lab rotation remains 0 degrees. The diagonal projection is intentionally smaller than the unrotated Plus bounding box; there is no style-specific enlargement. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review. The owner subsequently requested a Filled-only solid rounded box with a negative-space glyph and 2-unit clearance. Outline retains this unboxed drawing; its visible Regular exterior matches the Filled glyph cutout, not the added box.",
+      "filledTreatment": "boxed-cutout"
     },
     "root": {
       "tag": "svg",
@@ -2370,15 +2374,17 @@
     "filled": {
       "metadata": {
         "name": "x",
-        "description": "A centered close mark with two balanced diagonal strokes in a solid filled style.",
+        "description": "A solid rounded square with a centered close cutout and two-unit clearance.",
         "tags": [
           "close",
           "dismiss",
           "cancel",
-          "filled"
+          "filled",
+          "boxed"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "X is derived directly from the revised Plus by a 45-degree clockwise rotation about 12,12, with no rescaling. Each diagonal centerline is exactly 14 units long, sharing Plus arm length, intersections, Regular 1.70 weight and rounded end caps. The rotation is baked into the original SVG coordinates so the native Lab rotation remains 0 degrees. The diagonal projection is intentionally smaller than the unrotated Plus bounding box; there is no style-specific enlargement. The fill-only exterior is the exact width-1.70 union around the centerlines. The X Filled contour is obtained by rotating the entire revised Plus Filled contour, including its rounded end caps, with no independently redrawn geometry or artificial counter. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review."
+        "construction": "Owner-requested Filled-only boxed treatment. The solid upright rounded square has bounds 4.20025253..19.79974747 on both axes and radius-2.85 corners. Its negative-space glyph is the unchanged Regular 1.70 stroke exterior of the Outline mark. There is exactly 2 units of clearance from the visible glyph to each of the four box sides at native 24px, X/Y=100%, rotation=0. X keeps the Plus glyph rotated 45 degrees with no rescaling; each box is sized independently to its own glyph bounds and remains upright. The body is one evenodd compound path: the outer square followed by the original glyph as a cutout. This owner-requested exception deliberately adds a box only to Filled; the Outline glyph remains unboxed. The glyph cutout, rather than the new box exterior, matches Outline at Regular 1.70. Round 3 draft awaiting owner review.",
+        "filledTreatment": "boxed-cutout"
       },
       "root": {
         "tag": "svg",
@@ -2399,7 +2405,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M7.6512933 6.44921177 L12 10.79791847 L16.3487067 6.44921177 A0.85 0.85 0 0 1 17.55078823 7.6512933 L13.20208153 12 L17.55078823 16.3487067 A0.85 0.85 0 0 1 16.3487067 17.55078823 L12 13.20208153 L7.6512933 17.55078823 A0.85 0.85 0 0 1 6.44921177 16.3487067 L10.79791847 12 L6.44921177 7.6512933 A0.85 0.85 0 0 1 7.6512933 6.44921177 Z"
+                  "d": "M7.05025253 4.20025253 H16.94974747 A2.85 2.85 0 0 1 19.79974747 7.05025253 V16.94974747 A2.85 2.85 0 0 1 16.94974747 19.79974747 H7.05025253 A2.85 2.85 0 0 1 4.20025253 16.94974747 V7.05025253 A2.85 2.85 0 0 1 7.05025253 4.20025253 Z M7.6512933 6.44921177 L12 10.79791847 L16.3487067 6.44921177 A0.85 0.85 0 0 1 17.55078823 7.6512933 L13.20208153 12 L17.55078823 16.3487067 A0.85 0.85 0 0 1 16.3487067 17.55078823 L12 13.20208153 L7.6512933 17.55078823 A0.85 0.85 0 0 1 6.44921177 16.3487067 L10.79791847 12 L6.44921177 7.6512933 A0.85 0.85 0 0 1 7.6512933 6.44921177 Z"
                 },
                 "children": []
               }
