@@ -2124,19 +2124,23 @@
         "bin"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested straight sides and rounded corners. The bucket now has vertical centerlines at x=6 and x=18, from y=6 to17.9, with the standard Camera/Folder radius-3.25 bottom corners and bottom centerline y=21.15. Filled uses the exact .85 outward offset, with radius-4.10 exterior bottom corners. The fitted small handle uses radius-1 centerline corners, top centerline y=2.85, and corresponding radius-1.85 outer/.15 inner Filled corners. The level lid runs x=4..20 at y=6 with round .85 caps. Overall visible bounds x=3.15..20.85 and y=2..22 give the vertical primary pair exact 2px margins, with balanced 3.15px left/right. Two vertical slots retain their round ends at x=10,14 and y=10..17; Filled counters align with the Outline strokes. No enclosing box is added to Trash. Native X/Y=100%, rotation=0 and Regular 1.70. The owner approved both styles, including the fitted small handle corners, on 2026-10-27.",
+      "construction": "Owner requested straight sides and rounded corners. The bucket now has vertical centerlines at x=6 and x=18, from y=6 to17.9, with the standard Camera/Folder radius-3.25 bottom corners and bottom centerline y=21.15. Filled uses the exact .85 outward offset, with radius-4.10 exterior bottom corners. The fitted small handle uses radius-1 centerline corners, top centerline y=2.85, and corresponding radius-1.85 outer/.15 inner Filled corners. The level lid runs x=4..20 at y=6 with round .85 caps. Overall visible bounds x=3.15..20.85 and y=2..22 give the vertical primary pair exact 2px margins, with balanced 3.15px left/right. Two vertical slots retain their round ends at x=10,14 and y=10..17; Filled counters align with the Outline strokes. No enclosing box is added to Trash. Native X/Y=100%, rotation=0 and Regular 1.70. The owner approved both styles, including the fitted small handle corners, on 2026-10-27. Owner correction: the approved Lab pose is X=105%, Y=95%, not 100%/100%. The source geometry remains unchanged; restore this reviewed pose through metadata labDefaults when opening or resetting Trash.",
       "review": {
         "status": "approved",
         "reviewedBy": "palamto",
         "date": "2026-10-27",
         "style": "outline",
         "preview": {
-          "x": 100,
-          "y": 100,
+          "x": 105,
+          "y": 95,
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner accepted the current Trash in both styles, including straight sides, radius-3.25 centerline base corners, fitted radius-1 handle corners and 2px top/bottom primary margins."
+        "note": "Owner corrected the accepted Trash review pose to X=105%, Y=95%, Regular 1.70 and rotation=0. This approval covers both styles, straight sides, radius-3.25 source base centerline corners and fitted radius-1 source handle corners. Preserve source geometry; the 2px native top/bottom margins describe 100% source dimensions, not the accepted 105%/95% Lab pose."
+      },
+      "labDefaults": {
+        "x": 105,
+        "y": 95
       }
     },
     "root": {
@@ -2230,19 +2234,23 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner requested straight sides and rounded corners. The bucket now has vertical centerlines at x=6 and x=18, from y=6 to17.9, with the standard Camera/Folder radius-3.25 bottom corners and bottom centerline y=21.15. Filled uses the exact .85 outward offset, with radius-4.10 exterior bottom corners. The fitted small handle uses radius-1 centerline corners, top centerline y=2.85, and corresponding radius-1.85 outer/.15 inner Filled corners. The level lid runs x=4..20 at y=6 with round .85 caps. Overall visible bounds x=3.15..20.85 and y=2..22 give the vertical primary pair exact 2px margins, with balanced 3.15px left/right. Two vertical slots retain their round ends at x=10,14 and y=10..17; Filled counters align with the Outline strokes. No enclosing box is added to Trash. Native X/Y=100%, rotation=0 and Regular 1.70. The owner approved both styles, including the fitted small handle corners, on 2026-10-27.",
+        "construction": "Owner requested straight sides and rounded corners. The bucket now has vertical centerlines at x=6 and x=18, from y=6 to17.9, with the standard Camera/Folder radius-3.25 bottom corners and bottom centerline y=21.15. Filled uses the exact .85 outward offset, with radius-4.10 exterior bottom corners. The fitted small handle uses radius-1 centerline corners, top centerline y=2.85, and corresponding radius-1.85 outer/.15 inner Filled corners. The level lid runs x=4..20 at y=6 with round .85 caps. Overall visible bounds x=3.15..20.85 and y=2..22 give the vertical primary pair exact 2px margins, with balanced 3.15px left/right. Two vertical slots retain their round ends at x=10,14 and y=10..17; Filled counters align with the Outline strokes. No enclosing box is added to Trash. Native X/Y=100%, rotation=0 and Regular 1.70. The owner approved both styles, including the fitted small handle corners, on 2026-10-27. Owner correction: the approved Lab pose is X=105%, Y=95%, not 100%/100%. The source geometry remains unchanged; restore this reviewed pose through metadata labDefaults when opening or resetting Trash.",
         "review": {
           "status": "approved",
           "reviewedBy": "palamto",
           "date": "2026-10-27",
           "style": "filled",
           "preview": {
-            "x": 100,
-            "y": 100,
+            "x": 105,
+            "y": 95,
             "strokeWidth": 1.7,
             "rotation": 0
           },
-          "note": "Owner accepted the current Trash in both styles, including straight sides, radius-3.25 centerline base corners, fitted radius-1 handle corners and 2px top/bottom primary margins."
+          "note": "Owner corrected the accepted Trash review pose to X=105%, Y=95%, Regular 1.70 and rotation=0. This approval covers both styles, straight sides, radius-3.25 source base centerline corners and fitted radius-1 source handle corners. Preserve source geometry; the 2px native top/bottom margins describe 100% source dimensions, not the accepted 105%/95% Lab pose."
+        },
+        "labDefaults": {
+          "x": 105,
+          "y": 95
         }
       },
       "root": {
