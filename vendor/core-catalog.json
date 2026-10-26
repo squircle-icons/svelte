@@ -10,8 +10,21 @@
         "navigation"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Both styles remain drafts awaiting owner review. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Both styles remain drafts awaiting owner review.",
-      "filledTreatment": "solid-head"
+      "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-27",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7,
+          "rotation": 0
+        },
+        "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+      }
     },
     "root": {
       "tag": "svg",
@@ -56,8 +69,21 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Both styles remain drafts awaiting owner review. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Both styles remain drafts awaiting owner review.",
-        "filledTreatment": "solid-head"
+        "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27.",
+        "filledTreatment": "solid-head",
+        "review": {
+          "status": "approved",
+          "reviewedBy": "palamto",
+          "date": "2026-10-27",
+          "style": "filled",
+          "preview": {
+            "x": 100,
+            "y": 100,
+            "strokeWidth": 1.7,
+            "rotation": 0
+          },
+          "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+        }
       },
       "root": {
         "tag": "svg",
@@ -109,8 +135,21 @@
         "navigation"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Both styles remain drafts awaiting owner review. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Both styles remain drafts awaiting owner review.",
-      "filledTreatment": "solid-head"
+      "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-27",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7,
+          "rotation": 0
+        },
+        "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+      }
     },
     "root": {
       "tag": "svg",
@@ -155,8 +194,21 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Both styles remain drafts awaiting owner review. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Both styles remain drafts awaiting owner review.",
-        "filledTreatment": "solid-head"
+        "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27.",
+        "filledTreatment": "solid-head",
+        "review": {
+          "status": "approved",
+          "reviewedBy": "palamto",
+          "date": "2026-10-27",
+          "style": "filled",
+          "preview": {
+            "x": 100,
+            "y": 100,
+            "strokeWidth": 1.7,
+            "rotation": 0
+          },
+          "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+        }
       },
       "root": {
         "tag": "svg",
@@ -501,8 +553,21 @@
         "success"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested boxed Filled Check on2026-10-27, using the accepted Plus/X family. The solid frame has bounds2..22 and radius4. Outline is exactly the negative-space mark in Filled at Regular1.70, with round .85 caps and join. Shared centerlines are M4.85 12.55 L9.25 16.95 L19.15 7.05; both arms retain45-degree slopes and their unequal lengths. Native shared visible bounds are x4..20/y6.2..17.8. The horizontal primary inner pair has exactly2px clearance; vertical inner clearance is4.2px to preserve the check proportions. The box has2px artboard margins all around. Both revised styles await owner review.",
-      "filledTreatment": "boxed-cutout"
+      "construction": "Owner requested boxed Filled Check on2026-10-27, using the accepted Plus/X family. The solid frame has bounds2..22 and radius4. Outline is exactly the negative-space mark in Filled at Regular1.70, with round .85 caps and join. Shared centerlines are M4.85 12.55 L9.25 16.95 L19.15 7.05; both arms retain45-degree slopes and their unequal lengths. Native shared visible bounds are x4..20/y6.2..17.8. The horizontal primary inner pair has exactly2px clearance; vertical inner clearance is4.2px to preserve the check proportions. The box has2px artboard margins all around. Owner approved this current pair on2026-10-27.",
+      "filledTreatment": "boxed-cutout",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-27",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7,
+          "rotation": 0
+        },
+        "note": "Owner approved current Check Outline and boxed Filled: radius-4 frame at2..22 and identical shared Regular1.70 check mark."
+      }
     },
     "root": {
       "tag": "svg",
@@ -548,8 +613,21 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner requested boxed Filled Check on2026-10-27, using the accepted Plus/X family. The solid frame has bounds2..22 and radius4. Outline is exactly the negative-space mark in Filled at Regular1.70, with round .85 caps and join. Shared centerlines are M4.85 12.55 L9.25 16.95 L19.15 7.05; both arms retain45-degree slopes and their unequal lengths. Native shared visible bounds are x4..20/y6.2..17.8. The horizontal primary inner pair has exactly2px clearance; vertical inner clearance is4.2px to preserve the check proportions. The box has2px artboard margins all around. Both revised styles await owner review.",
-        "filledTreatment": "boxed-cutout"
+        "construction": "Owner requested boxed Filled Check on2026-10-27, using the accepted Plus/X family. The solid frame has bounds2..22 and radius4. Outline is exactly the negative-space mark in Filled at Regular1.70, with round .85 caps and join. Shared centerlines are M4.85 12.55 L9.25 16.95 L19.15 7.05; both arms retain45-degree slopes and their unequal lengths. Native shared visible bounds are x4..20/y6.2..17.8. The horizontal primary inner pair has exactly2px clearance; vertical inner clearance is4.2px to preserve the check proportions. The box has2px artboard margins all around. Owner approved this current pair on2026-10-27.",
+        "filledTreatment": "boxed-cutout",
+        "review": {
+          "status": "approved",
+          "reviewedBy": "palamto",
+          "date": "2026-10-27",
+          "style": "filled",
+          "preview": {
+            "x": 100,
+            "y": 100,
+            "strokeWidth": 1.7,
+            "rotation": 0
+          },
+          "note": "Owner approved current Check Outline and boxed Filled: radius-4 frame at2..22 and identical shared Regular1.70 check mark."
+        }
       },
       "root": {
         "tag": "svg",
@@ -592,11 +670,25 @@
         "down",
         "expand",
         "dropdown",
-        "arrow"
+        "arrow",
+        "caret"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Mirrored 45-degree arms meet at 12,15.25, with endpoints at 5.5,8.75 and 18.5,8.75. A single continuous centerline avoids doubled joins. Native bounds are centered at 12,12. Regular visible margins are 4.65 horizontally and 7.9 vertically. Rounded caps and the rounded lower vertex use the shared 1.70 stroke. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Both styles remain drafts awaiting owner review. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Both styles remain drafts awaiting owner review.",
-      "filledTreatment": "solid-head"
+      "construction": "Mirrored 45-degree arms meet at 12,15.25, with endpoints at 5.5,8.75 and 18.5,8.75. A single continuous centerline avoids doubled joins. Native bounds are centered at 12,12. Regular visible margins are 4.65 horizontally and 7.9 vertically. Rounded caps and the rounded lower vertex use the shared 1.70 stroke. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-27",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7,
+          "rotation": 0
+        },
+        "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+      }
     },
     "root": {
       "tag": "svg",
@@ -639,11 +731,25 @@
           "expand",
           "dropdown",
           "arrow",
-          "filled"
+          "filled",
+          "caret"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The fill-only contour is the exact union of the Regular 1.70 stroke exterior, with radius-.85 free-end caps. Straight edges, internal intersections and any rounded outer joint are constructed analytically from the Outline centerline. Line marks have no enclosed body or counter to fill; both styles intentionally retain the same recognizable mark at Regular. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Both styles remain drafts awaiting owner review. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Both styles remain drafts awaiting owner review.",
-        "filledTreatment": "solid-head"
+        "construction": "The fill-only contour is the exact union of the Regular 1.70 stroke exterior, with radius-.85 free-end caps. Straight edges, internal intersections and any rounded outer joint are constructed analytically from the Outline centerline. Line marks have no enclosed body or counter to fill; both styles intentionally retain the same recognizable mark at Regular. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27.",
+        "filledTreatment": "solid-head",
+        "review": {
+          "status": "approved",
+          "reviewedBy": "palamto",
+          "date": "2026-10-27",
+          "style": "filled",
+          "preview": {
+            "x": 100,
+            "y": 100,
+            "strokeWidth": 1.7,
+            "rotation": 0
+          },
+          "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+        }
       },
       "root": {
         "tag": "svg",
@@ -685,11 +791,25 @@
       "tags": [
         "up",
         "collapse",
-        "arrow"
+        "arrow",
+        "caret"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "This is the exact vertical reflection of Chevron Down about y=12. Mirrored 45-degree arms meet at 12,8.75, with endpoints at 5.5,15.25 and 18.5,15.25. Native bounds are centered at 12,12. Regular visible margins are 4.65 horizontally and 7.9 vertically. One continuous centerline avoids doubled joins. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Both styles remain drafts awaiting owner review. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Both styles remain drafts awaiting owner review.",
-      "filledTreatment": "solid-head"
+      "construction": "This is the exact vertical reflection of Chevron Down about y=12. Mirrored 45-degree arms meet at 12,8.75, with endpoints at 5.5,15.25 and 18.5,15.25. Native bounds are centered at 12,12. Regular visible margins are 4.65 horizontally and 7.9 vertically. One continuous centerline avoids doubled joins. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-27",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7,
+          "rotation": 0
+        },
+        "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+      }
     },
     "root": {
       "tag": "svg",
@@ -731,11 +851,25 @@
           "up",
           "collapse",
           "arrow",
-          "filled"
+          "filled",
+          "caret"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The fill-only contour is the exact union of the Regular 1.70 stroke exterior, with radius-.85 free-end caps. Straight edges, internal intersections and any rounded outer joint are constructed analytically from the Outline centerline. Line marks have no enclosed body or counter to fill; both styles intentionally retain the same recognizable mark at Regular. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Both styles remain drafts awaiting owner review. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Both styles remain drafts awaiting owner review.",
-        "filledTreatment": "solid-head"
+        "construction": "The fill-only contour is the exact union of the Regular 1.70 stroke exterior, with radius-.85 free-end caps. Straight edges, internal intersections and any rounded outer joint are constructed analytically from the Outline centerline. Line marks have no enclosed body or counter to fill; both styles intentionally retain the same recognizable mark at Regular. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27.",
+        "filledTreatment": "solid-head",
+        "review": {
+          "status": "approved",
+          "reviewedBy": "palamto",
+          "date": "2026-10-27",
+          "style": "filled",
+          "preview": {
+            "x": 100,
+            "y": 100,
+            "strokeWidth": 1.7,
+            "rotation": 0
+          },
+          "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+        }
       },
       "root": {
         "tag": "svg",
@@ -928,8 +1062,21 @@
         "file"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Both styles remain drafts awaiting owner review. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Both styles remain drafts awaiting owner review.",
-      "filledTreatment": "solid-head"
+      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-27",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7,
+          "rotation": 0
+        },
+        "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+      }
     },
     "root": {
       "tag": "svg",
@@ -990,8 +1137,21 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Both styles remain drafts awaiting owner review. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Both styles remain drafts awaiting owner review.",
-        "filledTreatment": "solid-head"
+        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27.",
+        "filledTreatment": "solid-head",
+        "review": {
+          "status": "approved",
+          "reviewedBy": "palamto",
+          "date": "2026-10-27",
+          "style": "filled",
+          "preview": {
+            "x": 100,
+            "y": 100,
+            "strokeWidth": 1.7,
+            "rotation": 0
+          },
+          "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+        }
       },
       "root": {
         "tag": "svg",
@@ -2311,8 +2471,21 @@
         "file"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Both styles remain drafts awaiting owner review. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Both styles remain drafts awaiting owner review.",
-      "filledTreatment": "solid-head"
+      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-27",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7,
+          "rotation": 0
+        },
+        "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+      }
     },
     "root": {
       "tag": "svg",
@@ -2373,8 +2546,21 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Both styles remain drafts awaiting owner review. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Both styles remain drafts awaiting owner review.",
-        "filledTreatment": "solid-head"
+        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27.",
+        "filledTreatment": "solid-head",
+        "review": {
+          "status": "approved",
+          "reviewedBy": "palamto",
+          "date": "2026-10-27",
+          "style": "filled",
+          "preview": {
+            "x": 100,
+            "y": 100,
+            "strokeWidth": 1.7,
+            "rotation": 0
+          },
+          "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+        }
       },
       "root": {
         "tag": "svg",

@@ -18,20 +18,10 @@ it('consumes validated fill-only Folder geometry with a deliberate cutout', () =
   expect(filled?.parts).toEqual(['body']);
 });
 
-it('keeps the seven pending pairs out of the owner-approved set', () => {
-  const draftNames = [
-    'arrow-left',
-    'arrow-right',
-    'check',
-    'chevron-down',
-    'chevron-up',
-    'download',
-    'upload',
-  ];
-  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(13);
-  for (const name of draftNames) {
-    const icon = icons.find((icon) => icon.name === name);
-    expect(icon?.metadata.review?.status ?? 'draft').toBe('draft');
-    expect(icon?.filled).toBeDefined();
+it('consumes all twenty owner-approved pairs from the pinned source', () => {
+  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(20);
+  for (const icon of icons) {
+    expect(icon.filled).toBeDefined();
+    expect(icon.filled?.metadata.review?.status).toBe('approved');
   }
 });
