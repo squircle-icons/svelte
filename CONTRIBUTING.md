@@ -11,3 +11,5 @@ Preserve independent per-icon exports. Direct paths must bypass barrels/catalogs
 Run `pnpm verify` and inspect browser captures before accepting changes. Visual baselines represent the alpha implementation, not approval of the final style. Contributions to original code and artwork are submitted under the project’s [MIT license](LICENSE).
 
 For the owner-requested Menu/Search Bold Filled treatment, compare packed geometry against Outline at Bold 2.25; these two icons deliberately differ from Regular 1.70 and use no surrounding box.
+
+Preserve compatibility with Svelte 5.0.0 through version 5, Node.js 18.0.0 or later, and npm 8.6.0 or later when npm is used. Packed components must contain JavaScript scripts and separate declarations so older Svelte compilers need no TypeScript preprocessing. Run `pnpm test:compat` after changing generation, public props, package preprocessing or exports. Repository development uses Node 24.19.0; consumer compatibility is checked separately on older Node versions.
