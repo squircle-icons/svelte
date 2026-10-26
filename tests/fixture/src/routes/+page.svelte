@@ -101,6 +101,13 @@
   <FilledFolder size={24} {strokeWidth} label="Filled folder" />
 </div>
 
+<div data-testid="settings-outline-contour">
+  <Settings size={96} label="Outline Settings contour" />
+</div>
+<div data-testid="settings-filled-contour">
+  <FilledSettings size={96} label="Filled Settings contour" />
+</div>
+
 <div data-testid="heart-outline-contour"><Heart size={96} label="Outline Heart contour" /></div>
 <div data-testid="heart-filled-contour"><FilledHeart size={96} label="Filled Heart contour" /></div>
 

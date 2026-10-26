@@ -353,3 +353,76 @@ test('Filled Heart head matches the visible Regular Outline exterior', async ({ 
   // One raster pixel at 40x is 0.025 units on the original drawing grid.
   expect(result.maximumDifference).toBeLessThanOrEqual(1);
 });
+
+test('Filled Settings matches the Regular Outline exterior and hub at native and rotated poses', async ({
+  page,
+}) => {
+  const results = await page.evaluate(async () => {
+    const size = 960;
+    const paint = async (outline: boolean, rotation: number) => {
+      const original = document.querySelector(
+        `[data-testid="settings-${outline ? 'outline' : 'filled'}-contour"] svg`,
+      ) as SVGSVGElement;
+      const svg = original.cloneNode(true) as SVGSVGElement;
+      svg.setAttribute('width', String(size));
+      svg.setAttribute('height', String(size));
+      svg.setAttribute('fill', '#000');
+      svg.setAttribute('stroke', outline ? '#000' : 'none');
+      if (outline) {
+        svg.setAttribute('stroke-width', '1.7');
+        // The hub's white interior is the same empty space as the Filled counter.
+        svg.querySelector('circle')!.setAttribute('fill', '#fff');
+      }
+      for (const group of svg.querySelectorAll(':scope > g'))
+        group.setAttribute('transform', `rotate(${rotation} 12 12)`);
+      const url = URL.createObjectURL(
+        new Blob([new XMLSerializer().serializeToString(svg)], { type: 'image/svg+xml' }),
+      );
+      try {
+        const image = new Image();
+        await new Promise<void>((resolve, reject) => {
+          image.onload = () => resolve();
+          image.onerror = reject;
+          image.src = url;
+        });
+        const canvas = document.createElement('canvas');
+        canvas.width = canvas.height = size;
+        const context = canvas.getContext('2d')!;
+        context.drawImage(image, 0, 0);
+        const rgba = context.getImageData(0, 0, size, size).data;
+        return Uint8Array.from({ length: size * size }, (_, i) =>
+          rgba[i * 4 + 3] >= 128 && rgba[i * 4] < 128 ? 1 : 0,
+        );
+      } finally {
+        URL.revokeObjectURL(url);
+      }
+    };
+    const results = [];
+    for (const rotation of [0, 30, 75]) {
+      const [reference, filled] = await Promise.all([
+        paint(true, rotation),
+        paint(false, rotation),
+      ]);
+      let mismatches = 0,
+        distantMismatches = 0;
+      for (let y = 1; y < size - 1; y++)
+        for (let x = 1; x < size - 1; x++) {
+          const index = y * size + x;
+          if (reference[index] === filled[index]) continue;
+          mismatches++;
+          const other = reference[index] ? filled : reference;
+          let neighbor = false;
+          for (let dy = -1; dy <= 1; dy++)
+            for (let dx = -1; dx <= 1; dx++) if (other[index + dy * size + dx]) neighbor = true;
+          if (!neighbor) distantMismatches++;
+        }
+      results.push({ rotation, mismatches, distantMismatches });
+    }
+    return results;
+  });
+  for (const result of results) {
+    // Ignore only the one-pixel antialiasing fringe at 40x magnification.
+    expect(result.distantMismatches, JSON.stringify(result)).toBe(0);
+    expect(result.mismatches, JSON.stringify(result)).toBeLessThan(960 * 960 * 0.002);
+  }
+});
