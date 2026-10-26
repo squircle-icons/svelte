@@ -68,7 +68,7 @@
       "description": "A balanced heart with full lobes and a softened lower point.",
       "tags": ["love", "favorite"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The lower flanks bow outward in continuous convex Bezier curves before meeting a softened point, replacing the straight diagonal taper. Left and right curves are mirrored and tangent-aligned at the lower joins. Upper lobes retain the current rounded construction. Outline bounds x=3.25..20.75, y=4.1..19.9 remain centered. Review study; not owner-approved.",
+      "construction": "The lower contour forms a slim V: mirrored straight 45-degree flanks meet through one small convex quadratic tip. Side curves join the straight flanks tangentially, without inward inflections or a broad lower belly. The current upper lobes and notch are retained. Outline bounds x=3.25..20.75, y=4.1..19.9 remain centered. Review study; not owner-approved.",
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
