@@ -9,7 +9,7 @@
         "alert"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "One continuous silhouette integrates the top hanger to avoid doubled seams. Straight side walls meet softened shoulders and a straight lower lip; the separate clapper remains recognizable. Vertical bounds y=2.5..21.5 are centered. Review study; not owner-approved."
+      "construction": "The integrated top hanger is shortened by 0.5 unit (from 2.3 to 1.8 units above its shoulder junction) so it reads as a compact nub. The full drawing is then translated upward by 0.25 unit to keep opposite vertical margins balanced: centerline bounds y=2.75..21.25, visible Regular bounds y=1.9..22.1. Straight walls, shoulders, lower lip and clapper proportions are retained. No doubled seams. Review study; not owner-approved."
     },
     "root": {
       "tag": "svg",
@@ -32,7 +32,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M10.5 4.8 V3.8 C10.5 2.85 11 2.5 12 2.5 C13 2.5 13.5 2.85 13.5 3.8 V4.8 C17.2 5.05 18.5 7.1 18.5 10.8 V14 C18.5 15.5 19.1 16.1 19.8 16.9 C20.35 17.55 20 18.2 19.15 18.2 H4.85 C4 18.2 3.65 17.55 4.2 16.9 C4.9 16.1 5.5 15.5 5.5 14 V10.8 C5.5 7.1 6.8 5.05 10.5 4.8 Z"
+                "d": "M10.5 4.55 L10.5 3.8 C10.5 3.05 11 2.75 12 2.75 C13 2.75 13.5 3.05 13.5 3.8 L13.5 4.55 C17.2 4.8 18.5 6.85 18.5 10.55 L18.5 13.75 C18.5 15.25 19.1 15.85 19.8 16.65 C20.35 17.3 20 17.95 19.15 17.95 L4.85 17.95 C4 17.95 3.65 17.3 4.2 16.65 C4.9 15.85 5.5 15.25 5.5 13.75 L5.5 10.55 C5.5 6.85 6.8 4.8 10.5 4.55 Z"
               },
               "children": []
             }
@@ -47,7 +47,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M10 20.4 C10.3 21.15 11 21.5 12 21.5 C13 21.5 13.7 21.15 14 20.4"
+                "d": "M10 20.15 C10.3 20.9 11 21.25 12 21.25 C13 21.25 13.7 20.9 14 20.15"
               },
               "children": []
             }
@@ -164,7 +164,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The solid shell follows the same hanger, upright walls and flat lip. Separate clapper starts 1.7 units beneath the body. Vertical bounds y=1.65..22.35 balance top and bottom. Separately authored fill-only study; counters are fixed geometry. Not owner-approved."
+        "construction": "The compact top hanger matches the revised Outline. The body contour is the union of the original body interior and its Regular 1.70 stroke, expanded outward by 0.85 unit. The separate clapper is the closed fill-only outline of its original open curve with 0.85-unit round caps. Both parts therefore match the visible Outline exterior at Regular 1.70, including the clapper opening and body/clapper separation. Visible vertical bounds y=1.9..22.1 are centered. Fixed fill-only geometry; other Outline weights may differ. Not owner-approved."
       },
       "root": {
         "tag": "svg",
@@ -185,7 +185,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M9.65 4.05 V3.8 C9.65 2.3 10.4 1.65 12 1.65 C13.6 1.65 14.35 2.3 14.35 3.8 V4.05 C17.9 4.6 19.35 7.1 19.35 10.8 V14 C19.35 15.1 19.85 15.7 20.45 16.35 C21.6 17.6 21.35 19.05 19.15 19.05 H4.85 C2.65 19.05 2.4 17.6 3.55 16.35 C4.15 15.7 4.65 15.1 4.65 14 V10.8 C4.65 7.1 6.1 4.6 9.65 4.05 Z"
+                  "d": "M14.349448 3.787780 C17.812673 4.293176 19.350000 6.532570 19.350000 10.550000 L19.350000 13.750000 C19.350000 14.602535 19.536405 15.036345 20.079583 15.677337 C20.128626 15.735211 20.181221 15.795930 20.251001 15.875496 C20.342710 15.979797 20.342710 15.979797 20.448878 16.100949 C21.474672 17.313251 20.712237 18.800000 19.150000 18.800000 L4.850000 18.800000 C3.287763 18.800000 2.525328 17.313251 3.560310 16.090271 C3.657290 15.979797 3.657290 15.979797 3.748999 15.875496 C3.818779 15.795930 3.871374 15.735211 3.920417 15.677337 C4.463595 15.036345 4.650000 14.602535 4.650000 13.750000 L4.650000 10.550000 C4.650000 6.532572 6.187325 4.293179 9.650552 3.787780 C9.655942 2.508433 10.562027 1.900000 12.000000 1.900000 C13.437973 1.900000 14.344058 2.508433 14.349448 3.787780 Z"
                 },
                 "children": []
               }
@@ -200,7 +200,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M9.2 20.75 H14.8 C14.8 21.8 13.75 22.35 12 22.35 C10.25 22.35 9.2 21.8 9.2 20.75 Z"
+                  "d": "M9.210795 20.465682 C9.647847 21.558313 10.656506 22.100000 12.000000 22.100000 C13.343494 22.100000 14.352153 21.558313 14.789205 20.465682 C14.963552 20.029816 14.751548 19.535141 14.315682 19.360795 C13.879816 19.186448 13.385141 19.398452 13.210795 19.834318 C13.061055 20.208668 12.704782 20.400000 12.000000 20.400000 C11.295218 20.400000 10.938945 20.208668 10.789205 19.834318 C10.614859 19.398452 10.120184 19.186448 9.684318 19.360795 C9.248452 19.535141 9.036448 20.029816 9.210795 20.465682 Z"
                 },
                 "children": []
               }
@@ -725,7 +725,19 @@
         "gear"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Six original radial teeth use straight faces with individually rounded transitions. The recognizable gear is a silhouette exception to the rounded rectangle baseline. Opposite teeth are constructed in symmetric pairs about 12,12; the circular hub remains circular. Review study; not owner-approved."
+      "construction": "Six original radial teeth use straight faces with individually rounded transitions. The recognizable gear is a silhouette exception to the rounded rectangle baseline. Opposite teeth are constructed in symmetric pairs about 12,12; the circular hub remains circular. Owner-approved source.",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-26",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7
+        },
+        "note": "Owner approved Settings Outline and Filled after aligning their exterior and hub. Reviewed in Lab at source proportions, Regular 1.70, including rotation 30 degrees."
+      }
     },
     "root": {
       "tag": "svg",
@@ -787,7 +799,19 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The solid six-tooth silhouette follows the visible exterior of the original Outline at Regular stroke 1.70: the original contour is expanded outward by 0.85 unit and its overlaps are united into one closed fill-only contour. Straight tooth faces and rounded transitions retain the Outline geometry. The circular hub counter has radius 2.25, matching the visible inner edge of the Outline hub (radius 3.1 minus half the Regular stroke). Opposite points remain symmetric about 12,12. The counter is fixed geometry; other Outline weights may differ. Not owner-approved."
+        "construction": "The solid six-tooth silhouette follows the visible exterior of the original Outline at Regular stroke 1.70: the original contour is expanded outward by 0.85 unit and its overlaps are united into one closed fill-only contour. Straight tooth faces and rounded transitions retain the Outline geometry. The circular hub counter has radius 2.25, matching the visible inner edge of the Outline hub (radius 3.1 minus half the Regular stroke). Opposite points remain symmetric about 12,12. The counter is fixed geometry; other Outline weights may differ. Owner-approved source.",
+        "review": {
+          "status": "approved",
+          "reviewedBy": "palamto",
+          "date": "2026-10-26",
+          "style": "filled",
+          "preview": {
+            "x": 100,
+            "y": 100,
+            "strokeWidth": 1.7
+          },
+          "note": "Owner approved Settings Outline and Filled after aligning their exterior and hub. Reviewed in Lab at source proportions, Regular 1.70, including rotation 30 degrees."
+        }
       },
       "root": {
         "tag": "svg",

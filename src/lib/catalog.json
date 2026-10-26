@@ -11,7 +11,7 @@
       "description": "A gently squared bell with a separate hanging clapper.",
       "tags": ["notification", "alert"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "One continuous silhouette integrates the top hanger to avoid doubled seams. Straight side walls meet softened shoulders and a straight lower lip; the separate clapper remains recognizable. Vertical bounds y=2.5..21.5 are centered. Review study; not owner-approved.",
+      "construction": "The integrated top hanger is shortened by 0.5 unit (from 2.3 to 1.8 units above its shoulder junction) so it reads as a compact nub. The full drawing is then translated upward by 0.25 unit to keep opposite vertical margins balanced: centerline bounds y=2.75..21.25, visible Regular bounds y=1.9..22.1. Straight walls, shoulders, lower lip and clapper proportions are retained. No doubled seams. Review study; not owner-approved.",
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
@@ -114,11 +114,23 @@
       "description": "A six-tooth gear with flowing shoulders and a circular center.",
       "tags": ["preferences", "gear"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Six original radial teeth use straight faces with individually rounded transitions. The recognizable gear is a silhouette exception to the rounded rectangle baseline. Opposite teeth are constructed in symmetric pairs about 12,12; the circular hub remains circular. Review study; not owner-approved.",
+      "construction": "Six original radial teeth use straight faces with individually rounded transitions. The recognizable gear is a silhouette exception to the rounded rectangle baseline. Opposite teeth are constructed in symmetric pairs about 12,12; the circular hub remains circular. Owner-approved source.",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-26",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7
+        },
+        "note": "Owner approved Settings Outline and Filled after aligning their exterior and hub. Reviewed in Lab at source proportions, Regular 1.70, including rotation 30 degrees."
+      },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "draft"
+      "reviewStatus": "approved"
     }
   ]
 }

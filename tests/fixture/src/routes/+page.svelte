@@ -101,6 +101,9 @@
   <FilledFolder size={24} {strokeWidth} label="Filled folder" />
 </div>
 
+<div data-testid="bell-outline-contour"><StaticBell size={96} label="Outline Bell contour" /></div>
+<div data-testid="bell-filled-contour"><FilledBell size={96} label="Filled Bell contour" /></div>
+
 <div data-testid="settings-outline-contour">
   <Settings size={96} label="Outline Settings contour" />
 </div>

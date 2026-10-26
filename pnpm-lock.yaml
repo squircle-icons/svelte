@@ -336,7 +336,7 @@ packages:
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
   '@squircle-icons/core@file:vendor/squircle-icons-core-0.0.0.tgz':
-    resolution: {integrity: sha512-rc6yATH3wBFZuUmH93DoSTE8kT5jKkWMn7BuomKtaGxZIFH0pWZ9FSbyccKv9TGR9SRbuHfAHuNgZCvuNegj/w==, tarball: file:vendor/squircle-icons-core-0.0.0.tgz}
+    resolution: {integrity: sha512-eYZUcb91djNKX6R/fciLB7PNi7e6V3rINcWT19ZniVF+NAJJnXbrZVsM1se3Jj43dRKbgrL0BUHsszt0uv6x7A==, tarball: file:vendor/squircle-icons-core-0.0.0.tgz}
     version: 0.0.0
     engines: {node: '>=22.17.0'}
 
