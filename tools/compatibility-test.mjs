@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { cp, mkdir, mkdtemp, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { resolve } from 'node:path';
+import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from '@playwright/test';
 
@@ -32,7 +33,10 @@ await writeFile(
     2,
   ),
 );
-run('npm', ['install', '--ignore-scripts', '--no-audit', '--no-fund'], fixture);
+const npmArgs = ['install', '--ignore-scripts', '--no-audit', '--no-fund'];
+const bundledNpm = resolve(dirname(node), '../lib/node_modules/npm/bin/npm-cli.js');
+if (existsSync(bundledNpm)) run(node, [bundledNpm, ...npmArgs], fixture);
+else run('npm', npmArgs, fixture);
 const installed = JSON.parse(
   await readFile(resolve(fixture, 'node_modules/svelte/package.json'), 'utf8'),
 );

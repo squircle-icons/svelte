@@ -71,7 +71,7 @@ Install browser engines once with `pnpm exec playwright install chromium firefox
 
 Generated components in `src/lib/` must be changed through `tools/generate.ts`. Public component props live in `src/lib/props.ts`. Consumers need no core runtime dependency.
 
-`pnpm test:compat` installs the packed artifact with Svelte 5.0.0 in a separate consumer. It compiles every component export for client/server, checks the public declarations with TypeScript 5.6, and tests SSR, browser hydration, style switching, numeric/preset widths, Filled geometry and accessibility. `SVELTE_COMPAT_VERSION` selects another exact Svelte version; `COMPAT_NODE` selects the Node executable used for compilation, SSR and type checking. The test runner and package build still use the development Node version.
+`pnpm test:compat` installs the packed artifact with Svelte 5.0.0 in a separate consumer. It compiles every component export for client/server, checks the public declarations with TypeScript 5.6, and tests SSR, browser hydration, style switching, numeric/preset widths, Filled geometry and accessibility. `SVELTE_COMPAT_VERSION` selects another exact Svelte version; `COMPAT_NODE` selects the Node executable used for compilation, SSR and type checking, plus its bundled npm when available. The test runner and package build still use the development Node version.
 
 The compatibility CI matrix checks Svelte 5.0.0 on Node 18.0.0 and 20.19.0, and Svelte 5.57.2 on Node 22.12.0. The full development suite checks Svelte 5.57.2 on Node 24.19.0. The compatibility browser check uses Chromium. Older Node versions in this matrix establish compatibility, not a recommendation to use an end-of-life runtime.
 
