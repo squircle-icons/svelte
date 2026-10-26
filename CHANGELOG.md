@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Select Outline or Filled through the same icon import using `style`.
+- Remove animated components, runtime, exports, demos and related snapshots. Existing animation imports and props are no longer supported.
+
 ## 0.1.0-alpha.0
 
 - First npm alpha under `@squircle-icons/svelte`, licensed MIT.

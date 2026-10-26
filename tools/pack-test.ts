@@ -60,6 +60,12 @@ assert(
   !(await readFile(resolve(installed, 'dist/filled/index.js'), 'utf8')).includes('Search.svelte'),
   'Filled barrel retained removed Search',
 );
+assert(
+  !Object.keys(installedPackage.exports).some((path) => path.includes('animated')),
+  'Removed animation exports must not survive packing',
+);
+await assert.rejects(readFile(resolve(installed, 'dist/animated/Bell.svelte')), { code: 'ENOENT' });
+await assert.rejects(readFile(resolve(installed, 'dist/adapter.svelte.js')), { code: 'ENOENT' });
 const installedLicense = await readFile(resolve(installed, 'LICENSE'), 'utf8');
 assert(installedLicense.includes('Copyright (c) 2026 palamto'), 'Packed copyright notice missing');
 assert(installedLicense.includes('Permission is hereby granted'), 'Packed MIT terms missing');
@@ -89,10 +95,6 @@ assert(
   'Sun and Moon direct exports did not survive packing',
 );
 assert(
-  html.includes('Already open') && html.includes('scaleY(0.72)'),
-  'Initial open pose was not server-rendered',
-);
-assert(
   html.includes('Camera one') && html.includes('aria-hidden="true"'),
   'Server accessibility markup is missing',
 );
@@ -103,13 +105,7 @@ await writeFile(
       fixture,
       tarball,
       installed,
-      checked: [
-        'tarball installation',
-        'declarations',
-        'production build',
-        'server-rendered open pose',
-        'server accessibility',
-      ],
+      checked: ['tarball installation', 'declarations', 'production build', 'server accessibility'],
     },
     null,
     2,

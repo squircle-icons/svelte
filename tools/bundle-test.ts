@@ -11,7 +11,6 @@ for (const [name, statement] of [
   ['individual', "import Icon from '@squircle-icons/svelte/camera';"],
   ['filled', "import Icon from '@squircle-icons/svelte/filled/folder';"],
   ['barrel', "import { Camera as Icon } from '@squircle-icons/svelte';"],
-  ['animated', "import Icon from '@squircle-icons/svelte/animated/bell';"],
 ] as const) {
   const transformedPackageModules = new Set<string>();
   const entry = resolve(root, `.artifacts/bundle/${name}.js`);
@@ -50,13 +49,11 @@ for (const [name, statement] of [
     .filter((file) => file.endsWith('.svelte'))
     .sort();
   const expectedIcon =
-    name === 'animated'
-      ? 'animated/Bell.svelte'
-      : name === 'filled'
-        ? 'filled/Folder.svelte'
-        : name === 'bell-static'
-          ? 'Bell.svelte'
-          : 'Camera.svelte';
+    name === 'filled'
+      ? 'filled/Folder.svelte'
+      : name === 'bell-static'
+        ? 'Bell.svelte'
+        : 'Camera.svelte';
   if (name !== 'barrel') {
     assert.deepEqual(
       transformedIconModules,
@@ -69,20 +66,14 @@ for (const [name, statement] of [
       ),
       'Per-icon imports must bypass collection barrels and the catalog',
     );
-    if (name === 'animated')
-      assert(
-        !transformedPackageModules.has('_internal/folder-motion.js'),
-        'Animated Bell traversed Folder motion',
-      );
-    else
-      assert(
-        ![...transformedPackageModules].some((file) =>
-          /controller|adapter\.svelte|motion\.(js|ts)/.test(file),
-        ),
-        'Static imports must not transform any motion runtime',
-      );
+    assert(
+      ![...transformedPackageModules].some((file) =>
+        /controller|adapter\.svelte|motion\.(js|ts)/.test(file),
+      ),
+      'Icons must not transform animation runtime',
+    );
   }
-  if (name !== 'animated') {
+  {
     assert(
       iconModules.length === 1 && iconModules[0].endsWith('/' + expectedIcon),
       'Unused icon code was retained',
@@ -95,11 +86,7 @@ for (const [name, statement] of [
       !code.includes('createMotionController') && !code.includes('prefers-reduced-motion'),
       'Static output retained motion code',
     );
-  } else
-    assert(
-      modules.some((id) => id.includes('/controller.js')),
-      'Animated control did not include the controller',
-    );
+  }
   await writeFile(resolve(root, `.artifacts/bundle/${name}.output.js`), code);
   reports.push({
     name,

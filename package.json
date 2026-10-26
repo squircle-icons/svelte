@@ -16,11 +16,6 @@
       "svelte": "./dist/index.js",
       "default": "./dist/index.js"
     },
-    "./animated": {
-      "types": "./dist/animated/index.d.ts",
-      "svelte": "./dist/animated/index.js",
-      "default": "./dist/animated/index.js"
-    },
     "./bell": {
       "types": "./dist/Bell.svelte.d.ts",
       "svelte": "./dist/Bell.svelte",
@@ -30,11 +25,6 @@
       "types": "./dist/filled/Bell.svelte.d.ts",
       "svelte": "./dist/filled/Bell.svelte",
       "default": "./dist/filled/Bell.svelte"
-    },
-    "./animated/bell": {
-      "types": "./dist/animated/Bell.svelte.d.ts",
-      "svelte": "./dist/animated/Bell.svelte",
-      "default": "./dist/animated/Bell.svelte"
     },
     "./camera": {
       "types": "./dist/Camera.svelte.d.ts",
@@ -55,11 +45,6 @@
       "types": "./dist/filled/Folder.svelte.d.ts",
       "svelte": "./dist/filled/Folder.svelte",
       "default": "./dist/filled/Folder.svelte"
-    },
-    "./animated/folder": {
-      "types": "./dist/animated/Folder.svelte.d.ts",
-      "svelte": "./dist/animated/Folder.svelte",
-      "default": "./dist/animated/Folder.svelte"
     },
     "./heart": {
       "types": "./dist/Heart.svelte.d.ts",
@@ -154,7 +139,7 @@
     "prettier-plugin-svelte": "4.1.1",
     "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0.tgz"
   },
-  "description": "Original static and animated icons as native Svelte 5 components.",
+  "description": "Original Outline and Filled icons as native Svelte 5 components.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/squircle-icons/svelte.git"
