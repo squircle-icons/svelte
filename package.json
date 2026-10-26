@@ -1,6 +1,6 @@
 {
   "name": "@squircle-icons/svelte",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "type": "module",
   "license": "MIT",
   "sideEffects": false,
@@ -115,7 +115,7 @@
     "dependency:check": "node tools/dependency-check.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepublishOnly": "pnpm dependency:check && pnpm generate:check && pnpm check",
+    "prepublishOnly": "pnpm verify",
     "test:imports": "node --import tsx tools/import-benchmark.ts"
   },
   "packageManager": "pnpm@10.10.0",

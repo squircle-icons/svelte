@@ -10,7 +10,7 @@ Native Svelte 5 components generated from the versioned [core](https://github.co
 npm install @squircle-icons/svelte@alpha
 ```
 
-The current npm alpha is `0.1.0-alpha.0`. The changes described below are in the local source and have not been published as a new release. Svelte 5.57.1+ is required.
+This release is `0.1.0-alpha.1`, with eight reviewed Outline icons and seven Filled variants. Svelte 5.57.1+ is required.
 
 ```svelte
 <script lang="ts">

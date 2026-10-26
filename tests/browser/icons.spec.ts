@@ -285,6 +285,8 @@ test('one icon switches styles for hover and keyboard focus without replacing it
 test('named stroke presets update Outline strokes and the Filled Folder gap', async ({ page }) => {
   const svg = page.getByTestId('stroke-preset').locator('svg');
   await expect(svg).toHaveAttribute('stroke-width', '1.7');
+  const filled = page.getByTestId('filled-stroke-preset').locator('svg');
+  const filledPath = await filled.locator('path').getAttribute('d');
   for (const [preset, width] of [
     ['thin', '1.25'],
     ['bold', '2.25'],
@@ -292,6 +294,8 @@ test('named stroke presets update Outline strokes and the Filled Folder gap', as
   ]) {
     await page.getByRole('combobox', { name: 'Stroke preset' }).selectOption(preset);
     await expect(svg).toHaveAttribute('stroke-width', width);
+    await expect(filled).toHaveAttribute('stroke', 'none');
+    expect(await filled.locator('path').getAttribute('d')).toBe(filledPath);
     await expect(page.getByTestId('gap-preset').locator('svg')).toHaveAttribute(
       'data-cutout-width',
       width,

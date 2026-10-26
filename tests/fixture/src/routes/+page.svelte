@@ -71,6 +71,7 @@
   ></label
 >
 <div data-testid="stroke-preset"><Camera strokeWidth={preset} label="Named stroke camera" /></div>
+<div data-testid="filled-stroke-preset"><Camera style="filled" strokeWidth={preset} /></div>
 <div data-testid="gap-preset"><Folder style="filled" strokeWidth={preset} /></div>
 <section data-testid="unified-api">
   <button onclick={() => (iconStyle = iconStyle === 'filled' ? 'outline' : 'filled')}

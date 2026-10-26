@@ -1,6 +1,9 @@
 # Changelog
 
-## Unreleased
+## 0.1.0-alpha.1
+
+- Add the reviewed Sun and Moon pairs. Drafts from later review batches are excluded from this release.
+- Reject colliding/reserved generated names and fall back to Regular for invalid numeric stroke widths.
 
 - Use one direct icon import with `style="outline" | "filled"`; Outline is the default.
 - Add `strokeWidth="thin" | "regular" | "bold"`, defaulting to Regular, while retaining custom numeric widths.
