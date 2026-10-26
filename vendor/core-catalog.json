@@ -555,7 +555,7 @@
         "weather"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The crescent preserves the recognizable lunar silhouette as an intentional circular exception to the rounded rectangular object baseline. A radius-8 outer arc and a radius-12 concave inner arc share the original horn endpoints. At the owner request for a fuller crescent, the inner arc is flatter than the previous radius-9 revision, adding approximately 1.38 units of body thickness at the crescent midpoint. The outer contour, both horn endpoints and Regular 1.70 stroke weight are retained. One closed path avoids doubled edges. Native centerline bounds remain x/y=4.35424869..19.64575131; Regular 1.70 gives equal opposite visible margins of 3.50424869. Rounded stroke joins soften both horns. Static draft awaiting owner review."
+      "construction": "The crescent preserves the recognizable lunar silhouette as an intentional circular exception to the rounded rectangular object baseline. A radius-8 outer arc and a radius-10 concave inner arc share the original horn endpoints. At the owner request for a deeper inward curve, the concavity is deepened by approximately .75 unit at its midpoint compared with the previous radius-12 revision. The body stays fuller than the initial radius-8 and radius-9 studies. The outer contour, both horn endpoints and Regular 1.70 stroke weight are retained. One closed path avoids doubled edges. Native centerline bounds remain x/y=4.35424869..19.64575131; Regular 1.70 gives equal opposite visible margins of 3.50424869. Rounded stroke joins soften both horns. Static draft awaiting owner review."
     },
     "root": {
       "tag": "svg",
@@ -578,7 +578,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M9.06274607 4.35424869 A8 8 0 1 0 19.64575131 14.93725393 A12 12 0 0 1 9.06274607 4.35424869 Z"
+                "d": "M9.06274607 4.35424869 A8 8 0 1 0 19.64575131 14.93725393 A10 10 0 0 1 9.06274607 4.35424869 Z"
               },
               "children": []
             }
@@ -600,7 +600,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The filled exterior is the analytical .85-unit outward offset of the fuller Outline at Regular 1.70: outer radius 8.85, concave radius 11.15, and radius-.85 joins centered on the original horns. The radius-12 Outline concavity is offset toward its own center by .85. The outer circle center, horn endpoints and native translation are retained. The flatter inner arc adds body thickness as requested by the owner; the default stroke weight and overall dimensions are unchanged. No style-specific scaling or translation is used. Native X/Y=100% and rotation=0 are the reference. Compare contours at equal rotation. Draft awaiting owner review."
+        "construction": "The filled exterior is the analytical .85-unit outward offset of the revised Outline at Regular 1.70: outer radius 8.85, concave radius 9.15, and radius-.85 joins centered on the original horns. The radius-10 Outline concavity is offset toward its own center by .85. The outer circle center, horn endpoints and native translation are retained. The inner arc has a deeper indentation than the radius-12 revision, as requested by the owner; the default stroke weight and overall dimensions are unchanged. No style-specific scaling or translation is used. Native X/Y=100% and rotation=0 are the reference. Compare contours at equal rotation. Draft awaiting owner review."
       },
       "root": {
         "tag": "svg",
@@ -621,7 +621,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M8.71302391 3.57952654 A8.85 8.85 0 1 0 20.42047346 15.28697609 A.85 .85 0 0 0 19.74079172 14.09258399 A11.15 11.15 0 0 1 9.90741601 4.25920828 A.85 .85 0 0 0 8.71302391 3.57952654 Z"
+                  "d": "M8.71302391 3.57952654 A8.85 8.85 0 1 0 20.42047346 15.28697609 A.85 .85 0 0 0 19.59465893 14.08879087 A9.15 9.15 0 0 1 9.91120913 4.40534107 A.85 .85 0 0 0 8.71302391 3.57952654 Z"
                 },
                 "children": []
               }
