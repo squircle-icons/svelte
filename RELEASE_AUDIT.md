@@ -38,6 +38,12 @@ The npm release is isolated from parallel artwork work. It contains eight owner-
    - Fix: `prepublishOnly` now runs the complete verification suite. This release publishes the exact already-tested tarball.
    - If skipped: A source publish could pass types while shipping a broken consumer package.
 
+6. **Source metadata accepted values with the wrong type.**
+   - What this is: Core descriptions, authorship, construction notes, tags and review status.
+   - Problem: Truthiness checks accepted values such as `description: 42`, `authorship: {}`, `construction: true` and non-string tags.
+   - Fix: Outline and Filled now share one validator for nonempty strings, string tags and explicit `approved`/`draft` review status. Optional metadata stays intact; no review approval is invented. Core commit `bdec9a8` passes all 67 tests.
+   - If skipped: Invalid metadata could enter the typed catalog and break consumers. This fix only affects source validation and does not change the tested release payload.
+
 ## Final checks
 
 - Deterministic generation, dependency commit/SHA-256, format, TypeScript and Svelte diagnostics: pass.
