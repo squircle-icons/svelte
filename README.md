@@ -12,21 +12,27 @@ npm install @squircle-icons/svelte@alpha
 
 The current npm alpha is `0.1.0-alpha.1`. The expanded compatibility below is a development change for the next release; it does not change the requirements of an already-published package.
 
-Recommended setup for new applications:
+### Recommended
 
 - The latest stable Svelte 5 release.
-- Node.js 24 LTS with its latest available patch. Node.js 22 LTS with its latest patch is also supported.
+- Node.js 24 LTS with its latest available patch.
 - The npm version bundled with that Node.js release, or a pnpm version compatible with it. No separate npm upgrade is required to use the icons.
 
 Use the [official Node.js LTS download](https://nodejs.org/en/download). The recommendation follows maintained LTS releases; it does not require the newest Current release.
 
-Compatibility requirements for this source:
+### Tested older versions
 
-- Svelte `>=5.0.0 <6`. Svelte 4 is not supported.
-- Node.js 18 or later, subject to your application's build-tool requirements. Node.js 18 and 20 are end-of-life and are tested only for existing projects; use the maintained LTS versions above for new applications.
-- npm or pnpm to install the package. Consumers do not need pnpm specifically.
+These exact combinations passed the packed-package compatibility check:
 
-Node.js 18.0.0 with its bundled npm 8.6.0 passed the compatibility check. These are tested older versions, not the recommended installation and not a separate npm minimum-version promise.
+| Svelte | Node.js | Bundled npm |
+| ------ | ------- | ----------- |
+| 5.0.0  | 18.0.0  | 8.6.0       |
+| 5.0.0  | 20.19.0 | 10.8.2      |
+| 5.57.2 | 22.12.0 | 10.9.0      |
+
+The check covers installation, client/server compilation of every component export, public TypeScript declarations, SSR, Chromium hydration, style switching, numeric/preset widths, Filled geometry and accessibility. The table records tested combinations; it does not claim that every version combination or application build tool has been tested.
+
+This source supports Svelte `>=5.0.0 <6` and Node.js 18 or later, subject to your application's build-tool requirements. Svelte 4 is not supported. npm or pnpm can install the package; consumers do not need pnpm specifically. Node.js 18 and 20 are end-of-life and are tested for existing projects. Use the recommended setup for new applications.
 
 The package ships JavaScript inside its native `.svelte` components and separate TypeScript declarations. Consumers do not need a TypeScript preprocessor for the icons. Building this repository itself uses the newer development tools listed below.
 
@@ -83,7 +89,7 @@ Generated components in `src/lib/` must be changed through `tools/generate.ts`. 
 
 `pnpm test:compat` installs the packed artifact with Svelte 5.0.0 in a separate consumer. It compiles every component export for client/server, checks the public declarations with TypeScript 5.6, and tests SSR, browser hydration, style switching, numeric/preset widths, Filled geometry and accessibility. `SVELTE_COMPAT_VERSION` selects another exact Svelte version; `COMPAT_NODE` selects the Node executable used for compilation, SSR and type checking, plus its bundled npm when available. The test runner and package build still use the development Node version.
 
-The compatibility CI matrix checks Svelte 5.0.0 on Node 18.0.0 and 20.19.0, and Svelte 5.57.2 on Node 22.12.0. The full development suite checks Svelte 5.57.2 on Node 24.19.0. The compatibility browser check uses Chromium. Older Node versions in this matrix establish compatibility, not a recommendation to use an end-of-life runtime.
+The compatibility CI matrix repeats the three older-version combinations listed above. The full development suite checks Svelte 5.57.2 on Node 24.19.0 in Chromium, Firefox and WebKit.
 
 ## Update core and homepage
 
