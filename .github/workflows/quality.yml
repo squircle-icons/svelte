@@ -29,3 +29,40 @@ jobs:
             test-results/
             .artifacts/bundle-report.json
             .artifacts/previews/
+  compatibility:
+    runs-on: macos-26
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - svelte: '5.0.0'
+            node: '18.0.0'
+          - svelte: '5.0.0'
+            node: '20.19.0'
+          - svelte: '5.57.2'
+            node: '22.12.0'
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Remember consumer Node executable
+        run: echo "COMPAT_NODE=$(node -p 'process.execPath')" >> "$GITHUB_ENV"
+      - uses: pnpm/action-setup@v6.1.0
+        with:
+          version: 10.10.0
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install chromium
+      - run: pnpm test:compat
+        env:
+          SVELTE_COMPAT_VERSION: ${{ matrix.svelte }}
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: compatibility-${{ matrix.svelte }}-node-${{ matrix.node }}
+          path: .artifacts/compatibility-*.json

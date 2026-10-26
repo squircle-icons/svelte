@@ -9,3 +9,5 @@ Follow the [core contour-matching rule](https://github.com/squircle-icons/core/b
 Preserve independent per-icon exports. Direct paths must bypass barrels/catalogs and transform only their selected `.svelte` component. Icon paths must traverse no animation runtime or other icon geometry. `test:bundle` checks the transform graph before tree shaking as well as retained production code. A small final bundle alone does not prove a small compilation graph.
 
 Run `pnpm verify` and inspect browser captures before accepting changes. Visual baselines represent the alpha implementation, not approval of the final style. Contributions to original code and artwork are submitted under the project’s [MIT license](LICENSE).
+
+Preserve compatibility with Svelte 5.0.0 through version 5. Packed components must contain JavaScript scripts and separate declarations so older Svelte compilers need no TypeScript preprocessing. Run `pnpm test:compat` after changing generation, public props, package preprocessing or exports. Repository development uses Node 24.19.0; consumer compatibility is checked separately on older Node versions.

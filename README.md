@@ -10,7 +10,15 @@ Native Svelte 5 components generated from the versioned [core](https://github.co
 npm install @squircle-icons/svelte@alpha
 ```
 
-The current npm alpha is `0.1.0-alpha.0`. The changes described below are in the local source and have not been published as a new release. Svelte 5.57.1+ is required.
+The current npm alpha is `0.1.0-alpha.1`. The expanded compatibility below is a development change for the next release; it does not change the requirements of an already-published package.
+
+Requirements for this source:
+
+- Svelte `>=5.0.0 <6`. Svelte 4 is not supported.
+- Node.js 18 or later, subject to your application's build-tool requirements. Use a currently supported Node.js release for new projects.
+- npm or pnpm to install the package. Consumers do not need pnpm specifically.
+
+The package ships JavaScript inside its native `.svelte` components and separate TypeScript declarations. Consumers do not need a TypeScript preprocessor for the icons. Building this repository itself uses the newer development tools listed below.
 
 ```svelte
 <script lang="ts">
@@ -62,6 +70,10 @@ pnpm pack --pack-destination .artifacts
 Install browser engines once with `pnpm exec playwright install chromium firefox webkit`. Verification checks artifact provenance, deterministic generation, types, build, source contracts, bundle isolation, an isolated tarball consumer, SSR/hydration, style switching, and browser geometry baselines.
 
 Generated components in `src/lib/` must be changed through `tools/generate.ts`. Public component props live in `src/lib/props.ts`. Consumers need no core runtime dependency.
+
+`pnpm test:compat` installs the packed artifact with Svelte 5.0.0 in a separate consumer. It compiles every component export for client/server, checks the public declarations with TypeScript 5.6, and tests SSR, browser hydration, style switching, numeric/preset widths, Filled geometry and accessibility. `SVELTE_COMPAT_VERSION` selects another exact Svelte version; `COMPAT_NODE` selects the Node executable used for compilation, SSR and type checking. The test runner and package build still use the development Node version.
+
+The compatibility CI matrix checks Svelte 5.0.0 on Node 18.0.0 and 20.19.0, and Svelte 5.57.2 on Node 22.12.0. The full development suite checks Svelte 5.57.2 on Node 24.19.0. The compatibility browser check uses Chromium. Older Node versions in this matrix establish compatibility, not a recommendation to use an end-of-life runtime.
 
 ## Update core and homepage
 
