@@ -20,7 +20,7 @@
       "description": "A rounded folder silhouette with a distinct tab and a straight movable front-panel edge.",
       "tags": ["files", "directory"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Original rounded rectangular outer contour preserves the folder tab and is drawn once. The front-panel upper edge is a single straight horizontal stroke at y=10, meeting the side walls without retracing the sides or bottom. Lower corners use matching 2.5-unit construction for balanced spacing. The existing named body/lid parts, stroke defaults and motion recipe are retained; only geometry is revised for static review."
+      "construction": "Original rounded outer contour preserves the folder tab and is drawn once. The contour bounds are x=3..21 and y=3..21: at the unchanged 1.75 stroke, visible padding is exactly 2.125 units on all four sides of the 24-unit viewBox. The front-panel upper edge is one straight horizontal stroke at y=10, without retracing the sides or bottom. Lower corners use matching 2.5-unit construction. Existing body/lid part names, stroke defaults and motion recipe are retained for this static review."
     },
     {
       "name": "heart",

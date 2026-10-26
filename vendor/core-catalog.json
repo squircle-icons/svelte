@@ -251,7 +251,7 @@
         "directory"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Original rounded rectangular outer contour preserves the folder tab and is drawn once. The front-panel upper edge is a single straight horizontal stroke at y=10, meeting the side walls without retracing the sides or bottom. Lower corners use matching 2.5-unit construction for balanced spacing. The existing named body/lid parts, stroke defaults and motion recipe are retained; only geometry is revised for static review."
+      "construction": "Original rounded outer contour preserves the folder tab and is drawn once. The contour bounds are x=3..21 and y=3..21: at the unchanged 1.75 stroke, visible padding is exactly 2.125 units on all four sides of the 24-unit viewBox. The front-panel upper edge is one straight horizontal stroke at y=10, without retracing the sides or bottom. Lower corners use matching 2.5-unit construction. Existing body/lid part names, stroke defaults and motion recipe are retained for this static review."
     },
     "root": {
       "tag": "svg",
@@ -274,7 +274,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 3 17.5 V 6.5 C 3 4.9 3.8 4.2 5.5 4.2 H 8.2 C 9 4.2 9.4 4.5 9.9 5.1 L 11.1 6.5 H 18.5 C 20.2 6.5 21 7.3 21 9 V 17.5 C 21 19.2 20.2 20 18.5 20 H 5.5 C 3.8 20 3 19.2 3 17.5 Z"
+                "d": "M 3 18.5 V 5.5 C 3 3.8 3.8 3 5.5 3 H 8.2 C 9 3 9.4 3.3 9.9 3.9 L 11.1 5.5 H 18.5 C 20.2 5.5 21 6.3 21 8 V 18.5 C 21 20.2 20.2 21 18.5 21 H 5.5 C 3.8 21 3 20.2 3 18.5 Z"
               },
               "children": []
             }
