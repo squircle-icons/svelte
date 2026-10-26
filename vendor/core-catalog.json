@@ -361,18 +361,18 @@
         "image"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Rounded rectangular body uses the Folder corner rhythm. The left and right shoulders have explicit 3-unit horizontal ledges at y=6.8 (x=5..8 and x=16..19), with a narrower raised housing to keep both straight spans visible. The indicator is a zero-length segment centered at 17.9,9.5 with round caps, forming a solid circular dot whose diameter follows the stroke. This avoids the hollow-ring rendering of a tiny stroked circle under non-scaling preview strokes at high zoom. The circular lens is centered at 12,13.2. Source bounds x=3..21 and y=4.1..19.9 balance opposite margins. Owner-approved source.",
+      "construction": "Owner-requested rounder unboxed camera with the left/right primary edge pair at exactly 2 native units. Both style exteriors span x=2..22 and y=3.11675127..20.88324873, centered at 12,12. Visible aspect ratio is retained from the established Outline family (20 by 17.76649746); the shorter vertical axis is not stretched to force 2px top/bottom margins. Outline uses circular tangent fillets and unchanged Regular 1.70 stroke. Filled exterior is the exact 0.85 outward offset of the same lines and arcs, increasing convex radii and reducing concave radii while keeping arc centers fixed. No enclosing box is added. Camera body corner radii are 2.75 at shoulders and 3.25 at the base; the raised housing has softened .8/1.05 transitions. Circular lens and indicator are retained; Filled counters remain their established fixed geometry. Native X/Y=100%, rotation=0. Revision awaits owner visual review.",
       "review": {
-        "status": "approved",
+        "status": "draft",
         "reviewedBy": "palamto",
-        "date": "2026-10-26",
+        "date": "2026-10-27",
         "style": "outline",
         "preview": {
           "x": 100,
           "y": 100,
           "strokeWidth": 1.7
         },
-        "note": "Owner approved Camera Outline and Filled at source proportions."
+        "note": "Review reopened for the owner-requested rounder corners and 2px primary-pair spacing. Previous approval applies to the earlier geometry; this revision awaits review."
       }
     },
     "root": {
@@ -396,7 +396,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M3 9 C3 7.4 3.6 6.8 5 6.8 H8 L9 4.8 C9.25 4.3 9.55 4.1 10.1 4.1 H13.9 C14.45 4.1 14.75 4.3 15 4.8 L16 6.8 H19 C20.4 6.8 21 7.4 21 9 V17.1 C21 19.0 20.2 19.9 18.4 19.9 H5.6 C3.8 19.9 3 19.0 3 17.1 Z"
+                "d": "M2.85 9.75 A2.75 2.75 0 0 1 5.6 7 L8.18621331 7 A1.05 1.05 0 0 0 9.16258304 6.33626693 L9.89993673 4.47245265 A0.8 0.8 0 0 1 10.64383748 3.96675127 L13.35616252 3.96675127 A0.8 0.8 0 0 1 14.10006327 4.47245265 L14.83741696 6.33626693 A1.05 1.05 0 0 0 15.81378669 7 L18.4 7 A2.75 2.75 0 0 1 21.15 9.75 L21.15 16.78324873 A3.25 3.25 0 0 1 17.9 20.03324873 L6.1 20.03324873 A3.25 3.25 0 0 1 2.85 16.78324873 Z"
               },
               "children": []
             }
@@ -451,18 +451,18 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Rounded rectangular outer shell has bounds x=2.15..21.85 and y=3.25..20.75. Horizontal shoulder ledges at y=5.95 (x=5..7.5 and x=16.5..19) match the narrowed raised housing in Outline. A circular lens counter and small indicator counter preserve recognition without overlapping strokes. Separately authored fill-only study; counters are fixed geometry. Owner-approved source.",
+        "construction": "Owner-requested rounder unboxed camera with the left/right primary edge pair at exactly 2 native units. Both style exteriors span x=2..22 and y=3.11675127..20.88324873, centered at 12,12. Visible aspect ratio is retained from the established Outline family (20 by 17.76649746); the shorter vertical axis is not stretched to force 2px top/bottom margins. Outline uses circular tangent fillets and unchanged Regular 1.70 stroke. Filled exterior is the exact 0.85 outward offset of the same lines and arcs, increasing convex radii and reducing concave radii while keeping arc centers fixed. No enclosing box is added. Camera body corner radii are 2.75 at shoulders and 3.25 at the base; the raised housing has softened .8/1.05 transitions. Circular lens and indicator are retained; Filled counters remain their established fixed geometry. Native X/Y=100%, rotation=0. Revision awaits owner visual review.",
         "review": {
-          "status": "approved",
+          "status": "draft",
           "reviewedBy": "palamto",
-          "date": "2026-10-26",
+          "date": "2026-10-27",
           "style": "filled",
           "preview": {
             "x": 100,
             "y": 100,
             "strokeWidth": 1.7
           },
-          "note": "Owner approved Camera Outline and Filled at source proportions."
+          "note": "Review reopened for the owner-requested rounder corners and 2px primary-pair spacing. Previous approval applies to the earlier geometry; this revision awaits review."
         }
       },
       "root": {
@@ -484,7 +484,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M2.15 9 C2.15 6.9 3.1 5.95 5 5.95 H7.5 L8.25 4.4 C8.7 3.55 9.25 3.25 10.1 3.25 H13.9 C14.75 3.25 15.3 3.55 15.75 4.4 L16.5 5.95 H19 C20.9 5.95 21.85 6.9 21.85 9 V17.1 C21.85 19.6 20.7 20.75 18.4 20.75 H5.6 C3.3 20.75 2.15 19.6 2.15 17.1 Z M 8.75 13.2 A 3.25 3.25 0 1 0 15.25 13.2 A 3.25 3.25 0 1 0 8.75 13.2 Z M 17.35 9.4 A 0.65 0.65 0 1 0 18.65 9.4 A 0.65 0.65 0 1 0 17.35 9.4 Z"
+                  "d": "M2 9.75 A3.6 3.6 0 0 1 5.6 6.15 L8.18621331 6.15 A0.2 0.2 0 0 0 8.3721885 6.02357465 L9.10954218 4.15976038 A1.65 1.65 0 0 1 10.64383748 3.11675127 L13.35616252 3.11675127 A1.65 1.65 0 0 1 14.89045782 4.15976038 L15.6278115 6.02357465 A0.2 0.2 0 0 0 15.81378669 6.15 L18.4 6.15 A3.6 3.6 0 0 1 22 9.75 L22 16.78324873 A4.1 4.1 0 0 1 17.9 20.88324873 L6.1 20.88324873 A4.1 4.1 0 0 1 2 16.78324873 Z M 8.75 13.2 A 3.25 3.25 0 1 0 15.25 13.2 A 3.25 3.25 0 1 0 8.75 13.2 Z M 17.35 9.4 A 0.65 0.65 0 1 0 18.65 9.4 A 0.65 0.65 0 1 0 17.35 9.4 Z"
                 },
                 "children": []
               }
@@ -1053,18 +1053,18 @@
         "directory"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner-approved horizontal Folder. Single rounded outer contour with a straight front-panel edge at y=10.9. Bounds x=3..21, y=4.3..19.7; default stroke is 1.7, with visible left/right padding 2.15 and top/bottom 3.45. The approved X=100%, Y=110% geometry is baked into the path coordinates, preserving constant stroke width and the existing part names.",
+      "construction": "Owner-requested rounder unboxed folder with the left/right primary edge pair at exactly 2 native units. Both style exteriors span x=2..22 and y=3.31979695..20.68020305, centered at 12,12. Visible aspect ratio is retained from the established Outline family (20 by 17.36040609); the shorter vertical axis is not stretched to force 2px top/bottom margins. Outline uses circular tangent fillets and unchanged Regular 1.70 stroke. Filled exterior is the exact 0.85 outward offset of the same lines and arcs, increasing convex radii and reducing concave radii while keeping arc centers fixed. No enclosing box is added. Folder body corner radii increase to 2.8/3.0 at the top and 3.25 at the base. The tab stays recognizable and its front-panel divider remains straight at y=10.9. The Filled divider gap remains strokeWidth-controlled, independent of the fixed exterior. Native X/Y=100%, rotation=0. Revision awaits owner visual review.",
       "review": {
-        "status": "approved",
+        "status": "draft",
         "reviewedBy": "palamto",
-        "date": "2026-10-26",
+        "date": "2026-10-27",
         "style": "outline",
         "preview": {
           "x": 100,
-          "y": 110,
+          "y": 100,
           "strokeWidth": 1.7
         },
-        "note": "Owner approved both styles. Y scaling and constant stroke/gap have been baked into the source; the approved shape is now 100% in the Lab."
+        "note": "Review reopened for the owner-requested rounder corners and 2px primary-pair spacing. Previous approval applies to the earlier geometry; this revision awaits review."
       }
     },
     "root": {
@@ -1088,7 +1088,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 3 16.95 V 7.05 C 3 5.18 3.8 4.3 5.5 4.3 H 8.2 C 9 4.3 9.4 4.63 9.9 5.29 L 11.1 7.05 H 18.5 C 20.2 7.05 21 7.93 21 9.8 V 16.95 C 21 18.82 20.2 19.7 18.5 19.7 H 5.5 C 3.8 19.7 3 18.82 3 16.95 Z"
+                "d": "M2.85 6.96979695 A2.8 2.8 0 0 1 5.65 4.16979695 L8.06199315 4.16979695 A0.8 0.8 0 0 1 8.63560873 4.41215445 L10.89076354 6.73190579 A1.05 1.05 0 0 0 11.64363399 7.05 L18.15 7.05 A3 3 0 0 1 21.15 10.05 L21.15 16.58020305 A3.25 3.25 0 0 1 17.9 19.83020305 L6.1 19.83020305 A3.25 3.25 0 0 1 2.85 16.58020305 Z"
               },
               "children": []
             }
@@ -1103,7 +1103,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 3 10.9 H 21"
+                "d": "M2.85 10.9 H21.15"
               },
               "children": []
             }
@@ -1125,23 +1125,23 @@
           "filled"
         ],
         "authorship": "Original filled geometry constructed for Squircle Icons; no third-party icon paths used.",
-        "construction": "Owner-approved filled Folder. Bounds x=2.125..21.875, y=3.3375..20.6625 preserve the approved Y=110% silhouette; default gap is 1.7 around y=10.9, independent of that scaling. A named compound path retains a straight rectangular counter adjustable with strokeWidth without changing the outside. The approved shape is baked into source and starts at 100% in the Lab.",
+        "construction": "Owner-requested rounder unboxed folder with the left/right primary edge pair at exactly 2 native units. Both style exteriors span x=2..22 and y=3.31979695..20.68020305, centered at 12,12. Visible aspect ratio is retained from the established Outline family (20 by 17.36040609); the shorter vertical axis is not stretched to force 2px top/bottom margins. Outline uses circular tangent fillets and unchanged Regular 1.70 stroke. Filled exterior is the exact 0.85 outward offset of the same lines and arcs, increasing convex radii and reducing concave radii while keeping arc centers fixed. No enclosing box is added. Folder body corner radii increase to 2.8/3.0 at the top and 3.25 at the base. The tab stays recognizable and its front-panel divider remains straight at y=10.9. The Filled divider gap remains strokeWidth-controlled, independent of the fixed exterior. Native X/Y=100%, rotation=0. Revision awaits owner visual review.",
         "strokeWidthCutout": {
           "part": "body",
           "minWidth": 0.25,
           "maxWidth": 6
         },
         "review": {
-          "status": "approved",
+          "status": "draft",
           "reviewedBy": "palamto",
-          "date": "2026-10-26",
+          "date": "2026-10-27",
           "style": "filled",
           "preview": {
             "x": 100,
-            "y": 110,
+            "y": 100,
             "strokeWidth": 1.7
           },
-          "note": "Owner approved both styles. Y scaling and constant stroke/gap have been baked into the source; the approved shape is now 100% in the Lab."
+          "note": "Review reopened for the owner-requested rounder corners and 2px primary-pair spacing. Previous approval applies to the earlier geometry; this revision awaits review."
         }
       },
       "root": {
@@ -1163,7 +1163,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M 5.5 3.3375 H 8.2 C 9.2 3.3375 9.9 3.86 10.6 4.63 L 11.6 6.0875 H 18.5 C 20.8 6.0875 21.875 7.38 21.875 9.8 V 16.95 C 21.875 19.48 20.8 20.6625 18.5 20.6625 H 5.5 C 3.2 20.6625 2.125 19.48 2.125 16.95 V 7.05 C 2.125 4.52 3.2 3.3375 5.5 3.3375 Z M 4.75 10.05 H 19.25 V 11.75 H 4.75 Z"
+                  "d": "M2 6.96979695 A3.65 3.65 0 0 1 5.65 3.31979695 L8.06199315 3.31979695 A1.65 1.65 0 0 1 9.24507529 3.81965929 L11.5002301 6.13941063 A0.2 0.2 0 0 0 11.64363399 6.2 L18.15 6.2 A3.85 3.85 0 0 1 22 10.05 L22 16.58020305 A4.1 4.1 0 0 1 17.9 20.68020305 L6.1 20.68020305 A4.1 4.1 0 0 1 2 16.58020305 Z M 4.75 10.05 H 19.25 V 11.75 H 4.75 Z"
                 },
                 "children": []
               }
@@ -1176,7 +1176,7 @@
       ],
       "cutout": {
         "part": "body",
-        "outerPath": "M 5.5 3.3375 H 8.2 C 9.2 3.3375 9.9 3.86 10.6 4.63 L 11.6 6.0875 H 18.5 C 20.8 6.0875 21.875 7.38 21.875 9.8 V 16.95 C 21.875 19.48 20.8 20.6625 18.5 20.6625 H 5.5 C 3.2 20.6625 2.125 19.48 2.125 16.95 V 7.05 C 2.125 4.52 3.2 3.3375 5.5 3.3375 Z",
+        "outerPath": "M2 6.96979695 A3.65 3.65 0 0 1 5.65 3.31979695 L8.06199315 3.31979695 A1.65 1.65 0 0 1 9.24507529 3.81965929 L11.5002301 6.13941063 A0.2 0.2 0 0 0 11.64363399 6.2 L18.15 6.2 A3.85 3.85 0 0 1 22 10.05 L22 16.58020305 A4.1 4.1 0 0 1 17.9 20.68020305 L6.1 20.68020305 A4.1 4.1 0 0 1 2 16.58020305 Z",
         "left": 4.75,
         "right": 19.25,
         "centerY": 10.9,
@@ -1529,7 +1529,7 @@
         "create"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "At the owner request, each perpendicular centerline is extended by 1 unit total, from length 13 to length 14. Endpoints move equally from 5.5/18.5 to 5/19 about the shared center 12,12. All four free ends retain radius-.85 caps at Regular 1.70. Visible native dimensions are 15.70 by 15.70, with equal margins of 4.15 units. This drawing is the construction source for X. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review. The owner subsequently requested a Filled-only solid rounded box with a negative-space glyph and 2-unit clearance. Outline retains this unboxed drawing; its visible Regular exterior matches the Filled glyph cutout, not the added box.",
+      "construction": "Owner clarified that Plus and X use all four sides as their primary margin pairs. Plus Filled box now spans 2..22 with radius-4 corners, exactly like X. Both Plus glyphs share perpendicular centerlines M4.85 12 H19.15 M12 4.85 V19.15, visible bounds 4..20, unchanged Regular 1.70 stroke and .85 round caps. This leaves 2px from the box to the artboard and another 2px from the shared glyph to each box side. Outline is exactly the mark inside Filled, with no style-specific scaling or translation. Native X/Y=100%, rotation=0. Round 3 draft awaiting owner review.",
       "filledTreatment": "boxed-cutout"
     },
     "root": {
@@ -1553,7 +1553,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M5 12 H19 M12 5 V19"
+                "d": "M4.85 12 H19.15 M12 4.85 V19.15"
               },
               "children": []
             }
@@ -1576,7 +1576,7 @@
           "boxed"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner-requested Filled-only boxed treatment. The solid upright rounded square has bounds 2.15..21.85 on both axes and radius-4 corners. Its negative-space glyph is the unchanged Regular 1.70 stroke exterior of the Outline mark. There is exactly 2 units of clearance from the visible glyph to each of the four box sides at native 24px, X/Y=100%, rotation=0. Plus retains its own glyph dimensions and fitted upright box. X follows the same shared-glyph construction, with 2px outside its box and another 2px between the box and its unchanged Outline glyph, as documented in its metadata. The body is one evenodd compound path: the outer square followed by the original glyph as a cutout. This owner-requested exception deliberately adds a box only to Filled; the Outline glyph remains unboxed. The glyph cutout, rather than the new box exterior, matches Outline at Regular 1.70. Round 3 draft awaiting owner review. The owner subsequently requested rounder Filled box corners: radius is 4, with box bounds, glyph contour, stroke weight and the measured 2-unit side clearances retained.",
+        "construction": "Owner clarified that Plus and X use all four sides as their primary margin pairs. Plus Filled box now spans 2..22 with radius-4 corners, exactly like X. Both Plus glyphs share perpendicular centerlines M4.85 12 H19.15 M12 4.85 V19.15, visible bounds 4..20, unchanged Regular 1.70 stroke and .85 round caps. This leaves 2px from the box to the artboard and another 2px from the shared glyph to each box side. Outline is exactly the mark inside Filled, with no style-specific scaling or translation. Native X/Y=100%, rotation=0. Round 3 draft awaiting owner review.",
         "filledTreatment": "boxed-cutout"
       },
       "root": {
@@ -1598,7 +1598,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M6.15 2.15 H17.85 A4 4 0 0 1 21.85 6.15 V17.85 A4 4 0 0 1 17.85 21.85 H6.15 A4 4 0 0 1 2.15 17.85 V6.15 A4 4 0 0 1 6.15 2.15 Z M5 11.15 H11.15 V5 A.85 .85 0 0 1 12.85 5 V11.15 H19 A.85 .85 0 0 1 19 12.85 H12.85 V19 A.85 .85 0 0 1 11.15 19 V12.85 H5 A.85 .85 0 0 1 5 11.15 Z"
+                  "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M4.85 11.15 H11.15 V4.85 A.85 .85 0 0 1 12.85 4.85 V11.15 H19.15 A.85 .85 0 0 1 19.15 12.85 H12.85 V19.15 A.85 .85 0 0 1 11.15 19.15 V12.85 H4.85 A.85 .85 0 0 1 4.85 11.15 Z"
                 },
                 "children": []
               }

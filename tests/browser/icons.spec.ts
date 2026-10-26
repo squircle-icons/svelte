@@ -172,6 +172,8 @@ test('Filled Heart head matches the visible Regular Outline exterior', async ({ 
 });
 
 for (const icon of [
+  'camera',
+  'folder',
   'settings',
   'bell',
   'sun',
@@ -212,6 +214,14 @@ for (const icon of [
           path.setAttribute('d', parts[1]);
         }
 
+        if (['camera', 'folder'].includes(icon)) {
+          for (const group of svg.querySelectorAll(':scope > g'))
+            if (group.getAttribute('data-part') !== 'body') group.remove();
+          if (!outline) {
+            const path = svg.querySelector('path')!;
+            path.setAttribute('d', path.getAttribute('d')!.match(/[Mm][^Mm]*/g)![0]);
+          }
+        }
         if (outline) {
           svg.setAttribute('stroke-width', '1.7');
           // Line marks keep an open interior; Filled Copy paints only its front page solid.
@@ -379,7 +389,7 @@ test('X shares identical Outline and Filled glyphs inside a box with 2px outer m
     const paint = async (name: 'plus' | 'x', style: 'outline' | 'filled', angle: number) => {
       const sourceStyle = name === 'plus' ? 'outline' : style;
       const outline = sourceStyle === 'outline';
-      const armScale = name === 'plus' ? (14.3 * Math.SQRT2) / 14 : 1;
+      const armScale = name === 'plus' ? Math.SQRT2 : 1;
       const original = document.querySelector(
         `[data-testid="${name}-${sourceStyle}-contour"] svg`,
       ) as SVGSVGElement;
@@ -459,7 +469,7 @@ test('X shares identical Outline and Filled glyphs inside a box with 2px outer m
         .getAttribute('stroke-width'),
     };
   });
-  expect(result.lengths[0]).toBeCloseTo(28, 4);
+  expect(result.lengths[0]).toBeCloseTo(28.6, 4);
   expect(result.lengths[1]).toBeCloseTo(28.6 * Math.SQRT2, 4);
   expect(result.xStroke).toBe('1.7');
   for (const pose of result.poses) {
@@ -521,7 +531,7 @@ for (const icon of ['plus', 'x'])
     // Chromium and WebKit approximate circular-arc bounds by up to 0.0003 native units.
     // The rotated contour tests independently check the unchanged 1.70 glyph weight.
     for (const padding of result.padding) expect(padding).toBeCloseTo(2, 3);
-    if (icon === 'x') {
+    if (['x', 'plus'].includes(icon)) {
       for (const margin of result.outerMargins) expect(margin).toBeCloseTo(2, 5);
       for (const margin of result.glyphMargins) expect(margin).toBeCloseTo(4, 3);
     }
@@ -556,4 +566,33 @@ test('X Outline matches the inner Filled glyph with unchanged stroke and 4px art
   expect(result.stroke).toBe(1.7);
   expect(result.cap).toBe('round');
   for (const margin of result.margins) expect(margin).toBeCloseTo(4, 5);
+});
+
+test('unboxed Camera and Folder retain horizontal proportions with a 2px primary pair', async ({
+  page,
+}, info) => {
+  for (const icon of ['camera', 'folder'])
+    for (const style of ['outline', 'filled']) {
+      const box = await page
+        .getByTestId(`${icon}-${style}-contour`)
+        .locator('svg')
+        .evaluate((el, style) => {
+          const path = el.querySelector('[data-part="body"] path') as SVGPathElement;
+          const b = path.getBBox();
+          const half = style === 'outline' ? 0.85 : 0;
+          return {
+            left: b.x - half,
+            right: 24 - b.x - b.width - half,
+            width: b.width + 2 * half,
+            height: b.height + 2 * half,
+          };
+        }, style);
+      expect(box.left).toBeCloseTo(2, 5);
+      expect(box.right).toBeCloseTo(2, 5);
+      expect(box.width).toBeGreaterThan(box.height);
+    }
+  if (info.project.name === 'chromium')
+    await page
+      .getByTestId('primary-rounded-sheet')
+      .screenshot({ path: '.artifacts/previews/camera-folder-rounded.png' });
 });

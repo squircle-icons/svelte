@@ -74,6 +74,35 @@
 <div data-testid="filled-camera"><FilledCamera label="Filled camera review" /></div>
 <div data-testid="filled-settings"><FilledSettings label="Filled settings review" /></div>
 <div data-testid="filled-folder"><FilledFolder {strokeWidth} label="Filled folder" /></div>
+<div data-testid="camera-outline-contour"><Camera size={96} /></div>
+<div data-testid="camera-filled-contour"><FilledCamera size={96} /></div>
+<div data-testid="folder-outline-contour"><Folder size={96} /></div>
+<div data-testid="folder-filled-contour"><FilledFolder size={96} /></div>
+<section class="rotation-sheet" data-testid="primary-rounded-sheet">
+  <header>
+    <span>PRIMARY PAIR / ROUNDER CORNERS</span>
+    <h2>Camera & Folder</h2>
+    <p>2px left/right · Natural horizontal proportions · No enclosing box</p>
+  </header>
+  <div class="rotation-grid">
+    <h3>Camera</h3>
+    <h3>Folder</h3>
+    {#each ['outline', 'filled'] as style}
+      <article>
+        <Camera size={64} style={style as 'outline' | 'filled'} /><small>{style}</small>
+        <div>
+          {#each [16, 20, 24] as size}<Camera {size} style={style as 'outline' | 'filled'} />{/each}
+        </div>
+      </article>
+      <article>
+        <Folder size={64} style={style as 'outline' | 'filled'} /><small>{style}</small>
+        <div>
+          {#each [16, 20, 24] as size}<Folder {size} style={style as 'outline' | 'filled'} />{/each}
+        </div>
+      </article>
+    {/each}
+  </div>
+</section>
 <div data-testid="bell-outline-contour"><Bell size={96} label="Outline Bell contour" /></div>
 <div data-testid="bell-filled-contour"><FilledBell size={96} label="Filled Bell contour" /></div>
 <div data-testid="settings-outline-contour">
