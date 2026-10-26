@@ -8,6 +8,7 @@
     label,
     class: className,
   }: FilledIconProps = $props();
+  const accessibleLabel = $derived(label?.trim());
 </script>
 
 <svg
@@ -21,9 +22,9 @@
   stroke-linecap="round"
   stroke-linejoin="round"
   class={className}
-  role={label ? 'img' : undefined}
-  aria-label={label || undefined}
-  aria-hidden={label ? undefined : true}
+  role={accessibleLabel ? 'img' : undefined}
+  aria-label={accessibleLabel || undefined}
+  aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
 >
   <g data-part="arrow"

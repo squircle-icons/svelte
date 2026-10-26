@@ -18,11 +18,16 @@ test('SSR and hydration preserve naming and multiple static instances', async ({
   const html = await (await request.get('/')).text();
   expect(html).toContain('Camera one');
   expect(html).toContain('Unified camera');
+  expect(html).not.toMatch(/aria-label="\s+"/);
   await page.reload();
   await expect(page.getByTestId('ready')).toHaveText('hydrated');
   await expect(page.getByRole('img', { name: 'Camera one', exact: true })).toHaveCount(1);
   await expect(page.getByRole('img', { name: 'Camera two', exact: true })).toHaveCount(1);
   await expect(page.getByTestId('instances').locator('svg[aria-hidden="true"]')).toHaveCount(3);
+  await expect(page.getByTestId('blank-labels').locator('svg[aria-hidden="true"]')).toHaveCount(2);
+  await expect(page.getByTestId('blank-labels').locator('svg[role], svg[aria-label]')).toHaveCount(
+    0,
+  );
   await expect(page.locator('svg title, svg [id], svg[tabindex]')).toHaveCount(0);
   expect(await page.evaluate(() => document.getAnimations().length)).toBe(0);
   expect(errors).toEqual([]);

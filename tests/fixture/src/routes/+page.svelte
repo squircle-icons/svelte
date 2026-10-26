@@ -62,6 +62,7 @@
 <div data-testid="instances">
   <Camera label="Camera one" /><Camera label="Camera two" /><Camera /><Folder /><Bell />
 </div>
+<div data-testid="blank-labels"><Camera label="   " /><FilledCamera label="   " /></div>
 <div class="contact" data-testid="contact-sheet">
   {#each [Camera, Folder, Bell, Heart, Search, Settings] as Icon}<div>
       {#each [16, 20, 24, 48] as n}<Icon size={n} />{/each}

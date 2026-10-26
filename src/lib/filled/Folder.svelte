@@ -9,6 +9,7 @@
     label,
     class: className,
   }: FilledIconProps = $props();
+  const accessibleLabel = $derived(label?.trim());
   const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));
   const gapWidth = $derived(
     Number.isFinite(resolvedStrokeWidth) ? Math.min(6, Math.max(0.25, resolvedStrokeWidth)) : 1.7,
@@ -34,9 +35,9 @@
   stroke-linecap="round"
   stroke-linejoin="round"
   class={className}
-  role={label ? 'img' : undefined}
-  aria-label={label || undefined}
-  aria-hidden={label ? undefined : true}
+  role={accessibleLabel ? 'img' : undefined}
+  aria-label={accessibleLabel || undefined}
+  aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
   data-cutout-width={gapWidth}
 >

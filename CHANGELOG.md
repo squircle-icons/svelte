@@ -1,6 +1,17 @@
 # Changelog
 
-## Unreleased
+## 0.1.0-alpha.2
+
+- Expand the release from eight icons to all twenty owner-approved Outline/Filled pairs. Add Arrow Left/Right, Check, Chevron Up/Down, Copy, Download, Menu, Plus, Trash, Upload and X; Search now has a Filled export.
+- Include the latest reviewed artwork. Menu/Search Filled follows fixed Bold 2.25 geometry, and Moon's approved minus-30-degree pose is baked into its native zero-degree source.
+- Support Svelte 5.0.0 through version 5 and consumer Node.js 18.0.0 / npm 8.6.0 or later. Strip TypeScript from packed component scripts while keeping public declarations.
+- Treat whitespace-only labels as decorative in unified and dedicated Filled components.
+- Require the full verification suite before publishing, including packed-consumer, import isolation, compatibility and browser checks.
+
+## 0.1.0-alpha.1
+
+- Add the reviewed Sun and Moon pairs. Drafts from later review batches are excluded from this release.
+- Reject colliding/reserved generated names and fall back to Regular for invalid numeric stroke widths.
 
 - Use one direct icon import with `style="outline" | "filled"`; Outline is the default.
 - Add `strokeWidth="thin" | "regular" | "bold"`, defaulting to Regular, while retaining custom numeric widths.
