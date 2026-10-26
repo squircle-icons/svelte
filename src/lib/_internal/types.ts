@@ -18,5 +18,6 @@ export type IconProps = {
   label?: string;
   class?: string;
 };
-export type FilledIconProps = Omit<IconProps, 'strokeWidth'>;
+// In filled artwork, strokeWidth controls designated negative-space cutouts.
+export type FilledIconProps = IconProps;
 export type AnimatedProps = IconProps & { hover?: boolean; reducedMotion?: 'system' | 'always' };

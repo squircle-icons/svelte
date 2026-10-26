@@ -219,6 +219,10 @@ test('unmount cancels detached animations and removes preference listeners', asy
 });
 
 test('presentation updates do not overwrite motion-owned styles', async ({ page }) => {
+  await expect(page.getByTestId('filled-folder').locator('svg')).toHaveAttribute(
+    'data-cutout-width',
+    '1.75',
+  );
   await page.getByRole('button', { name: 'Toggle folder' }).click();
   await expect.poll(() => countAnimations(page)).toBe(0);
   const before = await transform(folder(page));
@@ -227,6 +231,11 @@ test('presentation updates do not overwrite motion-owned styles', async ({ page 
   await expect(page.getByTestId('folder').locator('svg')).toHaveAttribute('stroke', '#6b50a1');
   await expect(page.getByTestId('folder').locator('svg')).toHaveAttribute('stroke-width', '2');
   expect(await transform(folder(page))).toBe(before);
+  await expect(page.getByTestId('filled-folder').locator('svg')).toHaveAttribute(
+    'data-cutout-width',
+    '2',
+  );
+  await expect(page.getByTestId('filled-folder').locator('svg')).toHaveAttribute('stroke', 'none');
 });
 
 test('missing animation API falls back to settled poses', async ({ page }) => {

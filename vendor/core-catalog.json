@@ -336,7 +336,12 @@
           "filled"
         ],
         "authorship": "Original filled geometry constructed for Squircle Icons; no third-party icon paths used.",
-        "construction": "A fill-only companion to Outline Folder. The outer bounds x=2.125..21.875 and y=4.125..19.875 match the visible Outline bounds at its default 1.75 stroke. One evenodd compound path cuts a straight 1.75-unit divider slot into the solid silhouette. Rounded outer corners preserve the real folder tab; no stroke is layered over the fill."
+        "construction": "A fill-only companion to Outline Folder. The outer bounds x=2.125..21.875 and y=4.125..19.875 match the visible Outline bounds at its default 1.75 stroke. One evenodd compound path contains a straight divider slot, 1.75 units by default. strokeWidthCutout targets the named body part so adapters can vary the inner gap with strokeWidth while preserving the outer contour. The adjustable source gap is bounded to 0.25–6 units so it remains inside the solid body. Rounded outer corners preserve the real folder tab; no stroke is layered over the fill.",
+        "strokeWidthCutout": {
+          "part": "body",
+          "minWidth": 0.25,
+          "maxWidth": 6
+        }
       },
       "root": {
         "tag": "svg",
@@ -367,7 +372,17 @@
       },
       "parts": [
         "body"
-      ]
+      ],
+      "cutout": {
+        "part": "body",
+        "outerPath": "M 5.5 4.125 H 8.2 C 9.2 4.125 9.9 4.6 10.6 5.3 L 11.6 6.625 H 18.5 C 20.8 6.625 21.875 7.8 21.875 10 V 16.5 C 21.875 18.8 20.8 19.875 18.5 19.875 H 5.5 C 3.2 19.875 2.125 18.8 2.125 16.5 V 7.5 C 2.125 5.2 3.2 4.125 5.5 4.125 Z",
+        "left": 4.75,
+        "right": 19.25,
+        "centerY": 11,
+        "defaultWidth": 1.75,
+        "minWidth": 0.25,
+        "maxWidth": 6
+      }
     }
   },
   {

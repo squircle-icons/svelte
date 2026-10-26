@@ -84,7 +84,9 @@
     </div>{/each}
 </div>
 
-<div data-testid="filled-folder"><FilledFolder size={24} label="Filled folder" /></div>
+<div data-testid="filled-folder">
+  <FilledFolder size={24} {strokeWidth} label="Filled folder" />
+</div>
 
 <style>
   :global(body) {

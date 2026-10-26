@@ -45,6 +45,6 @@ The package name `squircle-icons-svelte` is provisional and **not published to n
 
 ## Filled style
 
-Folder is the first original filled review candidate, imported with `import Folder from 'squircle-icons-svelte/filled/folder'` (or the `squircle-icons-svelte/filled` barrel). It accepts `size`, `color`, `label`, and `class`; filled geometry has no configurable stroke. `FilledIconProps` is exported from the filled barrel. Its negative-space divider is authored in core and preserved through SVG validation/optimization and packaging. Other filled icons are not implemented yet.
+Folder is the first original filled review candidate, imported with `import Folder from 'squircle-icons-svelte/filled/folder'` (or the `squircle-icons-svelte/filled` barrel). It accepts `size`, `color`, `strokeWidth`, `label`, and `class`. For this filled Folder, `strokeWidth` controls the inner divider gap (default 1.75) while the outside remains fill-only and unchanged. The source gap is bounded to 0.25–6 units. `FilledIconProps` is exported from the filled barrel. Its negative-space divider is authored in core and preserved through SVG validation/optimization and packaging. Other filled icons are not implemented yet.
 
 Motion development is paused while the static family is reviewed. Existing animated exports are retained; no new animation behavior is added.
