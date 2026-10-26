@@ -71,8 +71,8 @@
 >
   <g data-part="body"
     ><path
-      d="M 3 18.5 V 5.5 C 3 3.8 3.8 3 5.5 3 H 8.2 C 9 3 9.4 3.3 9.9 3.9 L 11.1 5.5 H 18.5 C 20.2 5.5 21 6.3 21 8 V 18.5 C 21 20.2 20.2 21 18.5 21 H 5.5 C 3.8 21 3 20.2 3 18.5 Z"
+      d="M 3 16.5 V 7.5 C 3 5.8 3.8 5 5.5 5 H 8.2 C 9 5 9.4 5.3 9.9 5.9 L 11.1 7.5 H 18.5 C 20.2 7.5 21 8.3 21 10 V 16.5 C 21 18.2 20.2 19 18.5 19 H 5.5 C 3.8 19 3 18.2 3 16.5 Z"
     ></path></g
   >
-  <g data-part="lid" style={initialStyles['lid']}><path d="M 3 10 H 21"></path></g>
+  <g data-part="lid" style={initialStyles['lid']}><path d="M 3 11 H 21"></path></g>
 </svg>
