@@ -1,0 +1,107 @@
+{
+  "name": "squircle-icons-svelte",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "svelte": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./animated": {
+      "types": "./dist/animated/index.d.ts",
+      "svelte": "./dist/animated/index.js",
+      "default": "./dist/animated/index.js"
+    },
+    "./bell": {
+      "types": "./dist/Bell.svelte.d.ts",
+      "svelte": "./dist/Bell.svelte",
+      "default": "./dist/Bell.svelte"
+    },
+    "./animated/bell": {
+      "types": "./dist/animated/Bell.svelte.d.ts",
+      "svelte": "./dist/animated/Bell.svelte",
+      "default": "./dist/animated/Bell.svelte"
+    },
+    "./camera": {
+      "types": "./dist/Camera.svelte.d.ts",
+      "svelte": "./dist/Camera.svelte",
+      "default": "./dist/Camera.svelte"
+    },
+    "./folder": {
+      "types": "./dist/Folder.svelte.d.ts",
+      "svelte": "./dist/Folder.svelte",
+      "default": "./dist/Folder.svelte"
+    },
+    "./animated/folder": {
+      "types": "./dist/animated/Folder.svelte.d.ts",
+      "svelte": "./dist/animated/Folder.svelte",
+      "default": "./dist/animated/Folder.svelte"
+    },
+    "./heart": {
+      "types": "./dist/Heart.svelte.d.ts",
+      "svelte": "./dist/Heart.svelte",
+      "default": "./dist/Heart.svelte"
+    },
+    "./search": {
+      "types": "./dist/Search.svelte.d.ts",
+      "svelte": "./dist/Search.svelte",
+      "default": "./dist/Search.svelte"
+    },
+    "./settings": {
+      "types": "./dist/Settings.svelte.d.ts",
+      "svelte": "./dist/Settings.svelte",
+      "default": "./dist/Settings.svelte"
+    },
+    "./catalog.json": "./dist/catalog.json"
+  },
+  "peerDependencies": {
+    "svelte": "^5.57.1"
+  },
+  "scripts": {
+    "generate": "node --import tsx tools/generate.ts",
+    "generate:check": "node --import tsx tools/generate.ts --check",
+    "build": "svelte-package",
+    "check": "pnpm build && tsc --noEmit -p tsconfig.tools.json && svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run",
+    "test:bundle": "node --import tsx tools/bundle-test.ts",
+    "test:pack": "node --import tsx tools/pack-test.ts",
+    "test:browser": "playwright test",
+    "sync:core": "node tools/sync-core.mjs",
+    "verify": "pnpm format:check && pnpm dependency:check && pnpm generate:check && pnpm check && pnpm test && pnpm test:bundle && pnpm test:pack && pnpm test:browser",
+    "dependency:check": "node tools/dependency-check.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepublishOnly": "node -e \"throw new Error('Publication is disabled pending naming and license review')\""
+  },
+  "packageManager": "pnpm@10.10.0",
+  "engines": {
+    "node": ">=22.17.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@sveltejs/adapter-static": "4.0.0",
+    "@sveltejs/kit": "3.1.0",
+    "@sveltejs/package": "3.0.1",
+    "@sveltejs/vite-plugin-svelte": "7.3.1",
+    "@types/node": "^24.0.0",
+    "esbuild": "0.28.2",
+    "svelte": "5.57.2",
+    "svelte-check": "4.7.7",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "vite": "8.3.5",
+    "vitest": "5.0.5",
+    "prettier": "3.9.10",
+    "prettier-plugin-svelte": "4.1.1",
+    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0.tgz"
+  }
+}

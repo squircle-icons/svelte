@@ -1,0 +1,47 @@
+{
+  "generatedBy": "tools/generate.ts",
+  "icons": [
+    {
+      "name": "bell",
+      "description": "A gently squared bell with a separate hanging clapper.",
+      "tags": ["notification", "alert"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Original bell shoulder curve transitions into nearly vertical walls. Broad lower lip balances the narrow crown."
+    },
+    {
+      "name": "camera",
+      "description": "A compact camera with a continuous curved body and circular lens.",
+      "tags": ["photo", "image"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Original Bézier body: shoulders taper into a raised shutter housing; lens is optically lowered to 12.9."
+    },
+    {
+      "name": "folder",
+      "description": "A soft folder with a distinct tab and movable front lid.",
+      "tags": ["files", "directory"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Original continuous tab and rear shell. The front panel bows gently at its top edge; motion opens a gap rather than morphing paths."
+    },
+    {
+      "name": "heart",
+      "description": "A balanced heart with full lobes and a softened lower point.",
+      "tags": ["love", "favorite"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Original symmetric lobes with a shallow notch and curved lower point; no rounded-square frame."
+    },
+    {
+      "name": "search",
+      "description": "A clear circular search lens with a short angled handle.",
+      "tags": ["find", "magnify"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Original construction from a circle centered at 10.4 and a 45-degree handle. Circular geometry preserves immediate recognition."
+    },
+    {
+      "name": "settings",
+      "description": "A six-tooth gear with flowing shoulders and a circular center.",
+      "tags": ["preferences", "gear"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Original six-tooth outline with Bézier shoulders. The gear stays recognizable rather than forcing a squircle silhouette."
+    }
+  ]
+}

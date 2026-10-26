@@ -1,0 +1,31 @@
+name: Quality checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  quality:
+    runs-on: macos-26
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: pnpm/action-setup@v6.1.0
+        with:
+          version: 10.10.0
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install chromium firefox webkit
+      - run: pnpm verify
+      - uses: actions/upload-artifact@v7.0.2
+        if: always()
+        with:
+          name: validation-reports
+          path: |
+            playwright-report/
+            test-results/
+            .artifacts/bundle-report.json
+            .artifacts/previews/

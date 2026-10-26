@@ -1,0 +1,12 @@
+node_modules
+dist
+.artifacts
+playwright-report
+test-results
+pnpm-lock.yaml
+src/lib/*.svelte
+src/lib/index.ts
+src/lib/animated
+src/lib/_internal
+src/lib/catalog.json
+vendor
