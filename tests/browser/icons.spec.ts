@@ -205,7 +205,7 @@ for (const icon of [
         svg.setAttribute('stroke', outline ? '#000' : 'none');
         if (!outline && ['plus', 'x'].includes(icon)) {
           // Owner-requested Filled boxes are a deliberate exterior exception.
-          // The unchanged negative-space mark must match the Outline exterior.
+          // Plus matches its Outline mark; X uses the owner-requested inset glyph reference.
           const path = svg.querySelector('path')!;
           const parts = path.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
           if (parts.length !== 2) throw new Error('Expected a box and a glyph cutout');
@@ -244,8 +244,13 @@ for (const icon of [
           const clapper = svg.querySelector('[data-part="clapper"] path');
           if (clapper) clapper.setAttribute('d', clapper.getAttribute('d') + ' Z');
         }
+        const insetScale = outline && icon === 'x' ? 14.3 / 18.3 : 1;
+        if (outline && icon === 'x') svg.setAttribute('stroke-width', String(1.7 / insetScale));
         for (const group of svg.querySelectorAll(':scope > g'))
-          group.setAttribute('transform', `rotate(${rotation} 12 12)`);
+          group.setAttribute(
+            'transform',
+            `rotate(${rotation} 12 12) translate(12 12) scale(${insetScale}) translate(-12 -12)`,
+          );
         const url = URL.createObjectURL(
           new Blob([new XMLSerializer().serializeToString(svg)], { type: 'image/svg+xml' }),
         );
@@ -371,7 +376,7 @@ test('Round 3 exposes six packed Outline/Filled pairs on light and dark surfaces
   }
 });
 
-test('X optically extends Plus arms at 45 degrees while preserving stroke and cap weight', async ({
+test('X follows the 2px outer-margin and inset-cutout references at unchanged stroke weight', async ({
   page,
 }, info) => {
   const result = await page.evaluate(async () => {
@@ -379,7 +384,8 @@ test('X optically extends Plus arms at 45 degrees while preserving stroke and ca
     const paint = async (name: 'plus' | 'x', style: 'outline' | 'filled', angle: number) => {
       const sourceStyle = name === 'plus' ? 'outline' : style;
       const outline = sourceStyle === 'outline';
-      const armScale = name === 'plus' ? 16 / 14 : 1;
+      const armScale =
+        name === 'plus' ? ((style === 'outline' ? 18.3 : 14.3) * Math.SQRT2) / 14 : 1;
       const original = document.querySelector(
         `[data-testid="${name}-${sourceStyle}-contour"] svg`,
       ) as SVGSVGElement;
@@ -460,7 +466,7 @@ test('X optically extends Plus arms at 45 degrees while preserving stroke and ca
     };
   });
   expect(result.lengths[0]).toBeCloseTo(28, 4);
-  expect(result.lengths[1]).toBeCloseTo(32, 4);
+  expect(result.lengths[1]).toBeCloseTo(36.6 * Math.SQRT2, 4);
   expect(result.xStroke).toBe('1.7');
   for (const pose of result.poses) {
     expect(pose.distantMismatches, JSON.stringify(pose)).toBe(0);
@@ -487,25 +493,28 @@ test('Round 4 exposes six draft pairs on light and dark review sheets', async ({
 });
 
 for (const icon of ['plus', 'x'])
-  test(`Filled ${icon} has a solid rounded box with exactly 2px around its unchanged cutout`, async ({
+  test(`Filled ${icon} has a solid rounded box with exactly 2px around its glyph cutout`, async ({
     page,
   }) => {
     const result = await page.evaluate((icon) => {
-      const outline = document.querySelector(
-        `[data-testid="${icon}-outline-contour"] path`,
-      ) as SVGPathElement;
       const filled = document.querySelector(
         `[data-testid="${icon}-filled-contour"] path`,
       ) as SVGPathElement;
-      const glyph = outline.getBBox(),
+      const cutout = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      const parts = filled.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
+      if (parts.length !== 2) throw new Error('Expected a box and a cutout');
+      cutout.setAttribute('d', parts[1]);
+      filled.parentNode!.appendChild(cutout);
+      const glyph = cutout.getBBox(),
         box = filled.getBBox();
-      const half = 1.7 / 2;
+      cutout.remove();
       return {
+        outerMargins: [box.x, box.y, 24 - box.x - box.width, 24 - box.y - box.height],
         padding: [
-          glyph.x - half - box.x,
-          box.x + box.width - glyph.x - glyph.width - half,
-          glyph.y - half - box.y,
-          box.y + box.height - glyph.y - glyph.height - half,
+          glyph.x - box.x,
+          box.x + box.width - glyph.x - glyph.width,
+          glyph.y - box.y,
+          box.y + box.height - glyph.y - glyph.height,
         ],
         emptyCenter: !filled.isPointInFill(new DOMPoint(12, 12)),
         solidBorder: filled.isPointInFill(new DOMPoint(box.x + 0.75, 12)),
@@ -513,9 +522,38 @@ for (const icon of ['plus', 'x'])
         roundedCorner: !filled.isPointInFill(new DOMPoint(box.x + 0.1, box.y + 0.1)),
       };
     }, icon);
-    for (const padding of result.padding) expect(padding).toBeCloseTo(2, 4);
+    // Chromium and WebKit approximate circular-arc bounds by up to 0.0003 native units.
+    // The rotated contour tests independently check the unchanged 1.70 glyph weight.
+    for (const padding of result.padding) expect(padding).toBeCloseTo(2, 3);
+    if (icon === 'x') for (const margin of result.outerMargins) expect(margin).toBeCloseTo(2, 5);
     expect(result.emptyCenter).toBe(true);
     expect(result.solidBorder).toBe(true);
     expect(result.clearOutside).toBe(true);
     expect(result.roundedCorner).toBe(true);
   });
+
+test('X Outline leaves exactly 2px at every native artboard edge without thickening its stroke', async ({
+  page,
+}) => {
+  const result = await page
+    .getByTestId('x-outline-contour')
+    .locator('svg')
+    .evaluate((element) => {
+      const svg = element as SVGSVGElement;
+      const box = (svg.querySelector('path') as SVGPathElement).getBBox();
+      const stroke = Number(svg.getAttribute('stroke-width'));
+      return {
+        stroke,
+        margins: [
+          box.x - stroke / 2,
+          box.y - stroke / 2,
+          24 - box.x - box.width - stroke / 2,
+          24 - box.y - box.height - stroke / 2,
+        ],
+        cap: svg.getAttribute('stroke-linecap'),
+      };
+    });
+  expect(result.stroke).toBe(1.7);
+  expect(result.cap).toBe('round');
+  for (const margin of result.margins) expect(margin).toBeCloseTo(2, 5);
+});

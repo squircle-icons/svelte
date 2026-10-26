@@ -1576,7 +1576,7 @@
           "boxed"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner-requested Filled-only boxed treatment. The solid upright rounded square has bounds 2.15..21.85 on both axes and radius-2.85 corners. Its negative-space glyph is the unchanged Regular 1.70 stroke exterior of the Outline mark. There is exactly 2 units of clearance from the visible glyph to each of the four box sides at native 24px, X/Y=100%, rotation=0. X derives from the Plus glyph rotated 45 degrees with its diagonal centerlines optically extended to 16 units at unchanged stroke/cap weight; each box is sized independently to its own glyph bounds and remains upright. The body is one evenodd compound path: the outer square followed by the original glyph as a cutout. This owner-requested exception deliberately adds a box only to Filled; the Outline glyph remains unboxed. The glyph cutout, rather than the new box exterior, matches Outline at Regular 1.70. Round 3 draft awaiting owner review.",
+        "construction": "Owner-requested Filled-only boxed treatment. The solid upright rounded square has bounds 2.15..21.85 on both axes and radius-2.85 corners. Its negative-space glyph is the unchanged Regular 1.70 stroke exterior of the Outline mark. There is exactly 2 units of clearance from the visible glyph to each of the four box sides at native 24px, X/Y=100%, rotation=0. Plus retains its own glyph dimensions and fitted upright box. X has a separate owner-requested 2px outer-margin and 2px inner-clearance treatment documented in its metadata. The body is one evenodd compound path: the outer square followed by the original glyph as a cutout. This owner-requested exception deliberately adds a box only to Filled; the Outline glyph remains unboxed. The glyph cutout, rather than the new box exterior, matches Outline at Regular 1.70. Round 3 draft awaiting owner review.",
         "filledTreatment": "boxed-cutout"
       },
       "root": {
@@ -2336,8 +2336,8 @@
         "cancel"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner-requested optical enlargement: X retains the 45-degree construction derived from Plus, with each diagonal centerline length increased from 14 to 16 units, extending both ends equally around 12,12. Stroke width stays Regular 1.70 and cap radius stays .85; the stroke and round ends are not scaled. The native visible dimensions become 13.0137085 by 13.0137085 units. Coordinates are baked into source at X/Y=100%, rotation=0. Plus remains unchanged. The Filled variant uses the exact Regular Outline exterior as its negative-space glyph in an upright solid rounded square with bounds 3.49314575..20.50685425 and radius-2.85 corners. Clearance remains exactly 2 native units on all four sides. This is the owner-requested Filled-only boxed treatment; Outline stays unboxed. Round 3 draft awaiting owner review.",
-      "filledTreatment": "boxed-cutout"
+      "construction": "Owner-requested exact 2px outer margins in both styles on the native 24 by 24 grid. Outline diagonal centerlines span 2.85..21.15 on each axis, giving visible bounds 2..22 at Regular 1.70 with .85 round caps. Filled uses an upright solid rounded square with the same bounds 2..22 and radius-2.85 corners. The owner explicitly requested retaining another 2 units of inner clearance from the cutout to each box side, so its negative-space X has visible bounds 4..20, with centerline endpoints 4.85..19.15. The Filled glyph is intentionally smaller than the Outline glyph, while its stroke-equivalent width 1.70 and cap radius .85 stay unchanged. This is the boxed-inset-cutout exception to glyph contour equality; compare it against the Outline centerlines inset 2 units on each axis, keeping stroke/cap weight fixed. Coordinates are baked into source at X/Y=100%, rotation=0. Round 3 draft awaiting owner review.",
+      "filledTreatment": "boxed-inset-cutout"
     },
     "root": {
       "tag": "svg",
@@ -2360,7 +2360,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M6.34314575 6.34314575 L17.65685425 17.65685425 M17.65685425 6.34314575 L6.34314575 17.65685425"
+                "d": "M2.85 2.85 L21.15 21.15 M21.15 2.85 L2.85 21.15"
               },
               "children": []
             }
@@ -2383,8 +2383,8 @@
           "boxed"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner-requested optical enlargement: X retains the 45-degree construction derived from Plus, with each diagonal centerline length increased from 14 to 16 units, extending both ends equally around 12,12. Stroke width stays Regular 1.70 and cap radius stays .85; the stroke and round ends are not scaled. The native visible dimensions become 13.0137085 by 13.0137085 units. Coordinates are baked into source at X/Y=100%, rotation=0. Plus remains unchanged. The Filled variant uses the exact Regular Outline exterior as its negative-space glyph in an upright solid rounded square with bounds 3.49314575..20.50685425 and radius-2.85 corners. Clearance remains exactly 2 native units on all four sides. This is the owner-requested Filled-only boxed treatment; Outline stays unboxed. Round 3 draft awaiting owner review.",
-        "filledTreatment": "boxed-cutout"
+        "construction": "Owner-requested exact 2px outer margins in both styles on the native 24 by 24 grid. Outline diagonal centerlines span 2.85..21.15 on each axis, giving visible bounds 2..22 at Regular 1.70 with .85 round caps. Filled uses an upright solid rounded square with the same bounds 2..22 and radius-2.85 corners. The owner explicitly requested retaining another 2 units of inner clearance from the cutout to each box side, so its negative-space X has visible bounds 4..20, with centerline endpoints 4.85..19.15. The Filled glyph is intentionally smaller than the Outline glyph, while its stroke-equivalent width 1.70 and cap radius .85 stay unchanged. This is the boxed-inset-cutout exception to glyph contour equality; compare it against the Outline centerlines inset 2 units on each axis, keeping stroke/cap weight fixed. Coordinates are baked into source at X/Y=100%, rotation=0. Round 3 draft awaiting owner review.",
+        "filledTreatment": "boxed-inset-cutout"
       },
       "root": {
         "tag": "svg",
@@ -2405,7 +2405,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M6.34314575 3.49314575 H17.65685425 A2.85 2.85 0 0 1 20.50685425 6.34314575 V17.65685425 A2.85 2.85 0 0 1 17.65685425 20.50685425 H6.34314575 A2.85 2.85 0 0 1 3.49314575 17.65685425 V6.34314575 A2.85 2.85 0 0 1 6.34314575 3.49314575 Z M6.94418651 5.74210499 L12 10.79791847 L17.05581349 5.74210499 A0.85 0.85 0 0 1 18.25789501 6.94418651 L13.20208153 12 L18.25789501 17.05581349 A0.85 0.85 0 0 1 17.05581349 18.25789501 L12 13.20208153 L6.94418651 18.25789501 A0.85 0.85 0 0 1 5.74210499 17.05581349 L10.79791847 12 L5.74210499 6.94418651 A0.85 0.85 0 0 1 6.94418651 5.74210499 Z"
+                  "d": "M4.85 2 H19.15 A2.85 2.85 0 0 1 22 4.85 V19.15 A2.85 2.85 0 0 1 19.15 22 H4.85 A2.85 2.85 0 0 1 2 19.15 V4.85 A2.85 2.85 0 0 1 4.85 2 Z M5.45104076 4.24895924 L12 10.79791847 L18.54895924 4.24895924 A0.85 0.85 0 0 1 19.75104076 5.45104076 L13.20208153 12 L19.75104076 18.54895924 A0.85 0.85 0 0 1 18.54895924 19.75104076 L12 13.20208153 L5.45104076 19.75104076 A0.85 0.85 0 0 1 4.24895924 18.54895924 L10.79791847 12 L4.24895924 5.45104076 A0.85 0.85 0 0 1 5.45104076 4.24895924 Z"
                 },
                 "children": []
               }

@@ -156,7 +156,7 @@
   <header>
     <span>ROUND 3 / FILLED REVISION</span>
     <h2>Plus & X</h2>
-    <p>Slightly longer X arms · Same 1.70 stroke · 2px box clearance</p>
+    <p>X outer margins 2px · Filled inner clearance 2px · Regular 1.70</p>
   </header>
   <div class="rotation-grid">
     <h3>Plus</h3>
