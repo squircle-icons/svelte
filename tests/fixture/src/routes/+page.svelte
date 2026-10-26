@@ -185,7 +185,7 @@
   <header>
     <span>ROUND 3 / COPY REVISION</span>
     <h2>Copy</h2>
-    <p>More space between pages · Camera/Folder corner standard · Regular 1.70</p>
+    <p>Two separated junctions · Standard corners · Regular 1.70</p>
   </header>
   <div class="rotation-grid">
     {#each ['outline', 'filled'] as style}<article>

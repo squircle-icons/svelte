@@ -597,14 +597,17 @@ test('unboxed Camera and Folder retain horizontal proportions with a 2px primary
       .screenshot({ path: '.artifacts/previews/camera-folder-rounded.png' });
 });
 
-test('Copy keeps a 4px inter-page gap, 2px margins and the standard rounded corners', async ({
+test('Copy has 1px junction breaks, 4px inter-page spacing and standard corners', async ({
   page,
 }, info) => {
   const result = await page.evaluate(() => {
     const outline = document.querySelector(
       '[data-testid="copy-outline-contour"] svg',
     ) as SVGSVGElement;
-    const back = (outline.querySelector('[data-part="back"] path') as SVGPathElement).getBBox();
+    const backPath = outline.querySelector('[data-part="back"] path') as SVGPathElement;
+    const back = backPath.getBBox();
+    const start = backPath.getPointAtLength(0);
+    const end = backPath.getPointAtLength(backPath.getTotalLength());
     const front = (outline.querySelector('[data-part="front"] path') as SVGPathElement).getBBox();
     const filled = document.querySelector(
       '[data-testid="copy-filled-contour"] svg',
@@ -615,6 +618,7 @@ test('Copy keeps a 4px inter-page gap, 2px margins and the standard rounded corn
     const h = Number(outline.getAttribute('stroke-width')) / 2;
     return {
       gaps: [front.x - back.x - 2 * h, front.y - back.y - 2 * h],
+      junctionGaps: [front.x - start.x - 2 * h, front.y - end.y - 2 * h],
       margins: [f.x, f.y, 24 - f.x - f.width, 24 - f.y - f.height],
       stroke: h * 2,
       roundedCorner: !frontFill.isPointInFill(new DOMPoint(b.x + 0.9, b.y + 0.9)),
@@ -622,6 +626,7 @@ test('Copy keeps a 4px inter-page gap, 2px margins and the standard rounded corn
     };
   });
   for (const gap of result.gaps) expect(gap).toBeCloseTo(4, 4);
+  for (const gap of result.junctionGaps) expect(gap).toBeCloseTo(1, 4);
   for (const margin of result.margins) expect(margin).toBeCloseTo(2, 4);
   expect(result.stroke).toBe(1.7);
   expect(result.roundedCorner).toBe(true);
