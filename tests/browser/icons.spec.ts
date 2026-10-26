@@ -515,6 +515,7 @@ for (const icon of ['plus', 'x'])
         solidBorder: filled.isPointInFill(new DOMPoint(box.x + 0.75, 12)),
         clearOutside: !filled.isPointInFill(new DOMPoint(box.x - 0.25, 12)),
         roundedCorner: !filled.isPointInFill(new DOMPoint(box.x + 0.1, box.y + 0.1)),
+        rounderCorner: !filled.isPointInFill(new DOMPoint(box.x + 0.9, box.y + 0.9)),
       };
     }, icon);
     // Chromium and WebKit approximate circular-arc bounds by up to 0.0003 native units.
@@ -528,6 +529,7 @@ for (const icon of ['plus', 'x'])
     expect(result.solidBorder).toBe(true);
     expect(result.clearOutside).toBe(true);
     expect(result.roundedCorner).toBe(true);
+    expect(result.rounderCorner).toBe(true);
   });
 
 test('X Outline matches the inner Filled glyph with unchanged stroke and 4px artboard spacing', async ({
