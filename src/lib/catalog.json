@@ -17,10 +17,10 @@
     },
     {
       "name": "folder",
-      "description": "A soft folder with a distinct tab and movable front lid.",
+      "description": "A rounded folder silhouette with a distinct tab and a straight movable front-panel edge.",
       "tags": ["files", "directory"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Original continuous tab and rear shell. The front panel bows gently at its top edge; motion opens a gap rather than morphing paths."
+      "construction": "Original rounded rectangular outer contour preserves the folder tab and is drawn once. The front-panel upper edge is a single straight horizontal stroke at y=10, meeting the side walls without retracing the sides or bottom. Lower corners use matching 2.5-unit construction for balanced spacing. The existing named body/lid parts, stroke defaults and motion recipe are retained; only geometry is revised for static review."
     },
     {
       "name": "heart",

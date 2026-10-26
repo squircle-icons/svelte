@@ -245,13 +245,13 @@
     "name": "folder",
     "metadata": {
       "name": "folder",
-      "description": "A soft folder with a distinct tab and movable front lid.",
+      "description": "A rounded folder silhouette with a distinct tab and a straight movable front-panel edge.",
       "tags": [
         "files",
         "directory"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Original continuous tab and rear shell. The front panel bows gently at its top edge; motion opens a gap rather than morphing paths."
+      "construction": "Original rounded rectangular outer contour preserves the folder tab and is drawn once. The front-panel upper edge is a single straight horizontal stroke at y=10, meeting the side walls without retracing the sides or bottom. Lower corners use matching 2.5-unit construction for balanced spacing. The existing named body/lid parts, stroke defaults and motion recipe are retained; only geometry is revised for static review."
     },
     "root": {
       "tag": "svg",
@@ -274,7 +274,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 3 17.8 L 3 6.5 C 3 4.9 3.8 4.2 5.5 4.2 L 8.2 4.2 C 9 4.2 9.4 4.5 9.9 5.1 L 11.1 6.5 L 18.5 6.5 C 20.2 6.5 21 7.3 21 9 L 21 17.8 C 21 19.4 20.1 20.1 18.4 20.1 L 5.6 20.1 C 3.9 20.1 3 19.4 3 17.8 Z"
+                "d": "M 3 17.5 V 6.5 C 3 4.9 3.8 4.2 5.5 4.2 H 8.2 C 9 4.2 9.4 4.5 9.9 5.1 L 11.1 6.5 H 18.5 C 20.2 6.5 21 7.3 21 9 V 17.5 C 21 19.2 20.2 20 18.5 20 H 5.5 C 3.8 20 3 19.2 3 17.5 Z"
               },
               "children": []
             }
@@ -289,7 +289,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 3.2 10.1 C 6.1 9.6 8.8 9.4 12 9.4 C 15.2 9.4 17.9 9.6 20.8 10.1 L 20 17.7 C 19.8 19 19.1 19.6 17.6 19.6 L 6.4 19.6 C 4.9 19.6 4.2 19 4 17.7 Z"
+                "d": "M 3 10 H 21"
               },
               "children": []
             }
