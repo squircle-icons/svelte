@@ -304,7 +304,7 @@
       "description": "A balanced crescent moon with a clean circular concavity.",
       "tags": ["night", "dark", "weather"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner clarified that Moon must look substantially fuller, not more deeply hollowed. The radius9 experiment was rejected because it made the crescent thinner. Preserve the radius8 outer circle, original horns 9.06274607 4.35424869 and 19.64575131 14.93725393, Regular1.70 and .85 round joins. Increase the inner centerline radius to14, centered at22.72084896 1.27915104, moving the inner arc midpoint1.83215957 units toward the opening from the rejected radius9 shape and adding visible body thickness. This is also1.19890999 units fuller than the earlier approved radius10 reference. Filled is the exact .85 outward offset: outer8.85, inner13.15 and .85 horn joins. Outer dimensions, centering and horn locations stay fixed, with native visible margins3.50424869. No independent style scaling. Native X/Y100%, rotation0. Both revised styles await owner review.",
+      "construction": "Owner explicitly confirmed: keep the previously approved concavity and lengthen both crescent horns, rather than changing the inner curvature. Restore the approved radius10 inner centerline and radius8 outer centerline; extend each horn15 degrees along the outer circle, adding4.18879020 units of outer arc in total. Refit the same radius10 inner circle through the longer horns. Translate the whole drawing uniformly to center its new bounds at12,12; do not scale either style independently. Native horn endpoints are 10.76035523 4.05252287 and 19.94747713 13.23964477; outer-circle center 12.05252287 11.94747713, inner-circle center 20.72971359 3.27028641. Regular1.70 and .85 joins stay fixed. Filled is the exact outward offset: outer8.85, inner9.15 and .85 horn joins. New equal native visible margins are3.20252287, with width/height17.59495426. Native X/Y100%, rotation0. The prior radius9 and radius14 curvature experiments are superseded. Both styles await owner review.",
       "review": {
         "status": "draft",
         "reviewedBy": "palamto",
@@ -316,7 +316,7 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner rejected the deeper radius9 concavity and clarified a visibly fatter crescent. Current radius14 inner arc adds1.83215957 units of body thickness versus that rejected version, while preserving the outer circle, horns and Regular1.70. Await owner review."
+        "note": "Owner confirmed keeping the earlier radius10 concavity and extending both horns. Current revision adds15 degrees at each horn on the radius8 outer circle and centers the new geometry at native100%/100%, preserving Regular1.70. Await owner review."
       },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
