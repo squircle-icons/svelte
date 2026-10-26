@@ -132,6 +132,29 @@
   </section>
 {/each}
 
+<section class="rotation-sheet" data-testid="plus-x-rotation-sheet">
+  <header>
+    <span>ROUND 3 / REVISION</span>
+    <h2>Plus & X</h2>
+    <p>Same stroke lengths · 45° rotation · Regular 1.70</p>
+  </header>
+  <div class="rotation-grid">
+    <h3>Plus</h3>
+    <h3>Plus rotated 45°</h3>
+    <h3>X</h3>
+    {#each ['outline', 'filled'] as style}
+      <article>
+        <Plus size={64} style={style as 'outline' | 'filled'} /><small>{style}</small>
+      </article>
+      <article>
+        <div class="turned"><Plus size={64} style={style as 'outline' | 'filled'} /></div>
+        <small>{style}</small>
+      </article>
+      <article><X size={64} style={style as 'outline' | 'filled'} /><small>{style}</small></article>
+    {/each}
+  </div>
+</section>
+
 <section data-testid="unified-api">
   <button onclick={() => (iconStyle = iconStyle === 'filled' ? 'outline' : 'filled')}
     >Toggle icon style</button
@@ -148,6 +171,58 @@
 </section>
 
 <style>
+  .rotation-sheet {
+    width: 700px;
+    padding: 28px;
+    margin: 32px 0;
+    color: #27272a;
+    background: #fff;
+    border: 1px solid #e4e4e7;
+    border-radius: 16px;
+  }
+  .rotation-sheet header > span {
+    color: #6366f1;
+    letter-spacing: 0.12em;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .rotation-sheet h2 {
+    margin: 8px 0 6px;
+    font-size: 26px;
+    letter-spacing: -0.04em;
+  }
+  .rotation-sheet p {
+    margin: 0 0 22px;
+    color: #92929e;
+    font-size: 12px;
+  }
+  .rotation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .rotation-grid h3 {
+    margin: 0 0 2px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+  }
+  .rotation-grid article {
+    display: grid;
+    justify-items: center;
+    gap: 18px;
+    padding: 20px;
+    border: 1px solid #e4e4e7;
+    border-radius: 10px;
+  }
+  .rotation-grid small {
+    font-size: 10px;
+    color: #92929e;
+  }
+  .rotation-grid .turned {
+    transform: rotate(45deg);
+  }
+
   .round-three {
     width: 850px;
     padding: 28px;

@@ -337,3 +337,85 @@ test('Round 3 exposes six packed Outline/Filled pairs on light and dark surfaces
     }
   }
 });
+
+test('X is the extended Plus rotated exactly 45 degrees in both packed styles', async ({
+  page,
+}, info) => {
+  const result = await page.evaluate(async () => {
+    const size = 960;
+    const paint = async (name: 'plus' | 'x', style: 'outline' | 'filled', angle: number) => {
+      const original = document.querySelector(
+        `[data-testid="${name}-${style}-contour"] svg`,
+      ) as SVGSVGElement;
+      const svg = original.cloneNode(true) as SVGSVGElement;
+      svg.setAttribute('width', String(size));
+      svg.setAttribute('height', String(size));
+      svg.setAttribute('fill', style === 'outline' ? 'none' : '#000');
+      svg.setAttribute('stroke', style === 'outline' ? '#000' : 'none');
+      if (style === 'outline') svg.setAttribute('stroke-width', '1.7');
+      for (const group of svg.querySelectorAll(':scope > g'))
+        group.setAttribute('transform', `rotate(${angle} 12 12)`);
+      const url = URL.createObjectURL(
+        new Blob([new XMLSerializer().serializeToString(svg)], { type: 'image/svg+xml' }),
+      );
+      try {
+        const image = new Image();
+        await new Promise<void>((resolve, reject) => {
+          image.onload = () => resolve();
+          image.onerror = reject;
+          image.src = url;
+        });
+        const canvas = document.createElement('canvas');
+        canvas.width = canvas.height = size;
+        const context = canvas.getContext('2d')!;
+        context.drawImage(image, 0, 0);
+        const pixels = context.getImageData(0, 0, size, size).data;
+        return Uint8Array.from({ length: size * size }, (_, i) =>
+          pixels[i * 4 + 3] >= 128 ? 1 : 0,
+        );
+      } finally {
+        URL.revokeObjectURL(url);
+      }
+    };
+    const lengths = ['plus', 'x'].map((name) =>
+      (
+        document.querySelector(`[data-testid="${name}-outline-contour"] path`) as SVGPathElement
+      ).getTotalLength(),
+    );
+    const poses = [];
+    for (const style of ['outline', 'filled'] as const) {
+      for (const rotation of [0, 30, 75]) {
+        const [plus, x] = await Promise.all([
+          paint('plus', style, rotation + 45),
+          paint('x', style, rotation),
+        ]);
+        let mismatches = 0,
+          distantMismatches = 0;
+        for (let y = 1; y < size - 1; y++)
+          for (let column = 1; column < size - 1; column++) {
+            const index = y * size + column;
+            if (plus[index] === x[index]) continue;
+            mismatches++;
+            const other = plus[index] ? x : plus;
+            let neighbor = false;
+            for (let dy = -1; dy <= 1; dy++)
+              for (let dx = -1; dx <= 1; dx++) if (other[index + dy * size + dx]) neighbor = true;
+            if (!neighbor) distantMismatches++;
+          }
+        poses.push({ style, rotation, mismatches, distantMismatches });
+      }
+    }
+    return { lengths, poses };
+  });
+  for (const length of result.lengths) expect(length).toBeCloseTo(28, 4);
+  for (const pose of result.poses) {
+    expect(pose.distantMismatches, JSON.stringify(pose)).toBe(0);
+    expect(pose.mismatches, JSON.stringify(pose)).toBeLessThan(960 * 960 * 0.002);
+  }
+  if (info.project.name === 'chromium') {
+    await mkdir('.artifacts/previews', { recursive: true });
+    await page
+      .getByTestId('plus-x-rotation-sheet')
+      .screenshot({ path: '.artifacts/previews/plus-x-derived.png' });
+  }
+});
