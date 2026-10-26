@@ -297,3 +297,59 @@ test('all five available filled variants render as solid native components with 
     ).toBe(false);
   }
 });
+
+test('Filled Heart head matches the visible Regular Outline exterior', async ({ page }) => {
+  const result = await page.evaluate(async () => {
+    const size = 960;
+    const scale = size / 24;
+    const paint = async (selector: string, outline: boolean) => {
+      const original = document.querySelector(selector) as SVGSVGElement;
+      const svg = original.cloneNode(true) as SVGSVGElement;
+      svg.setAttribute('width', String(size));
+      svg.setAttribute('height', String(size));
+      // Filling the reference joins its interior and stroke into its exterior silhouette.
+      svg.setAttribute('fill', '#000');
+      svg.setAttribute('stroke', outline ? '#000' : 'none');
+      if (outline) svg.setAttribute('stroke-width', '1.7');
+      const url = URL.createObjectURL(
+        new Blob([new XMLSerializer().serializeToString(svg)], { type: 'image/svg+xml' }),
+      );
+      try {
+        const image = new Image();
+        await new Promise<void>((resolve, reject) => {
+          image.onload = () => resolve();
+          image.onerror = reject;
+          image.src = url;
+        });
+        const canvas = document.createElement('canvas');
+        canvas.width = canvas.height = size;
+        const context = canvas.getContext('2d')!;
+        context.drawImage(image, 0, 0);
+        return context.getImageData(0, 0, size, size).data;
+      } finally {
+        URL.revokeObjectURL(url);
+      }
+    };
+    const [reference, filled] = await Promise.all([
+      paint('[data-testid="heart-outline-contour"] svg', true),
+      paint('[data-testid="heart-filled-contour"] svg', false),
+    ]);
+    const firstInk = (data: Uint8ClampedArray, x: number) => {
+      for (let y = 0; y < Math.floor(8.4 * scale); y++)
+        if (data[(y * size + x) * 4 + 3] >= 128) return y;
+      return -1;
+    };
+    let maximumDifference = 0,
+      missingColumns = 0;
+    for (let x = Math.ceil(2.5 * scale); x < Math.floor(21.5 * scale); x++) {
+      const a = firstInk(reference, x),
+        b = firstInk(filled, x);
+      if (a < 0 || b < 0) missingColumns++;
+      else maximumDifference = Math.max(maximumDifference, Math.abs(a - b));
+    }
+    return { maximumDifference, missingColumns };
+  });
+  expect(result.missingColumns).toBe(0);
+  // One raster pixel at 40x is 0.025 units on the original drawing grid.
+  expect(result.maximumDifference).toBeLessThanOrEqual(1);
+});
