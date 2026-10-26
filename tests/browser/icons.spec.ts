@@ -371,7 +371,7 @@ test('Round 3 exposes six packed Outline/Filled pairs on light and dark surfaces
   }
 });
 
-test('X shares identical Outline and Filled glyphs with 2px margins at unchanged stroke weight', async ({
+test('X shares identical Outline and Filled glyphs inside a box with 2px outer margins', async ({
   page,
 }, info) => {
   const result = await page.evaluate(async () => {
@@ -379,7 +379,7 @@ test('X shares identical Outline and Filled glyphs with 2px margins at unchanged
     const paint = async (name: 'plus' | 'x', style: 'outline' | 'filled', angle: number) => {
       const sourceStyle = name === 'plus' ? 'outline' : style;
       const outline = sourceStyle === 'outline';
-      const armScale = name === 'plus' ? (18.3 * Math.SQRT2) / 14 : 1;
+      const armScale = name === 'plus' ? (14.3 * Math.SQRT2) / 14 : 1;
       const original = document.querySelector(
         `[data-testid="${name}-${sourceStyle}-contour"] svg`,
       ) as SVGSVGElement;
@@ -460,7 +460,7 @@ test('X shares identical Outline and Filled glyphs with 2px margins at unchanged
     };
   });
   expect(result.lengths[0]).toBeCloseTo(28, 4);
-  expect(result.lengths[1]).toBeCloseTo(36.6 * Math.SQRT2, 4);
+  expect(result.lengths[1]).toBeCloseTo(28.6 * Math.SQRT2, 4);
   expect(result.xStroke).toBe('1.7');
   for (const pose of result.poses) {
     expect(pose.distantMismatches, JSON.stringify(pose)).toBe(0);
@@ -521,8 +521,8 @@ for (const icon of ['plus', 'x'])
     // The rotated contour tests independently check the unchanged 1.70 glyph weight.
     for (const padding of result.padding) expect(padding).toBeCloseTo(2, 3);
     if (icon === 'x') {
-      for (const margin of result.outerMargins) expect(margin).toBeCloseTo(0, 5);
-      for (const margin of result.glyphMargins) expect(margin).toBeCloseTo(2, 3);
+      for (const margin of result.outerMargins) expect(margin).toBeCloseTo(2, 5);
+      for (const margin of result.glyphMargins) expect(margin).toBeCloseTo(4, 3);
     }
     expect(result.emptyCenter).toBe(true);
     expect(result.solidBorder).toBe(true);
@@ -530,7 +530,7 @@ for (const icon of ['plus', 'x'])
     expect(result.roundedCorner).toBe(true);
   });
 
-test('X Outline leaves exactly 2px at every native artboard edge without thickening its stroke', async ({
+test('X Outline matches the inner Filled glyph with unchanged stroke and 4px artboard spacing', async ({
   page,
 }) => {
   const result = await page
@@ -553,5 +553,5 @@ test('X Outline leaves exactly 2px at every native artboard edge without thicken
     });
   expect(result.stroke).toBe(1.7);
   expect(result.cap).toBe('round');
-  for (const margin of result.margins) expect(margin).toBeCloseTo(2, 5);
+  for (const margin of result.margins) expect(margin).toBeCloseTo(4, 5);
 });
