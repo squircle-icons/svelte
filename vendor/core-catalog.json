@@ -784,7 +784,20 @@
         "document"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner-requested greater separation and the standard Camera/Folder main-body corner roundness. Both page centerlines use radius 3.25 with unchanged Regular 1.70 stroke and .85 round caps. Nominal rear page centerline bounds are 2.85..15.45; front page centerline bounds are 8.55..21.15 on both axes. The offset is 5.70, producing a 4.00-unit clear straight gap between the exposed parallel borders (previously 2.80). Combined visible bounds are 2..22 on both axes, with balanced 2px artboard margins. The owner requested breaks at both rear/front junctions. The rear path now starts at 5.85 15.44037035 and ends at 15.44037035 5.85, trimmed along the existing corner arcs so each radius-.85 end cap stops exactly 1 unit before the visible foreground border. These two endpoint clearances are separate from the 4-unit parallel-border gap. The front page stays unchanged. Filled uses the exact Outline exterior: outer corner radius 4.10, rear-band inner radius 2.40 and .85 end caps. Its front page is solid, with no added enclosing box or artificial hole. Position and visible exterior match between styles at native X/Y=100%, rotation=0 and Regular 1.70. Round 3 draft awaiting owner review."
+      "construction": "Owner-requested greater separation and the standard Camera/Folder main-body corner roundness. Both page centerlines use radius 3.25 with unchanged Regular 1.70 stroke and .85 round caps. Nominal rear page centerline bounds are 2.85..15.45; front page centerline bounds are 8.55..21.15 on both axes. The offset is 5.70, producing a 4.00-unit clear straight gap between the exposed parallel borders (previously 2.80). Combined visible bounds are 2..22 on both axes, with balanced 2px artboard margins. The owner requested breaks at both rear/front junctions. The rear path now starts at 5.85 15.44037035 and ends at 15.44037035 5.85, trimmed along the existing corner arcs so each radius-.85 end cap stops exactly 1 unit before the visible foreground border. These two endpoint clearances are separate from the 4-unit parallel-border gap. The front page stays unchanged. Filled uses the exact Outline exterior: outer corner radius 4.10, rear-band inner radius 2.40 and .85 end caps. Its front page is solid, with no added enclosing box or artificial hole. Position and visible exterior match between styles at native X/Y=100%, rotation=0 and Regular 1.70. Both styles were owner-approved on 2026-10-27.",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-27",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7,
+          "rotation": 0
+        },
+        "note": "Owner approved both Outline and Filled Copy with standard Camera/Folder roundness, 4px exposed page spacing, 1px breaks at both rear junctions and 2px outer margins."
+      }
     },
     "root": {
       "tag": "svg",
@@ -845,7 +858,20 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner-requested greater separation and the standard Camera/Folder main-body corner roundness. Both page centerlines use radius 3.25 with unchanged Regular 1.70 stroke and .85 round caps. Nominal rear page centerline bounds are 2.85..15.45; front page centerline bounds are 8.55..21.15 on both axes. The offset is 5.70, producing a 4.00-unit clear straight gap between the exposed parallel borders (previously 2.80). Combined visible bounds are 2..22 on both axes, with balanced 2px artboard margins. The owner requested breaks at both rear/front junctions. The rear path now starts at 5.85 15.44037035 and ends at 15.44037035 5.85, trimmed along the existing corner arcs so each radius-.85 end cap stops exactly 1 unit before the visible foreground border. These two endpoint clearances are separate from the 4-unit parallel-border gap. The front page stays unchanged. Filled uses the exact Outline exterior: outer corner radius 4.10, rear-band inner radius 2.40 and .85 end caps. Its front page is solid, with no added enclosing box or artificial hole. Position and visible exterior match between styles at native X/Y=100%, rotation=0 and Regular 1.70. Round 3 draft awaiting owner review."
+        "construction": "Owner-requested greater separation and the standard Camera/Folder main-body corner roundness. Both page centerlines use radius 3.25 with unchanged Regular 1.70 stroke and .85 round caps. Nominal rear page centerline bounds are 2.85..15.45; front page centerline bounds are 8.55..21.15 on both axes. The offset is 5.70, producing a 4.00-unit clear straight gap between the exposed parallel borders (previously 2.80). Combined visible bounds are 2..22 on both axes, with balanced 2px artboard margins. The owner requested breaks at both rear/front junctions. The rear path now starts at 5.85 15.44037035 and ends at 15.44037035 5.85, trimmed along the existing corner arcs so each radius-.85 end cap stops exactly 1 unit before the visible foreground border. These two endpoint clearances are separate from the 4-unit parallel-border gap. The front page stays unchanged. Filled uses the exact Outline exterior: outer corner radius 4.10, rear-band inner radius 2.40 and .85 end caps. Its front page is solid, with no added enclosing box or artificial hole. Position and visible exterior match between styles at native X/Y=100%, rotation=0 and Regular 1.70. Both styles were owner-approved on 2026-10-27.",
+        "review": {
+          "status": "approved",
+          "reviewedBy": "palamto",
+          "date": "2026-10-27",
+          "style": "filled",
+          "preview": {
+            "x": 100,
+            "y": 100,
+            "strokeWidth": 1.7,
+            "rotation": 0
+          },
+          "note": "Owner approved both Outline and Filled Copy with standard Camera/Folder roundness, 4px exposed page spacing, 1px breaks at both rear junctions and 2px outer margins."
+        }
       },
       "root": {
         "tag": "svg",
@@ -1651,9 +1677,9 @@
         "magnify"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner-requested boxed Filled Search replaces the earlier Outline-only direction. It follows the accepted Plus/X shared-glyph construction: both magnifiers have visible bounds 4..20, identical position and Regular-equivalent 1.70 stroke with .85 round caps. The lens center is 10.35632184,10.35632184 with centerline radius 5.50632184; the handle starts on the lens circle at 45 degrees and ends at 19.15,19.15. Centerline geometry is resized about 12,12 while stroke weight stays fixed. The upright Filled box spans 2..22 with radius-4 corners, leaving 2px outside the box and 2px to the shared glyph. Its evenodd compound path contains the box, the exact union of the lens exterior and rounded handle, then the inner lens circle. This makes the magnifier stroke negative space while preserving the solid center inside the lens. No overlapping cutouts or doubled seams. Native X/Y=100%, rotation=0. The revised Outline and new Filled await owner review.",
+      "construction": "Owner-requested boxed Filled Search replaces the earlier Outline-only direction. It follows the accepted Plus/X shared-glyph construction: both magnifiers have visible bounds 4..20, identical position and Regular-equivalent 1.70 stroke with .85 round caps. The lens center is 10.35632184,10.35632184 with centerline radius 5.50632184; the handle starts on the lens circle at 45 degrees and ends at 19.15,19.15. Centerline geometry is resized about 12,12 while stroke weight stays fixed. The upright Filled box spans 2..22 with radius-4 corners, leaving 2px outside the box and 2px to the shared glyph. Its evenodd compound path contains the box, the exact union of the lens exterior and rounded handle, then the inner lens circle. This makes the magnifier stroke negative space while preserving the solid center inside the lens. No overlapping cutouts or doubled seams. Native X/Y=100%, rotation=0. Both revised styles were owner-approved on 2026-10-27.",
       "review": {
-        "status": "draft",
+        "status": "approved",
         "reviewedBy": "palamto",
         "date": "2026-10-27",
         "style": "outline",
@@ -1663,7 +1689,7 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner requested a boxed Filled Search aligned to Outline like Plus/X. The previous approval covers the earlier Outline geometry; this revised pair awaits visual review."
+        "note": "Owner approved both revised Outline and boxed Filled Search, including the shared bounds 4..20, radius-4 box at 2..22, 2px clearances and unchanged Regular 1.70 weight."
       },
       "filledTreatment": "boxed-cutout"
     },
@@ -1728,10 +1754,10 @@
           "boxed"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner-requested boxed Filled Search replaces the earlier Outline-only direction. It follows the accepted Plus/X shared-glyph construction: both magnifiers have visible bounds 4..20, identical position and Regular-equivalent 1.70 stroke with .85 round caps. The lens center is 10.35632184,10.35632184 with centerline radius 5.50632184; the handle starts on the lens circle at 45 degrees and ends at 19.15,19.15. Centerline geometry is resized about 12,12 while stroke weight stays fixed. The upright Filled box spans 2..22 with radius-4 corners, leaving 2px outside the box and 2px to the shared glyph. Its evenodd compound path contains the box, the exact union of the lens exterior and rounded handle, then the inner lens circle. This makes the magnifier stroke negative space while preserving the solid center inside the lens. No overlapping cutouts or doubled seams. Native X/Y=100%, rotation=0. The revised Outline and new Filled await owner review.",
+        "construction": "Owner-requested boxed Filled Search replaces the earlier Outline-only direction. It follows the accepted Plus/X shared-glyph construction: both magnifiers have visible bounds 4..20, identical position and Regular-equivalent 1.70 stroke with .85 round caps. The lens center is 10.35632184,10.35632184 with centerline radius 5.50632184; the handle starts on the lens circle at 45 degrees and ends at 19.15,19.15. Centerline geometry is resized about 12,12 while stroke weight stays fixed. The upright Filled box spans 2..22 with radius-4 corners, leaving 2px outside the box and 2px to the shared glyph. Its evenodd compound path contains the box, the exact union of the lens exterior and rounded handle, then the inner lens circle. This makes the magnifier stroke negative space while preserving the solid center inside the lens. No overlapping cutouts or doubled seams. Native X/Y=100%, rotation=0. Both revised styles were owner-approved on 2026-10-27.",
         "filledTreatment": "boxed-cutout",
         "review": {
-          "status": "draft",
+          "status": "approved",
           "reviewedBy": "palamto",
           "date": "2026-10-27",
           "style": "filled",
@@ -1741,7 +1767,7 @@
             "strokeWidth": 1.7,
             "rotation": 0
           },
-          "note": "Owner requested a boxed Filled Search aligned to Outline like Plus/X. The previous approval covers the earlier Outline geometry; this revised pair awaits visual review."
+          "note": "Owner approved both revised Outline and boxed Filled Search, including the shared bounds 4..20, radius-4 box at 2..22, 2px clearances and unchanged Regular 1.70 weight."
         }
       },
       "root": {
