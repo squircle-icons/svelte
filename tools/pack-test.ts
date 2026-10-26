@@ -46,6 +46,12 @@ const installed = await realpath(resolve(fixture, 'node_modules/squircle-icons-s
 assert(!installed.startsWith(root), 'Fixture resolved a workspace link instead of the tarball');
 const installedPackage = JSON.parse(await readFile(resolve(installed, 'package.json'), 'utf8'));
 assert.equal(installedPackage.license, 'MIT', 'Packed manifest must declare MIT');
+assert(!installedPackage.exports['./filled/search'], 'Search must not expose a Filled entry point');
+await assert.rejects(readFile(resolve(installed, 'dist/filled/Search.svelte')), { code: 'ENOENT' });
+assert(
+  !(await readFile(resolve(installed, 'dist/filled/index.js'), 'utf8')).includes('Search.svelte'),
+  'Filled barrel retained removed Search',
+);
 const installedLicense = await readFile(resolve(installed, 'LICENSE'), 'utf8');
 assert(installedLicense.includes('Copyright (c) 2026 palamto'), 'Packed copyright notice missing');
 assert(installedLicense.includes('Permission is hereby granted'), 'Packed MIT terms missing');
@@ -62,9 +68,7 @@ assert(
   'Filled component import or SSR cutout missing',
 );
 assert(
-  html.includes('Filled camera review') &&
-    html.includes('Filled search review') &&
-    html.includes('Filled settings review'),
+  html.includes('Filled camera review') && html.includes('Filled settings review'),
   'New filled exports or declarations did not survive packing',
 );
 assert(

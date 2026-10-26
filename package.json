@@ -77,11 +77,6 @@
       "svelte": "./dist/Search.svelte",
       "default": "./dist/Search.svelte"
     },
-    "./filled/search": {
-      "types": "./dist/filled/Search.svelte.d.ts",
-      "svelte": "./dist/filled/Search.svelte",
-      "default": "./dist/filled/Search.svelte"
-    },
     "./settings": {
       "types": "./dist/Settings.svelte.d.ts",
       "svelte": "./dist/Settings.svelte",

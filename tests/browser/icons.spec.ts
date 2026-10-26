@@ -271,18 +271,17 @@ test('captures static artwork and reproducible motion poses', async ({ page }, i
   }
 });
 
-test('all six filled variants render as solid native components with deliberate counters', async ({
+test('all five available filled variants render as solid native components with deliberate counters', async ({
   page,
 }) => {
   const sheet = page.getByTestId('filled-contact-sheet');
-  await expect(sheet.locator('svg')).toHaveCount(24);
+  await expect(sheet.locator('svg')).toHaveCount(20);
   for (const svg of await sheet.locator('svg').all()) {
     await expect(svg).toHaveAttribute('stroke', 'none');
     await expect(svg).toHaveAttribute('fill-rule', 'evenodd');
   }
   for (const [id, x, y] of [
     ['filled-camera', 12, 13.2],
-    ['filled-search', 10, 10],
     ['filled-settings', 12, 12],
   ] as const) {
     expect(

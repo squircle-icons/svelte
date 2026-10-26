@@ -22,11 +22,23 @@
       "description": "A compact camera with a continuous curved body and circular lens.",
       "tags": ["photo", "image"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Rounded rectangular body uses the Folder corner rhythm. The left and right shoulders have explicit 3-unit horizontal ledges at y=6.8 (x=5..8 and x=16..19), with a narrower raised housing to keep both straight spans visible. The indicator is a zero-length segment centered at 17.9,9.5 with round caps, forming a solid circular dot whose diameter follows the stroke. This avoids the hollow-ring rendering of a tiny stroked circle under non-scaling preview strokes at high zoom. The circular lens is centered at 12,13.2. Source bounds x=3..21 and y=4.1..19.9 balance opposite margins. Review study; not owner-approved.",
+      "construction": "Rounded rectangular body uses the Folder corner rhythm. The left and right shoulders have explicit 3-unit horizontal ledges at y=6.8 (x=5..8 and x=16..19), with a narrower raised housing to keep both straight spans visible. The indicator is a zero-length segment centered at 17.9,9.5 with round caps, forming a solid circular dot whose diameter follows the stroke. This avoids the hollow-ring rendering of a tiny stroked circle under non-scaling preview strokes at high zoom. The circular lens is centered at 12,13.2. Source bounds x=3..21 and y=4.1..19.9 balance opposite margins. Owner-approved source.",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-26",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7
+        },
+        "note": "Owner approved Camera Outline and Filled at source proportions."
+      },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "draft"
+      "reviewStatus": "approved"
     },
     {
       "name": "folder",
@@ -56,7 +68,7 @@
       "description": "A balanced heart with full lobes and a softened lower point.",
       "tags": ["love", "favorite"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Broad, gently squared lobe shoulders and short upright sections carry the rounded rectangle grammar without losing the heart notch and soft point. Bounds x=3.25..20.75, y=4.1..19.9 are centered. Review study; not owner-approved.",
+      "construction": "Broad, gently squared lobe shoulders and short upright sections carry the rounded rectangle grammar without losing the heart notch and soft point. Bounds x=3.25..20.75, y=4.1..19.9 are centered. Review study; not owner-approved. The upper lobes now curl inward more deeply toward the center notch at y=7; outer bounds and lower point remain unchanged.",
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
@@ -67,11 +79,23 @@
       "description": "A clear circular search lens with a short angled handle.",
       "tags": ["find", "magnify"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The circular lens is an intentional silhouette exception. A single 45-degree handle meets the circle at its centerline, with a rounded free end. Combined centerline bounds x/y=3.3..20.7 balance the grid. Review study; not owner-approved.",
-      "styles": ["outline", "filled"],
+      "construction": "The circular lens is an intentional silhouette exception. A single 45-degree handle meets the circle at its centerline, with a rounded free end. Combined centerline bounds x/y=3.3..20.7 balance the grid. Owner-approved source. Outline-only icon by owner direction; no Filled variant.",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-26",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7
+        },
+        "note": "Owner approved Search Outline; Filled is intentionally omitted by owner direction."
+      },
+      "styles": ["outline"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "draft"
+      "reviewStatus": "approved"
     },
     {
       "name": "settings",

@@ -4,5 +4,4 @@ export { default as Bell } from './Bell.svelte';
 export { default as Camera } from './Camera.svelte';
 export { default as Folder } from './Folder.svelte';
 export { default as Heart } from './Heart.svelte';
-export { default as Search } from './Search.svelte';
 export { default as Settings } from './Settings.svelte';
