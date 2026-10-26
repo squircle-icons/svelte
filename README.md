@@ -14,20 +14,19 @@ The current npm alpha is `0.1.0-alpha.1`. The expanded compatibility below is a 
 
 ### Recommended
 
-- The latest stable Svelte 5 release.
-- Node.js 24 LTS with its latest available patch.
-- The npm version bundled with that Node.js release, or a pnpm version compatible with it. No separate npm upgrade is required to use the icons.
+- Svelte 5.57.3.
+- Node.js 24.22.1 LTS.
+- npm 11.19.1, bundled with Node.js 24.22.1. A compatible pnpm version is an alternative.
 
 Use the [official Node.js LTS download](https://nodejs.org/en/download). The recommendation follows maintained LTS releases; it does not require the newest Current release.
 
 ### Tested older versions
 
-These exact combinations passed the packed-package compatibility check. The first row is the minimum supported setup:
+This is the minimum supported combination verified by the packed-package compatibility check:
 
 | Svelte | Node.js | Bundled npm |
 | ------ | ------- | ----------- |
 | 5.0.0  | 20.19.0 | 10.8.2      |
-| 5.57.2 | 22.12.0 | 10.9.0      |
 
 The check covers installation, client/server compilation of every component export, public TypeScript declarations, SSR, Chromium hydration, style switching, numeric/preset widths, Filled geometry and accessibility. The table records tested combinations; it does not claim that every version combination or application build tool has been tested.
 
@@ -88,7 +87,7 @@ Generated components in `src/lib/` must be changed through `tools/generate.ts`. 
 
 `pnpm test:compat` installs the packed artifact with Svelte 5.0.0 in a separate consumer. It compiles every component export for client/server, checks the public declarations with TypeScript 5.6, and tests SSR, browser hydration, style switching, numeric/preset widths, Filled geometry and accessibility. `SVELTE_COMPAT_VERSION` selects another exact Svelte version; `COMPAT_NODE` selects the Node executable used for compilation, SSR and type checking, plus its bundled npm when available. The test runner and package build still use the development Node version.
 
-The compatibility CI matrix repeats the two older-version combinations listed above. The full development suite checks Svelte 5.57.2 on Node 24.19.0 in Chromium, Firefox and WebKit.
+The compatibility CI matrix checks the minimum setup above and an additional Svelte 5.57.2 / Node 22.12.0 consumer. The full development suite checks Svelte 5.57.2 on Node 24.19.0 in Chromium, Firefox and WebKit.
 
 ## Update core and homepage
 
