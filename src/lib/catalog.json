@@ -103,11 +103,24 @@
       "description": "A balanced crescent moon with a clean circular concavity.",
       "tags": ["night", "dark", "weather"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The crescent preserves the recognizable lunar silhouette as an intentional circular exception to the rounded rectangular object baseline. A radius-8 outer arc and a radius-10 concave inner arc share the original horn endpoints. At the owner request for a deeper inward curve, the concavity is deepened by approximately .75 unit at its midpoint compared with the previous radius-12 revision. The body stays fuller than the initial radius-8 and radius-9 studies. The outer contour, both horn endpoints and Regular 1.70 stroke weight are retained. One closed path avoids doubled edges. Native centerline bounds remain x/y=4.35424869..19.64575131; Regular 1.70 gives equal opposite visible margins of 3.50424869. Rounded stroke joins soften both horns. Static draft awaiting owner review.",
+      "construction": "The crescent preserves the recognizable lunar silhouette as an intentional circular exception to the rounded rectangular object baseline. A radius-8 outer arc and a radius-10 concave inner arc share the original horn endpoints. At the owner request for a deeper inward curve, the concavity is deepened by approximately .75 unit at its midpoint compared with the previous radius-12 revision. The body stays fuller than the initial radius-8 and radius-9 studies. The outer contour, both horn endpoints and Regular 1.70 stroke weight are retained. One closed path avoids doubled edges. Native centerline bounds remain x/y=4.35424869..19.64575131; Regular 1.70 gives equal opposite visible margins of 3.50424869. Rounded stroke joins soften both horns. Owner-approved source.",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-27",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7,
+          "rotation": 0
+        },
+        "note": "Owner approved Moon Outline and Filled after the fuller crescent and deeper inner-arc revisions. Final geometry uses a radius-8 outer arc and radius-10 inner concavity, at native proportions and Regular 1.70."
+      },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "draft"
+      "reviewStatus": "approved"
     },
     {
       "name": "search",
