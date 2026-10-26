@@ -21,3 +21,13 @@ it('keeps runtime input framework independent and import-time DOM free', async (
   expect(source).not.toMatch(/from ['"](?:svelte|react|vue|@angular)/);
   expect(typeof window).toBe('undefined');
 });
+
+it('consumes validated fill-only Folder geometry with a deliberate cutout', () => {
+  const filled = icons.find((icon) => icon.name === 'folder')?.filled;
+  expect(filled?.root.attrs).toMatchObject({
+    fill: 'currentColor',
+    stroke: 'none',
+    'fill-rule': 'evenodd',
+  });
+  expect(filled?.parts).toEqual(['body']);
+});

@@ -8,6 +8,7 @@ await mkdir(resolve(root, '.artifacts/bundle'), { recursive: true });
 const reports = [];
 for (const [name, statement] of [
   ['individual', "import Camera from 'squircle-icons-svelte/camera';"],
+  ['filled', "import Camera from 'squircle-icons-svelte/filled/folder';"],
   ['barrel', "import { Camera } from 'squircle-icons-svelte';"],
   ['animated', "import Camera from 'squircle-icons-svelte/animated/bell';"],
 ] as const) {
@@ -34,7 +35,8 @@ for (const [name, statement] of [
   const iconModules = modules.filter((id) => /dist\/.*\.svelte$/.test(id));
   if (name !== 'animated') {
     assert(
-      iconModules.length === 1 && iconModules[0].endsWith('/Camera.svelte'),
+      iconModules.length === 1 &&
+        iconModules[0].endsWith(name === 'filled' ? '/filled/Folder.svelte' : '/Camera.svelte'),
       'Unused icon code was retained',
     );
     assert(

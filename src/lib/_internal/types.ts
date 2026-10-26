@@ -18,4 +18,5 @@ export type IconProps = {
   label?: string;
   class?: string;
 };
+export type FilledIconProps = Omit<IconProps, 'strokeWidth'>;
 export type AnimatedProps = IconProps & { hover?: boolean; reducedMotion?: 'system' | 'always' };

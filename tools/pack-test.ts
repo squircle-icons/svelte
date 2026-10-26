@@ -58,6 +58,10 @@ run(['exec', 'svelte-check', '--tsconfig', './tsconfig.json'], fixture);
 run(['exec', 'vite', 'build'], fixture);
 const html = await readFile(resolve(fixture, 'build/index.html'), 'utf8');
 assert(
+  html.includes('Filled folder') && html.includes('fill-rule="evenodd"'),
+  'Filled component import or SSR cutout missing',
+);
+assert(
   html.includes('Already open') && html.includes('scaleY(0.72)'),
   'Initial open pose was not server-rendered',
 );

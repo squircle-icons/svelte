@@ -42,6 +42,11 @@
       "svelte": "./dist/Folder.svelte",
       "default": "./dist/Folder.svelte"
     },
+    "./filled/folder": {
+      "types": "./dist/filled/Folder.svelte.d.ts",
+      "svelte": "./dist/filled/Folder.svelte",
+      "default": "./dist/filled/Folder.svelte"
+    },
     "./animated/folder": {
       "types": "./dist/animated/Folder.svelte.d.ts",
       "svelte": "./dist/animated/Folder.svelte",
@@ -61,6 +66,11 @@
       "types": "./dist/Settings.svelte.d.ts",
       "svelte": "./dist/Settings.svelte",
       "default": "./dist/Settings.svelte"
+    },
+    "./filled": {
+      "types": "./dist/filled/index.d.ts",
+      "svelte": "./dist/filled/index.js",
+      "default": "./dist/filled/index.js"
     },
     "./catalog.json": "./dist/catalog.json"
   },

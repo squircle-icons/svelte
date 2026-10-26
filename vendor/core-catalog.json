@@ -325,6 +325,49 @@
           }
         }
       }
+    },
+    "filled": {
+      "metadata": {
+        "name": "folder",
+        "description": "A solid horizontal folder with a straight negative-space panel divider.",
+        "tags": [
+          "files",
+          "directory",
+          "filled"
+        ],
+        "authorship": "Original filled geometry constructed for Squircle Icons; no third-party icon paths used.",
+        "construction": "A fill-only companion to Outline Folder. The outer bounds x=2.125..21.875 and y=4.125..19.875 match the visible Outline bounds at its default 1.75 stroke. One evenodd compound path cuts a straight 1.75-unit divider slot into the solid silhouette. Rounded outer corners preserve the real folder tab; no stroke is layered over the fill."
+      },
+      "root": {
+        "tag": "svg",
+        "attrs": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "fill": "currentColor",
+          "fill-rule": "evenodd",
+          "stroke": "none",
+          "viewBox": "0 0 24 24"
+        },
+        "children": [
+          {
+            "tag": "g",
+            "attrs": {
+              "data-part": "body"
+            },
+            "children": [
+              {
+                "tag": "path",
+                "attrs": {
+                  "d": "M 5.5 4.125 H 8.2 C 9.2 4.125 9.9 4.6 10.6 5.3 L 11.6 6.625 H 18.5 C 20.8 6.625 21.875 7.8 21.875 10 V 16.5 C 21.875 18.8 20.8 19.875 18.5 19.875 H 5.5 C 3.2 19.875 2.125 18.8 2.125 16.5 V 7.5 C 2.125 5.2 3.2 4.125 5.5 4.125 Z M 4.75 10.125 H 19.25 V 11.875 H 4.75 Z"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "parts": [
+        "body"
+      ]
     }
   },
   {

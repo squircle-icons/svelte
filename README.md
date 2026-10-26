@@ -42,3 +42,9 @@ The source core checkout must be committed and clean. The sync command builds/pa
 To update the homepage, commit this repository, then run `pnpm sync:svelte ../svelte` from the homepage checkout. Its users install the built package artifact, not this repository's source files.
 
 The package name `squircle-icons-svelte` is provisional and **not published to npm**. `private: true` and the publication guard remain enabled. Original artwork and code are licensed under [MIT](LICENSE). See [migration provenance](MIGRATION.md).
+
+## Filled style
+
+Folder is the first original filled review candidate, imported with `import Folder from 'squircle-icons-svelte/filled/folder'` (or the `squircle-icons-svelte/filled` barrel). It accepts `size`, `color`, `label`, and `class`; filled geometry has no configurable stroke. `FilledIconProps` is exported from the filled barrel. Its negative-space divider is authored in core and preserved through SVG validation/optimization and packaging. Other filled icons are not implemented yet.
+
+Motion development is paused while the static family is reviewed. Existing animated exports are retained; no new animation behavior is added.

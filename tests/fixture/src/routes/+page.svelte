@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import Camera from 'squircle-icons-svelte/camera';
+  import FilledFolder from 'squircle-icons-svelte/filled/folder';
   import Folder from 'squircle-icons-svelte/animated/folder';
   import Bell from 'squircle-icons-svelte/animated/bell';
   import {
@@ -82,6 +83,8 @@
       {#each [16, 20, 24, 48] as n}<Icon size={n} />{/each}
     </div>{/each}
 </div>
+
+<div data-testid="filled-folder"><FilledFolder size={24} label="Filled folder" /></div>
 
 <style>
   :global(body) {
