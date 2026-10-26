@@ -86,8 +86,19 @@ test('SSR and hydration preserve initial state, naming, and multiple instances',
 });
 
 test('folder opens, closes, and resets to its controlled state', async ({ page }) => {
-  await page.getByRole('button', { name: 'Toggle folder' }).click();
-  await expect.poll(() => countAnimations(page)).toBeGreaterThan(0);
+  // Observe the short transition within the same browser turn; remote WebKit
+  // can complete it before a separate polling command reaches the page.
+  const started = await page
+    .getByRole('button', { name: 'Toggle folder' })
+    .evaluate(async (button) => {
+      button.click();
+      await Promise.resolve();
+      const animations = document.getAnimations();
+      for (const animation of animations) animation.pause();
+      return animations.length;
+    });
+  expect(started).toBe(1);
+  await page.evaluate(() => document.getAnimations().forEach((animation) => animation.play()));
   await expect.poll(() => countAnimations(page)).toBe(0);
   expect(await transform(folder(page))).toContain('0.72');
   await page.getByRole('button', { name: 'Toggle folder' }).click();
