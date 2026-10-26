@@ -538,7 +538,7 @@
         "favorite"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Broad, gently squared lobe shoulders and short upright sections carry the rounded rectangle grammar without losing the heart notch and soft point. Bounds x=3.25..20.75, y=4.1..19.9 are centered. Review study; not owner-approved. The upper lobes now curl inward more deeply toward the center notch at y=7; outer bounds and lower point remain unchanged."
+      "construction": "The lower flanks bow outward in continuous convex Bezier curves before meeting a softened point, replacing the straight diagonal taper. Left and right curves are mirrored and tangent-aligned at the lower joins. Upper lobes retain the current rounded construction. Outline bounds x=3.25..20.75, y=4.1..19.9 remain centered. Review study; not owner-approved."
     },
     "root": {
       "tag": "svg",
@@ -561,7 +561,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M12 7 C10.9 4.9 9.7 4.1 7.6 4.1 C4.8 4.1 3.25 5.65 3.25 8.4 C3.25 10.8 4.4 12.6 6.25 14.45 L10.65 18.85 C11.15 19.35 11.5 19.9 12 19.9 C12.5 19.9 12.85 19.35 13.35 18.85 L17.75 14.45 C19.6 12.6 20.75 10.8 20.75 8.4 C20.75 5.65 19.2 4.1 16.4 4.1 C14.3 4.1 13.1 4.9 12 7 Z"
+                "d": "M12 7 C10.9 4.9 9.7 4.1 7.6 4.1 C4.8 4.1 3.25 5.65 3.25 8.4 C3.25 12.7 6.35 16.7 10.9 19.45 C11.355 19.725 11.65 19.9 12 19.9 C12.35 19.9 12.645 19.725 13.1 19.45 C17.65 16.7 20.75 12.7 20.75 8.4 C20.75 5.65 19.2 4.1 16.4 4.1 C14.3 4.1 13.1 4.9 12 7 Z"
               },
               "children": []
             }
@@ -582,7 +582,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Filled lobes and point are separately expanded to match Outline apparent size. No artificial counters or interior strokes. Bounds x=2.4..21.6, y=3.25..20.75 are centered. Separately authored fill-only study; counters are fixed geometry. Not owner-approved. The upper lobes curl inward toward a deeper y=5.8 notch, paired with the Outline revision; outer bounds and lower point remain unchanged."
+        "construction": "Separately authored solid Heart pairs fuller, outward-bowed lower flanks with a softened tip. Mirrored convex Bezier curves replace the straight diagonal taper and preserve the same apparent-size relationship to Outline. Filled bounds x=2.4..21.6, y=3.25..20.75 remain centered. No interior counters or strokes. Not owner-approved."
       },
       "root": {
         "tag": "svg",
@@ -603,7 +603,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M12 5.8 C10.95 4.1 9.55 3.25 7.6 3.25 C4.25 3.25 2.4 5.1 2.4 8.4 C2.4 11.15 3.7 13.2 5.65 15.05 L10.05 19.45 C10.7 20.1 11.2 20.75 12 20.75 C12.8 20.75 13.3 20.1 13.95 19.45 L18.35 15.05 C20.3 13.2 21.6 11.15 21.6 8.4 C21.6 5.1 19.75 3.25 16.4 3.25 C14.45 3.25 13.05 4.1 12 5.8 Z"
+                  "d": "M12 5.8 C10.95 4.1 9.55 3.25 7.6 3.25 C4.25 3.25 2.4 5.1 2.4 8.4 C2.4 13.15 5.9 17.6 10.45 20.3 C10.905 20.57 11.55 20.75 12 20.75 C12.45 20.75 13.095 20.57 13.55 20.3 C18.1 17.6 21.6 13.15 21.6 8.4 C21.6 5.1 19.75 3.25 16.4 3.25 C14.45 3.25 13.05 4.1 12 5.8 Z"
                 },
                 "children": []
               }
