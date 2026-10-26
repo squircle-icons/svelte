@@ -12,11 +12,21 @@ npm install @squircle-icons/svelte@alpha
 
 The current npm alpha is `0.1.0-alpha.1`. The expanded compatibility below is a development change for the next release; it does not change the requirements of an already-published package.
 
-Requirements for this source:
+Recommended setup for new applications:
+
+- The latest stable Svelte 5 release.
+- Node.js 24 LTS with its latest available patch. Node.js 22 LTS with its latest patch is also supported.
+- The npm version bundled with that Node.js release, or a pnpm version compatible with it. No separate npm upgrade is required to use the icons.
+
+Use the [official Node.js LTS download](https://nodejs.org/en/download). The recommendation follows maintained LTS releases; it does not require the newest Current release.
+
+Compatibility requirements for this source:
 
 - Svelte `>=5.0.0 <6`. Svelte 4 is not supported.
-- Node.js 18 or later, subject to your application's build-tool requirements. Use a currently supported Node.js release for new projects.
+- Node.js 18 or later, subject to your application's build-tool requirements. Node.js 18 and 20 are end-of-life and are tested only for existing projects; use the maintained LTS versions above for new applications.
 - npm or pnpm to install the package. Consumers do not need pnpm specifically.
+
+Node.js 18.0.0 with its bundled npm 8.6.0 passed the compatibility check. These are tested older versions, not the recommended installation and not a separate npm minimum-version promise.
 
 The package ships JavaScript inside its native `.svelte` components and separate TypeScript declarations. Consumers do not need a TypeScript preprocessor for the icons. Building this repository itself uses the newer development tools listed below.
 
