@@ -5,15 +5,18 @@ import { execFileSync } from 'node:child_process';
 import assert from 'node:assert/strict';
 import { root } from './paths.js';
 const artifacts = resolve(root, '.artifacts');
+const rootPackage = JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8'));
 await mkdir(artifacts, { recursive: true });
 const run = (args: string[], cwd = root) =>
   execFileSync('pnpm', args, { cwd, stdio: 'inherit', env: { ...process.env, CI: 'true' } });
 run(['build']);
 run(['pack', '--pack-destination', artifacts]);
-const tarball = resolve(artifacts, 'squircle-icons-svelte-0.0.0.tgz');
+const tarball = resolve(
+  artifacts,
+  `${rootPackage.name.replace(/^@/, '').replace('/', '-')}-${rootPackage.version}.tgz`,
+);
 const fixture = await mkdtemp(resolve(tmpdir(), 'squircle-consumer-'));
 await cp(resolve(root, 'tests/fixture'), fixture, { recursive: true });
-const rootPackage = JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8'));
 const devDependencies = Object.fromEntries(
   [
     'svelte',
@@ -34,7 +37,7 @@ await writeFile(
       private: true,
       type: 'module',
       packageManager: rootPackage.packageManager,
-      dependencies: { 'squircle-icons-svelte': `file:${tarball}` },
+      dependencies: { '@squircle-icons/svelte': `file:${tarball}` },
       devDependencies,
     },
     null,
@@ -42,9 +45,14 @@ await writeFile(
   ),
 );
 run(['install', '--ignore-workspace', '--ignore-scripts'], fixture);
-const installed = await realpath(resolve(fixture, 'node_modules/squircle-icons-svelte'));
+const installed = await realpath(resolve(fixture, 'node_modules/@squircle-icons/svelte'));
 assert(!installed.startsWith(root), 'Fixture resolved a workspace link instead of the tarball');
 const installedPackage = JSON.parse(await readFile(resolve(installed, 'package.json'), 'utf8'));
+assert.equal(installedPackage.name, '@squircle-icons/svelte');
+assert.equal(installedPackage.version, rootPackage.version);
+assert(!installedPackage.private, 'Release package must permit publication');
+assert.equal(installedPackage.publishConfig.access, 'public');
+assert.equal(installedPackage.publishConfig.tag, 'alpha');
 assert.equal(installedPackage.license, 'MIT', 'Packed manifest must declare MIT');
 assert(!installedPackage.exports['./filled/search'], 'Search must not expose a Filled entry point');
 await assert.rejects(readFile(resolve(installed, 'dist/filled/Search.svelte')), { code: 'ENOENT' });

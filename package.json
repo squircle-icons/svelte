@@ -1,7 +1,6 @@
 {
-  "name": "squircle-icons-svelte",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@squircle-icons/svelte",
+  "version": "0.1.0-alpha.0",
   "type": "module",
   "license": "MIT",
   "sideEffects": false,
@@ -111,7 +110,7 @@
     "dependency:check": "node tools/dependency-check.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepublishOnly": "node -e \"throw new Error('Publication is disabled pending package naming and release review')\""
+    "prepublishOnly": "pnpm dependency:check && pnpm generate:check && pnpm check"
   },
   "packageManager": "pnpm@10.10.0",
   "engines": {
@@ -143,5 +142,10 @@
   "homepage": "https://github.com/squircle-icons/svelte#readme",
   "bugs": {
     "url": "https://github.com/squircle-icons/svelte/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "alpha",
+    "registry": "https://registry.npmjs.org/"
   }
 }

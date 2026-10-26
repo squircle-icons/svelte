@@ -1,23 +1,23 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import Camera from 'squircle-icons-svelte/camera';
-  import FilledFolder from 'squircle-icons-svelte/filled/folder';
+  import Camera from '@squircle-icons/svelte/camera';
+  import FilledFolder from '@squircle-icons/svelte/filled/folder';
   import {
     Camera as FilledCamera,
     Bell as FilledBell,
     Heart as FilledHeart,
     Settings as FilledSettings,
-  } from 'squircle-icons-svelte/filled';
-  import Folder from 'squircle-icons-svelte/animated/folder';
-  import Bell from 'squircle-icons-svelte/animated/bell';
+  } from '@squircle-icons/svelte/filled';
+  import Folder from '@squircle-icons/svelte/animated/folder';
+  import Bell from '@squircle-icons/svelte/animated/bell';
   import {
     Heart,
     Search,
     Settings,
     Bell as StaticBell,
     Folder as StaticFolder,
-  } from 'squircle-icons-svelte';
-  import { Bell as BarrelBell } from 'squircle-icons-svelte/animated';
+  } from '@squircle-icons/svelte';
+  import { Bell as BarrelBell } from '@squircle-icons/svelte/animated';
   let ready = $state(false);
   let open = $state(false);
   let mounted = $state(true);

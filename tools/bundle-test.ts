@@ -7,10 +7,10 @@ import { root } from './paths.js';
 await mkdir(resolve(root, '.artifacts/bundle'), { recursive: true });
 const reports = [];
 for (const [name, statement] of [
-  ['individual', "import Camera from 'squircle-icons-svelte/camera';"],
-  ['filled', "import Camera from 'squircle-icons-svelte/filled/folder';"],
-  ['barrel', "import { Camera } from 'squircle-icons-svelte';"],
-  ['animated', "import Camera from 'squircle-icons-svelte/animated/bell';"],
+  ['individual', "import Camera from '@squircle-icons/svelte/camera';"],
+  ['filled', "import Camera from '@squircle-icons/svelte/filled/folder';"],
+  ['barrel', "import { Camera } from '@squircle-icons/svelte';"],
+  ['animated', "import Camera from '@squircle-icons/svelte/animated/bell';"],
 ] as const) {
   const entry = resolve(root, `.artifacts/bundle/${name}.js`);
   await writeFile(entry, statement + '\nexport default Camera;\n');
