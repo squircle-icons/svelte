@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "sideEffects": false,
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "svelte": "./dist/index.js",
   "exports": {
@@ -80,7 +81,7 @@
     "dependency:check": "node tools/dependency-check.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepublishOnly": "node -e \"throw new Error('Publication is disabled pending naming and license review')\""
+    "prepublishOnly": "node -e \"throw new Error('Publication is disabled pending package naming and release review')\""
   },
   "packageManager": "pnpm@10.10.0",
   "engines": {
@@ -103,5 +104,14 @@
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
     "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0.tgz"
+  },
+  "description": "Original static and animated icons as native Svelte 5 components.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/squircle-icons/svelte.git"
+  },
+  "homepage": "https://github.com/squircle-icons/svelte#readme",
+  "bugs": {
+    "url": "https://github.com/squircle-icons/svelte/issues"
   }
 }

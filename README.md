@@ -1,6 +1,6 @@
 # Squircle Icons · Svelte
 
-**Alpha stage · Public source · License pending**
+**Alpha stage · Open source · MIT license**
 
 Native Svelte 5 components generated from the versioned [core](https://github.com/squircle-icons/core) artifact. This repository owns Svelte generation, lifecycle handling, package exports, and consumer/bundle/browser tests. Editable SVGs and motion recipes belong in core.
 
@@ -41,4 +41,4 @@ The source core checkout must be committed and clean. The sync command builds/pa
 
 To update the homepage, commit this repository, then run `pnpm sync:svelte ../svelte` from the homepage checkout. Its users install the built package artifact, not this repository's source files.
 
-The package name `squircle-icons-svelte` is provisional and **not published to npm**. `private: true` and the publication guard remain enabled. Licensing remains `UNLICENSED`. See [migration provenance](MIGRATION.md).
+The package name `squircle-icons-svelte` is provisional and **not published to npm**. `private: true` and the publication guard remain enabled. Original artwork and code are licensed under [MIT](LICENSE). See [migration provenance](MIGRATION.md).

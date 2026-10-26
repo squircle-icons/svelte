@@ -45,6 +45,10 @@ run(['install', '--ignore-workspace', '--ignore-scripts'], fixture);
 const installed = await realpath(resolve(fixture, 'node_modules/squircle-icons-svelte'));
 assert(!installed.startsWith(root), 'Fixture resolved a workspace link instead of the tarball');
 const installedPackage = JSON.parse(await readFile(resolve(installed, 'package.json'), 'utf8'));
+assert.equal(installedPackage.license, 'MIT', 'Packed manifest must declare MIT');
+const installedLicense = await readFile(resolve(installed, 'LICENSE'), 'utf8');
+assert(installedLicense.includes('Copyright (c) 2026 palamto'), 'Packed copyright notice missing');
+assert(installedLicense.includes('Permission is hereby granted'), 'Packed MIT terms missing');
 assert(
   !JSON.stringify(installedPackage.dependencies ?? {}).includes('workspace:'),
   'Leaked workspace dependency',
