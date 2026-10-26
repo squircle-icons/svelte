@@ -361,7 +361,7 @@
         "image"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner-requested rounder unboxed camera with the left/right primary edge pair at exactly 2 native units. Both style exteriors span x=2..22 and y=3.11675127..20.88324873, centered at 12,12. Visible aspect ratio is retained from the established Outline family (20 by 17.76649746); the shorter vertical axis is not stretched to force 2px top/bottom margins. Outline uses circular tangent fillets and unchanged Regular 1.70 stroke. Filled exterior is the exact 0.85 outward offset of the same lines and arcs, increasing convex radii and reducing concave radii while keeping arc centers fixed. No enclosing box is added. Camera body corner radii are 2.75 at shoulders and 3.25 at the base; the raised housing has softened .8/1.05 transitions. Circular lens and indicator are retained; Filled counters remain their established fixed geometry. Native X/Y=100%, rotation=0. Revision awaits owner visual review.",
+      "construction": "Owner-requested rounder unboxed camera with the left/right primary edge pair at exactly 2 native units. Both style exteriors span x=2..22 and y=3.49175127..20.50824873, centered at 12,12. The natural horizontal body proportions are retained (20 by 17.01649746); the shorter vertical axis is not stretched to force 2px top/bottom margins. Outline uses circular tangent fillets and unchanged Regular 1.70 stroke. Filled exterior is the exact 0.85 outward offset of the same lines and arcs, increasing convex radii and reducing concave radii while keeping arc centers fixed. No enclosing box is added. Camera body corner radii are 2.75 at shoulders and 3.25 at the base; the raised housing has softened .8/1.05 transitions. The owner then requested lowering the raised housing by .75 unit relative to the body. The complete drawing is recentered upward by .375 unit, including lens and indicator; circle radii remain unchanged; Filled counters remain their established fixed geometry. Native X/Y=100%, rotation=0. Revision awaits owner visual review.",
       "review": {
         "status": "draft",
         "reviewedBy": "palamto",
@@ -396,7 +396,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M2.85 9.75 A2.75 2.75 0 0 1 5.6 7 L8.18621331 7 A1.05 1.05 0 0 0 9.16258304 6.33626693 L9.89993673 4.47245265 A0.8 0.8 0 0 1 10.64383748 3.96675127 L13.35616252 3.96675127 A0.8 0.8 0 0 1 14.10006327 4.47245265 L14.83741696 6.33626693 A1.05 1.05 0 0 0 15.81378669 7 L18.4 7 A2.75 2.75 0 0 1 21.15 9.75 L21.15 16.78324873 A3.25 3.25 0 0 1 17.9 20.03324873 L6.1 20.03324873 A3.25 3.25 0 0 1 2.85 16.78324873 Z"
+                "d": "M2.85 9.375 A2.75 2.75 0 0 1 5.6 6.625 L8.26566096 6.625 A1.05 1.05 0 0 0 9.19511181 6.06348862 L9.87515291 4.76956947 A0.8 0.8 0 0 1 10.58330593 4.34175127 L13.41669407 4.34175127 A0.8 0.8 0 0 1 14.12484709 4.76956947 L14.80488819 6.06348862 A1.05 1.05 0 0 0 15.73433904 6.625 L18.4 6.625 A2.75 2.75 0 0 1 21.15 9.375 L21.15 16.40824873 A3.25 3.25 0 0 1 17.9 19.65824873 L6.1 19.65824873 A3.25 3.25 0 0 1 2.85 16.40824873 Z"
               },
               "children": []
             }
@@ -412,7 +412,7 @@
               "tag": "circle",
               "attrs": {
                 "cx": "12",
-                "cy": "13.2",
+                "cy": "12.825",
                 "r": "3.25"
               },
               "children": []
@@ -428,7 +428,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M17.9 9.5 L17.9 9.5"
+                "d": "M17.9 9.125 L17.9 9.125"
               },
               "children": []
             }
@@ -451,7 +451,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner-requested rounder unboxed camera with the left/right primary edge pair at exactly 2 native units. Both style exteriors span x=2..22 and y=3.11675127..20.88324873, centered at 12,12. Visible aspect ratio is retained from the established Outline family (20 by 17.76649746); the shorter vertical axis is not stretched to force 2px top/bottom margins. Outline uses circular tangent fillets and unchanged Regular 1.70 stroke. Filled exterior is the exact 0.85 outward offset of the same lines and arcs, increasing convex radii and reducing concave radii while keeping arc centers fixed. No enclosing box is added. Camera body corner radii are 2.75 at shoulders and 3.25 at the base; the raised housing has softened .8/1.05 transitions. Circular lens and indicator are retained; Filled counters remain their established fixed geometry. Native X/Y=100%, rotation=0. Revision awaits owner visual review.",
+        "construction": "Owner-requested rounder unboxed camera with the left/right primary edge pair at exactly 2 native units. Both style exteriors span x=2..22 and y=3.49175127..20.50824873, centered at 12,12. The natural horizontal body proportions are retained (20 by 17.01649746); the shorter vertical axis is not stretched to force 2px top/bottom margins. Outline uses circular tangent fillets and unchanged Regular 1.70 stroke. Filled exterior is the exact 0.85 outward offset of the same lines and arcs, increasing convex radii and reducing concave radii while keeping arc centers fixed. No enclosing box is added. Camera body corner radii are 2.75 at shoulders and 3.25 at the base; the raised housing has softened .8/1.05 transitions. The owner then requested lowering the raised housing by .75 unit relative to the body. The complete drawing is recentered upward by .375 unit, including lens and indicator; circle radii remain unchanged; Filled counters remain their established fixed geometry. Native X/Y=100%, rotation=0. Revision awaits owner visual review.",
         "review": {
           "status": "draft",
           "reviewedBy": "palamto",
@@ -484,7 +484,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M2 9.75 A3.6 3.6 0 0 1 5.6 6.15 L8.18621331 6.15 A0.2 0.2 0 0 0 8.3721885 6.02357465 L9.10954218 4.15976038 A1.65 1.65 0 0 1 10.64383748 3.11675127 L13.35616252 3.11675127 A1.65 1.65 0 0 1 14.89045782 4.15976038 L15.6278115 6.02357465 A0.2 0.2 0 0 0 15.81378669 6.15 L18.4 6.15 A3.6 3.6 0 0 1 22 9.75 L22 16.78324873 A4.1 4.1 0 0 1 17.9 20.88324873 L6.1 20.88324873 A4.1 4.1 0 0 1 2 16.78324873 Z M 8.75 13.2 A 3.25 3.25 0 1 0 15.25 13.2 A 3.25 3.25 0 1 0 8.75 13.2 Z M 17.35 9.4 A 0.65 0.65 0 1 0 18.65 9.4 A 0.65 0.65 0 1 0 17.35 9.4 Z"
+                  "d": "M2 9.375 A3.6 3.6 0 0 1 5.6 5.775 L8.26566096 5.775 A0.2 0.2 0 0 0 8.44269922 5.66804545 L9.12274032 4.3741263 A1.65 1.65 0 0 1 10.58330593 3.49175127 L13.41669407 3.49175127 A1.65 1.65 0 0 1 14.87725968 4.3741263 L15.55730078 5.66804545 A0.2 0.2 0 0 0 15.73433904 5.775 L18.4 5.775 A3.6 3.6 0 0 1 22 9.375 L22 16.40824873 A4.1 4.1 0 0 1 17.9 20.50824873 L6.1 20.50824873 A4.1 4.1 0 0 1 2 16.40824873 Z M8.75 12.825 A3.25 3.25 0 1 0 15.25 12.825 A3.25 3.25 0 1 0 8.75 12.825 Z M17.35 9.025 A.65 .65 0 1 0 18.65 9.025 A.65 .65 0 1 0 17.35 9.025 Z"
                 },
                 "children": []
               }
