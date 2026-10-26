@@ -4,4 +4,6 @@ export { default as Bell } from './Bell.svelte';
 export { default as Camera } from './Camera.svelte';
 export { default as Folder } from './Folder.svelte';
 export { default as Heart } from './Heart.svelte';
+export { default as Moon } from './Moon.svelte';
 export { default as Settings } from './Settings.svelte';
+export { default as Sun } from './Sun.svelte';

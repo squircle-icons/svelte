@@ -5,8 +5,8 @@ import type { CoreIcon } from '@squircle-icons/core/catalog-types';
 const icons: CoreIcon[] = JSON.parse(
   await readFile(fileURLToPath(import.meta.resolve('@squircle-icons/core/catalog.json')), 'utf8'),
 );
-it('consumes six validated icons and two recipes from the pinned core artifact', () => {
-  expect(icons).toHaveLength(6);
+it('consumes eight validated icons and two recipes from the pinned core artifact', () => {
+  expect(icons).toHaveLength(8);
   expect(icons.filter((icon) => icon.motion)).toHaveLength(2);
 });
 it('has complete stable-part references across every adapter input', () => {

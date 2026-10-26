@@ -99,6 +99,17 @@
       "reviewStatus": "approved"
     },
     {
+      "name": "moon",
+      "description": "A balanced crescent moon with a clean circular concavity.",
+      "tags": ["night", "dark", "weather"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "The crescent preserves the recognizable lunar silhouette as an intentional circular exception to the rounded rectangular object baseline. Two radius-8 circles separated by vector 4,-4 define the exterior and concavity; a single closed contour avoids doubled edges. The drawing is translated so its native centerline bounds are x/y=4.35424869..19.64575131; Regular 1.70 gives equal opposite visible margins of 3.50424869. Rounded stroke joins soften both horns without decorative stars or extra details. Static draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
       "name": "search",
       "description": "A clear circular search lens with a short angled handle.",
       "tags": ["find", "magnify"],
@@ -143,6 +154,17 @@
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
       "reviewStatus": "approved"
+    },
+    {
+      "name": "sun",
+      "description": "A clear circular sun with eight short, evenly spaced rays.",
+      "tags": ["day", "light", "weather"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "The circular disc preserves the real celestial silhouette and is an intentional exception to the rounded rectangular object baseline. A radius-4.25 disc is centered at 12,12. Eight straight radial segments run from radius 7.2 to 9.2, with round caps and no overlaps. Regular 1.70 gives equal visible margins of 1.95 units. The minimum disc-to-ray gap is 1.25 units at Regular. Native proportions are the reference; static draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
     }
   ]
 }

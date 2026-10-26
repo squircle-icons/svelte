@@ -71,6 +71,16 @@
       "svelte": "./dist/filled/Heart.svelte",
       "default": "./dist/filled/Heart.svelte"
     },
+    "./moon": {
+      "types": "./dist/Moon.svelte.d.ts",
+      "svelte": "./dist/Moon.svelte",
+      "default": "./dist/Moon.svelte"
+    },
+    "./filled/moon": {
+      "types": "./dist/filled/Moon.svelte.d.ts",
+      "svelte": "./dist/filled/Moon.svelte",
+      "default": "./dist/filled/Moon.svelte"
+    },
     "./search": {
       "types": "./dist/Search.svelte.d.ts",
       "svelte": "./dist/Search.svelte",
@@ -85,6 +95,16 @@
       "types": "./dist/filled/Settings.svelte.d.ts",
       "svelte": "./dist/filled/Settings.svelte",
       "default": "./dist/filled/Settings.svelte"
+    },
+    "./sun": {
+      "types": "./dist/Sun.svelte.d.ts",
+      "svelte": "./dist/Sun.svelte",
+      "default": "./dist/Sun.svelte"
+    },
+    "./filled/sun": {
+      "types": "./dist/filled/Sun.svelte.d.ts",
+      "svelte": "./dist/filled/Sun.svelte",
+      "default": "./dist/filled/Sun.svelte"
     },
     "./filled": {
       "types": "./dist/filled/index.d.ts",

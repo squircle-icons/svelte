@@ -1,6 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import Camera from '@squircle-icons/svelte/camera';
+  import Sun from '@squircle-icons/svelte/sun';
+  import Moon from '@squircle-icons/svelte/moon';
+  import FilledSun from '@squircle-icons/svelte/filled/sun';
+  import FilledMoon from '@squircle-icons/svelte/filled/moon';
   import FilledFolder from '@squircle-icons/svelte/filled/folder';
   import {
     Camera as FilledCamera,
@@ -113,6 +117,11 @@
 
 <div data-testid="heart-outline-contour"><Heart size={96} label="Outline Heart contour" /></div>
 <div data-testid="heart-filled-contour"><FilledHeart size={96} label="Filled Heart contour" /></div>
+
+<div data-testid="sun-outline-contour"><Sun size={96} label="Outline Sun contour" /></div>
+<div data-testid="sun-filled-contour"><FilledSun size={96} label="Filled Sun contour" /></div>
+<div data-testid="moon-outline-contour"><Moon size={96} label="Outline Moon contour" /></div>
+<div data-testid="moon-filled-contour"><FilledMoon size={96} label="Filled Moon contour" /></div>
 
 <style>
   :global(body) {

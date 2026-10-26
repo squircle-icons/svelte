@@ -354,7 +354,7 @@ test('Filled Heart head matches the visible Regular Outline exterior', async ({ 
   expect(result.maximumDifference).toBeLessThanOrEqual(1);
 });
 
-for (const icon of ['settings', 'bell'])
+for (const icon of ['settings', 'bell', 'sun', 'moon'])
   test(`Filled ${icon} matches the Regular Outline exterior and openings at native and rotated poses`, async ({
     page,
   }) => {
@@ -372,7 +372,7 @@ for (const icon of ['settings', 'bell'])
         if (outline) {
           svg.setAttribute('stroke-width', '1.7');
           // The hub's white interior is the same empty space as the Filled counter.
-          svg.querySelector('circle')?.setAttribute('fill', '#fff');
+          if (icon === 'settings') svg.querySelector('circle')?.setAttribute('fill', '#fff');
           // Filled Bell closes the open clapper into a solid part; compare its closed exterior.
           const clapper = svg.querySelector('[data-part="clapper"] path');
           if (clapper) clapper.setAttribute('d', clapper.getAttribute('d') + ' Z');

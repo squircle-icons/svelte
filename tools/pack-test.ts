@@ -80,6 +80,15 @@ assert(
   'New filled exports or declarations did not survive packing',
 );
 assert(
+  [
+    'Outline Sun contour',
+    'Filled Sun contour',
+    'Outline Moon contour',
+    'Filled Moon contour',
+  ].every((label) => html.includes(label)),
+  'Sun and Moon direct exports did not survive packing',
+);
+assert(
   html.includes('Already open') && html.includes('scaleY(0.72)'),
   'Initial open pose was not server-rendered',
 );
