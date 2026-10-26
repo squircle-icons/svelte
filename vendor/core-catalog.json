@@ -1062,7 +1062,7 @@
         "file"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner clarified on2026-10-27 that this transfer icon remains awaiting review in both styles.",
+      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft geometry is retained; the tray follows the standard roundness below. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner clarified on2026-10-27 that this transfer icon remains awaiting review in both styles. Owner requested the Camera/Folder standard roundness for both transfer trays on2026-10-27. The tray now uses tangent radius3.25 centerline base corners, with vertical sides x4/20, corner centers7.25/16.75 at y17.25, and bottom y20.5. Both open ends remain at y16. Filled is the exact Regular1.70 stroke band: outer radius4.10, inner radius2.40 and free caps .85. Tray visible bounds x3.15..20.85/y15.15..21.35 and complete icon bounds x3.15..20.85/y2.65..21.35 are retained. The open Outline V and solid Filled arrowhead remain unchanged. Both styles await owner review.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
@@ -1075,7 +1075,7 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner clarified that Download and Upload remain pending. The current approval covers Check and the navigation Arrow/Chevron pairs, not these transfer icons. Both current styles await owner review."
+        "note": "Download and Upload remain pending. Current revision adds standard Camera/Folder radius3.25 centerline tray corners with matching Filled exterior, retaining the accepted arrow treatment and original overall bounds."
       }
     },
     "root": {
@@ -1114,7 +1114,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M4 16 V20.5 H20 V16"
+                "d": "M4 16 V17.25 A3.25 3.25 0 0 0 7.25 20.5 H16.75 A3.25 3.25 0 0 0 20 17.25 V16"
               },
               "children": []
             }
@@ -1137,7 +1137,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner clarified on2026-10-27 that this transfer icon remains awaiting review in both styles.",
+        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft geometry is retained; the tray follows the standard roundness below. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner clarified on2026-10-27 that this transfer icon remains awaiting review in both styles. Owner requested the Camera/Folder standard roundness for both transfer trays on2026-10-27. The tray now uses tangent radius3.25 centerline base corners, with vertical sides x4/20, corner centers7.25/16.75 at y17.25, and bottom y20.5. Both open ends remain at y16. Filled is the exact Regular1.70 stroke band: outer radius4.10, inner radius2.40 and free caps .85. Tray visible bounds x3.15..20.85/y15.15..21.35 and complete icon bounds x3.15..20.85/y2.65..21.35 are retained. The open Outline V and solid Filled arrowhead remain unchanged. Both styles await owner review.",
         "filledTreatment": "solid-head",
         "review": {
           "status": "draft",
@@ -1150,7 +1150,7 @@
             "strokeWidth": 1.7,
             "rotation": 0
           },
-          "note": "Owner clarified that Download and Upload remain pending. The current approval covers Check and the navigation Arrow/Chevron pairs, not these transfer icons. Both current styles await owner review."
+          "note": "Download and Upload remain pending. Current revision adds standard Camera/Folder radius3.25 centerline tray corners with matching Filled exterior, retaining the accepted arrow treatment and original overall bounds."
         }
       },
       "root": {
@@ -1194,21 +1194,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M3.15 16 L3.15 20.5 A.85 .85 0 0 0 4.85 20.5 L4.85 16 A.85 .85 0 0 0 3.15 16 Z"
-                },
-                "children": []
-              },
-              {
-                "tag": "path",
-                "attrs": {
-                  "d": "M4 21.35 L20 21.35 A.85 .85 0 0 0 20 19.65 L4 19.65 A.85 .85 0 0 0 4 21.35 Z"
-                },
-                "children": []
-              },
-              {
-                "tag": "path",
-                "attrs": {
-                  "d": "M20.85 20.5 L20.85 16 A.85 .85 0 0 0 19.15 16 L19.15 20.5 A.85 .85 0 0 0 20.85 20.5 Z"
+                  "d": "M3.15 16 V17.25 A4.1 4.1 0 0 0 7.25 21.35 H16.75 A4.1 4.1 0 0 0 20.85 17.25 V16 A.85 .85 0 0 0 20 15.15 A.85 .85 0 0 0 19.15 16 V17.25 A2.4 2.4 0 0 1 16.75 19.65 H7.25 A2.4 2.4 0 0 1 4.85 17.25 V16 A.85 .85 0 0 0 4 15.15 A.85 .85 0 0 0 3.15 16 Z"
                 },
                 "children": []
               }
@@ -2471,7 +2457,7 @@
         "file"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner clarified on2026-10-27 that this transfer icon remains awaiting review in both styles.",
+      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft geometry is retained; the tray follows the standard roundness below. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner clarified on2026-10-27 that this transfer icon remains awaiting review in both styles. Owner requested the Camera/Folder standard roundness for both transfer trays on2026-10-27. The tray now uses tangent radius3.25 centerline base corners, with vertical sides x4/20, corner centers7.25/16.75 at y17.25, and bottom y20.5. Both open ends remain at y16. Filled is the exact Regular1.70 stroke band: outer radius4.10, inner radius2.40 and free caps .85. Tray visible bounds x3.15..20.85/y15.15..21.35 and complete icon bounds x3.15..20.85/y2.65..21.35 are retained. The open Outline V and solid Filled arrowhead remain unchanged. Both styles await owner review.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
@@ -2484,7 +2470,7 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner clarified that Download and Upload remain pending. The current approval covers Check and the navigation Arrow/Chevron pairs, not these transfer icons. Both current styles await owner review."
+        "note": "Download and Upload remain pending. Current revision adds standard Camera/Folder radius3.25 centerline tray corners with matching Filled exterior, retaining the accepted arrow treatment and original overall bounds."
       }
     },
     "root": {
@@ -2523,7 +2509,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M4 16 V20.5 H20 V16"
+                "d": "M4 16 V17.25 A3.25 3.25 0 0 0 7.25 20.5 H16.75 A3.25 3.25 0 0 0 20 17.25 V16"
               },
               "children": []
             }
@@ -2546,7 +2532,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner clarified on2026-10-27 that this transfer icon remains awaiting review in both styles.",
+        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft geometry is retained; the tray follows the standard roundness below. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner clarified on2026-10-27 that this transfer icon remains awaiting review in both styles. Owner requested the Camera/Folder standard roundness for both transfer trays on2026-10-27. The tray now uses tangent radius3.25 centerline base corners, with vertical sides x4/20, corner centers7.25/16.75 at y17.25, and bottom y20.5. Both open ends remain at y16. Filled is the exact Regular1.70 stroke band: outer radius4.10, inner radius2.40 and free caps .85. Tray visible bounds x3.15..20.85/y15.15..21.35 and complete icon bounds x3.15..20.85/y2.65..21.35 are retained. The open Outline V and solid Filled arrowhead remain unchanged. Both styles await owner review.",
         "filledTreatment": "solid-head",
         "review": {
           "status": "draft",
@@ -2559,7 +2545,7 @@
             "strokeWidth": 1.7,
             "rotation": 0
           },
-          "note": "Owner clarified that Download and Upload remain pending. The current approval covers Check and the navigation Arrow/Chevron pairs, not these transfer icons. Both current styles await owner review."
+          "note": "Download and Upload remain pending. Current revision adds standard Camera/Folder radius3.25 centerline tray corners with matching Filled exterior, retaining the accepted arrow treatment and original overall bounds."
         }
       },
       "root": {
@@ -2603,21 +2589,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M3.15 16 L3.15 20.5 A.85 .85 0 0 0 4.85 20.5 L4.85 16 A.85 .85 0 0 0 3.15 16 Z"
-                },
-                "children": []
-              },
-              {
-                "tag": "path",
-                "attrs": {
-                  "d": "M4 21.35 L20 21.35 A.85 .85 0 0 0 20 19.65 L4 19.65 A.85 .85 0 0 0 4 21.35 Z"
-                },
-                "children": []
-              },
-              {
-                "tag": "path",
-                "attrs": {
-                  "d": "M20.85 20.5 L20.85 16 A.85 .85 0 0 0 19.15 16 L19.15 20.5 A.85 .85 0 0 0 20.85 20.5 Z"
+                  "d": "M3.15 16 V17.25 A4.1 4.1 0 0 0 7.25 21.35 H16.75 A4.1 4.1 0 0 0 20.85 17.25 V16 A.85 .85 0 0 0 20 15.15 A.85 .85 0 0 0 19.15 16 V17.25 A2.4 2.4 0 0 1 16.75 19.65 H7.25 A2.4 2.4 0 0 1 4.85 17.25 V16 A.85 .85 0 0 0 4 15.15 A.85 .85 0 0 0 3.15 16 Z"
                 },
                 "children": []
               }

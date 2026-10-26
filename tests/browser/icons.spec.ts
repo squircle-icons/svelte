@@ -743,3 +743,29 @@ for (const [icon, point] of [
     );
     expect(result).toEqual({ filledSolid: true, outlineOpen: true });
   });
+
+for (const icon of ['download', 'upload'])
+  test(`${icon} tray uses standard round corners with aligned Outline and Filled`, async ({
+    page,
+  }) => {
+    const result = await page.evaluate((icon) => {
+      const outline = document.querySelector(
+        `[data-testid="${icon}-outline-contour"] [data-part="tray"] path`,
+      ) as SVGPathElement;
+      const filled = document.querySelector(
+        `[data-testid="${icon}-filled-contour"] [data-part="tray"] path`,
+      ) as SVGPathElement;
+      const corner = new DOMPoint(4, 20.5);
+      const curve = new DOMPoint(7.25 - 3.25 / Math.SQRT2, 17.25 + 3.25 / Math.SQRT2);
+      const box = filled.getBBox();
+      return {
+        oldSquareCornerClear: !outline.isPointInStroke(corner) && !filled.isPointInFill(corner),
+        curvedBand: outline.isPointInStroke(curve) && filled.isPointInFill(curve),
+        bounds: [box.x, box.y, box.width, box.height],
+      };
+    }, icon);
+    expect(result.oldSquareCornerClear).toBe(true);
+    expect(result.curvedBand).toBe(true);
+    for (const [index, value] of result.bounds.entries())
+      expect(value).toBeCloseTo([3.15, 15.15, 17.7, 6.2][index], 4);
+  });
