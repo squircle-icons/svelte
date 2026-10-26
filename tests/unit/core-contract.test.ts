@@ -5,8 +5,8 @@ import type { CoreIcon } from '@squircle-icons/core/catalog-types';
 const icons: CoreIcon[] = JSON.parse(
   await readFile(fileURLToPath(import.meta.resolve('@squircle-icons/core/catalog.json')), 'utf8'),
 );
-it('consumes eight validated icons from the pinned core artifact', () => {
-  expect(icons).toHaveLength(8);
+it('consumes fourteen validated icons from the pinned core artifact', () => {
+  expect(icons).toHaveLength(14);
 });
 it('consumes validated fill-only Folder geometry with a deliberate cutout', () => {
   const filled = icons.find((icon) => icon.name === 'folder')?.filled;

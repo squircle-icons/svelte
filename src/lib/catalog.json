@@ -53,6 +53,50 @@
       "reviewStatus": "approved"
     },
     {
+      "name": "check",
+      "description": "A clear check mark with a compact lead-in and a longer rising arm.",
+      "tags": ["tick", "done", "confirm", "success"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "The short diagonal runs from 5.5,12.5 to 9.5,16.5; the longer arm rises to 18.5,7.5. Both arms use true 45-degree straight segments with one rounded joint and two rounded ends. Native bounds are centered about 12,12, giving Regular visible margins 4.65 horizontally and 6.65 vertically. The unequal arm lengths preserve a recognizable check silhouette. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "chevron-down",
+      "description": "A balanced downward chevron with straight arms and a rounded vertex.",
+      "tags": ["down", "expand", "dropdown", "arrow"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Mirrored 45-degree arms meet at 12,15.25, with endpoints at 5.5,8.75 and 18.5,8.75. A single continuous centerline avoids doubled joins. Native bounds are centered at 12,12. Regular visible margins are 4.65 horizontally and 7.9 vertically. Rounded caps and the rounded lower vertex use the shared 1.70 stroke. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "chevron-up",
+      "description": "A balanced upward chevron with straight arms and a rounded vertex.",
+      "tags": ["up", "collapse", "arrow"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "This is the exact vertical reflection of Chevron Down about y=12. Mirrored 45-degree arms meet at 12,8.75, with endpoints at 5.5,15.25 and 18.5,15.25. Native bounds are centered at 12,12. Regular visible margins are 4.65 horizontally and 7.9 vertically. One continuous centerline avoids doubled joins. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "copy",
+      "description": "Two overlapping rounded pages with a distinct foreground sheet.",
+      "tags": ["duplicate", "clipboard", "document"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Two offset page shapes use deliberate straight sides and radius-2 circular corners. The rear outline runs from 7.5,16.5 around the upper-left page to 16.5,7.5, with its endpoints terminating within the foreground boundary stroke. The foreground page centerline bounds are 7.5..21 on both axes. Combined centerline bounds are 3..21, giving balanced Regular visible margins of 2.15. The partial rear path keeps hidden edges out of the foreground interior. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
       "name": "folder",
       "description": "A horizontal rounded folder with a distinct tab and a straight movable front-panel edge.",
       "tags": ["files", "directory"],
@@ -121,6 +165,17 @@
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
       "reviewStatus": "approved"
+    },
+    {
+      "name": "plus",
+      "description": "A centered plus mark with four equally sized arms.",
+      "tags": ["add", "new", "create"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Perpendicular straight strokes cross at 12,12, with equal endpoints at 5.5 and 18.5. The mark uses no enclosing frame or decorative bends. Regular 1.70 gives equal visible margins of 4.65 units. All four free ends have the same round cap. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
     },
     {
       "name": "search",
@@ -192,6 +247,17 @@
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
       "reviewStatus": "approved"
+    },
+    {
+      "name": "x",
+      "description": "A centered close mark with two balanced diagonal strokes.",
+      "tags": ["close", "dismiss", "cancel"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Two straight 45-degree strokes cross at 12,12 with endpoint coordinates 5.5 and 18.5. The line-symbol silhouette intentionally uses no outer frame or enclosed counter. Equal Regular 1.70 visible margins are 4.65 units. Rounded free ends and the shared center retain the established family weight. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review.",
+      "styles": ["outline", "filled"],
+      "defaultStrokeWidth": 1.7,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
     }
   ]
 }

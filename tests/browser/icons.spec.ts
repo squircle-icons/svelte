@@ -171,7 +171,18 @@ test('Filled Heart head matches the visible Regular Outline exterior', async ({ 
   expect(result.maximumDifference).toBeLessThanOrEqual(1);
 });
 
-for (const icon of ['settings', 'bell', 'sun', 'moon'])
+for (const icon of [
+  'settings',
+  'bell',
+  'sun',
+  'moon',
+  'x',
+  'copy',
+  'chevron-down',
+  'plus',
+  'check',
+  'chevron-up',
+])
   test(`Filled ${icon} matches the Regular Outline exterior and openings at native and rotated poses`, async ({
     page,
   }) => {
@@ -188,6 +199,12 @@ for (const icon of ['settings', 'bell', 'sun', 'moon'])
         svg.setAttribute('stroke', outline ? '#000' : 'none');
         if (outline) {
           svg.setAttribute('stroke-width', '1.7');
+          // Line marks keep an open interior; Filled Copy paints only its front page solid.
+          if (['x', 'plus', 'check', 'chevron-down', 'chevron-up'].includes(icon))
+            svg.setAttribute('fill', 'none');
+          if (icon === 'copy')
+            svg.querySelector('[data-part="back"]')?.setAttribute('fill', 'none');
+
           // The hub's white interior is the same empty space as the Filled counter.
           if (icon === 'settings') svg.querySelector('circle')?.setAttribute('fill', '#fff');
           // Filled Bell closes the open clapper into a solid part; compare its closed exterior.
@@ -296,5 +313,27 @@ test('named stroke presets update Outline strokes and the Filled Folder gap', as
       'data-cutout-width',
       width,
     );
+  }
+});
+
+test('Round 3 exposes six packed Outline/Filled pairs on light and dark surfaces', async ({
+  page,
+}, info) => {
+  for (const surface of ['light', 'dark']) {
+    const sheet = page.getByTestId('round-three-' + surface);
+    await expect(sheet.locator('article')).toHaveCount(6);
+    await expect(sheet.locator('h3')).toHaveText([
+      'X',
+      'Copy',
+      'Chevron Down',
+      'Plus',
+      'Check',
+      'Chevron Up',
+    ]);
+    await expect(sheet.locator('svg')).toHaveCount(48);
+    if (info.project.name === 'chromium') {
+      await mkdir('.artifacts/previews', { recursive: true });
+      await sheet.screenshot({ path: '.artifacts/previews/round-three-' + surface + '.png' });
+    }
   }
 });

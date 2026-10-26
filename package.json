@@ -36,6 +36,46 @@
       "svelte": "./dist/filled/Camera.svelte",
       "default": "./dist/filled/Camera.svelte"
     },
+    "./check": {
+      "types": "./dist/Check.svelte.d.ts",
+      "svelte": "./dist/Check.svelte",
+      "default": "./dist/Check.svelte"
+    },
+    "./filled/check": {
+      "types": "./dist/filled/Check.svelte.d.ts",
+      "svelte": "./dist/filled/Check.svelte",
+      "default": "./dist/filled/Check.svelte"
+    },
+    "./chevron-down": {
+      "types": "./dist/ChevronDown.svelte.d.ts",
+      "svelte": "./dist/ChevronDown.svelte",
+      "default": "./dist/ChevronDown.svelte"
+    },
+    "./filled/chevron-down": {
+      "types": "./dist/filled/ChevronDown.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronDown.svelte",
+      "default": "./dist/filled/ChevronDown.svelte"
+    },
+    "./chevron-up": {
+      "types": "./dist/ChevronUp.svelte.d.ts",
+      "svelte": "./dist/ChevronUp.svelte",
+      "default": "./dist/ChevronUp.svelte"
+    },
+    "./filled/chevron-up": {
+      "types": "./dist/filled/ChevronUp.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronUp.svelte",
+      "default": "./dist/filled/ChevronUp.svelte"
+    },
+    "./copy": {
+      "types": "./dist/Copy.svelte.d.ts",
+      "svelte": "./dist/Copy.svelte",
+      "default": "./dist/Copy.svelte"
+    },
+    "./filled/copy": {
+      "types": "./dist/filled/Copy.svelte.d.ts",
+      "svelte": "./dist/filled/Copy.svelte",
+      "default": "./dist/filled/Copy.svelte"
+    },
     "./folder": {
       "types": "./dist/Folder.svelte.d.ts",
       "svelte": "./dist/Folder.svelte",
@@ -66,6 +106,16 @@
       "svelte": "./dist/filled/Moon.svelte",
       "default": "./dist/filled/Moon.svelte"
     },
+    "./plus": {
+      "types": "./dist/Plus.svelte.d.ts",
+      "svelte": "./dist/Plus.svelte",
+      "default": "./dist/Plus.svelte"
+    },
+    "./filled/plus": {
+      "types": "./dist/filled/Plus.svelte.d.ts",
+      "svelte": "./dist/filled/Plus.svelte",
+      "default": "./dist/filled/Plus.svelte"
+    },
     "./search": {
       "types": "./dist/Search.svelte.d.ts",
       "svelte": "./dist/Search.svelte",
@@ -90,6 +140,16 @@
       "types": "./dist/filled/Sun.svelte.d.ts",
       "svelte": "./dist/filled/Sun.svelte",
       "default": "./dist/filled/Sun.svelte"
+    },
+    "./x": {
+      "types": "./dist/X.svelte.d.ts",
+      "svelte": "./dist/X.svelte",
+      "default": "./dist/X.svelte"
+    },
+    "./filled/x": {
+      "types": "./dist/filled/X.svelte.d.ts",
+      "svelte": "./dist/filled/X.svelte",
+      "default": "./dist/filled/X.svelte"
     },
     "./filled": {
       "types": "./dist/filled/index.d.ts",

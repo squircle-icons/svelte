@@ -1,5 +1,17 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import X from '@squircle-icons/svelte/x';
+  import FilledX from '@squircle-icons/svelte/filled/x';
+  import Copy from '@squircle-icons/svelte/copy';
+  import FilledCopy from '@squircle-icons/svelte/filled/copy';
+  import ChevronDown from '@squircle-icons/svelte/chevron-down';
+  import FilledChevronDown from '@squircle-icons/svelte/filled/chevron-down';
+  import Plus from '@squircle-icons/svelte/plus';
+  import FilledPlus from '@squircle-icons/svelte/filled/plus';
+  import Check from '@squircle-icons/svelte/check';
+  import FilledCheck from '@squircle-icons/svelte/filled/check';
+  import ChevronUp from '@squircle-icons/svelte/chevron-up';
+  import FilledChevronUp from '@squircle-icons/svelte/filled/chevron-up';
   import Camera from '@squircle-icons/svelte/camera';
   import Sun from '@squircle-icons/svelte/sun';
   import Moon from '@squircle-icons/svelte/moon';
@@ -72,6 +84,54 @@
 >
 <div data-testid="stroke-preset"><Camera strokeWidth={preset} label="Named stroke camera" /></div>
 <div data-testid="gap-preset"><Folder style="filled" strokeWidth={preset} /></div>
+<div data-testid="x-outline-contour"><X size={96} label="Outline X contour" /></div>
+<div data-testid="x-filled-contour"><FilledX size={96} label="Filled X contour" /></div>
+<div data-testid="copy-outline-contour"><Copy size={96} label="Outline Copy contour" /></div>
+<div data-testid="copy-filled-contour"><FilledCopy size={96} label="Filled Copy contour" /></div>
+<div data-testid="chevron-down-outline-contour">
+  <ChevronDown size={96} label="Outline ChevronDown contour" />
+</div>
+<div data-testid="chevron-down-filled-contour">
+  <FilledChevronDown size={96} label="Filled ChevronDown contour" />
+</div>
+<div data-testid="plus-outline-contour"><Plus size={96} label="Outline Plus contour" /></div>
+<div data-testid="plus-filled-contour"><FilledPlus size={96} label="Filled Plus contour" /></div>
+<div data-testid="check-outline-contour"><Check size={96} label="Outline Check contour" /></div>
+<div data-testid="check-filled-contour"><FilledCheck size={96} label="Filled Check contour" /></div>
+<div data-testid="chevron-up-outline-contour">
+  <ChevronUp size={96} label="Outline ChevronUp contour" />
+</div>
+<div data-testid="chevron-up-filled-contour">
+  <FilledChevronUp size={96} label="Filled ChevronUp contour" />
+</div>
+
+{#each ['light', 'dark'] as surface}
+  <section
+    class="round-three"
+    class:dark={surface === 'dark'}
+    data-testid={'round-three-' + surface}
+  >
+    <header>
+      <span>ROUND 3 / 6 ICONS</span>
+      <h2>Everyday actions.</h2>
+      <p>Outline & Filled · Regular 1.70</p>
+    </header>
+    <div class="round-grid">
+      {#each [{ name: 'X', Outline: X, Filled: FilledX }, { name: 'Copy', Outline: Copy, Filled: FilledCopy }, { name: 'Chevron Down', Outline: ChevronDown, Filled: FilledChevronDown }, { name: 'Plus', Outline: Plus, Filled: FilledPlus }, { name: 'Check', Outline: Check, Filled: FilledCheck }, { name: 'Chevron Up', Outline: ChevronUp, Filled: FilledChevronUp }] as item}
+        <article>
+          <h3>{item.name}</h3>
+          <div class="round-main"><item.Outline size={48} /><item.Filled size={48} /></div>
+          <div class="round-sizes">
+            {#each [16, 20, 24] as size}<div>
+                <item.Outline {size} /><item.Filled {size} /><small>{size}px</small>
+              </div>{/each}
+          </div>
+        </article>
+      {/each}
+    </div>
+  </section>
+{/each}
+
 <section data-testid="unified-api">
   <button onclick={() => (iconStyle = iconStyle === 'filled' ? 'outline' : 'filled')}
     >Toggle icon style</button
@@ -88,6 +148,78 @@
 </section>
 
 <style>
+  .round-three {
+    width: 850px;
+    padding: 28px;
+    margin: 32px 0;
+    color: #27272a;
+    background: #fff;
+    border: 1px solid #e4e4e7;
+    border-radius: 16px;
+  }
+  .round-three.dark {
+    color: #f4f4f5;
+    background: #1c1c22;
+    border-color: #353540;
+  }
+  .round-three header > span {
+    color: #6366f1;
+    letter-spacing: 0.12em;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .round-three h2 {
+    font-size: 26px;
+    margin: 8px 0 6px;
+    letter-spacing: -0.04em;
+  }
+  .round-three p {
+    margin: 0 0 22px;
+    font-size: 12px;
+    color: #92929e;
+  }
+  .round-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .round-three article {
+    border: 1px solid #e4e4e7;
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .round-three.dark article {
+    border-color: #353540;
+  }
+  .round-three h3 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .round-main {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    padding: 22px 0;
+  }
+  .round-sizes {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+  .round-sizes > div {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 5px;
+  }
+  .round-sizes small {
+    grid-column: 1 / -1;
+    font-size: 9px;
+    color: #92929e;
+    text-align: center;
+  }
+
   :global(body) {
     font-family: system-ui;
     background: #ffffff;

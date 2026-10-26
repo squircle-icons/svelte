@@ -2,9 +2,15 @@
 export type { IconProps, IconStyle, IconStrokeWidth } from './props.js';
 export { default as Bell } from './Bell.svelte';
 export { default as Camera } from './Camera.svelte';
+export { default as Check } from './Check.svelte';
+export { default as ChevronDown } from './ChevronDown.svelte';
+export { default as ChevronUp } from './ChevronUp.svelte';
+export { default as Copy } from './Copy.svelte';
 export { default as Folder } from './Folder.svelte';
 export { default as Heart } from './Heart.svelte';
 export { default as Moon } from './Moon.svelte';
+export { default as Plus } from './Plus.svelte';
 export { default as Search } from './Search.svelte';
 export { default as Settings } from './Settings.svelte';
 export { default as Sun } from './Sun.svelte';
+export { default as X } from './X.svelte';
