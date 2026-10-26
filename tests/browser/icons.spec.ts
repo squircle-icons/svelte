@@ -770,7 +770,7 @@ for (const icon of ['download', 'upload'])
       expect(value).toBeCloseTo([3.15, 15.15, 17.7, 6.2][index], 4);
   });
 
-test('Moon lengthens both horns while retaining the approved inner curvature', async ({ page }) => {
+test('Moon deepens its concavity while preserving both extended horns', async ({ page }) => {
   const values = await page.evaluate(() => {
     const path = document.querySelector(
       '[data-testid="moon-filled-contour"] path',
@@ -793,17 +793,19 @@ test('Moon lengthens both horns while retaining the approved inner curvature', a
       ].every(([x, y]) => path.isPointInFill(new DOMPoint(x, y))),
       centerSolid: path.isPointInFill(new DOMPoint(12.35424869, 11.64575131)),
       openingClear: !path.isPointInFill(new DOMPoint(15, 8)),
-      expandedBody: path.isPointInFill(new DOMPoint(13.25, 10.75)),
+      retainedBody: path.isPointInFill(new DOMPoint(13.25, 10.75)),
+      deeperOpening: !path.isPointInFill(new DOMPoint(14.12, 9.88)),
       bodySolid: path.isPointInFill(new DOMPoint(8, 17)),
-      innerRadius: Math.hypot(middle.x - 20.72971359, middle.y - 3.27028641),
+      innerRadius: Math.hypot(middle.x - 19.75836822, middle.y - 4.24163178),
       margins: [box.x, box.y, 24 - box.x - box.width, 24 - box.y - box.height],
     };
   });
   expect(values.extendedTips).toBe(true);
   expect(values.centerSolid).toBe(true);
   expect(values.openingClear).toBe(true);
-  expect(values.expandedBody).toBe(true);
+  expect(values.retainedBody).toBe(true);
+  expect(values.deeperOpening).toBe(true);
   expect(values.bodySolid).toBe(true);
-  expect(values.innerRadius).toBeCloseTo(10, 2);
+  expect(values.innerRadius).toBeCloseTo(9, 2);
   for (const margin of values.margins) expect(margin).toBeCloseTo(3.20252287, 4);
 });

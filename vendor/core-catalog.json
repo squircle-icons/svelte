@@ -1608,7 +1608,7 @@
         "weather"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner explicitly confirmed: keep the previously approved concavity and lengthen both crescent horns, rather than changing the inner curvature. Restore the approved radius10 inner centerline and radius8 outer centerline; extend each horn15 degrees along the outer circle, adding4.18879020 units of outer arc in total. Refit the same radius10 inner circle through the longer horns. Translate the whole drawing uniformly to center its new bounds at12,12; do not scale either style independently. Native horn endpoints are 10.76035523 4.05252287 and 19.94747713 13.23964477; outer-circle center 12.05252287 11.94747713, inner-circle center 20.72971359 3.27028641. Regular1.70 and .85 joins stay fixed. Filled is the exact outward offset: outer8.85, inner9.15 and .85 horn joins. New equal native visible margins are3.20252287, with width/height17.59495426. Native X/Y100%, rotation0. The prior radius9 and radius14 curvature experiments are superseded. Both styles await owner review.",
+      "construction": "Owner requested a deeper Moon concavity after the horn-extension revision. Preserve the extended horn endpoints, outer radius8, placement, bounds, Regular1.70 and round .85 joins. Reduce the inner centerline radius10 to9 and refit its circle through the unchanged horns. Filled follows the exact Regular exterior with outer radius8.85, inner radius8.15 and .85 horn joins. Both styles remain pending owner review. Horns 10.76035523 4.05252287 and 19.94747713 13.23964477; outer-circle center 12.05252287 11.94747713, inner-circle center 19.75836822 4.24163178. Native equal margins3.20252287, X/Y100%, rotation0.",
       "review": {
         "status": "draft",
         "reviewedBy": "palamto",
@@ -1620,7 +1620,7 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner confirmed keeping the earlier radius10 concavity and extending both horns. Current revision adds15 degrees at each horn on the radius8 outer circle and centers the new geometry at native100%/100%, preserving Regular1.70. Await owner review."
+        "note": "Owner requested a deeper Moon concavity after the horn-extension revision. Preserve the extended horn endpoints, outer radius8, placement, bounds, Regular1.70 and round .85 joins. Reduce the inner centerline radius10 to9 and refit its circle through the unchanged horns. Filled follows the exact Regular exterior with outer radius8.85, inner radius8.15 and .85 horn joins. Both styles remain pending owner review."
       }
     },
     "root": {
@@ -1644,7 +1644,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M10.76035523 4.05252287 A8 8 0 1 0 19.94747713 13.23964477 A10 10 0 0 1 10.76035523 4.05252287 Z"
+                "d": "M10.76035523 4.05252287 A8 8 0 1 0 19.94747713 13.23964477 A9 9 0 0 1 10.76035523 4.05252287 Z"
               },
               "children": []
             }
@@ -1666,7 +1666,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner explicitly confirmed: keep the previously approved concavity and lengthen both crescent horns, rather than changing the inner curvature. Restore the approved radius10 inner centerline and radius8 outer centerline; extend each horn15 degrees along the outer circle, adding4.18879020 units of outer arc in total. Refit the same radius10 inner circle through the longer horns. Translate the whole drawing uniformly to center its new bounds at12,12; do not scale either style independently. Native horn endpoints are 10.76035523 4.05252287 and 19.94747713 13.23964477; outer-circle center 12.05252287 11.94747713, inner-circle center 20.72971359 3.27028641. Regular1.70 and .85 joins stay fixed. Filled is the exact outward offset: outer8.85, inner9.15 and .85 horn joins. New equal native visible margins are3.20252287, with width/height17.59495426. Native X/Y100%, rotation0. The prior radius9 and radius14 curvature experiments are superseded. Both styles await owner review.",
+        "construction": "Owner requested a deeper Moon concavity after the horn-extension revision. Preserve the extended horn endpoints, outer radius8, placement, bounds, Regular1.70 and round .85 joins. Reduce the inner centerline radius10 to9 and refit its circle through the unchanged horns. Filled follows the exact Regular exterior with outer radius8.85, inner radius8.15 and .85 horn joins. Both styles remain pending owner review. Horns 10.76035523 4.05252287 and 19.94747713 13.23964477; outer-circle center 12.05252287 11.94747713, inner-circle center 19.75836822 4.24163178. Native equal margins3.20252287, X/Y100%, rotation0.",
         "review": {
           "status": "draft",
           "reviewedBy": "palamto",
@@ -1678,7 +1678,7 @@
             "strokeWidth": 1.7,
             "rotation": 0
           },
-          "note": "Owner confirmed keeping the earlier radius10 concavity and extending both horns. Current revision adds15 degrees at each horn on the radius8 outer circle and centers the new geometry at native100%/100%, preserving Regular1.70. Await owner review."
+          "note": "Owner requested a deeper Moon concavity after the horn-extension revision. Preserve the extended horn endpoints, outer radius8, placement, bounds, Regular1.70 and round .85 joins. Reduce the inner centerline radius10 to9 and refit its circle through the unchanged horns. Filled follows the exact Regular exterior with outer radius8.85, inner radius8.15 and .85 horn joins. Both styles remain pending owner review."
         }
       },
       "root": {
@@ -1700,7 +1700,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M10.62306241 3.21368398 A8.85 8.85 0 0 0 3.20252287 11.94747713 A8.85 8.85 0 0 0 12.05252287 20.79747713 A8.85 8.85 0 0 0 20.78631602 13.37693759 A0.85 0.85 0 0 0 20.79747713 13.23964477 A0.85 0.85 0 0 0 20.01396723 12.39224931 A9.15 9.15 0 0 1 11.60775069 3.98603277 A0.85 0.85 0 0 0 10.76035523 3.20252287 A0.85 0.85 0 0 0 10.62306241 3.21368398 Z"
+                  "d": "M10.62306241 3.21368398 A8.85 8.85 0 0 0 3.20252287 11.94747713 A8.85 8.85 0 0 0 12.05252287 20.79747713 A8.85 8.85 0 0 0 20.78631602 13.37693759 A0.85 0.85 0 0 0 20.79747713 13.23964477 A0.85 0.85 0 0 0 19.94747713 12.38964477 A0.85 0.85 0 0 0 19.92961684 12.38983244 A8.15 8.15 0 0 1 19.75836822 12.39163178 A8.15 8.15 0 0 1 11.60836822 4.24163178 A8.15 8.15 0 0 1 11.61016756 4.07038316 A0.85 0.85 0 0 0 11.61035523 4.05252287 A0.85 0.85 0 0 0 10.76035523 3.20252287 A0.85 0.85 0 0 0 10.62306241 3.21368398 Z"
                 },
                 "children": []
               }
