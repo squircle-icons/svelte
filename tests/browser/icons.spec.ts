@@ -770,7 +770,9 @@ for (const icon of ['download', 'upload'])
       expect(value).toBeCloseTo([3.15, 15.15, 17.7, 6.2][index], 4);
   });
 
-test('Moon deepens its concavity while preserving both extended horns', async ({ page }) => {
+test('Moon inner arc extends beyond center while preserving both extended horns', async ({
+  page,
+}) => {
   const values = await page.evaluate(() => {
     const path = document.querySelector(
       '[data-testid="moon-filled-contour"] path',
@@ -791,21 +793,23 @@ test('Moon deepens its concavity while preserving both extended horns', async ({
         [10.76035523, 4.05252287],
         [19.94747713, 13.23964477],
       ].every(([x, y]) => path.isPointInFill(new DOMPoint(x, y))),
-      centerSolid: path.isPointInFill(new DOMPoint(12.35424869, 11.64575131)),
+      centerClear: !path.isPointInFill(new DOMPoint(12, 12)),
+      arcBeyondCenter: middle.x < 12 && middle.y > 12,
+      visibleArcBeyondCenter: !path.isPointInFill(new DOMPoint(11.8, 12.2)),
       openingClear: !path.isPointInFill(new DOMPoint(15, 8)),
-      retainedBody: path.isPointInFill(new DOMPoint(13.25, 10.75)),
       deeperOpening: !path.isPointInFill(new DOMPoint(14.12, 9.88)),
       bodySolid: path.isPointInFill(new DOMPoint(8, 17)),
-      innerRadius: Math.hypot(middle.x - 19.75836822, middle.y - 4.24163178),
+      innerRadius: Math.hypot(middle.x - 15.74685101, middle.y - 8.25314899),
       margins: [box.x, box.y, 24 - box.x - box.width, 24 - box.y - box.height],
     };
   });
   expect(values.extendedTips).toBe(true);
-  expect(values.centerSolid).toBe(true);
+  expect(values.centerClear).toBe(true);
+  expect(values.arcBeyondCenter).toBe(true);
+  expect(values.visibleArcBeyondCenter).toBe(true);
   expect(values.openingClear).toBe(true);
-  expect(values.retainedBody).toBe(true);
   expect(values.deeperOpening).toBe(true);
   expect(values.bodySolid).toBe(true);
-  expect(values.innerRadius).toBeCloseTo(9, 2);
+  expect(values.innerRadius).toBeCloseTo(6.52, 2);
   for (const margin of values.margins) expect(margin).toBeCloseTo(3.20252287, 4);
 });

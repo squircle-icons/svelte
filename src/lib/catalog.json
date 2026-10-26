@@ -304,7 +304,7 @@
       "description": "A balanced crescent moon with a clean circular concavity.",
       "tags": ["night", "dark", "weather"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested a deeper Moon concavity after the horn-extension revision. Preserve the extended horn endpoints, outer radius8, placement, bounds, Regular1.70 and round .85 joins. Reduce the inner centerline radius10 to9 and refit its circle through the unchanged horns. Filled follows the exact Regular exterior with outer radius8.85, inner radius8.15 and .85 horn joins. Both styles remain pending owner review. Horns 10.76035523 4.05252287 and 19.94747713 13.23964477; outer-circle center 12.05252287 11.94747713, inner-circle center 19.75836822 4.24163178. Native equal margins3.20252287, X/Y100%, rotation0.",
+      "construction": "Owner requested substantially deeper concavity, with the inner arc extending beyond the artboard center. Preserve both extended horns, outer radius8, native bounds, placement and Regular1.70. Fit inner centerline radius6.52 through the unchanged horns. Filled uses the exact Regular exterior: outer radius8.85, inner radius5.67 and round .85 horn joins. The visible concave midpoint is11.73755556 12.26244444, beyond12,12 toward the crescent body; the center is inside the opening in both styles. Both styles remain pending owner review. Horns 10.76035523 4.05252287 and 19.94747713 13.23964477; outer-circle center 12.05252287 11.94747713, inner-circle center 15.74685101 8.25314899. Native equal margins3.20252287, X/Y100%, rotation0.",
       "review": {
         "status": "draft",
         "reviewedBy": "palamto",
@@ -316,7 +316,7 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner requested a deeper Moon concavity after the horn-extension revision. Preserve the extended horn endpoints, outer radius8, placement, bounds, Regular1.70 and round .85 joins. Reduce the inner centerline radius10 to9 and refit its circle through the unchanged horns. Filled follows the exact Regular exterior with outer radius8.85, inner radius8.15 and .85 horn joins. Both styles remain pending owner review."
+        "note": "Owner requested substantially deeper concavity, with the inner arc extending beyond the artboard center. Preserve both extended horns, outer radius8, native bounds, placement and Regular1.70. Fit inner centerline radius6.52 through the unchanged horns. Filled uses the exact Regular exterior: outer radius8.85, inner radius5.67 and round .85 horn joins. The visible concave midpoint is11.73755556 12.26244444, beyond12,12 toward the crescent body; the center is inside the opening in both styles. Both styles remain pending owner review."
       },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
