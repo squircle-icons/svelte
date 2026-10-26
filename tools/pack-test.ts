@@ -62,6 +62,12 @@ assert(
   'Filled component import or SSR cutout missing',
 );
 assert(
+  html.includes('Filled camera review') &&
+    html.includes('Filled search review') &&
+    html.includes('Filled settings review'),
+  'New filled exports or declarations did not survive packing',
+);
+assert(
   html.includes('Already open') && html.includes('scaleY(0.72)'),
   'Initial open pose was not server-rendered',
 );

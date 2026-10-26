@@ -2,6 +2,13 @@
   import { onMount } from 'svelte';
   import Camera from 'squircle-icons-svelte/camera';
   import FilledFolder from 'squircle-icons-svelte/filled/folder';
+  import FilledSearch from 'squircle-icons-svelte/filled/search';
+  import {
+    Camera as FilledCamera,
+    Bell as FilledBell,
+    Heart as FilledHeart,
+    Settings as FilledSettings,
+  } from 'squircle-icons-svelte/filled';
   import Folder from 'squircle-icons-svelte/animated/folder';
   import Bell from 'squircle-icons-svelte/animated/bell';
   import {
@@ -84,6 +91,15 @@
     </div>{/each}
 </div>
 
+<div class="contact" data-testid="filled-contact-sheet">
+  {#each [FilledCamera, FilledFolder, FilledBell, FilledHeart, FilledSearch, FilledSettings] as Icon}<div
+    >
+      {#each [16, 20, 24, 48] as n}<Icon size={n} />{/each}
+    </div>{/each}
+</div>
+<div data-testid="filled-camera"><FilledCamera label="Filled camera review" /></div>
+<div data-testid="filled-search"><FilledSearch label="Filled search review" /></div>
+<div data-testid="filled-settings"><FilledSettings label="Filled settings review" /></div>
 <div data-testid="filled-folder">
   <FilledFolder size={24} {strokeWidth} label="Filled folder" />
 </div>

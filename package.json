@@ -27,6 +27,11 @@
       "svelte": "./dist/Bell.svelte",
       "default": "./dist/Bell.svelte"
     },
+    "./filled/bell": {
+      "types": "./dist/filled/Bell.svelte.d.ts",
+      "svelte": "./dist/filled/Bell.svelte",
+      "default": "./dist/filled/Bell.svelte"
+    },
     "./animated/bell": {
       "types": "./dist/animated/Bell.svelte.d.ts",
       "svelte": "./dist/animated/Bell.svelte",
@@ -36,6 +41,11 @@
       "types": "./dist/Camera.svelte.d.ts",
       "svelte": "./dist/Camera.svelte",
       "default": "./dist/Camera.svelte"
+    },
+    "./filled/camera": {
+      "types": "./dist/filled/Camera.svelte.d.ts",
+      "svelte": "./dist/filled/Camera.svelte",
+      "default": "./dist/filled/Camera.svelte"
     },
     "./folder": {
       "types": "./dist/Folder.svelte.d.ts",
@@ -57,15 +67,30 @@
       "svelte": "./dist/Heart.svelte",
       "default": "./dist/Heart.svelte"
     },
+    "./filled/heart": {
+      "types": "./dist/filled/Heart.svelte.d.ts",
+      "svelte": "./dist/filled/Heart.svelte",
+      "default": "./dist/filled/Heart.svelte"
+    },
     "./search": {
       "types": "./dist/Search.svelte.d.ts",
       "svelte": "./dist/Search.svelte",
       "default": "./dist/Search.svelte"
     },
+    "./filled/search": {
+      "types": "./dist/filled/Search.svelte.d.ts",
+      "svelte": "./dist/filled/Search.svelte",
+      "default": "./dist/filled/Search.svelte"
+    },
     "./settings": {
       "types": "./dist/Settings.svelte.d.ts",
       "svelte": "./dist/Settings.svelte",
       "default": "./dist/Settings.svelte"
+    },
+    "./filled/settings": {
+      "types": "./dist/filled/Settings.svelte.d.ts",
+      "svelte": "./dist/filled/Settings.svelte",
+      "default": "./dist/filled/Settings.svelte"
     },
     "./filled": {
       "types": "./dist/filled/index.d.ts",

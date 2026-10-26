@@ -252,6 +252,9 @@ test('missing animation API falls back to settled poses', async ({ page }) => {
 
 test('captures static artwork and reproducible motion poses', async ({ page }, info) => {
   await expect(page.getByTestId('contact-sheet')).toHaveScreenshot('contact-sheet.png');
+  await expect(page.getByTestId('filled-contact-sheet')).toHaveScreenshot(
+    'filled-contact-sheet.png',
+  );
   await expect(moving(page)).toHaveScreenshot('motion-rest.png');
   await page.getByRole('button', { name: 'Toggle folder' }).click();
   await expect.poll(() => countAnimations(page)).toBe(0);
@@ -265,5 +268,33 @@ test('captures static artwork and reproducible motion poses', async ({ page }, i
       .getByTestId('contact-sheet')
       .screenshot({ path: '.artifacts/previews/contact-sheet.png' });
     await moving(page).screenshot({ path: '.artifacts/previews/motion.png', animations: 'allow' });
+  }
+});
+
+test('all six filled variants render as solid native components with deliberate counters', async ({
+  page,
+}) => {
+  const sheet = page.getByTestId('filled-contact-sheet');
+  await expect(sheet.locator('svg')).toHaveCount(24);
+  for (const svg of await sheet.locator('svg').all()) {
+    await expect(svg).toHaveAttribute('stroke', 'none');
+    await expect(svg).toHaveAttribute('fill-rule', 'evenodd');
+  }
+  for (const [id, x, y] of [
+    ['filled-camera', 12, 13.2],
+    ['filled-search', 10, 10],
+    ['filled-settings', 12, 12],
+  ] as const) {
+    expect(
+      await page
+        .getByTestId(id)
+        .locator('path')
+        .first()
+        .evaluate(
+          (element, point) =>
+            (element as SVGGeometryElement).isPointInFill(new DOMPoint(point[0], point[1])),
+          [x, y],
+        ),
+    ).toBe(false);
   }
 });

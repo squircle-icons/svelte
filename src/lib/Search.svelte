@@ -26,6 +26,6 @@
   aria-hidden={label ? undefined : true}
   focusable="false"
 >
-  <g data-part="lens"><circle cx="10.4" cy="10.4" r="6.7"></circle></g>
-  <g data-part="handle"><path d="M 15.3 15.3 L 20.4 20.4"></path></g>
+  <g data-part="lens"><circle cx="10" cy="10" r="6.7"></circle></g>
+  <g data-part="handle"><path d="M14.73762 14.73762 L20.7 20.7"></path></g>
 </svg>

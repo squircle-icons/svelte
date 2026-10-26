@@ -9,7 +9,7 @@
         "alert"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Original bell shoulder curve transitions into nearly vertical walls. Broad lower lip balances the narrow crown."
+      "construction": "One continuous silhouette integrates the top hanger to avoid doubled seams. Straight side walls meet softened shoulders and a straight lower lip; the separate clapper remains recognizable. Vertical bounds y=2.5..21.5 are centered. Review study; not owner-approved."
     },
     "root": {
       "tag": "svg",
@@ -32,14 +32,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 10.2 3.6 C 10.2 2.6 10.8 2.2 12 2.2 C 13.2 2.2 13.8 2.6 13.8 3.6"
-              },
-              "children": []
-            },
-            {
-              "tag": "path",
-              "attrs": {
-                "d": "M 5.3 12 C 5.3 7.2 7.2 4.6 12 4.6 C 16.8 4.6 18.7 7.2 18.7 12 L 18.7 13.8 C 18.7 15.2 19.4 15.8 20.2 16.8 C 20.6 17.4 20.3 18 19.4 18.2 C 17.6 18.6 14.8 18.8 12 18.8 C 9.2 18.8 6.4 18.6 4.6 18.2 C 3.7 18 3.4 17.4 3.8 16.8 C 4.6 15.8 5.3 15.2 5.3 13.8 Z"
+                "d": "M10.5 4.8 V3.8 C10.5 2.85 11 2.5 12 2.5 C13 2.5 13.5 2.85 13.5 3.8 V4.8 C17.2 5.05 18.5 7.1 18.5 10.8 V14 C18.5 15.5 19.1 16.1 19.8 16.9 C20.35 17.55 20 18.2 19.15 18.2 H4.85 C4 18.2 3.65 17.55 4.2 16.9 C4.9 16.1 5.5 15.5 5.5 14 V10.8 C5.5 7.1 6.8 5.05 10.5 4.8 Z"
               },
               "children": []
             }
@@ -54,7 +47,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 9.8 21 C 10.4 21.6 11.1 21.8 12 21.8 C 12.9 21.8 13.6 21.6 14.2 21"
+                "d": "M10 20.4 C10.3 21.15 11 21.5 12 21.5 C13 21.5 13.7 21.15 14 20.4"
               },
               "children": []
             }
@@ -160,6 +153,65 @@
           ]
         }
       ]
+    },
+    "filled": {
+      "metadata": {
+        "name": "bell",
+        "description": "A gently squared bell with a separate hanging clapper in a solid filled style.",
+        "tags": [
+          "notification",
+          "alert",
+          "filled"
+        ],
+        "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+        "construction": "The solid shell follows the same hanger, upright walls and flat lip. Separate clapper starts 1.7 units beneath the body. Vertical bounds y=1.65..22.35 balance top and bottom. Separately authored fill-only study; counters are fixed geometry. Not owner-approved."
+      },
+      "root": {
+        "tag": "svg",
+        "attrs": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "fill": "currentColor",
+          "fill-rule": "evenodd",
+          "stroke": "none",
+          "viewBox": "0 0 24 24"
+        },
+        "children": [
+          {
+            "tag": "g",
+            "attrs": {
+              "data-part": "body"
+            },
+            "children": [
+              {
+                "tag": "path",
+                "attrs": {
+                  "d": "M9.65 4.05 V3.8 C9.65 2.3 10.4 1.65 12 1.65 C13.6 1.65 14.35 2.3 14.35 3.8 V4.05 C17.9 4.6 19.35 7.1 19.35 10.8 V14 C19.35 15.1 19.85 15.7 20.45 16.35 C21.6 17.6 21.35 19.05 19.15 19.05 H4.85 C2.65 19.05 2.4 17.6 3.55 16.35 C4.15 15.7 4.65 15.1 4.65 14 V10.8 C4.65 7.1 6.1 4.6 9.65 4.05 Z"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "g",
+            "attrs": {
+              "data-part": "clapper"
+            },
+            "children": [
+              {
+                "tag": "path",
+                "attrs": {
+                  "d": "M9.2 20.75 H14.8 C14.8 21.8 13.75 22.35 12 22.35 C10.25 22.35 9.2 21.8 9.2 20.75 Z"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "parts": [
+        "body",
+        "clapper"
+      ]
     }
   },
   {
@@ -172,7 +224,7 @@
         "image"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Original Bézier body: shoulders taper into a raised shutter housing; lens is optically lowered to 12.9."
+      "construction": "Rounded rectangular body uses the Folder corner rhythm, straight shoulder ledges and a raised housing. Circular lens stays circular; its center is lowered to y=13.2. Source bounds x=3..21 and y=4.1..19.9 balance opposite margins. Review study; not owner-approved."
     },
     "root": {
       "tag": "svg",
@@ -195,7 +247,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 3 9.2 C 3 7.5 3.7 6.8 5.4 6.8 L 7.2 6.8 L 8.3 4.9 C 8.6 4.4 9.1 4.2 9.8 4.2 L 14.2 4.2 C 14.9 4.2 15.4 4.4 15.7 4.9 L 16.8 6.8 L 18.6 6.8 C 20.3 6.8 21 7.5 21 9.2 L 21 16.6 C 21 18.6 20.1 19.5 18.1 19.5 L 5.9 19.5 C 3.9 19.5 3 18.6 3 16.6 Z"
+                "d": "M3 9.2 C3 7.5 3.8 6.8 5.5 6.8 H7.2 L8.2 4.9 C8.55 4.3 8.9 4.1 9.6 4.1 H14.4 C15.1 4.1 15.45 4.3 15.8 4.9 L16.8 6.8 H18.5 C20.2 6.8 21 7.5 21 9.2 V17.1 C21 19.0 20.2 19.9 18.4 19.9 H5.6 C3.8 19.9 3 19.0 3 17.1 Z"
               },
               "children": []
             }
@@ -211,8 +263,8 @@
               "tag": "circle",
               "attrs": {
                 "cx": "12",
-                "cy": "12.9",
-                "r": "3.4"
+                "cy": "13.2",
+                "r": "3.25"
               },
               "children": []
             }
@@ -227,7 +279,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 17.8 9.6 L 18.2 9.6"
+                "d": "M17.6 9.5 H18.2"
               },
               "children": []
             }
@@ -239,7 +291,50 @@
       "body",
       "lens",
       "indicator"
-    ]
+    ],
+    "filled": {
+      "metadata": {
+        "name": "camera",
+        "description": "A compact camera with a continuous curved body and circular lens in a solid filled style.",
+        "tags": [
+          "photo",
+          "image",
+          "filled"
+        ],
+        "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+        "construction": "Rounded rectangular outer shell has bounds x=2.15..21.85 and y=3.25..20.75. A circular lens counter and small indicator counter preserve recognition without overlapping strokes. Separately authored fill-only study; counters are fixed geometry. Not owner-approved."
+      },
+      "root": {
+        "tag": "svg",
+        "attrs": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "fill": "currentColor",
+          "fill-rule": "evenodd",
+          "stroke": "none",
+          "viewBox": "0 0 24 24"
+        },
+        "children": [
+          {
+            "tag": "g",
+            "attrs": {
+              "data-part": "body"
+            },
+            "children": [
+              {
+                "tag": "path",
+                "attrs": {
+                  "d": "M2.15 9.2 C2.15 6.95 3.3 5.95 5.5 5.95 H6.7 L7.45 4.45 C7.9 3.55 8.55 3.25 9.6 3.25 H14.4 C15.45 3.25 16.1 3.55 16.55 4.45 L17.3 5.95 H18.5 C20.7 5.95 21.85 6.95 21.85 9.2 V17.1 C21.85 19.6 20.7 20.75 18.4 20.75 H5.6 C3.3 20.75 2.15 19.6 2.15 17.1 Z M 8.75 13.2 A 3.25 3.25 0 1 0 15.25 13.2 A 3.25 3.25 0 1 0 8.75 13.2 Z M 17.35 9.4 A 0.65 0.65 0 1 0 18.65 9.4 A 0.65 0.65 0 1 0 17.35 9.4 Z"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "parts": [
+        "body"
+      ]
+    }
   },
   {
     "name": "folder",
@@ -419,7 +514,7 @@
         "favorite"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Original symmetric lobes with a shallow notch and curved lower point; no rounded-square frame."
+      "construction": "Broad, gently squared lobe shoulders and short upright sections carry the rounded rectangle grammar without losing the heart notch and soft point. Bounds x=3.25..20.75, y=4.1..19.9 are centered. Review study; not owner-approved."
     },
     "root": {
       "tag": "svg",
@@ -442,7 +537,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 12 6.1 C 10 2.9 5.7 2.9 3.7 5.5 C 1.5 8.4 2.9 11.8 5.2 14.3 L 10.5 19.7 C 11.5 20.7 12.5 20.7 13.5 19.7 L 18.8 14.3 C 21.1 11.8 22.5 8.4 20.3 5.5 C 18.3 2.9 14 2.9 12 6.1 Z"
+                "d": "M12 6.15 C10.8 4.55 9.8 4.1 7.6 4.1 C4.8 4.1 3.25 5.65 3.25 8.4 C3.25 10.8 4.4 12.6 6.25 14.45 L10.65 18.85 C11.15 19.35 11.5 19.9 12 19.9 C12.5 19.9 12.85 19.35 13.35 18.85 L17.75 14.45 C19.6 12.6 20.75 10.8 20.75 8.4 C20.75 5.65 19.2 4.1 16.4 4.1 C14.2 4.1 13.2 4.55 12 6.15 Z"
               },
               "children": []
             }
@@ -452,7 +547,50 @@
     },
     "parts": [
       "body"
-    ]
+    ],
+    "filled": {
+      "metadata": {
+        "name": "heart",
+        "description": "A balanced heart with full lobes and a softened lower point in a solid filled style.",
+        "tags": [
+          "love",
+          "favorite",
+          "filled"
+        ],
+        "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+        "construction": "Filled lobes and point are separately expanded to match Outline apparent size. No artificial counters or interior strokes. Bounds x=2.4..21.6, y=3.25..20.75 are centered. Separately authored fill-only study; counters are fixed geometry. Not owner-approved."
+      },
+      "root": {
+        "tag": "svg",
+        "attrs": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "fill": "currentColor",
+          "fill-rule": "evenodd",
+          "stroke": "none",
+          "viewBox": "0 0 24 24"
+        },
+        "children": [
+          {
+            "tag": "g",
+            "attrs": {
+              "data-part": "body"
+            },
+            "children": [
+              {
+                "tag": "path",
+                "attrs": {
+                  "d": "M12 4.95 C10.9 3.8 9.6 3.25 7.6 3.25 C4.25 3.25 2.4 5.1 2.4 8.4 C2.4 11.15 3.7 13.2 5.65 15.05 L10.05 19.45 C10.7 20.1 11.2 20.75 12 20.75 C12.8 20.75 13.3 20.1 13.95 19.45 L18.35 15.05 C20.3 13.2 21.6 11.15 21.6 8.4 C21.6 5.1 19.75 3.25 16.4 3.25 C14.4 3.25 13.1 3.8 12 4.95 Z"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "parts": [
+        "body"
+      ]
+    }
   },
   {
     "name": "search",
@@ -464,7 +602,7 @@
         "magnify"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Original construction from a circle centered at 10.4 and a 45-degree handle. Circular geometry preserves immediate recognition."
+      "construction": "The circular lens is an intentional silhouette exception. A single 45-degree handle meets the circle at its centerline, with a rounded free end. Combined centerline bounds x/y=3.3..20.7 balance the grid. Review study; not owner-approved."
     },
     "root": {
       "tag": "svg",
@@ -487,8 +625,8 @@
             {
               "tag": "circle",
               "attrs": {
-                "cx": "10.4",
-                "cy": "10.4",
+                "cx": "10",
+                "cy": "10",
                 "r": "6.7"
               },
               "children": []
@@ -504,7 +642,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 15.3 15.3 L 20.4 20.4"
+                "d": "M14.73762 14.73762 L20.7 20.7"
               },
               "children": []
             }
@@ -515,7 +653,66 @@
     "parts": [
       "lens",
       "handle"
-    ]
+    ],
+    "filled": {
+      "metadata": {
+        "name": "search",
+        "description": "A clear circular search lens with a short angled handle in a solid filled style.",
+        "tags": [
+          "find",
+          "magnify",
+          "filled"
+        ],
+        "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+        "construction": "A circular ring uses a true circular counter; the separately authored rounded capsule handle joins the solid ring. Fill overlap creates one silhouette with no doubled strokes. Combined visible bounds are approximately x/y=2.45..21.55. Separately authored fill-only study; counters are fixed geometry. Not owner-approved."
+      },
+      "root": {
+        "tag": "svg",
+        "attrs": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "fill": "currentColor",
+          "fill-rule": "evenodd",
+          "stroke": "none",
+          "viewBox": "0 0 24 24"
+        },
+        "children": [
+          {
+            "tag": "g",
+            "attrs": {
+              "data-part": "lens"
+            },
+            "children": [
+              {
+                "tag": "path",
+                "attrs": {
+                  "d": "M 2.45 10 A 7.55 7.55 0 1 0 17.55 10 A 7.55 7.55 0 1 0 2.45 10 Z M 4.55 10 A 5.45 5.45 0 1 0 15.45 10 A 5.45 5.45 0 1 0 4.55 10 Z"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "tag": "g",
+            "attrs": {
+              "data-part": "handle"
+            },
+            "children": [
+              {
+                "tag": "path",
+                "attrs": {
+                  "d": "M14.22218 15.77782 L19.67218 21.22782 A1.1 1.1 0 0 0 21.22782 19.67218 L15.77782 14.22218 A1.1 1.1 0 0 0 14.22218 15.77782 Z"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "parts": [
+        "lens",
+        "handle"
+      ]
+    }
   },
   {
     "name": "settings",
@@ -527,7 +724,7 @@
         "gear"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Original six-tooth outline with Bézier shoulders. The gear stays recognizable rather than forcing a squircle silhouette."
+      "construction": "Six original radial teeth use straight faces with individually rounded transitions. The recognizable gear is a silhouette exception to the rounded rectangle baseline. Opposite teeth are constructed in symmetric pairs about 12,12; the circular hub remains circular. Review study; not owner-approved."
     },
     "root": {
       "tag": "svg",
@@ -550,7 +747,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M 10.2 2.8 C 10.5 2.2 13.5 2.2 13.8 2.8 L 14.4 5.1 C 15 5.3 15.6 5.6 16.1 6 L 18.4 5.4 C 19.1 5.3 20.6 7.9 20.2 8.4 L 18.6 10.1 C 18.8 11.4 18.8 12.6 18.6 13.9 L 20.2 15.6 C 20.6 16.1 19.1 18.7 18.4 18.6 L 16.1 18 C 15.6 18.4 15 18.7 14.4 18.9 L 13.8 21.2 C 13.5 21.8 10.5 21.8 10.2 21.2 L 9.6 18.9 C 9 18.7 8.4 18.4 7.9 18 L 5.6 18.6 C 4.9 18.7 3.4 16.1 3.8 15.6 L 5.4 13.9 C 5.2 12.6 5.2 11.4 5.4 10.1 L 3.8 8.4 C 3.4 7.9 4.9 5.3 5.6 5.4 L 7.9 6 C 8.4 5.6 9 5.3 9.6 5.1 Z"
+                "d": "M9.29875 5.51182 L9.29875 5.51182 Q9.68847 5.28682 9.79345 4.84924 L10.13957 3.40661 Q10.24456 2.96903 10.69456 2.96903 L13.30544 2.96903 Q13.75544 2.96903 13.86043 3.40661 L14.20655 4.84924 Q14.31153 5.28682 14.70125 5.51182 L16.26831 6.41656 Q16.65802 6.64156 17.08947 6.51369 L18.51188 6.09213 Q18.94333 5.96426 19.16833 6.35397 L20.47377 8.61506 Q20.69877 9.00477 20.37231 9.31448 L19.29602 10.33554 Q18.96955 10.64526 18.96955 11.09526 L18.96955 12.90474 Q18.96955 13.35474 19.29602 13.66446 L20.37231 14.68552 Q20.69877 14.99523 20.47377 15.38494 L19.16833 17.64603 Q18.94333 18.03574 18.51188 17.90787 L17.08947 17.48631 Q16.65802 17.35844 16.26831 17.58344 L14.70125 18.48818 Q14.31153 18.71318 14.20655 19.15076 L13.86043 20.59339 Q13.75544 21.03097 13.30544 21.03097 L10.69456 21.03097 Q10.24456 21.03097 10.13957 20.59339 L9.79345 19.15076 Q9.68847 18.71318 9.29875 18.48818 L7.73169 17.58344 Q7.34198 17.35844 6.91053 17.48631 L5.48812 17.90787 Q5.05667 18.03574 4.83167 17.64603 L3.52623 15.38494 Q3.30123 14.99523 3.62769 14.68552 L4.70398 13.66446 Q5.03045 13.35474 5.03045 12.90474 L5.03045 11.09526 Q5.03045 10.64526 4.70398 10.33554 L3.62769 9.31448 Q3.30123 9.00477 3.52623 8.61506 L4.83167 6.35397 Q5.05667 5.96426 5.48812 6.09213 L6.91053 6.51369 Q7.34198 6.64156 7.73169 6.41656 Z"
               },
               "children": []
             }
@@ -578,6 +775,49 @@
     "parts": [
       "body",
       "hub"
-    ]
+    ],
+    "filled": {
+      "metadata": {
+        "name": "settings",
+        "description": "A six-tooth gear with flowing shoulders and a circular center in a solid filled style.",
+        "tags": [
+          "preferences",
+          "gear",
+          "filled"
+        ],
+        "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+        "construction": "Six solid teeth use matching straight faces and softened roots, expanded independently from the Outline. A circular hub counter leaves a clean single-color silhouette. Opposite points are symmetric about 12,12. Separately authored fill-only study; counters are fixed geometry. Not owner-approved."
+      },
+      "root": {
+        "tag": "svg",
+        "attrs": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "fill": "currentColor",
+          "fill-rule": "evenodd",
+          "stroke": "none",
+          "viewBox": "0 0 24 24"
+        },
+        "children": [
+          {
+            "tag": "g",
+            "attrs": {
+              "data-part": "body"
+            },
+            "children": [
+              {
+                "tag": "path",
+                "attrs": {
+                  "d": "M8.89212 4.78313 L8.89212 4.78313 Q9.41173 4.48313 9.57648 3.90619 L9.91762 2.71158 Q10.08237 2.13465 10.68237 2.13465 L13.31763 2.13465 Q13.91763 2.13465 14.08238 2.71158 L14.42352 3.90619 Q14.58827 4.48313 15.10788 4.78313 L16.69605 5.70006 Q17.21567 6.00006 17.79769 5.85427 L19.00281 5.55240 Q19.58483 5.40661 19.88483 5.92622 L21.20246 8.20842 Q21.50246 8.72804 21.08519 9.15919 L20.22120 10.05192 Q19.80394 10.48307 19.80394 11.08307 L19.80394 12.91693 Q19.80394 13.51693 20.22120 13.94808 L21.08519 14.84081 Q21.50246 15.27196 21.20246 15.79158 L19.88483 18.07378 Q19.58483 18.59339 19.00281 18.44760 L17.79769 18.14573 Q17.21567 17.99994 16.69605 18.29994 L15.10788 19.21687 Q14.58827 19.51687 14.42352 20.09381 L14.08238 21.28842 Q13.91763 21.86535 13.31763 21.86535 L10.68237 21.86535 Q10.08237 21.86535 9.91762 21.28842 L9.57648 20.09381 Q9.41173 19.51687 8.89212 19.21687 L7.30395 18.29994 Q6.78433 17.99994 6.20231 18.14573 L4.99719 18.44760 Q4.41517 18.59339 4.11517 18.07378 L2.79754 15.79158 Q2.49754 15.27196 2.91481 14.84081 L3.77880 13.94808 Q4.19606 13.51693 4.19606 12.91693 L4.19606 11.08307 Q4.19606 10.48307 3.77880 10.05192 L2.91481 9.15919 Q2.49754 8.72804 2.79754 8.20842 L4.11517 5.92622 Q4.41517 5.40661 4.99719 5.55240 L6.20231 5.85427 Q6.78433 6.00006 7.30395 5.70006 Z M 8.9 12 A 3.1 3.1 0 1 0 15.1 12 A 3.1 3.1 0 1 0 8.9 12 Z"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "parts": [
+        "body"
+      ]
+    }
   }
 ]
