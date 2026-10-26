@@ -12,8 +12,8 @@ importers:
         specifier: 1.64.1
         version: 1.64.1
       '@squircle-icons/core':
-        specifier: file:vendor/squircle-icons-core-0.0.0-8df7697cc25a.tgz
-        version: file:vendor/squircle-icons-core-0.0.0-8df7697cc25a.tgz
+        specifier: file:vendor/squircle-icons-core-0.0.0-4434e66f99b3.tgz
+        version: file:vendor/squircle-icons-core-0.0.0-4434e66f99b3.tgz
       '@sveltejs/adapter-static':
         specifier: 4.0.0
         version: 4.0.0(@sveltejs/kit@3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.5(@types/node@24.19.2)(esbuild@0.28.2)(tsx@4.23.15)))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.5(@types/node@24.19.2)(esbuild@0.28.2)(tsx@4.23.15)))
@@ -335,8 +335,8 @@ packages:
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
-  '@squircle-icons/core@file:vendor/squircle-icons-core-0.0.0-8df7697cc25a.tgz':
-    resolution: {integrity: sha512-Fz/NohLox6Yxr5Je/UaqqrcJBOBwjDqMej2Lob67caAMCTgpnPhFjw/VxUwcDMcxcJ08T33TMGbFMXXvNH9vrg==, tarball: file:vendor/squircle-icons-core-0.0.0-8df7697cc25a.tgz}
+  '@squircle-icons/core@file:vendor/squircle-icons-core-0.0.0-4434e66f99b3.tgz':
+    resolution: {integrity: sha512-xrExWDHGD/u/icZOFPune4it9yTPLsaLW1ErrPLOnt68JrAMRLXbUhQmXdKS0UnfC14jPI2dfawlTG0n/xppsw==, tarball: file:vendor/squircle-icons-core-0.0.0-4434e66f99b3.tgz}
     version: 0.0.0
     engines: {node: '>=22.17.0'}
 
@@ -976,7 +976,7 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.1': {}
 
-  '@squircle-icons/core@file:vendor/squircle-icons-core-0.0.0-8df7697cc25a.tgz': {}
+  '@squircle-icons/core@file:vendor/squircle-icons-core-0.0.0-4434e66f99b3.tgz': {}
 
   '@standard-schema/spec@1.1.0': {}
 

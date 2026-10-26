@@ -206,7 +206,7 @@ for (const icon of [
         svg.setAttribute('height', String(size));
         svg.setAttribute('fill', '#000');
         svg.setAttribute('stroke', outline ? '#000' : 'none');
-        if (!outline && ['plus', 'x'].includes(icon)) {
+        if (!outline && ['plus', 'x', 'check'].includes(icon)) {
           // Owner-requested Filled boxes are a deliberate exterior exception.
           // The negative-space glyph matches the unchanged Outline exterior for both marks.
           const path = svg.querySelector('path')!;
@@ -243,6 +243,21 @@ for (const icon of [
             ].includes(icon)
           )
             svg.setAttribute('fill', 'none');
+          if (
+            [
+              'arrow-left',
+              'arrow-right',
+              'chevron-down',
+              'chevron-up',
+              'download',
+              'upload',
+            ].includes(icon)
+          ) {
+            const group = ['download', 'upload'].includes(icon) ? 'arrow' : 'body';
+            const head = svg.querySelector(`[data-part="${group}"] path`)!;
+            head.setAttribute('d', head.getAttribute('d') + ' Z');
+            head.setAttribute('fill', '#000');
+          }
           if (icon === 'trash') {
             svg.querySelector('[data-part="body"]')?.setAttribute('fill', '#000');
             svg.querySelector('[data-part="slots"]')?.setAttribute('stroke', '#fff');
@@ -498,8 +513,8 @@ test('Round 4 exposes six draft pairs on light and dark review sheets', async ({
   }
 });
 
-for (const icon of ['plus', 'x'])
-  test(`Filled ${icon} has a solid rounded box with exactly 2px around its glyph cutout`, async ({
+for (const icon of ['plus', 'x', 'check'])
+  test(`Filled ${icon} has a rounded box with 2px primary clearance around its glyph cutout`, async ({
     page,
   }) => {
     const result = await page.evaluate((icon) => {
@@ -523,7 +538,9 @@ for (const icon of ['plus', 'x'])
           glyph.y - box.y,
           box.y + box.height - glyph.y - glyph.height,
         ],
-        emptyCenter: !filled.isPointInFill(new DOMPoint(12, 12)),
+        emptyCenter: !filled.isPointInFill(
+          new DOMPoint(icon === 'check' ? 9.25 : 12, icon === 'check' ? 16.95 : 12),
+        ),
         solidBorder: filled.isPointInFill(new DOMPoint(box.x + 0.75, 12)),
         clearOutside: !filled.isPointInFill(new DOMPoint(box.x - 0.25, 12)),
         roundedCorner: !filled.isPointInFill(new DOMPoint(box.x + 0.1, box.y + 0.1)),
@@ -532,7 +549,8 @@ for (const icon of ['plus', 'x'])
     }, icon);
     // Chromium and WebKit approximate circular-arc bounds by up to 0.0003 native units.
     // The rotated contour tests independently check the unchanged 1.70 glyph weight.
-    for (const padding of result.padding) expect(padding).toBeCloseTo(2, 3);
+    for (const [index, padding] of result.padding.entries())
+      expect(padding).toBeCloseTo(icon === 'check' && index >= 2 ? 4.2 : 2, 3);
     if (['x', 'plus'].includes(icon)) {
       for (const margin of result.outerMargins) expect(margin).toBeCloseTo(2, 5);
       for (const margin of result.glyphMargins) expect(margin).toBeCloseTo(4, 3);
@@ -697,3 +715,31 @@ test('Trash bakes the accepted 105 by 95 proportions into native geometry with f
   for (const margin of values.margins.slice(2)) expect(margin).toBeCloseTo(2.75, 4);
   expect(values.stroke).toBe('1.7');
 });
+
+for (const [icon, point] of [
+  ['arrow-left', [9, 10]],
+  ['arrow-right', [15, 10]],
+  ['chevron-down', [12, 10.5]],
+  ['chevron-up', [12, 13.5]],
+  ['download', [10.5, 11]],
+  ['upload', [10.5, 6.75]],
+] as const)
+  test(`Filled ${icon} has a solid head while Outline remains open`, async ({ page }) => {
+    const result = await page.evaluate(
+      ({ icon, point }) => {
+        const filled = document.querySelector(`[data-testid="${icon}-filled-contour"] svg`)!;
+        const outline = document.querySelector(`[data-testid="${icon}-outline-contour"] svg`)!;
+        const location = new DOMPoint(point[0], point[1]);
+        return {
+          filledSolid: Array.from(filled.querySelectorAll('path')).some((path) =>
+            path.isPointInFill(location),
+          ),
+          outlineOpen: !Array.from(outline.querySelectorAll('path')).some((path) =>
+            path.isPointInStroke(location),
+          ),
+        };
+      },
+      { icon, point: [...point] },
+    );
+    expect(result).toEqual({ filledSolid: true, outlineOpen: true });
+  });
