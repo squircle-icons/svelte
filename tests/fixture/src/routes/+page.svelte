@@ -181,6 +181,24 @@
   </section>
 {/each}
 
+<section class="rotation-sheet" data-testid="copy-review-sheet">
+  <header>
+    <span>ROUND 3 / COPY REVISION</span>
+    <h2>Copy</h2>
+    <p>More space between pages · Camera/Folder corner standard · Regular 1.70</p>
+  </header>
+  <div class="rotation-grid">
+    {#each ['outline', 'filled'] as style}<article>
+        <Copy size={72} style={style as 'outline' | 'filled'} /><small>{style}</small>
+        <div>
+          {#each [16, 20, 24, 48] as size}<Copy
+              {size}
+              style={style as 'outline' | 'filled'}
+            />{/each}
+        </div>
+      </article>{/each}
+  </div>
+</section>
 <section class="rotation-sheet" data-testid="plus-x-rotation-sheet">
   <header>
     <span>ROUND 3 / FILLED REVISION</span>

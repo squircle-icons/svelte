@@ -596,3 +596,38 @@ test('unboxed Camera and Folder retain horizontal proportions with a 2px primary
       .getByTestId('primary-rounded-sheet')
       .screenshot({ path: '.artifacts/previews/camera-folder-rounded.png' });
 });
+
+test('Copy keeps a 4px inter-page gap, 2px margins and the standard rounded corners', async ({
+  page,
+}, info) => {
+  const result = await page.evaluate(() => {
+    const outline = document.querySelector(
+      '[data-testid="copy-outline-contour"] svg',
+    ) as SVGSVGElement;
+    const back = (outline.querySelector('[data-part="back"] path') as SVGPathElement).getBBox();
+    const front = (outline.querySelector('[data-part="front"] path') as SVGPathElement).getBBox();
+    const filled = document.querySelector(
+      '[data-testid="copy-filled-contour"] svg',
+    ) as SVGSVGElement;
+    const frontFill = filled.querySelector('[data-part="front"] path') as SVGPathElement;
+    const b = frontFill.getBBox();
+    const f = filled.getBBox();
+    const h = Number(outline.getAttribute('stroke-width')) / 2;
+    return {
+      gaps: [front.x - back.x - 2 * h, front.y - back.y - 2 * h],
+      margins: [f.x, f.y, 24 - f.x - f.width, 24 - f.y - f.height],
+      stroke: h * 2,
+      roundedCorner: !frontFill.isPointInFill(new DOMPoint(b.x + 0.9, b.y + 0.9)),
+      solidFront: frontFill.isPointInFill(new DOMPoint(14, 14)),
+    };
+  });
+  for (const gap of result.gaps) expect(gap).toBeCloseTo(4, 4);
+  for (const margin of result.margins) expect(margin).toBeCloseTo(2, 4);
+  expect(result.stroke).toBe(1.7);
+  expect(result.roundedCorner).toBe(true);
+  expect(result.solidFront).toBe(true);
+  if (info.project.name === 'chromium')
+    await page
+      .getByTestId('copy-review-sheet')
+      .screenshot({ path: '.artifacts/previews/copy-spaced-rounded.png' });
+});

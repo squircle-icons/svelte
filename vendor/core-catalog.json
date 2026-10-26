@@ -784,7 +784,7 @@
         "document"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Two offset page shapes use deliberate straight sides and radius-2 circular corners. The rear outline runs from 7.5,16.5 around the upper-left page to 16.5,7.5, with its endpoints terminating within the foreground boundary stroke. The foreground page centerline bounds are 7.5..21 on both axes. Combined centerline bounds are 3..21, giving balanced Regular visible margins of 2.15. The partial rear path keeps hidden edges out of the foreground interior. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review."
+      "construction": "Owner-requested greater separation and the standard Camera/Folder main-body corner roundness. Both page centerlines use radius 3.25 with unchanged Regular 1.70 stroke and .85 round caps. Rear page centerline bounds are 2.85..15.45; front page centerline bounds are 8.55..21.15 on both axes. The offset is 5.70, producing a 4.00-unit clear straight gap between the exposed parallel borders (previously 2.80). Combined visible bounds are 2..22 on both axes, with balanced 2px artboard margins. The partial rear path terminates inside the foreground stroke so hidden edges do not appear. Filled uses the exact Outline exterior: outer corner radius 4.10, rear-band inner radius 2.40 and .85 end caps. Its front page is solid, with no added enclosing box or artificial hole. Position and visible exterior match between styles at native X/Y=100%, rotation=0 and Regular 1.70. Round 3 draft awaiting owner review."
     },
     "root": {
       "tag": "svg",
@@ -807,7 +807,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M7.5 16.5 H5 A2 2 0 0 1 3 14.5 V5 A2 2 0 0 1 5 3 H14.5 A2 2 0 0 1 16.5 5 V7.5"
+                "d": "M8.55 15.45 H6.1 A3.25 3.25 0 0 1 2.85 12.2 V6.1 A3.25 3.25 0 0 1 6.1 2.85 H12.2 A3.25 3.25 0 0 1 15.45 6.1 V8.55"
               },
               "children": []
             }
@@ -822,7 +822,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M9.5 7.5 H19 A2 2 0 0 1 21 9.5 V19 A2 2 0 0 1 19 21 H9.5 A2 2 0 0 1 7.5 19 V9.5 A2 2 0 0 1 9.5 7.5 Z"
+                "d": "M11.8 8.55 H17.9 A3.25 3.25 0 0 1 21.15 11.8 V17.9 A3.25 3.25 0 0 1 17.9 21.15 H11.8 A3.25 3.25 0 0 1 8.55 17.9 V11.8 A3.25 3.25 0 0 1 11.8 8.55 Z"
               },
               "children": []
             }
@@ -845,7 +845,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The foreground is a solid rounded page with bounds 6.65..21.85 and radius-2.85 corners, exactly the exterior of the Outline foreground at Regular 1.70. The exposed rear border is authored as a closed width-1.70 band with outer radius 2.85, inner radius 1.15 and radius-.85 end caps. Its ends merge within the solid foreground; the exposed inter-page gap is retained. No artificial foreground hole is added. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review."
+        "construction": "Owner-requested greater separation and the standard Camera/Folder main-body corner roundness. Both page centerlines use radius 3.25 with unchanged Regular 1.70 stroke and .85 round caps. Rear page centerline bounds are 2.85..15.45; front page centerline bounds are 8.55..21.15 on both axes. The offset is 5.70, producing a 4.00-unit clear straight gap between the exposed parallel borders (previously 2.80). Combined visible bounds are 2..22 on both axes, with balanced 2px artboard margins. The partial rear path terminates inside the foreground stroke so hidden edges do not appear. Filled uses the exact Outline exterior: outer corner radius 4.10, rear-band inner radius 2.40 and .85 end caps. Its front page is solid, with no added enclosing box or artificial hole. Position and visible exterior match between styles at native X/Y=100%, rotation=0 and Regular 1.70. Round 3 draft awaiting owner review."
       },
       "root": {
         "tag": "svg",
@@ -866,7 +866,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M7.5 17.35 H5 A2.85 2.85 0 0 1 2.15 14.5 V5 A2.85 2.85 0 0 1 5 2.15 H14.5 A2.85 2.85 0 0 1 17.35 5 V7.5 A.85 .85 0 0 1 15.65 7.5 V5 A1.15 1.15 0 0 0 14.5 3.85 H5 A1.15 1.15 0 0 0 3.85 5 V14.5 A1.15 1.15 0 0 0 5 15.65 H7.5 A.85 .85 0 0 1 7.5 17.35 Z"
+                  "d": "M8.55 16.3 H6.1 A4.1 4.1 0 0 1 2 12.2 V6.1 A4.1 4.1 0 0 1 6.1 2 H12.2 A4.1 4.1 0 0 1 16.3 6.1 V8.55 A.85 .85 0 0 1 14.6 8.55 V6.1 A2.4 2.4 0 0 0 12.2 3.7 H6.1 A2.4 2.4 0 0 0 3.7 6.1 V12.2 A2.4 2.4 0 0 0 6.1 14.6 H8.55 A.85 .85 0 0 1 8.55 16.3 Z"
                 },
                 "children": []
               }
@@ -881,7 +881,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M9.5 6.65 H19 A2.85 2.85 0 0 1 21.85 9.5 V19 A2.85 2.85 0 0 1 19 21.85 H9.5 A2.85 2.85 0 0 1 6.65 19 V9.5 A2.85 2.85 0 0 1 9.5 6.65 Z"
+                  "d": "M11.8 7.7 H17.9 A4.1 4.1 0 0 1 22 11.8 V17.9 A4.1 4.1 0 0 1 17.9 22 H11.8 A4.1 4.1 0 0 1 7.7 17.9 V11.8 A4.1 4.1 0 0 1 11.8 7.7 Z"
                 },
                 "children": []
               }
