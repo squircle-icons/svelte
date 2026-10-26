@@ -769,3 +769,27 @@ for (const icon of ['download', 'upload'])
     for (const [index, value] of result.bounds.entries())
       expect(value).toBeCloseTo([3.15, 15.15, 17.7, 6.2][index], 4);
   });
+
+test('Moon has a deeper inward crescent while keeping its outer bounds and horns', async ({
+  page,
+}) => {
+  const values = await page.evaluate(() => {
+    const path = document.querySelector(
+      '[data-testid="moon-filled-contour"] path',
+    ) as SVGPathElement;
+    const box = path.getBBox();
+    return {
+      centerCutOut: !path.isPointInFill(new DOMPoint(12.35424869, 11.64575131)),
+      bodySolid: path.isPointInFill(new DOMPoint(8, 17)),
+      hornsSolid: [
+        [9.06274607, 4.35424869],
+        [19.64575131, 14.93725393],
+      ].every(([x, y]) => path.isPointInFill(new DOMPoint(x, y))),
+      margins: [box.x, box.y, 24 - box.x - box.width, 24 - box.y - box.height],
+    };
+  });
+  expect(values.centerCutOut).toBe(true);
+  expect(values.bodySolid).toBe(true);
+  expect(values.hornsSolid).toBe(true);
+  for (const margin of values.margins) expect(margin).toBeCloseTo(3.50424869, 4);
+});

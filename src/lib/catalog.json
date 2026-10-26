@@ -304,9 +304,9 @@
       "description": "A balanced crescent moon with a clean circular concavity.",
       "tags": ["night", "dark", "weather"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The crescent preserves the recognizable lunar silhouette as an intentional circular exception to the rounded rectangular object baseline. A radius-8 outer arc and a radius-10 concave inner arc share the original horn endpoints. At the owner request for a deeper inward curve, the concavity is deepened by approximately .75 unit at its midpoint compared with the previous radius-12 revision. The body stays fuller than the initial radius-8 and radius-9 studies. The outer contour, both horn endpoints and Regular 1.70 stroke weight are retained. One closed path avoids doubled edges. Native centerline bounds remain x/y=4.35424869..19.64575131; Regular 1.70 gives equal opposite visible margins of 3.50424869. Rounded stroke joins soften both horns. Owner-approved source.",
+      "construction": "Owner requested a longer/deeper inward crescent on2026-10-27. Preserve the radius-8 outer circle, original horns 9.06274607 4.35424869 and 19.64575131 14.93725393, Regular1.70 and .85 joins. Reduce the inner centerline radius from10 to9, moving the midpoint .63324958 unit deeper toward the crescent body. Inner-circle center is 17.8897826 6.1102174. The inner arc is longer while outer dimensions and horn positions remain fixed. Filled is the exact .85 outward offset: outer circle8.85, concave circle8.15 and radius-.85 horn joins. No style-specific scaling or translation. Native X/Y100%, rotation0; visible opposite margins remain3.50424869. The earlier approval covers radius10; both revised styles await owner review.",
       "review": {
-        "status": "approved",
+        "status": "draft",
         "reviewedBy": "palamto",
         "date": "2026-10-27",
         "style": "outline",
@@ -316,12 +316,12 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner approved Moon Outline and Filled after the fuller crescent and deeper inner-arc revisions. Final geometry uses a radius-8 outer arc and radius-10 inner concavity, at native proportions and Regular 1.70."
+        "note": "Owner requested a longer/deeper inner crescent after the radius10 pair was approved. Current radius9 inner arc deepens the midpoint by .63324958 while retaining the outer contour, horns and Regular1.70. This revised pair awaits review."
       },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "approved"
+      "reviewStatus": "draft"
     },
     {
       "name": "plus",
