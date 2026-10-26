@@ -770,7 +770,7 @@ for (const icon of ['download', 'upload'])
       expect(value).toBeCloseTo([3.15, 15.15, 17.7, 6.2][index], 4);
   });
 
-test('Moon visible concavity reaches the icon center with both extended horns preserved', async ({
+test('Moon moves the visible concave point to local two two without moving the outer circle', async ({
   page,
 }) => {
   const values = await page.evaluate(() => {
@@ -782,34 +782,33 @@ test('Moon visible concavity reaches the icon center with both extended horns pr
       '[data-testid="moon-outline-contour"] path',
     ) as SVGPathElement;
     const outer = [12.05252287, 11.94747713];
-    const start = Math.atan2(4.05252287 - outer[1], 10.76035523 - outer[0]);
-    const end = Math.atan2(13.23964477 - outer[1], 19.94747713 - outer[0]);
+    const start = Math.atan2(4.36322239 - outer[1], 14.59792657 - outer[0]);
+    const end = Math.atan2(16.49877655 - outer[1], 18.63170775 - outer[0]);
     const outerLength = 8 * (2 * Math.PI - (end - start));
     const middle = outline.getPointAtLength(
       outerLength + (outline.getTotalLength() - outerLength) / 2,
     );
     return {
-      extendedTips: [
-        [10.76035523, 4.05252287],
-        [19.94747713, 13.23964477],
+      horns: [
+        [14.59792657, 4.36322239],
+        [18.63170775, 16.49877655],
       ].every(([x, y]) => path.isPointInFill(new DOMPoint(x, y))),
-      openingSideClear: !path.isPointInFill(new DOMPoint(12.15, 11.85)),
-      bodySideSolid: path.isPointInFill(new DOMPoint(11.85, 12.15)),
-      concaveMidpoint: [middle.x + 0.85 / Math.SQRT2, middle.y - 0.85 / Math.SQRT2],
+      openingSideClear: !path.isPointInFill(new DOMPoint(14.03, 13.97)),
+      bodySideSolid: path.isPointInFill(new DOMPoint(13.97, 14.03)),
       openingClear: !path.isPointInFill(new DOMPoint(15, 8)),
       deeperOpening: !path.isPointInFill(new DOMPoint(14.12, 9.88)),
       bodySolid: path.isPointInFill(new DOMPoint(8, 17)),
-      innerRadius: Math.hypot(middle.x - 16.04407765, middle.y - 7.95592235),
+      innerRadius: Math.hypot(middle.x - 18.04407765, middle.y - 9.95592235),
       margins: [box.x, box.y, 24 - box.x - box.width, 24 - box.y - box.height],
     };
   });
-  expect(values.extendedTips).toBe(true);
+  expect(values.horns).toBe(true);
   expect(values.openingSideClear).toBe(true);
   expect(values.bodySideSolid).toBe(true);
-  for (const coordinate of values.concaveMidpoint) expect(coordinate).toBeCloseTo(12, 2);
   expect(values.openingClear).toBe(true);
   expect(values.deeperOpening).toBe(true);
   expect(values.bodySolid).toBe(true);
   expect(values.innerRadius).toBeCloseTo(6.56918946, 2);
-  for (const margin of values.margins) expect(margin).toBeCloseTo(3.20252287, 4);
+  for (const [index, margin] of values.margins.entries())
+    expect(margin).toBeCloseTo([3.20252287, 3.09747713, 4.51829225, 3.20252287][index], 4);
 });

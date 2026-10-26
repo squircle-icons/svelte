@@ -1608,7 +1608,7 @@
         "weather"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner clarified the concavity target: its deepest visible edge must coincide exactly with the icon center, treated as local0,0. Preserve both extended horns, outer radius8, position, native bounds, Regular1.70 and round .85 joins. Fit inner centerline radius6.569189459166889 so its inward visible edge at Regular1.70 reaches12,12 exactly. Filled is the exact Regular exterior: outer radius8.85, inner radius5.719189459166889 and .85 horn joins. Centerline midpoint11.39895924 12.60104076; shared visible concave midpoint12 12. Both styles remain pending owner review. Horns 10.76035523 4.05252287 and 19.94747713 13.23964477; outer-circle center 12.05252287 11.94747713, inner-circle center 16.04407765 7.95592235. Native equal margins3.20252287, X/Y100%, rotation0.",
+      "construction": "Owner corrected the interpretation: move the concave edge point, not the circle center, to local2,2 relative to the artboard center. The requested visible edge point is14,14. Translate the existing concave circle by+2,+2; preserve outer-circle center12.05252287 11.94747713, outer radius8, inner centerline radius6.569189459166889, Regular1.70 and round .85 joins. Recompute both horn intersections with the fixed outer circle. Filled uses exact outer8.85 and inner5.719189459166889 offsets and .85 joins. Do not recenter the result, because that would move the requested point away from local2,2. Native visible margins are left3.20252287/right4.51829225/top3.09747713/bottom3.20252287. This asymmetry is the intentional result of the requested notch translation. Both styles remain pending owner review. Horns 14.59792657 4.36322239 and 18.63170775 16.49877655; outer-circle center 12.05252287 11.94747713, inner-circle center 18.04407765 9.95592235. X/Y100%, rotation0.",
       "review": {
         "status": "draft",
         "reviewedBy": "palamto",
@@ -1620,7 +1620,7 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner clarified the concavity target: its deepest visible edge must coincide exactly with the icon center, treated as local0,0. Preserve both extended horns, outer radius8, position, native bounds, Regular1.70 and round .85 joins. Fit inner centerline radius6.569189459166889 so its inward visible edge at Regular1.70 reaches12,12 exactly. Filled is the exact Regular exterior: outer radius8.85, inner radius5.719189459166889 and .85 horn joins. Centerline midpoint11.39895924 12.60104076; shared visible concave midpoint12 12. Both styles remain pending owner review."
+        "note": "Owner corrected the interpretation: move the concave edge point, not the circle center, to local2,2 relative to the artboard center. The requested visible edge point is14,14. Translate the existing concave circle by+2,+2; preserve outer-circle center12.05252287 11.94747713, outer radius8, inner centerline radius6.569189459166889, Regular1.70 and round .85 joins. Recompute both horn intersections with the fixed outer circle. Filled uses exact outer8.85 and inner5.719189459166889 offsets and .85 joins. Do not recenter the result, because that would move the requested point away from local2,2. Native visible margins are left3.20252287/right4.51829225/top3.09747713/bottom3.20252287. This asymmetry is the intentional result of the requested notch translation. Both styles remain pending owner review."
       }
     },
     "root": {
@@ -1644,7 +1644,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M10.76035523 4.05252287 A8 8 0 1 0 19.94747713 13.23964477 A6.56918946 6.56918946 0 0 1 10.76035523 4.05252287 Z"
+                "d": "M14.59792657 4.36322239 A8 8 0 1 0 18.63170775 16.49877655 A6.56918946 6.56918946 0 0 1 14.59792657 4.36322239 Z"
               },
               "children": []
             }
@@ -1666,7 +1666,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner clarified the concavity target: its deepest visible edge must coincide exactly with the icon center, treated as local0,0. Preserve both extended horns, outer radius8, position, native bounds, Regular1.70 and round .85 joins. Fit inner centerline radius6.569189459166889 so its inward visible edge at Regular1.70 reaches12,12 exactly. Filled is the exact Regular exterior: outer radius8.85, inner radius5.719189459166889 and .85 horn joins. Centerline midpoint11.39895924 12.60104076; shared visible concave midpoint12 12. Both styles remain pending owner review. Horns 10.76035523 4.05252287 and 19.94747713 13.23964477; outer-circle center 12.05252287 11.94747713, inner-circle center 16.04407765 7.95592235. Native equal margins3.20252287, X/Y100%, rotation0.",
+        "construction": "Owner corrected the interpretation: move the concave edge point, not the circle center, to local2,2 relative to the artboard center. The requested visible edge point is14,14. Translate the existing concave circle by+2,+2; preserve outer-circle center12.05252287 11.94747713, outer radius8, inner centerline radius6.569189459166889, Regular1.70 and round .85 joins. Recompute both horn intersections with the fixed outer circle. Filled uses exact outer8.85 and inner5.719189459166889 offsets and .85 joins. Do not recenter the result, because that would move the requested point away from local2,2. Native visible margins are left3.20252287/right4.51829225/top3.09747713/bottom3.20252287. This asymmetry is the intentional result of the requested notch translation. Both styles remain pending owner review. Horns 14.59792657 4.36322239 and 18.63170775 16.49877655; outer-circle center 12.05252287 11.94747713, inner-circle center 18.04407765 9.95592235. X/Y100%, rotation0.",
         "review": {
           "status": "draft",
           "reviewedBy": "palamto",
@@ -1678,7 +1678,7 @@
             "strokeWidth": 1.7,
             "rotation": 0
           },
-          "note": "Owner clarified the concavity target: its deepest visible edge must coincide exactly with the icon center, treated as local0,0. Preserve both extended horns, outer radius8, position, native bounds, Regular1.70 and round .85 joins. Fit inner centerline radius6.569189459166889 so its inward visible edge at Regular1.70 reaches12,12 exactly. Filled is the exact Regular exterior: outer radius8.85, inner radius5.719189459166889 and .85 horn joins. Centerline midpoint11.39895924 12.60104076; shared visible concave midpoint12 12. Both styles remain pending owner review."
+          "note": "Owner corrected the interpretation: move the concave edge point, not the circle center, to local2,2 relative to the artboard center. The requested visible edge point is14,14. Translate the existing concave circle by+2,+2; preserve outer-circle center12.05252287 11.94747713, outer radius8, inner centerline radius6.569189459166889, Regular1.70 and round .85 joins. Recompute both horn intersections with the fixed outer circle. Filled uses exact outer8.85 and inner5.719189459166889 offsets and .85 joins. Do not recenter the result, because that would move the requested point away from local2,2. Native visible margins are left3.20252287/right4.51829225/top3.09747713/bottom3.20252287. This asymmetry is the intentional result of the requested notch translation. Both styles remain pending owner review."
         }
       },
       "root": {
@@ -1700,7 +1700,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M10.62306241 3.21368398 A8.85 8.85 0 0 0 3.20252287 11.94747713 A8.85 8.85 0 0 0 12.05252287 20.79747713 A8.85 8.85 0 0 0 20.78631602 13.37693759 A0.85 0.85 0 0 0 20.79747713 13.23964477 A0.85 0.85 0 0 0 19.94747713 12.38964477 A0.85 0.85 0 0 0 19.4424088 12.55597381 A5.71918946 5.71918946 0 0 1 16.04407765 13.67511181 A5.71918946 5.71918946 0 0 1 10.32488819 7.95592235 A5.71918946 5.71918946 0 0 1 11.44402619 4.5575912 A0.85 0.85 0 0 0 11.61035523 4.05252287 A0.85 0.85 0 0 0 10.76035523 3.20252287 A0.85 0.85 0 0 0 10.62306241 3.21368398 Z"
+                  "d": "M14.86837571 3.55739532 A8.85 8.85 0 0 0 12.05252287 3.09747713 A8.85 8.85 0 0 0 3.20252287 11.94747713 A8.85 8.85 0 0 0 12.05252287 20.79747713 A8.85 8.85 0 0 0 19.33074614 16.98235211 A0.85 0.85 0 0 0 19.48170775 16.49877655 A0.85 0.85 0 0 0 18.63170775 15.64877655 A0.85 0.85 0 0 0 18.55567316 15.65218412 A5.71918946 5.71918946 0 0 1 18.04407765 15.67511181 A5.71918946 5.71918946 0 0 1 12.32488819 9.95592235 A5.71918946 5.71918946 0 0 1 15.04383065 5.08687254 A0.85 0.85 0 0 0 15.44792657 4.36322239 A0.85 0.85 0 0 0 14.86837571 3.55739532 Z"
                 },
                 "children": []
               }
