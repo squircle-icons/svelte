@@ -373,8 +373,9 @@ for (const icon of ['settings', 'bell'])
           svg.setAttribute('stroke-width', '1.7');
           // The hub's white interior is the same empty space as the Filled counter.
           svg.querySelector('circle')?.setAttribute('fill', '#fff');
-          // Bell's open clapper stays unfilled in the reference.
-          svg.querySelector('[data-part="clapper"]')?.setAttribute('fill', 'none');
+          // Filled Bell closes the open clapper into a solid part; compare its closed exterior.
+          const clapper = svg.querySelector('[data-part="clapper"] path');
+          if (clapper) clapper.setAttribute('d', clapper.getAttribute('d') + ' Z');
         }
         for (const group of svg.querySelectorAll(':scope > g'))
           group.setAttribute('transform', `rotate(${rotation} 12 12)`);
@@ -423,6 +424,19 @@ for (const icon of ['settings', 'bell'])
       }
       return results;
     }, icon);
+    if (icon === 'bell') {
+      const solidity = await page
+        .getByTestId('bell-filled-contour')
+        .locator('[data-part="clapper"] path')
+        .evaluate((element) => {
+          const path = element as SVGPathElement;
+          return {
+            solid: path.isPointInFill(new DOMPoint(12, 20)),
+            separated: !path.isPointInFill(new DOMPoint(12, 19)),
+          };
+        });
+      expect(solidity).toEqual({ solid: true, separated: true });
+    }
     for (const result of results) {
       // Ignore only the one-pixel antialiasing fringe at 40x magnification.
       expect(result.distantMismatches, JSON.stringify(result)).toBe(0);

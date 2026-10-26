@@ -9,9 +9,9 @@
         "alert"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The integrated top hanger is shortened by 0.5 unit (from 2.3 to 1.8 units above its shoulder junction) so it reads as a compact nub. The full drawing is then translated upward by 0.25 unit to keep opposite vertical margins balanced: centerline bounds y=2.75..21.25, visible Regular bounds y=1.9..22.1. Straight walls, shoulders, lower lip and clapper proportions are retained. No doubled seams. Owner-approved source.",
+      "construction": "The integrated top hanger is shortened by 0.5 unit (from 2.3 to 1.8 units above its shoulder junction) so it reads as a compact nub. The full drawing is then translated upward by 0.25 unit to keep opposite vertical margins balanced: centerline bounds y=2.75..21.25, visible Regular bounds y=1.9..22.1. Straight walls, shoulders, lower lip and clapper proportions are retained. No doubled seams. Outline geometry retained; overall Bell review reopened for the Filled clapper correction.",
       "review": {
-        "status": "approved",
+        "status": "draft",
         "reviewedBy": "palamto",
         "date": "2026-10-26",
         "style": "outline",
@@ -20,7 +20,7 @@
           "y": 100,
           "strokeWidth": 1.7
         },
-        "note": "Owner approved Bell Outline and Filled after shortening the hanger and matching both visible contours. Reviewed at source proportions, Regular 1.70, rotation 0 degrees and zoom 11x."
+        "note": "Owner reopened Bell review after noticing the hollow-looking Filled clapper. The Filled clapper is now solid and awaits visual review; Outline geometry is unchanged."
       }
     },
     "root": {
@@ -176,9 +176,9 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The compact top hanger matches the revised Outline. The body contour is the union of the original body interior and its Regular 1.70 stroke, expanded outward by 0.85 unit. The separate clapper is the closed fill-only outline of its original open curve with 0.85-unit round caps. Both parts therefore match the visible Outline exterior at Regular 1.70, including the clapper opening and body/clapper separation. Visible vertical bounds y=1.9..22.1 are centered. Fixed fill-only geometry; other Outline weights may differ. Owner-approved source.",
+        "construction": "The compact top hanger and body match the visible Regular 1.70 Outline. The Filled clapper is a solid rounded half-disc: its upper edge closes the opening, while its lower curve and round outside corners follow the Regular Outline exterior. The closed clapper interior is united with its 0.85-unit outer expansion, leaving no U-shaped recess. Body/clapper separation and visible vertical bounds y=1.9..22.1 are retained. This intentional solid interior follows the Filled body treatment; it is not a counter. Fixed fill-only geometry; other Outline weights may differ. Pending owner review.",
         "review": {
-          "status": "approved",
+          "status": "draft",
           "reviewedBy": "palamto",
           "date": "2026-10-26",
           "style": "filled",
@@ -187,7 +187,7 @@
             "y": 100,
             "strokeWidth": 1.7
           },
-          "note": "Owner approved Bell Outline and Filled after shortening the hanger and matching both visible contours. Reviewed at source proportions, Regular 1.70, rotation 0 degrees and zoom 11x."
+          "note": "Owner reopened Bell review after noticing the hollow-looking Filled clapper. The Filled clapper is now solid and awaits visual review; Outline geometry is unchanged."
         }
       },
       "root": {
@@ -224,7 +224,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M9.210795 20.465682 C9.647847 21.558313 10.656506 22.100000 12.000000 22.100000 C13.343494 22.100000 14.352153 21.558313 14.789205 20.465682 C14.963552 20.029816 14.751548 19.535141 14.315682 19.360795 C13.879816 19.186448 13.385141 19.398452 13.210795 19.834318 C13.061055 20.208668 12.704782 20.400000 12.000000 20.400000 C11.295218 20.400000 10.938945 20.208668 10.789205 19.834318 C10.614859 19.398452 10.120184 19.186448 9.684318 19.360795 C9.248452 19.535141 9.036448 20.029816 9.210795 20.465682 Z"
+                  "d": "M14.789205 20.465682 C14.352153 21.558313 13.343494 22.100000 12.000000 22.100000 C10.656506 22.100000 9.647847 21.558313 9.210795 20.465682 C8.987461 19.907347 9.398655 19.300000 10.000000 19.300000 L14.000000 19.300000 C14.601345 19.300000 15.012539 19.907347 14.789205 20.465682 Z"
                 },
                 "children": []
               }
