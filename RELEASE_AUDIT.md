@@ -1,4 +1,4 @@
-# Release audit — 0.1.0-alpha.2
+# Release audit — 0.1.0-alpha.3
 
 What this repo does: Squircle Icons validates original SVG artwork in core and generates native Svelte icon components. Applications import individual icons and select Outline/Filled and stroke widths. This audit assumes a growing collection of 1,000 icons, with each application using a small subset.
 
@@ -24,11 +24,11 @@ What this repo does: Squircle Icons validates original SVG artwork in core and g
    - Fix: Trim labels in the shared generator. Empty labels produce decorative SVGs. The existing SSR/hydration browser test now checks both import forms across Chromium, Firefox and WebKit.
    - If skipped: Screen readers could encounter images with no meaningful accessible name.
 
-3. **Tarball publishing omitted the npm page README.** (release workflow)
-   - What this is: The documentation shown on npm, separate from README bytes inside a downloaded archive.
-   - Problem: The public registry returned an empty root README after the earlier tarball publication. Packing a README file alone did not populate publication metadata.
-   - Fix: Publish from a frozen, extracted copy of the verified payload using npm's directory manifest preparation, which reads README metadata. Assert that this metadata exactly matches README.md. Lifecycle scripts are skipped only for that frozen artifact because the complete source checks have already run; the published artifact contains no development tools. Compare every file with the tested tarball before publication.
-   - If skipped: Users could download the documentation but still see an empty npm documentation page.
+3. **The default npm page still advertised an old release.** (release tags)
+   - What this is: The default version and README selected on npm.
+   - Problem: The alpha tag had moved forward while latest still pointed at alpha.0. The user screenshot and registry tags confirmed that the default page selected the old version and its old documentation.
+   - Fix: Keep latest and alpha aligned with the current release, then inspect the actual npm page. Alpha.2 was visibly verified on the default npm page after correcting latest. Alpha.3 removes the Tested older versions section at the owner's request.
+   - If skipped: The default npm page and untagged installation would continue to select an obsolete release.
 
 ## Should fix — resolved
 
@@ -41,7 +41,7 @@ What this repo does: Squircle Icons validates original SVG artwork in core and g
 5. **Release and artwork documentation described obsolete states.** (README.md; CHANGELOG.md; core/README.md)
    - What this is: Public compatibility, artwork availability and release history.
    - Problem: Main still reported alpha.0, lacked the alpha.1 changelog, and core's README described historical six/thirteen-icon approvals and an obsolete boxed Search.
-   - Fix: Set alpha.2, restore alpha.1 history from its release tag, describe all 20 current approved pairs, retain the latest artwork exceptions, and keep Recommended separate from the one deepest-tested older combination.
+   - Fix: Restore alpha.1 history, describe all 20 current approved pairs, and retain the latest artwork exceptions. Alpha.3 keeps only Recommended in the public installation documentation; compatibility metadata and CI remain unchanged.
    - If skipped: Users could choose the wrong runtime, miss newly available icons, or mistake historical design experiments for the current approved source.
 
 ## Verification
@@ -53,9 +53,12 @@ What this repo does: Squircle Icons validates original SVG artwork in core and g
 - Per-icon imports compile only the selected component and bypass the catalog/barrels. Root named imports retain only the selected icon after tree shaking. No animation runtime is retained. Local and package imports produce equivalent executable code.
 - Core and Svelte dependency audits report zero known vulnerabilities in their installed development dependency sets. This does not assert that every old consumer runtime is maintained or vulnerability-free.
 - The package contains 92 allowlisted files, 20 approved icons with both styles, no animation exports and no regular dependencies. Package scripts contain JavaScript; declarations remain available.
-- npm prepared README metadata: 7,618 characters, matching the packed README exactly. The npm-packed payload is byte-identical to all 92 files in the tarball used by the verification consumers.
-- Prepared npm archive: 24933 bytes. Integrity: sha512-0DGTAHsZZtC/dME1mVO7vwjlC4IHDnoIUbz1eziNXji3u2PDoTD8UV/9ubgePI6ip0gg5TbtloQI2QGXiU9KxA==.
+- Alpha.3 changes only README.md and package.json compared with the verified alpha.2 payload. All icon, helper, catalog and declaration files are byte-identical.
+- npm prepared README metadata: 6920 characters, exactly matching the packed README and omitting the removed section. Publish from the frozen package directory with lifecycle scripts disabled only after complete source verification; the payload contains no development tools.
+- The npm-packed payload matches every one of the 92 files used by the verification consumers.
+- Prepared npm archive: 24750 bytes. Integrity: sha512-qKvkULjGfDOYVTG9pCvjrepLj7FA0VvEpPgBbF3lW3FReEH9FfKzOVnHyUQHhde8hRTKVnMEZAJJvz038s1Xbw==.
+- An empty readme field in registry metadata is not proof of a missing website README. Verification uses the packaged README and the actual rendered npm page.
 
-Verdict: No unresolved release findings in the audited core/Svelte scope. Ready for alpha.2 publication.
+Verdict: No unresolved release findings in the audited core/Svelte scope. Ready for alpha.3 publication.
 
 Not checked: Real mobile hardware, native Windows/Linux consumer execution, bundlers outside the tested Vite/esbuild toolchain, Svelte 4/6, or every future runtime combination. Older Node 18/20 support records compatibility; the recommended maintained LTS setup is for new applications. The separately edited homepage's visual redesign is outside this npm release audit.

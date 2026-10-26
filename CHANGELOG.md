@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.0-alpha.3
+
+- Remove the Tested older versions section from the public README; keep the Recommended version ranges. Compatibility metadata and automated checks remain unchanged.
+- Clarify the independent homepage Lab update and keep the npm default/latest and alpha release aliases aligned.
+
 ## 0.1.0-alpha.2
 
 - Expand the release from eight icons to all twenty owner-approved Outline/Filled pairs. Add Arrow Left/Right, Check, Chevron Up/Down, Copy, Download, Menu, Plus, Trash, Upload and X; Search now has a Filled export.
