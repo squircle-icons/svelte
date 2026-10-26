@@ -538,7 +538,7 @@
         "favorite"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The lower contour forms a slim V: mirrored straight 45-degree flanks meet through one small convex quadratic tip. Side curves join the straight flanks tangentially, without inward inflections or a broad lower belly. The current upper lobes and notch are retained. Outline bounds x=3.25..20.75, y=4.1..19.9 remain centered. Review study; not owner-approved."
+      "construction": "The lower silhouette is a slim V with only a slight outward convex bow. Mirrored quadratic flanks depart subtly from straight diagonals and meet a compact rounded tip. Tangents align through the side transitions and tip without inward inflections. The established upper lobes and notch are retained. Outline bounds x=3.25..20.75, y=4.1..19.9 remain centered. Review study; not owner-approved."
     },
     "root": {
       "tag": "svg",
@@ -561,7 +561,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M12 7 C10.9 4.9 9.7 4.1 7.6 4.1 C4.8 4.1 3.25 5.65 3.25 8.4 C3.25 10.8 4.5 12.65 6 14.15 L11.5 19.65 Q12 20.15 12.5 19.65 L18 14.15 C19.5 12.65 20.75 10.8 20.75 8.4 C20.75 5.65 19.2 4.1 16.4 4.1 C14.3 4.1 13.1 4.9 12 7 Z"
+                "d": "M12 7 C10.9 4.9 9.7 4.1 7.6 4.1 C4.8 4.1 3.25 5.65 3.25 8.4 C3.25 10.65 4.775 12.625 6 14.15 Q8.45 17.2 11.5 19.69545455 Q12 20.10454545 12.5 19.69545455 Q15.55 17.2 18 14.15 C19.225 12.625 20.75 10.65 20.75 8.4 C20.75 5.65 19.2 4.1 16.4 4.1 C14.3 4.1 13.1 4.9 12 7 Z"
               },
               "children": []
             }
@@ -582,7 +582,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Separately authored solid Heart follows the slim V silhouette. Mirrored straight 45-degree lower flanks meet a convex quadratic tip; transitions from the side curves are tangent-aligned. The current upper lobes and notch are retained. Bounds x=2.4..21.6, y=3.25..20.75 remain centered. No interior counters or strokes. Not owner-approved."
+        "construction": "Separately authored solid Heart follows the slim V with a slight outward convex bow. Mirrored quadratic lower flanks and a compact tip are tangent-aligned without inward inflections or a broad belly. The established upper lobes and notch are retained. Bounds x=2.4..21.6, y=3.25..20.75 remain centered. No interior counters or strokes. Not owner-approved."
       },
       "root": {
         "tag": "svg",
@@ -603,7 +603,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M12 5.8 C10.95 4.1 9.55 3.25 7.6 3.25 C4.25 3.25 2.4 5.1 2.4 8.4 C2.4 11.25 3.8 13.15 5.5 14.85 L10.8 20.15 Q12 21.35 13.2 20.15 L18.5 14.85 C20.2 13.15 21.6 11.25 21.6 8.4 C21.6 5.1 19.75 3.25 16.4 3.25 C14.45 3.25 13.05 4.1 12 5.8 Z"
+                  "d": "M12 5.8 C10.95 4.1 9.55 3.25 7.6 3.25 C4.25 3.25 2.4 5.1 2.4 8.4 C2.4 10.9 4.325 13.375 5.5 14.85 Q7.85 17.8 10.8 20.25140845 Q12 21.24859155 13.2 20.25140845 Q16.15 17.8 18.5 14.85 C19.675 13.375 21.6 10.9 21.6 8.4 C21.6 5.1 19.75 3.25 16.4 3.25 C14.45 3.25 13.05 4.1 12 5.8 Z"
                 },
                 "children": []
               }
