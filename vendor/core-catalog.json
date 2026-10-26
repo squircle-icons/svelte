@@ -2124,23 +2124,19 @@
         "bin"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested straight sides and rounded corners. The bucket now has vertical centerlines at x=6 and x=18, from y=6 to17.9, with the standard Camera/Folder radius-3.25 bottom corners and bottom centerline y=21.15. Filled uses the exact .85 outward offset, with radius-4.10 exterior bottom corners. The fitted small handle uses radius-1 centerline corners, top centerline y=2.85, and corresponding radius-1.85 outer/.15 inner Filled corners. The level lid runs x=4..20 at y=6 with round .85 caps. Overall visible bounds x=3.15..20.85 and y=2..22 give the vertical primary pair exact 2px margins, with balanced 3.15px left/right. Two vertical slots retain their round ends at x=10,14 and y=10..17; Filled counters align with the Outline strokes. No enclosing box is added to Trash. Native X/Y=100%, rotation=0 and Regular 1.70. The owner approved both styles, including the fitted small handle corners, on 2026-10-27. Owner correction: the approved Lab pose is X=105%, Y=95%, not 100%/100%. The source geometry remains unchanged; restore this reviewed pose through metadata labDefaults when opening or resetting Trash.",
+      "construction": "Owner requested the accepted X=105%, Y=95% proportions to become native source geometry, with Lab X/Y reset to100%/100%. The original Outline centerlines are baked about12,12: x maps to12+1.05*(x-12), y maps to12+.95*(y-12). Regular1.70 stroke and round .85 caps stay fixed. Base centerline corners become ellipses rx3.4125/ry3.0875; fitted handle corners become rx1.05/ry.95. Straight sides remain vertical. Filled is reconstructed from the baked Outline with an exact .85 normal offset, represented by tangent-continuous cubic segments at ellipse corners; no runtime transform or extra box is used. This keeps the styles aligned at native Regular1.70 rather than scaling the stroke weight. Native visible bounds in both styles are x=2.75..21.25 and y=2.4575..21.5425, width18.5/height19.085. The original 2px top/bottom native-margin reference is superseded by the owner-approved baked proportion adjustment. Slots share x9.9/14.1, y10.1..16.75 with .85 round caps. Owner-approved proportions; native X/Y=100%, rotation=0.",
       "review": {
         "status": "approved",
         "reviewedBy": "palamto",
         "date": "2026-10-27",
         "style": "outline",
         "preview": {
-          "x": 105,
-          "y": 95,
+          "x": 100,
+          "y": 100,
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner corrected the accepted Trash review pose to X=105%, Y=95%, Regular 1.70 and rotation=0. This approval covers both styles, straight sides, radius-3.25 source base centerline corners and fitted radius-1 source handle corners. Preserve source geometry; the 2px native top/bottom margins describe 100% source dimensions, not the accepted 105%/95% Lab pose."
-      },
-      "labDefaults": {
-        "x": 105,
-        "y": 95
+        "note": "Owner approved the original Trash at X105%/Y95%, then explicitly requested baking those proportions into native source and returning Lab controls to100%/100%. Preserve Regular1.70 and the fitted handle/base contours. Both styles remain approved."
       }
     },
     "root": {
@@ -2164,7 +2160,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M6 6 V17.9 A3.25 3.25 0 0 0 9.25 21.15 H14.75 A3.25 3.25 0 0 0 18 17.9 V6"
+                "d": "M5.7 6.3 V17.605 A3.4125 3.0875 0 0 0 9.1125 20.6925 H14.8875 A3.4125 3.0875 0 0 0 18.3 17.605 V6.3"
               },
               "children": []
             }
@@ -2179,7 +2175,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M4 6 H20"
+                "d": "M3.6 6.3 H20.4"
               },
               "children": []
             }
@@ -2194,7 +2190,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M9 6 V3.85 A1 1 0 0 1 10 2.85 H14 A1 1 0 0 1 15 3.85 V6"
+                "d": "M8.85 6.3 V4.2575 A1.05 .95 0 0 1 9.9 3.3075 H14.1 A1.05 .95 0 0 1 15.15 4.2575 V6.3"
               },
               "children": []
             }
@@ -2209,7 +2205,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M10 10 V17 M14 10 V17"
+                "d": "M9.9 10.1 V16.75 M14.1 10.1 V16.75"
               },
               "children": []
             }
@@ -2234,23 +2230,19 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner requested straight sides and rounded corners. The bucket now has vertical centerlines at x=6 and x=18, from y=6 to17.9, with the standard Camera/Folder radius-3.25 bottom corners and bottom centerline y=21.15. Filled uses the exact .85 outward offset, with radius-4.10 exterior bottom corners. The fitted small handle uses radius-1 centerline corners, top centerline y=2.85, and corresponding radius-1.85 outer/.15 inner Filled corners. The level lid runs x=4..20 at y=6 with round .85 caps. Overall visible bounds x=3.15..20.85 and y=2..22 give the vertical primary pair exact 2px margins, with balanced 3.15px left/right. Two vertical slots retain their round ends at x=10,14 and y=10..17; Filled counters align with the Outline strokes. No enclosing box is added to Trash. Native X/Y=100%, rotation=0 and Regular 1.70. The owner approved both styles, including the fitted small handle corners, on 2026-10-27. Owner correction: the approved Lab pose is X=105%, Y=95%, not 100%/100%. The source geometry remains unchanged; restore this reviewed pose through metadata labDefaults when opening or resetting Trash.",
+        "construction": "Owner requested the accepted X=105%, Y=95% proportions to become native source geometry, with Lab X/Y reset to100%/100%. The original Outline centerlines are baked about12,12: x maps to12+1.05*(x-12), y maps to12+.95*(y-12). Regular1.70 stroke and round .85 caps stay fixed. Base centerline corners become ellipses rx3.4125/ry3.0875; fitted handle corners become rx1.05/ry.95. Straight sides remain vertical. Filled is reconstructed from the baked Outline with an exact .85 normal offset, represented by tangent-continuous cubic segments at ellipse corners; no runtime transform or extra box is used. This keeps the styles aligned at native Regular1.70 rather than scaling the stroke weight. Native visible bounds in both styles are x=2.75..21.25 and y=2.4575..21.5425, width18.5/height19.085. The original 2px top/bottom native-margin reference is superseded by the owner-approved baked proportion adjustment. Slots share x9.9/14.1, y10.1..16.75 with .85 round caps. Owner-approved proportions; native X/Y=100%, rotation=0.",
         "review": {
           "status": "approved",
           "reviewedBy": "palamto",
           "date": "2026-10-27",
           "style": "filled",
           "preview": {
-            "x": 105,
-            "y": 95,
+            "x": 100,
+            "y": 100,
             "strokeWidth": 1.7,
             "rotation": 0
           },
-          "note": "Owner corrected the accepted Trash review pose to X=105%, Y=95%, Regular 1.70 and rotation=0. This approval covers both styles, straight sides, radius-3.25 source base centerline corners and fitted radius-1 source handle corners. Preserve source geometry; the 2px native top/bottom margins describe 100% source dimensions, not the accepted 105%/95% Lab pose."
-        },
-        "labDefaults": {
-          "x": 105,
-          "y": 95
+          "note": "Owner approved the original Trash at X105%/Y95%, then explicitly requested baking those proportions into native source and returning Lab controls to100%/100%. Preserve Regular1.70 and the fitted handle/base contours. Both styles remain approved."
         }
       },
       "root": {
@@ -2272,7 +2264,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M5.15 6 H18.85 V17.9 A4.1 4.1 0 0 1 14.75 22 H9.25 A4.1 4.1 0 0 1 5.15 17.9 Z M9.15 10 V17 A.85 .85 0 0 0 10.85 17 V10 A.85 .85 0 0 0 9.15 10 Z M13.15 10 V17 A.85 .85 0 0 0 14.85 17 V10 A.85 .85 0 0 0 13.15 10 Z"
+                  "d": "M4.85 6.3 H19.15 V17.605 C19.15 17.86856481 19.12126907 18.13211004 19.0646036 18.38985551 C19.00793813 18.64760098 18.92335803 18.89951571 18.81309567 19.14036051 C18.70283331 19.38120531 18.56691653 19.6109667 18.40864144 19.82528254 C18.25036635 20.03959838 18.06975646 20.23846966 17.87077822 20.4184976 C17.67179997 20.59852553 17.45446819 20.75971702 17.22313202 20.89956958 C16.99179584 21.03942215 16.74646338 21.15794233 16.4916979 21.25341943 C16.23693242 21.34889652 15.97273877 21.42133456 15.70380011 21.469735 C15.43486146 21.51813544 15.16118165 21.5425 14.8875 21.5425 H9.1125 C8.83881835 21.5425 8.56513854 21.51813544 8.29619989 21.469735 C8.02726123 21.42133456 7.76306758 21.34889652 7.5083021 21.25341943 C7.25353662 21.15794233 7.00820416 21.03942215 6.77686798 20.89956958 C6.54553181 20.75971702 6.32820003 20.59852553 6.12922178 20.4184976 C5.93024354 20.23846966 5.74963365 20.03959838 5.59135856 19.82528254 C5.43308347 19.6109667 5.29716669 19.38120531 5.18690433 19.14036051 C5.07664197 18.89951571 4.99206187 18.64760098 4.9353964 18.38985551 C4.87873093 18.13211004 4.85 17.86856481 4.85 17.605 Z M9.05 10.1 V16.75 A.85 .85 0 0 0 10.75 16.75 V10.1 A.85 .85 0 0 0 9.05 10.1 Z M13.25 10.1 V16.75 A.85 .85 0 0 0 14.95 16.75 V10.1 A.85 .85 0 0 0 13.25 10.1 Z"
                 },
                 "children": []
               }
@@ -2287,7 +2279,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M4 5.15 H20 A.85 .85 0 0 1 20.85 6 A.85 .85 0 0 1 20 6.85 H4 A.85 .85 0 0 1 3.15 6 A.85 .85 0 0 1 4 5.15 Z"
+                  "d": "M3.6 5.45 H20.4 A.85 .85 0 0 1 21.25 6.3 A.85 .85 0 0 1 20.4 7.15 H3.6 A.85 .85 0 0 1 2.75 6.3 A.85 .85 0 0 1 3.6 5.45 Z"
                 },
                 "children": []
               }
@@ -2302,7 +2294,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M8.15 6 V3.85 A1.85 1.85 0 0 1 10 2 H14 A1.85 1.85 0 0 1 15.85 3.85 V6 H14.15 V3.85 A.15 .15 0 0 0 14 3.7 H10 A.15 .15 0 0 0 9.85 3.85 V6 Z"
+                  "d": "M8 6.3 V4.2575 C8 4.13383424 8.01350204 4.0101846 8.04000163 3.88965005 C8.06650121 3.76911551 8.1059799 3.65172026 8.15706973 3.54012533 C8.20815956 3.4285304 8.27083563 3.32274287 8.34320552 3.22474883 C8.41557541 3.1267548 8.49761988 3.03654752 8.58726155 2.95544315 C8.67690323 2.87433878 8.77413269 2.80232553 8.87690266 2.74019671 C8.97967262 2.67806789 9.08798134 2.62581312 9.19989171 2.58387307 C9.31180207 2.54193303 9.4273163 2.51030103 9.54460077 2.48919354 C9.66188524 2.46808605 9.78094361 2.4575 9.9 2.4575 H14.1 C14.21905639 2.4575 14.33811476 2.46808605 14.45539923 2.48919354 C14.5726837 2.51030103 14.68819793 2.54193303 14.80010829 2.58387307 C14.91201866 2.62581312 15.02032738 2.67806789 15.12309734 2.74019671 C15.22586731 2.80232553 15.32309677 2.87433878 15.41273845 2.95544315 C15.50238012 3.03654752 15.58442459 3.1267548 15.65679448 3.22474883 C15.72916437 3.32274287 15.79184044 3.4285304 15.84293027 3.54012533 C15.8940201 3.65172026 15.93349879 3.76911551 15.95999837 3.88965005 C15.98649796 4.0101846 16 4.13383424 16 4.2575 V6.3 H14.3 V4.2575 C14.3 4.25681105 14.29996526 4.25610906 14.29965071 4.25467834 C14.29933617 4.25324761 14.29872471 4.25106999 14.29721674 4.24777615 C14.29570877 4.24448231 14.29328199 4.24007085 14.28929171 4.23466772 C14.28530143 4.2292646 14.27973219 4.22288166 14.27218579 4.21605397 C14.2646394 4.20922628 14.25511126 4.20196998 14.24360015 4.19501102 C14.23208904 4.18805207 14.21859887 4.18140425 14.20352691 4.17575581 C14.18845495 4.17010738 14.1718097 4.16546734 14.15429045 4.16231443 C14.1367712 4.15916152 14.11838829 4.1575 14.1 4.1575 H9.9 C9.88161171 4.1575 9.8632288 4.15916152 9.84570955 4.16231443 C9.8281903 4.16546734 9.81154505 4.17010738 9.79647309 4.17575581 C9.78140113 4.18140425 9.76791096 4.18805207 9.75639985 4.19501102 C9.74488874 4.20196998 9.7353606 4.20922628 9.72781421 4.21605397 C9.72026781 4.22288166 9.71469857 4.2292646 9.71070829 4.23466772 C9.70671801 4.24007085 9.70429123 4.24448231 9.70278326 4.24777615 C9.70127529 4.25106999 9.70066383 4.25324761 9.70034929 4.25467834 C9.70003474 4.25610906 9.7 4.25681105 9.7 4.2575 V6.3 Z"
                 },
                 "children": []
               }

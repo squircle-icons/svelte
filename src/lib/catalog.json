@@ -342,23 +342,19 @@
       "description": "A straight-sided waste bin with rounded base corners, an open handle and two internal slots.",
       "tags": ["delete", "remove", "bin"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested straight sides and rounded corners. The bucket now has vertical centerlines at x=6 and x=18, from y=6 to17.9, with the standard Camera/Folder radius-3.25 bottom corners and bottom centerline y=21.15. Filled uses the exact .85 outward offset, with radius-4.10 exterior bottom corners. The fitted small handle uses radius-1 centerline corners, top centerline y=2.85, and corresponding radius-1.85 outer/.15 inner Filled corners. The level lid runs x=4..20 at y=6 with round .85 caps. Overall visible bounds x=3.15..20.85 and y=2..22 give the vertical primary pair exact 2px margins, with balanced 3.15px left/right. Two vertical slots retain their round ends at x=10,14 and y=10..17; Filled counters align with the Outline strokes. No enclosing box is added to Trash. Native X/Y=100%, rotation=0 and Regular 1.70. The owner approved both styles, including the fitted small handle corners, on 2026-10-27. Owner correction: the approved Lab pose is X=105%, Y=95%, not 100%/100%. The source geometry remains unchanged; restore this reviewed pose through metadata labDefaults when opening or resetting Trash.",
+      "construction": "Owner requested the accepted X=105%, Y=95% proportions to become native source geometry, with Lab X/Y reset to100%/100%. The original Outline centerlines are baked about12,12: x maps to12+1.05*(x-12), y maps to12+.95*(y-12). Regular1.70 stroke and round .85 caps stay fixed. Base centerline corners become ellipses rx3.4125/ry3.0875; fitted handle corners become rx1.05/ry.95. Straight sides remain vertical. Filled is reconstructed from the baked Outline with an exact .85 normal offset, represented by tangent-continuous cubic segments at ellipse corners; no runtime transform or extra box is used. This keeps the styles aligned at native Regular1.70 rather than scaling the stroke weight. Native visible bounds in both styles are x=2.75..21.25 and y=2.4575..21.5425, width18.5/height19.085. The original 2px top/bottom native-margin reference is superseded by the owner-approved baked proportion adjustment. Slots share x9.9/14.1, y10.1..16.75 with .85 round caps. Owner-approved proportions; native X/Y=100%, rotation=0.",
       "review": {
         "status": "approved",
         "reviewedBy": "palamto",
         "date": "2026-10-27",
         "style": "outline",
         "preview": {
-          "x": 105,
-          "y": 95,
+          "x": 100,
+          "y": 100,
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner corrected the accepted Trash review pose to X=105%, Y=95%, Regular 1.70 and rotation=0. This approval covers both styles, straight sides, radius-3.25 source base centerline corners and fitted radius-1 source handle corners. Preserve source geometry; the 2px native top/bottom margins describe 100% source dimensions, not the accepted 105%/95% Lab pose."
-      },
-      "labDefaults": {
-        "x": 105,
-        "y": 95
+        "note": "Owner approved the original Trash at X105%/Y95%, then explicitly requested baking those proportions into native source and returning Lab controls to100%/100%. Preserve Regular1.70 and the fitted handle/base contours. Both styles remain approved."
       },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,

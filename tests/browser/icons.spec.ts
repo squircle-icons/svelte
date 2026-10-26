@@ -668,7 +668,7 @@ for (const icon of ['menu', 'search'])
         .screenshot({ path: '.artifacts/previews/search-bold.png' });
   });
 
-test('Trash keeps straight sides, standard round base corners and vertical 2px margins', async ({
+test('Trash bakes the accepted 105 by 95 proportions into native geometry with fixed stroke', async ({
   page,
 }) => {
   const values = await page.evaluate(() => {
@@ -681,19 +681,19 @@ test('Trash keeps straight sides, standard round base corners and vertical 2px m
     ) as SVGSVGElement;
     const bounds = filled.getBBox();
     return {
-      verticalSides: [6, 18].every((x) =>
+      verticalSides: [5.7, 18.3].every((x) =>
         [8, 16].every((y) => body.isPointInStroke(new DOMPoint(x, y))),
       ),
       roundedBase: !(
         filled.querySelector('[data-part="body"] path') as SVGPathElement
-      ).isPointInFill(new DOMPoint(6, 21.15)),
+      ).isPointInFill(new DOMPoint(5.7, 20.6925)),
       margins: [bounds.y, 24 - bounds.y - bounds.height, bounds.x, 24 - bounds.x - bounds.width],
       stroke: outline.getAttribute('stroke-width'),
     };
   });
   expect(values.verticalSides).toBe(true);
   expect(values.roundedBase).toBe(true);
-  for (const margin of values.margins.slice(0, 2)) expect(margin).toBeCloseTo(2, 4);
-  for (const margin of values.margins.slice(2)) expect(margin).toBeCloseTo(3.15, 4);
+  for (const margin of values.margins.slice(0, 2)) expect(margin).toBeCloseTo(2.4575, 4);
+  for (const margin of values.margins.slice(2)) expect(margin).toBeCloseTo(2.75, 4);
   expect(values.stroke).toBe('1.7');
 });
