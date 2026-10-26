@@ -206,12 +206,12 @@ for (const icon of [
         svg.setAttribute('height', String(size));
         svg.setAttribute('fill', '#000');
         svg.setAttribute('stroke', outline ? '#000' : 'none');
-        if (!outline && ['plus', 'x', 'search'].includes(icon)) {
+        if (!outline && ['plus', 'x', 'search', 'menu'].includes(icon)) {
           // Owner-requested Filled boxes are a deliberate exterior exception.
           // The negative-space glyph matches the unchanged Outline exterior for both marks.
           const path = svg.querySelector('path')!;
           const parts = path.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
-          if (parts.length !== (icon === 'search' ? 3 : 2))
+          if (parts.length !== (icon === 'menu' ? 4 : icon === 'search' ? 3 : 2))
             throw new Error('Expected a box and glyph cutout subpaths');
           path.setAttribute('d', parts.slice(1).join(' '));
         }
@@ -677,4 +677,52 @@ test('Search exposes a matching boxed Filled glyph with a solid lens center and 
     await page
       .getByTestId('search-boxed-sheet')
       .screenshot({ path: '.artifacts/previews/search-boxed.png' });
+});
+
+test('Menu uses a rounded Filled box around the exact three bar glyph', async ({ page }) => {
+  const values = await page.evaluate(() => {
+    const svg = document.querySelector('[data-testid="menu-filled-contour"] svg') as SVGSVGElement;
+    const path = svg.querySelector('path') as SVGPathElement;
+    const box = path.getBBox();
+    return {
+      margins: [box.x, box.y, 24 - box.x - box.width, 24 - box.y - box.height],
+      holes: [6, 12, 18].map((y) => !path.isPointInFill(new DOMPoint(12, y))),
+      solidGaps: [3, 9, 15, 21].map((y) => path.isPointInFill(new DOMPoint(12, y))),
+      roundCorner: !path.isPointInFill(new DOMPoint(2.9, 2.9)),
+    };
+  });
+  for (const margin of values.margins) expect(margin).toBeCloseTo(2, 5);
+  expect(values.holes).toEqual([true, true, true]);
+  expect(values.solidGaps).toEqual([true, true, true, true]);
+  expect(values.roundCorner).toBe(true);
+});
+
+test('Trash keeps straight sides, standard round base corners and vertical 2px margins', async ({
+  page,
+}) => {
+  const values = await page.evaluate(() => {
+    const outline = document.querySelector(
+      '[data-testid="trash-outline-contour"] svg',
+    ) as SVGSVGElement;
+    const body = outline.querySelector('[data-part="body"] path') as SVGPathElement;
+    const filled = document.querySelector(
+      '[data-testid="trash-filled-contour"] svg',
+    ) as SVGSVGElement;
+    const bounds = filled.getBBox();
+    return {
+      verticalSides: [6, 18].every((x) =>
+        [8, 16].every((y) => body.isPointInStroke(new DOMPoint(x, y))),
+      ),
+      roundedBase: !(
+        filled.querySelector('[data-part="body"] path') as SVGPathElement
+      ).isPointInFill(new DOMPoint(6, 21.15)),
+      margins: [bounds.y, 24 - bounds.y - bounds.height, bounds.x, 24 - bounds.x - bounds.width],
+      stroke: outline.getAttribute('stroke-width'),
+    };
+  });
+  expect(values.verticalSides).toBe(true);
+  expect(values.roundedBase).toBe(true);
+  for (const margin of values.margins.slice(0, 2)) expect(margin).toBeCloseTo(2, 4);
+  for (const margin of values.margins.slice(2)) expect(margin).toBeCloseTo(3.15, 4);
+  expect(values.stroke).toBe('1.7');
 });
