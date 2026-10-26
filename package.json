@@ -111,11 +111,12 @@
     "test:pack": "node --import tsx tools/pack-test.ts",
     "test:browser": "playwright test",
     "sync:core": "node tools/sync-core.mjs",
-    "verify": "pnpm format:check && pnpm dependency:check && pnpm generate:check && pnpm check && pnpm test && pnpm test:bundle && pnpm test:pack && pnpm test:browser",
+    "verify": "pnpm format:check && pnpm dependency:check && pnpm generate:check && pnpm check && pnpm test && pnpm test:bundle && pnpm test:imports && pnpm test:pack && pnpm test:browser",
     "dependency:check": "node tools/dependency-check.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepublishOnly": "pnpm dependency:check && pnpm generate:check && pnpm check"
+    "prepublishOnly": "pnpm dependency:check && pnpm generate:check && pnpm check",
+    "test:imports": "node --import tsx tools/import-benchmark.ts"
   },
   "packageManager": "pnpm@10.10.0",
   "engines": {

@@ -2,7 +2,10 @@
 
 ## Unreleased
 
-- Select Outline or Filled through the same icon import using `style`.
+- Use one direct icon import with `style="outline" | "filled"`; Outline is the default.
+- Add `strokeWidth="thin" | "regular" | "bold"`, defaulting to Regular, while retaining custom numeric widths.
+- Compare local and package imports with repeatable build/size measurements.
+
 - Remove animated components, runtime, exports, demos and related snapshots. Existing animation imports and props are no longer supported.
 
 ## 0.1.0-alpha.0

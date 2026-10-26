@@ -19,24 +19,33 @@ The current npm alpha is `0.1.0-alpha.0`. The changes described below are in the
 
 <Camera size={24} label="Camera" />
 <Camera size={24} label="Camera" style="filled" />
+<Camera strokeWidth="thin" />
+<Camera strokeWidth="regular" />
+<Camera strokeWidth="bold" />
 ```
 
 Use the same import for both styles. `style="outline"` is the default; `style="filled"` selects the separately authored solid drawing. Search is Outline-only, and its component type rejects `style="filled"`. Dedicated imports such as `@squircle-icons/svelte/filled/camera` and the Filled barrel remain supported.
 
-Common props are `size=24`, `color="currentColor"`, `strokeWidth=1.70`, optional `label`, `class`, and `style`. Decorative icons omit `label`; meaningful icons receive one accessible name. Components add no tab stop or duplicate SVG title. Filled Folder uses `strokeWidth` for its bounded 0.25–6-unit divider gap; other Filled drawings have fixed geometry.
+Common props are `size=24`, `color="currentColor"`, `style="outline"`, `strokeWidth="regular"`, optional `label` and `class`. Decorative icons omit `label`; meaningful icons receive one accessible name. Components add no tab stop or duplicate SVG title. Stroke presets are `thin` (1.25), `regular` (1.70), and `bold` (2.25); numbers remain supported for fine adjustments. Filled Folder uses `strokeWidth` for its bounded 0.25–6-unit divider gap; other Filled drawings have fixed geometry.
 
 Animation components, runtime, recipes and exports have been removed from the current source. The API has no `animate`, `hover`, `open`, or `reducedMotion` props and no playback methods.
 
 ## Keep application builds small
 
-Prefer direct imports:
+Use one direct import per icon and choose its style through props:
 
-```ts
-import Camera from '@squircle-icons/svelte/camera';
-import FilledCamera from '@squircle-icons/svelte/filled/camera';
+```svelte
+<script lang="ts">
+  import Camera from '@squircle-icons/svelte/camera';
+  let active = $state(false);
+</script>
+
+<Camera style={active ? 'filled' : 'outline'} strokeWidth="regular" />
 ```
 
-A direct path transforms one selected component without traversing other icons, a collection barrel, or the catalog. A unified component includes both drawings where available; use a dedicated Filled import when you only need that drawing. Root named imports such as `import { Camera } from '@squircle-icons/svelte'` also work. Production tree shaking removes unused components, although a build tool may compile them first.
+The component contains only that icon's available styles. It bypasses other icons, collection barrels and the catalog. It keeps one root SVG while the style changes. Let the parent button manage hover and keyboard focus; no special hover prop or animation runtime is needed. Legacy `/filled/<icon>` paths remain compatible, while documentation and website previews use the unified API.
+
+Root named imports such as `import { Camera } from '@squircle-icons/svelte'` remain supported. Production tree shaking removes unused components, although a build tool may compile them first. Copying an unchanged component into your app produces the same executable JavaScript as its direct package import. `pnpm test:imports` checks this, confirms one compiled icon, and records repeated build timings and gzip/Brotli sizes in `.artifacts/import-benchmark/report.json`. Timing is informational.
 
 Native `.svelte` files are compiled by the consuming application for its client/server targets. `pnpm test:bundle` records transformed and retained modules in `.artifacts/bundle-report.json`; these checks describe the tested Vite toolchain.
 

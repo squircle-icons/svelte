@@ -4,7 +4,7 @@
   let {
     size = 24,
     color = 'currentColor',
-    strokeWidth = 1.7,
+    strokeWidth = 'regular',
     label,
     class: className,
   }: FilledIconProps = $props();

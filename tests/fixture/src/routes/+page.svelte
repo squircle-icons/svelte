@@ -13,6 +13,9 @@
     Settings as FilledSettings,
   } from '@squircle-icons/svelte/filled';
   import { Heart, Search, Settings, Bell, Folder } from '@squircle-icons/svelte';
+  let hovered = $state(false);
+  let focused = $state(false);
+  let preset = $state<'thin' | 'regular' | 'bold'>('regular');
   let ready = $state(false);
   let iconStyle = $state<'outline' | 'filled'>('filled');
   let strokeWidth = $state(1.75);
@@ -53,6 +56,22 @@
 <div data-testid="sun-filled-contour"><FilledSun size={96} label="Filled Sun contour" /></div>
 <div data-testid="moon-outline-contour"><Moon size={96} label="Outline Moon contour" /></div>
 <div data-testid="moon-filled-contour"><FilledMoon size={96} label="Filled Moon contour" /></div>
+<button
+  aria-label="Preview camera styles"
+  onpointerenter={() => (hovered = true)}
+  onpointerleave={() => (hovered = false)}
+  onfocus={() => (focused = true)}
+  onblur={() => (focused = false)}
+>
+  <Camera style={hovered || focused ? 'filled' : 'outline'} />
+</button>
+<label
+  >Stroke preset<select aria-label="Stroke preset" bind:value={preset}
+    ><option>thin</option><option>regular</option><option>bold</option></select
+  ></label
+>
+<div data-testid="stroke-preset"><Camera strokeWidth={preset} label="Named stroke camera" /></div>
+<div data-testid="gap-preset"><Folder style="filled" strokeWidth={preset} /></div>
 <section data-testid="unified-api">
   <button onclick={() => (iconStyle = iconStyle === 'filled' ? 'outline' : 'filled')}
     >Toggle icon style</button

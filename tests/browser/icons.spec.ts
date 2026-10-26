@@ -260,3 +260,41 @@ for (const icon of ['settings', 'bell', 'sun', 'moon'])
       expect(result.mismatches, JSON.stringify(result)).toBeLessThan(960 * 960 * 0.002);
     }
   });
+
+test('one icon switches styles for hover and keyboard focus without replacing its SVG', async ({
+  page,
+}) => {
+  const button = page.getByRole('button', { name: 'Preview camera styles' });
+  const svg = button.locator('svg');
+  const original = await svg.elementHandle();
+  await expect(svg).toHaveAttribute('fill', 'none');
+  await button.hover();
+  await expect(svg).toHaveAttribute('fill', 'currentColor');
+  await page.mouse.move(0, 0);
+  await expect(svg).toHaveAttribute('fill', 'none');
+  await button.focus();
+  await expect(svg).toHaveAttribute('fill', 'currentColor');
+  await button.hover();
+  await page.mouse.move(0, 0);
+  await expect(svg).toHaveAttribute('fill', 'currentColor');
+  await button.evaluate((element) => element.blur());
+  await expect(svg).toHaveAttribute('fill', 'none');
+  expect(await original!.evaluate((element) => element.isConnected)).toBe(true);
+});
+
+test('named stroke presets update Outline strokes and the Filled Folder gap', async ({ page }) => {
+  const svg = page.getByTestId('stroke-preset').locator('svg');
+  await expect(svg).toHaveAttribute('stroke-width', '1.7');
+  for (const [preset, width] of [
+    ['thin', '1.25'],
+    ['bold', '2.25'],
+    ['regular', '1.7'],
+  ]) {
+    await page.getByRole('combobox', { name: 'Stroke preset' }).selectOption(preset);
+    await expect(svg).toHaveAttribute('stroke-width', width);
+    await expect(page.getByTestId('gap-preset').locator('svg')).toHaveAttribute(
+      'data-cutout-width',
+      width,
+    );
+  }
+});
