@@ -770,7 +770,7 @@ for (const icon of ['download', 'upload'])
       expect(value).toBeCloseTo([3.15, 15.15, 17.7, 6.2][index], 4);
   });
 
-test('Moon has a deeper inward crescent while keeping its outer bounds and horns', async ({
+test('Moon has a substantially fuller body while keeping its outer bounds and horns', async ({
   page,
 }) => {
   const values = await page.evaluate(() => {
@@ -779,7 +779,9 @@ test('Moon has a deeper inward crescent while keeping its outer bounds and horns
     ) as SVGPathElement;
     const box = path.getBBox();
     return {
-      centerCutOut: !path.isPointInFill(new DOMPoint(12.35424869, 11.64575131)),
+      centerSolid: path.isPointInFill(new DOMPoint(12.35424869, 11.64575131)),
+      openingClear: !path.isPointInFill(new DOMPoint(15, 8)),
+      expandedBody: path.isPointInFill(new DOMPoint(13.25, 10.75)),
       bodySolid: path.isPointInFill(new DOMPoint(8, 17)),
       hornsSolid: [
         [9.06274607, 4.35424869],
@@ -788,7 +790,9 @@ test('Moon has a deeper inward crescent while keeping its outer bounds and horns
       margins: [box.x, box.y, 24 - box.x - box.width, 24 - box.y - box.height],
     };
   });
-  expect(values.centerCutOut).toBe(true);
+  expect(values.centerSolid).toBe(true);
+  expect(values.openingClear).toBe(true);
+  expect(values.expandedBody).toBe(true);
   expect(values.bodySolid).toBe(true);
   expect(values.hornsSolid).toBe(true);
   for (const margin of values.margins) expect(margin).toBeCloseTo(3.50424869, 4);

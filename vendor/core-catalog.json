@@ -1608,7 +1608,7 @@
         "weather"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested a longer/deeper inward crescent on2026-10-27. Preserve the radius-8 outer circle, original horns 9.06274607 4.35424869 and 19.64575131 14.93725393, Regular1.70 and .85 joins. Reduce the inner centerline radius from10 to9, moving the midpoint .63324958 unit deeper toward the crescent body. Inner-circle center is 17.8897826 6.1102174. The inner arc is longer while outer dimensions and horn positions remain fixed. Filled is the exact .85 outward offset: outer circle8.85, concave circle8.15 and radius-.85 horn joins. No style-specific scaling or translation. Native X/Y100%, rotation0; visible opposite margins remain3.50424869. The earlier approval covers radius10; both revised styles await owner review.",
+      "construction": "Owner clarified that Moon must look substantially fuller, not more deeply hollowed. The radius9 experiment was rejected because it made the crescent thinner. Preserve the radius8 outer circle, original horns 9.06274607 4.35424869 and 19.64575131 14.93725393, Regular1.70 and .85 round joins. Increase the inner centerline radius to14, centered at22.72084896 1.27915104, moving the inner arc midpoint1.83215957 units toward the opening from the rejected radius9 shape and adding visible body thickness. This is also1.19890999 units fuller than the earlier approved radius10 reference. Filled is the exact .85 outward offset: outer8.85, inner13.15 and .85 horn joins. Outer dimensions, centering and horn locations stay fixed, with native visible margins3.50424869. No independent style scaling. Native X/Y100%, rotation0. Both revised styles await owner review.",
       "review": {
         "status": "draft",
         "reviewedBy": "palamto",
@@ -1620,7 +1620,7 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner requested a longer/deeper inner crescent after the radius10 pair was approved. Current radius9 inner arc deepens the midpoint by .63324958 while retaining the outer contour, horns and Regular1.70. This revised pair awaits review."
+        "note": "Owner rejected the deeper radius9 concavity and clarified a visibly fatter crescent. Current radius14 inner arc adds1.83215957 units of body thickness versus that rejected version, while preserving the outer circle, horns and Regular1.70. Await owner review."
       }
     },
     "root": {
@@ -1644,7 +1644,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M9.06274607 4.35424869 A8 8 0 1 0 19.64575131 14.93725393 A9 9 0 0 1 9.06274607 4.35424869 Z"
+                "d": "M9.06274607 4.35424869 A8 8 0 1 0 19.64575131 14.93725393 A14 14 0 0 1 9.06274607 4.35424869 Z"
               },
               "children": []
             }
@@ -1666,7 +1666,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner requested a longer/deeper inward crescent on2026-10-27. Preserve the radius-8 outer circle, original horns 9.06274607 4.35424869 and 19.64575131 14.93725393, Regular1.70 and .85 joins. Reduce the inner centerline radius from10 to9, moving the midpoint .63324958 unit deeper toward the crescent body. Inner-circle center is 17.8897826 6.1102174. The inner arc is longer while outer dimensions and horn positions remain fixed. Filled is the exact .85 outward offset: outer circle8.85, concave circle8.15 and radius-.85 horn joins. No style-specific scaling or translation. Native X/Y100%, rotation0; visible opposite margins remain3.50424869. The earlier approval covers radius10; both revised styles await owner review.",
+        "construction": "Owner clarified that Moon must look substantially fuller, not more deeply hollowed. The radius9 experiment was rejected because it made the crescent thinner. Preserve the radius8 outer circle, original horns 9.06274607 4.35424869 and 19.64575131 14.93725393, Regular1.70 and .85 round joins. Increase the inner centerline radius to14, centered at22.72084896 1.27915104, moving the inner arc midpoint1.83215957 units toward the opening from the rejected radius9 shape and adding visible body thickness. This is also1.19890999 units fuller than the earlier approved radius10 reference. Filled is the exact .85 outward offset: outer8.85, inner13.15 and .85 horn joins. Outer dimensions, centering and horn locations stay fixed, with native visible margins3.50424869. No independent style scaling. Native X/Y100%, rotation0. Both revised styles await owner review.",
         "review": {
           "status": "draft",
           "reviewedBy": "palamto",
@@ -1678,7 +1678,7 @@
             "strokeWidth": 1.7,
             "rotation": 0
           },
-          "note": "Owner requested a longer/deeper inner crescent after the radius10 pair was approved. Current radius9 inner arc deepens the midpoint by .63324958 while retaining the outer contour, horns and Regular1.70. This revised pair awaits review."
+          "note": "Owner rejected the deeper radius9 concavity and clarified a visibly fatter crescent. Current radius14 inner arc adds1.83215957 units of body thickness versus that rejected version, while preserving the outer circle, horns and Regular1.70. Await owner review."
         }
       },
       "root": {
@@ -1700,7 +1700,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M8.71302392 3.57952654 A8.85 8.85 0 0 0 3.50424869 11.64575131 A8.85 8.85 0 0 0 12.35424869 20.49575131 A8.85 8.85 0 0 0 20.42047346 15.28697608 A0.85 0.85 0 0 0 20.49575131 14.93725393 A0.85 0.85 0 0 0 19.64575131 14.08725393 A0.85 0.85 0 0 0 19.47990982 14.10358937 A8.15 8.15 0 0 1 17.8897826 14.2602174 A8.15 8.15 0 0 1 9.7397826 6.1102174 A8.15 8.15 0 0 1 9.89641063 4.52009018 A0.85 0.85 0 0 0 9.91274607 4.35424869 A0.85 0.85 0 0 0 9.06274607 3.50424869 A0.85 0.85 0 0 0 8.71302392 3.57952654 Z"
+                  "d": "M8.71302392 3.57952654 A8.85 8.85 0 0 0 3.50424869 11.64575131 A8.85 8.85 0 0 0 12.35424869 20.49575131 A8.85 8.85 0 0 0 20.42047346 15.28697608 A0.85 0.85 0 0 0 20.49575131 14.93725393 A0.85 0.85 0 0 0 19.83245367 14.10801197 A13.15 13.15 0 0 1 9.89198803 4.16754633 A0.85 0.85 0 0 0 9.06274607 3.50424869 A0.85 0.85 0 0 0 8.71302392 3.57952654 Z"
                 },
                 "children": []
               }

@@ -304,7 +304,7 @@
       "description": "A balanced crescent moon with a clean circular concavity.",
       "tags": ["night", "dark", "weather"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested a longer/deeper inward crescent on2026-10-27. Preserve the radius-8 outer circle, original horns 9.06274607 4.35424869 and 19.64575131 14.93725393, Regular1.70 and .85 joins. Reduce the inner centerline radius from10 to9, moving the midpoint .63324958 unit deeper toward the crescent body. Inner-circle center is 17.8897826 6.1102174. The inner arc is longer while outer dimensions and horn positions remain fixed. Filled is the exact .85 outward offset: outer circle8.85, concave circle8.15 and radius-.85 horn joins. No style-specific scaling or translation. Native X/Y100%, rotation0; visible opposite margins remain3.50424869. The earlier approval covers radius10; both revised styles await owner review.",
+      "construction": "Owner clarified that Moon must look substantially fuller, not more deeply hollowed. The radius9 experiment was rejected because it made the crescent thinner. Preserve the radius8 outer circle, original horns 9.06274607 4.35424869 and 19.64575131 14.93725393, Regular1.70 and .85 round joins. Increase the inner centerline radius to14, centered at22.72084896 1.27915104, moving the inner arc midpoint1.83215957 units toward the opening from the rejected radius9 shape and adding visible body thickness. This is also1.19890999 units fuller than the earlier approved radius10 reference. Filled is the exact .85 outward offset: outer8.85, inner13.15 and .85 horn joins. Outer dimensions, centering and horn locations stay fixed, with native visible margins3.50424869. No independent style scaling. Native X/Y100%, rotation0. Both revised styles await owner review.",
       "review": {
         "status": "draft",
         "reviewedBy": "palamto",
@@ -316,7 +316,7 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner requested a longer/deeper inner crescent after the radius10 pair was approved. Current radius9 inner arc deepens the midpoint by .63324958 while retaining the outer contour, horns and Regular1.70. This revised pair awaits review."
+        "note": "Owner rejected the deeper radius9 concavity and clarified a visibly fatter crescent. Current radius14 inner arc adds1.83215957 units of body thickness versus that rejected version, while preserving the outer circle, horns and Regular1.70. Await owner review."
       },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,

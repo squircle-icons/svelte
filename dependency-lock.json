@@ -1,7 +1,7 @@
 {
   "repository": "https://github.com/squircle-icons/core",
-  "commit": "192e52c00b2f02e90a61d0f2c8071a377bfe4f6e",
+  "commit": "4fa921cd1b217f3b0114d3b87e11043305cccbf8",
   "version": "0.0.0",
-  "artifact": "vendor/squircle-icons-core-0.0.0-7bc43ea4770a.tgz",
-  "sha256": "7bc43ea4770a78b73cb0415719cc9e2bd5a3173ee898f80e2401416a06f037a9"
+  "artifact": "vendor/squircle-icons-core-0.0.0-12e0cd2ff740.tgz",
+  "sha256": "12e0cd2ff7401b250b8baf4f204171fab556ae155fd64452a0d1ad50c90d3c1c"
 }
