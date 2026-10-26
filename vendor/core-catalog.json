@@ -538,7 +538,19 @@
         "favorite"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The lower silhouette is a slim V with only a slight outward convex bow. Mirrored quadratic flanks depart subtly from straight diagonals and meet a compact rounded tip. Tangents align through the side transitions and tip without inward inflections. The established upper lobes and notch are retained. Outline bounds x=3.25..20.75, y=4.1..19.9 remain centered. Review study; not owner-approved."
+      "construction": "The lower silhouette is a slim V with only a slight outward convex bow. Mirrored quadratic flanks depart subtly from straight diagonals and meet a compact rounded tip. Tangents align through the side transitions and tip without inward inflections. The established upper lobes and notch are retained. Outline bounds x=3.25..20.75, y=4.1..19.9 remain centered. Owner-approved source.",
+      "review": {
+        "status": "approved",
+        "reviewedBy": "palamto",
+        "date": "2026-10-26",
+        "style": "outline",
+        "preview": {
+          "x": 95,
+          "y": 95,
+          "strokeWidth": 1.7
+        },
+        "note": "Owner approved Heart Outline and Filled after the head alignment and centered-grid review. The reviewed Lab preview used X/Y=95%; these local preview settings are recorded without changing the source geometry."
+      }
     },
     "root": {
       "tag": "svg",
@@ -582,7 +594,19 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Filled upper lobes and center notch are fitted to the visible exterior of the original Outline at Regular stroke 1.70 (0.85-unit outward normal offset). Offset branches are trimmed at the symmetric center intersection, with cubic segments fitted to within 0.001 drawing unit. The lower slim V and slight outward bow remain as authored. Bounds x=2.4..21.6, y=3.25..20.75 remain centered. No interior counters or strokes. Not owner-approved."
+        "construction": "Filled upper lobes and center notch are fitted to the visible exterior of the original Outline at Regular stroke 1.70 (0.85-unit outward normal offset). Offset branches are trimmed at the symmetric center intersection, with cubic segments fitted to within 0.001 drawing unit. The lower slim V and slight outward bow remain as authored. Bounds x=2.4..21.6, y=3.25..20.75 remain centered. No interior counters or strokes. Owner-approved source.",
+        "review": {
+          "status": "approved",
+          "reviewedBy": "palamto",
+          "date": "2026-10-26",
+          "style": "filled",
+          "preview": {
+            "x": 95,
+            "y": 95,
+            "strokeWidth": 1.7
+          },
+          "note": "Owner approved Heart Outline and Filled after the head alignment and centered-grid review. The reviewed Lab preview used X/Y=95%; these local preview settings are recorded without changing the source geometry."
+        }
       },
       "root": {
         "tag": "svg",
