@@ -37,8 +37,6 @@ jobs:
       matrix:
         include:
           - svelte: '5.0.0'
-            node: '18.0.0'
-          - svelte: '5.0.0'
             node: '20.19.0'
           - svelte: '5.57.2'
             node: '22.12.0'

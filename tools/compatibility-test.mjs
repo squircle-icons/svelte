@@ -33,7 +33,7 @@ await writeFile(
     2,
   ),
 );
-const npmArgs = ['install', '--ignore-scripts', '--no-audit', '--no-fund'];
+const npmArgs = ['install', '--engine-strict', '--ignore-scripts', '--no-audit', '--no-fund'];
 const bundledNpm = resolve(dirname(node), '../lib/node_modules/npm/bin/npm-cli.js');
 if (existsSync(bundledNpm)) run(node, [bundledNpm, ...npmArgs], fixture);
 else run('npm', npmArgs, fixture);
