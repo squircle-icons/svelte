@@ -14,9 +14,9 @@ The current npm alpha is `0.1.0-alpha.1`. The expanded compatibility below is a 
 
 ### Recommended
 
-- Svelte 5.57.3.
-- Node.js 24.22.1 LTS.
-- npm 11.19.1, bundled with Node.js 24.22.1. A compatible pnpm version is an alternative.
+- Svelte 5.57.2.
+- Node.js 22.23.4 LTS.
+- npm 10.9.9, bundled with Node.js 22.23.4. A compatible pnpm version is an alternative.
 
 Use the [official Node.js LTS download](https://nodejs.org/en/download). The recommendation follows maintained LTS releases; it does not require the newest Current release.
 
@@ -26,11 +26,11 @@ This is the minimum supported combination verified by the packed-package compati
 
 | Svelte | Node.js | Bundled npm |
 | ------ | ------- | ----------- |
-| 5.0.0  | 20.19.0 | 10.8.2      |
+| 5.0.0  | 18.0.0  | 8.6.0       |
 
 The check covers installation, client/server compilation of every component export, public TypeScript declarations, SSR, Chromium hydration, style switching, numeric/preset widths, Filled geometry and accessibility. The table records tested combinations; it does not claim that every version combination or application build tool has been tested.
 
-This source supports Svelte `>=5.0.0 <6` and Node.js `>=20.19.0`, subject to your application's build-tool requirements. When installing with npm, use npm `>=10.8.2`; a compatible pnpm version is an alternative. Svelte 4 and Node.js 18 are outside the supported range. Node.js 20 is end-of-life and is supported for existing projects. Use the recommended setup for new applications.
+This source supports Svelte `>=5.0.0 <6` and Node.js `>=18.0.0`, subject to your application's build-tool requirements. When installing with npm, use npm `>=8.6.0`; a compatible pnpm version is an alternative. Svelte 4 is not supported. Node.js 18 and 20 are end-of-life and are tested for existing projects. Use the recommended maintained Node.js 22 LTS setup for new applications.
 
 The package ships JavaScript inside its native `.svelte` components and separate TypeScript declarations. Consumers do not need a TypeScript preprocessor for the icons. Building this repository itself uses the newer development tools listed below.
 
@@ -87,7 +87,7 @@ Generated components in `src/lib/` must be changed through `tools/generate.ts`. 
 
 `pnpm test:compat` installs the packed artifact with Svelte 5.0.0 in a separate consumer. It compiles every component export for client/server, checks the public declarations with TypeScript 5.6, and tests SSR, browser hydration, style switching, numeric/preset widths, Filled geometry and accessibility. `SVELTE_COMPAT_VERSION` selects another exact Svelte version; `COMPAT_NODE` selects the Node executable used for compilation, SSR and type checking, plus its bundled npm when available. The test runner and package build still use the development Node version.
 
-The compatibility CI matrix checks the minimum setup above and an additional Svelte 5.57.2 / Node 22.12.0 consumer. The full development suite checks Svelte 5.57.2 on Node 24.19.0 in Chromium, Firefox and WebKit.
+The compatibility CI matrix checks the minimum setup above and the recommended Svelte 5.57.2 / Node 22.23.4 consumer. The full development suite checks Svelte 5.57.2 on Node 24.19.0 in Chromium, Firefox and WebKit.
 
 ## Update core and homepage
 
