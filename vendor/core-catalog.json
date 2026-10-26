@@ -1576,7 +1576,7 @@
           "boxed"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner-requested Filled-only boxed treatment. The solid upright rounded square has bounds 2.15..21.85 on both axes and radius-2.85 corners. Its negative-space glyph is the unchanged Regular 1.70 stroke exterior of the Outline mark. There is exactly 2 units of clearance from the visible glyph to each of the four box sides at native 24px, X/Y=100%, rotation=0. X keeps the Plus glyph rotated 45 degrees with no rescaling; each box is sized independently to its own glyph bounds and remains upright. The body is one evenodd compound path: the outer square followed by the original glyph as a cutout. This owner-requested exception deliberately adds a box only to Filled; the Outline glyph remains unboxed. The glyph cutout, rather than the new box exterior, matches Outline at Regular 1.70. Round 3 draft awaiting owner review.",
+        "construction": "Owner-requested Filled-only boxed treatment. The solid upright rounded square has bounds 2.15..21.85 on both axes and radius-2.85 corners. Its negative-space glyph is the unchanged Regular 1.70 stroke exterior of the Outline mark. There is exactly 2 units of clearance from the visible glyph to each of the four box sides at native 24px, X/Y=100%, rotation=0. X derives from the Plus glyph rotated 45 degrees with its diagonal centerlines optically extended to 16 units at unchanged stroke/cap weight; each box is sized independently to its own glyph bounds and remains upright. The body is one evenodd compound path: the outer square followed by the original glyph as a cutout. This owner-requested exception deliberately adds a box only to Filled; the Outline glyph remains unboxed. The glyph cutout, rather than the new box exterior, matches Outline at Regular 1.70. Round 3 draft awaiting owner review.",
         "filledTreatment": "boxed-cutout"
       },
       "root": {
@@ -2336,7 +2336,7 @@
         "cancel"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "X is derived directly from the revised Plus by a 45-degree clockwise rotation about 12,12, with no rescaling. Each diagonal centerline is exactly 14 units long, sharing Plus arm length, intersections, Regular 1.70 weight and rounded end caps. The rotation is baked into the original SVG coordinates so the native Lab rotation remains 0 degrees. The diagonal projection is intentionally smaller than the unrotated Plus bounding box; there is no style-specific enlargement. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review. The owner subsequently requested a Filled-only solid rounded box with a negative-space glyph and 2-unit clearance. Outline retains this unboxed drawing; its visible Regular exterior matches the Filled glyph cutout, not the added box.",
+      "construction": "Owner-requested optical enlargement: X retains the 45-degree construction derived from Plus, with each diagonal centerline length increased from 14 to 16 units, extending both ends equally around 12,12. Stroke width stays Regular 1.70 and cap radius stays .85; the stroke and round ends are not scaled. The native visible dimensions become 13.0137085 by 13.0137085 units. Coordinates are baked into source at X/Y=100%, rotation=0. Plus remains unchanged. The Filled variant uses the exact Regular Outline exterior as its negative-space glyph in an upright solid rounded square with bounds 3.49314575..20.50685425 and radius-2.85 corners. Clearance remains exactly 2 native units on all four sides. This is the owner-requested Filled-only boxed treatment; Outline stays unboxed. Round 3 draft awaiting owner review.",
       "filledTreatment": "boxed-cutout"
     },
     "root": {
@@ -2360,7 +2360,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M7.05025253 7.05025253 L16.94974747 16.94974747 M16.94974747 7.05025253 L7.05025253 16.94974747"
+                "d": "M6.34314575 6.34314575 L17.65685425 17.65685425 M17.65685425 6.34314575 L6.34314575 17.65685425"
               },
               "children": []
             }
@@ -2383,7 +2383,7 @@
           "boxed"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner-requested Filled-only boxed treatment. The solid upright rounded square has bounds 4.20025253..19.79974747 on both axes and radius-2.85 corners. Its negative-space glyph is the unchanged Regular 1.70 stroke exterior of the Outline mark. There is exactly 2 units of clearance from the visible glyph to each of the four box sides at native 24px, X/Y=100%, rotation=0. X keeps the Plus glyph rotated 45 degrees with no rescaling; each box is sized independently to its own glyph bounds and remains upright. The body is one evenodd compound path: the outer square followed by the original glyph as a cutout. This owner-requested exception deliberately adds a box only to Filled; the Outline glyph remains unboxed. The glyph cutout, rather than the new box exterior, matches Outline at Regular 1.70. Round 3 draft awaiting owner review.",
+        "construction": "Owner-requested optical enlargement: X retains the 45-degree construction derived from Plus, with each diagonal centerline length increased from 14 to 16 units, extending both ends equally around 12,12. Stroke width stays Regular 1.70 and cap radius stays .85; the stroke and round ends are not scaled. The native visible dimensions become 13.0137085 by 13.0137085 units. Coordinates are baked into source at X/Y=100%, rotation=0. Plus remains unchanged. The Filled variant uses the exact Regular Outline exterior as its negative-space glyph in an upright solid rounded square with bounds 3.49314575..20.50685425 and radius-2.85 corners. Clearance remains exactly 2 native units on all four sides. This is the owner-requested Filled-only boxed treatment; Outline stays unboxed. Round 3 draft awaiting owner review.",
         "filledTreatment": "boxed-cutout"
       },
       "root": {
@@ -2405,7 +2405,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M7.05025253 4.20025253 H16.94974747 A2.85 2.85 0 0 1 19.79974747 7.05025253 V16.94974747 A2.85 2.85 0 0 1 16.94974747 19.79974747 H7.05025253 A2.85 2.85 0 0 1 4.20025253 16.94974747 V7.05025253 A2.85 2.85 0 0 1 7.05025253 4.20025253 Z M7.6512933 6.44921177 L12 10.79791847 L16.3487067 6.44921177 A0.85 0.85 0 0 1 17.55078823 7.6512933 L13.20208153 12 L17.55078823 16.3487067 A0.85 0.85 0 0 1 16.3487067 17.55078823 L12 13.20208153 L7.6512933 17.55078823 A0.85 0.85 0 0 1 6.44921177 16.3487067 L10.79791847 12 L6.44921177 7.6512933 A0.85 0.85 0 0 1 7.6512933 6.44921177 Z"
+                  "d": "M6.34314575 3.49314575 H17.65685425 A2.85 2.85 0 0 1 20.50685425 6.34314575 V17.65685425 A2.85 2.85 0 0 1 17.65685425 20.50685425 H6.34314575 A2.85 2.85 0 0 1 3.49314575 17.65685425 V6.34314575 A2.85 2.85 0 0 1 6.34314575 3.49314575 Z M6.94418651 5.74210499 L12 10.79791847 L17.05581349 5.74210499 A0.85 0.85 0 0 1 18.25789501 6.94418651 L13.20208153 12 L18.25789501 17.05581349 A0.85 0.85 0 0 1 17.05581349 18.25789501 L12 13.20208153 L6.94418651 18.25789501 A0.85 0.85 0 0 1 5.74210499 17.05581349 L10.79791847 12 L5.74210499 6.94418651 A0.85 0.85 0 0 1 6.94418651 5.74210499 Z"
                 },
                 "children": []
               }

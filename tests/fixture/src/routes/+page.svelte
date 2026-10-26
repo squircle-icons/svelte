@@ -156,7 +156,7 @@
   <header>
     <span>ROUND 3 / FILLED REVISION</span>
     <h2>Plus & X</h2>
-    <p>Solid rounded boxes · 2px around each symbol</p>
+    <p>Slightly longer X arms · Same 1.70 stroke · 2px box clearance</p>
   </header>
   <div class="rotation-grid">
     <h3>Plus</h3>

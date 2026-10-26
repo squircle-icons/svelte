@@ -371,21 +371,24 @@ test('Round 3 exposes six packed Outline/Filled pairs on light and dark surfaces
   }
 });
 
-test('X glyph is the extended Plus rotated exactly 45 degrees in both packed styles', async ({
+test('X optically extends Plus arms at 45 degrees while preserving stroke and cap weight', async ({
   page,
 }, info) => {
   const result = await page.evaluate(async () => {
     const size = 960;
     const paint = async (name: 'plus' | 'x', style: 'outline' | 'filled', angle: number) => {
+      const sourceStyle = name === 'plus' ? 'outline' : style;
+      const outline = sourceStyle === 'outline';
+      const armScale = name === 'plus' ? 16 / 14 : 1;
       const original = document.querySelector(
-        `[data-testid="${name}-${style}-contour"] svg`,
+        `[data-testid="${name}-${sourceStyle}-contour"] svg`,
       ) as SVGSVGElement;
       const svg = original.cloneNode(true) as SVGSVGElement;
       svg.setAttribute('width', String(size));
       svg.setAttribute('height', String(size));
-      svg.setAttribute('fill', style === 'outline' ? 'none' : '#000');
-      svg.setAttribute('stroke', style === 'outline' ? '#000' : 'none');
-      if (style === 'outline') svg.setAttribute('stroke-width', '1.7');
+      svg.setAttribute('fill', outline ? 'none' : '#000');
+      svg.setAttribute('stroke', outline ? '#000' : 'none');
+      if (outline) svg.setAttribute('stroke-width', String(1.7 / armScale));
       else {
         const path = svg.querySelector('path')!;
         const parts = path.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
@@ -394,7 +397,10 @@ test('X glyph is the extended Plus rotated exactly 45 degrees in both packed sty
       }
 
       for (const group of svg.querySelectorAll(':scope > g'))
-        group.setAttribute('transform', `rotate(${angle} 12 12)`);
+        group.setAttribute(
+          'transform',
+          `rotate(${angle} 12 12) translate(12 12) scale(${armScale}) translate(-12 -12)`,
+        );
       const url = URL.createObjectURL(
         new Blob([new XMLSerializer().serializeToString(svg)], { type: 'image/svg+xml' }),
       );
@@ -445,9 +451,17 @@ test('X glyph is the extended Plus rotated exactly 45 degrees in both packed sty
         poses.push({ style, rotation, mismatches, distantMismatches });
       }
     }
-    return { lengths, poses };
+    return {
+      lengths,
+      poses,
+      xStroke: document
+        .querySelector('[data-testid="x-outline-contour"] svg')!
+        .getAttribute('stroke-width'),
+    };
   });
-  for (const length of result.lengths) expect(length).toBeCloseTo(28, 4);
+  expect(result.lengths[0]).toBeCloseTo(28, 4);
+  expect(result.lengths[1]).toBeCloseTo(32, 4);
+  expect(result.xStroke).toBe('1.7');
   for (const pose of result.poses) {
     expect(pose.distantMismatches, JSON.stringify(pose)).toBe(0);
     expect(pose.mismatches, JSON.stringify(pose)).toBeLessThan(960 * 960 * 0.002);
