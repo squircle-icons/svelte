@@ -32,5 +32,5 @@
     ></path></g
   >
   <g data-part="lens"><circle cx="12" cy="13.2" r="3.25"></circle></g>
-  <g data-part="indicator"><circle cx="17.9" cy="9.5" r=".15"></circle></g>
+  <g data-part="indicator"><path d="M17.9 9.5 L17.9 9.5"></path></g>
 </svg>
