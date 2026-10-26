@@ -91,7 +91,7 @@ test('folder opens, closes, and resets to its controlled state', async ({ page }
   const started = await page
     .getByRole('button', { name: 'Toggle folder' })
     .evaluate(async (button) => {
-      button.click();
+      (button as HTMLButtonElement).click();
       await Promise.resolve();
       const animations = document.getAnimations();
       for (const animation of animations) animation.pause();
