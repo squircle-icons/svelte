@@ -140,11 +140,11 @@
 <div data-testid="search-filled-contour">
   <FilledSearch size={96} label="Filled Search contour" />
 </div>
-<section class="rotation-sheet" data-testid="search-boxed-sheet">
+<section class="rotation-sheet" data-testid="search-bold-sheet">
   <header>
-    <span>BOXED FILLED / SEARCH</span>
+    <span>BOLD FILLED / SEARCH</span>
     <h2>Search</h2>
-    <p>Shared magnifier glyph · 2px outside + 2px inside · Regular 1.70</p>
+    <p>Shared centerlines · Outline 1.70 / Filled Bold 2.25 · 2px Filled margins</p>
   </header>
   <div class="rotation-grid">
     {#each ['outline', 'filled'] as style}<article>

@@ -192,7 +192,7 @@ for (const icon of [
   'upload',
   'trash',
 ])
-  test(`Filled ${icon} preserves Regular Outline reference contours and openings at native and rotated poses`, async ({
+  test(`Filled ${icon} preserves ${['menu', 'search'].includes(icon) ? 'Bold' : 'Regular'} Outline reference contours and openings at native and rotated poses`, async ({
     page,
   }) => {
     const results = await page.evaluate(async (icon) => {
@@ -206,13 +206,12 @@ for (const icon of [
         svg.setAttribute('height', String(size));
         svg.setAttribute('fill', '#000');
         svg.setAttribute('stroke', outline ? '#000' : 'none');
-        if (!outline && ['plus', 'x', 'search', 'menu'].includes(icon)) {
+        if (!outline && ['plus', 'x'].includes(icon)) {
           // Owner-requested Filled boxes are a deliberate exterior exception.
           // The negative-space glyph matches the unchanged Outline exterior for both marks.
           const path = svg.querySelector('path')!;
           const parts = path.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
-          if (parts.length !== (icon === 'menu' ? 4 : icon === 'search' ? 3 : 2))
-            throw new Error('Expected a box and glyph cutout subpaths');
+          if (parts.length !== 2) throw new Error('Expected a box and glyph cutout subpaths');
           path.setAttribute('d', parts.slice(1).join(' '));
         }
 
@@ -225,7 +224,7 @@ for (const icon of [
           }
         }
         if (outline) {
-          svg.setAttribute('stroke-width', '1.7');
+          svg.setAttribute('stroke-width', ['menu', 'search'].includes(icon) ? '2.25' : '1.7');
           // Line marks keep an open interior; Filled Copy paints only its front page solid.
           if (
             [
@@ -640,62 +639,34 @@ test('Copy has 1px junction breaks, 4px inter-page spacing and standard corners'
       .screenshot({ path: '.artifacts/previews/copy-spaced-rounded.png' });
 });
 
-test('Search exposes a matching boxed Filled glyph with a solid lens center and 2px frame margins', async ({
-  page,
-}, info) => {
-  const values = await page.evaluate(() => {
-    const svg = document.querySelector(
-      '[data-testid="search-filled-contour"] svg',
-    ) as SVGSVGElement;
-    const path = svg.querySelector('path') as SVGPathElement;
-    const box = path.getBBox();
-    const outline = document.querySelector(
-      '[data-testid="search-outline-contour"] svg',
-    ) as SVGSVGElement;
-    const glyph = outline.getBBox();
-    const half = 0.85;
-    return {
-      margins: [box.x, box.y, 24 - box.x - box.width, 24 - box.y - box.height],
-      clearances: [
-        glyph.x - half - box.x,
-        glyph.y - half - box.y,
-        box.x + box.width - glyph.x - glyph.width - half,
-        box.y + box.height - glyph.y - glyph.height - half,
-      ],
-      lensCenterSolid: path.isPointInFill(new DOMPoint(10.35632184, 10.35632184)),
-      ringCutout: !path.isPointInFill(new DOMPoint(4.85, 10.35632184)),
-      handleCutout: !path.isPointInFill(new DOMPoint(19.15, 19.15)),
-      borderSolid: path.isPointInFill(new DOMPoint(2.5, 12)),
-    };
+for (const icon of ['menu', 'search'])
+  test(`Filled ${icon} uses Bold without a box and retains 2px primary margins`, async ({
+    page,
+  }, info) => {
+    const values = await page.evaluate((icon) => {
+      const svg = document.querySelector(
+        `[data-testid="${icon}-filled-contour"] svg`,
+      ) as SVGSVGElement;
+      const box = svg.getBBox();
+      const ink = (x: number, y: number) =>
+        Array.from(svg.querySelectorAll('path')).some((p) => p.isPointInFill(new DOMPoint(x, y)));
+      return {
+        margins: [box.x, 24 - box.x - box.width, box.y, 24 - box.y - box.height],
+        emptyCorner: !ink(3, 3),
+        emptyCenter: !ink(icon === 'search' ? 9.95977012 : 12, icon === 'search' ? 9.95977012 : 9),
+        boldInk: icon === 'menu' ? ink(12, 6.95) : ink(3.125, 9.95977012),
+      };
+    }, icon);
+    for (const margin of values.margins.slice(0, icon === 'search' ? 4 : 2))
+      expect(margin).toBeCloseTo(2, 3);
+    expect(values.emptyCorner).toBe(true);
+    expect(values.emptyCenter).toBe(true);
+    expect(values.boldInk).toBe(true);
+    if (icon === 'search' && info.project.name === 'chromium')
+      await page
+        .getByTestId('search-bold-sheet')
+        .screenshot({ path: '.artifacts/previews/search-bold.png' });
   });
-  for (const value of [...values.margins, ...values.clearances]) expect(value).toBeCloseTo(2, 4);
-  expect(values.lensCenterSolid).toBe(true);
-  expect(values.ringCutout).toBe(true);
-  expect(values.handleCutout).toBe(true);
-  expect(values.borderSolid).toBe(true);
-  if (info.project.name === 'chromium')
-    await page
-      .getByTestId('search-boxed-sheet')
-      .screenshot({ path: '.artifacts/previews/search-boxed.png' });
-});
-
-test('Menu uses a rounded Filled box around the exact three bar glyph', async ({ page }) => {
-  const values = await page.evaluate(() => {
-    const svg = document.querySelector('[data-testid="menu-filled-contour"] svg') as SVGSVGElement;
-    const path = svg.querySelector('path') as SVGPathElement;
-    const box = path.getBBox();
-    return {
-      margins: [box.x, box.y, 24 - box.x - box.width, 24 - box.y - box.height],
-      holes: [6, 12, 18].map((y) => !path.isPointInFill(new DOMPoint(12, y))),
-      solidGaps: [3, 9, 15, 21].map((y) => path.isPointInFill(new DOMPoint(12, y))),
-      roundCorner: !path.isPointInFill(new DOMPoint(2.9, 2.9)),
-    };
-  });
-  for (const margin of values.margins) expect(margin).toBeCloseTo(2, 5);
-  expect(values.holes).toEqual([true, true, true]);
-  expect(values.solidGaps).toEqual([true, true, true, true]);
-  expect(values.roundCorner).toBe(true);
-});
 
 test('Trash keeps straight sides, standard round base corners and vertical 2px margins', async ({
   page,

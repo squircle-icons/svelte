@@ -192,11 +192,24 @@
     },
     {
       "name": "menu",
-      "description": "Three equal horizontal menu strokes with rounded free ends.",
+      "description": "Three straight menu bars with rounded ends.",
       "tags": ["navigation", "list", "hamburger"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested a boxed Filled Menu. Three straight equal centerlines run x=4.85..19.15 at y=6,12,18 with unchanged Regular 1.70 and round .85 caps. The shared glyph has visible bounds x=4..20 and y=5.15..18.85. Filled adds the family radius-4 box at 2..22, with the exact three capsules as negative space. Left/right are the primary inner pair, with 2px clearances; top/bottom retain 3.15px clearances and natural bar spacing. The box has 2px artboard margins on all four sides. Outline and Filled glyphs are identical in position and weight. Native X/Y=100%, rotation=0. Round 4 draft awaiting owner review.",
-      "filledTreatment": "boxed-cutout",
+      "construction": "Owner changed the Filled concept to Bold rather than a boxed cutout. Filled is fixed fill-only geometry matching the exact Outline centerlines rendered at Bold 2.25, with round cap radius 1.125. Outline retains default Regular 1.70 and radius-.85 caps. Both styles share centerlines and placement; weight is deliberately different. Centerlines are sized for exact 2px primary-pair margins at the Filled Bold reference. Regular Outline therefore has 2.275px on that same primary pair. No enclosing box or negative-space symbol is present. Native X/Y=100%, rotation=0. Both revised styles await owner review; earlier boxed approval does not approve this revision. Three straight equal centerlines x=3.125..20.875 at y=6,12,18. Filled visible bounds x=2..22/y=4.875..19.125; horizontal is the primary pair. Vertical margins preserve the natural bar spacing. Each bar is an analytical radius-1.125 capsule.",
+      "filledTreatment": "bold-stroke",
+      "review": {
+        "status": "draft",
+        "reviewedBy": "palamto",
+        "date": "2026-10-27",
+        "style": "outline",
+        "preview": {
+          "x": 100,
+          "y": 100,
+          "strokeWidth": 1.7,
+          "rotation": 0
+        },
+        "note": "Owner requested Filled = Bold for Menu and Search, superseding the previous box treatment. Revised geometry awaits owner review."
+      },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
@@ -253,12 +266,12 @@
     },
     {
       "name": "search",
-      "description": "A clear circular search lens with a short angled handle.",
+      "description": "A circular search lens with a rounded diagonal handle.",
       "tags": ["find", "magnify"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner-requested boxed Filled Search replaces the earlier Outline-only direction. It follows the accepted Plus/X shared-glyph construction: both magnifiers have visible bounds 4..20, identical position and Regular-equivalent 1.70 stroke with .85 round caps. The lens center is 10.35632184,10.35632184 with centerline radius 5.50632184; the handle starts on the lens circle at 45 degrees and ends at 19.15,19.15. Centerline geometry is resized about 12,12 while stroke weight stays fixed. The upright Filled box spans 2..22 with radius-4 corners, leaving 2px outside the box and 2px to the shared glyph. Its evenodd compound path contains the box, the exact union of the lens exterior and rounded handle, then the inner lens circle. This makes the magnifier stroke negative space while preserving the solid center inside the lens. No overlapping cutouts or doubled seams. Native X/Y=100%, rotation=0. Both revised styles were owner-approved on 2026-10-27.",
+      "construction": "Owner changed the Filled concept to Bold rather than a boxed cutout. Filled is fixed fill-only geometry matching the exact Outline centerlines rendered at Bold 2.25, with round cap radius 1.125. Outline retains default Regular 1.70 and radius-.85 caps. Both styles share centerlines and placement; weight is deliberately different. Centerlines are sized for exact 2px primary-pair margins at the Filled Bold reference. Regular Outline therefore has 2.275px on that same primary pair. No enclosing box or negative-space symbol is present. Native X/Y=100%, rotation=0. Both revised styles await owner review; earlier boxed approval does not approve this revision. Both opposing pairs are primary. Filled visible bounds 2..22 on both axes; Regular Outline bounds 2.275..21.725. Lens center 9.95977012,9.95977012, centerline radius 6.83477012. Handle starts on the lens at 45 degrees and ends at20.875,20.875. Filled analytically unions the expanded lens exterior and handle capsule, then subtracts the lens interior. The lens center stays transparent; no doubled seam or overlapping evenodd cutouts.",
       "review": {
-        "status": "approved",
+        "status": "draft",
         "reviewedBy": "palamto",
         "date": "2026-10-27",
         "style": "outline",
@@ -268,13 +281,13 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner approved both revised Outline and boxed Filled Search, including the shared bounds 4..20, radius-4 box at 2..22, 2px clearances and unchanged Regular 1.70 weight."
+        "note": "Owner requested Filled = Bold for Menu and Search, superseding the previous box treatment. Revised geometry awaits owner review."
       },
-      "filledTreatment": "boxed-cutout",
+      "filledTreatment": "bold-stroke",
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "approved"
+      "reviewStatus": "draft"
     },
     {
       "name": "settings",

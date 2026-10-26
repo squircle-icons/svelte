@@ -9,3 +9,5 @@ Follow the [core contour-matching rule](https://github.com/squircle-icons/core/b
 Preserve independent per-icon exports. Direct paths must bypass barrels/catalogs and transform only their selected `.svelte` component. Icon paths must traverse no animation runtime or other icon geometry. `test:bundle` checks the transform graph before tree shaking as well as retained production code. A small final bundle alone does not prove a small compilation graph.
 
 Run `pnpm verify` and inspect browser captures before accepting changes. Visual baselines represent the alpha implementation, not approval of the final style. Contributions to original code and artwork are submitted under the project’s [MIT license](LICENSE).
+
+For the owner-requested Menu/Search Bold Filled treatment, compare packed geometry against Outline at Bold 2.25; these two icons deliberately differ from Regular 1.70 and use no surrounding box.
