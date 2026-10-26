@@ -10,7 +10,7 @@
         "navigation"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review."
+      "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner requested visibly rounded arrow bends across all arrow-bearing icons. The old sharp V is replaced by a tangent circular centerline arc of radius1.50 centered at5.5 12, with straight tangent arms. Preserve the prior free endpoints, shaft, native visible bounds, centering and Regular1.70 weight. The visible outer bend radius is2.35 and inner bend radius .65; free caps remain .85. Filled is the exact analytical1.70 stroke band around this rounded head, unioned with its separate shaft where present. Transfer trays stay unchanged. This is actual centerline rounding, not only a round stroke join. Both styles remain drafts awaiting owner review."
     },
     "root": {
       "tag": "svg",
@@ -33,7 +33,14 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M20 12 H4 M10 6 L4 12 L10 18"
+                "d": "M20 12 L4 12"
+              },
+              "children": []
+            },
+            {
+              "tag": "path",
+              "attrs": {
+                "d": "M10 6 L4.50424492 10.87818369 A1.5 1.5 0 0 0 4 12 A1.5 1.5 0 0 0 4.50424492 13.12181631 L10 18"
               },
               "children": []
             }
@@ -55,7 +62,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review."
+        "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner requested visibly rounded arrow bends across all arrow-bearing icons. The old sharp V is replaced by a tangent circular centerline arc of radius1.50 centered at5.5 12, with straight tangent arms. Preserve the prior free endpoints, shaft, native visible bounds, centering and Regular1.70 weight. The visible outer bend radius is2.35 and inner bend radius .65; free caps remain .85. Filled is the exact analytical1.70 stroke band around this rounded head, unioned with its separate shaft where present. Transfer trays stay unchanged. This is actual centerline rounding, not only a round stroke join. Both styles remain drafts awaiting owner review."
       },
       "root": {
         "tag": "svg",
@@ -76,21 +83,14 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M20 11.15 L4 11.15 A.85 .85 0 0 0 4 12.85 L20 12.85 A.85 .85 0 0 0 20 11.15 Z"
+                  "d": "M20 11.15 L4 11.15 A0.85 0.85 0 0 0 3.15 12 A0.85 0.85 0 0 0 4 12.85 L20 12.85 A0.85 0.85 0 0 0 20.85 12 A0.85 0.85 0 0 0 20 11.15 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M9.39895924 5.39895924 L3.39895924 11.39895924 A.85 .85 0 0 0 4.60104076 12.60104076 L10.60104076 6.60104076 A.85 .85 0 0 0 9.39895924 5.39895924 Z"
-                },
-                "children": []
-              },
-              {
-                "tag": "path",
-                "attrs": {
-                  "d": "M3.39895924 12.60104076 L9.39895924 18.60104076 A.85 .85 0 0 0 10.60104076 17.39895924 L4.60104076 11.39895924 A.85 .85 0 0 0 3.39895924 12.60104076 Z"
+                  "d": "M9.43573879 5.36430409 L3.93998371 10.24248779 A2.35 2.35 0 0 0 3.15 12 A2.35 2.35 0 0 0 3.93998371 13.75751221 L9.43573879 18.63569591 A0.85 0.85 0 0 0 10 18.85 A0.85 0.85 0 0 0 10.85 18 A0.85 0.85 0 0 0 10.56426121 17.36430409 L5.06850613 12.4861204 A0.65 0.65 0 0 1 4.85 12 A0.65 0.65 0 0 1 5.06850613 11.5138796 L10.56426121 6.63569591 A0.85 0.85 0 0 0 10.85 6 A0.85 0.85 0 0 0 10 5.15 A0.85 0.85 0 0 0 9.43573879 5.36430409 Z"
                 },
                 "children": []
               }
@@ -114,7 +114,7 @@
         "navigation"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review."
+      "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner requested visibly rounded arrow bends across all arrow-bearing icons. The old sharp V is replaced by a tangent circular centerline arc of radius1.50 centered at18.5 12, with straight tangent arms. Preserve the prior free endpoints, shaft, native visible bounds, centering and Regular1.70 weight. The visible outer bend radius is2.35 and inner bend radius .65; free caps remain .85. Filled is the exact analytical1.70 stroke band around this rounded head, unioned with its separate shaft where present. Transfer trays stay unchanged. This is actual centerline rounding, not only a round stroke join. Both styles remain drafts awaiting owner review."
     },
     "root": {
       "tag": "svg",
@@ -137,7 +137,14 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M4 12 H20 M14 6 L20 12 L14 18"
+                "d": "M4 12 L20 12"
+              },
+              "children": []
+            },
+            {
+              "tag": "path",
+              "attrs": {
+                "d": "M14 6 L19.49575508 10.87818369 A1.5 1.5 0 0 1 20 12 A1.5 1.5 0 0 1 19.49575508 13.12181631 L14 18"
               },
               "children": []
             }
@@ -159,7 +166,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review."
+        "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner requested visibly rounded arrow bends across all arrow-bearing icons. The old sharp V is replaced by a tangent circular centerline arc of radius1.50 centered at18.5 12, with straight tangent arms. Preserve the prior free endpoints, shaft, native visible bounds, centering and Regular1.70 weight. The visible outer bend radius is2.35 and inner bend radius .65; free caps remain .85. Filled is the exact analytical1.70 stroke band around this rounded head, unioned with its separate shaft where present. Transfer trays stay unchanged. This is actual centerline rounding, not only a round stroke join. Both styles remain drafts awaiting owner review."
       },
       "root": {
         "tag": "svg",
@@ -180,21 +187,14 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M4 12.85 L20 12.85 A.85 .85 0 0 0 20 11.15 L4 11.15 A.85 .85 0 0 0 4 12.85 Z"
+                  "d": "M4 12.85 L20 12.85 A0.85 0.85 0 0 0 20.85 12 A0.85 0.85 0 0 0 20 11.15 L4 11.15 A0.85 0.85 0 0 0 3.15 12 A0.85 0.85 0 0 0 4 12.85 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M13.39895924 6.60104076 L19.39895924 12.60104076 A.85 .85 0 0 0 20.60104076 11.39895924 L14.60104076 5.39895924 A.85 .85 0 0 0 13.39895924 6.60104076 Z"
-                },
-                "children": []
-              },
-              {
-                "tag": "path",
-                "attrs": {
-                  "d": "M19.39895924 11.39895924 L13.39895924 17.39895924 A.85 .85 0 0 0 14.60104076 18.60104076 L20.60104076 12.60104076 A.85 .85 0 0 0 19.39895924 11.39895924 Z"
+                  "d": "M14.56426121 5.36430409 L20.06001629 10.24248779 A2.35 2.35 0 0 1 20.85 12 A2.35 2.35 0 0 1 20.06001629 13.75751221 L14.56426121 18.63569591 A0.85 0.85 0 0 1 14 18.85 A0.85 0.85 0 0 1 13.15 18 A0.85 0.85 0 0 1 13.43573879 17.36430409 L18.93149387 12.4861204 A0.65 0.65 0 0 0 19.15 12 A0.65 0.65 0 0 0 18.93149387 11.5138796 L13.43573879 6.63569591 A0.85 0.85 0 0 1 13.15 6 A0.85 0.85 0 0 1 14 5.15 A0.85 0.85 0 0 1 14.56426121 5.36430409 Z"
                 },
                 "children": []
               }
@@ -603,7 +603,7 @@
         "arrow"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Mirrored 45-degree arms meet at 12,15.25, with endpoints at 5.5,8.75 and 18.5,8.75. A single continuous centerline avoids doubled joins. Native bounds are centered at 12,12. Regular visible margins are 4.65 horizontally and 7.9 vertically. Rounded caps and the rounded lower vertex use the shared 1.70 stroke. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review."
+      "construction": "Mirrored 45-degree arms meet at 12,15.25, with endpoints at 5.5,8.75 and 18.5,8.75. A single continuous centerline avoids doubled joins. Native bounds are centered at 12,12. Regular visible margins are 4.65 horizontally and 7.9 vertically. Rounded caps and the rounded lower vertex use the shared 1.70 stroke. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review. Owner requested visibly rounded arrow bends across all arrow-bearing icons. The old sharp V is replaced by a tangent circular centerline arc of radius1.50 centered at12 13.75, with straight tangent arms. Preserve the prior free endpoints, shaft, native visible bounds, centering and Regular1.70 weight. The visible outer bend radius is2.35 and inner bend radius .65; free caps remain .85. Filled is the exact analytical1.70 stroke band around this rounded head, unioned with its separate shaft where present. Transfer trays stay unchanged. This is actual centerline rounding, not only a round stroke join. Both styles remain drafts awaiting owner review."
     },
     "root": {
       "tag": "svg",
@@ -626,7 +626,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M5.5 8.75 L12 15.25 L18.5 8.75"
+                "d": "M5.5 8.75 L10.88339133 14.75159127 A1.5 1.5 0 0 0 12 15.25 A1.5 1.5 0 0 0 13.11660867 14.75159127 L18.5 8.75"
               },
               "children": []
             }
@@ -649,7 +649,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The fill-only contour is the exact union of the Regular 1.70 stroke exterior, with radius-.85 free-end caps. Straight edges, internal intersections and any rounded outer joint are constructed analytically from the Outline centerline. Line marks have no enclosed body or counter to fill; both styles intentionally retain the same recognizable mark at Regular. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review."
+        "construction": "The fill-only contour is the exact union of the Regular 1.70 stroke exterior, with radius-.85 free-end caps. Straight edges, internal intersections and any rounded outer joint are constructed analytically from the Outline centerline. Line marks have no enclosed body or counter to fill; both styles intentionally retain the same recognizable mark at Regular. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review. Owner requested visibly rounded arrow bends across all arrow-bearing icons. The old sharp V is replaced by a tangent circular centerline arc of radius1.50 centered at12 13.75, with straight tangent arms. Preserve the prior free endpoints, shaft, native visible bounds, centering and Regular1.70 weight. The visible outer bend radius is2.35 and inner bend radius .65; free caps remain .85. Filled is the exact analytical1.70 stroke band around this rounded head, unioned with its separate shaft where present. Transfer trays stay unchanged. This is actual centerline rounding, not only a round stroke join. Both styles remain drafts awaiting owner review."
       },
       "root": {
         "tag": "svg",
@@ -670,7 +670,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M4.89895924 9.35104076 L11.39895924 15.85104076 A.85 .85 0 0 0 12.60104076 15.85104076 L19.10104076 9.35104076 A.85 .85 0 0 0 17.89895924 8.14895924 L12 14.04791847 L6.10104076 8.14895924 A.85 .85 0 0 0 4.89895924 9.35104076 Z"
+                  "d": "M4.86725509 9.31756839 L10.25064642 15.31915966 A2.35 2.35 0 0 0 12 16.1 A2.35 2.35 0 0 0 13.74935358 15.31915966 L19.13274491 9.31756839 A0.85 0.85 0 0 0 19.35 8.75 A0.85 0.85 0 0 0 18.5 7.9 A0.85 0.85 0 0 0 17.86725509 8.18243161 L12.48386376 14.18402288 A0.65 0.65 0 0 1 12 14.4 A0.65 0.65 0 0 1 11.51613624 14.18402288 L6.13274491 8.18243161 A0.85 0.85 0 0 0 5.5 7.9 A0.85 0.85 0 0 0 4.65 8.75 A0.85 0.85 0 0 0 4.86725509 9.31756839 Z"
                 },
                 "children": []
               }
@@ -694,7 +694,7 @@
         "arrow"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "This is the exact vertical reflection of Chevron Down about y=12. Mirrored 45-degree arms meet at 12,8.75, with endpoints at 5.5,15.25 and 18.5,15.25. Native bounds are centered at 12,12. Regular visible margins are 4.65 horizontally and 7.9 vertically. One continuous centerline avoids doubled joins. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review."
+      "construction": "This is the exact vertical reflection of Chevron Down about y=12. Mirrored 45-degree arms meet at 12,8.75, with endpoints at 5.5,15.25 and 18.5,15.25. Native bounds are centered at 12,12. Regular visible margins are 4.65 horizontally and 7.9 vertically. One continuous centerline avoids doubled joins. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review. Owner requested visibly rounded arrow bends across all arrow-bearing icons. The old sharp V is replaced by a tangent circular centerline arc of radius1.50 centered at12 10.25, with straight tangent arms. Preserve the prior free endpoints, shaft, native visible bounds, centering and Regular1.70 weight. The visible outer bend radius is2.35 and inner bend radius .65; free caps remain .85. Filled is the exact analytical1.70 stroke band around this rounded head, unioned with its separate shaft where present. Transfer trays stay unchanged. This is actual centerline rounding, not only a round stroke join. Both styles remain drafts awaiting owner review."
     },
     "root": {
       "tag": "svg",
@@ -717,7 +717,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M5.5 15.25 L12 8.75 L18.5 15.25"
+                "d": "M5.5 15.25 L10.88339133 9.24840873 A1.5 1.5 0 0 1 12 8.75 A1.5 1.5 0 0 1 13.11660867 9.24840873 L18.5 15.25"
               },
               "children": []
             }
@@ -739,7 +739,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The fill-only contour is the exact union of the Regular 1.70 stroke exterior, with radius-.85 free-end caps. Straight edges, internal intersections and any rounded outer joint are constructed analytically from the Outline centerline. Line marks have no enclosed body or counter to fill; both styles intentionally retain the same recognizable mark at Regular. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review."
+        "construction": "The fill-only contour is the exact union of the Regular 1.70 stroke exterior, with radius-.85 free-end caps. Straight edges, internal intersections and any rounded outer joint are constructed analytically from the Outline centerline. Line marks have no enclosed body or counter to fill; both styles intentionally retain the same recognizable mark at Regular. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 3 draft awaiting owner review. Owner requested visibly rounded arrow bends across all arrow-bearing icons. The old sharp V is replaced by a tangent circular centerline arc of radius1.50 centered at12 10.25, with straight tangent arms. Preserve the prior free endpoints, shaft, native visible bounds, centering and Regular1.70 weight. The visible outer bend radius is2.35 and inner bend radius .65; free caps remain .85. Filled is the exact analytical1.70 stroke band around this rounded head, unioned with its separate shaft where present. Transfer trays stay unchanged. This is actual centerline rounding, not only a round stroke join. Both styles remain drafts awaiting owner review."
       },
       "root": {
         "tag": "svg",
@@ -760,7 +760,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M19.10104076 14.64895924 L12.60104076 8.14895924 A.85 .85 0 0 0 11.39895924 8.14895924 L4.89895924 14.64895924 A.85 .85 0 0 0 6.10104076 15.85104076 L12 9.95208153 L17.89895924 15.85104076 A.85 .85 0 0 0 19.10104076 14.64895924 Z"
+                  "d": "M4.86725509 14.68243161 L10.25064642 8.68084034 A2.35 2.35 0 0 1 12 7.9 A2.35 2.35 0 0 1 13.74935358 8.68084034 L19.13274491 14.68243161 A0.85 0.85 0 0 1 19.35 15.25 A0.85 0.85 0 0 1 18.5 16.1 A0.85 0.85 0 0 1 17.86725509 15.81756839 L12.48386376 9.81597712 A0.65 0.65 0 0 0 12 9.6 A0.65 0.65 0 0 0 11.51613624 9.81597712 L6.13274491 15.81756839 A0.85 0.85 0 0 1 5.5 16.1 A0.85 0.85 0 0 1 4.65 15.25 A0.85 0.85 0 0 1 4.86725509 14.68243161 Z"
                 },
                 "children": []
               }
@@ -932,7 +932,7 @@
         "file"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review."
+      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner requested visibly rounded arrow bends across all arrow-bearing icons. The old sharp V is replaced by a tangent circular centerline arc of radius1.50 centered at12 12.75, with straight tangent arms. Preserve the prior free endpoints, shaft, native visible bounds, centering and Regular1.70 weight. The visible outer bend radius is2.35 and inner bend radius .65; free caps remain .85. Filled is the exact analytical1.70 stroke band around this rounded head, unioned with its separate shaft where present. Transfer trays stay unchanged. This is actual centerline rounding, not only a round stroke join. Both styles remain drafts awaiting owner review."
     },
     "root": {
       "tag": "svg",
@@ -955,7 +955,14 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M12 3.5 V14.25 M7.5 9.75 L12 14.25 L16.5 9.75"
+                "d": "M12 3.5 L12 14.25"
+              },
+              "children": []
+            },
+            {
+              "tag": "path",
+              "attrs": {
+                "d": "M7.5 9.75 L10.85443809 13.71834287 A1.5 1.5 0 0 0 12 14.25 A1.5 1.5 0 0 0 13.14556191 13.71834287 L16.5 9.75"
               },
               "children": []
             }
@@ -993,7 +1000,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review."
+        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner requested visibly rounded arrow bends across all arrow-bearing icons. The old sharp V is replaced by a tangent circular centerline arc of radius1.50 centered at12 12.75, with straight tangent arms. Preserve the prior free endpoints, shaft, native visible bounds, centering and Regular1.70 weight. The visible outer bend radius is2.35 and inner bend radius .65; free caps remain .85. Filled is the exact analytical1.70 stroke band around this rounded head, unioned with its separate shaft where present. Transfer trays stay unchanged. This is actual centerline rounding, not only a round stroke join. Both styles remain drafts awaiting owner review."
       },
       "root": {
         "tag": "svg",
@@ -1014,21 +1021,14 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M11.15 3.5 L11.15 14.25 A.85 .85 0 0 0 12.85 14.25 L12.85 3.5 A.85 .85 0 0 0 11.15 3.5 Z"
+                  "d": "M11.15 3.5 L11.15 14.25 A0.85 0.85 0 0 0 12 15.1 A0.85 0.85 0 0 0 12.85 14.25 L12.85 3.5 A0.85 0.85 0 0 0 12 2.65 A0.85 0.85 0 0 0 11.15 3.5 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M6.89895924 10.35104076 L11.39895924 14.85104076 A.85 .85 0 0 0 12.60104076 13.64895924 L8.10104076 9.14895924 A.85 .85 0 0 0 6.89895924 10.35104076 Z"
-                },
-                "children": []
-              },
-              {
-                "tag": "path",
-                "attrs": {
-                  "d": "M12.60104076 14.85104076 L17.10104076 10.35104076 A.85 .85 0 0 0 15.89895924 9.14895924 L11.39895924 13.64895924 A.85 .85 0 0 0 12.60104076 14.85104076 Z"
+                  "d": "M6.85084825 10.29872762 L10.20528634 14.26707049 A2.35 2.35 0 0 0 12 15.1 A2.35 2.35 0 0 0 13.79471366 14.26707049 L17.14915175 10.29872762 A0.85 0.85 0 0 0 17.35 9.75 A0.85 0.85 0 0 0 16.5 8.9 A0.85 0.85 0 0 0 15.85084825 9.20127238 L12.49641016 13.16961524 A0.65 0.65 0 0 1 12 13.4 A0.65 0.65 0 0 1 11.50358984 13.16961524 L8.14915175 9.20127238 A0.85 0.85 0 0 0 7.5 8.9 A0.85 0.85 0 0 0 6.65 9.75 A0.85 0.85 0 0 0 6.85084825 10.29872762 Z"
                 },
                 "children": []
               }
@@ -1043,21 +1043,21 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M3.15 16 L3.15 20.5 A.85 .85 0 0 0 4.85 20.5 L4.85 16 A.85 .85 0 0 0 3.15 16 Z"
+                  "d": "M3.15 16 L3.15 20.5 A0.85 0.85 0 0 0 4 21.35 A0.85 0.85 0 0 0 4.85 20.5 L4.85 16 A0.85 0.85 0 0 0 4 15.15 A0.85 0.85 0 0 0 3.15 16 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M4 21.35 L20 21.35 A.85 .85 0 0 0 20 19.65 L4 19.65 A.85 .85 0 0 0 4 21.35 Z"
+                  "d": "M4 21.35 L20 21.35 A0.85 0.85 0 0 0 20.85 20.5 A0.85 0.85 0 0 0 20 19.65 L4 19.65 A0.85 0.85 0 0 0 3.15 20.5 A0.85 0.85 0 0 0 4 21.35 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M20.85 20.5 L20.85 16 A.85 .85 0 0 0 19.15 16 L19.15 20.5 A.85 .85 0 0 0 20.85 20.5 Z"
+                  "d": "M20.85 20.5 L20.85 16 A0.85 0.85 0 0 0 20 15.15 A0.85 0.85 0 0 0 19.15 16 L19.15 20.5 A0.85 0.85 0 0 0 20 21.35 A0.85 0.85 0 0 0 20.85 20.5 Z"
                 },
                 "children": []
               }
@@ -2320,7 +2320,7 @@
         "file"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review."
+      "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner requested visibly rounded arrow bends across all arrow-bearing icons. The old sharp V is replaced by a tangent circular centerline arc of radius1.50 centered at12 5, with straight tangent arms. Preserve the prior free endpoints, shaft, native visible bounds, centering and Regular1.70 weight. The visible outer bend radius is2.35 and inner bend radius .65; free caps remain .85. Filled is the exact analytical1.70 stroke band around this rounded head, unioned with its separate shaft where present. Transfer trays stay unchanged. This is actual centerline rounding, not only a round stroke join. Both styles remain drafts awaiting owner review."
     },
     "root": {
       "tag": "svg",
@@ -2343,7 +2343,14 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M12 14.25 V3.5 M7.5 8 L12 3.5 L16.5 8"
+                "d": "M12 14.25 L12 3.5"
+              },
+              "children": []
+            },
+            {
+              "tag": "path",
+              "attrs": {
+                "d": "M7.5 8 L10.85443809 4.03165713 A1.5 1.5 0 0 1 12 3.5 A1.5 1.5 0 0 1 13.14556191 4.03165713 L16.5 8"
               },
               "children": []
             }
@@ -2381,7 +2388,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review."
+        "construction": "The arrow is centered at x=12 above a straight-sided U tray. The tray has a horizontal base and open top, preserving the recognizable receiving/sending object instead of a surrounding frame. Total centerline bounds x=4..20/y=3.5..20.5 balance visible padding 3.15 horizontally and 2.65 vertically. The 1.70 stroke supplies consistent rounded tray joints and free ends. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Round 4 draft awaiting owner review. Owner requested visibly rounded arrow bends across all arrow-bearing icons. The old sharp V is replaced by a tangent circular centerline arc of radius1.50 centered at12 5, with straight tangent arms. Preserve the prior free endpoints, shaft, native visible bounds, centering and Regular1.70 weight. The visible outer bend radius is2.35 and inner bend radius .65; free caps remain .85. Filled is the exact analytical1.70 stroke band around this rounded head, unioned with its separate shaft where present. Transfer trays stay unchanged. This is actual centerline rounding, not only a round stroke join. Both styles remain drafts awaiting owner review."
       },
       "root": {
         "tag": "svg",
@@ -2402,21 +2409,14 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M12.85 14.25 L12.85 3.5 A.85 .85 0 0 0 11.15 3.5 L11.15 14.25 A.85 .85 0 0 0 12.85 14.25 Z"
+                  "d": "M12.85 14.25 L12.85 3.5 A0.85 0.85 0 0 0 12 2.65 A0.85 0.85 0 0 0 11.15 3.5 L11.15 14.25 A0.85 0.85 0 0 0 12 15.1 A0.85 0.85 0 0 0 12.85 14.25 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M8.10104076 8.60104076 L12.60104076 4.10104076 A.85 .85 0 0 0 11.39895924 2.89895924 L6.89895924 7.39895924 A.85 .85 0 0 0 8.10104076 8.60104076 Z"
-                },
-                "children": []
-              },
-              {
-                "tag": "path",
-                "attrs": {
-                  "d": "M11.39895924 4.10104076 L15.89895924 8.60104076 A.85 .85 0 0 0 17.10104076 7.39895924 L12.60104076 2.89895924 A.85 .85 0 0 0 11.39895924 4.10104076 Z"
+                  "d": "M6.85084825 7.45127238 L10.20528634 3.48292951 A2.35 2.35 0 0 1 12 2.65 A2.35 2.35 0 0 1 13.79471366 3.48292951 L17.14915175 7.45127238 A0.85 0.85 0 0 1 17.35 8 A0.85 0.85 0 0 1 16.5 8.85 A0.85 0.85 0 0 1 15.85084825 8.54872762 L12.49641016 4.58038476 A0.65 0.65 0 0 0 12 4.35 A0.65 0.65 0 0 0 11.50358984 4.58038476 L8.14915175 8.54872762 A0.85 0.85 0 0 1 7.5 8.85 A0.85 0.85 0 0 1 6.65 8 A0.85 0.85 0 0 1 6.85084825 7.45127238 Z"
                 },
                 "children": []
               }
@@ -2431,21 +2431,21 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M3.15 16 L3.15 20.5 A.85 .85 0 0 0 4.85 20.5 L4.85 16 A.85 .85 0 0 0 3.15 16 Z"
+                  "d": "M3.15 16 L3.15 20.5 A0.85 0.85 0 0 0 4 21.35 A0.85 0.85 0 0 0 4.85 20.5 L4.85 16 A0.85 0.85 0 0 0 4 15.15 A0.85 0.85 0 0 0 3.15 16 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M4 21.35 L20 21.35 A.85 .85 0 0 0 20 19.65 L4 19.65 A.85 .85 0 0 0 4 21.35 Z"
+                  "d": "M4 21.35 L20 21.35 A0.85 0.85 0 0 0 20.85 20.5 A0.85 0.85 0 0 0 20 19.65 L4 19.65 A0.85 0.85 0 0 0 3.15 20.5 A0.85 0.85 0 0 0 4 21.35 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M20.85 20.5 L20.85 16 A.85 .85 0 0 0 19.15 16 L19.15 20.5 A.85 .85 0 0 0 20.85 20.5 Z"
+                  "d": "M20.85 20.5 L20.85 16 A0.85 0.85 0 0 0 20 15.15 A0.85 0.85 0 0 0 19.15 16 L19.15 20.5 A0.85 0.85 0 0 0 20 21.35 A0.85 0.85 0 0 0 20.85 20.5 Z"
                 },
                 "children": []
               }

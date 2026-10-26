@@ -697,3 +697,28 @@ test('Trash bakes the accepted 105 by 95 proportions into native geometry with f
   for (const margin of values.margins.slice(2)) expect(margin).toBeCloseTo(2.75, 4);
   expect(values.stroke).toBe('1.7');
 });
+
+for (const [icon, part, tip, inner] of [
+  ['arrow-left', 'body', [4, 12], [4.95, 12]],
+  ['arrow-right', 'body', [20, 12], [19.05, 12]],
+  ['chevron-down', 'body', [12, 15.25], [12, 14.3]],
+  ['chevron-up', 'body', [12, 8.75], [12, 9.7]],
+  ['download', 'arrow', [12, 14.25], [12, 13.3]],
+  ['upload', 'arrow', [12, 3.5], [12, 4.45]],
+] as const)
+  test(`${icon} has an open rounded inner bend rather than a sharp V`, async ({ page }) => {
+    const result = await page
+      .getByTestId(icon + '-outline-contour')
+      .locator(`[data-part="${part}"] path:last-of-type`)
+      .evaluate(
+        (element, points) => {
+          const path = element as SVGPathElement;
+          return {
+            roundedTip: path.isPointInStroke(new DOMPoint(points.tip[0], points.tip[1])),
+            openInnerBend: !path.isPointInStroke(new DOMPoint(points.inner[0], points.inner[1])),
+          };
+        },
+        { tip: [...tip], inner: [...inner] },
+      );
+    expect(result).toEqual({ roundedTip: true, openInnerBend: true });
+  });
