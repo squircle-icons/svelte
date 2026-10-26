@@ -205,7 +205,7 @@ for (const icon of [
         svg.setAttribute('stroke', outline ? '#000' : 'none');
         if (!outline && ['plus', 'x'].includes(icon)) {
           // Owner-requested Filled boxes are a deliberate exterior exception.
-          // Plus matches its Outline mark; X uses the owner-requested inset glyph reference.
+          // The negative-space glyph matches the unchanged Outline exterior for both marks.
           const path = svg.querySelector('path')!;
           const parts = path.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
           if (parts.length !== 2) throw new Error('Expected a box and a glyph cutout');
@@ -244,13 +244,8 @@ for (const icon of [
           const clapper = svg.querySelector('[data-part="clapper"] path');
           if (clapper) clapper.setAttribute('d', clapper.getAttribute('d') + ' Z');
         }
-        const insetScale = outline && icon === 'x' ? 14.3 / 18.3 : 1;
-        if (outline && icon === 'x') svg.setAttribute('stroke-width', String(1.7 / insetScale));
         for (const group of svg.querySelectorAll(':scope > g'))
-          group.setAttribute(
-            'transform',
-            `rotate(${rotation} 12 12) translate(12 12) scale(${insetScale}) translate(-12 -12)`,
-          );
+          group.setAttribute('transform', `rotate(${rotation} 12 12)`);
         const url = URL.createObjectURL(
           new Blob([new XMLSerializer().serializeToString(svg)], { type: 'image/svg+xml' }),
         );
@@ -376,7 +371,7 @@ test('Round 3 exposes six packed Outline/Filled pairs on light and dark surfaces
   }
 });
 
-test('X follows the 2px outer-margin and inset-cutout references at unchanged stroke weight', async ({
+test('X shares identical Outline and Filled glyphs with 2px margins at unchanged stroke weight', async ({
   page,
 }, info) => {
   const result = await page.evaluate(async () => {
@@ -384,8 +379,7 @@ test('X follows the 2px outer-margin and inset-cutout references at unchanged st
     const paint = async (name: 'plus' | 'x', style: 'outline' | 'filled', angle: number) => {
       const sourceStyle = name === 'plus' ? 'outline' : style;
       const outline = sourceStyle === 'outline';
-      const armScale =
-        name === 'plus' ? ((style === 'outline' ? 18.3 : 14.3) * Math.SQRT2) / 14 : 1;
+      const armScale = name === 'plus' ? (18.3 * Math.SQRT2) / 14 : 1;
       const original = document.querySelector(
         `[data-testid="${name}-${sourceStyle}-contour"] svg`,
       ) as SVGSVGElement;
@@ -510,6 +504,7 @@ for (const icon of ['plus', 'x'])
       cutout.remove();
       return {
         outerMargins: [box.x, box.y, 24 - box.x - box.width, 24 - box.y - box.height],
+        glyphMargins: [glyph.x, glyph.y, 24 - glyph.x - glyph.width, 24 - glyph.y - glyph.height],
         padding: [
           glyph.x - box.x,
           box.x + box.width - glyph.x - glyph.width,
@@ -525,7 +520,10 @@ for (const icon of ['plus', 'x'])
     // Chromium and WebKit approximate circular-arc bounds by up to 0.0003 native units.
     // The rotated contour tests independently check the unchanged 1.70 glyph weight.
     for (const padding of result.padding) expect(padding).toBeCloseTo(2, 3);
-    if (icon === 'x') for (const margin of result.outerMargins) expect(margin).toBeCloseTo(2, 5);
+    if (icon === 'x') {
+      for (const margin of result.outerMargins) expect(margin).toBeCloseTo(0, 5);
+      for (const margin of result.glyphMargins) expect(margin).toBeCloseTo(2, 3);
+    }
     expect(result.emptyCenter).toBe(true);
     expect(result.solidBorder).toBe(true);
     expect(result.clearOutside).toBe(true);

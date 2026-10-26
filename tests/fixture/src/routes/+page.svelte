@@ -156,7 +156,7 @@
   <header>
     <span>ROUND 3 / FILLED REVISION</span>
     <h2>Plus & X</h2>
-    <p>X outer margins 2px · Filled inner clearance 2px · Regular 1.70</p>
+    <p>Same X glyph in both styles · 2px around the glyph · Regular 1.70</p>
   </header>
   <div class="rotation-grid">
     <h3>Plus</h3>
