@@ -22,7 +22,7 @@
       "description": "A compact camera with a continuous curved body and circular lens.",
       "tags": ["photo", "image"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Rounded rectangular body uses the Folder corner rhythm, straight shoulder ledges and a raised housing. Circular lens stays circular; its center is lowered to y=13.2. Source bounds x=3..21 and y=4.1..19.9 balance opposite margins. Review study; not owner-approved.",
+      "construction": "Rounded rectangular body uses the Folder corner rhythm. The left and right shoulders have explicit 3-unit horizontal ledges at y=6.8 (x=5..8 and x=16..19), with a narrower raised housing to keep both straight spans visible. The indicator is a circular stroke mark centered at 17.9,9.5 with radius 0.15; it stays a solid circular dot across the Thin/Regular/Bold presets. The circular lens is centered at 12,13.2. Source bounds x=3..21 and y=4.1..19.9 balance opposite margins. Review study; not owner-approved.",
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
