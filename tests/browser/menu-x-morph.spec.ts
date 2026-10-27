@@ -118,3 +118,34 @@ for (const style of ['outline', 'filled'])
   });
 
 registerMorphLifecycle('Menu X fixture', 'Menu X open', 'x');
+
+for (const frame of ['none', 'square', 'circle'])
+  test(`Menu X ${frame} merges horizontally before opening the diagonals`, async ({ page }) => {
+    await page.goto('/');
+    await page.getByRole('button', { name: `Frame ${frame}`, exact: true }).click();
+    const svg = page.getByTestId('menu-x-intermediate-outline').locator('svg');
+    const body = svg.locator('[data-part="body"]');
+    const scrub = (p: number) =>
+      page.getByLabel('Fixture Menu X progress').evaluate((node, value) => {
+        (node as HTMLInputElement).value = String(value);
+        node.dispatchEvent(new Event('input', { bubbles: true }));
+      }, p);
+    await scrub(0.4);
+    const before = (await body.getAttribute('d'))!.match(/-?\d*\.?\d+/g)!.map(Number);
+    expect(before[1]).toBe(before[3]);
+    expect(before[5]).toBe(before[7]);
+    expect(before[1]).toBeLessThan(before[5]);
+    await scrub(0.5);
+    expect((await body.getAttribute('d'))!.match(/M/g)).toHaveLength(1);
+    expect(await body.evaluate((node) => (node as SVGPathElement).getBBox().height)).toBe(0);
+    await expect(svg.locator('[data-part="middle"]')).toHaveCount(0);
+    const filled = page.getByTestId('menu-x-intermediate-filled').locator('svg');
+    const centerIsInk = await filled
+      .locator('path')
+      .evaluate((node) => (node as SVGPathElement).isPointInFill(new DOMPoint(12, 12)));
+    expect(centerIsInk).toBe(frame === 'none');
+    await scrub(0.6);
+    const after = (await body.getAttribute('d'))!.match(/-?\d*\.?\d+/g)!.map(Number);
+    expect(after[1]).toBeLessThan(after[3]);
+    expect(after[5]).toBeGreaterThan(after[7]);
+  });
