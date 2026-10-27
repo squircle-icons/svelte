@@ -153,6 +153,17 @@ files.set(
   ) + '\n',
 );
 exports['./catalog.json'] = './dist/catalog.json';
+// The base-shape study stays separate from every production icon import/catalog.
+const study = fileURLToPath(import.meta.resolve('@squircle-icons/core/design/squircle-base'));
+files.set('src/lib/design/squircle-base.js', header + (await readFile(study, 'utf8')));
+files.set(
+  'src/lib/design/squircle-base.d.ts',
+  header + (await readFile(study.replace(/\.js$/, '.d.ts'), 'utf8')),
+);
+exports['./design/squircle-base'] = {
+  types: './dist/design/squircle-base.d.ts',
+  default: './dist/design/squircle-base.js',
+};
 // Preserve relative imports for shared pure geometry used by opt-in morphs.
 const strokes = fileURLToPath(import.meta.resolve('@squircle-icons/core/morph/round-strokes'));
 files.set('src/lib/morph/round-strokes.js', header + (await readFile(strokes, 'utf8')));

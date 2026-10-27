@@ -7,13 +7,27 @@ import { compile } from 'svelte/compiler';
 const manifest = JSON.parse(
   await readFile('node_modules/@squircle-icons/svelte/package.json', 'utf8'),
 );
-const entries = Object.keys(manifest.exports).filter((path) => path !== './catalog.json');
-const components = entries.filter((path) => path !== '.' && path !== './filled');
+const components = Object.entries(manifest.exports)
+  .filter(([, target]) => {
+    const resolved = typeof target === 'string' ? target : (target.svelte ?? target.default);
+    return typeof resolved === 'string' && resolved.endsWith('.svelte');
+  })
+  .map(([entry]) => entry);
+const entries = ['.', './filled', ...components];
 const require = createRequire(import.meta.url);
 for (const entry of components) {
   const filename = require.resolve('@squircle-icons/svelte' + entry.slice(1));
   const source = await readFile(filename, 'utf8');
   for (const generate of ['client', 'server']) compile(source, { filename, generate });
+}
+// Pure design helpers are opt-in JavaScript exports, not Svelte components.
+assert(!components.includes('./design/squircle-base'));
+const study = await import(require.resolve('@squircle-icons/svelte/design/squircle-base'));
+assert.equal(study.STUDY_STROKE, 1.5);
+for (const subject of ['square', 'camera', 'folder']) {
+  const shape = study.prototypeStudy(subject);
+  assert(shape.outline.startsWith('M') && shape.filled.startsWith('M'));
+  assert(!/NaN|Infinity|undefined/.test(shape.outline + shape.filled));
 }
 await writeFile(
   'types.ts',
@@ -36,6 +50,12 @@ const boldPlus: ComponentProps<typeof Plus> = { style: 'bold' };
 import PlusSquare from '@squircle-icons/svelte/plus-square';
 // @ts-expect-error A frame is a separate static drawing with Outline/Filled styles.
 const invalidFrameStyle: ComponentProps<typeof PlusSquare> = { style: 'bold' };
+import { prototypeStudy, STUDY_STROKE, type StudyShape, type StudySubject } from '@squircle-icons/svelte/design/squircle-base';
+const studySubject: StudySubject = 'camera';
+const studyShape: StudyShape = prototypeStudy(studySubject, 3.2);
+const studyWeight: number = STUDY_STROKE;
+// @ts-expect-error Study subjects stay separate from production icon names.
+prototypeStudy('new-window');
 `,
 );
 

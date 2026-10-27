@@ -2,6 +2,7 @@ import { cp, mkdir, mkdtemp, readFile, realpath, writeFile } from 'node:fs/promi
 import { tmpdir } from 'node:os';
 import { resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { createRequire } from 'node:module';
 import assert from 'node:assert/strict';
 import { root } from './paths.js';
 const artifacts = resolve(root, '.artifacts');
@@ -50,6 +51,37 @@ assert(!installed.startsWith(root), 'Fixture resolved a workspace link instead o
 const installedPackage = JSON.parse(await readFile(resolve(installed, 'package.json'), 'utf8'));
 assert.equal(installedPackage.name, '@squircle-icons/svelte');
 assert.equal(installedPackage.version, rootPackage.version);
+const studyFilename = createRequire(resolve(fixture, 'package.json')).resolve(
+  '@squircle-icons/svelte/design/squircle-base',
+);
+assert(
+  studyFilename.startsWith(installed),
+  'Design helper did not resolve from the installed tarball',
+);
+const study = await import(studyFilename);
+assert.equal(study.STUDY_STROKE, 1.5, 'Packed study must use its scoped new-design weight');
+assert.equal(study.DEFAULT_ROUNDNESS, 3.2);
+assert(study.squircleStudy().outline.includes('C'), 'Packed whole-contour study is missing');
+assert(!study.squircleStudy().outline.includes('L'), 'Study must not substitute straight sides');
+const studySource = await readFile(studyFilename, 'utf8');
+assert(
+  !studySource.includes('@squircle-icons/core'),
+  'Design helper leaked a Core runtime dependency',
+);
+assert(!Object.hasOwn(installedPackage.dependencies ?? {}, '@squircle-icons/core'));
+for (const subject of ['square', 'camera', 'folder']) {
+  const shape = study.prototypeStudy(subject);
+  assert.deepEqual(study.prototypeStudy(subject), shape, `Nondeterministic ${subject} study`);
+  for (const style of ['outline', 'filled']) {
+    const path = shape[style];
+    assert(typeof path === 'string' && path.startsWith('M'), `Missing ${subject} ${style}`);
+    assert(!/NaN|Infinity|undefined/.test(path), `Invalid ${subject} ${style} coordinates`);
+    assert.notEqual(
+      study.prototypeStudy(subject, 2.7)[style],
+      study.prototypeStudy(subject, 4)[style],
+    );
+  }
+}
 assert(!installedPackage.private, 'Release package must permit publication');
 assert.equal(installedPackage.publishConfig.access, 'public');
 assert.equal(installedPackage.publishConfig.tag, 'alpha');
