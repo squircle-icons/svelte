@@ -83,10 +83,10 @@ function structuralTransition(x, left, right, a, b) {
 }
 /** Restrained level housing/tab roofs; only the semantic upper sections are replaced. */
 function semanticTop(body, x) {
-  const supportLeft = body.tab ? -8.5 : -5.1,
-    supportRight = body.tab ? 0.8 : 5.1;
-  const roofLeft = body.tab ? -4.5 : -2,
-    roofRight = body.tab ? -2 : 2;
+  const supportLeft = body.tab ? -8.5 : -4.2,
+    supportRight = body.tab ? 1 : 4.2;
+  const roofLeft = body.tab ? -5.5 : -2,
+    roofRight = body.tab ? -1 : 2;
   if (x <= supportLeft || x >= supportRight) return null;
   const roof = { value: -body.halfHeight - body.bump, slope: 0, curvature: 0 };
   if (x >= roofLeft && x <= roofRight) return roof;
@@ -151,7 +151,7 @@ function studyBody(subject, exponent) {
   const body = {
     exponent,
     halfHeight: subject === 'camera' ? 6.9 : 7,
-    bump: subject === 'camera' ? 1.1 : 0.8,
+    bump: subject === 'camera' ? 0.65 : 0.6,
     tab: subject === 'folder',
     centerY: 0,
   };
