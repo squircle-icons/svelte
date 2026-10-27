@@ -95,6 +95,32 @@ test('Plus X morph reverses in flight from its current shape without replacing t
     ),
   ).toBe(true);
 });
+test('default pace leaves time to read the merge before X opens', async ({ page }) => {
+  const progress = await page.evaluate(async () => {
+    const button = [...document.querySelectorAll('button')].find(
+      (node) => node.textContent?.trim() === 'Morph x',
+    )!;
+    const start = performance.now();
+    button.click();
+    return new Promise<number>((resolve) => {
+      const sample = () => {
+        if (performance.now() - start < 400) requestAnimationFrame(sample);
+        else
+          resolve(
+            Number(
+              document
+                .querySelector('[data-testid="plus-x-morph-fixture"] svg')!
+                .getAttribute('data-progress'),
+            ),
+          );
+      };
+      requestAnimationFrame(sample);
+    });
+  });
+  expect(progress).toBeGreaterThan(0.1);
+  expect(progress).toBeLessThan(0.75);
+  await expect(morph(page)).toHaveAttribute('data-state', 'x');
+});
 test('reduced motion switches directly and respects a later preference change', async ({
   page,
 }) => {
@@ -134,11 +160,11 @@ test('the fixed Filled box cuts out the exact moving Outline at intermediate fra
     });
     expect(result.mismatches).toBeLessThanOrEqual(4);
     expect(result.stroke).toBe('1.7');
-    expect(result.bounds[1]).toBeCloseTo(4.85, 5);
-    expect(result.bounds[3]).toBeCloseTo(14.3, 5);
-    expect(result.bounds[0]).toBeGreaterThanOrEqual(4.85 - 1e-6);
-    expect(result.bounds[0] + result.bounds[2]).toBeLessThanOrEqual(19.15 + 1e-6);
-    if (progress === 0.5) expect(result.bounds[2]).toBeCloseTo(0, 5);
+    expect(result.bounds[0]).toBeCloseTo(4.85, 5);
+    expect(result.bounds[2]).toBeCloseTo(14.3, 5);
+    expect(result.bounds[1]).toBeGreaterThanOrEqual(4.85 - 1e-6);
+    expect(result.bounds[1] + result.bounds[3]).toBeLessThanOrEqual(19.15 + 1e-6);
+    if (progress === 0.5) expect(result.bounds[3]).toBeCloseTo(0, 5);
     expect(result.boxPath).toBe(
       'M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2',
     );

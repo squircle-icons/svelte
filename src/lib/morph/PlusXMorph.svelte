@@ -29,7 +29,8 @@
   const accessibleLabel = $derived(label?.trim());
 </script>
 
-<MorphProgress end={x} {progress} {speed} {onprogress} {onsettle}>
+<!-- Keep this two-stage fold legible at default speed; Sun Moon retains its own pace. -->
+<MorphProgress end={x} {progress} speed={speed * 0.4} {onprogress} {onsettle}>
   {#snippet children(visual)}
     {@const frame = plusXFrame(visual, geometry)}
     <svg

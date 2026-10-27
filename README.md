@@ -109,4 +109,4 @@ It retains fixed Regular 1.70 and the approved 2px outer box margin; the upright
 Filled box cuts out exactly the same moving glyph as Outline. Both pairs share
 one reversible progress controller. No stroke-width control is provided.
 
-The Plus ↔ X sequence folds into a single vertical stroke before opening into X; reversing follows the same sequence. The Filled box remains upright during the single-line phase.
+The Plus ↔ X sequence folds into a single horizontal stroke before opening into X; reversing follows the same sequence. The Filled box remains upright during the single-line phase. Default1× uses40% of the shared spring rate to make both folds legible; the speed prop scales this slower pair pace.

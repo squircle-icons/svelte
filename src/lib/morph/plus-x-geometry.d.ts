@@ -14,7 +14,7 @@ export type PlusXGeometry = {
     filled: string;
   };
 };
-/** Plus folds to one vertical line, holds briefly, then opens into the approved X. */
+/** Plus folds to one horizontal line, holds briefly, then opens into the approved X. */
 export declare function plusXFrame(
   progress: number,
   geometry: PlusXGeometry,
