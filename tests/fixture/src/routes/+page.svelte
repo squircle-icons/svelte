@@ -429,7 +429,7 @@
     <header>
       <span>ROUND 5 / COMPASS ARROWS</span>
       <h2>Six new directions</h2>
-      <p>Regular 1.75 · Open V / solid head · 2px primary margins</p>
+      <p>Equal shaft/head size · Regular 1.75 · Outline / Filled</p>
     </header>
     <div class="round-grid">
       {#each roundFive as item}

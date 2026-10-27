@@ -740,14 +740,14 @@ test('Trash bakes the accepted 105 by 95 proportions into native geometry with f
 });
 
 for (const [icon, point] of [
-  ['arrow-left', [9, 10]],
-  ['arrow-right', [15, 10]],
-  ['arrow-up', [9.7125, 8.56875]],
-  ['arrow-down', [14.2875, 15.43125]],
-  ['arrow-up-left', [6.28125, 10.85625]],
-  ['arrow-up-right', [13.14375, 6.28125]],
-  ['arrow-down-left', [10.85625, 17.71875]],
-  ['arrow-down-right', [17.71875, 13.14375]],
+  ['arrow-left', [8.578125, 14.28125]],
+  ['arrow-right', [15.421875, 9.71875]],
+  ['arrow-up', [9.71875, 8.578125]],
+  ['arrow-down', [14.28125, 15.421875]],
+  ['arrow-up-left', [7.96728164, 11.19345633]],
+  ['arrow-up-right', [12.80654367, 7.96728164]],
+  ['arrow-down-left', [11.19345633, 16.03271836]],
+  ['arrow-down-right', [16.03271836, 12.80654367]],
   ['chevron-down', [12, 10.5]],
   ['chevron-up', [12, 13.5]],
   ['download', [10.5, 11]],
@@ -850,12 +850,14 @@ test('Moon bakes the owner-approved minus thirty degree pose as native zero', as
 for (const icon of [
   'arrow-up',
   'arrow-down',
+  'arrow-left',
+  'arrow-right',
   'arrow-up-left',
   'arrow-up-right',
   'arrow-down-left',
   'arrow-down-right',
 ])
-  test(`${icon} has 2px primary margins and fixed Regular stroke`, async ({ page }) => {
+  test(`${icon} shares one shaft and head size across all eight directions`, async ({ page }) => {
     const result = await page.evaluate((icon) => {
       const outline = document.querySelector(
         `[data-testid="${icon}-outline-contour"] svg`,
@@ -863,17 +865,30 @@ for (const icon of [
       const filled = document.querySelector(
         `[data-testid="${icon}-filled-contour"] svg`,
       ) as SVGSVGElement;
-      const bounds = filled.getBBox();
+      const b = filled.getBBox();
+      const v = outline
+        .querySelector('path')!
+        .getAttribute('d')!
+        .match(/-?\d*\.?\d+/g)!
+        .map(Number);
       return {
-        margins: [bounds.x, 24 - bounds.x - bounds.width, bounds.y, 24 - bounds.y - bounds.height],
+        margins: [b.x, 24 - b.x - b.width, b.y, 24 - b.y - b.height],
         stroke: outline.getAttribute('stroke-width'),
+        shaft: Math.hypot(v[2] - v[0], v[3] - v[1]),
+        arm: Math.hypot(v[4] - v[2], v[5] - v[3]),
       };
     }, icon);
     expect(result.stroke).toBe('1.75');
-    for (const value of result.margins.slice(2)) expect(value).toBeCloseTo(2, 4);
-    if (icon.includes('left') || icon.includes('right'))
-      for (const value of result.margins.slice(0, 2)) expect(value).toBeCloseTo(2, 4);
-    else expect(result.margins[0]).toBeCloseTo(result.margins[1], 4);
+    expect(result.shaft).toBeCloseTo(18.25, 5);
+    expect(result.arm).toBeCloseTo(6.84375 * Math.SQRT2, 5);
+    const diagonal = icon.split('-').length === 3;
+    if (diagonal) for (const margin of result.margins) expect(margin).toBeCloseTo(4.67265062, 4);
+    else
+      for (const margin of result.margins.slice(
+        icon === 'arrow-left' || icon === 'arrow-right' ? 0 : 2,
+        icon === 'arrow-left' || icon === 'arrow-right' ? 2 : 4,
+      ))
+        expect(margin).toBeCloseTo(2, 4);
   });
 
 test('Round 5 exposes six dual-style directions at actual sizes on light and dark', async ({
