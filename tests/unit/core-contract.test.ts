@@ -18,14 +18,16 @@ it('consumes validated fill-only Folder geometry with a deliberate cutout', () =
   expect(filled?.parts).toEqual(['body']);
 });
 
-it('retains twenty approvals and six new draft compass arrows', () => {
-  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(20);
+it('retains eighteen approvals and eight draft arrows with frames', () => {
+  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(18);
   expect(
     icons.filter((icon) => icon.metadata.review?.status !== 'approved').map((icon) => icon.name),
   ).toEqual([
     'arrow-down-left',
     'arrow-down-right',
     'arrow-down',
+    'arrow-left',
+    'arrow-right',
     'arrow-up-left',
     'arrow-up-right',
     'arrow-up',

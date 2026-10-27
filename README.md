@@ -114,3 +114,7 @@ The Plus ↔ X sequence folds into a single horizontal stroke and immediately op
 The owner approved the current Plus ↔ X motion on2026-10-27: continuous horizontal merge with no midpoint hold, the slower default pace and smooth reversal in both styles. Preserve the implementation accepted in adapter commit `190b84b49ea2e058fc99d358298a392c0271eaee`; see the core approved motion reference for construction details.
 
 Owner global weight update (2026-10-27): all default Outline, Filled construction and morph endpoint weights now use Regular1.75; Thin1.25, Bold2.50 and Lab step.25. Menu/Search Filled uses2.50. The accepted morph timing is unchanged.
+
+### Arrow frames
+
+The eight compass arrows accept `frame="none" | "square" | "circle"` in unified and direct Filled imports. All three share the same smaller arrow glyph, with equal shaft/head sizes in every direction. Frames stay upright; Square/Circle have2px outer margins at Regular1.75. Filled frames have a negative-space solid-head arrow. Other icons ignore the frame prop. The arrow family and its new frames await owner review.

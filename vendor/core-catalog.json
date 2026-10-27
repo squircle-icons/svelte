@@ -13,11 +13,11 @@
         "left"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Round 5 completes the eight compass arrows. Rotate the approved Arrow Right straight shaft and V head by 135 degrees about 12,12, uniformly fit centerlines to a 9.15-unit primary half extent, then bake coordinates into source. Reference centerline points before rotation are shaft (4,12) to (20,12) and head (14,6) to (20,12) to (14,18). Centerline fit factor 1.6175067620; keep Regular1.70 unchanged instead of scaling stroke. Both horizontal and vertical visible margins are exactly2px. Outline keeps an open straight-arm V with .85 round caps and joins. Filled uses the exact .85 capsule around the same shaft and a solid triangle expanded by .85 round exterior corners around those same head vertices. Tips, shoulders and exterior align at Regular1.70; the solid head is the accepted semantic interior exception. No enclosing box, broad curved-head fillet or preview transform. Existing approved Left/Right artwork is preserved. Both new styles await owner review. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+      "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
-        "note": "Round 5: new direction derived from the approved Arrow Right family, awaiting owner visual review."
+        "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
       }
     },
     "root": {
@@ -41,7 +41,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M18.45234938 5.54765062 L5.54765062 18.45234938 M15.22617469 18.45234938 L5.54765062 18.45234938 L5.54765062 8.77382531"
+                "d": "M16.33102903 7.66897097 L7.66897097 16.33102903 M14.16551452 16.33102903 L7.66897097 16.33102903 L7.66897097 9.83448548"
               },
               "children": []
             }
@@ -66,11 +66,11 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Round 5 completes the eight compass arrows. Rotate the approved Arrow Right straight shaft and V head by 135 degrees about 12,12, uniformly fit centerlines to a 9.15-unit primary half extent, then bake coordinates into source. Reference centerline points before rotation are shaft (4,12) to (20,12) and head (14,6) to (20,12) to (14,18). Centerline fit factor 1.6175067620; keep Regular1.70 unchanged instead of scaling stroke. Both horizontal and vertical visible margins are exactly2px. Outline keeps an open straight-arm V with .85 round caps and joins. Filled uses the exact .85 capsule around the same shaft and a solid triangle expanded by .85 round exterior corners around those same head vertices. Tips, shoulders and exterior align at Regular1.70; the solid head is the accepted semantic interior exception. No enclosing box, broad curved-head fillet or preview transform. Existing approved Left/Right artwork is preserved. Both new styles await owner review. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+        "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
         "filledTreatment": "solid-head",
         "review": {
           "status": "draft",
-          "note": "Round 5: new direction derived from the approved Arrow Right family, awaiting owner visual review."
+          "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
         }
       },
       "root": {
@@ -92,14 +92,14 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M19.07106781 6.16636906 L6.16636906 19.07106781 A.875 .875 0 0 1 5.54765062 19.32734938 A.875 .875 0 0 1 4.67265062 18.45234938 A.875 .875 0 0 1 4.92893219 17.83363094 L17.83363094 4.92893219 A.875 .875 0 0 1 18.45234938 4.67265062 A.875 .875 0 0 1 19.32734938 5.54765062 A.875 .875 0 0 1 19.07106781 6.16636906 Z"
+                  "d": "M16.94974747 8.2876894 L8.2876894 16.94974747 A.875 .875 0 0 1 7.66897097 17.20602903 A.875 .875 0 0 1 6.79397097 16.33102903 A.875 .875 0 0 1 7.05025253 15.7123106 L15.7123106 7.05025253 A.875 .875 0 0 1 16.33102903 6.79397097 A.875 .875 0 0 1 17.20602903 7.66897097 A.875 .875 0 0 1 16.94974747 8.2876894 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M15.84489312 17.83363094 A.875 .875 0 0 1 16.10117469 18.45234938 A.875 .875 0 0 1 15.22617469 19.32734938 L5.54765062 19.32734938 A.875 .875 0 0 1 4.67265062 18.45234938 L4.67265062 8.77382531 A.875 .875 0 0 1 5.54765062 7.89882531 A.875 .875 0 0 1 6.16636906 8.15510688 L15.84489312 17.83363094 Z"
+                  "d": "M14.78423295 15.7123106 A.875 .875 0 0 1 15.04051452 16.33102903 A.875 .875 0 0 1 14.16551452 17.20602903 L7.66897097 17.20602903 A.875 .875 0 0 1 6.79397097 16.33102903 L6.79397097 9.83448548 A.875 .875 0 0 1 7.66897097 8.95948548 A.875 .875 0 0 1 8.2876894 9.21576705 L14.78423295 15.7123106 Z"
                 },
                 "children": []
               }
@@ -110,6 +110,238 @@
       "parts": [
         "body"
       ]
+    },
+    "frames": {
+      "square": {
+        "metadata": {
+          "name": "arrow-down-left",
+          "description": "Arrow Down Left in a square frame with an open V arrow.",
+          "tags": [
+            "arrow",
+            "navigation",
+            "direction",
+            "southwest",
+            "down",
+            "left",
+            "frame",
+            "square"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M16.33102903 7.66897097 L7.66897097 16.33102903 M14.16551452 16.33102903 L7.66897097 16.33102903 L7.66897097 9.83448548"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-down-left",
+            "description": "Arrow Down Left in a square frame with a negative-space solid-head arrow.",
+            "tags": [
+              "arrow",
+              "navigation",
+              "direction",
+              "southwest",
+              "down",
+              "left",
+              "filled",
+              "frame",
+              "square"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M16.94974709 8.28768921 12.1546793 13.082757 14.78423309 15.71231079C14.94832706 15.87640476 15.04051495 16.09896469 15.04051495 16.33102989C15.04051495 16.81427765 14.64876366 17.20602989 14.16551495 17.20602989H7.66897106C7.18572187 17.20602989 6.79397106 16.81427765 6.79397106 16.33102989V9.83448505C6.79397106 9.35123634 7.18572187 8.95948505 7.66897106 8.95948505C7.90103531 8.95948505 8.12359524 9.05167294 8.28768921 9.21576691L10.917243 11.8453207L15.71231079 7.05025244C15.87640476 6.88615799 16.09896469 6.79397106 16.33102989 6.79397106C16.81427765 6.79397106 17.20602989 7.18572187 17.20602989 7.66897106C17.20602989 7.90103531 17.11384201 8.12359524 16.94974709 8.28768921Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      },
+      "circle": {
+        "metadata": {
+          "name": "arrow-down-left",
+          "description": "Arrow Down Left in a circle frame with an open V arrow.",
+          "tags": [
+            "arrow",
+            "navigation",
+            "direction",
+            "southwest",
+            "down",
+            "left",
+            "frame",
+            "circle"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "circle",
+                  "attrs": {
+                    "cx": "12",
+                    "cy": "12",
+                    "r": "9.125"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M16.33102903 7.66897097 L7.66897097 16.33102903 M14.16551452 16.33102903 L7.66897097 16.33102903 L7.66897097 9.83448548"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-down-left",
+            "description": "Arrow Down Left in a circle frame with a negative-space solid-head arrow.",
+            "tags": [
+              "arrow",
+              "navigation",
+              "direction",
+              "southwest",
+              "down",
+              "left",
+              "filled",
+              "frame",
+              "circle"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M16.94974709 8.28768921 12.1546793 13.082757 14.78423309 15.71231079C14.94832706 15.87640476 15.04051495 16.09896469 15.04051495 16.33102989C15.04051495 16.81427765 14.64876366 17.20602989 14.16551495 17.20602989H7.66897106C7.18572187 17.20602989 6.79397106 16.81427765 6.79397106 16.33102989V9.83448505C6.79397106 9.35123634 7.18572187 8.95948505 7.66897106 8.95948505C7.90103531 8.95948505 8.12359524 9.05167294 8.28768921 9.21576691L10.917243 11.8453207L15.71231079 7.05025244C15.87640476 6.88615799 16.09896469 6.79397106 16.33102989 6.79397106C16.81427765 6.79397106 17.20602989 7.18572187 17.20602989 7.66897106C17.20602989 7.90103531 17.11384201 8.12359524 16.94974709 8.28768921Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      }
     }
   },
   {
@@ -126,11 +358,11 @@
         "right"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Round 5 completes the eight compass arrows. Rotate the approved Arrow Right straight shaft and V head by 45 degrees about 12,12, uniformly fit centerlines to a 9.15-unit primary half extent, then bake coordinates into source. Reference centerline points before rotation are shaft (4,12) to (20,12) and head (14,6) to (20,12) to (14,18). Centerline fit factor 1.6175067620; keep Regular1.70 unchanged instead of scaling stroke. Both horizontal and vertical visible margins are exactly2px. Outline keeps an open straight-arm V with .85 round caps and joins. Filled uses the exact .85 capsule around the same shaft and a solid triangle expanded by .85 round exterior corners around those same head vertices. Tips, shoulders and exterior align at Regular1.70; the solid head is the accepted semantic interior exception. No enclosing box, broad curved-head fillet or preview transform. Existing approved Left/Right artwork is preserved. Both new styles await owner review. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+      "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
-        "note": "Round 5: new direction derived from the approved Arrow Right family, awaiting owner visual review."
+        "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
       }
     },
     "root": {
@@ -154,7 +386,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M5.54765062 5.54765062 L18.45234938 18.45234938 M18.45234938 8.77382531 L18.45234938 18.45234938 L8.77382531 18.45234938"
+                "d": "M7.66897097 7.66897097 L16.33102903 16.33102903 M16.33102903 9.83448548 L16.33102903 16.33102903 L9.83448548 16.33102903"
               },
               "children": []
             }
@@ -179,11 +411,11 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Round 5 completes the eight compass arrows. Rotate the approved Arrow Right straight shaft and V head by 45 degrees about 12,12, uniformly fit centerlines to a 9.15-unit primary half extent, then bake coordinates into source. Reference centerline points before rotation are shaft (4,12) to (20,12) and head (14,6) to (20,12) to (14,18). Centerline fit factor 1.6175067620; keep Regular1.70 unchanged instead of scaling stroke. Both horizontal and vertical visible margins are exactly2px. Outline keeps an open straight-arm V with .85 round caps and joins. Filled uses the exact .85 capsule around the same shaft and a solid triangle expanded by .85 round exterior corners around those same head vertices. Tips, shoulders and exterior align at Regular1.70; the solid head is the accepted semantic interior exception. No enclosing box, broad curved-head fillet or preview transform. Existing approved Left/Right artwork is preserved. Both new styles await owner review. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+        "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
         "filledTreatment": "solid-head",
         "review": {
           "status": "draft",
-          "note": "Round 5: new direction derived from the approved Arrow Right family, awaiting owner visual review."
+          "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
         }
       },
       "root": {
@@ -205,14 +437,14 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M6.16636906 4.92893219 L19.07106781 17.83363094 A.875 .875 0 0 1 19.32734938 18.45234938 A.875 .875 0 0 1 18.45234938 19.32734938 A.875 .875 0 0 1 17.83363094 19.07106781 L4.92893219 6.16636906 A.875 .875 0 0 1 4.67265062 5.54765062 A.875 .875 0 0 1 5.54765062 4.67265062 A.875 .875 0 0 1 6.16636906 4.92893219 Z"
+                  "d": "M8.2876894 7.05025253 L16.94974747 15.7123106 A.875 .875 0 0 1 17.20602903 16.33102903 A.875 .875 0 0 1 16.33102903 17.20602903 A.875 .875 0 0 1 15.7123106 16.94974747 L7.05025253 8.2876894 A.875 .875 0 0 1 6.79397097 7.66897097 A.875 .875 0 0 1 7.66897097 6.79397097 A.875 .875 0 0 1 8.2876894 7.05025253 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M17.83363094 8.15510688 A.875 .875 0 0 1 18.45234938 7.89882531 A.875 .875 0 0 1 19.32734938 8.77382531 L19.32734938 18.45234938 A.875 .875 0 0 1 18.45234938 19.32734938 L8.77382531 19.32734938 A.875 .875 0 0 1 7.89882531 18.45234938 A.875 .875 0 0 1 8.15510688 17.83363094 L17.83363094 8.15510688 Z"
+                  "d": "M15.7123106 9.21576705 A.875 .875 0 0 1 16.33102903 8.95948548 A.875 .875 0 0 1 17.20602903 9.83448548 L17.20602903 16.33102903 A.875 .875 0 0 1 16.33102903 17.20602903 L9.83448548 17.20602903 A.875 .875 0 0 1 8.95948548 16.33102903 A.875 .875 0 0 1 9.21576705 15.7123106 L15.7123106 9.21576705 Z"
                 },
                 "children": []
               }
@@ -223,6 +455,238 @@
       "parts": [
         "body"
       ]
+    },
+    "frames": {
+      "square": {
+        "metadata": {
+          "name": "arrow-down-right",
+          "description": "Arrow Down Right in a square frame with an open V arrow.",
+          "tags": [
+            "arrow",
+            "navigation",
+            "direction",
+            "southeast",
+            "down",
+            "right",
+            "frame",
+            "square"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M7.66897097 7.66897097 L16.33102903 16.33102903 M16.33102903 9.83448548 L16.33102903 16.33102903 L9.83448548 16.33102903"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-down-right",
+            "description": "Arrow Down Right in a square frame with a negative-space solid-head arrow.",
+            "tags": [
+              "arrow",
+              "navigation",
+              "direction",
+              "southeast",
+              "down",
+              "right",
+              "filled",
+              "frame",
+              "square"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M8.28768921 7.05025244 13.082757 11.8453207 15.71231079 9.21576691C15.87640476 9.05167294 16.09896469 8.95948505 16.33102989 8.95948505C16.81427765 8.95948505 17.20602989 9.35123634 17.20602989 9.83448505V16.33102989C17.20602989 16.81427765 16.81427765 17.20602989 16.33102989 17.20602989H9.83448505C9.35123634 17.20602989 8.95948505 16.81427765 8.95948505 16.33102989C8.95948505 16.09896469 9.05167294 15.87640476 9.21576691 15.71231079L11.8453207 13.082757L7.05025244 8.28768921C6.88615799 8.12359524 6.79397106 7.90103531 6.79397106 7.66897106C6.79397106 7.18572187 7.18572187 6.79397106 7.66897106 6.79397106C7.90103531 6.79397106 8.12359524 6.88615799 8.28768921 7.05025244Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      },
+      "circle": {
+        "metadata": {
+          "name": "arrow-down-right",
+          "description": "Arrow Down Right in a circle frame with an open V arrow.",
+          "tags": [
+            "arrow",
+            "navigation",
+            "direction",
+            "southeast",
+            "down",
+            "right",
+            "frame",
+            "circle"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "circle",
+                  "attrs": {
+                    "cx": "12",
+                    "cy": "12",
+                    "r": "9.125"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M7.66897097 7.66897097 L16.33102903 16.33102903 M16.33102903 9.83448548 L16.33102903 16.33102903 L9.83448548 16.33102903"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-down-right",
+            "description": "Arrow Down Right in a circle frame with a negative-space solid-head arrow.",
+            "tags": [
+              "arrow",
+              "navigation",
+              "direction",
+              "southeast",
+              "down",
+              "right",
+              "filled",
+              "frame",
+              "circle"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M8.28768921 7.05025244 13.082757 11.8453207 15.71231079 9.21576691C15.87640476 9.05167294 16.09896469 8.95948505 16.33102989 8.95948505C16.81427765 8.95948505 17.20602989 9.35123634 17.20602989 9.83448505V16.33102989C17.20602989 16.81427765 16.81427765 17.20602989 16.33102989 17.20602989H9.83448505C9.35123634 17.20602989 8.95948505 16.81427765 8.95948505 16.33102989C8.95948505 16.09896469 9.05167294 15.87640476 9.21576691 15.71231079L11.8453207 13.082757L7.05025244 8.28768921C6.88615799 8.12359524 6.79397106 7.90103531 6.79397106 7.66897106C6.79397106 7.18572187 7.18572187 6.79397106 7.66897106 6.79397106C7.90103531 6.79397106 8.12359524 6.88615799 8.28768921 7.05025244Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      }
     }
   },
   {
@@ -238,11 +702,11 @@
         "down"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Round 5 completes the eight compass arrows. Rotate the approved Arrow Right straight shaft and V head by 90 degrees about 12,12, uniformly fit centerlines to a 9.15-unit primary half extent, then bake coordinates into source. Reference centerline points before rotation are shaft (4,12) to (20,12) and head (14,6) to (20,12) to (14,18). Centerline fit factor 1.1437500000; keep Regular1.70 unchanged instead of scaling stroke. Top/bottom are the primary pair at exactly2px; left/right stay balanced and preserve natural proportions. Outline keeps an open straight-arm V with .85 round caps and joins. Filled uses the exact .85 capsule around the same shaft and a solid triangle expanded by .85 round exterior corners around those same head vertices. Tips, shoulders and exterior align at Regular1.70; the solid head is the accepted semantic interior exception. No enclosing box, broad curved-head fillet or preview transform. Existing approved Left/Right artwork is preserved. Both new styles await owner review. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+      "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
-        "note": "Round 5: new direction derived from the approved Arrow Right family, awaiting owner visual review."
+        "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
       }
     },
     "root": {
@@ -266,7 +730,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M12 2.875 L12 21.125 M18.84375 14.28125 L12 21.125 L5.15625 14.28125"
+                "d": "M12 5.875 L12 18.125 M16.59375 13.53125 L12 18.125 L7.40625 13.53125"
               },
               "children": []
             }
@@ -290,11 +754,11 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Round 5 completes the eight compass arrows. Rotate the approved Arrow Right straight shaft and V head by 90 degrees about 12,12, uniformly fit centerlines to a 9.15-unit primary half extent, then bake coordinates into source. Reference centerline points before rotation are shaft (4,12) to (20,12) and head (14,6) to (20,12) to (14,18). Centerline fit factor 1.1437500000; keep Regular1.70 unchanged instead of scaling stroke. Top/bottom are the primary pair at exactly2px; left/right stay balanced and preserve natural proportions. Outline keeps an open straight-arm V with .85 round caps and joins. Filled uses the exact .85 capsule around the same shaft and a solid triangle expanded by .85 round exterior corners around those same head vertices. Tips, shoulders and exterior align at Regular1.70; the solid head is the accepted semantic interior exception. No enclosing box, broad curved-head fillet or preview transform. Existing approved Left/Right artwork is preserved. Both new styles await owner review. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+        "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
         "filledTreatment": "solid-head",
         "review": {
           "status": "draft",
-          "note": "Round 5: new direction derived from the approved Arrow Right family, awaiting owner visual review."
+          "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
         }
       },
       "root": {
@@ -316,14 +780,14 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M12.875 2.875 L12.875 21.125 A.875 .875 0 0 1 12 22 A.875 .875 0 0 1 11.125 21.125 L11.125 2.875 A.875 .875 0 0 1 12 2 A.875 .875 0 0 1 12.875 2.875 Z"
+                  "d": "M12.875 5.875 L12.875 18.125 A.875 .875 0 0 1 12 19 A.875 .875 0 0 1 11.125 18.125 L11.125 5.875 A.875 .875 0 0 1 12 5 A.875 .875 0 0 1 12.875 5.875 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M18.84375 13.40625 A.875 .875 0 0 1 19.71875 14.28125 A.875 .875 0 0 1 19.46246843 14.89996843 L12.61871843 21.74371843 A.875 .875 0 0 1 12 22 A.875 .875 0 0 1 11.38128157 21.74371843 L4.53753157 14.89996843 A.875 .875 0 0 1 4.28125 14.28125 A.875 .875 0 0 1 5.15625 13.40625 L18.84375 13.40625 Z"
+                  "d": "M16.59375 12.65625 A.875 .875 0 0 1 17.46875 13.53125 A.875 .875 0 0 1 17.21246843 14.14996843 L12.61871843 18.74371843 A.875 .875 0 0 1 12 19 A.875 .875 0 0 1 11.38128157 18.74371843 L6.78753157 14.14996843 A.875 .875 0 0 1 6.53125 13.53125 A.875 .875 0 0 1 7.40625 12.65625 L16.59375 12.65625 Z"
                 },
                 "children": []
               }
@@ -334,6 +798,234 @@
       "parts": [
         "body"
       ]
+    },
+    "frames": {
+      "square": {
+        "metadata": {
+          "name": "arrow-down",
+          "description": "Arrow Down in a square frame with an open V arrow.",
+          "tags": [
+            "arrow",
+            "navigation",
+            "direction",
+            "south",
+            "down",
+            "frame",
+            "square"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M12 5.875 L12 18.125 M16.59375 13.53125 L12 18.125 L7.40625 13.53125"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-down",
+            "description": "Arrow Down in a square frame with a negative-space solid-head arrow.",
+            "tags": [
+              "arrow",
+              "navigation",
+              "direction",
+              "south",
+              "down",
+              "filled",
+              "frame",
+              "square"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M12.875 5.875V12.65625H16.59375C17.07699966 12.65625 17.46875 13.04800129 17.46875 13.53125C17.46875 13.76331425 17.37656212 13.98587418 17.2124691 14.14996815L12.61871815 18.7437191C12.46037388 18.90206337 12.24162388 19 12 19C11.75837612 19 11.53962612 18.90206337 11.38128185 18.7437191L6.78753138 14.14996815C6.6234374 13.98587418 6.53125 13.76331425 6.53125 13.53125C6.53125 13.04800129 6.92300081 12.65625 7.40625 12.65625H11.125V5.875C11.125 5.39175081 11.51675129 5 12 5C12.48324871 5 12.875 5.39175081 12.875 5.875Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      },
+      "circle": {
+        "metadata": {
+          "name": "arrow-down",
+          "description": "Arrow Down in a circle frame with an open V arrow.",
+          "tags": [
+            "arrow",
+            "navigation",
+            "direction",
+            "south",
+            "down",
+            "frame",
+            "circle"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "circle",
+                  "attrs": {
+                    "cx": "12",
+                    "cy": "12",
+                    "r": "9.125"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M12 5.875 L12 18.125 M16.59375 13.53125 L12 18.125 L7.40625 13.53125"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-down",
+            "description": "Arrow Down in a circle frame with a negative-space solid-head arrow.",
+            "tags": [
+              "arrow",
+              "navigation",
+              "direction",
+              "south",
+              "down",
+              "filled",
+              "frame",
+              "circle"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M12.875 5.875V12.65625H16.59375C17.07699966 12.65625 17.46875 13.04800129 17.46875 13.53125C17.46875 13.76331425 17.37656212 13.98587418 17.2124691 14.14996815L12.61871815 18.7437191C12.46037388 18.90206337 12.24162388 19 12 19C11.75837612 19 11.53962612 18.90206337 11.38128185 18.7437191L6.78753138 14.14996815C6.6234374 13.98587418 6.53125 13.76331425 6.53125 13.53125C6.53125 13.04800129 6.92300081 12.65625 7.40625 12.65625H11.125V5.875C11.125 5.39175081 11.51675129 5 12 5C12.48324871 5 12.875 5.39175081 12.875 5.875Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      }
     }
   },
   {
@@ -347,20 +1039,11 @@
         "navigation"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Established centerline proportions and pose are retained. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+      "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
       "filledTreatment": "solid-head",
       "review": {
-        "status": "approved",
-        "reviewedBy": "palamto",
-        "date": "2026-10-27",
-        "style": "outline",
-        "preview": {
-          "x": 100,
-          "y": 100,
-          "strokeWidth": 1.75,
-          "rotation": 0
-        },
-        "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+        "status": "draft",
+        "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
       }
     },
     "root": {
@@ -384,7 +1067,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M21.125 12 L2.875 12 M9.71875 18.84375 L2.875 12 L9.71875 5.15625"
+                "d": "M18.125 12 L5.875 12 M10.46875 16.59375 L5.875 12 L10.46875 7.40625"
               },
               "children": []
             }
@@ -406,20 +1089,11 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Established centerline proportions and pose are retained. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+        "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
         "filledTreatment": "solid-head",
         "review": {
-          "status": "approved",
-          "reviewedBy": "palamto",
-          "date": "2026-10-27",
-          "style": "filled",
-          "preview": {
-            "x": 100,
-            "y": 100,
-            "strokeWidth": 1.75,
-            "rotation": 0
-          },
-          "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+          "status": "draft",
+          "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
         }
       },
       "root": {
@@ -441,14 +1115,14 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M21.125 12.875 L2.875 12.875 A.875 .875 0 0 1 2 12 A.875 .875 0 0 1 2.875 11.125 L21.125 11.125 A.875 .875 0 0 1 22 12 A.875 .875 0 0 1 21.125 12.875 Z"
+                  "d": "M18.125 12.875 L5.875 12.875 A.875 .875 0 0 1 5 12 A.875 .875 0 0 1 5.875 11.125 L18.125 11.125 A.875 .875 0 0 1 19 12 A.875 .875 0 0 1 18.125 12.875 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M10.59375 18.84375 A.875 .875 0 0 1 9.71875 19.71875 A.875 .875 0 0 1 9.10003157 19.46246843 L2.25628157 12.61871843 A.875 .875 0 0 1 2 12 A.875 .875 0 0 1 2.25628157 11.38128157 L9.10003157 4.53753157 A.875 .875 0 0 1 9.71875 4.28125 A.875 .875 0 0 1 10.59375 5.15625 L10.59375 18.84375 Z"
+                  "d": "M11.34375 16.59375 A.875 .875 0 0 1 10.46875 17.46875 A.875 .875 0 0 1 9.85003157 17.21246843 L5.25628157 12.61871843 A.875 .875 0 0 1 5 12 A.875 .875 0 0 1 5.25628157 11.38128157 L9.85003157 6.78753157 A.875 .875 0 0 1 10.46875 6.53125 A.875 .875 0 0 1 11.34375 7.40625 L11.34375 16.59375 Z"
                 },
                 "children": []
               }
@@ -459,6 +1133,226 @@
       "parts": [
         "body"
       ]
+    },
+    "frames": {
+      "square": {
+        "metadata": {
+          "name": "arrow-left",
+          "description": "Arrow Left in a square frame with an open V arrow.",
+          "tags": [
+            "back",
+            "previous",
+            "navigation",
+            "frame",
+            "square"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M18.125 12 L5.875 12 M10.46875 16.59375 L5.875 12 L10.46875 7.40625"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-left",
+            "description": "Arrow Left in a square frame with a negative-space solid-head arrow.",
+            "tags": [
+              "back",
+              "previous",
+              "navigation",
+              "filled",
+              "frame",
+              "square"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M18.125 12.875H11.34375V16.59375C11.34375 17.07699966 10.95199871 17.46875 10.46875 17.46875C10.23668575 17.46875 10.01412582 17.37656212 9.85003185 17.2124691L5.25628138 12.61871815C5.09793758 12.46037388 5 12.24162388 5 12C5 11.75837612 5.09793758 11.53962612 5.25628138 11.38128185L9.85003185 6.78753138C10.01412582 6.6234374 10.23668575 6.53125 10.46875 6.53125C10.95199871 6.53125 11.34375 6.92300081 11.34375 7.40625V11.125H18.125C18.60824966 11.125 19 11.51675129 19 12C19 12.48324871 18.60824966 12.875 18.125 12.875Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      },
+      "circle": {
+        "metadata": {
+          "name": "arrow-left",
+          "description": "Arrow Left in a circle frame with an open V arrow.",
+          "tags": [
+            "back",
+            "previous",
+            "navigation",
+            "frame",
+            "circle"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "circle",
+                  "attrs": {
+                    "cx": "12",
+                    "cy": "12",
+                    "r": "9.125"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M18.125 12 L5.875 12 M10.46875 16.59375 L5.875 12 L10.46875 7.40625"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-left",
+            "description": "Arrow Left in a circle frame with a negative-space solid-head arrow.",
+            "tags": [
+              "back",
+              "previous",
+              "navigation",
+              "filled",
+              "frame",
+              "circle"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M18.125 12.875H11.34375V16.59375C11.34375 17.07699966 10.95199871 17.46875 10.46875 17.46875C10.23668575 17.46875 10.01412582 17.37656212 9.85003185 17.2124691L5.25628138 12.61871815C5.09793758 12.46037388 5 12.24162388 5 12C5 11.75837612 5.09793758 11.53962612 5.25628138 11.38128185L9.85003185 6.78753138C10.01412582 6.6234374 10.23668575 6.53125 10.46875 6.53125C10.95199871 6.53125 11.34375 6.92300081 11.34375 7.40625V11.125H18.125C18.60824966 11.125 19 11.51675129 19 12C19 12.48324871 18.60824966 12.875 18.125 12.875Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      }
     }
   },
   {
@@ -472,20 +1366,11 @@
         "navigation"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Established centerline proportions and pose are retained. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+      "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
       "filledTreatment": "solid-head",
       "review": {
-        "status": "approved",
-        "reviewedBy": "palamto",
-        "date": "2026-10-27",
-        "style": "outline",
-        "preview": {
-          "x": 100,
-          "y": 100,
-          "strokeWidth": 1.75,
-          "rotation": 0
-        },
-        "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+        "status": "draft",
+        "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
       }
     },
     "root": {
@@ -509,7 +1394,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M2.875 12 L21.125 12 M14.28125 5.15625 L21.125 12 L14.28125 18.84375"
+                "d": "M5.875 12 L18.125 12 M13.53125 7.40625 L18.125 12 L13.53125 16.59375"
               },
               "children": []
             }
@@ -531,20 +1416,11 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Straight centerlines keep the symbol readable without an enclosing frame. Centerline bounds x=4..20 and y=6..18 give balanced opposite visible margins of 3.15 horizontally and 5.15 vertically. The arrow pair is mirrored about x=12. Filled line contours are constructed as the union of radius-.85 segment capsules, matching the native Regular 1.70 stroke exterior, free-end caps and round joins. For closed objects, the body remains solid with explicitly authored negative-space details. Native X/Y=100%, rotation=0 and Regular 1.70 are the reference. Owner rejected the radius-1.50 curved-head experiment on2026-10-27. Return to the original straight-arm V head with round .85 caps and round stroke joins at Regular1.70. Do not reintroduce a broad centerline fillet. Owner requested a solid arrowhead for every Filled arrow on2026-10-27. Outline retains the open straight-arm V. Filled closes that same head into a solid triangular body, including the Regular1.70 round exterior at its three corners; shaft and tray geometry are retained. Corresponding tip, arm endpoints, native outer bounds and Regular1.70 weight remain aligned. This is a semantic solid-head exception to reproducing the open Outline interior. Owner approved this current pair on2026-10-27. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Established centerline proportions and pose are retained. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+        "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
         "filledTreatment": "solid-head",
         "review": {
-          "status": "approved",
-          "reviewedBy": "palamto",
-          "date": "2026-10-27",
-          "style": "filled",
-          "preview": {
-            "x": 100,
-            "y": 100,
-            "strokeWidth": 1.75,
-            "rotation": 0
-          },
-          "note": "Owner approved both current styles: open straight-arm V head in Outline and solid triangular head in Filled, with aligned tips/endpoints, original shafts/trays and Regular1.70 reference."
+          "status": "draft",
+          "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
         }
       },
       "root": {
@@ -566,14 +1442,14 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M2.875 11.125 L21.125 11.125 A.875 .875 0 0 1 22 12 A.875 .875 0 0 1 21.125 12.875 L2.875 12.875 A.875 .875 0 0 1 2 12 A.875 .875 0 0 1 2.875 11.125 Z"
+                  "d": "M5.875 11.125 L18.125 11.125 A.875 .875 0 0 1 19 12 A.875 .875 0 0 1 18.125 12.875 L5.875 12.875 A.875 .875 0 0 1 5 12 A.875 .875 0 0 1 5.875 11.125 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M13.40625 5.15625 A.875 .875 0 0 1 14.28125 4.28125 A.875 .875 0 0 1 14.89996843 4.53753157 L21.74371843 11.38128157 A.875 .875 0 0 1 22 12 A.875 .875 0 0 1 21.74371843 12.61871843 L14.89996843 19.46246843 A.875 .875 0 0 1 14.28125 19.71875 A.875 .875 0 0 1 13.40625 18.84375 L13.40625 5.15625 Z"
+                  "d": "M12.65625 7.40625 A.875 .875 0 0 1 13.53125 6.53125 A.875 .875 0 0 1 14.14996843 6.78753157 L18.74371843 11.38128157 A.875 .875 0 0 1 19 12 A.875 .875 0 0 1 18.74371843 12.61871843 L14.14996843 17.21246843 A.875 .875 0 0 1 13.53125 17.46875 A.875 .875 0 0 1 12.65625 16.59375 L12.65625 7.40625 Z"
                 },
                 "children": []
               }
@@ -584,6 +1460,226 @@
       "parts": [
         "body"
       ]
+    },
+    "frames": {
+      "square": {
+        "metadata": {
+          "name": "arrow-right",
+          "description": "Arrow Right in a square frame with an open V arrow.",
+          "tags": [
+            "forward",
+            "next",
+            "navigation",
+            "frame",
+            "square"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M5.875 12 L18.125 12 M13.53125 7.40625 L18.125 12 L13.53125 16.59375"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-right",
+            "description": "Arrow Right in a square frame with a negative-space solid-head arrow.",
+            "tags": [
+              "forward",
+              "next",
+              "navigation",
+              "filled",
+              "frame",
+              "square"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M5.875 11.125H12.65625V7.40625C12.65625 6.92300081 13.04800129 6.53125 13.53125 6.53125C13.76331425 6.53125 13.98587418 6.6234374 14.14996815 6.78753138L18.7437191 11.38128185C18.90206337 11.53962612 19 11.75837612 19 12C19 12.24162388 18.90206337 12.46037388 18.7437191 12.61871815L14.14996815 17.2124691C13.98587418 17.37656212 13.76331425 17.46875 13.53125 17.46875C13.04800129 17.46875 12.65625 17.07699966 12.65625 16.59375V12.875H5.875C5.39175081 12.875 5 12.48324871 5 12C5 11.51675129 5.39175081 11.125 5.875 11.125Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      },
+      "circle": {
+        "metadata": {
+          "name": "arrow-right",
+          "description": "Arrow Right in a circle frame with an open V arrow.",
+          "tags": [
+            "forward",
+            "next",
+            "navigation",
+            "frame",
+            "circle"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "circle",
+                  "attrs": {
+                    "cx": "12",
+                    "cy": "12",
+                    "r": "9.125"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M5.875 12 L18.125 12 M13.53125 7.40625 L18.125 12 L13.53125 16.59375"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-right",
+            "description": "Arrow Right in a circle frame with a negative-space solid-head arrow.",
+            "tags": [
+              "forward",
+              "next",
+              "navigation",
+              "filled",
+              "frame",
+              "circle"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M5.875 11.125H12.65625V7.40625C12.65625 6.92300081 13.04800129 6.53125 13.53125 6.53125C13.76331425 6.53125 13.98587418 6.6234374 14.14996815 6.78753138L18.7437191 11.38128185C18.90206337 11.53962612 19 11.75837612 19 12C19 12.24162388 18.90206337 12.46037388 18.7437191 12.61871815L14.14996815 17.2124691C13.98587418 17.37656212 13.76331425 17.46875 13.53125 17.46875C13.04800129 17.46875 12.65625 17.07699966 12.65625 16.59375V12.875H5.875C5.39175081 12.875 5 12.48324871 5 12C5 11.51675129 5.39175081 11.125 5.875 11.125Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      }
     }
   },
   {
@@ -600,11 +1696,11 @@
         "left"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Round 5 completes the eight compass arrows. Rotate the approved Arrow Right straight shaft and V head by -135 degrees about 12,12, uniformly fit centerlines to a 9.15-unit primary half extent, then bake coordinates into source. Reference centerline points before rotation are shaft (4,12) to (20,12) and head (14,6) to (20,12) to (14,18). Centerline fit factor 1.6175067620; keep Regular1.70 unchanged instead of scaling stroke. Both horizontal and vertical visible margins are exactly2px. Outline keeps an open straight-arm V with .85 round caps and joins. Filled uses the exact .85 capsule around the same shaft and a solid triangle expanded by .85 round exterior corners around those same head vertices. Tips, shoulders and exterior align at Regular1.70; the solid head is the accepted semantic interior exception. No enclosing box, broad curved-head fillet or preview transform. Existing approved Left/Right artwork is preserved. Both new styles await owner review. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+      "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
-        "note": "Round 5: new direction derived from the approved Arrow Right family, awaiting owner visual review."
+        "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
       }
     },
     "root": {
@@ -628,7 +1724,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M18.45234938 18.45234938 L5.54765062 5.54765062 M5.54765062 15.22617469 L5.54765062 5.54765062 L15.22617469 5.54765062"
+                "d": "M16.33102903 16.33102903 L7.66897097 7.66897097 M7.66897097 14.16551452 L7.66897097 7.66897097 L14.16551452 7.66897097"
               },
               "children": []
             }
@@ -653,11 +1749,11 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Round 5 completes the eight compass arrows. Rotate the approved Arrow Right straight shaft and V head by -135 degrees about 12,12, uniformly fit centerlines to a 9.15-unit primary half extent, then bake coordinates into source. Reference centerline points before rotation are shaft (4,12) to (20,12) and head (14,6) to (20,12) to (14,18). Centerline fit factor 1.6175067620; keep Regular1.70 unchanged instead of scaling stroke. Both horizontal and vertical visible margins are exactly2px. Outline keeps an open straight-arm V with .85 round caps and joins. Filled uses the exact .85 capsule around the same shaft and a solid triangle expanded by .85 round exterior corners around those same head vertices. Tips, shoulders and exterior align at Regular1.70; the solid head is the accepted semantic interior exception. No enclosing box, broad curved-head fillet or preview transform. Existing approved Left/Right artwork is preserved. Both new styles await owner review. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+        "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
         "filledTreatment": "solid-head",
         "review": {
           "status": "draft",
-          "note": "Round 5: new direction derived from the approved Arrow Right family, awaiting owner visual review."
+          "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
         }
       },
       "root": {
@@ -679,14 +1775,14 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M17.83363094 19.07106781 L4.92893219 6.16636906 A.875 .875 0 0 1 4.67265062 5.54765062 A.875 .875 0 0 1 5.54765062 4.67265062 A.875 .875 0 0 1 6.16636906 4.92893219 L19.07106781 17.83363094 A.875 .875 0 0 1 19.32734938 18.45234938 A.875 .875 0 0 1 18.45234938 19.32734938 A.875 .875 0 0 1 17.83363094 19.07106781 Z"
+                  "d": "M15.7123106 16.94974747 L7.05025253 8.2876894 A.875 .875 0 0 1 6.79397097 7.66897097 A.875 .875 0 0 1 7.66897097 6.79397097 A.875 .875 0 0 1 8.2876894 7.05025253 L16.94974747 15.7123106 A.875 .875 0 0 1 17.20602903 16.33102903 A.875 .875 0 0 1 16.33102903 17.20602903 A.875 .875 0 0 1 15.7123106 16.94974747 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M6.16636906 15.84489312 A.875 .875 0 0 1 5.54765062 16.10117469 A.875 .875 0 0 1 4.67265062 15.22617469 L4.67265062 5.54765062 A.875 .875 0 0 1 5.54765062 4.67265062 L15.22617469 4.67265062 A.875 .875 0 0 1 16.10117469 5.54765062 A.875 .875 0 0 1 15.84489312 6.16636906 L6.16636906 15.84489312 Z"
+                  "d": "M8.2876894 14.78423295 A.875 .875 0 0 1 7.66897097 15.04051452 A.875 .875 0 0 1 6.79397097 14.16551452 L6.79397097 7.66897097 A.875 .875 0 0 1 7.66897097 6.79397097 L14.16551452 6.79397097 A.875 .875 0 0 1 15.04051452 7.66897097 A.875 .875 0 0 1 14.78423295 8.2876894 L8.2876894 14.78423295 Z"
                 },
                 "children": []
               }
@@ -697,6 +1793,238 @@
       "parts": [
         "body"
       ]
+    },
+    "frames": {
+      "square": {
+        "metadata": {
+          "name": "arrow-up-left",
+          "description": "Arrow Up Left in a square frame with an open V arrow.",
+          "tags": [
+            "arrow",
+            "navigation",
+            "direction",
+            "northwest",
+            "up",
+            "left",
+            "frame",
+            "square"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M16.33102903 16.33102903 L7.66897097 7.66897097 M7.66897097 14.16551452 L7.66897097 7.66897097 L14.16551452 7.66897097"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-up-left",
+            "description": "Arrow Up Left in a square frame with a negative-space solid-head arrow.",
+            "tags": [
+              "arrow",
+              "navigation",
+              "direction",
+              "northwest",
+              "up",
+              "left",
+              "filled",
+              "frame",
+              "square"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M15.71231079 16.94974709 10.917243 12.1546793 8.28768921 14.78423309C8.12359524 14.94832706 7.90103531 15.04051495 7.66897106 15.04051495C7.18572187 15.04051495 6.79397106 14.64876366 6.79397106 14.16551495V7.66897106C6.79397106 7.18572187 7.18572187 6.79397106 7.66897106 6.79397106H14.16551495C14.64876366 6.79397106 15.04051495 7.18572187 15.04051495 7.66897106C15.04051495 7.90103531 14.94832706 8.12359524 14.78423309 8.28768921L12.1546793 10.917243L16.94974709 15.71231079C17.11384201 15.87640476 17.20602989 16.09896469 17.20602989 16.33102989C17.20602989 16.81427765 16.81427765 17.20602989 16.33102989 17.20602989C16.09896469 17.20602989 15.87640476 17.11384201 15.71231079 16.94974709Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      },
+      "circle": {
+        "metadata": {
+          "name": "arrow-up-left",
+          "description": "Arrow Up Left in a circle frame with an open V arrow.",
+          "tags": [
+            "arrow",
+            "navigation",
+            "direction",
+            "northwest",
+            "up",
+            "left",
+            "frame",
+            "circle"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "circle",
+                  "attrs": {
+                    "cx": "12",
+                    "cy": "12",
+                    "r": "9.125"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M16.33102903 16.33102903 L7.66897097 7.66897097 M7.66897097 14.16551452 L7.66897097 7.66897097 L14.16551452 7.66897097"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-up-left",
+            "description": "Arrow Up Left in a circle frame with a negative-space solid-head arrow.",
+            "tags": [
+              "arrow",
+              "navigation",
+              "direction",
+              "northwest",
+              "up",
+              "left",
+              "filled",
+              "frame",
+              "circle"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M15.71231079 16.94974709 10.917243 12.1546793 8.28768921 14.78423309C8.12359524 14.94832706 7.90103531 15.04051495 7.66897106 15.04051495C7.18572187 15.04051495 6.79397106 14.64876366 6.79397106 14.16551495V7.66897106C6.79397106 7.18572187 7.18572187 6.79397106 7.66897106 6.79397106H14.16551495C14.64876366 6.79397106 15.04051495 7.18572187 15.04051495 7.66897106C15.04051495 7.90103531 14.94832706 8.12359524 14.78423309 8.28768921L12.1546793 10.917243L16.94974709 15.71231079C17.11384201 15.87640476 17.20602989 16.09896469 17.20602989 16.33102989C17.20602989 16.81427765 16.81427765 17.20602989 16.33102989 17.20602989C16.09896469 17.20602989 15.87640476 17.11384201 15.71231079 16.94974709Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      }
     }
   },
   {
@@ -713,11 +2041,11 @@
         "right"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Round 5 completes the eight compass arrows. Rotate the approved Arrow Right straight shaft and V head by -45 degrees about 12,12, uniformly fit centerlines to a 9.15-unit primary half extent, then bake coordinates into source. Reference centerline points before rotation are shaft (4,12) to (20,12) and head (14,6) to (20,12) to (14,18). Centerline fit factor 1.6175067620; keep Regular1.70 unchanged instead of scaling stroke. Both horizontal and vertical visible margins are exactly2px. Outline keeps an open straight-arm V with .85 round caps and joins. Filled uses the exact .85 capsule around the same shaft and a solid triangle expanded by .85 round exterior corners around those same head vertices. Tips, shoulders and exterior align at Regular1.70; the solid head is the accepted semantic interior exception. No enclosing box, broad curved-head fillet or preview transform. Existing approved Left/Right artwork is preserved. Both new styles await owner review. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+      "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
-        "note": "Round 5: new direction derived from the approved Arrow Right family, awaiting owner visual review."
+        "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
       }
     },
     "root": {
@@ -741,7 +2069,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M5.54765062 18.45234938 L18.45234938 5.54765062 M8.77382531 5.54765062 L18.45234938 5.54765062 L18.45234938 15.22617469"
+                "d": "M7.66897097 16.33102903 L16.33102903 7.66897097 M9.83448548 7.66897097 L16.33102903 7.66897097 L16.33102903 14.16551452"
               },
               "children": []
             }
@@ -766,11 +2094,11 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Round 5 completes the eight compass arrows. Rotate the approved Arrow Right straight shaft and V head by -45 degrees about 12,12, uniformly fit centerlines to a 9.15-unit primary half extent, then bake coordinates into source. Reference centerline points before rotation are shaft (4,12) to (20,12) and head (14,6) to (20,12) to (14,18). Centerline fit factor 1.6175067620; keep Regular1.70 unchanged instead of scaling stroke. Both horizontal and vertical visible margins are exactly2px. Outline keeps an open straight-arm V with .85 round caps and joins. Filled uses the exact .85 capsule around the same shaft and a solid triangle expanded by .85 round exterior corners around those same head vertices. Tips, shoulders and exterior align at Regular1.70; the solid head is the accepted semantic interior exception. No enclosing box, broad curved-head fillet or preview transform. Existing approved Left/Right artwork is preserved. Both new styles await owner review. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+        "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
         "filledTreatment": "solid-head",
         "review": {
           "status": "draft",
-          "note": "Round 5: new direction derived from the approved Arrow Right family, awaiting owner visual review."
+          "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
         }
       },
       "root": {
@@ -792,14 +2120,14 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M4.92893219 17.83363094 L17.83363094 4.92893219 A.875 .875 0 0 1 18.45234938 4.67265062 A.875 .875 0 0 1 19.32734938 5.54765062 A.875 .875 0 0 1 19.07106781 6.16636906 L6.16636906 19.07106781 A.875 .875 0 0 1 5.54765062 19.32734938 A.875 .875 0 0 1 4.67265062 18.45234938 A.875 .875 0 0 1 4.92893219 17.83363094 Z"
+                  "d": "M7.05025253 15.7123106 L15.7123106 7.05025253 A.875 .875 0 0 1 16.33102903 6.79397097 A.875 .875 0 0 1 17.20602903 7.66897097 A.875 .875 0 0 1 16.94974747 8.2876894 L8.2876894 16.94974747 A.875 .875 0 0 1 7.66897097 17.20602903 A.875 .875 0 0 1 6.79397097 16.33102903 A.875 .875 0 0 1 7.05025253 15.7123106 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M8.15510688 6.16636906 A.875 .875 0 0 1 7.89882531 5.54765062 A.875 .875 0 0 1 8.77382531 4.67265062 L18.45234938 4.67265062 A.875 .875 0 0 1 19.32734938 5.54765062 L19.32734938 15.22617469 A.875 .875 0 0 1 18.45234938 16.10117469 A.875 .875 0 0 1 17.83363094 15.84489312 L8.15510688 6.16636906 Z"
+                  "d": "M9.21576705 8.2876894 A.875 .875 0 0 1 8.95948548 7.66897097 A.875 .875 0 0 1 9.83448548 6.79397097 L16.33102903 6.79397097 A.875 .875 0 0 1 17.20602903 7.66897097 L17.20602903 14.16551452 A.875 .875 0 0 1 16.33102903 15.04051452 A.875 .875 0 0 1 15.7123106 14.78423295 L9.21576705 8.2876894 Z"
                 },
                 "children": []
               }
@@ -810,6 +2138,238 @@
       "parts": [
         "body"
       ]
+    },
+    "frames": {
+      "square": {
+        "metadata": {
+          "name": "arrow-up-right",
+          "description": "Arrow Up Right in a square frame with an open V arrow.",
+          "tags": [
+            "arrow",
+            "navigation",
+            "direction",
+            "northeast",
+            "up",
+            "right",
+            "frame",
+            "square"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M7.66897097 16.33102903 L16.33102903 7.66897097 M9.83448548 7.66897097 L16.33102903 7.66897097 L16.33102903 14.16551452"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-up-right",
+            "description": "Arrow Up Right in a square frame with a negative-space solid-head arrow.",
+            "tags": [
+              "arrow",
+              "navigation",
+              "direction",
+              "northeast",
+              "up",
+              "right",
+              "filled",
+              "frame",
+              "square"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M7.05025244 15.71231079 11.8453207 10.917243 9.21576691 8.28768921C9.05167294 8.12359524 8.95948505 7.90103531 8.95948505 7.66897106C8.95948505 7.18572187 9.35123634 6.79397106 9.83448505 6.79397106H16.33102989C16.81427765 6.79397106 17.20602989 7.18572187 17.20602989 7.66897106V14.16551495C17.20602989 14.64876366 16.81427765 15.04051495 16.33102989 15.04051495C16.09896469 15.04051495 15.87640476 14.94832706 15.71231079 14.78423309L13.082757 12.1546793L8.28768921 16.94974709C8.12359524 17.11384201 7.90103531 17.20602989 7.66897106 17.20602989C7.18572187 17.20602989 6.79397106 16.81427765 6.79397106 16.33102989C6.79397106 16.09896469 6.88615799 15.87640476 7.05025244 15.71231079Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      },
+      "circle": {
+        "metadata": {
+          "name": "arrow-up-right",
+          "description": "Arrow Up Right in a circle frame with an open V arrow.",
+          "tags": [
+            "arrow",
+            "navigation",
+            "direction",
+            "northeast",
+            "up",
+            "right",
+            "frame",
+            "circle"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "circle",
+                  "attrs": {
+                    "cx": "12",
+                    "cy": "12",
+                    "r": "9.125"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M7.66897097 16.33102903 L16.33102903 7.66897097 M9.83448548 7.66897097 L16.33102903 7.66897097 L16.33102903 14.16551452"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-up-right",
+            "description": "Arrow Up Right in a circle frame with a negative-space solid-head arrow.",
+            "tags": [
+              "arrow",
+              "navigation",
+              "direction",
+              "northeast",
+              "up",
+              "right",
+              "filled",
+              "frame",
+              "circle"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M7.05025244 15.71231079 11.8453207 10.917243 9.21576691 8.28768921C9.05167294 8.12359524 8.95948505 7.90103531 8.95948505 7.66897106C8.95948505 7.18572187 9.35123634 6.79397106 9.83448505 6.79397106H16.33102989C16.81427765 6.79397106 17.20602989 7.18572187 17.20602989 7.66897106V14.16551495C17.20602989 14.64876366 16.81427765 15.04051495 16.33102989 15.04051495C16.09896469 15.04051495 15.87640476 14.94832706 15.71231079 14.78423309L13.082757 12.1546793L8.28768921 16.94974709C8.12359524 17.11384201 7.90103531 17.20602989 7.66897106 17.20602989C7.18572187 17.20602989 6.79397106 16.81427765 6.79397106 16.33102989C6.79397106 16.09896469 6.88615799 15.87640476 7.05025244 15.71231079Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      }
     }
   },
   {
@@ -825,11 +2385,11 @@
         "up"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Round 5 completes the eight compass arrows. Rotate the approved Arrow Right straight shaft and V head by -90 degrees about 12,12, uniformly fit centerlines to a 9.15-unit primary half extent, then bake coordinates into source. Reference centerline points before rotation are shaft (4,12) to (20,12) and head (14,6) to (20,12) to (14,18). Centerline fit factor 1.1437500000; keep Regular1.70 unchanged instead of scaling stroke. Top/bottom are the primary pair at exactly2px; left/right stay balanced and preserve natural proportions. Outline keeps an open straight-arm V with .85 round caps and joins. Filled uses the exact .85 capsule around the same shaft and a solid triangle expanded by .85 round exterior corners around those same head vertices. Tips, shoulders and exterior align at Regular1.70; the solid head is the accepted semantic interior exception. No enclosing box, broad curved-head fillet or preview transform. Existing approved Left/Right artwork is preserved. Both new styles await owner review. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+      "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
-        "note": "Round 5: new direction derived from the approved Arrow Right family, awaiting owner visual review."
+        "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
       }
     },
     "root": {
@@ -853,7 +2413,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M12 21.125 L12 2.875 M5.15625 9.71875 L12 2.875 L18.84375 9.71875"
+                "d": "M12 18.125 L12 5.875 M7.40625 10.46875 L12 5.875 L16.59375 10.46875"
               },
               "children": []
             }
@@ -877,11 +2437,11 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Round 5 completes the eight compass arrows. Rotate the approved Arrow Right straight shaft and V head by -90 degrees about 12,12, uniformly fit centerlines to a 9.15-unit primary half extent, then bake coordinates into source. Reference centerline points before rotation are shaft (4,12) to (20,12) and head (14,6) to (20,12) to (14,18). Centerline fit factor 1.1437500000; keep Regular1.70 unchanged instead of scaling stroke. Top/bottom are the primary pair at exactly2px; left/right stay balanced and preserve natural proportions. Outline keeps an open straight-arm V with .85 round caps and joins. Filled uses the exact .85 capsule around the same shaft and a solid triangle expanded by .85 round exterior corners around those same head vertices. Tips, shoulders and exterior align at Regular1.70; the solid head is the accepted semantic interior exception. No enclosing box, broad curved-head fillet or preview transform. Existing approved Left/Right artwork is preserved. Both new styles await owner review. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75. Owner compass-size correction on2026-10-27: all eight directional arrows share exactly18.25-unit shafts, the same two head-arm lengths and fixed1.75 stroke. Rotate the same reference about12,12 without refitting diagonal bounds. Cardinal arrows have2px at their primary pair; diagonals retain the rotated physical size, so their horizontal/vertical visible margins are4.67265062px. This explicitly supersedes the earlier diagonal2px-on-all-sides fit and older Left/Right size. Filled uses the same shaft with .875 caps and the same solid expanded triangle. The owner requested equal sizes; new six directions remain drafts.",
+        "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
         "filledTreatment": "solid-head",
         "review": {
           "status": "draft",
-          "note": "Round 5: new direction derived from the approved Arrow Right family, awaiting owner visual review."
+          "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
         }
       },
       "root": {
@@ -903,14 +2463,14 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M11.125 21.125 L11.125 2.875 A.875 .875 0 0 1 12 2 A.875 .875 0 0 1 12.875 2.875 L12.875 21.125 A.875 .875 0 0 1 12 22 A.875 .875 0 0 1 11.125 21.125 Z"
+                  "d": "M11.125 18.125 L11.125 5.875 A.875 .875 0 0 1 12 5 A.875 .875 0 0 1 12.875 5.875 L12.875 18.125 A.875 .875 0 0 1 12 19 A.875 .875 0 0 1 11.125 18.125 Z"
                 },
                 "children": []
               },
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M5.15625 10.59375 A.875 .875 0 0 1 4.28125 9.71875 A.875 .875 0 0 1 4.53753157 9.10003157 L11.38128157 2.25628157 A.875 .875 0 0 1 12 2 A.875 .875 0 0 1 12.61871843 2.25628157 L19.46246843 9.10003157 A.875 .875 0 0 1 19.71875 9.71875 A.875 .875 0 0 1 18.84375 10.59375 L5.15625 10.59375 Z"
+                  "d": "M7.40625 11.34375 A.875 .875 0 0 1 6.53125 10.46875 A.875 .875 0 0 1 6.78753157 9.85003157 L11.38128157 5.25628157 A.875 .875 0 0 1 12 5 A.875 .875 0 0 1 12.61871843 5.25628157 L17.21246843 9.85003157 A.875 .875 0 0 1 17.46875 10.46875 A.875 .875 0 0 1 16.59375 11.34375 L7.40625 11.34375 Z"
                 },
                 "children": []
               }
@@ -921,6 +2481,234 @@
       "parts": [
         "body"
       ]
+    },
+    "frames": {
+      "square": {
+        "metadata": {
+          "name": "arrow-up",
+          "description": "Arrow Up in a square frame with an open V arrow.",
+          "tags": [
+            "arrow",
+            "navigation",
+            "direction",
+            "north",
+            "up",
+            "frame",
+            "square"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M12 18.125 L12 5.875 M7.40625 10.46875 L12 5.875 L16.59375 10.46875"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-up",
+            "description": "Arrow Up in a square frame with a negative-space solid-head arrow.",
+            "tags": [
+              "arrow",
+              "navigation",
+              "direction",
+              "north",
+              "up",
+              "filled",
+              "frame",
+              "square"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M11.125 18.125V11.34375H7.40625C6.92300081 11.34375 6.53125 10.95199871 6.53125 10.46875C6.53125 10.23668575 6.6234374 10.01412582 6.78753138 9.85003185L11.38128185 5.25628138C11.53962612 5.09793758 11.75837612 5 12 5C12.24162388 5 12.46037388 5.09793758 12.61871815 5.25628138L17.2124691 9.85003185C17.37656212 10.01412582 17.46875 10.23668575 17.46875 10.46875C17.46875 10.95199871 17.07699966 11.34375 16.59375 11.34375H12.875V18.125C12.875 18.60824966 12.48324871 19 12 19C11.51675129 19 11.125 18.60824966 11.125 18.125Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      },
+      "circle": {
+        "metadata": {
+          "name": "arrow-up",
+          "description": "Arrow Up in a circle frame with an open V arrow.",
+          "tags": [
+            "arrow",
+            "navigation",
+            "direction",
+            "north",
+            "up",
+            "frame",
+            "circle"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+          "review": {
+            "status": "draft",
+            "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "circle",
+                  "attrs": {
+                    "cx": "12",
+                    "cy": "12",
+                    "r": "9.125"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M12 18.125 L12 5.875 M7.40625 10.46875 L12 5.875 L16.59375 10.46875"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "arrow-up",
+            "description": "Arrow Up in a circle frame with a negative-space solid-head arrow.",
+            "tags": [
+              "arrow",
+              "navigation",
+              "direction",
+              "north",
+              "up",
+              "filled",
+              "frame",
+              "circle"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner frame-ready arrow revision on2026-10-27: all8 directions share a12.25-unit shaft and identical head-arm lengths at Regular1.75. Use one reference rotated about12,12, with no independent scaling for directions or frames. The standalone glyph has14px visible length along its axis, leaving5px at cardinal primary edges. This smaller shared glyph reserves room for Square/Circle frames. Square frame exterior is2..22 with radius4; Circle exterior is centered12,12 with radius10. Outline frame centerlines use radius3.125 corners / circle radius9.125 at stroke1.75. Filled frames are solid exteriors with the exact standalone Filled arrow silhouette cut out, retaining the approved solid triangular head. At Regular the circular frame has1.25px inner clearance at the shaft tips; at Bold2.50 it still clears by.5px. Standalone and framed glyphs have exactly the same position, size and weight. Frames remain upright for every baked arrow direction. The2px outer rule applies to frames, not the inner arrow. This explicitly supersedes earlier18.25-unit shafts and2px standalone-arrow margins. This family revision awaits owner review.",
+            "review": {
+              "status": "draft",
+              "note": "Review reopened for smaller shared arrow glyph and new Square/Circle frame variants; previous approval covered earlier standalone artwork."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M11.125 18.125V11.34375H7.40625C6.92300081 11.34375 6.53125 10.95199871 6.53125 10.46875C6.53125 10.23668575 6.6234374 10.01412582 6.78753138 9.85003185L11.38128185 5.25628138C11.53962612 5.09793758 11.75837612 5 12 5C12.24162388 5 12.46037388 5.09793758 12.61871815 5.25628138L17.2124691 9.85003185C17.37656212 10.01412582 17.46875 10.23668575 17.46875 10.46875C17.46875 10.95199871 17.07699966 11.34375 16.59375 11.34375H12.875V18.125C12.875 18.60824966 12.48324871 19 12 19C11.51675129 19 11.125 18.60824966 11.125 18.125Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      }
     }
   },
   {

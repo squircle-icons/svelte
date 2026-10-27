@@ -94,6 +94,8 @@
       Filled: FilledArrowDownRight,
     },
   ];
+  let arrowFrame = $state<'none' | 'square' | 'circle'>('none');
+  let arrowWeight = $state(1.75);
   let hovered = $state(false);
   let focused = $state(false);
   let preset = $state<'thin' | 'regular' | 'bold'>('regular');
@@ -242,10 +244,18 @@
       {#each [{ name: 'X', Outline: X, Filled: FilledX }, { name: 'Copy', Outline: Copy, Filled: FilledCopy }, { name: 'Chevron Down', Outline: ChevronDown, Filled: FilledChevronDown }, { name: 'Plus', Outline: Plus, Filled: FilledPlus }, { name: 'Check', Outline: Check, Filled: FilledCheck }, { name: 'Chevron Up', Outline: ChevronUp, Filled: FilledChevronUp }] as item}
         <article>
           <h3>{item.name}</h3>
-          <div class="round-main"><item.Outline size={48} /><item.Filled size={48} /></div>
+          <div class="round-main">
+            <item.Outline frame={arrowFrame} strokeWidth={arrowWeight} size={48} /><item.Filled
+              frame={arrowFrame}
+              size={48}
+            />
+          </div>
           <div class="round-sizes">
             {#each [16, 20, 24] as size}<div>
-                <item.Outline {size} /><item.Filled {size} /><small>{size}px</small>
+                <item.Outline frame={arrowFrame} strokeWidth={arrowWeight} {size} /><item.Filled
+                  frame={arrowFrame}
+                  {size}
+                /><small>{size}px</small>
               </div>{/each}
           </div>
         </article>
@@ -292,10 +302,15 @@
 
 {#each roundFour as item}
   <div data-testid={item.name + '-outline-contour'}>
-    <item.Outline size={96} label={'Outline ' + item.label + ' contour'} />
+    <item.Outline
+      frame={arrowFrame}
+      strokeWidth={arrowWeight}
+      size={96}
+      label={'Outline ' + item.label + ' contour'}
+    />
   </div>
   <div data-testid={item.name + '-filled-contour'}>
-    <item.Filled size={96} label={'Filled ' + item.label + ' contour'} />
+    <item.Filled frame={arrowFrame} size={96} label={'Filled ' + item.label + ' contour'} />
   </div>
 {/each}
 {#each ['light', 'dark'] as surface}
@@ -312,10 +327,18 @@
     <div class="round-grid">
       {#each roundFour as item}<article>
           <h3>{item.label}</h3>
-          <div class="round-main"><item.Outline size={48} /><item.Filled size={48} /></div>
+          <div class="round-main">
+            <item.Outline frame={arrowFrame} strokeWidth={arrowWeight} size={48} /><item.Filled
+              frame={arrowFrame}
+              size={48}
+            />
+          </div>
           <div class="round-sizes">
             {#each [16, 20, 24] as size}<div>
-                <item.Outline {size} /><item.Filled {size} /><small>{size}px</small>
+                <item.Outline frame={arrowFrame} strokeWidth={arrowWeight} {size} /><item.Filled
+                  frame={arrowFrame}
+                  {size}
+                /><small>{size}px</small>
               </div>{/each}
           </div>
         </article>{/each}
@@ -414,10 +437,15 @@
 
 {#each roundFive as item}
   <div data-testid={item.name + '-outline-contour'}>
-    <item.Outline size={96} label={'Outline ' + item.label + ' contour'} />
+    <item.Outline
+      frame={arrowFrame}
+      strokeWidth={arrowWeight}
+      size={96}
+      label={'Outline ' + item.label + ' contour'}
+    />
   </div>
   <div data-testid={item.name + '-filled-contour'}>
-    <item.Filled size={96} label={'Filled ' + item.label + ' contour'} />
+    <item.Filled frame={arrowFrame} size={96} label={'Filled ' + item.label + ' contour'} />
   </div>
 {/each}
 {#each ['light', 'dark'] as surface}
@@ -435,10 +463,18 @@
       {#each roundFive as item}
         <article>
           <h3>{item.label}</h3>
-          <div class="round-main"><item.Outline size={64} /><item.Filled size={64} /></div>
+          <div class="round-main">
+            <item.Outline frame={arrowFrame} strokeWidth={arrowWeight} size={64} /><item.Filled
+              frame={arrowFrame}
+              size={64}
+            />
+          </div>
           <div class="round-sizes">
             {#each [16, 20, 24, 48] as size}<div>
-                <item.Outline {size} /><item.Filled {size} /><small>{size}px</small>
+                <item.Outline frame={arrowFrame} strokeWidth={arrowWeight} {size} /><item.Filled
+                  frame={arrowFrame}
+                  {size}
+                /><small>{size}px</small>
               </div>{/each}
           </div>
         </article>
@@ -446,6 +482,24 @@
     </div>
   </section>
 {/each}
+
+<section aria-label="Arrow frame fixture controls">
+  <label
+    >Arrow frame <select aria-label="Fixture arrow frame" bind:value={arrowFrame}
+      ><option>none</option><option>square</option><option>circle</option></select
+    ></label
+  >
+  <label
+    >Arrow weight <select
+      aria-label="Fixture arrow weight"
+      value={arrowWeight}
+      onchange={(event) => (arrowWeight = Number(event.currentTarget.value))}
+      ><option value="1.25">Thin</option><option value="1.75">Regular</option><option value="2.5"
+        >Bold</option
+      ></select
+    ></label
+  >
+</section>
 
 <style>
   .rotation-sheet {

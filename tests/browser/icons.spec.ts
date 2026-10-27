@@ -740,14 +740,14 @@ test('Trash bakes the accepted 105 by 95 proportions into native geometry with f
 });
 
 for (const [icon, point] of [
-  ['arrow-left', [8.578125, 14.28125]],
-  ['arrow-right', [15.421875, 9.71875]],
-  ['arrow-up', [9.71875, 8.578125]],
-  ['arrow-down', [14.28125, 15.421875]],
-  ['arrow-up-left', [7.96728164, 11.19345633]],
-  ['arrow-up-right', [12.80654367, 7.96728164]],
-  ['arrow-down-left', [11.19345633, 16.03271836]],
-  ['arrow-down-right', [16.03271836, 12.80654367]],
+  ['arrow-left', [9.703125, 13.53125]],
+  ['arrow-right', [14.296875, 10.46875]],
+  ['arrow-up', [10.46875, 9.703125]],
+  ['arrow-down', [13.53125, 14.296875]],
+  ['arrow-up-left', [9.29310685, 11.45862137]],
+  ['arrow-up-right', [12.54137863, 9.29310685]],
+  ['arrow-down-left', [11.45862137, 14.70689315]],
+  ['arrow-down-right', [14.70689315, 12.54137863]],
   ['chevron-down', [12, 10.5]],
   ['chevron-up', [12, 13.5]],
   ['download', [10.5, 11]],
@@ -879,16 +879,16 @@ for (const icon of [
       };
     }, icon);
     expect(result.stroke).toBe('1.75');
-    expect(result.shaft).toBeCloseTo(18.25, 5);
-    expect(result.arm).toBeCloseTo(6.84375 * Math.SQRT2, 5);
+    expect(result.shaft).toBeCloseTo(12.25, 5);
+    expect(result.arm).toBeCloseTo(4.59375 * Math.SQRT2, 5);
     const diagonal = icon.split('-').length === 3;
-    if (diagonal) for (const margin of result.margins) expect(margin).toBeCloseTo(4.67265062, 4);
+    if (diagonal) for (const margin of result.margins) expect(margin).toBeCloseTo(6.79397097, 4);
     else
       for (const margin of result.margins.slice(
         icon === 'arrow-left' || icon === 'arrow-right' ? 0 : 2,
         icon === 'arrow-left' || icon === 'arrow-right' ? 2 : 4,
       ))
-        expect(margin).toBeCloseTo(2, 4);
+        expect(margin).toBeCloseTo(5, 4);
   });
 
 test('Round 5 exposes six dual-style directions at actual sizes on light and dark', async ({

@@ -1,7 +1,10 @@
 export type IconStyle = 'outline' | 'filled';
+export type IconFrame = 'none' | 'square' | 'circle';
 export type IconStrokeWidth = number | 'thin' | 'regular' | 'bold';
 
 export type IconProps = {
+  /** Square/Circle frames are supported by the eight compass arrows. */
+  frame?: IconFrame;
   size?: number | string;
   color?: string;
   strokeWidth?: IconStrokeWidth;
