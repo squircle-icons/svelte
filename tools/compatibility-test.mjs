@@ -113,6 +113,32 @@ try {
       .evaluateAll((paths) => paths.map((p) => p.getAttribute('d'))),
   );
   assert.equal(await page.locator('#dedicated svg').getAttribute('aria-hidden'), 'true');
+  for (const states of [
+    {
+      'sun-moon': 'moon',
+      'plus-x': 'x',
+      'menu-x': 'x',
+      'plus-minus': 'minus',
+      'maximize-minimize': 'minimize',
+    },
+    {
+      'sun-moon': 'sun',
+      'plus-x': 'plus',
+      'menu-x': 'menu',
+      'plus-minus': 'plus',
+      'maximize-minimize': 'maximize',
+    },
+  ]) {
+    await page.locator('#morph-target').click();
+    await page.waitForFunction(
+      (states) =>
+        Object.entries(states).every(
+          ([pair, state]) =>
+            document.querySelector(`[data-morph="${pair}"]`)?.getAttribute('data-state') === state,
+        ),
+      states,
+    );
+  }
   assert.deepEqual(errors, []);
 } finally {
   await browser?.close();
@@ -134,6 +160,7 @@ const report = {
     'numeric/preset widths',
     'Filled geometry',
     'accessibility',
+    'all five morph destination changes in both directions',
   ],
 };
 await writeFile(

@@ -6,11 +6,18 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { root } from './paths.js';
 await mkdir(resolve(root, '.artifacts/bundle'), { recursive: true });
 const reports = [];
-for (const [name, statement] of [
-  ['bell-static', "import Icon from '@squircle-icons/svelte/bell';"],
-  ['individual', "import Icon from '@squircle-icons/svelte/camera';"],
-  ['filled', "import Icon from '@squircle-icons/svelte/filled/folder';"],
-  ['barrel', "import { Camera as Icon } from '@squircle-icons/svelte';"],
+for (const [name, statement, expectedIcon] of [
+  ['bell-static', "import Icon from '@squircle-icons/svelte/bell';", 'Bell.svelte'],
+  ['individual', "import Icon from '@squircle-icons/svelte/camera';", 'Camera.svelte'],
+  ['filled', "import Icon from '@squircle-icons/svelte/filled/folder';", 'filled/Folder.svelte'],
+  ['math', "import Icon from '@squircle-icons/svelte/plus';", 'Plus.svelte'],
+  ['square', "import Icon from '@squircle-icons/svelte/plus-square';", 'PlusSquare.svelte'],
+  [
+    'circle',
+    "import Icon from '@squircle-icons/svelte/arrow-left-circle';",
+    'ArrowLeftCircle.svelte',
+  ],
+  ['barrel', "import { Camera as Icon } from '@squircle-icons/svelte';", 'Camera.svelte'],
 ] as const) {
   const transformedPackageModules = new Set<string>();
   const entry = resolve(root, `.artifacts/bundle/${name}.js`);
@@ -48,12 +55,6 @@ for (const [name, statement] of [
   const transformedIconModules = [...transformedPackageModules]
     .filter((file) => file.endsWith('.svelte'))
     .sort();
-  const expectedIcon =
-    name === 'filled'
-      ? 'filled/Folder.svelte'
-      : name === 'bell-static'
-        ? 'Bell.svelte'
-        : 'Camera.svelte';
   if (name !== 'barrel') {
     assert.deepEqual(
       transformedIconModules,
@@ -68,7 +69,7 @@ for (const [name, statement] of [
     );
     assert(
       ![...transformedPackageModules].some((file) =>
-        /controller|adapter\.svelte|motion\.(js|ts)/.test(file),
+        /controller|adapter\.svelte|motion\.(js|ts)|^morph\//.test(file),
       ),
       'Icons must not transform animation runtime',
     );
@@ -79,7 +80,7 @@ for (const [name, statement] of [
       'Unused icon code was retained',
     );
     assert(
-      !modules.some((id) => /controller|adapter\.svelte|motion\.(js|ts)/.test(id)),
+      !modules.some((id) => /controller|adapter\.svelte|motion\.(js|ts)|\/dist\/morph\//.test(id)),
       'Static bundle imported motion runtime',
     );
     assert(

@@ -29,6 +29,13 @@ import Camera from '@squircle-icons/svelte/camera';
 const named: ComponentProps<typeof Camera> = { style: 'filled', strokeWidth: 'bold' };
 // @ts-expect-error Invalid preset must stay rejected on older Svelte types.
 const invalid: ComponentProps<typeof Camera> = { strokeWidth: 'heavy' };
+// @ts-expect-error Named Bold style belongs to the unframed math symbols.
+const invalidStyle: ComponentProps<typeof Camera> = { style: 'bold' };
+import Plus from '@squircle-icons/svelte/plus';
+const boldPlus: ComponentProps<typeof Plus> = { style: 'bold' };
+import PlusSquare from '@squircle-icons/svelte/plus-square';
+// @ts-expect-error A frame is a separate static drawing with Outline/Filled styles.
+const invalidFrameStyle: ComponentProps<typeof PlusSquare> = { style: 'bold' };
 `,
 );
 

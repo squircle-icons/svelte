@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.4
+
+- Include all 121 approved static icons from 51 authoring families, with independent Square/Circle imports and no static frame prop.
+- Set Regular to 1.75 and Bold to 2.50. Preserve Thin 1.25 and numeric widths. Unframed Plus/Minus/X support an explicit Bold style; their unframed Filled is a solid mark.
+- Add five opt-in morph pairs. Plus X retains its approved continuous horizontal merge; the other pairs retain their documented experimental status.
+- Block unapproved static artwork at publication, preserve independent icon compilation, and expand packed/compatibility coverage for separate frame exports.
+- Keep Svelte 5.0.0 through version 5 and the declared Node/npm consumer minimums.
+
 ## 0.1.0-alpha.3
 
 - Remove the Tested older versions section from the public README; keep the Recommended version ranges. Compatibility metadata and automated checks remain unchanged.

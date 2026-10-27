@@ -9,11 +9,9 @@
     label,
     class: className,
     style: iconStyle = 'outline',
-  }: IconProps = $props();
+  }: Omit<IconProps, 'style'> & { style?: 'outline' | 'filled' } = $props();
   const accessibleLabel = $derived(label?.trim());
-  const resolvedStrokeWidth = $derived(
-    iconStyle === 'bold' ? 2.5 : resolveStrokeWidth(strokeWidth),
-  );
+  const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));
   const gapWidth = $derived(
     Number.isFinite(resolvedStrokeWidth) ? Math.min(6, Math.max(0.25, resolvedStrokeWidth)) : 1.75,
   );

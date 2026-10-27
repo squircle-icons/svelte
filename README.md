@@ -10,7 +10,7 @@ Native Svelte 5 components generated from the versioned [core](https://github.co
 npm install @squircle-icons/svelte@alpha
 ```
 
-Release `0.1.0-alpha.3` contains all 20 owner-reviewed icons in both Outline and Filled styles. It includes the latest approved artwork and the compatibility requirements below. Earlier published versions retain their original contents and requirements.
+Release `0.1.0-alpha.4` contains 121 owner-reviewed static icons from 51 authoring families, including 35 Square and 35 Circle drawings. Every static icon has Outline and Filled styles. It includes the latest approved artwork and the compatibility requirements below. Earlier published versions retain their original contents and requirements.
 
 ### Recommended
 
@@ -38,7 +38,7 @@ Use the same import for both styles. `style="outline"` is the default; `style="f
 
 Common props are `size=24`, `color="currentColor"`, `style="outline"`, `strokeWidth="regular"`, optional `label` and `class`. Decorative icons omit `label`; meaningful icons receive one accessible name. Components add no tab stop or duplicate SVG title. Stroke presets are `thin` (1.25), `regular` (1.75), and `bold` (2.50); numbers remain supported for fine adjustments. Filled Folder uses `strokeWidth` for its bounded 0.25–6-unit divider gap; other Filled drawings have fixed geometry.
 
-Animation components, runtime, recipes and exports have been removed from the current source. The API has no `animate`, `hover`, `open`, or `reducedMotion` props and no playback methods.
+The old animated Folder/Bell API remains removed. Static icons have no `animate`, `hover`, `open`, or playback methods. Authored morph pairs use separate opt-in imports described below.
 
 ## Keep application builds small
 
@@ -91,50 +91,50 @@ Sync requires a committed, clean upstream checkout and exclusive use of the down
 
 The public package is `@squircle-icons/svelte`. Keep both `alpha` and `latest` distribution tags on the current release so the default npm page, default install and documented `@alpha` command stay in sync. Update the public homepage from the exact published npm version and its registry provenance; the independent local app keeps its separate development artifact. Original artwork and code are licensed under [MIT](LICENSE). See [migration provenance](MIGRATION.md).
 
-### Opt-in morph pairs
+## Static frames and Bold
 
-Import each authored pair directly:
+Frames are separate icons with independent imports. Static components have no `frame` prop:
 
 ```svelte
 <script>
-  import MenuXMorph from '@squircle-icons/svelte/morph/menu-x';
-  let open = $state(false);
+  import Plus from '@squircle-icons/svelte/plus';
+  import PlusSquare from '@squircle-icons/svelte/plus-square';
+  import PlusCircle from '@squircle-icons/svelte/plus-circle';
 </script>
 
-<button onclick={() => (open = !open)} aria-expanded={open} aria-label="Toggle menu">
-  <MenuXMorph x={open} size={24} />
+<Plus />
+<Plus style="bold" />
+<PlusSquare style="filled" />
+<PlusCircle style="outline" />
+```
+
+Only unframed Plus, Minus and X expose `style="bold"`, fixed at 2.50. Other icons select Outline or Filled; Outline thickness still supports presets and numbers. Unframed math Filled equals its solid Bold mark. Its Square/Circle Filled drawings use a Regular 1.75 cutout. Frames are available only where separately authored; Maximize, Minimize and External Link have no framed variants. New Tab uses `plus-square` rather than a duplicate export.
+
+## Opt-in morph pairs
+
+```svelte
+<script>
+  import SunMoonMorph from '@squircle-icons/svelte/morph/sun-moon';
+  let dark = $state(false);
+</script>
+
+<button onclick={() => (dark = !dark)} aria-pressed={dark} aria-label="Dark mode">
+  <SunMoonMorph moon={dark} size={24} />
 </button>
 ```
 
-The Plus ↔ Minus proposal is `morph/plus-minus`; use `minus={true}` for Minus
-and `minus={false}` for Plus. It folds the vertical arm onto a fixed horizontal
-arm at0.6× of the shared spring rate. Filled uses the Square frame endpoints and
-cuts out exactly the same moving mark. The new motion awaits owner review.
+Bind the destination prop to the state your application already uses. The host application owns theme changes, persistence and interaction. Keep the same component mounted to reverse smoothly in flight.
 
-Other pairs are `morph/sun-moon` (`moon` destination prop) and `morph/plus-x`
-(`x` destination prop). All support `style="outline" | "filled"`, `size`, `color`,
-`class`, `label`, `speed`, controlled `progress`, `onprogress` and `onsettle`.
-Omit `progress` for animation; set it to a value from 0 to 1 for manual inspection.
-An omitted label makes the SVG decorative. Reversal retains position and velocity;
-reduced motion switches directly to the requested endpoint.
+| Import suffix             | Destination prop | Motion status                               |
+| ------------------------- | ---------------- | ------------------------------------------- |
+| `morph/sun-moon`          | `moon`           | Owner-preferred reference; experimental     |
+| `morph/plus-x`            | `x`              | Approved horizontal-merge motion; 0.4× pace |
+| `morph/menu-x`            | `x`              | Experimental horizontal merge; 0.6× pace    |
+| `morph/plus-minus`        | `minus`          | Experimental single fold; 0.6× pace         |
+| `morph/maximize-minimize` | `minimize`       | Experimental inward corner fold; 0.6× pace  |
 
-Sun Moon is the preferred motion reference. Plus X's continuous horizontal merge
-is owner-approved and retains its 0.4× pace. Menu X is a new proposal at 0.6× and
-awaits visual review. Regular morph strokes are fixed at 1.75; Menu Filled starts
-at its approved Bold 2.50 and changes geometrically into the boxed X cutout.
-Static imports do not load any morph runtime. See core `MORPH.md` for the formal
-construction, approval and verification contract.
+All pairs support `style="outline|filled"`, `size`, `color`, `class`, `label`, `speed`, `progress`, `onprogress` and `onsettle`. Omit `progress` for animation; a supplied 0–1 value controls manual inspection instead. Morph weights follow their authored endpoints and have no `strokeWidth` prop. Reversal preserves progress and velocity, hidden documents pause playback, and reduced motion switches immediately. Static imports never load this runtime.
 
-Owner global weight update (2026-10-27): all default Outline, Filled construction and morph endpoint weights now use Regular1.75; Thin1.25, Bold2.50 and Lab step.25. Menu/Search Filled uses2.50. The accepted morph timing is unchanged.
+Plus X, Menu X and Plus Minus also accept their own `frame="none|square|circle"` option, selecting matching authored geometry at both ends. Outline defaults to None and Filled to Square. Sun Moon and Maximize Minimize are unframed. Static endpoint approval is separate from motion approval; experimental morphs remain subject to change.
 
-### Arrow and Chevron frames
-
-The eight Arrow and four single and four Double Chevron directions accept `frame="none" | "square" | "circle"` in unified and direct Filled imports. All three share the same smaller arrow glyph, with equal shaft/head sizes in every direction. Frames stay upright; Square/Circle have2px outer margins at Regular1.75. Filled frames have a negative-space solid-head arrow. Other icons ignore the frame prop. The arrow family and its new frames await owner review.
-
-Chevron uses the same24-variant idea:four single and four Double Chevrons times None/Square/Circle, with Outline/Filled for each. Arm lengths stay equal across directions, and each rotated Chevron is recentered without resizing. Both directional families reserve space for frames and keep the same standalone/framed glyphs.
-
-Chevron uses only four cardinal directions. Double Chevron (`chevrons-up`, `chevrons-down`, `chevrons-left`, `chevrons-right`) uses the same four directions. Both support None/Square/Circle, for24 variants total; there are no diagonal Chevron exports.
-
-### Plus / Minus / X styles
-
-These three symbols expose `style="outline" | "bold" | "filled"` and `frame="none" | "square" | "circle"`. Bold is fixed at2.50 and unboxed. Filled with no frame equals the unboxed Bold geometry, like Menu/Search; Square/Circle Filled cuts the exact Regular1.75 glyph from its solid frame. The shared source mark keeps identical placement in every frame. Plus/X share optical width and height; Minus shares their horizontal span. The boxed morph endpoints use the Square Filled source while preserving the approved motion and pace.
+Public releases run `pnpm release:check` after verification to reject unapproved static artwork in any style or frame. Local `pnpm pack` remains available for draft review without publishing.

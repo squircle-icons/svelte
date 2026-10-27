@@ -11,6 +11,7 @@
   let filled = $state(false);
   let width = $state('regular');
   let ready = $state(false);
+  let active = $state(false);
   onMount(() => {
     ready = true;
   });
@@ -40,12 +41,13 @@
 </div>
 <div id="folder"><Folder style="filled" strokeWidth={width} /></div>
 <div id="dedicated"><FilledCamera /></div>
-<div id="morph"><SunMoonMorph progress={0.5} label="Compatible morph" /></div>
+<button id="morph-target" onclick={() => (active = !active)}>Toggle morph destinations</button>
+<div id="morph"><SunMoonMorph moon={active} label="Compatible morph" /></div>
 
-<PlusXMorph progress={0.5} label="Compatible Plus X morph" />
+<PlusXMorph x={active} label="Compatible Plus X morph" />
 
-<MenuXMorph progress={0.5} label="Compatible Menu X morph" />
+<MenuXMorph x={active} label="Compatible Menu X morph" />
 
-<PlusMinusMorph progress={0.5} label="Compatible Plus Minus morph" />
+<PlusMinusMorph minus={active} label="Compatible Plus Minus morph" />
 
-<MaximizeMinimizeMorph progress={0.5} label="Compatible Maximize Minimize morph" />
+<MaximizeMinimizeMorph minimize={active} label="Compatible Maximize Minimize morph" />

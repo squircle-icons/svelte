@@ -1,6 +1,6 @@
 {
   "name": "@squircle-icons/svelte",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "type": "module",
   "license": "MIT",
   "sideEffects": false,
@@ -1275,9 +1275,10 @@
     "dependency:check": "node tools/dependency-check.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepublishOnly": "pnpm verify",
+    "prepublishOnly": "pnpm verify && pnpm release:check",
     "test:imports": "node --import tsx tools/import-benchmark.ts",
-    "test:compat": "node tools/compatibility-test.mjs"
+    "test:compat": "node tools/compatibility-test.mjs",
+    "release:check": "node --import tsx tools/release-check.ts"
   },
   "packageManager": "pnpm@10.10.0",
   "engines": {
@@ -1300,7 +1301,7 @@
     "vitest": "5.0.5",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
-    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-0202ae0c9fb3.tgz"
+    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-30d407ec6618.tgz"
   },
   "description": "Original Outline and Filled icons as native Svelte 5 components.",
   "repository": {
