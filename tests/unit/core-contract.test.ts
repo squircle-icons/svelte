@@ -18,8 +18,8 @@ it('consumes validated fill-only Folder geometry with a deliberate cutout', () =
   expect(filled?.parts).toEqual(['body']);
 });
 
-it('retains fourteen approvals and nineteen drafts including the math frame family', () => {
-  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(14);
+it('retains prior approvals while reopening Menu and Trash revisions', () => {
+  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(12);
   expect(
     icons.filter((icon) => icon.metadata.review?.status !== 'approved').map((icon) => icon.name),
   ).toEqual([
@@ -39,8 +39,10 @@ it('retains fourteen approvals and nineteen drafts including the math frame fami
     'chevrons-left',
     'chevrons-right',
     'chevrons-up',
+    'menu',
     'minus',
     'plus',
+    'trash',
     'x',
   ]);
   for (const icon of icons) {

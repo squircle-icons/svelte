@@ -708,7 +708,7 @@ test('Copy has 1px junction breaks, 4px inter-page spacing and standard corners'
 });
 
 for (const icon of ['menu', 'search'])
-  test(`Filled ${icon} uses Bold without a box and retains 2px primary margins`, async ({
+  test(`Filled ${icon} uses unboxed Bold with its current family padding`, async ({
     page,
   }, info) => {
     const values = await page.evaluate((icon) => {
@@ -721,12 +721,12 @@ for (const icon of ['menu', 'search'])
       return {
         margins: [box.x, 24 - box.x - box.width, box.y, 24 - box.y - box.height],
         emptyCorner: !ink(3, 3),
-        emptyCenter: !ink(icon === 'search' ? 9.95977012 : 12, icon === 'search' ? 9.95977012 : 9),
-        boldInk: icon === 'menu' ? ink(12, 6.95) : ink(3.125, 9.95977012),
+        emptyCenter: !ink(icon === 'search' ? 9.95977012 : 12, icon === 'search' ? 9.95977012 : 10),
+        boldInk: icon === 'menu' ? ink(12, 8) : ink(3.125, 9.95977012),
       };
     }, icon);
     for (const margin of values.margins.slice(0, icon === 'search' ? 4 : 2))
-      expect(margin).toBeCloseTo(2, 3);
+      expect(margin).toBeCloseTo(icon === 'menu' ? 5.75 : 2, 3);
     expect(values.emptyCorner).toBe(true);
     expect(values.emptyCenter).toBe(true);
     expect(values.boldInk).toBe(true);

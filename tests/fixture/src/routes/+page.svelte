@@ -718,6 +718,17 @@
   </div>
 </section>
 
+<section data-testid="menu-frame-proof">
+  {#each ['none', 'square', 'circle'] as frame}
+    <div data-testid={'menu-frame-' + frame + '-outline'}>
+      <Menu frame={frame as 'none' | 'square' | 'circle'} size={96} />
+    </div>
+    <div data-testid={'menu-frame-' + frame + '-filled'}>
+      <FilledMenu frame={frame as 'none' | 'square' | 'circle'} size={96} />
+    </div>
+  {/each}
+</section>
+
 <style>
   .math-proof {
     width: 950px;

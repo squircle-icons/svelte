@@ -76,7 +76,8 @@ function upperBox(g) {
   // Keep each boundary's horizontal station fixed. The future X branches start
   // collapsed on the bar's lower edge, then open without contour crossings.
   const source = (points, side) =>
-    points.map(([x]) => {
+    points.map(([station]) => {
+      const x = (station * (g.menuExtent + h)) / 10;
       const capX = Math.max(0, Math.abs(x) - g.menuExtent);
       return [x, -g.menuOffset + side * Math.sqrt(Math.max(0, h * h - capX * capX))];
     });
