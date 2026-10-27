@@ -518,7 +518,7 @@
     label="Experimental Plus X morph"
   />
   <div data-testid="plus-x-intermediate-outline">
-    <PlusXMorph frame="none" progress={plusXProgress ?? 0} size={96} />
+    <PlusXMorph frame={morphFrame} progress={plusXProgress ?? 0} size={96} />
   </div>
   <div data-testid="plus-x-intermediate-filled">
     <PlusXMorph frame={morphFrame} progress={plusXProgress ?? 0} style="filled" size={96} />
@@ -678,6 +678,9 @@
       size={96}
       label="Menu X fixture"
     />{/if}
+  <div data-testid="menu-x-intermediate-outline">
+    <MenuXMorph frame={morphFrame} progress={menuXProgress ?? 0} size={96} />
+  </div>
   <div data-testid="menu-x-intermediate-filled">
     <MenuXMorph frame={morphFrame} progress={menuXProgress ?? 0} style="filled" size={96} />
   </div>
@@ -744,7 +747,7 @@
       label="Experimental Plus Minus morph"
     />{/if}
   <div data-testid="plus-minus-intermediate-outline">
-    <PlusMinusMorph frame="none" progress={plusMinusProgress ?? 0} size={96} />
+    <PlusMinusMorph frame={morphFrame} progress={plusMinusProgress ?? 0} size={96} />
   </div>
   <div data-testid="plus-minus-intermediate-filled">
     <PlusMinusMorph frame={morphFrame} progress={plusMinusProgress ?? 0} style="filled" size={96} />

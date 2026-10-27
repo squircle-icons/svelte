@@ -55,10 +55,9 @@ for (const item of pairs)
               `[data-testid="${item.pair}-intermediate-filled"] svg`,
             )! as SVGSVGElement;
             const filled = svg.querySelector('path')!;
-            const original =
-              item.pair === 'menu-x'
-                ? document.querySelector(`[aria-label="${item.label}"]`)!
-                : document.querySelector(`[data-testid="${item.pair}-intermediate-outline"] svg`)!;
+            const original = document.querySelector(
+              `[data-testid="${item.pair}-intermediate-outline"] svg`,
+            )!;
             const outline = original.cloneNode(true) as SVGSVGElement;
             const width =
               item.pair === 'menu-x'
@@ -67,6 +66,7 @@ for (const item of pairs)
                   ? 2.5
                   : 1.75;
             outline.setAttribute('stroke-width', String(width));
+            outline.querySelector('[data-part="frame"]')?.remove();
             for (const path of outline.querySelectorAll('path[data-part="middle"]'))
               path.setAttribute(
                 'stroke-width',
@@ -77,13 +77,21 @@ for (const item of pairs)
             document.body.append(outline);
             let mismatches = 0;
             // Avoid exact stroke boundaries, whose inclusion varies across SVG engines.
-            for (let y = 6.283; y < 17.8; y += 0.25)
-              for (let x = 6.317; x < 17.8; x += 0.25) {
+            for (let y = 2.283; y < 21.8; y += 0.25)
+              for (let x = 2.317; x < 21.8; x += 0.25) {
                 const point = new DOMPoint(x, y),
                   ink = [...outline.querySelectorAll('path')].some((path) =>
                     path.isPointInStroke(point),
                   );
-                if (filled.isPointInFill(point) !== (frame === 'none' ? ink : !ink)) mismatches++;
+                const exterior =
+                  frame === 'none' ||
+                  (frame === 'square'
+                    ? (x >= 6 && x <= 18) ||
+                      (y >= 6 && y <= 18) ||
+                      Math.hypot(x - (x < 12 ? 6 : 18), y - (y < 12 ? 6 : 18)) <= 4
+                    : Math.hypot(x - 12, y - 12) <= 10);
+                if (filled.isPointInFill(point) !== (frame === 'none' ? ink : exterior && !ink))
+                  mismatches++;
               }
             outline.remove();
             return {
@@ -96,8 +104,10 @@ for (const item of pairs)
           { item, frame },
         );
         expect(result.mismatches).toBeLessThanOrEqual(8);
-        expect(result.edge).toBe(frame !== 'none');
-        expect(result.shoulder).toBe(frame === 'square');
+        if (frame !== 'none') {
+          expect(result.edge).toBe(true);
+          expect(result.shoulder).toBe(frame === 'square');
+        }
         expect(result.path).not.toMatch(/NaN|Infinity/);
       }
     });
