@@ -140,7 +140,7 @@ test('the fixed Filled box cuts out the exact moving Outline at intermediate fra
     await expect(morph(page)).toHaveAttribute('data-progress', progress.toFixed(5));
     const result = await page.evaluate(() => {
       const outline = document.querySelector(
-        '[data-testid="plus-minus-intermediate-outline"] path',
+        '[data-testid="plus-minus-intermediate-outline"] path[data-part="body"]',
       ) as SVGPathElement;
       const filled = document.querySelector(
         '[data-testid="plus-minus-intermediate-filled"] path',
