@@ -1,5 +1,11 @@
 import { expect, test } from '@playwright/test';
 const arrows = [
+  'chevron-up-down',
+  'chevron-left-right',
+  'chevron-line-up',
+  'chevron-line-down',
+  'chevron-line-left',
+  'chevron-line-right',
   'arrow-left',
   'arrow-right',
   'arrow-up',
@@ -92,7 +98,11 @@ test('Square and Circle use the identical standalone glyph, fixed frames and mat
       expect(result.glyph).toBe(originals[icon].outline);
       expect(result.mismatches).toBeLessThanOrEqual(4);
       for (const margin of result.margins) expect(margin).toBeCloseTo(2, 4);
-      if (!icon.startsWith('chevrons-')) expect(result.emptyCenter).toBe(true);
+      if (
+        !icon.startsWith('chevrons-') &&
+        !['chevron-up-down', 'chevron-left-right'].includes(icon)
+      )
+        expect(result.emptyCenter).toBe(true);
       expect(result.solidBorder).toBe(true);
     }
     if (info.project.name === 'chromium')
@@ -117,20 +127,26 @@ test('even Bold leaves clearance between the arrow and either frame in every dir
             .getAttribute('d')!
             .match(/-?\d*\.?\d+/g)!
             .map(Number);
+          // A radial probe can cross another part of a compound glyph (for
+          // example a stop bar). Measure true clearance from each vertex to
+          // the convex inner frame instead. Round joins/caps stay inside the
+          // union of the centerline's radius-1.25 discs.
+          const halfStroke = Number(svg.getAttribute('stroke-width')) / 2;
+          const frameShape = svg.querySelector<SVGGeometryElement>('path,circle')!;
+          const innerHalf = frameShape.getBBox().width / 2 - halfStroke;
+          const innerCorner = 3.125 - halfStroke;
           return values.every((_, index) => {
             if (index % 2) return true;
-            const dx = values[index] - 12,
-              dy = values[index + 1] - 12,
-              length = Math.hypot(dx, dy);
-            const border =
-              frame === 'circle'
-                ? 7.875
-                : 7.5 / Math.max(Math.abs(dx / length), Math.abs(dy / length));
-            const radius = (length + 1.25 + border) / 2;
-            const point = new DOMPoint(12 + (dx / length) * radius, 12 + (dy / length) * radius);
-            return ![...svg.querySelectorAll<SVGGeometryElement>('path,circle')].some((shape) =>
-              shape.isPointInStroke(point),
-            );
+            const dx = Math.abs(values[index] - 12),
+              dy = Math.abs(values[index + 1] - 12);
+            if (frame === 'circle') return innerHalf - Math.hypot(dx, dy) - halfStroke > 0;
+            const qx = dx - (innerHalf - innerCorner),
+              qy = dy - (innerHalf - innerCorner);
+            const signedDistance =
+              Math.hypot(Math.max(qx, 0), Math.max(qy, 0)) +
+              Math.min(Math.max(qx, qy), 0) -
+              innerCorner;
+            return -signedDistance - halfStroke > 0;
           });
         }),
       { names: arrows, frame },
@@ -148,7 +164,9 @@ test('Single and Double Chevron provide 24 forms with shared cardinal geometry',
     await expect(sheet.locator(`svg[data-frame="${frame}"]`)).toHaveCount(16);
   const geometry = await page.evaluate(() =>
     [...document.querySelectorAll('[data-testid$="-outline-contour"]')]
-      .filter((el) => /^chevrons?-/.test(el.getAttribute('data-testid')!))
+      .filter((el) =>
+        /^chevrons?-(up|down|left|right)-outline-contour$/.test(el.getAttribute('data-testid')!),
+      )
       .map((el) => {
         const values = el
           .querySelector('path')!

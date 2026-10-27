@@ -20,6 +20,8 @@
   import X from '@squircle-icons/svelte/x';
   import FilledX from '@squircle-icons/svelte/filled/x';
   import Copy from '@squircle-icons/svelte/copy';
+  import NewWindow from '@squircle-icons/svelte/new-window';
+  import FilledNewWindow from '@squircle-icons/svelte/filled/new-window';
   import FilledCopy from '@squircle-icons/svelte/filled/copy';
   import FilledSearch from '@squircle-icons/svelte/filled/search';
   import ChevronDown from '@squircle-icons/svelte/chevron-down';
@@ -122,6 +124,26 @@
   import FilledChevronLeft from '@squircle-icons/svelte/filled/chevron-left';
   import ChevronsRight from '@squircle-icons/svelte/chevrons-right';
   import FilledChevronsRight from '@squircle-icons/svelte/filled/chevrons-right';
+  import ChevronUpDown from '@squircle-icons/svelte/chevron-up-down';
+  import FilledChevronUpDown from '@squircle-icons/svelte/filled/chevron-up-down';
+  import ChevronLeftRight from '@squircle-icons/svelte/chevron-left-right';
+  import FilledChevronLeftRight from '@squircle-icons/svelte/filled/chevron-left-right';
+  import ChevronLineUp from '@squircle-icons/svelte/chevron-line-up';
+  import FilledChevronLineUp from '@squircle-icons/svelte/filled/chevron-line-up';
+  import ChevronLineDown from '@squircle-icons/svelte/chevron-line-down';
+  import FilledChevronLineDown from '@squircle-icons/svelte/filled/chevron-line-down';
+  import ChevronLineLeft from '@squircle-icons/svelte/chevron-line-left';
+  import FilledChevronLineLeft from '@squircle-icons/svelte/filled/chevron-line-left';
+  import ChevronLineRight from '@squircle-icons/svelte/chevron-line-right';
+  import FilledChevronLineRight from '@squircle-icons/svelte/filled/chevron-line-right';
+  const chevronControls = [
+    { name: 'chevron-up-down', Outline: ChevronUpDown, Filled: FilledChevronUpDown },
+    { name: 'chevron-left-right', Outline: ChevronLeftRight, Filled: FilledChevronLeftRight },
+    { name: 'chevron-line-up', Outline: ChevronLineUp, Filled: FilledChevronLineUp },
+    { name: 'chevron-line-down', Outline: ChevronLineDown, Filled: FilledChevronLineDown },
+    { name: 'chevron-line-left', Outline: ChevronLineLeft, Filled: FilledChevronLineLeft },
+    { name: 'chevron-line-right', Outline: ChevronLineRight, Filled: FilledChevronLineRight },
+  ];
   const chevrons = [
     { name: 'chevron-up', label: 'Up', Outline: ChevronUp, Filled: FilledChevronUp },
     { name: 'chevron-down', label: 'Down', Outline: ChevronDown, Filled: FilledChevronDown },
@@ -496,7 +518,7 @@
     label="Experimental Plus X morph"
   />
   <div data-testid="plus-x-intermediate-outline">
-    <PlusXMorph frame={'none'} progress={plusXProgress ?? 0} size={96} />
+    <PlusXMorph frame="none" progress={plusXProgress ?? 0} size={96} />
   </div>
   <div data-testid="plus-x-intermediate-filled">
     <PlusXMorph frame={morphFrame} progress={plusXProgress ?? 0} style="filled" size={96} />
@@ -650,7 +672,7 @@
     oninput={(e) => (menuXProgress = Number(e.currentTarget.value))}
   />
   {#if movingMorphsMounted}<MenuXMorph
-      frame={'none'}
+      frame="none"
       x={menuXTarget}
       progress={menuXProgress}
       size={96}
@@ -722,7 +744,7 @@
       label="Experimental Plus Minus morph"
     />{/if}
   <div data-testid="plus-minus-intermediate-outline">
-    <PlusMinusMorph frame={'none'} progress={plusMinusProgress ?? 0} size={96} />
+    <PlusMinusMorph frame="none" progress={plusMinusProgress ?? 0} size={96} />
   </div>
   <div data-testid="plus-minus-intermediate-filled">
     <PlusMinusMorph frame={morphFrame} progress={plusMinusProgress ?? 0} style="filled" size={96} />
@@ -740,7 +762,84 @@
   {/each}
 </section>
 
+<section class="chevron-controls-proof" data-testid="chevron-controls-proof">
+  <h2>Opposing Chevron and Chevron Line</h2>
+  <div class="chevron-controls-grid">
+    {#each chevronControls as item}
+      <article>
+        <h3>{item.name}</h3>
+        <div data-testid={item.name + '-outline-contour'}>
+          <item.Outline size={96} frame={arrowFrame} strokeWidth={arrowWeight} />
+        </div>
+        <div data-testid={item.name + '-filled-contour'}>
+          <item.Filled size={96} frame={arrowFrame} />
+        </div>
+        {#each [16, 20, 24, 48] as size}
+          <item.Outline {size} /><item.Filled {size} />
+        {/each}
+      </article>
+    {/each}
+  </div>
+</section>
+
+<section data-testid="check-frame-proof">
+  {#each ['none', 'square', 'circle'] as frame}
+    <div data-testid={'check-frame-' + frame + '-outline'}>
+      <Check frame={frame as 'none' | 'square' | 'circle'} strokeWidth={arrowWeight} size={96} />
+    </div>
+    <div data-testid={'check-frame-' + frame + '-filled'}>
+      <FilledCheck frame={frame as 'none' | 'square' | 'circle'} size={96} />
+    </div>
+  {/each}
+</section>
+
+<div data-testid="new-window-outline-contour">
+  <NewWindow size={96} label="Outline New Window contour" />
+</div>
+<div data-testid="new-window-filled-contour">
+  <FilledNewWindow size={96} label="Filled New Window contour" />
+</div>
+<section class="rotation-sheet" data-testid="copy-window-proof">
+  <header>
+    <h2>Copy and New Window</h2>
+    <p>Mirrored foreground sides · Preserved natural silhouettes</p>
+  </header>
+  <div class="rotation-grid">
+    {#each [{ name: 'Copy', Icon: Copy }, { name: 'New Window', Icon: NewWindow }] as item}
+      {#each ['outline', 'filled'] as style}
+        <article>
+          <h3>{item.name} · {style}</h3>
+          <item.Icon size={72} style={style as 'outline' | 'filled'} />
+          <div>
+            {#each [16, 20, 24, 48] as size}<item.Icon
+                {size}
+                style={style as 'outline' | 'filled'}
+              />{/each}
+          </div>
+        </article>
+      {/each}
+    {/each}
+  </div>
+</section>
+
 <style>
+  .chevron-controls-proof {
+    width: 1000px;
+    padding: 24px;
+    color: #27272a;
+    background: #fff;
+  }
+  .chevron-controls-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .chevron-controls-grid h3 {
+    font: 13px system-ui;
+  }
+  .chevron-controls-grid article > div {
+    display: inline-block;
+  }
   .math-proof {
     width: 950px;
     padding: 28px;

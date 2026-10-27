@@ -209,7 +209,7 @@ for (const icon of [
   'upload',
   'trash',
 ])
-  test(`Filled ${icon} preserves ${['menu', 'search'].includes(icon) ? 'Bold' : 'Regular'} Outline reference contours and openings at native and rotated poses`, async ({
+  test(`Filled ${icon} preserves ${['menu', 'search', 'check'].includes(icon) ? 'Bold' : 'Regular'} Outline reference contours and openings at native and rotated poses`, async ({
     page,
   }) => {
     const results = await page.evaluate(async (icon) => {
@@ -223,7 +223,7 @@ for (const icon of [
         svg.setAttribute('height', String(size));
         svg.setAttribute('fill', '#000');
         svg.setAttribute('stroke', outline ? '#000' : 'none');
-        if (!outline && ['plus', 'x', 'check'].includes(icon)) {
+        if (!outline && ['plus', 'x'].includes(icon)) {
           // Owner-requested Filled boxes are a deliberate exterior exception.
           // The negative-space glyph matches the unchanged Outline exterior for both marks.
           const path = svg.querySelector('path')!;
@@ -241,7 +241,10 @@ for (const icon of [
           }
         }
         if (outline) {
-          svg.setAttribute('stroke-width', ['menu', 'search'].includes(icon) ? '2.5' : '1.75');
+          svg.setAttribute(
+            'stroke-width',
+            ['menu', 'search', 'check'].includes(icon) ? '2.5' : '1.75',
+          );
           // Line marks keep an open interior; Filled Copy paints only its front page solid.
           if (
             [
@@ -563,7 +566,7 @@ test('Round 4 exposes six pairs on light and dark review sheets', async ({ page 
   }
 });
 
-for (const icon of ['plus', 'x', 'check'])
+for (const icon of ['plus', 'x'])
   test(`Filled ${icon} has a rounded box with 2px primary clearance around its glyph cutout`, async ({
     page,
   }) => {
@@ -588,9 +591,7 @@ for (const icon of ['plus', 'x', 'check'])
           glyph.y - box.y,
           box.y + box.height - glyph.y - glyph.height,
         ],
-        emptyCenter: !filled.isPointInFill(
-          new DOMPoint(icon === 'check' ? 9.25 : 12, icon === 'check' ? 16.95 : 12),
-        ),
+        emptyCenter: !filled.isPointInFill(new DOMPoint(12, 12)),
         solidBorder: filled.isPointInFill(new DOMPoint(box.x + 0.75, 12)),
         clearOutside: !filled.isPointInFill(new DOMPoint(box.x - 0.25, 12)),
         roundedCorner: !filled.isPointInFill(new DOMPoint(box.x + 0.1, box.y + 0.1)),
@@ -599,8 +600,7 @@ for (const icon of ['plus', 'x', 'check'])
     }, icon);
     // Chromium and WebKit approximate circular-arc bounds by up to 0.0003 native units.
     // The rotated contour tests independently check the unchanged 1.75 glyph weight.
-    for (const [index, padding] of result.padding.entries())
-      expect(padding).toBeCloseTo(icon === 'check' ? (index >= 2 ? 4.19230769 : 2) : 4.625, 3);
+    for (const padding of result.padding) expect(padding).toBeCloseTo(4.625, 3);
     if (['x', 'plus'].includes(icon)) {
       for (const margin of result.outerMargins) expect(margin).toBeCloseTo(2, 5);
       for (const margin of result.glyphMargins) expect(margin).toBeCloseTo(6.625, 3);
@@ -667,45 +667,57 @@ test('unboxed Camera and Folder retain horizontal proportions with a 2px primary
       .screenshot({ path: '.artifacts/previews/camera-folder-rounded.png' });
 });
 
-test('Copy has 1px junction breaks, 4px inter-page spacing and standard corners', async ({
-  page,
-}, info) => {
-  const result = await page.evaluate(() => {
-    const outline = document.querySelector(
-      '[data-testid="copy-outline-contour"] svg',
-    ) as SVGSVGElement;
-    const backPath = outline.querySelector('[data-part="back"] path') as SVGPathElement;
-    const back = backPath.getBBox();
-    const start = backPath.getPointAtLength(0);
-    const end = backPath.getPointAtLength(backPath.getTotalLength());
-    const front = (outline.querySelector('[data-part="front"] path') as SVGPathElement).getBBox();
-    const filled = document.querySelector(
-      '[data-testid="copy-filled-contour"] svg',
-    ) as SVGSVGElement;
-    const frontFill = filled.querySelector('[data-part="front"] path') as SVGPathElement;
-    const b = frontFill.getBBox();
-    const f = filled.getBBox();
-    const h = Number(outline.getAttribute('stroke-width')) / 2;
-    return {
-      gaps: [front.x - back.x - 2 * h, front.y - back.y - 2 * h],
-      junctionGaps: [front.x - start.x - 2 * h, front.y - end.y - 2 * h],
-      margins: [f.x, f.y, 24 - f.x - f.width, 24 - f.y - f.height],
-      stroke: h * 2,
-      roundedCorner: !frontFill.isPointInFill(new DOMPoint(b.x + 0.9, b.y + 0.9)),
-      solidFront: frontFill.isPointInFill(new DOMPoint(14, 14)),
-    };
+for (const icon of ['copy', 'new-window'])
+  test(`${icon} has 1px junction breaks, 4px inter-page spacing and standard corners`, async ({
+    page,
+  }, info) => {
+    const result = await page.evaluate((icon) => {
+      const outline = document.querySelector(
+        `[data-testid="${icon}-outline-contour"] svg`,
+      ) as SVGSVGElement;
+      const backPath = outline.querySelector('[data-part="back"] path') as SVGPathElement;
+      const back = backPath.getBBox();
+      const start = backPath.getPointAtLength(0);
+      const end = backPath.getPointAtLength(backPath.getTotalLength());
+      const [upperEndpoint, sideEndpoint] = [start, end].sort((a, b) => a.y - b.y);
+      const front = (outline.querySelector('[data-part="front"] path') as SVGPathElement).getBBox();
+      const filled = document.querySelector(
+        `[data-testid="${icon}-filled-contour"] svg`,
+      ) as SVGSVGElement;
+      const frontFill = filled.querySelector('[data-part="front"] path') as SVGPathElement;
+      const b = frontFill.getBBox();
+      const f = filled.getBBox();
+      const h = Number(outline.getAttribute('stroke-width')) / 2;
+      return {
+        gaps: [
+          icon === 'copy'
+            ? back.x + back.width - front.x - front.width - 2 * h
+            : front.x - back.x - 2 * h,
+          front.y - back.y - 2 * h,
+        ],
+        junctionGaps: [
+          icon === 'copy'
+            ? sideEndpoint.x - front.x - front.width - 2 * h
+            : front.x - sideEndpoint.x - 2 * h,
+          front.y - upperEndpoint.y - 2 * h,
+        ],
+        margins: [f.x, f.y, 24 - f.x - f.width, 24 - f.y - f.height],
+        stroke: h * 2,
+        roundedCorner: !frontFill.isPointInFill(new DOMPoint(b.x + 0.9, b.y + 0.9)),
+        solidFront: frontFill.isPointInFill(new DOMPoint(icon === 'copy' ? 10 : 14, 14)),
+      };
+    }, icon);
+    for (const gap of result.gaps) expect(gap).toBeCloseTo(4, 4);
+    for (const gap of result.junctionGaps) expect(gap).toBeCloseTo(1, 4);
+    for (const margin of result.margins) expect(margin).toBeCloseTo(2, 4);
+    expect(result.stroke).toBe(1.75);
+    expect(result.roundedCorner).toBe(true);
+    expect(result.solidFront).toBe(true);
+    if (info.project.name === 'chromium')
+      await page
+        .getByTestId(icon === 'copy' ? 'copy-review-sheet' : 'copy-window-proof')
+        .screenshot({ path: `.artifacts/previews/${icon}-spaced-rounded.png` });
   });
-  for (const gap of result.gaps) expect(gap).toBeCloseTo(4, 4);
-  for (const gap of result.junctionGaps) expect(gap).toBeCloseTo(1, 4);
-  for (const margin of result.margins) expect(margin).toBeCloseTo(2, 4);
-  expect(result.stroke).toBe(1.75);
-  expect(result.roundedCorner).toBe(true);
-  expect(result.solidFront).toBe(true);
-  if (info.project.name === 'chromium')
-    await page
-      .getByTestId('copy-review-sheet')
-      .screenshot({ path: '.artifacts/previews/copy-spaced-rounded.png' });
-});
 
 for (const icon of ['menu', 'search'])
   test(`Filled ${icon} uses unboxed Bold with its current family padding`, async ({

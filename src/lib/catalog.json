@@ -7,6 +7,57 @@
   },
   "icons": [
     {
+      "name": "align-center",
+      "description": "Four rounded text lines aligned center.",
+      "tags": ["text", "editor", "paragraph", "align", "center"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Four horizontal bars at y7.5,10.5,13.5,16.5 alternate full length9 (x7.5..16.5) and shorter length6. Short bars are left-aligned x7.5..13.5, centered x9..15 or right-aligned x10.5..16.5 according to identity. Unframed Filled is the exact Bold2.50 capsule expansion (radius1.25), like Menu/Search; framed Filled cuts out that same Bold silhouette. Regular visible bounds6.625..17.375 on each axis; Bold/Filled bounds6.25..17.75. Filled row clearance is.5px and circular clearance remains greater than.26px even when the Outline frame is Bold. All None/Square/Circle forms reuse exactly the same native glyph, with no per-frame scale or translation. Outline is Regular1.75 with round caps/joins; Thin1.25 and Bold2.50 use the same centerlines. Standard solid frame exteriors are bounds2..22, Square radius4 / Circle radius10; Outline frame centerlines are bounds2.875..21.125 with radius3.125 / circle radius9.125. Frames remain upright, with2px default outer margins. Framed Filled subtracts the exact standalone Filled silhouette as transparent negative space. All geometry is original to this project; external references establish meaning only. Native X/Y100/100, rotation0. All new forms remain draft pending owner review.",
+      "filledTreatment": "bold-stroke",
+      "review": {
+        "status": "draft",
+        "note": "New action/alignment icon and frame variants; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "align-left",
+      "description": "Four rounded text lines aligned left.",
+      "tags": ["text", "editor", "paragraph", "align", "left"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Four horizontal bars at y7.5,10.5,13.5,16.5 alternate full length9 (x7.5..16.5) and shorter length6. Short bars are left-aligned x7.5..13.5, centered x9..15 or right-aligned x10.5..16.5 according to identity. Unframed Filled is the exact Bold2.50 capsule expansion (radius1.25), like Menu/Search; framed Filled cuts out that same Bold silhouette. Regular visible bounds6.625..17.375 on each axis; Bold/Filled bounds6.25..17.75. Filled row clearance is.5px and circular clearance remains greater than.26px even when the Outline frame is Bold. All None/Square/Circle forms reuse exactly the same native glyph, with no per-frame scale or translation. Outline is Regular1.75 with round caps/joins; Thin1.25 and Bold2.50 use the same centerlines. Standard solid frame exteriors are bounds2..22, Square radius4 / Circle radius10; Outline frame centerlines are bounds2.875..21.125 with radius3.125 / circle radius9.125. Frames remain upright, with2px default outer margins. Framed Filled subtracts the exact standalone Filled silhouette as transparent negative space. All geometry is original to this project; external references establish meaning only. Native X/Y100/100, rotation0. All new forms remain draft pending owner review.",
+      "filledTreatment": "bold-stroke",
+      "review": {
+        "status": "draft",
+        "note": "New action/alignment icon and frame variants; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "align-right",
+      "description": "Four rounded text lines aligned right.",
+      "tags": ["text", "editor", "paragraph", "align", "right"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Four horizontal bars at y7.5,10.5,13.5,16.5 alternate full length9 (x7.5..16.5) and shorter length6. Short bars are left-aligned x7.5..13.5, centered x9..15 or right-aligned x10.5..16.5 according to identity. Unframed Filled is the exact Bold2.50 capsule expansion (radius1.25), like Menu/Search; framed Filled cuts out that same Bold silhouette. Regular visible bounds6.625..17.375 on each axis; Bold/Filled bounds6.25..17.75. Filled row clearance is.5px and circular clearance remains greater than.26px even when the Outline frame is Bold. All None/Square/Circle forms reuse exactly the same native glyph, with no per-frame scale or translation. Outline is Regular1.75 with round caps/joins; Thin1.25 and Bold2.50 use the same centerlines. Standard solid frame exteriors are bounds2..22, Square radius4 / Circle radius10; Outline frame centerlines are bounds2.875..21.125 with radius3.125 / circle radius9.125. Frames remain upright, with2px default outer margins. Framed Filled subtracts the exact standalone Filled silhouette as transparent negative space. All geometry is original to this project; external references establish meaning only. Native X/Y100/100, rotation0. All new forms remain draft pending owner review.",
+      "filledTreatment": "bold-stroke",
+      "review": {
+        "status": "draft",
+        "note": "New action/alignment icon and frame variants; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
       "name": "arrow-down-left",
       "description": "A down and left-facing navigation arrow with a straight shaft and an open V head.",
       "tags": ["arrow", "navigation", "direction", "southwest", "down", "left"],
@@ -193,29 +244,35 @@
     },
     {
       "name": "check",
-      "description": "A clear check mark with a compact lead-in and a longer rising arm.",
+      "description": "A clear rounded check mark with a compact lead-in and longer rising arm.",
       "tags": ["tick", "done", "confirm", "success"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested boxed Filled Check on2026-10-27, using the accepted Plus/X family. The solid frame has bounds2..22 and radius4. Outline is exactly the negative-space mark in Filled at Regular1.70, with round .85 caps and join. Shared centerlines are M4.85 12.55 L9.25 16.95 L19.15 7.05; both arms retain45-degree slopes and their unequal lengths. Native shared visible bounds are x4..20/y6.2..17.8. The horizontal primary inner pair has exactly2px clearance; vertical inner clearance is4.2px to preserve the check proportions. The box has2px artboard margins all around. Owner approved this current pair on2026-10-27. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9965034965 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75.",
-      "filledTreatment": "boxed-cutout",
+      "construction": "Frame-ready Check revision: None/Square/Circle reuse the identical smaller centered mark, preserving the original4:9 short/long arm ratio and45-degree slopes. Shared centerline vertices (7,12.38461538),(10.07692308,15.46153846),(17,8.53846154). Regular Outline1.75 uses round caps/joins. None Filled is the exact Bold2.50 expansion with radius1.25 caps and outer join, represented by one analytical union contour with an intersected inner offset corner, not overlapping evenodd capsules. Framed Filled cuts that same unboxed Bold silhouette out of the standard solid frame. Square exterior2..22/radius4, Circle radius10; Outline centerline bounds2.875..21.125/radius3.125 or Circle9.125. The smaller mark reserves positive clearance even with Bold2.50 Circle/glyph strokes. Regular visible bounds x6.125..17.875/y7.66346154..16.33653846; Bold/Filled bounds x5.75..18.25/y7.28846154..16.71153846. No per-frame scaling or double enclosing box. This supersedes the former standalone boxed Filled Check; prior approval is retained as history. Native X/Y100/100, rotation0. Revised mark and frames await owner review.",
+      "filledTreatment": "bold-stroke",
       "review": {
-        "status": "approved",
-        "reviewedBy": "palamto",
-        "date": "2026-10-27",
-        "style": "outline",
-        "preview": {
-          "x": 100,
-          "y": 100,
-          "strokeWidth": 1.75,
-          "rotation": 0
-        },
-        "note": "Owner approved current Check Outline and boxed Filled: radius-4 frame at2..22 and identical shared Regular1.70 check mark."
+        "status": "draft",
+        "note": "Review reopened for frame-ready Check and standalone Filled=Bold; former boxed Check approval retained in history."
       },
+      "reviewHistory": [
+        {
+          "status": "approved",
+          "reviewedBy": "palamto",
+          "date": "2026-10-27",
+          "style": "outline",
+          "preview": {
+            "x": 100,
+            "y": 100,
+            "strokeWidth": 1.75,
+            "rotation": 0
+          },
+          "note": "Owner approved current Check Outline and boxed Filled: radius-4 frame at2..22 and identical shared Regular1.70 check mark."
+        }
+      ],
       "styles": ["outline", "filled"],
-      "frames": [],
+      "frames": ["square", "circle"],
       "defaultStrokeWidth": 1.75,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "approved"
+      "reviewStatus": "draft"
     },
     {
       "name": "chevron-down",
@@ -227,6 +284,23 @@
       "review": {
         "status": "draft",
         "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "chevron-left-right",
+      "description": "Opposing rounded chevrons for left and right.",
+      "tags": ["chevron", "caret", "navigation", "left", "right"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Original extension of the existing project Chevron family, using the supplied reference only for icon meaning, without third-party SVG paths. Chevron Up Down and Left Right combine two outward-facing heads. Up Down vertices are (8,10.5),(12,6.5),(16,10.5) and (16,13.5),(12,17.5),(8,13.5); the Filled heads have1.25px central separation, and Bold Outline retains.5px between endpoint caps. Chevron Line Up uses V vertices (8,15.5),(12,11.5),(16,15.5), with a separate bar from(8,8.5) to(16,8.5), giving1.25px Regular and.5px Bold head/bar clearance. Rotate the exact construction for other cardinal directions, without independent scaling. All source strokes are Regular1.75 with round caps/joins; Filled is the same triangle expanded by.875 plus a matching.875-radius bar capsule where present. None/Square/Circle reuse one glyph at identical position and size. Standard frame exteriors2..22, Square radius4, Circle radius10; Outline centerline radius3.125/9.125. Framed Filled subtracts the exact standalone solid-head-and-line silhouette as transparent negative space. Circle clearance remains positive at Bold2.50. All six new identities and frames are drafts; existing Single/Double Chevron geometry is unchanged.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New opposed Chevron / Chevron Line family and frames; awaits owner review."
       },
       "styles": ["outline", "filled"],
       "frames": ["square", "circle"],
@@ -252,6 +326,74 @@
       "reviewStatus": "draft"
     },
     {
+      "name": "chevron-line-down",
+      "description": "A rounded chevron pointing down toward a separate stop line.",
+      "tags": ["chevron", "caret", "navigation", "line", "down"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Original extension of the existing project Chevron family, using the supplied reference only for icon meaning, without third-party SVG paths. Chevron Up Down and Left Right combine two outward-facing heads. Up Down vertices are (8,10.5),(12,6.5),(16,10.5) and (16,13.5),(12,17.5),(8,13.5); the Filled heads have1.25px central separation, and Bold Outline retains.5px between endpoint caps. Chevron Line Up uses V vertices (8,15.5),(12,11.5),(16,15.5), with a separate bar from(8,8.5) to(16,8.5), giving1.25px Regular and.5px Bold head/bar clearance. Rotate the exact construction for other cardinal directions, without independent scaling. All source strokes are Regular1.75 with round caps/joins; Filled is the same triangle expanded by.875 plus a matching.875-radius bar capsule where present. None/Square/Circle reuse one glyph at identical position and size. Standard frame exteriors2..22, Square radius4, Circle radius10; Outline centerline radius3.125/9.125. Framed Filled subtracts the exact standalone solid-head-and-line silhouette as transparent negative space. Circle clearance remains positive at Bold2.50. All six new identities and frames are drafts; existing Single/Double Chevron geometry is unchanged.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New opposed Chevron / Chevron Line family and frames; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "chevron-line-left",
+      "description": "A rounded chevron pointing left toward a separate stop line.",
+      "tags": ["chevron", "caret", "navigation", "line", "left"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Original extension of the existing project Chevron family, using the supplied reference only for icon meaning, without third-party SVG paths. Chevron Up Down and Left Right combine two outward-facing heads. Up Down vertices are (8,10.5),(12,6.5),(16,10.5) and (16,13.5),(12,17.5),(8,13.5); the Filled heads have1.25px central separation, and Bold Outline retains.5px between endpoint caps. Chevron Line Up uses V vertices (8,15.5),(12,11.5),(16,15.5), with a separate bar from(8,8.5) to(16,8.5), giving1.25px Regular and.5px Bold head/bar clearance. Rotate the exact construction for other cardinal directions, without independent scaling. All source strokes are Regular1.75 with round caps/joins; Filled is the same triangle expanded by.875 plus a matching.875-radius bar capsule where present. None/Square/Circle reuse one glyph at identical position and size. Standard frame exteriors2..22, Square radius4, Circle radius10; Outline centerline radius3.125/9.125. Framed Filled subtracts the exact standalone solid-head-and-line silhouette as transparent negative space. Circle clearance remains positive at Bold2.50. All six new identities and frames are drafts; existing Single/Double Chevron geometry is unchanged.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New opposed Chevron / Chevron Line family and frames; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "chevron-line-right",
+      "description": "A rounded chevron pointing right toward a separate stop line.",
+      "tags": ["chevron", "caret", "navigation", "line", "right"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Original extension of the existing project Chevron family, using the supplied reference only for icon meaning, without third-party SVG paths. Chevron Up Down and Left Right combine two outward-facing heads. Up Down vertices are (8,10.5),(12,6.5),(16,10.5) and (16,13.5),(12,17.5),(8,13.5); the Filled heads have1.25px central separation, and Bold Outline retains.5px between endpoint caps. Chevron Line Up uses V vertices (8,15.5),(12,11.5),(16,15.5), with a separate bar from(8,8.5) to(16,8.5), giving1.25px Regular and.5px Bold head/bar clearance. Rotate the exact construction for other cardinal directions, without independent scaling. All source strokes are Regular1.75 with round caps/joins; Filled is the same triangle expanded by.875 plus a matching.875-radius bar capsule where present. None/Square/Circle reuse one glyph at identical position and size. Standard frame exteriors2..22, Square radius4, Circle radius10; Outline centerline radius3.125/9.125. Framed Filled subtracts the exact standalone solid-head-and-line silhouette as transparent negative space. Circle clearance remains positive at Bold2.50. All six new identities and frames are drafts; existing Single/Double Chevron geometry is unchanged.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New opposed Chevron / Chevron Line family and frames; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "chevron-line-up",
+      "description": "A rounded chevron pointing up toward a separate stop line.",
+      "tags": ["chevron", "caret", "navigation", "line", "up"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Original extension of the existing project Chevron family, using the supplied reference only for icon meaning, without third-party SVG paths. Chevron Up Down and Left Right combine two outward-facing heads. Up Down vertices are (8,10.5),(12,6.5),(16,10.5) and (16,13.5),(12,17.5),(8,13.5); the Filled heads have1.25px central separation, and Bold Outline retains.5px between endpoint caps. Chevron Line Up uses V vertices (8,15.5),(12,11.5),(16,15.5), with a separate bar from(8,8.5) to(16,8.5), giving1.25px Regular and.5px Bold head/bar clearance. Rotate the exact construction for other cardinal directions, without independent scaling. All source strokes are Regular1.75 with round caps/joins; Filled is the same triangle expanded by.875 plus a matching.875-radius bar capsule where present. None/Square/Circle reuse one glyph at identical position and size. Standard frame exteriors2..22, Square radius4, Circle radius10; Outline centerline radius3.125/9.125. Framed Filled subtracts the exact standalone solid-head-and-line silhouette as transparent negative space. Circle clearance remains positive at Bold2.50. All six new identities and frames are drafts; existing Single/Double Chevron geometry is unchanged.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New opposed Chevron / Chevron Line family and frames; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
       "name": "chevron-right",
       "description": "A chevron right with an open V and round ends.",
       "tags": ["chevron", "caret", "navigation", "right"],
@@ -261,6 +403,23 @@
       "review": {
         "status": "draft",
         "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "chevron-up-down",
+      "description": "Opposing rounded chevrons for up and down.",
+      "tags": ["chevron", "caret", "navigation", "up", "down"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Original extension of the existing project Chevron family, using the supplied reference only for icon meaning, without third-party SVG paths. Chevron Up Down and Left Right combine two outward-facing heads. Up Down vertices are (8,10.5),(12,6.5),(16,10.5) and (16,13.5),(12,17.5),(8,13.5); the Filled heads have1.25px central separation, and Bold Outline retains.5px between endpoint caps. Chevron Line Up uses V vertices (8,15.5),(12,11.5),(16,15.5), with a separate bar from(8,8.5) to(16,8.5), giving1.25px Regular and.5px Bold head/bar clearance. Rotate the exact construction for other cardinal directions, without independent scaling. All source strokes are Regular1.75 with round caps/joins; Filled is the same triangle expanded by.875 plus a matching.875-radius bar capsule where present. None/Square/Circle reuse one glyph at identical position and size. Standard frame exteriors2..22, Square radius4, Circle radius10; Outline centerline radius3.125/9.125. Framed Filled subtracts the exact standalone solid-head-and-line silhouette as transparent negative space. Circle clearance remains positive at Bold2.50. All six new identities and frames are drafts; existing Single/Double Chevron geometry is unchanged.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New opposed Chevron / Chevron Line family and frames; awaits owner review."
       },
       "styles": ["outline", "filled"],
       "frames": ["square", "circle"],
@@ -355,28 +514,51 @@
     },
     {
       "name": "copy",
-      "description": "Two overlapping rounded pages with a distinct foreground sheet.",
+      "description": "Two overlapping rounded pages with the foreground sheet at bottom left and background sheet at top right.",
       "tags": ["duplicate", "clipboard", "document"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner-requested greater separation and the standard Camera/Folder main-body corner roundness. Both page centerlines use radius 3.25 with unchanged Regular 1.70 stroke and .85 round caps. Nominal rear page centerline bounds are 2.85..15.45; front page centerline bounds are 8.55..21.15 on both axes. The offset is 5.70, producing a 4.00-unit clear straight gap between the exposed parallel borders (previously 2.80). Combined visible bounds are 2..22 on both axes, with balanced 2px artboard margins. The owner requested breaks at both rear/front junctions. The rear path now starts at 5.85 15.44037035 and ends at 15.44037035 5.85, trimmed along the existing corner arcs so each radius-.85 end cap stops exactly 1 unit before the visible foreground border. These two endpoint clearances are separate from the 4-unit parallel-border gap. The front page stays unchanged. Filled uses the exact Outline exterior: outer corner radius 4.10, rear-band inner radius 2.40 and .85 end caps. Its front page is solid, with no added enclosing box or artificial hole. Position and visible exterior match between styles at native X/Y=100%, rotation=0 and Regular 1.70. Both styles were owner-approved on 2026-10-27. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75.",
+      "construction": "Owner Copy orientation revision: horizontally reflect the entire previous natural Copy drawing about x12, mapping every x to24-x. The foreground sheet is now bottom-left, with the background sheet top-right, matching the supplied reference. Bake all path endpoints/control points and reverse elliptical-arc sweep flags; no runtime transform. Preserve the previous geometry, object roundness, exposed parallel-page spacing, intentional rear-junction breaks and combined visible bounds2..22 at Regular1.75. Filled mirrors the same original natural silhouette with a solid foreground sheet. Neither Copy nor New Window adds a Square/Circle enclosure. The unreflected previous drawing is preserved byte-for-byte as the new New Window identity. Previous Copy approval remains in history; revised orientation is draft pending owner visual review.",
       "review": {
-        "status": "approved",
-        "reviewedBy": "palamto",
-        "date": "2026-10-27",
-        "style": "outline",
-        "preview": {
-          "x": 100,
-          "y": 100,
-          "strokeWidth": 1.75,
-          "rotation": 0
-        },
-        "note": "Owner approved both Outline and Filled Copy with standard Camera/Folder roundness, 4px exposed page spacing, 1px breaks at both rear junctions and 2px outer margins."
+        "status": "draft",
+        "note": "Review reopened for the owner-requested bottom-left foreground / top-right background orientation. Prior Copy approval is retained in history."
       },
+      "reviewHistory": [
+        {
+          "status": "approved",
+          "reviewedBy": "palamto",
+          "date": "2026-10-27",
+          "style": "outline",
+          "preview": {
+            "x": 100,
+            "y": 100,
+            "strokeWidth": 1.75,
+            "rotation": 0
+          },
+          "note": "Owner approved both Outline and Filled Copy with standard Camera/Folder roundness, 4px exposed page spacing, 1px breaks at both rear junctions and 2px outer margins."
+        }
+      ],
       "styles": ["outline", "filled"],
       "frames": [],
       "defaultStrokeWidth": 1.75,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "approved"
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "corner-up-right",
+      "description": "A rounded elbow arrow that rises from below and turns right.",
+      "tags": ["arrow", "corner", "turn", "up", "right"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Elbow centerline starts(8,16.75), rises to(8,13.75), bends with radius3 around(11,13.75) to(11,10.75), then ends at(16,10.75). Head arms run from(12.5,7.25) through the tip to(12.5,14.25). Filled is the analytical union of the radius.875 shaft and rounded solid triangular head, retaining tangent elbow radii3.875/2.125. Regular visible bounds x7.125..16.875/y6.375..17.625 are centered at12,12. Circle clearance at Bold is greater than.4px. All None/Square/Circle forms reuse exactly the same native glyph, with no per-frame scale or translation. Outline is Regular1.75 with round caps/joins; Thin1.25 and Bold2.50 use the same centerlines. Standard solid frame exteriors are bounds2..22, Square radius4 / Circle radius10; Outline frame centerlines are bounds2.875..21.125 with radius3.125 / circle radius9.125. Frames remain upright, with2px default outer margins. Framed Filled subtracts the exact standalone Filled silhouette as transparent negative space. All geometry is original to this project; external references establish meaning only. Native X/Y100/100, rotation0. All new forms remain draft pending owner review.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New action/alignment icon and frame variants; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
     },
     {
       "name": "download",
@@ -403,6 +585,23 @@
       "defaultStrokeWidth": 1.75,
       "filledDefaultStrokeWidth": null,
       "reviewStatus": "approved"
+    },
+    {
+      "name": "external-link",
+      "description": "An arrow leaving a rounded open window toward the upper right.",
+      "tags": ["window", "link", "external", "open", "up", "right"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Open window centerline bounds 7.5..16.5, radius 1.5. Upper arm stops at (10,7.5), right arm at (16.5,14), leaving clear space for a separate outbound arrow. Arrow runs (11.5,12.5) to (16.5,7.5); head arms are (13,7.5) to the tip to (16.5,11). Filled uses exact radius-.875 window expansion (corner radii 2.375/.625), and an analytically unioned shaft and solid triangular head rotated -45 degrees. The default visible bounds are 6.625..17.375, centered on both axes. Window-to-head gaps are 1.25px at Regular and .5px at Bold. Conservative Circle clearance exceeds .26px at Bold. All None/Square/Circle forms use the identical native glyph position and size, without per-frame transforms. Outline defaults to Regular 1.75 with round caps/joins, Thin 1.25 and Bold 2.50. Standard frame exteriors span 2..22, with Square radius 4 and Circle radius 10; Outline frame centerlines span 2.875..21.125 with corner radius 3.125 / Circle radius 9.125. Framed Filled subtracts the exact standalone Filled silhouette as transparent negative space. Original project geometry; no third-party SVG paths used. All forms remain drafts pending owner review.",
+      "review": {
+        "status": "draft",
+        "note": "New window action icon and frame variants; awaits owner review."
+      },
+      "filledTreatment": "solid-head",
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
     },
     {
       "name": "folder",
@@ -452,6 +651,57 @@
       "defaultStrokeWidth": 1.75,
       "filledDefaultStrokeWidth": null,
       "reviewStatus": "approved"
+    },
+    {
+      "name": "log-in",
+      "description": "A right-pointing arrow entering a rounded open door.",
+      "tags": ["authentication", "session", "login", "enter"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Door centerlines span y7.5..16.5 with radius1.5 corners. Entry door opens left at x12.5 and closes at x16.5; exit is mirrored about12,12 and opens right at x11.5 with left side x7.5. Both arrows point right: entry shaft x7.5..12.5 / head base x9.5, exit shaft x11.5..16.5 / head base x13.5, at y12 with head arms y9..15. Filled uses the exact radius.875 expansion of the C door, outer radius2.375 / inner radius.625, and an analytical merged shaft/solid-head contour; door and arrow stay disjoint. Combined Regular visible bounds6.625..17.375 on both axes; Bold circular clearance exceeds.26px. All None/Square/Circle forms reuse exactly the same native glyph, with no per-frame scale or translation. Outline is Regular1.75 with round caps/joins; Thin1.25 and Bold2.50 use the same centerlines. Standard solid frame exteriors are bounds2..22, Square radius4 / Circle radius10; Outline frame centerlines are bounds2.875..21.125 with radius3.125 / circle radius9.125. Frames remain upright, with2px default outer margins. Framed Filled subtracts the exact standalone Filled silhouette as transparent negative space. All geometry is original to this project; external references establish meaning only. Native X/Y100/100, rotation0. All new forms remain draft pending owner review.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New action/alignment icon and frame variants; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "log-out",
+      "description": "A right-pointing arrow leaving a rounded open door.",
+      "tags": ["authentication", "session", "logout", "exit"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Door centerlines span y7.5..16.5 with radius1.5 corners. Entry door opens left at x12.5 and closes at x16.5; exit is mirrored about12,12 and opens right at x11.5 with left side x7.5. Both arrows point right: entry shaft x7.5..12.5 / head base x9.5, exit shaft x11.5..16.5 / head base x13.5, at y12 with head arms y9..15. Filled uses the exact radius.875 expansion of the C door, outer radius2.375 / inner radius.625, and an analytical merged shaft/solid-head contour; door and arrow stay disjoint. Combined Regular visible bounds6.625..17.375 on both axes; Bold circular clearance exceeds.26px. All None/Square/Circle forms reuse exactly the same native glyph, with no per-frame scale or translation. Outline is Regular1.75 with round caps/joins; Thin1.25 and Bold2.50 use the same centerlines. Standard solid frame exteriors are bounds2..22, Square radius4 / Circle radius10; Outline frame centerlines are bounds2.875..21.125 with radius3.125 / circle radius9.125. Frames remain upright, with2px default outer margins. Framed Filled subtracts the exact standalone Filled silhouette as transparent negative space. All geometry is original to this project; external references establish meaning only. Native X/Y100/100, rotation0. All new forms remain draft pending owner review.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New action/alignment icon and frame variants; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "maximize",
+      "description": "Four outward corners for maximizing a view.",
+      "tags": ["window", "maximize", "expand", "fullscreen"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Four equal L corners occupy the 8..16 centerline bounds. Top-left is M8 10.5 V8 H10.5; the other corners are rigid quarter-turns about 12,12. Unframed Filled is the exact Bold 2.50 expansion, with radius-1.25 outer joins and round caps, like Menu. Framed Filled reuses the same Bold silhouette. Adjacent corner endpoints are 3px apart, leaving .5px of visible clearance at Bold. Regular exterior bounds 7.125..16.875; Bold/Filled bounds 6.75..17.25. Circle clearance at Bold exceeds .96px. All None/Square/Circle forms use the identical native glyph position and size, without per-frame transforms. Outline defaults to Regular 1.75 with round caps/joins, Thin 1.25 and Bold 2.50. Standard frame exteriors span 2..22, with Square radius 4 and Circle radius 10; Outline frame centerlines span 2.875..21.125 with corner radius 3.125 / Circle radius 9.125. Framed Filled subtracts the exact standalone Filled silhouette as transparent negative space. Original project geometry; no third-party SVG paths used. All forms remain drafts pending owner review.",
+      "review": {
+        "status": "draft",
+        "note": "New window action icon and frame variants; awaits owner review."
+      },
+      "filledTreatment": "bold-stroke",
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
     },
     {
       "name": "menu",
@@ -527,6 +777,70 @@
       "defaultStrokeWidth": 1.75,
       "filledDefaultStrokeWidth": null,
       "reviewStatus": "approved"
+    },
+    {
+      "name": "more-horizontal",
+      "description": "Three evenly spaced horizontal dots for more actions.",
+      "tags": ["more", "ellipsis", "menu", "options", "horizontal"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Three identical centered dots. Horizontal Outline circle centers are (7.5,12), (12,12) and (16.5,12), each radius 1 at Regular 1.75. Vertical is the rigid 90-degree rotation, with centers (12,7.5), (12,12) and (12,16.5), retaining the same size. Natural Filled dots use radius 1.875, exactly matching the visible Regular Outline exterior. The tiny radius-0.125 Outline interior counter is intentional; Filled removes it. No added unframed box. Regular visible bounds are 12.75 by 3.75 for Horizontal, swapped for Vertical, centered at 12,12. Thin 1.25 and Bold 2.50 retain the radius-1 centerlines. At Bold, the Circle frame still has 1.125px radial clearance. None/Square/Circle reuse the same glyph position and size. Standard frame exteriors span 2..22, with Square radius 4 and Circle radius 10. Outline frame centerlines span 2.875..21.125 with Square corner radius 3.125 and Circle radius 9.125. Framed Filled subtracts the exact three solid Filled circles as transparent negative space. All new forms are drafts pending owner review; existing artwork is unchanged.",
+      "review": {
+        "status": "draft",
+        "note": "New ellipsis icon and frame variants; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "more-vertical",
+      "description": "Three evenly spaced vertical dots for more actions.",
+      "tags": ["more", "ellipsis", "menu", "options", "vertical"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Three identical centered dots. Horizontal Outline circle centers are (7.5,12), (12,12) and (16.5,12), each radius 1 at Regular 1.75. Vertical is the rigid 90-degree rotation, with centers (12,7.5), (12,12) and (12,16.5), retaining the same size. Natural Filled dots use radius 1.875, exactly matching the visible Regular Outline exterior. The tiny radius-0.125 Outline interior counter is intentional; Filled removes it. No added unframed box. Regular visible bounds are 12.75 by 3.75 for Horizontal, swapped for Vertical, centered at 12,12. Thin 1.25 and Bold 2.50 retain the radius-1 centerlines. At Bold, the Circle frame still has 1.125px radial clearance. None/Square/Circle reuse the same glyph position and size. Standard frame exteriors span 2..22, with Square radius 4 and Circle radius 10. Outline frame centerlines span 2.875..21.125 with Square corner radius 3.125 and Circle radius 9.125. Framed Filled subtracts the exact three solid Filled circles as transparent negative space. All new forms are drafts pending owner review; existing artwork is unchanged.",
+      "review": {
+        "status": "draft",
+        "note": "New ellipsis icon and frame variants; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "new-tab",
+      "description": "A rounded window with a centered plus for opening a new tab.",
+      "tags": ["window", "tab", "new", "add", "plus"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Window centerline bounds 7..17 on both axes with corner radius 2.25. The plus uses centered half-extent 1.75 at Regular 1.75. Natural Filled uses the matching window exterior bounds 6.125..17.875 / radius 3.125 and the exact Regular plus as a transparent counter. No top divider crowds the small native drawing. Even at Bold, the plus and inner window border remain separated by .75px. The rounded window retains more than .48px Circle clearance at Bold. All None/Square/Circle forms use the identical native glyph position and size, without per-frame transforms. Outline defaults to Regular 1.75 with round caps/joins, Thin 1.25 and Bold 2.50. Standard frame exteriors span 2..22, with Square radius 4 and Circle radius 10; Outline frame centerlines span 2.875..21.125 with corner radius 3.125 / Circle radius 9.125. Framed Filled subtracts the exact standalone Filled silhouette as transparent negative space. Original project geometry; no third-party SVG paths used. All forms remain drafts pending owner review.",
+      "review": {
+        "status": "draft",
+        "note": "New window action icon and frame variants; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "new-window",
+      "description": "Two overlapping rounded windows with the foreground window at bottom right.",
+      "tags": ["window", "new", "open", "overlap"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Owner requested retaining the previous Copy drawing exactly as the new New Window identity. Both SVG files are byte-for-byte the former Copy source, including the foreground bottom-right sheet, background top-left partial border, standard object roundness, 2px outer bounds, exposed parallel page separation and junction breaks. This is a natural object silhouette, with no additional Square/Circle enclosure. Its artwork is original project geometry reused by explicit owner request. New identity remains draft; previous Copy approval is not inherited.",
+      "review": {
+        "status": "draft",
+        "note": "New Window preserves the former Copy drawing exactly; this new identity awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": [],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
     },
     {
       "name": "plus",

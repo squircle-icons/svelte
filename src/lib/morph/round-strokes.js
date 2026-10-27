@@ -115,3 +115,79 @@ export function mergedStrokes(a, b, length, h, center) {
   }
   return path + ' Z';
 }
+// Menu has three moving, sometimes disconnected capsules with unequal radii.
+function unequalCrossings(a, b) {
+  if (a.kind !== 'arc' || b.kind !== 'arc' || a.radius === b.radius) return crossings(a, b);
+  const v = sub(b.center, a.center),
+    d = Math.hypot(v.x, v.y);
+  if (
+    d < epsilon ||
+    d > a.radius + b.radius + epsilon ||
+    d < Math.abs(a.radius - b.radius) - epsilon
+  )
+    return [];
+  const along = (a.radius ** 2 - b.radius ** 2 + d ** 2) / (2 * d);
+  const h = Math.sqrt(Math.max(0, a.radius ** 2 - along ** 2));
+  const middle = add(a.center, mul(v, along / d)),
+    normal = { x: -v.y / d, y: v.x / d };
+  return [add(middle, mul(normal, h)), add(middle, mul(normal, -h))].filter((p) =>
+    [parameter(a, p), parameter(b, p)].every((t) => t >= -epsilon && t <= 1 + epsilon),
+  );
+}
+/** Exact capsule union, including disconnected Menu bars and overlapping caps. */
+export function movingStrokeUnion(input) {
+  const strokes = input.filter((s) => s.radius > 1e-7 && s.length > 1e-7);
+  const shapes = strokes.map((s) =>
+    capsule(s.angle, s.length, s.radius).map((edge) =>
+      edge.kind === 'line'
+        ? { ...edge, a: add(edge.a, s.center), b: add(edge.b, s.center) }
+        : { ...edge, center: add(edge.center, s.center) },
+    ),
+  );
+  const inside = (p, s) => {
+    const u = { x: Math.cos(s.angle), y: Math.sin(s.angle) },
+      offset = sub(p, s.center);
+    const projected = Math.max(-s.length, Math.min(s.length, dot(offset, u)));
+    const distance = sub(offset, mul(u, projected));
+    return dot(distance, distance) < s.radius ** 2 - epsilon;
+  };
+  const pieces = [];
+  for (let side = 0; side < shapes.length; side++)
+    for (const edge of shapes[side]) {
+      const cuts = [0, 1];
+      for (let other = 0; other < shapes.length; other++)
+        if (other !== side)
+          for (const boundary of shapes[other])
+            for (const p of unequalCrossings(edge, boundary)) cuts.push(clamp(parameter(edge, p)));
+      cuts.sort((a, b) => a - b);
+      for (let i = 1; i < cuts.length; i++) {
+        const from = cuts[i - 1],
+          to = cuts[i];
+        if (to - from < epsilon) continue;
+        const middle = at(edge, (from + to) / 2);
+        if (!strokes.some((s, i) => i !== side && inside(middle, s)))
+          pieces.push({ edge, from, to });
+      }
+    }
+  const near = (a, b) => Math.hypot(a.x - b.x, a.y - b.y) < 1e-6;
+  let path = '';
+  while (pieces.length) {
+    let piece = pieces.shift();
+    const start = at(piece.edge, piece.from);
+    path += 'M' + pointString(start);
+    for (;;) {
+      const end = at(piece.edge, piece.to);
+      path +=
+        (piece.edge.kind === 'line'
+          ? ' L'
+          : ` A${format(piece.edge.radius)} ${format(piece.edge.radius)} 0 0 1 `) +
+        pointString(end);
+      if (near(end, start)) break;
+      const next = pieces.findIndex((p) => near(at(p.edge, p.from), end));
+      if (next < 0) throw new Error('Moving stroke union has an open contour');
+      piece = pieces.splice(next, 1)[0];
+    }
+    path += ' Z ';
+  }
+  return path.trim();
+}

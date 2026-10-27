@@ -17,10 +17,10 @@ function interpolate(from, to, startVelocity, endVelocity, t) {
   );
 }
 /** Plus flows through one horizontal line into X without a hold or zero angular velocity. */
-export function plusXFrame(progress, geometry) {
+export function plusXFrame(progress, geometry, frame = 'square') {
   const p = clamp(Number.isFinite(progress) ? progress : 0);
-  if (p === 0) return geometry.plus;
-  if (p === 1) return geometry.x;
+  if (p === 0) return { ...geometry.plus, filled: geometry.frames[frame].from };
+  if (p === 1) return { ...geometry.x, filled: geometry.frames[frame].to };
   const turn = Math.PI / 4;
   const t = p < 0.5 ? p * 2 : (p - 0.5) * 2;
   const a = p < 0.5 ? interpolate(0, 0, 0, turn, t) : interpolate(0, turn, turn, 0, t);
@@ -40,6 +40,9 @@ export function plusXFrame(progress, geometry) {
   const outline = Math.abs(a - b) < 1e-6 ? line(b) : `${line(a)} ${line(b)}`;
   return {
     outline,
-    filled: geometry.box + ' ' + mergedStrokes(a, b, length, geometry.strokeWidth / 2, center),
+    filled:
+      geometry.frames[frame].box +
+      ' ' +
+      mergedStrokes(a, b, length, (frame === 'none' ? 2.5 : geometry.strokeWidth) / 2, center),
   };
 }

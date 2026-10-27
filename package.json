@@ -16,6 +16,36 @@
       "svelte": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./align-center": {
+      "types": "./dist/AlignCenter.svelte.d.ts",
+      "svelte": "./dist/AlignCenter.svelte",
+      "default": "./dist/AlignCenter.svelte"
+    },
+    "./filled/align-center": {
+      "types": "./dist/filled/AlignCenter.svelte.d.ts",
+      "svelte": "./dist/filled/AlignCenter.svelte",
+      "default": "./dist/filled/AlignCenter.svelte"
+    },
+    "./align-left": {
+      "types": "./dist/AlignLeft.svelte.d.ts",
+      "svelte": "./dist/AlignLeft.svelte",
+      "default": "./dist/AlignLeft.svelte"
+    },
+    "./filled/align-left": {
+      "types": "./dist/filled/AlignLeft.svelte.d.ts",
+      "svelte": "./dist/filled/AlignLeft.svelte",
+      "default": "./dist/filled/AlignLeft.svelte"
+    },
+    "./align-right": {
+      "types": "./dist/AlignRight.svelte.d.ts",
+      "svelte": "./dist/AlignRight.svelte",
+      "default": "./dist/AlignRight.svelte"
+    },
+    "./filled/align-right": {
+      "types": "./dist/filled/AlignRight.svelte.d.ts",
+      "svelte": "./dist/filled/AlignRight.svelte",
+      "default": "./dist/filled/AlignRight.svelte"
+    },
     "./arrow-down-left": {
       "types": "./dist/ArrowDownLeft.svelte.d.ts",
       "svelte": "./dist/ArrowDownLeft.svelte",
@@ -136,6 +166,16 @@
       "svelte": "./dist/filled/ChevronDown.svelte",
       "default": "./dist/filled/ChevronDown.svelte"
     },
+    "./chevron-left-right": {
+      "types": "./dist/ChevronLeftRight.svelte.d.ts",
+      "svelte": "./dist/ChevronLeftRight.svelte",
+      "default": "./dist/ChevronLeftRight.svelte"
+    },
+    "./filled/chevron-left-right": {
+      "types": "./dist/filled/ChevronLeftRight.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronLeftRight.svelte",
+      "default": "./dist/filled/ChevronLeftRight.svelte"
+    },
     "./chevron-left": {
       "types": "./dist/ChevronLeft.svelte.d.ts",
       "svelte": "./dist/ChevronLeft.svelte",
@@ -146,6 +186,46 @@
       "svelte": "./dist/filled/ChevronLeft.svelte",
       "default": "./dist/filled/ChevronLeft.svelte"
     },
+    "./chevron-line-down": {
+      "types": "./dist/ChevronLineDown.svelte.d.ts",
+      "svelte": "./dist/ChevronLineDown.svelte",
+      "default": "./dist/ChevronLineDown.svelte"
+    },
+    "./filled/chevron-line-down": {
+      "types": "./dist/filled/ChevronLineDown.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronLineDown.svelte",
+      "default": "./dist/filled/ChevronLineDown.svelte"
+    },
+    "./chevron-line-left": {
+      "types": "./dist/ChevronLineLeft.svelte.d.ts",
+      "svelte": "./dist/ChevronLineLeft.svelte",
+      "default": "./dist/ChevronLineLeft.svelte"
+    },
+    "./filled/chevron-line-left": {
+      "types": "./dist/filled/ChevronLineLeft.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronLineLeft.svelte",
+      "default": "./dist/filled/ChevronLineLeft.svelte"
+    },
+    "./chevron-line-right": {
+      "types": "./dist/ChevronLineRight.svelte.d.ts",
+      "svelte": "./dist/ChevronLineRight.svelte",
+      "default": "./dist/ChevronLineRight.svelte"
+    },
+    "./filled/chevron-line-right": {
+      "types": "./dist/filled/ChevronLineRight.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronLineRight.svelte",
+      "default": "./dist/filled/ChevronLineRight.svelte"
+    },
+    "./chevron-line-up": {
+      "types": "./dist/ChevronLineUp.svelte.d.ts",
+      "svelte": "./dist/ChevronLineUp.svelte",
+      "default": "./dist/ChevronLineUp.svelte"
+    },
+    "./filled/chevron-line-up": {
+      "types": "./dist/filled/ChevronLineUp.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronLineUp.svelte",
+      "default": "./dist/filled/ChevronLineUp.svelte"
+    },
     "./chevron-right": {
       "types": "./dist/ChevronRight.svelte.d.ts",
       "svelte": "./dist/ChevronRight.svelte",
@@ -155,6 +235,16 @@
       "types": "./dist/filled/ChevronRight.svelte.d.ts",
       "svelte": "./dist/filled/ChevronRight.svelte",
       "default": "./dist/filled/ChevronRight.svelte"
+    },
+    "./chevron-up-down": {
+      "types": "./dist/ChevronUpDown.svelte.d.ts",
+      "svelte": "./dist/ChevronUpDown.svelte",
+      "default": "./dist/ChevronUpDown.svelte"
+    },
+    "./filled/chevron-up-down": {
+      "types": "./dist/filled/ChevronUpDown.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronUpDown.svelte",
+      "default": "./dist/filled/ChevronUpDown.svelte"
     },
     "./chevron-up": {
       "types": "./dist/ChevronUp.svelte.d.ts",
@@ -216,6 +306,16 @@
       "svelte": "./dist/filled/Copy.svelte",
       "default": "./dist/filled/Copy.svelte"
     },
+    "./corner-up-right": {
+      "types": "./dist/CornerUpRight.svelte.d.ts",
+      "svelte": "./dist/CornerUpRight.svelte",
+      "default": "./dist/CornerUpRight.svelte"
+    },
+    "./filled/corner-up-right": {
+      "types": "./dist/filled/CornerUpRight.svelte.d.ts",
+      "svelte": "./dist/filled/CornerUpRight.svelte",
+      "default": "./dist/filled/CornerUpRight.svelte"
+    },
     "./download": {
       "types": "./dist/Download.svelte.d.ts",
       "svelte": "./dist/Download.svelte",
@@ -225,6 +325,16 @@
       "types": "./dist/filled/Download.svelte.d.ts",
       "svelte": "./dist/filled/Download.svelte",
       "default": "./dist/filled/Download.svelte"
+    },
+    "./external-link": {
+      "types": "./dist/ExternalLink.svelte.d.ts",
+      "svelte": "./dist/ExternalLink.svelte",
+      "default": "./dist/ExternalLink.svelte"
+    },
+    "./filled/external-link": {
+      "types": "./dist/filled/ExternalLink.svelte.d.ts",
+      "svelte": "./dist/filled/ExternalLink.svelte",
+      "default": "./dist/filled/ExternalLink.svelte"
     },
     "./folder": {
       "types": "./dist/Folder.svelte.d.ts",
@@ -245,6 +355,36 @@
       "types": "./dist/filled/Heart.svelte.d.ts",
       "svelte": "./dist/filled/Heart.svelte",
       "default": "./dist/filled/Heart.svelte"
+    },
+    "./log-in": {
+      "types": "./dist/LogIn.svelte.d.ts",
+      "svelte": "./dist/LogIn.svelte",
+      "default": "./dist/LogIn.svelte"
+    },
+    "./filled/log-in": {
+      "types": "./dist/filled/LogIn.svelte.d.ts",
+      "svelte": "./dist/filled/LogIn.svelte",
+      "default": "./dist/filled/LogIn.svelte"
+    },
+    "./log-out": {
+      "types": "./dist/LogOut.svelte.d.ts",
+      "svelte": "./dist/LogOut.svelte",
+      "default": "./dist/LogOut.svelte"
+    },
+    "./filled/log-out": {
+      "types": "./dist/filled/LogOut.svelte.d.ts",
+      "svelte": "./dist/filled/LogOut.svelte",
+      "default": "./dist/filled/LogOut.svelte"
+    },
+    "./maximize": {
+      "types": "./dist/Maximize.svelte.d.ts",
+      "svelte": "./dist/Maximize.svelte",
+      "default": "./dist/Maximize.svelte"
+    },
+    "./filled/maximize": {
+      "types": "./dist/filled/Maximize.svelte.d.ts",
+      "svelte": "./dist/filled/Maximize.svelte",
+      "default": "./dist/filled/Maximize.svelte"
     },
     "./menu": {
       "types": "./dist/Menu.svelte.d.ts",
@@ -275,6 +415,46 @@
       "types": "./dist/filled/Moon.svelte.d.ts",
       "svelte": "./dist/filled/Moon.svelte",
       "default": "./dist/filled/Moon.svelte"
+    },
+    "./more-horizontal": {
+      "types": "./dist/MoreHorizontal.svelte.d.ts",
+      "svelte": "./dist/MoreHorizontal.svelte",
+      "default": "./dist/MoreHorizontal.svelte"
+    },
+    "./filled/more-horizontal": {
+      "types": "./dist/filled/MoreHorizontal.svelte.d.ts",
+      "svelte": "./dist/filled/MoreHorizontal.svelte",
+      "default": "./dist/filled/MoreHorizontal.svelte"
+    },
+    "./more-vertical": {
+      "types": "./dist/MoreVertical.svelte.d.ts",
+      "svelte": "./dist/MoreVertical.svelte",
+      "default": "./dist/MoreVertical.svelte"
+    },
+    "./filled/more-vertical": {
+      "types": "./dist/filled/MoreVertical.svelte.d.ts",
+      "svelte": "./dist/filled/MoreVertical.svelte",
+      "default": "./dist/filled/MoreVertical.svelte"
+    },
+    "./new-tab": {
+      "types": "./dist/NewTab.svelte.d.ts",
+      "svelte": "./dist/NewTab.svelte",
+      "default": "./dist/NewTab.svelte"
+    },
+    "./filled/new-tab": {
+      "types": "./dist/filled/NewTab.svelte.d.ts",
+      "svelte": "./dist/filled/NewTab.svelte",
+      "default": "./dist/filled/NewTab.svelte"
+    },
+    "./new-window": {
+      "types": "./dist/NewWindow.svelte.d.ts",
+      "svelte": "./dist/NewWindow.svelte",
+      "default": "./dist/NewWindow.svelte"
+    },
+    "./filled/new-window": {
+      "types": "./dist/filled/NewWindow.svelte.d.ts",
+      "svelte": "./dist/filled/NewWindow.svelte",
+      "default": "./dist/filled/NewWindow.svelte"
     },
     "./plus": {
       "types": "./dist/Plus.svelte.d.ts",
@@ -415,7 +595,7 @@
     "vitest": "5.0.5",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
-    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-1e20f5bd34cf.tgz"
+    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-d55d409b2d93.tgz"
   },
   "description": "Original Outline and Filled icons as native Svelte 5 components.",
   "repository": {

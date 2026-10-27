@@ -11,4 +11,22 @@ export declare function mergedStrokes(
   h: number,
   center: Point,
 ): string;
+export type MorphFrame = 'none' | 'square' | 'circle';
+export type MorphFrames = Record<
+  MorphFrame,
+  {
+    box: string;
+    outline: string;
+    from: string;
+    to: string;
+  }
+>;
+export type MovingStroke = {
+  center: Point;
+  angle: number;
+  length: number;
+  radius: number;
+};
+/** Exact capsule union, including disconnected Menu bars and overlapping caps. */
+export declare function movingStrokeUnion(input: MovingStroke[]): string;
 export {};
