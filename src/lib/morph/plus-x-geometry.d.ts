@@ -14,7 +14,7 @@ export type PlusXGeometry = {
     filled: string;
   };
 };
-/** Rotate and lengthen the SAME cross, with fixed stroke and visible side bounds. */
+/** Plus folds to one vertical line, holds briefly, then opens into the approved X. */
 export declare function plusXFrame(
   progress: number,
   geometry: PlusXGeometry,

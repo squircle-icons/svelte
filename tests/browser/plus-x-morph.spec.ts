@@ -108,7 +108,7 @@ test('reduced motion switches directly and respects a later preference change', 
 test('the fixed Filled box cuts out the exact moving Outline at intermediate frames', async ({
   page,
 }) => {
-  for (const progress of [0.1, 0.25, 0.5, 0.75, 0.9]) {
+  for (const progress of [0.1, 0.25, 0.33, 0.36, 0.379, 0.5, 0.621, 0.65, 0.75, 0.9]) {
     await scrub(page, progress);
     await expect(morph(page)).toHaveAttribute('data-progress', progress.toFixed(5));
     const result = await page.evaluate(() => {
@@ -134,8 +134,11 @@ test('the fixed Filled box cuts out the exact moving Outline at intermediate fra
     });
     expect(result.mismatches).toBeLessThanOrEqual(4);
     expect(result.stroke).toBe('1.7');
-    for (const [i, value] of result.bounds.entries())
-      expect(value).toBeCloseTo([4.85, 4.85, 14.3, 14.3][i], 5);
+    expect(result.bounds[1]).toBeCloseTo(4.85, 5);
+    expect(result.bounds[3]).toBeCloseTo(14.3, 5);
+    expect(result.bounds[0]).toBeGreaterThanOrEqual(4.85 - 1e-6);
+    expect(result.bounds[0] + result.bounds[2]).toBeLessThanOrEqual(19.15 + 1e-6);
+    if (progress === 0.5) expect(result.bounds[2]).toBeCloseTo(0, 5);
     expect(result.boxPath).toBe(
       'M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2',
     );
