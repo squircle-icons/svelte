@@ -26,6 +26,7 @@
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
+  data-frame="none"
 >
   <g data-part="arrow"
     ><path

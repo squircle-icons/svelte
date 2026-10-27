@@ -191,3 +191,38 @@ test('default pace leaves time to read the corner fold and reduced motion switch
 });
 
 registerMorphLifecycle('Maximize Minimize fixture', 'Morph minimize', 'minimize');
+
+test('corners pull inward with anchored tips and straighten instead of rotating', async ({
+  page,
+}) => {
+  for (const p of [0.1, 0.25, 0.49, 0.5, 0.51, 0.75, 0.9]) {
+    await scrub(page, p);
+    const result = await morph(page).evaluate((element) => {
+      const svg = element as SVGSVGElement;
+      const pieces = (d: string) => d.match(/[Mm][^Mm]*/g)!;
+      const original = pieces(
+        document.querySelector('[data-testid="maximize-outline-contour"] path')!.getAttribute('d')!,
+      );
+      const moving = pieces(svg.querySelector('path')!.getAttribute('d')!);
+      const endpoints = (d: string) => {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', d);
+        path.setAttribute('visibility', 'hidden');
+        svg.append(path);
+        const a = path.getPointAtLength(0),
+          b = path.getPointAtLength(path.getTotalLength());
+        path.remove();
+        return [a.x, a.y, b.x, b.y];
+      };
+      return {
+        original: original.map(endpoints),
+        moving: moving.map(endpoints),
+        straight: moving.every((d) => !/A/i.test(d)),
+      };
+    });
+    result.moving.forEach((points, index) =>
+      points.forEach((point, axis) => expect(point).toBeCloseTo(result.original[index][axis], 3)),
+    );
+    expect(result.straight).toBe(p === 0.5);
+  }
+});

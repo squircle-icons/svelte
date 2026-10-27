@@ -26,6 +26,7 @@
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
+  data-frame="none"
 >
   <g data-part="body"><circle cx="12" cy="12" r="5.975"></circle></g>
   <g data-part="rays"

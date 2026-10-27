@@ -45,7 +45,7 @@ export declare function rotateCornerPath(
   center: [number, number],
   angle: number,
 ): string;
-/** Four mirrored local half-turns preserve the same coordinated parts both ways. */
+/** Four corners contract inward through straight chords, without rigid rotation. */
 export declare function maximizeMinimizeFrame(
   progress: number,
   geometry: MaximizeMinimizeGeometry,

@@ -7,7 +7,6 @@
     strokeWidth = 'regular',
     label,
     class: className,
-    frame = 'none',
   }: FilledIconProps = $props();
   const accessibleLabel = $derived(label?.trim());
 </script>
@@ -27,19 +26,11 @@
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
-  data-frame={frame}
+  data-frame="none"
 >
-  {#if frame === 'square'}<g data-part="body"
-      ><path
-        d="M8 2 H16 A6 6 0 0 1 22 8 V16 A6 6 0 0 1 16 22 H8 A6 6 0 0 1 2 16 V8 A6 6 0 0 1 8 2 Z M7 6.75 H17 A1.25 1.25 0 0 1 17 9.25 H7 A1.25 1.25 0 0 1 7 6.75 Z M7 10.75 H17 A1.25 1.25 0 0 1 17 13.25 H7 A1.25 1.25 0 0 1 7 10.75 Z M7 14.75 H17 A1.25 1.25 0 0 1 17 17.25 H7 A1.25 1.25 0 0 1 7 14.75 Z"
-      ></path></g
-    >{:else if frame === 'circle'}<g data-part="body"
-      ><path
-        d="M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M7 6.75 H17 A1.25 1.25 0 0 1 17 9.25 H7 A1.25 1.25 0 0 1 7 6.75 Z M7 10.75 H17 A1.25 1.25 0 0 1 17 13.25 H7 A1.25 1.25 0 0 1 7 10.75 Z M7 14.75 H17 A1.25 1.25 0 0 1 17 17.25 H7 A1.25 1.25 0 0 1 7 14.75 Z"
-      ></path></g
-    >{:else}<g data-part="body"
-      ><path
-        d="M3.25 6.25 L20.75 6.25 A1.25 1.25 0 0 0 20.75 3.75 L3.25 3.75 A1.25 1.25 0 0 0 3.25 6.25 Z M3.25 13.25 L20.75 13.25 A1.25 1.25 0 0 0 20.75 10.75 L3.25 10.75 A1.25 1.25 0 0 0 3.25 13.25 Z M3.25 20.25 L20.75 20.25 A1.25 1.25 0 0 0 20.75 17.75 L3.25 17.75 A1.25 1.25 0 0 0 3.25 20.25 Z"
-      ></path></g
-    >{/if}
+  <g data-part="body"
+    ><path
+      d="M3.25 6.25 L20.75 6.25 A1.25 1.25 0 0 0 20.75 3.75 L3.25 3.75 A1.25 1.25 0 0 0 3.25 6.25 Z M3.25 13.25 L20.75 13.25 A1.25 1.25 0 0 0 20.75 10.75 L3.25 10.75 A1.25 1.25 0 0 0 3.25 13.25 Z M3.25 20.25 L20.75 20.25 A1.25 1.25 0 0 0 20.75 17.75 L3.25 17.75 A1.25 1.25 0 0 0 3.25 20.25 Z"
+    ></path></g
+  >
 </svg>

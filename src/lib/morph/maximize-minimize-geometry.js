@@ -15,7 +15,56 @@ export function rotateCornerPath(commands, center, angle) {
     })
     .join(' ');
 }
-/** Four mirrored local half-turns preserve the same coordinated parts both ways. */
+const point = (p) => `${format(p.x)} ${format(p.y)}`;
+const shift = (p, n, distance) => ({
+  x: p.x + n.x * distance,
+  y: p.y + n.y * distance,
+});
+/** Pull the rounded elbow inward while its two source tips remain anchored. */
+function inwardCorner(corner, q, radius, width) {
+  const commands = corner.outline.filter((command) => command.kind !== 'Z');
+  const start = commands[0],
+    end = commands.at(-1);
+  const vertical = Math.abs(start.x - commands[1].x) < 1e-7;
+  const outer = { x: vertical ? start.x : end.x, y: vertical ? end.y : start.y };
+  const elbow = {
+    x: outer.x + (2 * corner.center[0] - 2 * outer.x) * q,
+    y: outer.y + (2 * corner.center[1] - 2 * outer.y) * q,
+  };
+  const direction = (a, b) => {
+    const length = Math.hypot(b.x - a.x, b.y - a.y);
+    return { x: (b.x - a.x) / length, y: (b.y - a.y) / length };
+  };
+  const u = direction(start, elbow),
+    v = direction(elbow, end);
+  const normal = (p) => ({ x: -p.y, y: p.x });
+  const a = normal(u),
+    b = normal(v),
+    h = width / 2;
+  const turn = Math.atan2(u.x * v.y - u.y * v.x, u.x * v.x + u.y * v.y);
+  const cap = (end) => `A${format(h)} ${format(h)} 0 0 1 ${point(end)}`;
+  if (Math.abs(turn) < 1e-7) {
+    const leftStart = shift(start, a, h),
+      rightStart = shift(start, a, -h);
+    const leftEnd = shift(end, b, h),
+      rightEnd = shift(end, b, -h);
+    return {
+      outline: `M${point(start)} L${point(end)}`,
+      filled: `M${point(rightStart)} L${point(rightEnd)} ${cap(leftEnd)} L${point(leftStart)} ${cap(rightStart)} Z`,
+    };
+  }
+  const sign = Math.sign(turn),
+    sweep = turn > 0 ? 1 : 0;
+  const tangent = radius * Math.tan(Math.abs(turn) / 2);
+  const first = shift(elbow, u, -tangent),
+    last = shift(elbow, v, tangent);
+  const arc = (r, sweep, end) => `A${format(r)} ${format(r)} 0 0 ${sweep} ${point(end)}`;
+  return {
+    outline: `M${point(start)} L${point(first)} ${arc(radius, sweep, last)} L${point(end)}`,
+    filled: `M${point(shift(start, a, -h))} L${point(shift(first, a, -h))} ${arc(radius + sign * h, sweep, shift(last, b, -h))} L${point(shift(end, b, -h))} ${cap(shift(end, b, h))} L${point(shift(last, b, h))} ${arc(radius - sign * h, 1 - sweep, shift(first, a, h))} L${point(shift(start, a, h))} ${cap(shift(start, a, -h))} Z`,
+  };
+}
+/** Four corners contract inward through straight chords, without rigid rotation. */
 export function maximizeMinimizeFrame(progress, geometry) {
   const p = Math.max(0, Math.min(1, Number.isFinite(progress) ? progress : 0));
   if (p === 0)
@@ -29,14 +78,10 @@ export function maximizeMinimizeFrame(progress, geometry) {
       parts: geometry.corners.map((corner) => ({ id: corner.id, ...corner.minimize })),
     };
   const eased = p ** 3 * (10 + p * (-15 + 6 * p));
-  const parts = geometry.corners.map((corner) => {
-    const angle = corner.direction * Math.PI * eased;
-    return {
-      id: corner.id,
-      outline: rotateCornerPath(corner.outline, corner.center, angle),
-      filled: rotateCornerPath(corner.filled, corner.center, angle),
-    };
-  });
+  const parts = geometry.corners.map((corner) => ({
+    id: corner.id,
+    ...inwardCorner(corner, eased, geometry.cornerRadius, geometry.filledStrokeWidth),
+  }));
   return {
     outline: parts.map((part) => part.outline).join(' '),
     filled: parts.map((part) => part.filled).join(' '),

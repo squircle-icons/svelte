@@ -8,7 +8,6 @@
     strokeWidth = 'regular',
     label,
     class: className,
-    frame = 'none',
     style: iconStyle = 'outline',
   }: IconProps = $props();
   const accessibleLabel = $derived(label?.trim());
@@ -33,33 +32,15 @@
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
-  data-frame={iconStyle === 'bold' ? 'none' : frame}
+  data-frame="none"
 >
   {#if iconStyle === 'filled'}
-    {#if frame === 'square'}<g data-part="body"
-        ><path
-          d="M8 2 H16 A6 6 0 0 1 22 8 V16 A6 6 0 0 1 16 22 H8 A6 6 0 0 1 2 16 V8 A6 6 0 0 1 8 2 Z M17.5 8.375 A.875 .875 0 0 1 18.375 9.25 A.875 .875 0 0 1 18.11871843 9.86871843 L12.61871843 15.36871843 A.875 .875 0 0 1 12 15.625 A.875 .875 0 0 1 11.38128157 15.36871843 L5.88128157 9.86871843 A.875 .875 0 0 1 5.625 9.25 A.875 .875 0 0 1 6.5 8.375 L17.5 8.375 Z"
-        ></path></g
-      >{:else if frame === 'circle'}<g data-part="body"
-        ><path
-          d="M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M17.5 8.375 A.875 .875 0 0 1 18.375 9.25 A.875 .875 0 0 1 18.11871843 9.86871843 L12.61871843 15.36871843 A.875 .875 0 0 1 12 15.625 A.875 .875 0 0 1 11.38128157 15.36871843 L5.88128157 9.86871843 A.875 .875 0 0 1 5.625 9.25 A.875 .875 0 0 1 6.5 8.375 L17.5 8.375 Z"
-        ></path></g
-      >{:else}<g data-part="body"
-        ><path
-          d="M21.125 6.5625 A0.875 0.875 0 0 1 21.74371843 8.05621843 L12.61871843 17.18121843 A0.875 0.875 0 0 1 11.38128157 17.18121843 L2.25628157 8.05621843 A0.875 0.875 0 0 1 2.875 6.5625 L21.125 6.5625 Z"
-        ></path></g
-      >{/if}
-  {:else if iconStyle === 'bold'}
-    <g data-part="body"><path d="M21.125 7.4375 L12 16.5625 L2.875 7.4375"></path></g>
+    <g data-part="body"
+      ><path
+        d="M21.125 6.5625 A0.875 0.875 0 0 1 21.74371843 8.05621843 L12.61871843 17.18121843 A0.875 0.875 0 0 1 11.38128157 17.18121843 L2.25628157 8.05621843 A0.875 0.875 0 0 1 2.875 6.5625 L21.125 6.5625 Z"
+      ></path></g
+    >
   {:else}
-    {#if frame === 'square'}<g data-part="body"
-        ><path
-          d="M8 2.875 H16 A5.125 5.125 0 0 1 21.125 8 V16 A5.125 5.125 0 0 1 16 21.125 H8 A5.125 5.125 0 0 1 2.875 16 V8 A5.125 5.125 0 0 1 8 2.875 Z"
-        ></path><path d="M17.5 9.25 L12 14.75 L6.5 9.25"></path></g
-      >{:else if frame === 'circle'}<g data-part="body"
-        ><circle cx="12" cy="12" r="9.125"></circle><path d="M17.5 9.25 L12 14.75 L6.5 9.25"
-        ></path></g
-      >{:else}<g data-part="body"><path d="M21.125 7.4375 L12 16.5625 L2.875 7.4375"></path></g
-      >{/if}
+    <g data-part="body"><path d="M21.125 7.4375 L12 16.5625 L2.875 7.4375"></path></g>
   {/if}
 </svg>

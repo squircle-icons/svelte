@@ -39,6 +39,7 @@
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
+  data-frame="none"
   data-cutout-width={gapWidth}
 >
   <g data-part="body"><path d={cutoutPath}></path></g>

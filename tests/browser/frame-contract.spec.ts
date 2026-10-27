@@ -38,34 +38,16 @@ test('Square frames use the owner-requested radius6 exterior with unchanged2px b
   }
 });
 
-test('unapproved frame props do not add frames to Maximize or External Link', async ({ page }) => {
+test('natural unframed icons expose their own artwork without a runtime frame attribute', async ({
+  page,
+}) => {
   await page.goto('/');
   await expect(page.getByTestId('ready')).toHaveText('hydrated');
-  const results = await page.evaluate(() =>
-    ['maximize', 'minimize', 'external-link'].flatMap((name) =>
-      ['outline', 'filled'].map((style) => {
-        const svg = (frame: string) =>
-          document.querySelector(`[data-testid="unframed-${name}-${style}-${frame}"] svg`)!;
-        const geometry = (frame: string) =>
-          [...svg(frame).querySelectorAll('path,circle')].map((shape) => shape.outerHTML);
-        const original = geometry('none');
-        return {
-          name,
-          style,
-          original,
-          requested: ['square', 'circle'].map((frame) => ({
-            geometry: geometry(frame),
-            dataFrame: svg(frame).getAttribute('data-frame'),
-            frameAttr: svg(frame).getAttribute('frame'),
-          })),
-        };
-      }),
-    ),
-  );
-  for (const result of results)
-    for (const requested of result.requested) {
-      expect(requested.geometry, `${result.name} ${result.style}`).toEqual(result.original);
-      expect(requested.dataFrame).toBeNull();
-      expect(requested.frameAttr).toBeNull();
+  for (const name of ['maximize', 'minimize', 'external-link'])
+    for (const style of ['outline', 'filled']) {
+      const svg = page.getByTestId(`unframed-${name}-${style}`).locator('svg');
+      await expect(svg).toHaveCount(1);
+      expect(await svg.getAttribute('frame')).toBeNull();
+      await expect(svg).toHaveAttribute('data-frame', 'none');
     }
 });

@@ -8,7 +8,6 @@
     strokeWidth = 'regular',
     label,
     class: className,
-    frame = 'none',
     style: iconStyle = 'outline',
   }: IconProps = $props();
   const accessibleLabel = $derived(label?.trim());
@@ -33,23 +32,15 @@
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
-  data-frame={iconStyle === 'bold' ? 'none' : frame}
+  data-frame="none"
 >
   {#if iconStyle === 'filled'}
-    {#if frame === 'square'}<g data-part="body"
-        ><path
-          d="M8 2 H16 A6 6 0 0 1 22 8 V16 A6 6 0 0 1 16 22 H8 A6 6 0 0 1 2 16 V8 A6 6 0 0 1 8 2 Z M10.125 7.5 A1.875 1.875 0 1 0 13.875 7.5 A1.875 1.875 0 1 0 10.125 7.5 Z M10.125 12 A1.875 1.875 0 1 0 13.875 12 A1.875 1.875 0 1 0 10.125 12 Z M10.125 16.5 A1.875 1.875 0 1 0 13.875 16.5 A1.875 1.875 0 1 0 10.125 16.5 Z"
-        ></path></g
-      >{:else if frame === 'circle'}<g data-part="body"
-        ><path
-          d="M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M10.125 7.5 A1.875 1.875 0 1 0 13.875 7.5 A1.875 1.875 0 1 0 10.125 7.5 Z M10.125 12 A1.875 1.875 0 1 0 13.875 12 A1.875 1.875 0 1 0 10.125 12 Z M10.125 16.5 A1.875 1.875 0 1 0 13.875 16.5 A1.875 1.875 0 1 0 10.125 16.5 Z"
-        ></path></g
-      >{:else}<g data-part="body"
-        ><path
-          d="M9.4659090909 4.5340909091 A2.5340909091 2.5340909091 0 1 0 14.5340909091 4.5340909091 A2.5340909091 2.5340909091 0 1 0 9.4659090909 4.5340909091 Z M9.4659090909 12 A2.5340909091 2.5340909091 0 1 0 14.5340909091 12 A2.5340909091 2.5340909091 0 1 0 9.4659090909 12 Z M9.4659090909 19.4659090909 A2.5340909091 2.5340909091 0 1 0 14.5340909091 19.4659090909 A2.5340909091 2.5340909091 0 1 0 9.4659090909 19.4659090909 Z"
-        ></path></g
-      >{/if}
-  {:else if iconStyle === 'bold'}
+    <g data-part="body"
+      ><path
+        d="M9.4659090909 4.5340909091 A2.5340909091 2.5340909091 0 1 0 14.5340909091 4.5340909091 A2.5340909091 2.5340909091 0 1 0 9.4659090909 4.5340909091 Z M9.4659090909 12 A2.5340909091 2.5340909091 0 1 0 14.5340909091 12 A2.5340909091 2.5340909091 0 1 0 9.4659090909 12 Z M9.4659090909 19.4659090909 A2.5340909091 2.5340909091 0 1 0 14.5340909091 19.4659090909 A2.5340909091 2.5340909091 0 1 0 9.4659090909 19.4659090909 Z"
+      ></path></g
+    >
+  {:else}
     <g data-part="body"
       ><circle cx="12" cy="4.5340909091" r="1.6590909091"></circle><circle
         cx="12"
@@ -57,24 +48,5 @@
         r="1.6590909091"
       ></circle><circle cx="12" cy="19.4659090909" r="1.6590909091"></circle></g
     >
-  {:else}
-    {#if frame === 'square'}<g data-part="body"
-        ><path
-          d="M8 2.875 H16 A5.125 5.125 0 0 1 21.125 8 V16 A5.125 5.125 0 0 1 16 21.125 H8 A5.125 5.125 0 0 1 2.875 16 V8 A5.125 5.125 0 0 1 8 2.875 Z"
-        ></path><circle cx="12" cy="7.5" r="1"></circle><circle cx="12" cy="12" r="1"
-        ></circle><circle cx="12" cy="16.5" r="1"></circle></g
-      >{:else if frame === 'circle'}<g data-part="body"
-        ><circle cx="12" cy="12" r="9.125"></circle><circle cx="12" cy="7.5" r="1"></circle><circle
-          cx="12"
-          cy="12"
-          r="1"
-        ></circle><circle cx="12" cy="16.5" r="1"></circle></g
-      >{:else}<g data-part="body"
-        ><circle cx="12" cy="4.5340909091" r="1.6590909091"></circle><circle
-          cx="12"
-          cy="12"
-          r="1.6590909091"
-        ></circle><circle cx="12" cy="19.4659090909" r="1.6590909091"></circle></g
-      >{/if}
   {/if}
 </svg>

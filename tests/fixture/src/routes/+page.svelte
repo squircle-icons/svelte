@@ -1,4 +1,5 @@
 <script lang="ts">
+  import FrameFixtureIcon from '../lib/FrameFixtureIcon.svelte';
   import MaximizeMinimizeMorph from '@squircle-icons/svelte/morph/maximize-minimize';
   import Minimize from '@squircle-icons/svelte/minimize';
   let maximizeMinimizeTarget = $state(false);
@@ -271,7 +272,7 @@
 <div data-testid="gap-preset"><Folder style="filled" strokeWidth={preset} /></div>
 <div data-testid="x-outline-contour"><X size={96} label="Outline X contour" /></div>
 <div data-testid="x-filled-contour">
-  <FilledX frame={morphFrame} size={96} label="Filled X contour" />
+  <FrameFixtureIcon name="x" style="filled" frame={morphFrame} size={96} label="Filled X contour" />
 </div>
 <div data-testid="search-outline-contour"><Search size={96} label="Outline Search contour" /></div>
 <div data-testid="search-filled-contour">
@@ -298,7 +299,8 @@
 <div data-testid="copy-outline-contour"><Copy size={96} label="Outline Copy contour" /></div>
 <div data-testid="copy-filled-contour"><FilledCopy size={96} label="Filled Copy contour" /></div>
 <div data-testid="chevron-down-outline-contour">
-  <ChevronDown
+  <FrameFixtureIcon
+    name="chevron-down"
     frame={arrowFrame}
     strokeWidth={arrowWeight}
     size={96}
@@ -306,16 +308,29 @@
   />
 </div>
 <div data-testid="chevron-down-filled-contour">
-  <FilledChevronDown frame={arrowFrame} size={96} label="Filled ChevronDown contour" />
+  <FrameFixtureIcon
+    name="chevron-down"
+    style="filled"
+    frame={arrowFrame}
+    size={96}
+    label="Filled ChevronDown contour"
+  />
 </div>
 <div data-testid="plus-outline-contour"><Plus size={96} label="Outline Plus contour" /></div>
 <div data-testid="plus-filled-contour">
-  <FilledPlus frame={morphFrame} size={96} label="Filled Plus contour" />
+  <FrameFixtureIcon
+    name="plus"
+    style="filled"
+    frame={morphFrame}
+    size={96}
+    label="Filled Plus contour"
+  />
 </div>
 <div data-testid="check-outline-contour"><Check size={96} label="Outline Check contour" /></div>
 <div data-testid="check-filled-contour"><FilledCheck size={96} label="Filled Check contour" /></div>
 <div data-testid="chevron-up-outline-contour">
-  <ChevronUp
+  <FrameFixtureIcon
+    name="chevron-up"
     frame={arrowFrame}
     strokeWidth={arrowWeight}
     size={96}
@@ -323,7 +338,13 @@
   />
 </div>
 <div data-testid="chevron-up-filled-contour">
-  <FilledChevronUp frame={arrowFrame} size={96} label="Filled ChevronUp contour" />
+  <FrameFixtureIcon
+    name="chevron-up"
+    style="filled"
+    frame={arrowFrame}
+    size={96}
+    label="Filled ChevronUp contour"
+  />
 </div>
 
 {#each ['light', 'dark'] as surface}
@@ -342,15 +363,29 @@
         <article>
           <h3>{item.name}</h3>
           <div class="round-main">
-            <item.Outline frame={arrowFrame} strokeWidth={arrowWeight} size={48} /><item.Filled
-              frame={arrowFrame}
+            <FrameFixtureIcon
+              name={item.name}
+              frame={item.name === 'Copy' ? 'none' : arrowFrame}
+              strokeWidth={arrowWeight}
+              size={48}
+            /><FrameFixtureIcon
+              name={item.name}
+              style="filled"
+              frame={item.name === 'Copy' ? 'none' : arrowFrame}
               size={48}
             />
           </div>
           <div class="round-sizes">
             {#each [16, 20, 24] as size}<div>
-                <item.Outline frame={arrowFrame} strokeWidth={arrowWeight} {size} /><item.Filled
-                  frame={arrowFrame}
+                <FrameFixtureIcon
+                  name={item.name}
+                  frame={item.name === 'Copy' ? 'none' : arrowFrame}
+                  strokeWidth={arrowWeight}
+                  {size}
+                /><FrameFixtureIcon
+                  name={item.name}
+                  style="filled"
+                  frame={item.name === 'Copy' ? 'none' : arrowFrame}
                   {size}
                 /><small>{size}px</small>
               </div>{/each}
@@ -399,15 +434,22 @@
 
 {#each roundFour as item}
   <div data-testid={item.name + '-outline-contour'}>
-    <item.Outline
-      frame={arrowFrame}
+    <FrameFixtureIcon
+      name={item.name}
+      frame={['arrow-left', 'arrow-right', 'menu'].includes(item.name) ? arrowFrame : 'none'}
       strokeWidth={arrowWeight}
       size={96}
       label={'Outline ' + item.label + ' contour'}
     />
   </div>
   <div data-testid={item.name + '-filled-contour'}>
-    <item.Filled frame={arrowFrame} size={96} label={'Filled ' + item.label + ' contour'} />
+    <FrameFixtureIcon
+      name={item.name}
+      style="filled"
+      frame={['arrow-left', 'arrow-right', 'menu'].includes(item.name) ? arrowFrame : 'none'}
+      size={96}
+      label={'Filled ' + item.label + ' contour'}
+    />
   </div>
 {/each}
 {#each ['light', 'dark'] as surface}
@@ -425,15 +467,37 @@
       {#each roundFour as item}<article>
           <h3>{item.label}</h3>
           <div class="round-main">
-            <item.Outline frame={arrowFrame} strokeWidth={arrowWeight} size={48} /><item.Filled
-              frame={arrowFrame}
+            <FrameFixtureIcon
+              name={item.name}
+              frame={['arrow-left', 'arrow-right', 'menu'].includes(item.name)
+                ? arrowFrame
+                : 'none'}
+              strokeWidth={arrowWeight}
+              size={48}
+            /><FrameFixtureIcon
+              name={item.name}
+              style="filled"
+              frame={['arrow-left', 'arrow-right', 'menu'].includes(item.name)
+                ? arrowFrame
+                : 'none'}
               size={48}
             />
           </div>
           <div class="round-sizes">
             {#each [16, 20, 24] as size}<div>
-                <item.Outline frame={arrowFrame} strokeWidth={arrowWeight} {size} /><item.Filled
-                  frame={arrowFrame}
+                <FrameFixtureIcon
+                  name={item.name}
+                  frame={['arrow-left', 'arrow-right', 'menu'].includes(item.name)
+                    ? arrowFrame
+                    : 'none'}
+                  strokeWidth={arrowWeight}
+                  {size}
+                /><FrameFixtureIcon
+                  name={item.name}
+                  style="filled"
+                  frame={['arrow-left', 'arrow-right', 'menu'].includes(item.name)
+                    ? arrowFrame
+                    : 'none'}
                   {size}
                 /><small>{size}px</small>
               </div>{/each}
@@ -535,7 +599,8 @@
 
 {#each roundFive as item}
   <div data-testid={item.name + '-outline-contour'}>
-    <item.Outline
+    <FrameFixtureIcon
+      name={item.name}
       frame={arrowFrame}
       strokeWidth={arrowWeight}
       size={96}
@@ -543,7 +608,13 @@
     />
   </div>
   <div data-testid={item.name + '-filled-contour'}>
-    <item.Filled frame={arrowFrame} size={96} label={'Filled ' + item.label + ' contour'} />
+    <FrameFixtureIcon
+      name={item.name}
+      style="filled"
+      frame={arrowFrame}
+      size={96}
+      label={'Filled ' + item.label + ' contour'}
+    />
   </div>
 {/each}
 {#each ['light', 'dark'] as surface}
@@ -562,14 +633,23 @@
         <article>
           <h3>{item.label}</h3>
           <div class="round-main">
-            <item.Outline frame={arrowFrame} strokeWidth={arrowWeight} size={64} /><item.Filled
+            <FrameFixtureIcon
+              name={item.name}
               frame={arrowFrame}
+              strokeWidth={arrowWeight}
               size={64}
-            />
+            /><FrameFixtureIcon name={item.name} style="filled" frame={arrowFrame} size={64} />
           </div>
           <div class="round-sizes">
             {#each [16, 20, 24, 48] as size}<div>
-                <item.Outline frame={arrowFrame} strokeWidth={arrowWeight} {size} /><item.Filled
+                <FrameFixtureIcon
+                  name={item.name}
+                  frame={arrowFrame}
+                  strokeWidth={arrowWeight}
+                  {size}
+                /><FrameFixtureIcon
+                  name={item.name}
+                  style="filled"
                   frame={arrowFrame}
                   {size}
                 /><small>{size}px</small>
@@ -600,40 +680,40 @@
 </section>
 
 <div data-testid="chevrons-up-outline-contour">
-  <ChevronsUp frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+  <FrameFixtureIcon name="chevrons-up" frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
 </div>
 <div data-testid="chevrons-up-filled-contour">
-  <FilledChevronsUp frame={arrowFrame} size={96} />
+  <FrameFixtureIcon name="chevrons-up" style="filled" frame={arrowFrame} size={96} />
 </div>
 <div data-testid="chevron-right-outline-contour">
-  <ChevronRight frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+  <FrameFixtureIcon name="chevron-right" frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
 </div>
 <div data-testid="chevron-right-filled-contour">
-  <FilledChevronRight frame={arrowFrame} size={96} />
+  <FrameFixtureIcon name="chevron-right" style="filled" frame={arrowFrame} size={96} />
 </div>
 <div data-testid="chevrons-down-outline-contour">
-  <ChevronsDown frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+  <FrameFixtureIcon name="chevrons-down" frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
 </div>
 <div data-testid="chevrons-down-filled-contour">
-  <FilledChevronsDown frame={arrowFrame} size={96} />
+  <FrameFixtureIcon name="chevrons-down" style="filled" frame={arrowFrame} size={96} />
 </div>
 <div data-testid="chevrons-left-outline-contour">
-  <ChevronsLeft frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+  <FrameFixtureIcon name="chevrons-left" frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
 </div>
 <div data-testid="chevrons-left-filled-contour">
-  <FilledChevronsLeft frame={arrowFrame} size={96} />
+  <FrameFixtureIcon name="chevrons-left" style="filled" frame={arrowFrame} size={96} />
 </div>
 <div data-testid="chevron-left-outline-contour">
-  <ChevronLeft frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+  <FrameFixtureIcon name="chevron-left" frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
 </div>
 <div data-testid="chevron-left-filled-contour">
-  <FilledChevronLeft frame={arrowFrame} size={96} />
+  <FrameFixtureIcon name="chevron-left" style="filled" frame={arrowFrame} size={96} />
 </div>
 <div data-testid="chevrons-right-outline-contour">
-  <ChevronsRight frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+  <FrameFixtureIcon name="chevrons-right" frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
 </div>
 <div data-testid="chevrons-right-filled-contour">
-  <FilledChevronsRight frame={arrowFrame} size={96} />
+  <FrameFixtureIcon name="chevrons-right" style="filled" frame={arrowFrame} size={96} />
 </div>
 
 <section class="chevron-proof" data-testid="chevron-proof">
@@ -642,7 +722,13 @@
   <div class="chevron-matrix">
     <span></span>{#each chevrons as item}<b>{item.label}</b>{/each}
     {#each ['none', 'square', 'circle'] as frame}<b>{frame}</b>{#each chevrons as item}<div>
-          <item.Outline size={32} frame={frame as 'none' | 'square' | 'circle'} /><item.Filled
+          <FrameFixtureIcon
+            name={item.name}
+            size={32}
+            frame={frame as 'none' | 'square' | 'circle'}
+          /><FrameFixtureIcon
+            name={item.name}
+            style="filled"
             size={32}
             frame={frame as 'none' | 'square' | 'circle'}
           />
@@ -651,7 +737,9 @@
 </section>
 
 <div data-testid="menu-outline-contour"><Menu size={96} /></div>
-<div data-testid="morph-menu-filled-contour"><FilledMenu frame={morphFrame} size={96} /></div>
+<div data-testid="morph-menu-filled-contour">
+  <FrameFixtureIcon name="menu" style="filled" frame={morphFrame} size={96} />
+</div>
 <section data-testid="menu-x-morph-fixture">
   <div aria-label="Fixture morph frames">
     {#each ['none', 'square', 'circle'] as choice}<button
@@ -704,11 +792,13 @@
       >{#each mathIcons as item}<div
           data-testid={'math-' + item.name + '-' + variant.style + '-' + variant.frame}
         >
-          <item.Icon
+          <FrameFixtureIcon
+            name={item.name}
             style={variant.style as 'outline' | 'bold' | 'filled'}
             frame={variant.frame as 'none' | 'square' | 'circle'}
             size={48}
-          />{#each [16, 20, 24] as size}<item.Icon
+          />{#each [16, 20, 24] as size}<FrameFixtureIcon
+              name={item.name}
               style={variant.style as 'outline' | 'bold' | 'filled'}
               frame={variant.frame as 'none' | 'square' | 'circle'}
               {size}
@@ -718,7 +808,9 @@
 </section>
 
 <div data-testid="minus-outline-contour"><Minus size={96} /></div>
-<div data-testid="minus-filled-contour"><Minus size={96} style="filled" frame={morphFrame} /></div>
+<div data-testid="minus-filled-contour">
+  <FrameFixtureIcon name="minus" size={96} style="filled" frame={morphFrame} />
+</div>
 <section data-testid="plus-minus-morph-fixture">
   <button onclick={() => (movingMorphsMounted = false)}>Unmount moving morphs</button>
   <button onclick={() => (movingMorphsMounted = true)}>Remount moving morphs</button>
@@ -765,10 +857,15 @@
 <section data-testid="menu-frame-proof">
   {#each ['none', 'square', 'circle'] as frame}
     <div data-testid={'menu-frame-' + frame + '-outline'}>
-      <Menu frame={frame as 'none' | 'square' | 'circle'} size={96} />
+      <FrameFixtureIcon name="menu" frame={frame as 'none' | 'square' | 'circle'} size={96} />
     </div>
     <div data-testid={'menu-frame-' + frame + '-filled'}>
-      <FilledMenu frame={frame as 'none' | 'square' | 'circle'} size={96} />
+      <FrameFixtureIcon
+        name="menu"
+        style="filled"
+        frame={frame as 'none' | 'square' | 'circle'}
+        size={96}
+      />
     </div>
   {/each}
 </section>
@@ -780,10 +877,15 @@
       <article>
         <h3>{item.name}</h3>
         <div data-testid={item.name + '-outline-contour'}>
-          <item.Outline size={96} frame={arrowFrame} strokeWidth={arrowWeight} />
+          <FrameFixtureIcon
+            name={item.name}
+            size={96}
+            frame={arrowFrame}
+            strokeWidth={arrowWeight}
+          />
         </div>
         <div data-testid={item.name + '-filled-contour'}>
-          <item.Filled size={96} frame={arrowFrame} />
+          <FrameFixtureIcon name={item.name} style="filled" size={96} frame={arrowFrame} />
         </div>
         {#each [16, 20, 24, 48] as size}
           <item.Outline {size} /><item.Filled {size} />
@@ -796,10 +898,20 @@
 <section data-testid="check-frame-proof">
   {#each ['none', 'square', 'circle'] as frame}
     <div data-testid={'check-frame-' + frame + '-outline'}>
-      <Check frame={frame as 'none' | 'square' | 'circle'} strokeWidth={arrowWeight} size={96} />
+      <FrameFixtureIcon
+        name="check"
+        frame={frame as 'none' | 'square' | 'circle'}
+        strokeWidth={arrowWeight}
+        size={96}
+      />
     </div>
     <div data-testid={'check-frame-' + frame + '-filled'}>
-      <FilledCheck frame={frame as 'none' | 'square' | 'circle'} size={96} />
+      <FrameFixtureIcon
+        name="check"
+        style="filled"
+        frame={frame as 'none' | 'square' | 'circle'}
+        size={96}
+      />
     </div>
   {/each}
 </section>
@@ -836,15 +948,9 @@
 <section data-testid="unframed-only-proof">
   {#each [{ name: 'maximize', Icon: Maximize }, { name: 'minimize', Icon: Minimize }, { name: 'external-link', Icon: ExternalLink }] as item}
     {#each ['outline', 'filled'] as style}
-      {#each ['none', 'square', 'circle'] as frame}
-        <div data-testid={'unframed-' + item.name + '-' + style + '-' + frame}>
-          <item.Icon
-            size={48}
-            style={style as 'outline' | 'filled'}
-            frame={frame as 'none' | 'square' | 'circle'}
-          />
-        </div>
-      {/each}
+      <div data-testid={'unframed-' + item.name + '-' + style}>
+        <item.Icon size={48} style={style as 'outline' | 'filled'} />
+      </div>
     {/each}
   {/each}
 </section>

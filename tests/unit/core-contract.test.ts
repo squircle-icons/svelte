@@ -18,57 +18,13 @@ it('consumes validated fill-only Folder geometry with a deliberate cutout', () =
   expect(filled?.parts).toEqual(['body']);
 });
 
-it('retains prior approvals while reopening Menu and Trash revisions', () => {
-  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(10);
-  expect(
-    icons.filter((icon) => icon.metadata.review?.status !== 'approved').map((icon) => icon.name),
-  ).toEqual([
-    'align-center',
-    'align-left',
-    'align-right',
-    'arrow-down-left',
-    'arrow-down-right',
-    'arrow-down',
-    'arrow-left',
-    'arrow-right',
-    'arrow-up-left',
-    'arrow-up-right',
-    'arrow-up',
-    'check',
-    'chevron-down',
-    'chevron-left-right',
-    'chevron-left',
-    'chevron-line-down',
-    'chevron-line-left',
-    'chevron-line-right',
-    'chevron-line-up',
-    'chevron-right',
-    'chevron-up-down',
-    'chevron-up',
-    'chevrons-down',
-    'chevrons-left',
-    'chevrons-right',
-    'chevrons-up',
-    'copy',
-    'corner-up-right',
-    'external-link',
-    'log-in',
-    'log-out',
-    'maximize',
-    'menu',
-    'minimize',
-    'minus',
-    'more-horizontal',
-    'more-vertical',
-    'new-window',
-    'plus',
-    'trash',
-    'x',
-  ]);
+it('retains owner approval on all authoring sources and styles', () => {
+  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(51);
   for (const icon of icons) {
     expect(icon.filled).toBeDefined();
-    expect(icon.filled?.metadata.review?.status).toBe(icon.metadata.review?.status);
+    expect(icon.filled?.metadata.review?.status).toBe('approved');
   }
+  expect(icons.filter((icon) => icon.frames?.square && icon.frames?.circle)).toHaveLength(35);
 });
 
 it('advertises no frame variants for icons without explicit owner frame approval', () => {
