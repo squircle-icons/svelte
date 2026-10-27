@@ -9,13 +9,13 @@ const arrows = [
   'arrow-down-left',
   'arrow-down-right',
   'chevron-up',
-  'chevron-up-right',
+  'chevrons-up',
   'chevron-right',
-  'chevron-down-right',
+  'chevrons-down',
   'chevron-down',
-  'chevron-down-left',
+  'chevrons-left',
   'chevron-left',
-  'chevron-up-left',
+  'chevrons-right',
 ];
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
@@ -55,9 +55,9 @@ test('Square and Circle use the identical standalone glyph, fixed frames and mat
           const glyph = [...outline.querySelectorAll('path')].at(-1)!;
           const path = filled.querySelector('path')!;
           const parts = path.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
-          if (parts.length !== 2) throw new Error('Expected one solid frame and one arrow hole');
+          if (parts.length < 2) throw new Error('Expected one solid frame and glyph cutout');
           const hole = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-          hole.setAttribute('d', parts[1]);
+          hole.setAttribute('d', parts.slice(1).join(' '));
           hole.setAttribute('visibility', 'hidden');
           filled.append(hole);
           const reference = original.filled.map((d) => {
@@ -92,7 +92,7 @@ test('Square and Circle use the identical standalone glyph, fixed frames and mat
       expect(result.glyph).toBe(originals[icon].outline);
       expect(result.mismatches).toBeLessThanOrEqual(4);
       for (const margin of result.margins) expect(margin).toBeCloseTo(2, 4);
-      expect(result.emptyCenter).toBe(true);
+      expect(result.emptyCenter).toBe(!icon.startsWith('chevrons-'));
       expect(result.solidBorder).toBe(true);
     }
     if (info.project.name === 'chromium')
@@ -108,7 +108,7 @@ test('even Bold leaves clearance between the arrow and either frame in every dir
   for (const frame of ['square', 'circle']) {
     await page.getByLabel('Fixture arrow frame').selectOption(frame);
     const clear = await page.evaluate(
-      (names) =>
+      ({ names, frame }) =>
         names.every((icon) => {
           const svg = document.querySelector(`[data-testid="${icon}-outline-contour"] svg`)!;
           const paths = [...svg.querySelectorAll('path')];
@@ -122,19 +122,24 @@ test('even Bold leaves clearance between the arrow and either frame in every dir
             const dx = values[index] - 12,
               dy = values[index + 1] - 12,
               length = Math.hypot(dx, dy);
-            const point = new DOMPoint(12 + (dx / length) * 7.625, 12 + (dy / length) * 7.625);
+            const border =
+              frame === 'circle'
+                ? 7.875
+                : 7.5 / Math.max(Math.abs(dx / length), Math.abs(dy / length));
+            const radius = (length + 1.25 + border) / 2;
+            const point = new DOMPoint(12 + (dx / length) * radius, 12 + (dy / length) * radius);
             return ![...svg.querySelectorAll<SVGGeometryElement>('path,circle')].some((shape) =>
               shape.isPointInStroke(point),
             );
           });
         }),
-      arrows,
+      { names: arrows, frame },
     );
     expect(clear).toBe(true);
   }
 });
 
-test('Chevron provides 24 forms with equal arm lengths and centered glyphs', async ({
+test('Single and Double Chevron provide 24 forms with shared cardinal geometry', async ({
   page,
 }, info) => {
   const sheet = page.getByTestId('chevron-proof');
@@ -142,29 +147,42 @@ test('Chevron provides 24 forms with equal arm lengths and centered glyphs', asy
   for (const frame of ['none', 'square', 'circle'])
     await expect(sheet.locator(`svg[data-frame="${frame}"]`)).toHaveCount(16);
   const geometry = await page.evaluate(() =>
-    [
-      ...document.querySelectorAll(
-        '[data-testid^="chevron-"][data-testid$="-outline-contour"] svg path',
-      ),
-    ].map((path) => {
-      const v = path
-        .getAttribute('d')!
-        .match(/-?\d*\.?\d+/g)!
-        .map(Number);
-      return [
-        Math.hypot(v[2] - v[0], v[3] - v[1]),
-        Math.hypot(v[4] - v[2], v[5] - v[3]),
-        (Math.min(v[0], v[2], v[4]) + Math.max(v[0], v[2], v[4])) / 2,
-        (Math.min(v[1], v[3], v[5]) + Math.max(v[1], v[3], v[5])) / 2,
-      ];
-    }),
+    [...document.querySelectorAll('[data-testid$="-outline-contour"]')]
+      .filter((el) => /^chevrons?-/.test(el.getAttribute('data-testid')!))
+      .map((el) => {
+        const values = el
+          .querySelector('path')!
+          .getAttribute('d')!
+          .match(/-?\d*\.?\d+/g)!
+          .map(Number);
+        const points = Array.from({ length: values.length / 2 }, (_, i) => [
+          values[2 * i],
+          values[2 * i + 1],
+        ]);
+        const arms = [];
+        for (let i = 0; i < points.length; i += 3)
+          for (let j = 0; j < 2; j++)
+            arms.push(
+              Math.hypot(
+                points[i + j + 1][0] - points[i + j][0],
+                points[i + j + 1][1] - points[i + j][1],
+              ),
+            );
+        return {
+          double: el.getAttribute('data-testid')!.startsWith('chevrons-'),
+          arms,
+          center: [
+            (Math.min(...points.map((p) => p[0])) + Math.max(...points.map((p) => p[0]))) / 2,
+            (Math.min(...points.map((p) => p[1])) + Math.max(...points.map((p) => p[1]))) / 2,
+          ],
+        };
+      }),
   );
   expect(geometry).toHaveLength(8);
-  for (const [a, b, x, y] of geometry) {
-    expect(a).toBeCloseTo(5.5 * Math.SQRT2, 5);
-    expect(b).toBeCloseTo(a, 5);
-    expect(x).toBeCloseTo(12, 5);
-    expect(y).toBeCloseTo(12, 5);
+  for (const item of geometry) {
+    expect(item.arms).toHaveLength(item.double ? 4 : 2);
+    for (const arm of item.arms) expect(arm).toBeCloseTo((item.double ? 4 : 5.5) * Math.SQRT2, 5);
+    for (const center of item.center) expect(center).toBeCloseTo(12, 5);
   }
   if (info.project.name === 'chromium')
     await sheet.screenshot({ path: '.artifacts/previews/chevron-24.png' });

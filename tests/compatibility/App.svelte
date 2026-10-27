@@ -3,6 +3,7 @@
   import Camera from '@squircle-icons/svelte/camera';
   import Folder from '@squircle-icons/svelte/folder';
   import FilledCamera from '@squircle-icons/svelte/filled/camera';
+  import MenuXMorph from '@squircle-icons/svelte/morph/menu-x';
   import PlusXMorph from '@squircle-icons/svelte/morph/plus-x';
   import SunMoonMorph from '@squircle-icons/svelte/morph/sun-moon';
   let filled = $state(false);
@@ -40,3 +41,5 @@
 <div id="morph"><SunMoonMorph progress={0.5} label="Compatible morph" /></div>
 
 <PlusXMorph progress={0.5} label="Compatible Plus X morph" />
+
+<MenuXMorph progress={0.5} label="Compatible Menu X morph" />

@@ -91,32 +91,41 @@ Sync requires a committed, clean upstream checkout and exclusive use of the down
 
 The public package is `@squircle-icons/svelte`. Keep both `alpha` and `latest` distribution tags on the current release so the default npm page, default install and documented `@alpha` command stay in sync. Update the public homepage from the exact published npm version and its registry provenance; the Lab keeps its separate development artifact. Original artwork and code are licensed under [MIT](LICENSE). See [migration provenance](MIGRATION.md).
 
-### Experimental Sun ↔ Moon morph
+### Opt-in morph pairs
 
-An opt-in prototype is available at `@squircle-icons/svelte/morph/sun-moon`.
-It does not add motion to static icon imports.
-Pass `moon={true}` to morph toward Moon and `moon={false}` to reverse toward Sun.
-`style="outline" | "filled"` selects the approved endpoint style. Optional
-`progress={0..1}` scrubs the same geometry; `speed={0.5}` slows playback.
-The separate component retains velocity when redirected, pauses while hidden,
-cleans up on unmount and respects the system reduced-motion preference.
-The morph is experimental and has not received owner approval.
+Import each authored pair directly:
 
-The second experimental pair is `@squircle-icons/svelte/morph/plus-x`.
-Use `x={true}` to move toward X and `x={false}` to return to Plus, with the
-same optional `progress`, `speed`, `style`, `onprogress` and `onsettle` props.
-It retains fixed Regular 1.75 and the approved 2px outer box margin; the upright
-Filled box cuts out exactly the same moving glyph as Outline. Both pairs share
-one reversible progress controller. No stroke-width control is provided.
+```svelte
+<script>
+  import MenuXMorph from '@squircle-icons/svelte/morph/menu-x';
+  let open = $state(false);
+</script>
 
-The Plus ↔ X sequence folds into a single horizontal stroke and immediately opens into X with no pause; reversing follows the same sequence. The Filled box remains upright during the single-line phase. Default1× uses40% of the shared spring rate to make both folds legible; the speed prop scales this slower pair pace.
+<button onclick={() => (open = !open)} aria-expanded={open} aria-label="Toggle menu">
+  <MenuXMorph x={open} size={24} />
+</button>
+```
 
-The owner approved the current Plus ↔ X motion on2026-10-27: continuous horizontal merge with no midpoint hold, the slower default pace and smooth reversal in both styles. Preserve the implementation accepted in adapter commit `190b84b49ea2e058fc99d358298a392c0271eaee`; see the core approved motion reference for construction details.
+Other pairs are `morph/sun-moon` (`moon` destination prop) and `morph/plus-x`
+(`x` destination prop). All support `style="outline" | "filled"`, `size`, `color`,
+`class`, `label`, `speed`, controlled `progress`, `onprogress` and `onsettle`.
+Omit `progress` for animation; set it to a value from 0 to 1 for manual inspection.
+An omitted label makes the SVG decorative. Reversal retains position and velocity;
+reduced motion switches directly to the requested endpoint.
+
+Sun Moon is the preferred motion reference. Plus X's continuous horizontal merge
+is owner-approved and retains its 0.4× pace. Menu X is a new proposal at 0.6× and
+awaits visual review. Regular morph strokes are fixed at 1.75; Menu Filled starts
+at its approved Bold 2.50 and changes geometrically into the boxed X cutout.
+Static imports do not load any morph runtime. See core `MORPH.md` for the formal
+construction, approval and verification contract.
 
 Owner global weight update (2026-10-27): all default Outline, Filled construction and morph endpoint weights now use Regular1.75; Thin1.25, Bold2.50 and Lab step.25. Menu/Search Filled uses2.50. The accepted morph timing is unchanged.
 
 ### Arrow and Chevron frames
 
-The eight Arrow and eight Chevron directions accept `frame="none" | "square" | "circle"` in unified and direct Filled imports. All three share the same smaller arrow glyph, with equal shaft/head sizes in every direction. Frames stay upright; Square/Circle have2px outer margins at Regular1.75. Filled frames have a negative-space solid-head arrow. Other icons ignore the frame prop. The arrow family and its new frames await owner review.
+The eight Arrow and four single and four Double Chevron directions accept `frame="none" | "square" | "circle"` in unified and direct Filled imports. All three share the same smaller arrow glyph, with equal shaft/head sizes in every direction. Frames stay upright; Square/Circle have2px outer margins at Regular1.75. Filled frames have a negative-space solid-head arrow. Other icons ignore the frame prop. The arrow family and its new frames await owner review.
 
-Chevron uses the same24-variant idea:8 directions times None/Square/Circle, with Outline/Filled for each. Arm lengths stay equal across directions, and each rotated Chevron is recentered without resizing. Both directional families reserve space for frames and keep the same standalone/framed glyphs.
+Chevron uses the same24-variant idea:four single and four Double Chevrons times None/Square/Circle, with Outline/Filled for each. Arm lengths stay equal across directions, and each rotated Chevron is recentered without resizing. Both directional families reserve space for frames and keep the same standalone/framed glyphs.
+
+Chevron uses only four cardinal directions. Double Chevron (`chevrons-up`, `chevrons-down`, `chevrons-left`, `chevrons-right`) uses the same four directions. Both support None/Square/Circle, for24 variants total; there are no diagonal Chevron exports.
