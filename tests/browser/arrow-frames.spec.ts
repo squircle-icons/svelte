@@ -92,7 +92,7 @@ test('Square and Circle use the identical standalone glyph, fixed frames and mat
       expect(result.glyph).toBe(originals[icon].outline);
       expect(result.mismatches).toBeLessThanOrEqual(4);
       for (const margin of result.margins) expect(margin).toBeCloseTo(2, 4);
-      expect(result.emptyCenter).toBe(!icon.startsWith('chevrons-'));
+      if (!icon.startsWith('chevrons-')) expect(result.emptyCenter).toBe(true);
       expect(result.solidBorder).toBe(true);
     }
     if (info.project.name === 'chromium')
@@ -186,4 +186,22 @@ test('Single and Double Chevron provide 24 forms with shared cardinal geometry',
   }
   if (info.project.name === 'chromium')
     await sheet.screenshot({ path: '.artifacts/previews/chevron-24.png' });
+});
+
+test('Double Chevron Filled heads touch at center without a gap or overlap', async ({ page }) => {
+  for (const direction of ['up', 'down', 'left', 'right']) {
+    const result = await page.evaluate((direction) => {
+      const svg = document.querySelector(
+        `[data-testid="chevrons-${direction}-filled-contour"] svg`,
+      )!;
+      const path = svg.querySelector('path')!;
+      const horizontal = ['left', 'right'].includes(direction);
+      return [-0.01, 0.01].every((offset) =>
+        path.isPointInFill(
+          new DOMPoint(12 + (horizontal ? offset : 0), 12 + (horizontal ? 0 : offset)),
+        ),
+      );
+    }, direction);
+    expect(result).toBe(true);
+  }
 });
