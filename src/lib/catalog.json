@@ -402,11 +402,11 @@
       "description": "A clear circular sun with eight short, evenly spaced rays.",
       "tags": ["day", "light", "weather"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The circular disc preserves the real celestial silhouette and is an intentional exception to the rounded rectangular object baseline. At the owner request, the disc radius increases from 4.25 to 5.1 and the eight radial centerlines shorten from 2 to 1 unit, running from radius 8.2 to 9.2. The disc remains centered at 12,12. Round caps and Regular 1.70 stroke are retained, giving equal visible margins of 1.95 units and a minimum disc-to-ray gap of 1.4 units. Overall dimensions are unchanged. Native proportions are the reference; Owner-approved source.",
+      "construction": "Owner requested a trial of longer Sun rays on2026-10-27. Each ray is3px long measured to the visible rounded ends at native24px and Regular1.70: centerline length1.30, spanning radial distance7.90..9.20, plus .85 caps at each end. Extend only the inner endpoint by.30; preserve the outer tips, disc radius5.10 (Filled5.95), stroke1.70, native X/Y100%, rotation0 and equal margins1.95. Filled rays are exact radius-.85 capsules around the same centerlines. The Sun Moon morph derives its Sun endpoint from this source automatically. This trial replaces the previously approved2.70px rays and awaits owner review;19 of20 pairs remain approved.",
       "review": {
-        "status": "approved",
+        "status": "draft",
         "reviewedBy": "palamto",
-        "date": "2026-10-26",
+        "date": "2026-10-27",
         "style": "outline",
         "preview": {
           "x": 100,
@@ -414,12 +414,12 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner approved Sun Outline and Filled after enlarging the central disc and shortening the eight rays. Reviewed at native proportions and Regular 1.70."
+        "note": "Owner requested a trial of longer Sun rays on2026-10-27. Each ray is3px long measured to the visible rounded ends at native24px and Regular1.70: centerline length1.30, spanning radial distance7.90..9.20, plus .85 caps at each end. Extend only the inner endpoint by.30; preserve the outer tips, disc radius5.10 (Filled5.95), stroke1.70, native X/Y100%, rotation0 and equal margins1.95. Filled rays are exact radius-.85 capsules around the same centerlines. The Sun Moon morph derives its Sun endpoint from this source automatically. This trial replaces the previously approved2.70px rays and awaits owner review;19 of20 pairs remain approved."
       },
       "styles": ["outline", "filled"],
       "defaultStrokeWidth": 1.7,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "approved"
+      "reviewStatus": "draft"
     },
     {
       "name": "trash",

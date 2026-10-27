@@ -18,11 +18,11 @@ it('consumes validated fill-only Folder geometry with a deliberate cutout', () =
   expect(filled?.parts).toEqual(['body']);
 });
 
-it('records owner approval for all twenty Outline and Filled pairs', () => {
-  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(20);
+it('keeps only the revised Sun rays pending owner review', () => {
+  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(19);
   expect(
     icons.filter((icon) => icon.metadata.review?.status !== 'approved').map((icon) => icon.name),
-  ).toEqual([]);
+  ).toEqual(['sun']);
   for (const icon of icons) {
     expect(icon.filled).toBeDefined();
     expect(icon.filled?.metadata.review?.status).toBe(icon.metadata.review?.status);

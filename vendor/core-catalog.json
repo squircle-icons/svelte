@@ -2109,11 +2109,11 @@
         "weather"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "The circular disc preserves the real celestial silhouette and is an intentional exception to the rounded rectangular object baseline. At the owner request, the disc radius increases from 4.25 to 5.1 and the eight radial centerlines shorten from 2 to 1 unit, running from radius 8.2 to 9.2. The disc remains centered at 12,12. Round caps and Regular 1.70 stroke are retained, giving equal visible margins of 1.95 units and a minimum disc-to-ray gap of 1.4 units. Overall dimensions are unchanged. Native proportions are the reference; Owner-approved source.",
+      "construction": "Owner requested a trial of longer Sun rays on2026-10-27. Each ray is3px long measured to the visible rounded ends at native24px and Regular1.70: centerline length1.30, spanning radial distance7.90..9.20, plus .85 caps at each end. Extend only the inner endpoint by.30; preserve the outer tips, disc radius5.10 (Filled5.95), stroke1.70, native X/Y100%, rotation0 and equal margins1.95. Filled rays are exact radius-.85 capsules around the same centerlines. The Sun Moon morph derives its Sun endpoint from this source automatically. This trial replaces the previously approved2.70px rays and awaits owner review;19 of20 pairs remain approved.",
       "review": {
-        "status": "approved",
+        "status": "draft",
         "reviewedBy": "palamto",
-        "date": "2026-10-26",
+        "date": "2026-10-27",
         "style": "outline",
         "preview": {
           "x": 100,
@@ -2121,7 +2121,7 @@
           "strokeWidth": 1.7,
           "rotation": 0
         },
-        "note": "Owner approved Sun Outline and Filled after enlarging the central disc and shortening the eight rays. Reviewed at native proportions and Regular 1.70."
+        "note": "Owner requested a trial of longer Sun rays on2026-10-27. Each ray is3px long measured to the visible rounded ends at native24px and Regular1.70: centerline length1.30, spanning radial distance7.90..9.20, plus .85 caps at each end. Extend only the inner endpoint by.30; preserve the outer tips, disc radius5.10 (Filled5.95), stroke1.70, native X/Y100%, rotation0 and equal margins1.95. Filled rays are exact radius-.85 capsules around the same centerlines. The Sun Moon morph derives its Sun endpoint from this source automatically. This trial replaces the previously approved2.70px rays and awaits owner review;19 of20 pairs remain approved."
       }
     },
     "root": {
@@ -2162,7 +2162,7 @@
             {
               "tag": "path",
               "attrs": {
-                "d": "M20.2 12 L21.2 12 M17.79827561 17.79827561 L18.50538239 18.50538239 M12 20.2 L12 21.2 M6.20172439 17.79827561 L5.49461761 18.50538239 M3.8 12 L2.8 12 M6.20172439 6.20172439 L5.49461761 5.49461761 M12 3.8 L12 2.8 M17.79827561 6.20172439 L18.50538239 5.49461761"
+                "d": "M19.9 12 L21.2 12 M17.58614357 17.58614357 L18.50538239 18.50538239 M12 19.9 L12 21.2 M6.41385643 17.58614357 L5.49461761 18.50538239 M4.1 12 L2.8 12 M6.41385643 6.41385643 L5.49461761 5.49461761 M12 4.1 L12 2.8 M17.58614357 6.41385643 L18.50538239 5.49461761"
               },
               "children": []
             }
@@ -2185,11 +2185,11 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "The solid disc radius is 5.95, exactly 5.1 plus half the Regular 1.70 stroke. Each shortened ray is an exact width-1.70 capsule with radius-.85 round ends around its original radial centerline from radius 8.2 to 9.2. The disc is solid; there is no counter. This follows the owner request for a larger disc and shorter rays while retaining the original overall dimensions and Regular stroke weight. Native X/Y=100% and rotation=0 are the reference. Compare contours at equal rotation. Owner-approved source.",
+        "construction": "Owner requested a trial of longer Sun rays on2026-10-27. Each ray is3px long measured to the visible rounded ends at native24px and Regular1.70: centerline length1.30, spanning radial distance7.90..9.20, plus .85 caps at each end. Extend only the inner endpoint by.30; preserve the outer tips, disc radius5.10 (Filled5.95), stroke1.70, native X/Y100%, rotation0 and equal margins1.95. Filled rays are exact radius-.85 capsules around the same centerlines. The Sun Moon morph derives its Sun endpoint from this source automatically. This trial replaces the previously approved2.70px rays and awaits owner review;19 of20 pairs remain approved.",
         "review": {
-          "status": "approved",
+          "status": "draft",
           "reviewedBy": "palamto",
-          "date": "2026-10-26",
+          "date": "2026-10-27",
           "style": "filled",
           "preview": {
             "x": 100,
@@ -2197,7 +2197,7 @@
             "strokeWidth": 1.7,
             "rotation": 0
           },
-          "note": "Owner approved Sun Outline and Filled after enlarging the central disc and shortening the eight rays. Reviewed at native proportions and Regular 1.70."
+          "note": "Owner requested a trial of longer Sun rays on2026-10-27. Each ray is3px long measured to the visible rounded ends at native24px and Regular1.70: centerline length1.30, spanning radial distance7.90..9.20, plus .85 caps at each end. Extend only the inner endpoint by.30; preserve the outer tips, disc radius5.10 (Filled5.95), stroke1.70, native X/Y100%, rotation0 and equal margins1.95. Filled rays are exact radius-.85 capsules around the same centerlines. The Sun Moon morph derives its Sun endpoint from this source automatically. This trial replaces the previously approved2.70px rays and awaits owner review;19 of20 pairs remain approved."
         }
       },
       "root": {
@@ -2236,7 +2236,7 @@
               {
                 "tag": "path",
                 "attrs": {
-                  "d": "M20.2 12.85 L21.2 12.85 A.85 .85 0 0 0 21.2 11.15 L20.2 11.15 A.85 .85 0 0 0 20.2 12.85 Z M17.19723484 18.39931637 L17.90434162 19.10642315 A.85 .85 0 0 0 19.10642315 17.90434162 L18.39931637 17.19723484 A.85 .85 0 0 0 17.19723484 18.39931637 Z M11.15 20.2 L11.15 21.2 A.85 .85 0 0 0 12.85 21.2 L12.85 20.2 A.85 .85 0 0 0 11.15 20.2 Z M5.60068363 17.19723484 L4.89357685 17.90434162 A.85 .85 0 0 0 6.09565838 19.10642315 L6.80276516 18.39931637 A.85 .85 0 0 0 5.60068363 17.19723484 Z M3.8 11.15 L2.8 11.15 A.85 .85 0 0 0 2.8 12.85 L3.8 12.85 A.85 .85 0 0 0 3.8 11.15 Z M6.80276516 5.60068363 L6.09565838 4.89357685 A.85 .85 0 0 0 4.89357685 6.09565838 L5.60068363 6.80276516 A.85 .85 0 0 0 6.80276516 5.60068363 Z M12.85 3.8 L12.85 2.8 A.85 .85 0 0 0 11.15 2.8 L11.15 3.8 A.85 .85 0 0 0 12.85 3.8 Z M18.39931637 6.80276516 L19.10642315 6.09565838 A.85 .85 0 0 0 17.90434162 4.89357685 L17.19723484 5.60068363 A.85 .85 0 0 0 18.39931637 6.80276516 Z"
+                  "d": "M19.9 12.85 L21.2 12.85 A.85 .85 0 0 0 21.2 11.15 L19.9 11.15 A.85 .85 0 0 0 19.9 12.85 Z M16.98510281 18.18718434 L17.90434162 19.10642315 A.85 .85 0 0 0 19.10642315 17.90434162 L18.18718434 16.98510281 A.85 .85 0 0 0 16.98510281 18.18718434 Z M11.15 19.9 L11.15 21.2 A.85 .85 0 0 0 12.85 21.2 L12.85 19.9 A.85 .85 0 0 0 11.15 19.9 Z M5.81281566 16.98510281 L4.89357685 17.90434162 A.85 .85 0 0 0 6.09565838 19.10642315 L7.01489719 18.18718434 A.85 .85 0 0 0 5.81281566 16.98510281 Z M4.1 11.15 L2.8 11.15 A.85 .85 0 0 0 2.8 12.85 L4.1 12.85 A.85 .85 0 0 0 4.1 11.15 Z M7.01489719 5.81281566 L6.09565838 4.89357685 A.85 .85 0 0 0 4.89357685 6.09565838 L5.81281566 7.01489719 A.85 .85 0 0 0 7.01489719 5.81281566 Z M12.85 4.1 L12.85 2.8 A.85 .85 0 0 0 11.15 2.8 L11.15 4.1 A.85 .85 0 0 0 12.85 4.1 Z M18.18718434 7.01489719 L19.10642315 6.09565838 A.85 .85 0 0 0 17.90434162 4.89357685 L16.98510281 5.81281566 A.85 .85 0 0 0 18.18718434 7.01489719 Z"
                 },
                 "children": []
               }

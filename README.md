@@ -94,7 +94,7 @@ The public package is `@squircle-icons/svelte`. Keep both `alpha` and `latest` d
 ### Experimental Sun ↔ Moon morph
 
 An opt-in prototype is available at `@squircle-icons/svelte/morph/sun-moon`.
-It does not change the twenty approved static icons or add motion to their imports.
+It does not add motion to static icon imports.
 Pass `moon={true}` to morph toward Moon and `moon={false}` to reverse toward Sun.
 `style="outline" | "filled"` selects the approved endpoint style. Optional
 `progress={0..1}` scrubs the same geometry; `speed={0.5}` slows playback.
