@@ -126,6 +126,26 @@
       "svelte": "./dist/filled/Check.svelte",
       "default": "./dist/filled/Check.svelte"
     },
+    "./chevron-down-left": {
+      "types": "./dist/ChevronDownLeft.svelte.d.ts",
+      "svelte": "./dist/ChevronDownLeft.svelte",
+      "default": "./dist/ChevronDownLeft.svelte"
+    },
+    "./filled/chevron-down-left": {
+      "types": "./dist/filled/ChevronDownLeft.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronDownLeft.svelte",
+      "default": "./dist/filled/ChevronDownLeft.svelte"
+    },
+    "./chevron-down-right": {
+      "types": "./dist/ChevronDownRight.svelte.d.ts",
+      "svelte": "./dist/ChevronDownRight.svelte",
+      "default": "./dist/ChevronDownRight.svelte"
+    },
+    "./filled/chevron-down-right": {
+      "types": "./dist/filled/ChevronDownRight.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronDownRight.svelte",
+      "default": "./dist/filled/ChevronDownRight.svelte"
+    },
     "./chevron-down": {
       "types": "./dist/ChevronDown.svelte.d.ts",
       "svelte": "./dist/ChevronDown.svelte",
@@ -135,6 +155,46 @@
       "types": "./dist/filled/ChevronDown.svelte.d.ts",
       "svelte": "./dist/filled/ChevronDown.svelte",
       "default": "./dist/filled/ChevronDown.svelte"
+    },
+    "./chevron-left": {
+      "types": "./dist/ChevronLeft.svelte.d.ts",
+      "svelte": "./dist/ChevronLeft.svelte",
+      "default": "./dist/ChevronLeft.svelte"
+    },
+    "./filled/chevron-left": {
+      "types": "./dist/filled/ChevronLeft.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronLeft.svelte",
+      "default": "./dist/filled/ChevronLeft.svelte"
+    },
+    "./chevron-right": {
+      "types": "./dist/ChevronRight.svelte.d.ts",
+      "svelte": "./dist/ChevronRight.svelte",
+      "default": "./dist/ChevronRight.svelte"
+    },
+    "./filled/chevron-right": {
+      "types": "./dist/filled/ChevronRight.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronRight.svelte",
+      "default": "./dist/filled/ChevronRight.svelte"
+    },
+    "./chevron-up-left": {
+      "types": "./dist/ChevronUpLeft.svelte.d.ts",
+      "svelte": "./dist/ChevronUpLeft.svelte",
+      "default": "./dist/ChevronUpLeft.svelte"
+    },
+    "./filled/chevron-up-left": {
+      "types": "./dist/filled/ChevronUpLeft.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronUpLeft.svelte",
+      "default": "./dist/filled/ChevronUpLeft.svelte"
+    },
+    "./chevron-up-right": {
+      "types": "./dist/ChevronUpRight.svelte.d.ts",
+      "svelte": "./dist/ChevronUpRight.svelte",
+      "default": "./dist/ChevronUpRight.svelte"
+    },
+    "./filled/chevron-up-right": {
+      "types": "./dist/filled/ChevronUpRight.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronUpRight.svelte",
+      "default": "./dist/filled/ChevronUpRight.svelte"
     },
     "./chevron-up": {
       "types": "./dist/ChevronUp.svelte.d.ts",
@@ -335,7 +395,7 @@
     "vitest": "5.0.5",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
-    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-a2495ca7e6ff.tgz"
+    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-d37d92fb478b.tgz"
   },
   "description": "Original Outline and Filled icons as native Svelte 5 components.",
   "repository": {

@@ -115,6 +115,8 @@ The owner approved the current Plus ↔ X motion on2026-10-27: continuous horizo
 
 Owner global weight update (2026-10-27): all default Outline, Filled construction and morph endpoint weights now use Regular1.75; Thin1.25, Bold2.50 and Lab step.25. Menu/Search Filled uses2.50. The accepted morph timing is unchanged.
 
-### Arrow frames
+### Arrow and Chevron frames
 
-The eight compass arrows accept `frame="none" | "square" | "circle"` in unified and direct Filled imports. All three share the same smaller arrow glyph, with equal shaft/head sizes in every direction. Frames stay upright; Square/Circle have2px outer margins at Regular1.75. Filled frames have a negative-space solid-head arrow. Other icons ignore the frame prop. The arrow family and its new frames await owner review.
+The eight Arrow and eight Chevron directions accept `frame="none" | "square" | "circle"` in unified and direct Filled imports. All three share the same smaller arrow glyph, with equal shaft/head sizes in every direction. Frames stay upright; Square/Circle have2px outer margins at Regular1.75. Filled frames have a negative-space solid-head arrow. Other icons ignore the frame prop. The arrow family and its new frames await owner review.
+
+Chevron uses the same24-variant idea:8 directions times None/Square/Circle, with Outline/Filled for each. Arm lengths stay equal across directions, and each rotated Chevron is recentered without resizing. Both directional families reserve space for frames and keep the same standalone/framed glyphs.

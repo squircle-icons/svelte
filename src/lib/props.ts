@@ -3,7 +3,7 @@ export type IconFrame = 'none' | 'square' | 'circle';
 export type IconStrokeWidth = number | 'thin' | 'regular' | 'bold';
 
 export type IconProps = {
-  /** Square/Circle frames are supported by the eight compass arrows. */
+  /** Square/Circle frames are supported by the Arrow and Chevron directional families. */
   frame?: IconFrame;
   size?: number | string;
   color?: string;

@@ -5,8 +5,8 @@ import type { CoreIcon } from '@squircle-icons/core/catalog-types';
 const icons: CoreIcon[] = JSON.parse(
   await readFile(fileURLToPath(import.meta.resolve('@squircle-icons/core/catalog.json')), 'utf8'),
 );
-it('consumes twenty-six validated icons from the pinned core artifact', () => {
-  expect(icons).toHaveLength(26);
+it('consumes thirty-two validated icons from the pinned core artifact', () => {
+  expect(icons).toHaveLength(32);
 });
 it('consumes validated fill-only Folder geometry with a deliberate cutout', () => {
   const filled = icons.find((icon) => icon.name === 'folder')?.filled;
@@ -18,8 +18,8 @@ it('consumes validated fill-only Folder geometry with a deliberate cutout', () =
   expect(filled?.parts).toEqual(['body']);
 });
 
-it('retains eighteen approvals and eight draft arrows with frames', () => {
-  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(18);
+it('retains sixteen approvals and sixteen draft Arrow/Chevron directions with frames', () => {
+  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(16);
   expect(
     icons.filter((icon) => icon.metadata.review?.status !== 'approved').map((icon) => icon.name),
   ).toEqual([
@@ -31,6 +31,14 @@ it('retains eighteen approvals and eight draft arrows with frames', () => {
     'arrow-up-left',
     'arrow-up-right',
     'arrow-up',
+    'chevron-down-left',
+    'chevron-down-right',
+    'chevron-down',
+    'chevron-left',
+    'chevron-right',
+    'chevron-up-left',
+    'chevron-up-right',
+    'chevron-up',
   ]);
   for (const icon of icons) {
     expect(icon.filled).toBeDefined();

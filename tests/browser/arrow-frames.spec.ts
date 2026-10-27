@@ -8,6 +8,14 @@ const arrows = [
   'arrow-up-right',
   'arrow-down-left',
   'arrow-down-right',
+  'chevron-up',
+  'chevron-up-right',
+  'chevron-right',
+  'chevron-down-right',
+  'chevron-down',
+  'chevron-down-left',
+  'chevron-left',
+  'chevron-up-left',
 ];
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
@@ -109,16 +117,55 @@ test('even Bold leaves clearance between the arrow and either frame in every dir
             .getAttribute('d')!
             .match(/-?\d*\.?\d+/g)!
             .map(Number);
-          const dx = values[2] - 12,
-            dy = values[3] - 12,
-            length = Math.hypot(dx, dy);
-          const point = new DOMPoint(12 + (dx / length) * 7.625, 12 + (dy / length) * 7.625);
-          return ![...svg.querySelectorAll<SVGGeometryElement>('path,circle')].some((shape) =>
-            shape.isPointInStroke(point),
-          );
+          return values.every((_, index) => {
+            if (index % 2) return true;
+            const dx = values[index] - 12,
+              dy = values[index + 1] - 12,
+              length = Math.hypot(dx, dy);
+            const point = new DOMPoint(12 + (dx / length) * 7.625, 12 + (dy / length) * 7.625);
+            return ![...svg.querySelectorAll<SVGGeometryElement>('path,circle')].some((shape) =>
+              shape.isPointInStroke(point),
+            );
+          });
         }),
       arrows,
     );
     expect(clear).toBe(true);
   }
+});
+
+test('Chevron provides 24 forms with equal arm lengths and centered glyphs', async ({
+  page,
+}, info) => {
+  const sheet = page.getByTestId('chevron-proof');
+  await expect(sheet.locator('svg')).toHaveCount(48);
+  for (const frame of ['none', 'square', 'circle'])
+    await expect(sheet.locator(`svg[data-frame="${frame}"]`)).toHaveCount(16);
+  const geometry = await page.evaluate(() =>
+    [
+      ...document.querySelectorAll(
+        '[data-testid^="chevron-"][data-testid$="-outline-contour"] svg path',
+      ),
+    ].map((path) => {
+      const v = path
+        .getAttribute('d')!
+        .match(/-?\d*\.?\d+/g)!
+        .map(Number);
+      return [
+        Math.hypot(v[2] - v[0], v[3] - v[1]),
+        Math.hypot(v[4] - v[2], v[5] - v[3]),
+        (Math.min(v[0], v[2], v[4]) + Math.max(v[0], v[2], v[4])) / 2,
+        (Math.min(v[1], v[3], v[5]) + Math.max(v[1], v[3], v[5])) / 2,
+      ];
+    }),
+  );
+  expect(geometry).toHaveLength(8);
+  for (const [a, b, x, y] of geometry) {
+    expect(a).toBeCloseTo(5.5 * Math.SQRT2, 5);
+    expect(b).toBeCloseTo(a, 5);
+    expect(x).toBeCloseTo(12, 5);
+    expect(y).toBeCloseTo(12, 5);
+  }
+  if (info.project.name === 'chromium')
+    await sheet.screenshot({ path: '.artifacts/previews/chevron-24.png' });
 });

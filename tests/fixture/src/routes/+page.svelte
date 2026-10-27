@@ -94,6 +94,48 @@
       Filled: FilledArrowDownRight,
     },
   ];
+  import ChevronUpRight from '@squircle-icons/svelte/chevron-up-right';
+  import FilledChevronUpRight from '@squircle-icons/svelte/filled/chevron-up-right';
+  import ChevronRight from '@squircle-icons/svelte/chevron-right';
+  import FilledChevronRight from '@squircle-icons/svelte/filled/chevron-right';
+  import ChevronDownRight from '@squircle-icons/svelte/chevron-down-right';
+  import FilledChevronDownRight from '@squircle-icons/svelte/filled/chevron-down-right';
+  import ChevronDownLeft from '@squircle-icons/svelte/chevron-down-left';
+  import FilledChevronDownLeft from '@squircle-icons/svelte/filled/chevron-down-left';
+  import ChevronLeft from '@squircle-icons/svelte/chevron-left';
+  import FilledChevronLeft from '@squircle-icons/svelte/filled/chevron-left';
+  import ChevronUpLeft from '@squircle-icons/svelte/chevron-up-left';
+  import FilledChevronUpLeft from '@squircle-icons/svelte/filled/chevron-up-left';
+  const chevrons = [
+    { name: 'chevron-up', label: 'Up', Outline: ChevronUp, Filled: FilledChevronUp },
+    {
+      name: 'chevron-up-right',
+      label: 'Up Right',
+      Outline: ChevronUpRight,
+      Filled: FilledChevronUpRight,
+    },
+    { name: 'chevron-right', label: 'Right', Outline: ChevronRight, Filled: FilledChevronRight },
+    {
+      name: 'chevron-down-right',
+      label: 'Down Right',
+      Outline: ChevronDownRight,
+      Filled: FilledChevronDownRight,
+    },
+    { name: 'chevron-down', label: 'Down', Outline: ChevronDown, Filled: FilledChevronDown },
+    {
+      name: 'chevron-down-left',
+      label: 'Down Left',
+      Outline: ChevronDownLeft,
+      Filled: FilledChevronDownLeft,
+    },
+    { name: 'chevron-left', label: 'Left', Outline: ChevronLeft, Filled: FilledChevronLeft },
+    {
+      name: 'chevron-up-left',
+      label: 'Up Left',
+      Outline: ChevronUpLeft,
+      Filled: FilledChevronUpLeft,
+    },
+  ];
   let arrowFrame = $state<'none' | 'square' | 'circle'>('none');
   let arrowWeight = $state(1.75);
   let hovered = $state(false);
@@ -213,20 +255,30 @@
 <div data-testid="copy-outline-contour"><Copy size={96} label="Outline Copy contour" /></div>
 <div data-testid="copy-filled-contour"><FilledCopy size={96} label="Filled Copy contour" /></div>
 <div data-testid="chevron-down-outline-contour">
-  <ChevronDown size={96} label="Outline ChevronDown contour" />
+  <ChevronDown
+    frame={arrowFrame}
+    strokeWidth={arrowWeight}
+    size={96}
+    label="Outline ChevronDown contour"
+  />
 </div>
 <div data-testid="chevron-down-filled-contour">
-  <FilledChevronDown size={96} label="Filled ChevronDown contour" />
+  <FilledChevronDown frame={arrowFrame} size={96} label="Filled ChevronDown contour" />
 </div>
 <div data-testid="plus-outline-contour"><Plus size={96} label="Outline Plus contour" /></div>
 <div data-testid="plus-filled-contour"><FilledPlus size={96} label="Filled Plus contour" /></div>
 <div data-testid="check-outline-contour"><Check size={96} label="Outline Check contour" /></div>
 <div data-testid="check-filled-contour"><FilledCheck size={96} label="Filled Check contour" /></div>
 <div data-testid="chevron-up-outline-contour">
-  <ChevronUp size={96} label="Outline ChevronUp contour" />
+  <ChevronUp
+    frame={arrowFrame}
+    strokeWidth={arrowWeight}
+    size={96}
+    label="Outline ChevronUp contour"
+  />
 </div>
 <div data-testid="chevron-up-filled-contour">
-  <FilledChevronUp size={96} label="Filled ChevronUp contour" />
+  <FilledChevronUp frame={arrowFrame} size={96} label="Filled ChevronUp contour" />
 </div>
 
 {#each ['light', 'dark'] as surface}
@@ -501,7 +553,88 @@
   >
 </section>
 
+<div data-testid="chevron-up-right-outline-contour">
+  <ChevronUpRight frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+</div>
+<div data-testid="chevron-up-right-filled-contour">
+  <FilledChevronUpRight frame={arrowFrame} size={96} />
+</div>
+<div data-testid="chevron-right-outline-contour">
+  <ChevronRight frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+</div>
+<div data-testid="chevron-right-filled-contour">
+  <FilledChevronRight frame={arrowFrame} size={96} />
+</div>
+<div data-testid="chevron-down-right-outline-contour">
+  <ChevronDownRight frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+</div>
+<div data-testid="chevron-down-right-filled-contour">
+  <FilledChevronDownRight frame={arrowFrame} size={96} />
+</div>
+<div data-testid="chevron-down-left-outline-contour">
+  <ChevronDownLeft frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+</div>
+<div data-testid="chevron-down-left-filled-contour">
+  <FilledChevronDownLeft frame={arrowFrame} size={96} />
+</div>
+<div data-testid="chevron-left-outline-contour">
+  <ChevronLeft frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+</div>
+<div data-testid="chevron-left-filled-contour">
+  <FilledChevronLeft frame={arrowFrame} size={96} />
+</div>
+<div data-testid="chevron-up-left-outline-contour">
+  <ChevronUpLeft frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+</div>
+<div data-testid="chevron-up-left-filled-contour">
+  <FilledChevronUpLeft frame={arrowFrame} size={96} />
+</div>
+
+<section class="chevron-proof" data-testid="chevron-proof">
+  <h2>Chevron · 24 forms</h2>
+  <p>8 directions × None / Square / Circle · Outline & Filled · Regular 1.75</p>
+  <div class="chevron-matrix">
+    <span></span>{#each chevrons as item}<b>{item.label}</b>{/each}
+    {#each ['none', 'square', 'circle'] as frame}<b>{frame}</b>{#each chevrons as item}<div>
+          <item.Outline size={32} frame={frame as 'none' | 'square' | 'circle'} /><item.Filled
+            size={32}
+            frame={frame as 'none' | 'square' | 'circle'}
+          />
+        </div>{/each}{/each}
+  </div>
+</section>
+
 <style>
+  .chevron-proof {
+    width: 1000px;
+    padding: 28px;
+    background: white;
+    color: #27272a;
+    border: 1px solid #e4e4e7;
+    border-radius: 20px;
+  }
+  .chevron-proof p {
+    color: #71717a;
+    font-size: 13px;
+  }
+  .chevron-matrix {
+    display: grid;
+    grid-template-columns: 80px repeat(8, 1fr);
+    gap: 24px 8px;
+    align-items: center;
+    text-align: center;
+    padding: 24px 0;
+  }
+  .chevron-matrix b {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  .chevron-matrix div {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
   .rotation-sheet {
     width: 700px;
     padding: 28px;
