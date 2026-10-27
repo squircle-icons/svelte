@@ -135,6 +135,46 @@ files.set(
   ) + '\n',
 );
 exports['./catalog.json'] = './dist/catalog.json';
+// Opt-in experiment: no static icon or barrel imports the morph implementation.
+exports['./morph/sun-moon'] = {
+  types: './dist/morph/SunMoonMorph.svelte.d.ts',
+  svelte: './dist/morph/SunMoonMorph.svelte',
+  default: './dist/morph/SunMoonMorph.svelte',
+};
+files.set(
+  'src/lib/morph/sun-moon-geometry.js',
+  header +
+    (await readFile(
+      fileURLToPath(import.meta.resolve('@squircle-icons/core/morph/sun-moon')),
+      'utf8',
+    )),
+);
+files.set(
+  'src/lib/morph/sun-moon-data.js',
+  header +
+    'export default ' +
+    (await readFile(
+      fileURLToPath(import.meta.resolve('@squircle-icons/core/morph/sun-moon.json')),
+      'utf8',
+    )) +
+    ';\n',
+);
+files.set(
+  'src/lib/morph/sun-moon-geometry.d.ts',
+  header +
+    (await readFile(
+      fileURLToPath(import.meta.resolve('@squircle-icons/core/morph/sun-moon')).replace(
+        /\.js$/,
+        '.d.ts',
+      ),
+      'utf8',
+    )),
+);
+files.set(
+  'src/lib/morph/sun-moon-data.d.ts',
+  header +
+    "import type { SunMoonGeometry } from './sun-moon-geometry.js';\ndeclare const geometry: SunMoonGeometry;\nexport default geometry;\n",
+);
 const packagePath = 'package.json';
 const manifest = JSON.parse(await readFile(resolve(root, packagePath), 'utf8'));
 manifest.exports = exports;

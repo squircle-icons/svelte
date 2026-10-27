@@ -90,3 +90,14 @@ pnpm sync:lab ../svelte
 Sync requires a committed, clean upstream checkout and exclusive use of the downstream checkout while it runs. It builds and packs the source, records its full commit and SHA-256 in `dependency-lock.json`, refreshes the installed dependency and lockfile, and regenerates components/catalogs. Artifacts use content-addressed filenames so updates do not require a destructive reinstall. Failed installation, generation or provenance checks restore downstream files and the previously installed dependency. If automatic recovery also fails, the error prints the preserved backup location. Review the artifact, provenance and generated output together.
 
 The public package is `@squircle-icons/svelte`. Keep both `alpha` and `latest` distribution tags on the current release so the default npm page, default install and documented `@alpha` command stay in sync. Update the public homepage from the exact published npm version and its registry provenance; the Lab keeps its separate development artifact. Original artwork and code are licensed under [MIT](LICENSE). See [migration provenance](MIGRATION.md).
+
+### Experimental Sun ↔ Moon morph
+
+An opt-in prototype is available at `@squircle-icons/svelte/morph/sun-moon`.
+It does not change the twenty approved static icons or add motion to their imports.
+Pass `moon={true}` to morph toward Moon and `moon={false}` to reverse toward Sun.
+`style="outline" | "filled"` selects the approved endpoint style. Optional
+`progress={0..1}` scrubs the same geometry; `speed={0.5}` slows playback.
+The separate component retains velocity when redirected, pauses while hidden,
+cleans up on unmount and respects the system reduced-motion preference.
+The morph is experimental and has not received owner approval.

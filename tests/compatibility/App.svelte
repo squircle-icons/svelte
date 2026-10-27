@@ -3,6 +3,7 @@
   import Camera from '@squircle-icons/svelte/camera';
   import Folder from '@squircle-icons/svelte/folder';
   import FilledCamera from '@squircle-icons/svelte/filled/camera';
+  import SunMoonMorph from '@squircle-icons/svelte/morph/sun-moon';
   let filled = $state(false);
   let width = $state('regular');
   let ready = $state(false);
@@ -35,3 +36,4 @@
 </div>
 <div id="folder"><Folder style="filled" strokeWidth={width} /></div>
 <div id="dedicated"><FilledCamera /></div>
+<div id="morph"><SunMoonMorph progress={0.5} label="Compatible morph" /></div>

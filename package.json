@@ -221,7 +221,12 @@
       "svelte": "./dist/filled/index.js",
       "default": "./dist/filled/index.js"
     },
-    "./catalog.json": "./dist/catalog.json"
+    "./catalog.json": "./dist/catalog.json",
+    "./morph/sun-moon": {
+      "types": "./dist/morph/SunMoonMorph.svelte.d.ts",
+      "svelte": "./dist/morph/SunMoonMorph.svelte",
+      "default": "./dist/morph/SunMoonMorph.svelte"
+    }
   },
   "peerDependencies": {
     "svelte": "^5.0.0"
@@ -265,7 +270,7 @@
     "vitest": "5.0.5",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
-    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-6f26f5aec7e4.tgz"
+    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-d2719dca8537.tgz"
   },
   "description": "Original Outline and Filled icons as native Svelte 5 components.",
   "repository": {

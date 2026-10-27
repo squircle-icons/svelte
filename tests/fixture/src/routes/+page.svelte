@@ -1,5 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import SunMoonMorph from '@squircle-icons/svelte/morph/sun-moon';
+  let morphMoon = $state(false);
+  let morphProgress = $state<number | undefined>(undefined);
+  let morphStyle = $state<'outline' | 'filled'>('outline');
   import X from '@squircle-icons/svelte/x';
   import FilledX from '@squircle-icons/svelte/filled/x';
   import Copy from '@squircle-icons/svelte/copy';
@@ -58,6 +62,7 @@
 </script>
 
 <h1>Packed Svelte consumer</h1>
+
 <div data-testid="ready">{ready ? 'hydrated' : 'server'}</div>
 <div data-testid="instances">
   <Camera label="Camera one" /><Camera label="Camera two" /><Camera /><Folder /><Bell />
@@ -287,6 +292,40 @@
   <div data-testid="unified-filled-sheet">
     {#each [Camera, Folder, Bell, Heart, Settings] as Icon}<Icon style="filled" />{/each}
   </div>
+</section>
+
+<section data-testid="morph-fixture">
+  <button
+    onclick={() => {
+      morphProgress = undefined;
+      morphMoon = true;
+    }}>Morph moon</button
+  >
+  <button
+    onclick={() => {
+      morphProgress = undefined;
+      morphMoon = false;
+    }}>Morph sun</button
+  >
+  <button onclick={() => (morphStyle = morphStyle === 'outline' ? 'filled' : 'outline')}
+    >Morph style</button
+  >
+  <input
+    aria-label="Fixture morph progress"
+    type="range"
+    min="0"
+    max="1"
+    step="0.001"
+    value={morphProgress ?? 0}
+    oninput={(e) => (morphProgress = Number(e.currentTarget.value))}
+  />
+  <SunMoonMorph
+    moon={morphMoon}
+    progress={morphProgress}
+    style={morphStyle}
+    size={96}
+    label="Experimental morph"
+  />
 </section>
 
 <style>
