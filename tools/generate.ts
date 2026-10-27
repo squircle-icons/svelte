@@ -153,6 +153,7 @@ exports['./catalog.json'] = './dist/catalog.json';
 for (const [pair, component, type] of [
   ['sun-moon', 'SunMoonMorph', 'SunMoonGeometry'],
   ['plus-x', 'PlusXMorph', 'PlusXGeometry'],
+  ['menu-x', 'MenuXMorph', 'MenuXGeometry'],
 ]) {
   exports[`./morph/${pair}`] = {
     types: `./dist/morph/${component}.svelte.d.ts`,

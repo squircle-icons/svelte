@@ -31,14 +31,14 @@ it('retains sixteen approvals and sixteen draft Arrow/Chevron directions with fr
     'arrow-up-left',
     'arrow-up-right',
     'arrow-up',
-    'chevron-down-left',
-    'chevron-down-right',
     'chevron-down',
     'chevron-left',
     'chevron-right',
-    'chevron-up-left',
-    'chevron-up-right',
     'chevron-up',
+    'chevrons-down',
+    'chevrons-left',
+    'chevrons-right',
+    'chevrons-up',
   ]);
   for (const icon of icons) {
     expect(icon.filled).toBeDefined();

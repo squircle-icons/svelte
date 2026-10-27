@@ -190,12 +190,12 @@ for (const icon of [
   'plus',
   'check',
   'chevron-up',
-  'chevron-up-right',
+  'chevrons-up',
   'chevron-right',
-  'chevron-down-right',
-  'chevron-down-left',
+  'chevrons-down',
+  'chevrons-left',
   'chevron-left',
-  'chevron-up-left',
+  'chevrons-right',
   'arrow-left',
   'arrow-right',
   'arrow-up',
@@ -251,12 +251,12 @@ for (const icon of [
               'check',
               'chevron-down',
               'chevron-up',
-              'chevron-up-right',
+              'chevrons-up',
               'chevron-right',
-              'chevron-down-right',
-              'chevron-down-left',
+              'chevrons-down',
+              'chevrons-left',
               'chevron-left',
-              'chevron-up-left',
+              'chevrons-right',
               'arrow-left',
               'arrow-right',
               'arrow-up',
@@ -284,19 +284,28 @@ for (const icon of [
               'arrow-down-right',
               'chevron-down',
               'chevron-up',
-              'chevron-up-right',
+              'chevrons-up',
               'chevron-right',
-              'chevron-down-right',
-              'chevron-down-left',
+              'chevrons-down',
+              'chevrons-left',
               'chevron-left',
-              'chevron-up-left',
+              'chevrons-right',
               'download',
               'upload',
             ].includes(icon)
           ) {
             const group = ['download', 'upload'].includes(icon) ? 'arrow' : 'body';
             const head = svg.querySelector(`[data-part="${group}"] path`)!;
-            head.setAttribute('d', head.getAttribute('d') + ' Z');
+            head.setAttribute(
+              'd',
+              icon.startsWith('chevrons-')
+                ? head
+                    .getAttribute('d')!
+                    .match(/[Mm][^Mm]*/g)!
+                    .map((part) => part + ' Z')
+                    .join(' ')
+                : head.getAttribute('d') + ' Z',
+            );
             head.setAttribute('fill', '#000');
           }
           if (icon === 'trash') {

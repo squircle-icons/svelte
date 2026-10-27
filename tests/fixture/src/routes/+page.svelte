@@ -1,5 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import MenuXMorph from '@squircle-icons/svelte/morph/menu-x';
+  let menuXTarget = $state(false);
+  let menuXProgress = $state<number | undefined>(undefined);
   import PlusXMorph from '@squircle-icons/svelte/morph/plus-x';
   let plusXTarget = $state(false);
   let plusXProgress = $state<number | undefined>(undefined);
@@ -94,46 +97,41 @@
       Filled: FilledArrowDownRight,
     },
   ];
-  import ChevronUpRight from '@squircle-icons/svelte/chevron-up-right';
-  import FilledChevronUpRight from '@squircle-icons/svelte/filled/chevron-up-right';
+  import ChevronsUp from '@squircle-icons/svelte/chevrons-up';
+  import FilledChevronsUp from '@squircle-icons/svelte/filled/chevrons-up';
   import ChevronRight from '@squircle-icons/svelte/chevron-right';
   import FilledChevronRight from '@squircle-icons/svelte/filled/chevron-right';
-  import ChevronDownRight from '@squircle-icons/svelte/chevron-down-right';
-  import FilledChevronDownRight from '@squircle-icons/svelte/filled/chevron-down-right';
-  import ChevronDownLeft from '@squircle-icons/svelte/chevron-down-left';
-  import FilledChevronDownLeft from '@squircle-icons/svelte/filled/chevron-down-left';
+  import ChevronsDown from '@squircle-icons/svelte/chevrons-down';
+  import FilledChevronsDown from '@squircle-icons/svelte/filled/chevrons-down';
+  import ChevronsLeft from '@squircle-icons/svelte/chevrons-left';
+  import FilledChevronsLeft from '@squircle-icons/svelte/filled/chevrons-left';
   import ChevronLeft from '@squircle-icons/svelte/chevron-left';
   import FilledChevronLeft from '@squircle-icons/svelte/filled/chevron-left';
-  import ChevronUpLeft from '@squircle-icons/svelte/chevron-up-left';
-  import FilledChevronUpLeft from '@squircle-icons/svelte/filled/chevron-up-left';
+  import ChevronsRight from '@squircle-icons/svelte/chevrons-right';
+  import FilledChevronsRight from '@squircle-icons/svelte/filled/chevrons-right';
   const chevrons = [
     { name: 'chevron-up', label: 'Up', Outline: ChevronUp, Filled: FilledChevronUp },
-    {
-      name: 'chevron-up-right',
-      label: 'Up Right',
-      Outline: ChevronUpRight,
-      Filled: FilledChevronUpRight,
-    },
-    { name: 'chevron-right', label: 'Right', Outline: ChevronRight, Filled: FilledChevronRight },
-    {
-      name: 'chevron-down-right',
-      label: 'Down Right',
-      Outline: ChevronDownRight,
-      Filled: FilledChevronDownRight,
-    },
     { name: 'chevron-down', label: 'Down', Outline: ChevronDown, Filled: FilledChevronDown },
-    {
-      name: 'chevron-down-left',
-      label: 'Down Left',
-      Outline: ChevronDownLeft,
-      Filled: FilledChevronDownLeft,
-    },
     { name: 'chevron-left', label: 'Left', Outline: ChevronLeft, Filled: FilledChevronLeft },
+    { name: 'chevron-right', label: 'Right', Outline: ChevronRight, Filled: FilledChevronRight },
+    { name: 'chevrons-up', label: 'Double Up', Outline: ChevronsUp, Filled: FilledChevronsUp },
     {
-      name: 'chevron-up-left',
-      label: 'Up Left',
-      Outline: ChevronUpLeft,
-      Filled: FilledChevronUpLeft,
+      name: 'chevrons-down',
+      label: 'Double Down',
+      Outline: ChevronsDown,
+      Filled: FilledChevronsDown,
+    },
+    {
+      name: 'chevrons-left',
+      label: 'Double Left',
+      Outline: ChevronsLeft,
+      Filled: FilledChevronsLeft,
+    },
+    {
+      name: 'chevrons-right',
+      label: 'Double Right',
+      Outline: ChevronsRight,
+      Filled: FilledChevronsRight,
     },
   ];
   let arrowFrame = $state<'none' | 'square' | 'circle'>('none');
@@ -553,11 +551,11 @@
   >
 </section>
 
-<div data-testid="chevron-up-right-outline-contour">
-  <ChevronUpRight frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+<div data-testid="chevrons-up-outline-contour">
+  <ChevronsUp frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
 </div>
-<div data-testid="chevron-up-right-filled-contour">
-  <FilledChevronUpRight frame={arrowFrame} size={96} />
+<div data-testid="chevrons-up-filled-contour">
+  <FilledChevronsUp frame={arrowFrame} size={96} />
 </div>
 <div data-testid="chevron-right-outline-contour">
   <ChevronRight frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
@@ -565,17 +563,17 @@
 <div data-testid="chevron-right-filled-contour">
   <FilledChevronRight frame={arrowFrame} size={96} />
 </div>
-<div data-testid="chevron-down-right-outline-contour">
-  <ChevronDownRight frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+<div data-testid="chevrons-down-outline-contour">
+  <ChevronsDown frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
 </div>
-<div data-testid="chevron-down-right-filled-contour">
-  <FilledChevronDownRight frame={arrowFrame} size={96} />
+<div data-testid="chevrons-down-filled-contour">
+  <FilledChevronsDown frame={arrowFrame} size={96} />
 </div>
-<div data-testid="chevron-down-left-outline-contour">
-  <ChevronDownLeft frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+<div data-testid="chevrons-left-outline-contour">
+  <ChevronsLeft frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
 </div>
-<div data-testid="chevron-down-left-filled-contour">
-  <FilledChevronDownLeft frame={arrowFrame} size={96} />
+<div data-testid="chevrons-left-filled-contour">
+  <FilledChevronsLeft frame={arrowFrame} size={96} />
 </div>
 <div data-testid="chevron-left-outline-contour">
   <ChevronLeft frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
@@ -583,16 +581,16 @@
 <div data-testid="chevron-left-filled-contour">
   <FilledChevronLeft frame={arrowFrame} size={96} />
 </div>
-<div data-testid="chevron-up-left-outline-contour">
-  <ChevronUpLeft frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
+<div data-testid="chevrons-right-outline-contour">
+  <ChevronsRight frame={arrowFrame} strokeWidth={arrowWeight} size={96} />
 </div>
-<div data-testid="chevron-up-left-filled-contour">
-  <FilledChevronUpLeft frame={arrowFrame} size={96} />
+<div data-testid="chevrons-right-filled-contour">
+  <FilledChevronsRight frame={arrowFrame} size={96} />
 </div>
 
 <section class="chevron-proof" data-testid="chevron-proof">
   <h2>Chevron · 24 forms</h2>
-  <p>8 directions × None / Square / Circle · Outline & Filled · Regular 1.75</p>
+  <p>4 single + 4 double × None / Square / Circle · Outline & Filled · Regular 1.75</p>
   <div class="chevron-matrix">
     <span></span>{#each chevrons as item}<b>{item.label}</b>{/each}
     {#each ['none', 'square', 'circle'] as frame}<b>{frame}</b>{#each chevrons as item}<div>
@@ -602,6 +600,34 @@
           />
         </div>{/each}{/each}
   </div>
+</section>
+
+<div data-testid="menu-outline-contour"><Menu size={96} /></div>
+<div data-testid="menu-filled-contour"><FilledMenu size={96} /></div>
+<section data-testid="menu-x-morph-fixture">
+  <button
+    onclick={() => {
+      menuXProgress = undefined;
+      menuXTarget = true;
+    }}>Menu X open</button
+  >
+  <button
+    onclick={() => {
+      menuXProgress = undefined;
+      menuXTarget = false;
+    }}>Menu X close</button
+  >
+  <input
+    aria-label="Fixture Menu X progress"
+    type="range"
+    min="0"
+    max="1"
+    step="0.001"
+    value={menuXProgress ?? 0}
+    oninput={(e) => (menuXProgress = Number(e.currentTarget.value))}
+  />
+  <MenuXMorph x={menuXTarget} progress={menuXProgress} size={96} label="Menu X fixture" />
+  <MenuXMorph progress={menuXProgress ?? 0} style="filled" size={96} />
 </section>
 
 <style>

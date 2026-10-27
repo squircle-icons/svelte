@@ -3124,670 +3124,6 @@
     }
   },
   {
-    "name": "chevron-down-left",
-    "metadata": {
-      "name": "chevron-down-left",
-      "description": "A chevron down left with an open V and round ends.",
-      "tags": [
-        "chevron",
-        "caret",
-        "navigation",
-        "down",
-        "left"
-      ],
-      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-      "filledTreatment": "solid-head",
-      "review": {
-        "status": "draft",
-        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-      }
-    },
-    "root": {
-      "tag": "svg",
-      "attrs": {
-        "xmlns": "http://www.w3.org/2000/svg",
-        "fill": "none",
-        "stroke": "currentColor",
-        "stroke-linecap": "round",
-        "stroke-linejoin": "round",
-        "stroke-width": "1.75",
-        "viewBox": "0 0 24 24"
-      },
-      "children": [
-        {
-          "tag": "g",
-          "attrs": {
-            "data-part": "body"
-          },
-          "children": [
-            {
-              "tag": "path",
-              "attrs": {
-                "d": "M15.8890873 15.8890873 L8.1109127 15.8890873 L8.1109127 8.1109127"
-              },
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    "parts": [
-      "body"
-    ],
-    "filled": {
-      "metadata": {
-        "name": "chevron-down-left",
-        "description": "A chevron down left with a solid rounded triangular head.",
-        "tags": [
-          "chevron",
-          "caret",
-          "navigation",
-          "down",
-          "left",
-          "filled"
-        ],
-        "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-        "filledTreatment": "solid-head",
-        "review": {
-          "status": "draft",
-          "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-        }
-      },
-      "root": {
-        "tag": "svg",
-        "attrs": {
-          "xmlns": "http://www.w3.org/2000/svg",
-          "fill": "currentColor",
-          "fill-rule": "evenodd",
-          "stroke": "none",
-          "viewBox": "0 0 24 24"
-        },
-        "children": [
-          {
-            "tag": "g",
-            "attrs": {
-              "data-part": "body"
-            },
-            "children": [
-              {
-                "tag": "path",
-                "attrs": {
-                  "d": "M16.50780573 15.27036886 A.875 .875 0 0 1 16.7640873 15.8890873 A.875 .875 0 0 1 15.8890873 16.7640873 L8.1109127 16.7640873 A.875 .875 0 0 1 7.2359127 15.8890873 L7.2359127 8.1109127 A.875 .875 0 0 1 8.1109127 7.2359127 A.875 .875 0 0 1 8.72963114 7.49219427 L16.50780573 15.27036886 Z"
-                },
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      "parts": [
-        "body"
-      ]
-    },
-    "frames": {
-      "square": {
-        "metadata": {
-          "name": "chevron-down-left",
-          "description": "Chevron Down Left in a square frame.",
-          "tags": [
-            "chevron",
-            "caret",
-            "navigation",
-            "down",
-            "left",
-            "frame",
-            "square"
-          ],
-          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-          "review": {
-            "status": "draft",
-            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-          }
-        },
-        "root": {
-          "tag": "svg",
-          "attrs": {
-            "xmlns": "http://www.w3.org/2000/svg",
-            "fill": "none",
-            "stroke": "currentColor",
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round",
-            "stroke-width": "1.75",
-            "viewBox": "0 0 24 24"
-          },
-          "children": [
-            {
-              "tag": "g",
-              "attrs": {
-                "data-part": "body"
-              },
-              "children": [
-                {
-                  "tag": "path",
-                  "attrs": {
-                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
-                  },
-                  "children": []
-                },
-                {
-                  "tag": "path",
-                  "attrs": {
-                    "d": "M15.8890873 15.8890873 L8.1109127 15.8890873 L8.1109127 8.1109127"
-                  },
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        "parts": [
-          "body"
-        ],
-        "filled": {
-          "metadata": {
-            "name": "chevron-down-left",
-            "description": "Chevron Down Left in a square frame with a negative-space solid head.",
-            "tags": [
-              "chevron",
-              "caret",
-              "navigation",
-              "down",
-              "left",
-              "filled",
-              "frame",
-              "square"
-            ],
-            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-            "review": {
-              "status": "draft",
-              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-            }
-          },
-          "root": {
-            "tag": "svg",
-            "attrs": {
-              "xmlns": "http://www.w3.org/2000/svg",
-              "fill": "currentColor",
-              "fill-rule": "evenodd",
-              "stroke": "none",
-              "viewBox": "0 0 24 24"
-            },
-            "children": [
-              {
-                "tag": "g",
-                "attrs": {
-                  "data-part": "body"
-                },
-                "children": [
-                  {
-                    "tag": "path",
-                    "attrs": {
-                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M16.50780573 15.27036886 A.875 .875 0 0 1 16.7640873 15.8890873 A.875 .875 0 0 1 15.8890873 16.7640873 L8.1109127 16.7640873 A.875 .875 0 0 1 7.2359127 15.8890873 L7.2359127 8.1109127 A.875 .875 0 0 1 8.1109127 7.2359127 A.875 .875 0 0 1 8.72963114 7.49219427 L16.50780573 15.27036886 Z"
-                    },
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          "parts": [
-            "body"
-          ]
-        }
-      },
-      "circle": {
-        "metadata": {
-          "name": "chevron-down-left",
-          "description": "Chevron Down Left in a circle frame.",
-          "tags": [
-            "chevron",
-            "caret",
-            "navigation",
-            "down",
-            "left",
-            "frame",
-            "circle"
-          ],
-          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-          "review": {
-            "status": "draft",
-            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-          }
-        },
-        "root": {
-          "tag": "svg",
-          "attrs": {
-            "xmlns": "http://www.w3.org/2000/svg",
-            "fill": "none",
-            "stroke": "currentColor",
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round",
-            "stroke-width": "1.75",
-            "viewBox": "0 0 24 24"
-          },
-          "children": [
-            {
-              "tag": "g",
-              "attrs": {
-                "data-part": "body"
-              },
-              "children": [
-                {
-                  "tag": "circle",
-                  "attrs": {
-                    "cx": "12",
-                    "cy": "12",
-                    "r": "9.125"
-                  },
-                  "children": []
-                },
-                {
-                  "tag": "path",
-                  "attrs": {
-                    "d": "M15.8890873 15.8890873 L8.1109127 15.8890873 L8.1109127 8.1109127"
-                  },
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        "parts": [
-          "body"
-        ],
-        "filled": {
-          "metadata": {
-            "name": "chevron-down-left",
-            "description": "Chevron Down Left in a circle frame with a negative-space solid head.",
-            "tags": [
-              "chevron",
-              "caret",
-              "navigation",
-              "down",
-              "left",
-              "filled",
-              "frame",
-              "circle"
-            ],
-            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-            "review": {
-              "status": "draft",
-              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-            }
-          },
-          "root": {
-            "tag": "svg",
-            "attrs": {
-              "xmlns": "http://www.w3.org/2000/svg",
-              "fill": "currentColor",
-              "fill-rule": "evenodd",
-              "stroke": "none",
-              "viewBox": "0 0 24 24"
-            },
-            "children": [
-              {
-                "tag": "g",
-                "attrs": {
-                  "data-part": "body"
-                },
-                "children": [
-                  {
-                    "tag": "path",
-                    "attrs": {
-                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M16.50780573 15.27036886 A.875 .875 0 0 1 16.7640873 15.8890873 A.875 .875 0 0 1 15.8890873 16.7640873 L8.1109127 16.7640873 A.875 .875 0 0 1 7.2359127 15.8890873 L7.2359127 8.1109127 A.875 .875 0 0 1 8.1109127 7.2359127 A.875 .875 0 0 1 8.72963114 7.49219427 L16.50780573 15.27036886 Z"
-                    },
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          "parts": [
-            "body"
-          ]
-        }
-      }
-    }
-  },
-  {
-    "name": "chevron-down-right",
-    "metadata": {
-      "name": "chevron-down-right",
-      "description": "A chevron down right with an open V and round ends.",
-      "tags": [
-        "chevron",
-        "caret",
-        "navigation",
-        "down",
-        "right"
-      ],
-      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-      "filledTreatment": "solid-head",
-      "review": {
-        "status": "draft",
-        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-      }
-    },
-    "root": {
-      "tag": "svg",
-      "attrs": {
-        "xmlns": "http://www.w3.org/2000/svg",
-        "fill": "none",
-        "stroke": "currentColor",
-        "stroke-linecap": "round",
-        "stroke-linejoin": "round",
-        "stroke-width": "1.75",
-        "viewBox": "0 0 24 24"
-      },
-      "children": [
-        {
-          "tag": "g",
-          "attrs": {
-            "data-part": "body"
-          },
-          "children": [
-            {
-              "tag": "path",
-              "attrs": {
-                "d": "M15.8890873 8.1109127 L15.8890873 15.8890873 L8.1109127 15.8890873"
-              },
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    "parts": [
-      "body"
-    ],
-    "filled": {
-      "metadata": {
-        "name": "chevron-down-right",
-        "description": "A chevron down right with a solid rounded triangular head.",
-        "tags": [
-          "chevron",
-          "caret",
-          "navigation",
-          "down",
-          "right",
-          "filled"
-        ],
-        "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-        "filledTreatment": "solid-head",
-        "review": {
-          "status": "draft",
-          "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-        }
-      },
-      "root": {
-        "tag": "svg",
-        "attrs": {
-          "xmlns": "http://www.w3.org/2000/svg",
-          "fill": "currentColor",
-          "fill-rule": "evenodd",
-          "stroke": "none",
-          "viewBox": "0 0 24 24"
-        },
-        "children": [
-          {
-            "tag": "g",
-            "attrs": {
-              "data-part": "body"
-            },
-            "children": [
-              {
-                "tag": "path",
-                "attrs": {
-                  "d": "M15.27036886 7.49219427 A.875 .875 0 0 1 15.8890873 7.2359127 A.875 .875 0 0 1 16.7640873 8.1109127 L16.7640873 15.8890873 A.875 .875 0 0 1 15.8890873 16.7640873 L8.1109127 16.7640873 A.875 .875 0 0 1 7.2359127 15.8890873 A.875 .875 0 0 1 7.49219427 15.27036886 L15.27036886 7.49219427 Z"
-                },
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      "parts": [
-        "body"
-      ]
-    },
-    "frames": {
-      "square": {
-        "metadata": {
-          "name": "chevron-down-right",
-          "description": "Chevron Down Right in a square frame.",
-          "tags": [
-            "chevron",
-            "caret",
-            "navigation",
-            "down",
-            "right",
-            "frame",
-            "square"
-          ],
-          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-          "review": {
-            "status": "draft",
-            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-          }
-        },
-        "root": {
-          "tag": "svg",
-          "attrs": {
-            "xmlns": "http://www.w3.org/2000/svg",
-            "fill": "none",
-            "stroke": "currentColor",
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round",
-            "stroke-width": "1.75",
-            "viewBox": "0 0 24 24"
-          },
-          "children": [
-            {
-              "tag": "g",
-              "attrs": {
-                "data-part": "body"
-              },
-              "children": [
-                {
-                  "tag": "path",
-                  "attrs": {
-                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
-                  },
-                  "children": []
-                },
-                {
-                  "tag": "path",
-                  "attrs": {
-                    "d": "M15.8890873 8.1109127 L15.8890873 15.8890873 L8.1109127 15.8890873"
-                  },
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        "parts": [
-          "body"
-        ],
-        "filled": {
-          "metadata": {
-            "name": "chevron-down-right",
-            "description": "Chevron Down Right in a square frame with a negative-space solid head.",
-            "tags": [
-              "chevron",
-              "caret",
-              "navigation",
-              "down",
-              "right",
-              "filled",
-              "frame",
-              "square"
-            ],
-            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-            "review": {
-              "status": "draft",
-              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-            }
-          },
-          "root": {
-            "tag": "svg",
-            "attrs": {
-              "xmlns": "http://www.w3.org/2000/svg",
-              "fill": "currentColor",
-              "fill-rule": "evenodd",
-              "stroke": "none",
-              "viewBox": "0 0 24 24"
-            },
-            "children": [
-              {
-                "tag": "g",
-                "attrs": {
-                  "data-part": "body"
-                },
-                "children": [
-                  {
-                    "tag": "path",
-                    "attrs": {
-                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M15.27036886 7.49219427 A.875 .875 0 0 1 15.8890873 7.2359127 A.875 .875 0 0 1 16.7640873 8.1109127 L16.7640873 15.8890873 A.875 .875 0 0 1 15.8890873 16.7640873 L8.1109127 16.7640873 A.875 .875 0 0 1 7.2359127 15.8890873 A.875 .875 0 0 1 7.49219427 15.27036886 L15.27036886 7.49219427 Z"
-                    },
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          "parts": [
-            "body"
-          ]
-        }
-      },
-      "circle": {
-        "metadata": {
-          "name": "chevron-down-right",
-          "description": "Chevron Down Right in a circle frame.",
-          "tags": [
-            "chevron",
-            "caret",
-            "navigation",
-            "down",
-            "right",
-            "frame",
-            "circle"
-          ],
-          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-          "review": {
-            "status": "draft",
-            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-          }
-        },
-        "root": {
-          "tag": "svg",
-          "attrs": {
-            "xmlns": "http://www.w3.org/2000/svg",
-            "fill": "none",
-            "stroke": "currentColor",
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round",
-            "stroke-width": "1.75",
-            "viewBox": "0 0 24 24"
-          },
-          "children": [
-            {
-              "tag": "g",
-              "attrs": {
-                "data-part": "body"
-              },
-              "children": [
-                {
-                  "tag": "circle",
-                  "attrs": {
-                    "cx": "12",
-                    "cy": "12",
-                    "r": "9.125"
-                  },
-                  "children": []
-                },
-                {
-                  "tag": "path",
-                  "attrs": {
-                    "d": "M15.8890873 8.1109127 L15.8890873 15.8890873 L8.1109127 15.8890873"
-                  },
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        "parts": [
-          "body"
-        ],
-        "filled": {
-          "metadata": {
-            "name": "chevron-down-right",
-            "description": "Chevron Down Right in a circle frame with a negative-space solid head.",
-            "tags": [
-              "chevron",
-              "caret",
-              "navigation",
-              "down",
-              "right",
-              "filled",
-              "frame",
-              "circle"
-            ],
-            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-            "review": {
-              "status": "draft",
-              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-            }
-          },
-          "root": {
-            "tag": "svg",
-            "attrs": {
-              "xmlns": "http://www.w3.org/2000/svg",
-              "fill": "currentColor",
-              "fill-rule": "evenodd",
-              "stroke": "none",
-              "viewBox": "0 0 24 24"
-            },
-            "children": [
-              {
-                "tag": "g",
-                "attrs": {
-                  "data-part": "body"
-                },
-                "children": [
-                  {
-                    "tag": "path",
-                    "attrs": {
-                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M15.27036886 7.49219427 A.875 .875 0 0 1 15.8890873 7.2359127 A.875 .875 0 0 1 16.7640873 8.1109127 L16.7640873 15.8890873 A.875 .875 0 0 1 15.8890873 16.7640873 L8.1109127 16.7640873 A.875 .875 0 0 1 7.2359127 15.8890873 A.875 .875 0 0 1 7.49219427 15.27036886 L15.27036886 7.49219427 Z"
-                    },
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          "parts": [
-            "body"
-          ]
-        }
-      }
-    }
-  },
-  {
     "name": "chevron-down",
     "metadata": {
       "name": "chevron-down",
@@ -3799,7 +3135,7 @@
         "down"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
@@ -3850,7 +3186,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+        "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
         "filledTreatment": "solid-head",
         "review": {
           "status": "draft",
@@ -3902,7 +3238,7 @@
             "square"
           ],
           "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
           "review": {
             "status": "draft",
             "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -3961,7 +3297,7 @@
               "square"
             ],
             "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
             "review": {
               "status": "draft",
               "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -4012,7 +3348,7 @@
             "circle"
           ],
           "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
           "review": {
             "status": "draft",
             "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -4073,7 +3409,7 @@
               "circle"
             ],
             "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
             "review": {
               "status": "draft",
               "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -4125,7 +3461,7 @@
         "left"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
@@ -4176,7 +3512,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+        "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
         "filledTreatment": "solid-head",
         "review": {
           "status": "draft",
@@ -4228,7 +3564,7 @@
             "square"
           ],
           "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
           "review": {
             "status": "draft",
             "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -4287,7 +3623,7 @@
               "square"
             ],
             "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
             "review": {
               "status": "draft",
               "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -4338,7 +3674,7 @@
             "circle"
           ],
           "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
           "review": {
             "status": "draft",
             "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -4399,7 +3735,7 @@
               "circle"
             ],
             "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
             "review": {
               "status": "draft",
               "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -4451,7 +3787,7 @@
         "right"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
@@ -4502,7 +3838,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+        "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
         "filledTreatment": "solid-head",
         "review": {
           "status": "draft",
@@ -4554,7 +3890,7 @@
             "square"
           ],
           "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
           "review": {
             "status": "draft",
             "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -4613,7 +3949,7 @@
               "square"
             ],
             "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
             "review": {
               "status": "draft",
               "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -4664,7 +4000,7 @@
             "circle"
           ],
           "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
           "review": {
             "status": "draft",
             "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -4725,7 +4061,7 @@
               "circle"
             ],
             "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
             "review": {
               "status": "draft",
               "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -4766,670 +4102,6 @@
     }
   },
   {
-    "name": "chevron-up-left",
-    "metadata": {
-      "name": "chevron-up-left",
-      "description": "A chevron up left with an open V and round ends.",
-      "tags": [
-        "chevron",
-        "caret",
-        "navigation",
-        "up",
-        "left"
-      ],
-      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-      "filledTreatment": "solid-head",
-      "review": {
-        "status": "draft",
-        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-      }
-    },
-    "root": {
-      "tag": "svg",
-      "attrs": {
-        "xmlns": "http://www.w3.org/2000/svg",
-        "fill": "none",
-        "stroke": "currentColor",
-        "stroke-linecap": "round",
-        "stroke-linejoin": "round",
-        "stroke-width": "1.75",
-        "viewBox": "0 0 24 24"
-      },
-      "children": [
-        {
-          "tag": "g",
-          "attrs": {
-            "data-part": "body"
-          },
-          "children": [
-            {
-              "tag": "path",
-              "attrs": {
-                "d": "M8.1109127 15.8890873 L8.1109127 8.1109127 L15.8890873 8.1109127"
-              },
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    "parts": [
-      "body"
-    ],
-    "filled": {
-      "metadata": {
-        "name": "chevron-up-left",
-        "description": "A chevron up left with a solid rounded triangular head.",
-        "tags": [
-          "chevron",
-          "caret",
-          "navigation",
-          "up",
-          "left",
-          "filled"
-        ],
-        "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-        "filledTreatment": "solid-head",
-        "review": {
-          "status": "draft",
-          "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-        }
-      },
-      "root": {
-        "tag": "svg",
-        "attrs": {
-          "xmlns": "http://www.w3.org/2000/svg",
-          "fill": "currentColor",
-          "fill-rule": "evenodd",
-          "stroke": "none",
-          "viewBox": "0 0 24 24"
-        },
-        "children": [
-          {
-            "tag": "g",
-            "attrs": {
-              "data-part": "body"
-            },
-            "children": [
-              {
-                "tag": "path",
-                "attrs": {
-                  "d": "M8.72963114 16.50780573 A.875 .875 0 0 1 8.1109127 16.7640873 A.875 .875 0 0 1 7.2359127 15.8890873 L7.2359127 8.1109127 A.875 .875 0 0 1 8.1109127 7.2359127 L15.8890873 7.2359127 A.875 .875 0 0 1 16.7640873 8.1109127 A.875 .875 0 0 1 16.50780573 8.72963114 L8.72963114 16.50780573 Z"
-                },
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      "parts": [
-        "body"
-      ]
-    },
-    "frames": {
-      "square": {
-        "metadata": {
-          "name": "chevron-up-left",
-          "description": "Chevron Up Left in a square frame.",
-          "tags": [
-            "chevron",
-            "caret",
-            "navigation",
-            "up",
-            "left",
-            "frame",
-            "square"
-          ],
-          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-          "review": {
-            "status": "draft",
-            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-          }
-        },
-        "root": {
-          "tag": "svg",
-          "attrs": {
-            "xmlns": "http://www.w3.org/2000/svg",
-            "fill": "none",
-            "stroke": "currentColor",
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round",
-            "stroke-width": "1.75",
-            "viewBox": "0 0 24 24"
-          },
-          "children": [
-            {
-              "tag": "g",
-              "attrs": {
-                "data-part": "body"
-              },
-              "children": [
-                {
-                  "tag": "path",
-                  "attrs": {
-                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
-                  },
-                  "children": []
-                },
-                {
-                  "tag": "path",
-                  "attrs": {
-                    "d": "M8.1109127 15.8890873 L8.1109127 8.1109127 L15.8890873 8.1109127"
-                  },
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        "parts": [
-          "body"
-        ],
-        "filled": {
-          "metadata": {
-            "name": "chevron-up-left",
-            "description": "Chevron Up Left in a square frame with a negative-space solid head.",
-            "tags": [
-              "chevron",
-              "caret",
-              "navigation",
-              "up",
-              "left",
-              "filled",
-              "frame",
-              "square"
-            ],
-            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-            "review": {
-              "status": "draft",
-              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-            }
-          },
-          "root": {
-            "tag": "svg",
-            "attrs": {
-              "xmlns": "http://www.w3.org/2000/svg",
-              "fill": "currentColor",
-              "fill-rule": "evenodd",
-              "stroke": "none",
-              "viewBox": "0 0 24 24"
-            },
-            "children": [
-              {
-                "tag": "g",
-                "attrs": {
-                  "data-part": "body"
-                },
-                "children": [
-                  {
-                    "tag": "path",
-                    "attrs": {
-                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M8.72963114 16.50780573 A.875 .875 0 0 1 8.1109127 16.7640873 A.875 .875 0 0 1 7.2359127 15.8890873 L7.2359127 8.1109127 A.875 .875 0 0 1 8.1109127 7.2359127 L15.8890873 7.2359127 A.875 .875 0 0 1 16.7640873 8.1109127 A.875 .875 0 0 1 16.50780573 8.72963114 L8.72963114 16.50780573 Z"
-                    },
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          "parts": [
-            "body"
-          ]
-        }
-      },
-      "circle": {
-        "metadata": {
-          "name": "chevron-up-left",
-          "description": "Chevron Up Left in a circle frame.",
-          "tags": [
-            "chevron",
-            "caret",
-            "navigation",
-            "up",
-            "left",
-            "frame",
-            "circle"
-          ],
-          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-          "review": {
-            "status": "draft",
-            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-          }
-        },
-        "root": {
-          "tag": "svg",
-          "attrs": {
-            "xmlns": "http://www.w3.org/2000/svg",
-            "fill": "none",
-            "stroke": "currentColor",
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round",
-            "stroke-width": "1.75",
-            "viewBox": "0 0 24 24"
-          },
-          "children": [
-            {
-              "tag": "g",
-              "attrs": {
-                "data-part": "body"
-              },
-              "children": [
-                {
-                  "tag": "circle",
-                  "attrs": {
-                    "cx": "12",
-                    "cy": "12",
-                    "r": "9.125"
-                  },
-                  "children": []
-                },
-                {
-                  "tag": "path",
-                  "attrs": {
-                    "d": "M8.1109127 15.8890873 L8.1109127 8.1109127 L15.8890873 8.1109127"
-                  },
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        "parts": [
-          "body"
-        ],
-        "filled": {
-          "metadata": {
-            "name": "chevron-up-left",
-            "description": "Chevron Up Left in a circle frame with a negative-space solid head.",
-            "tags": [
-              "chevron",
-              "caret",
-              "navigation",
-              "up",
-              "left",
-              "filled",
-              "frame",
-              "circle"
-            ],
-            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-            "review": {
-              "status": "draft",
-              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-            }
-          },
-          "root": {
-            "tag": "svg",
-            "attrs": {
-              "xmlns": "http://www.w3.org/2000/svg",
-              "fill": "currentColor",
-              "fill-rule": "evenodd",
-              "stroke": "none",
-              "viewBox": "0 0 24 24"
-            },
-            "children": [
-              {
-                "tag": "g",
-                "attrs": {
-                  "data-part": "body"
-                },
-                "children": [
-                  {
-                    "tag": "path",
-                    "attrs": {
-                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M8.72963114 16.50780573 A.875 .875 0 0 1 8.1109127 16.7640873 A.875 .875 0 0 1 7.2359127 15.8890873 L7.2359127 8.1109127 A.875 .875 0 0 1 8.1109127 7.2359127 L15.8890873 7.2359127 A.875 .875 0 0 1 16.7640873 8.1109127 A.875 .875 0 0 1 16.50780573 8.72963114 L8.72963114 16.50780573 Z"
-                    },
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          "parts": [
-            "body"
-          ]
-        }
-      }
-    }
-  },
-  {
-    "name": "chevron-up-right",
-    "metadata": {
-      "name": "chevron-up-right",
-      "description": "A chevron up right with an open V and round ends.",
-      "tags": [
-        "chevron",
-        "caret",
-        "navigation",
-        "up",
-        "right"
-      ],
-      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-      "filledTreatment": "solid-head",
-      "review": {
-        "status": "draft",
-        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-      }
-    },
-    "root": {
-      "tag": "svg",
-      "attrs": {
-        "xmlns": "http://www.w3.org/2000/svg",
-        "fill": "none",
-        "stroke": "currentColor",
-        "stroke-linecap": "round",
-        "stroke-linejoin": "round",
-        "stroke-width": "1.75",
-        "viewBox": "0 0 24 24"
-      },
-      "children": [
-        {
-          "tag": "g",
-          "attrs": {
-            "data-part": "body"
-          },
-          "children": [
-            {
-              "tag": "path",
-              "attrs": {
-                "d": "M8.1109127 8.1109127 L15.8890873 8.1109127 L15.8890873 15.8890873"
-              },
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    "parts": [
-      "body"
-    ],
-    "filled": {
-      "metadata": {
-        "name": "chevron-up-right",
-        "description": "A chevron up right with a solid rounded triangular head.",
-        "tags": [
-          "chevron",
-          "caret",
-          "navigation",
-          "up",
-          "right",
-          "filled"
-        ],
-        "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-        "filledTreatment": "solid-head",
-        "review": {
-          "status": "draft",
-          "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-        }
-      },
-      "root": {
-        "tag": "svg",
-        "attrs": {
-          "xmlns": "http://www.w3.org/2000/svg",
-          "fill": "currentColor",
-          "fill-rule": "evenodd",
-          "stroke": "none",
-          "viewBox": "0 0 24 24"
-        },
-        "children": [
-          {
-            "tag": "g",
-            "attrs": {
-              "data-part": "body"
-            },
-            "children": [
-              {
-                "tag": "path",
-                "attrs": {
-                  "d": "M7.49219427 8.72963114 A.875 .875 0 0 1 7.2359127 8.1109127 A.875 .875 0 0 1 8.1109127 7.2359127 L15.8890873 7.2359127 A.875 .875 0 0 1 16.7640873 8.1109127 L16.7640873 15.8890873 A.875 .875 0 0 1 15.8890873 16.7640873 A.875 .875 0 0 1 15.27036886 16.50780573 L7.49219427 8.72963114 Z"
-                },
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      "parts": [
-        "body"
-      ]
-    },
-    "frames": {
-      "square": {
-        "metadata": {
-          "name": "chevron-up-right",
-          "description": "Chevron Up Right in a square frame.",
-          "tags": [
-            "chevron",
-            "caret",
-            "navigation",
-            "up",
-            "right",
-            "frame",
-            "square"
-          ],
-          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-          "review": {
-            "status": "draft",
-            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-          }
-        },
-        "root": {
-          "tag": "svg",
-          "attrs": {
-            "xmlns": "http://www.w3.org/2000/svg",
-            "fill": "none",
-            "stroke": "currentColor",
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round",
-            "stroke-width": "1.75",
-            "viewBox": "0 0 24 24"
-          },
-          "children": [
-            {
-              "tag": "g",
-              "attrs": {
-                "data-part": "body"
-              },
-              "children": [
-                {
-                  "tag": "path",
-                  "attrs": {
-                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
-                  },
-                  "children": []
-                },
-                {
-                  "tag": "path",
-                  "attrs": {
-                    "d": "M8.1109127 8.1109127 L15.8890873 8.1109127 L15.8890873 15.8890873"
-                  },
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        "parts": [
-          "body"
-        ],
-        "filled": {
-          "metadata": {
-            "name": "chevron-up-right",
-            "description": "Chevron Up Right in a square frame with a negative-space solid head.",
-            "tags": [
-              "chevron",
-              "caret",
-              "navigation",
-              "up",
-              "right",
-              "filled",
-              "frame",
-              "square"
-            ],
-            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-            "review": {
-              "status": "draft",
-              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-            }
-          },
-          "root": {
-            "tag": "svg",
-            "attrs": {
-              "xmlns": "http://www.w3.org/2000/svg",
-              "fill": "currentColor",
-              "fill-rule": "evenodd",
-              "stroke": "none",
-              "viewBox": "0 0 24 24"
-            },
-            "children": [
-              {
-                "tag": "g",
-                "attrs": {
-                  "data-part": "body"
-                },
-                "children": [
-                  {
-                    "tag": "path",
-                    "attrs": {
-                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M7.49219427 8.72963114 A.875 .875 0 0 1 7.2359127 8.1109127 A.875 .875 0 0 1 8.1109127 7.2359127 L15.8890873 7.2359127 A.875 .875 0 0 1 16.7640873 8.1109127 L16.7640873 15.8890873 A.875 .875 0 0 1 15.8890873 16.7640873 A.875 .875 0 0 1 15.27036886 16.50780573 L7.49219427 8.72963114 Z"
-                    },
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          "parts": [
-            "body"
-          ]
-        }
-      },
-      "circle": {
-        "metadata": {
-          "name": "chevron-up-right",
-          "description": "Chevron Up Right in a circle frame.",
-          "tags": [
-            "chevron",
-            "caret",
-            "navigation",
-            "up",
-            "right",
-            "frame",
-            "circle"
-          ],
-          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-          "review": {
-            "status": "draft",
-            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-          }
-        },
-        "root": {
-          "tag": "svg",
-          "attrs": {
-            "xmlns": "http://www.w3.org/2000/svg",
-            "fill": "none",
-            "stroke": "currentColor",
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round",
-            "stroke-width": "1.75",
-            "viewBox": "0 0 24 24"
-          },
-          "children": [
-            {
-              "tag": "g",
-              "attrs": {
-                "data-part": "body"
-              },
-              "children": [
-                {
-                  "tag": "circle",
-                  "attrs": {
-                    "cx": "12",
-                    "cy": "12",
-                    "r": "9.125"
-                  },
-                  "children": []
-                },
-                {
-                  "tag": "path",
-                  "attrs": {
-                    "d": "M8.1109127 8.1109127 L15.8890873 8.1109127 L15.8890873 15.8890873"
-                  },
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        "parts": [
-          "body"
-        ],
-        "filled": {
-          "metadata": {
-            "name": "chevron-up-right",
-            "description": "Chevron Up Right in a circle frame with a negative-space solid head.",
-            "tags": [
-              "chevron",
-              "caret",
-              "navigation",
-              "up",
-              "right",
-              "filled",
-              "frame",
-              "circle"
-            ],
-            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-            "review": {
-              "status": "draft",
-              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-            }
-          },
-          "root": {
-            "tag": "svg",
-            "attrs": {
-              "xmlns": "http://www.w3.org/2000/svg",
-              "fill": "currentColor",
-              "fill-rule": "evenodd",
-              "stroke": "none",
-              "viewBox": "0 0 24 24"
-            },
-            "children": [
-              {
-                "tag": "g",
-                "attrs": {
-                  "data-part": "body"
-                },
-                "children": [
-                  {
-                    "tag": "path",
-                    "attrs": {
-                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M7.49219427 8.72963114 A.875 .875 0 0 1 7.2359127 8.1109127 A.875 .875 0 0 1 8.1109127 7.2359127 L15.8890873 7.2359127 A.875 .875 0 0 1 16.7640873 8.1109127 L16.7640873 15.8890873 A.875 .875 0 0 1 15.8890873 16.7640873 A.875 .875 0 0 1 15.27036886 16.50780573 L7.49219427 8.72963114 Z"
-                    },
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          "parts": [
-            "body"
-          ]
-        }
-      }
-    }
-  },
-  {
     "name": "chevron-up",
     "metadata": {
       "name": "chevron-up",
@@ -5441,7 +4113,7 @@
         "up"
       ],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
@@ -5492,7 +4164,7 @@
           "filled"
         ],
         "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-        "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+        "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
         "filledTreatment": "solid-head",
         "review": {
           "status": "draft",
@@ -5544,7 +4216,7 @@
             "square"
           ],
           "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
           "review": {
             "status": "draft",
             "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -5603,7 +4275,7 @@
               "square"
             ],
             "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
             "review": {
               "status": "draft",
               "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -5654,7 +4326,7 @@
             "circle"
           ],
           "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-          "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
           "review": {
             "status": "draft",
             "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -5715,7 +4387,7 @@
               "circle"
             ],
             "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-            "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
             "review": {
               "status": "draft",
               "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
@@ -5741,6 +4413,1310 @@
                     "tag": "path",
                     "attrs": {
                       "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M6.5 15.625 A.875 .875 0 0 1 5.625 14.75 A.875 .875 0 0 1 5.88128157 14.13128157 L11.38128157 8.63128157 A.875 .875 0 0 1 12 8.375 A.875 .875 0 0 1 12.61871843 8.63128157 L18.11871843 14.13128157 A.875 .875 0 0 1 18.375 14.75 A.875 .875 0 0 1 17.5 15.625 L6.5 15.625 Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "chevrons-down",
+    "metadata": {
+      "name": "chevrons-down",
+      "description": "A chevrons down with an open V and round ends.",
+      "tags": [
+        "chevron",
+        "caret",
+        "navigation",
+        "down"
+      ],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+      }
+    },
+    "root": {
+      "tag": "svg",
+      "attrs": {
+        "xmlns": "http://www.w3.org/2000/svg",
+        "fill": "none",
+        "stroke": "currentColor",
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round",
+        "stroke-width": "1.75",
+        "viewBox": "0 0 24 24"
+      },
+      "children": [
+        {
+          "tag": "g",
+          "attrs": {
+            "data-part": "body"
+          },
+          "children": [
+            {
+              "tag": "path",
+              "attrs": {
+                "d": "M16 13 L12 17 L8 13 M16 7 L12 11 L8 7"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "parts": [
+      "body"
+    ],
+    "filled": {
+      "metadata": {
+        "name": "chevrons-down",
+        "description": "A chevrons down with a solid rounded triangular head.",
+        "tags": [
+          "chevron",
+          "caret",
+          "navigation",
+          "down",
+          "filled"
+        ],
+        "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+        "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+        "filledTreatment": "solid-head",
+        "review": {
+          "status": "draft",
+          "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+        }
+      },
+      "root": {
+        "tag": "svg",
+        "attrs": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "fill": "currentColor",
+          "fill-rule": "evenodd",
+          "stroke": "none",
+          "viewBox": "0 0 24 24"
+        },
+        "children": [
+          {
+            "tag": "g",
+            "attrs": {
+              "data-part": "body"
+            },
+            "children": [
+              {
+                "tag": "path",
+                "attrs": {
+                  "d": "M16 12.125 A.875 .875 0 0 1 16.875 13 A.875 .875 0 0 1 16.61871843 13.61871843 L12.61871843 17.61871843 A.875 .875 0 0 1 12 17.875 A.875 .875 0 0 1 11.38128157 17.61871843 L7.38128157 13.61871843 A.875 .875 0 0 1 7.125 13 A.875 .875 0 0 1 8 12.125 L16 12.125 Z M16 6.125 A.875 .875 0 0 1 16.875 7 A.875 .875 0 0 1 16.61871843 7.61871843 L12.61871843 11.61871843 A.875 .875 0 0 1 12 11.875 A.875 .875 0 0 1 11.38128157 11.61871843 L7.38128157 7.61871843 A.875 .875 0 0 1 7.125 7 A.875 .875 0 0 1 8 6.125 L16 6.125 Z"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "parts": [
+        "body"
+      ]
+    },
+    "frames": {
+      "square": {
+        "metadata": {
+          "name": "chevrons-down",
+          "description": "Chevrons Down in a square frame.",
+          "tags": [
+            "chevron",
+            "caret",
+            "navigation",
+            "down",
+            "frame",
+            "square"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+          "review": {
+            "status": "draft",
+            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M16 13 L12 17 L8 13 M16 7 L12 11 L8 7"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "chevrons-down",
+            "description": "Chevrons Down in a square frame with a negative-space solid head.",
+            "tags": [
+              "chevron",
+              "caret",
+              "navigation",
+              "down",
+              "filled",
+              "frame",
+              "square"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+            "review": {
+              "status": "draft",
+              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M16 12.125 A.875 .875 0 0 1 16.875 13 A.875 .875 0 0 1 16.61871843 13.61871843 L12.61871843 17.61871843 A.875 .875 0 0 1 12 17.875 A.875 .875 0 0 1 11.38128157 17.61871843 L7.38128157 13.61871843 A.875 .875 0 0 1 7.125 13 A.875 .875 0 0 1 8 12.125 L16 12.125 Z M16 6.125 A.875 .875 0 0 1 16.875 7 A.875 .875 0 0 1 16.61871843 7.61871843 L12.61871843 11.61871843 A.875 .875 0 0 1 12 11.875 A.875 .875 0 0 1 11.38128157 11.61871843 L7.38128157 7.61871843 A.875 .875 0 0 1 7.125 7 A.875 .875 0 0 1 8 6.125 L16 6.125 Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      },
+      "circle": {
+        "metadata": {
+          "name": "chevrons-down",
+          "description": "Chevrons Down in a circle frame.",
+          "tags": [
+            "chevron",
+            "caret",
+            "navigation",
+            "down",
+            "frame",
+            "circle"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+          "review": {
+            "status": "draft",
+            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "circle",
+                  "attrs": {
+                    "cx": "12",
+                    "cy": "12",
+                    "r": "9.125"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M16 13 L12 17 L8 13 M16 7 L12 11 L8 7"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "chevrons-down",
+            "description": "Chevrons Down in a circle frame with a negative-space solid head.",
+            "tags": [
+              "chevron",
+              "caret",
+              "navigation",
+              "down",
+              "filled",
+              "frame",
+              "circle"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+            "review": {
+              "status": "draft",
+              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M16 12.125 A.875 .875 0 0 1 16.875 13 A.875 .875 0 0 1 16.61871843 13.61871843 L12.61871843 17.61871843 A.875 .875 0 0 1 12 17.875 A.875 .875 0 0 1 11.38128157 17.61871843 L7.38128157 13.61871843 A.875 .875 0 0 1 7.125 13 A.875 .875 0 0 1 8 12.125 L16 12.125 Z M16 6.125 A.875 .875 0 0 1 16.875 7 A.875 .875 0 0 1 16.61871843 7.61871843 L12.61871843 11.61871843 A.875 .875 0 0 1 12 11.875 A.875 .875 0 0 1 11.38128157 11.61871843 L7.38128157 7.61871843 A.875 .875 0 0 1 7.125 7 A.875 .875 0 0 1 8 6.125 L16 6.125 Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "chevrons-left",
+    "metadata": {
+      "name": "chevrons-left",
+      "description": "A chevrons left with an open V and round ends.",
+      "tags": [
+        "chevron",
+        "caret",
+        "navigation",
+        "left"
+      ],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+      }
+    },
+    "root": {
+      "tag": "svg",
+      "attrs": {
+        "xmlns": "http://www.w3.org/2000/svg",
+        "fill": "none",
+        "stroke": "currentColor",
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round",
+        "stroke-width": "1.75",
+        "viewBox": "0 0 24 24"
+      },
+      "children": [
+        {
+          "tag": "g",
+          "attrs": {
+            "data-part": "body"
+          },
+          "children": [
+            {
+              "tag": "path",
+              "attrs": {
+                "d": "M11 16 L7 12 L11 8 M17 16 L13 12 L17 8"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "parts": [
+      "body"
+    ],
+    "filled": {
+      "metadata": {
+        "name": "chevrons-left",
+        "description": "A chevrons left with a solid rounded triangular head.",
+        "tags": [
+          "chevron",
+          "caret",
+          "navigation",
+          "left",
+          "filled"
+        ],
+        "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+        "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+        "filledTreatment": "solid-head",
+        "review": {
+          "status": "draft",
+          "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+        }
+      },
+      "root": {
+        "tag": "svg",
+        "attrs": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "fill": "currentColor",
+          "fill-rule": "evenodd",
+          "stroke": "none",
+          "viewBox": "0 0 24 24"
+        },
+        "children": [
+          {
+            "tag": "g",
+            "attrs": {
+              "data-part": "body"
+            },
+            "children": [
+              {
+                "tag": "path",
+                "attrs": {
+                  "d": "M11.875 16 A.875 .875 0 0 1 11 16.875 A.875 .875 0 0 1 10.38128157 16.61871843 L6.38128157 12.61871843 A.875 .875 0 0 1 6.125 12 A.875 .875 0 0 1 6.38128157 11.38128157 L10.38128157 7.38128157 A.875 .875 0 0 1 11 7.125 A.875 .875 0 0 1 11.875 8 L11.875 16 Z M17.875 16 A.875 .875 0 0 1 17 16.875 A.875 .875 0 0 1 16.38128157 16.61871843 L12.38128157 12.61871843 A.875 .875 0 0 1 12.125 12 A.875 .875 0 0 1 12.38128157 11.38128157 L16.38128157 7.38128157 A.875 .875 0 0 1 17 7.125 A.875 .875 0 0 1 17.875 8 L17.875 16 Z"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "parts": [
+        "body"
+      ]
+    },
+    "frames": {
+      "square": {
+        "metadata": {
+          "name": "chevrons-left",
+          "description": "Chevrons Left in a square frame.",
+          "tags": [
+            "chevron",
+            "caret",
+            "navigation",
+            "left",
+            "frame",
+            "square"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+          "review": {
+            "status": "draft",
+            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M11 16 L7 12 L11 8 M17 16 L13 12 L17 8"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "chevrons-left",
+            "description": "Chevrons Left in a square frame with a negative-space solid head.",
+            "tags": [
+              "chevron",
+              "caret",
+              "navigation",
+              "left",
+              "filled",
+              "frame",
+              "square"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+            "review": {
+              "status": "draft",
+              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M11.875 16 A.875 .875 0 0 1 11 16.875 A.875 .875 0 0 1 10.38128157 16.61871843 L6.38128157 12.61871843 A.875 .875 0 0 1 6.125 12 A.875 .875 0 0 1 6.38128157 11.38128157 L10.38128157 7.38128157 A.875 .875 0 0 1 11 7.125 A.875 .875 0 0 1 11.875 8 L11.875 16 Z M17.875 16 A.875 .875 0 0 1 17 16.875 A.875 .875 0 0 1 16.38128157 16.61871843 L12.38128157 12.61871843 A.875 .875 0 0 1 12.125 12 A.875 .875 0 0 1 12.38128157 11.38128157 L16.38128157 7.38128157 A.875 .875 0 0 1 17 7.125 A.875 .875 0 0 1 17.875 8 L17.875 16 Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      },
+      "circle": {
+        "metadata": {
+          "name": "chevrons-left",
+          "description": "Chevrons Left in a circle frame.",
+          "tags": [
+            "chevron",
+            "caret",
+            "navigation",
+            "left",
+            "frame",
+            "circle"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+          "review": {
+            "status": "draft",
+            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "circle",
+                  "attrs": {
+                    "cx": "12",
+                    "cy": "12",
+                    "r": "9.125"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M11 16 L7 12 L11 8 M17 16 L13 12 L17 8"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "chevrons-left",
+            "description": "Chevrons Left in a circle frame with a negative-space solid head.",
+            "tags": [
+              "chevron",
+              "caret",
+              "navigation",
+              "left",
+              "filled",
+              "frame",
+              "circle"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+            "review": {
+              "status": "draft",
+              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M11.875 16 A.875 .875 0 0 1 11 16.875 A.875 .875 0 0 1 10.38128157 16.61871843 L6.38128157 12.61871843 A.875 .875 0 0 1 6.125 12 A.875 .875 0 0 1 6.38128157 11.38128157 L10.38128157 7.38128157 A.875 .875 0 0 1 11 7.125 A.875 .875 0 0 1 11.875 8 L11.875 16 Z M17.875 16 A.875 .875 0 0 1 17 16.875 A.875 .875 0 0 1 16.38128157 16.61871843 L12.38128157 12.61871843 A.875 .875 0 0 1 12.125 12 A.875 .875 0 0 1 12.38128157 11.38128157 L16.38128157 7.38128157 A.875 .875 0 0 1 17 7.125 A.875 .875 0 0 1 17.875 8 L17.875 16 Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "chevrons-right",
+    "metadata": {
+      "name": "chevrons-right",
+      "description": "A chevrons right with an open V and round ends.",
+      "tags": [
+        "chevron",
+        "caret",
+        "navigation",
+        "right"
+      ],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+      }
+    },
+    "root": {
+      "tag": "svg",
+      "attrs": {
+        "xmlns": "http://www.w3.org/2000/svg",
+        "fill": "none",
+        "stroke": "currentColor",
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round",
+        "stroke-width": "1.75",
+        "viewBox": "0 0 24 24"
+      },
+      "children": [
+        {
+          "tag": "g",
+          "attrs": {
+            "data-part": "body"
+          },
+          "children": [
+            {
+              "tag": "path",
+              "attrs": {
+                "d": "M13 8 L17 12 L13 16 M7 8 L11 12 L7 16"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "parts": [
+      "body"
+    ],
+    "filled": {
+      "metadata": {
+        "name": "chevrons-right",
+        "description": "A chevrons right with a solid rounded triangular head.",
+        "tags": [
+          "chevron",
+          "caret",
+          "navigation",
+          "right",
+          "filled"
+        ],
+        "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+        "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+        "filledTreatment": "solid-head",
+        "review": {
+          "status": "draft",
+          "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+        }
+      },
+      "root": {
+        "tag": "svg",
+        "attrs": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "fill": "currentColor",
+          "fill-rule": "evenodd",
+          "stroke": "none",
+          "viewBox": "0 0 24 24"
+        },
+        "children": [
+          {
+            "tag": "g",
+            "attrs": {
+              "data-part": "body"
+            },
+            "children": [
+              {
+                "tag": "path",
+                "attrs": {
+                  "d": "M12.125 8 A.875 .875 0 0 1 13 7.125 A.875 .875 0 0 1 13.61871843 7.38128157 L17.61871843 11.38128157 A.875 .875 0 0 1 17.875 12 A.875 .875 0 0 1 17.61871843 12.61871843 L13.61871843 16.61871843 A.875 .875 0 0 1 13 16.875 A.875 .875 0 0 1 12.125 16 L12.125 8 Z M6.125 8 A.875 .875 0 0 1 7 7.125 A.875 .875 0 0 1 7.61871843 7.38128157 L11.61871843 11.38128157 A.875 .875 0 0 1 11.875 12 A.875 .875 0 0 1 11.61871843 12.61871843 L7.61871843 16.61871843 A.875 .875 0 0 1 7 16.875 A.875 .875 0 0 1 6.125 16 L6.125 8 Z"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "parts": [
+        "body"
+      ]
+    },
+    "frames": {
+      "square": {
+        "metadata": {
+          "name": "chevrons-right",
+          "description": "Chevrons Right in a square frame.",
+          "tags": [
+            "chevron",
+            "caret",
+            "navigation",
+            "right",
+            "frame",
+            "square"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+          "review": {
+            "status": "draft",
+            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M13 8 L17 12 L13 16 M7 8 L11 12 L7 16"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "chevrons-right",
+            "description": "Chevrons Right in a square frame with a negative-space solid head.",
+            "tags": [
+              "chevron",
+              "caret",
+              "navigation",
+              "right",
+              "filled",
+              "frame",
+              "square"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+            "review": {
+              "status": "draft",
+              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M12.125 8 A.875 .875 0 0 1 13 7.125 A.875 .875 0 0 1 13.61871843 7.38128157 L17.61871843 11.38128157 A.875 .875 0 0 1 17.875 12 A.875 .875 0 0 1 17.61871843 12.61871843 L13.61871843 16.61871843 A.875 .875 0 0 1 13 16.875 A.875 .875 0 0 1 12.125 16 L12.125 8 Z M6.125 8 A.875 .875 0 0 1 7 7.125 A.875 .875 0 0 1 7.61871843 7.38128157 L11.61871843 11.38128157 A.875 .875 0 0 1 11.875 12 A.875 .875 0 0 1 11.61871843 12.61871843 L7.61871843 16.61871843 A.875 .875 0 0 1 7 16.875 A.875 .875 0 0 1 6.125 16 L6.125 8 Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      },
+      "circle": {
+        "metadata": {
+          "name": "chevrons-right",
+          "description": "Chevrons Right in a circle frame.",
+          "tags": [
+            "chevron",
+            "caret",
+            "navigation",
+            "right",
+            "frame",
+            "circle"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+          "review": {
+            "status": "draft",
+            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "circle",
+                  "attrs": {
+                    "cx": "12",
+                    "cy": "12",
+                    "r": "9.125"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M13 8 L17 12 L13 16 M7 8 L11 12 L7 16"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "chevrons-right",
+            "description": "Chevrons Right in a circle frame with a negative-space solid head.",
+            "tags": [
+              "chevron",
+              "caret",
+              "navigation",
+              "right",
+              "filled",
+              "frame",
+              "circle"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+            "review": {
+              "status": "draft",
+              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M12.125 8 A.875 .875 0 0 1 13 7.125 A.875 .875 0 0 1 13.61871843 7.38128157 L17.61871843 11.38128157 A.875 .875 0 0 1 17.875 12 A.875 .875 0 0 1 17.61871843 12.61871843 L13.61871843 16.61871843 A.875 .875 0 0 1 13 16.875 A.875 .875 0 0 1 12.125 16 L12.125 8 Z M6.125 8 A.875 .875 0 0 1 7 7.125 A.875 .875 0 0 1 7.61871843 7.38128157 L11.61871843 11.38128157 A.875 .875 0 0 1 11.875 12 A.875 .875 0 0 1 11.61871843 12.61871843 L7.61871843 16.61871843 A.875 .875 0 0 1 7 16.875 A.875 .875 0 0 1 6.125 16 L6.125 8 Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "name": "chevrons-up",
+    "metadata": {
+      "name": "chevrons-up",
+      "description": "A chevrons up with an open V and round ends.",
+      "tags": [
+        "chevron",
+        "caret",
+        "navigation",
+        "up"
+      ],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+      }
+    },
+    "root": {
+      "tag": "svg",
+      "attrs": {
+        "xmlns": "http://www.w3.org/2000/svg",
+        "fill": "none",
+        "stroke": "currentColor",
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round",
+        "stroke-width": "1.75",
+        "viewBox": "0 0 24 24"
+      },
+      "children": [
+        {
+          "tag": "g",
+          "attrs": {
+            "data-part": "body"
+          },
+          "children": [
+            {
+              "tag": "path",
+              "attrs": {
+                "d": "M8 11 L12 7 L16 11 M8 17 L12 13 L16 17"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "parts": [
+      "body"
+    ],
+    "filled": {
+      "metadata": {
+        "name": "chevrons-up",
+        "description": "A chevrons up with a solid rounded triangular head.",
+        "tags": [
+          "chevron",
+          "caret",
+          "navigation",
+          "up",
+          "filled"
+        ],
+        "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+        "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+        "filledTreatment": "solid-head",
+        "review": {
+          "status": "draft",
+          "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+        }
+      },
+      "root": {
+        "tag": "svg",
+        "attrs": {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "fill": "currentColor",
+          "fill-rule": "evenodd",
+          "stroke": "none",
+          "viewBox": "0 0 24 24"
+        },
+        "children": [
+          {
+            "tag": "g",
+            "attrs": {
+              "data-part": "body"
+            },
+            "children": [
+              {
+                "tag": "path",
+                "attrs": {
+                  "d": "M8 11.875 A.875 .875 0 0 1 7.125 11 A.875 .875 0 0 1 7.38128157 10.38128157 L11.38128157 6.38128157 A.875 .875 0 0 1 12 6.125 A.875 .875 0 0 1 12.61871843 6.38128157 L16.61871843 10.38128157 A.875 .875 0 0 1 16.875 11 A.875 .875 0 0 1 16 11.875 L8 11.875 Z M8 17.875 A.875 .875 0 0 1 7.125 17 A.875 .875 0 0 1 7.38128157 16.38128157 L11.38128157 12.38128157 A.875 .875 0 0 1 12 12.125 A.875 .875 0 0 1 12.61871843 12.38128157 L16.61871843 16.38128157 A.875 .875 0 0 1 16.875 17 A.875 .875 0 0 1 16 17.875 L8 17.875 Z"
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "parts": [
+        "body"
+      ]
+    },
+    "frames": {
+      "square": {
+        "metadata": {
+          "name": "chevrons-up",
+          "description": "Chevrons Up in a square frame.",
+          "tags": [
+            "chevron",
+            "caret",
+            "navigation",
+            "up",
+            "frame",
+            "square"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+          "review": {
+            "status": "draft",
+            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M6 2.875 H18 A3.125 3.125 0 0 1 21.125 6 V18 A3.125 3.125 0 0 1 18 21.125 H6 A3.125 3.125 0 0 1 2.875 18 V6 A3.125 3.125 0 0 1 6 2.875 Z"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M8 11 L12 7 L16 11 M8 17 L12 13 L16 17"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "chevrons-up",
+            "description": "Chevrons Up in a square frame with a negative-space solid head.",
+            "tags": [
+              "chevron",
+              "caret",
+              "navigation",
+              "up",
+              "filled",
+              "frame",
+              "square"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+            "review": {
+              "status": "draft",
+              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2 Z M8 11.875 A.875 .875 0 0 1 7.125 11 A.875 .875 0 0 1 7.38128157 10.38128157 L11.38128157 6.38128157 A.875 .875 0 0 1 12 6.125 A.875 .875 0 0 1 12.61871843 6.38128157 L16.61871843 10.38128157 A.875 .875 0 0 1 16.875 11 A.875 .875 0 0 1 16 11.875 L8 11.875 Z M8 17.875 A.875 .875 0 0 1 7.125 17 A.875 .875 0 0 1 7.38128157 16.38128157 L11.38128157 12.38128157 A.875 .875 0 0 1 12 12.125 A.875 .875 0 0 1 12.61871843 12.38128157 L16.61871843 16.38128157 A.875 .875 0 0 1 16.875 17 A.875 .875 0 0 1 16 17.875 L8 17.875 Z"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          "parts": [
+            "body"
+          ]
+        }
+      },
+      "circle": {
+        "metadata": {
+          "name": "chevrons-up",
+          "description": "Chevrons Up in a circle frame.",
+          "tags": [
+            "chevron",
+            "caret",
+            "navigation",
+            "up",
+            "frame",
+            "circle"
+          ],
+          "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+          "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+          "review": {
+            "status": "draft",
+            "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+          }
+        },
+        "root": {
+          "tag": "svg",
+          "attrs": {
+            "xmlns": "http://www.w3.org/2000/svg",
+            "fill": "none",
+            "stroke": "currentColor",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            "stroke-width": "1.75",
+            "viewBox": "0 0 24 24"
+          },
+          "children": [
+            {
+              "tag": "g",
+              "attrs": {
+                "data-part": "body"
+              },
+              "children": [
+                {
+                  "tag": "circle",
+                  "attrs": {
+                    "cx": "12",
+                    "cy": "12",
+                    "r": "9.125"
+                  },
+                  "children": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M8 11 L12 7 L16 11 M8 17 L12 13 L16 17"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        "parts": [
+          "body"
+        ],
+        "filled": {
+          "metadata": {
+            "name": "chevrons-up",
+            "description": "Chevrons Up in a circle frame with a negative-space solid head.",
+            "tags": [
+              "chevron",
+              "caret",
+              "navigation",
+              "up",
+              "filled",
+              "frame",
+              "circle"
+            ],
+            "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+            "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -3/+3. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles retain.25px gap. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+            "review": {
+              "status": "draft",
+              "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+            }
+          },
+          "root": {
+            "tag": "svg",
+            "attrs": {
+              "xmlns": "http://www.w3.org/2000/svg",
+              "fill": "currentColor",
+              "fill-rule": "evenodd",
+              "stroke": "none",
+              "viewBox": "0 0 24 24"
+            },
+            "children": [
+              {
+                "tag": "g",
+                "attrs": {
+                  "data-part": "body"
+                },
+                "children": [
+                  {
+                    "tag": "path",
+                    "attrs": {
+                      "d": "M2 12 A10 10 0 1 0 22 12 A10 10 0 1 0 2 12 Z M8 11.875 A.875 .875 0 0 1 7.125 11 A.875 .875 0 0 1 7.38128157 10.38128157 L11.38128157 6.38128157 A.875 .875 0 0 1 12 6.125 A.875 .875 0 0 1 12.61871843 6.38128157 L16.61871843 10.38128157 A.875 .875 0 0 1 16.875 11 A.875 .875 0 0 1 16 11.875 L8 11.875 Z M8 17.875 A.875 .875 0 0 1 7.125 17 A.875 .875 0 0 1 7.38128157 16.38128157 L11.38128157 12.38128157 A.875 .875 0 0 1 12 12.125 A.875 .875 0 0 1 12.61871843 12.38128157 L16.61871843 16.38128157 A.875 .875 0 0 1 16.875 17 A.875 .875 0 0 1 16 17.875 L8 17.875 Z"
                     },
                     "children": []
                   }
