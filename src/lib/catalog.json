@@ -970,13 +970,13 @@
     },
     {
       "name": "camera",
-      "description": "A compact camera with a continuous curved body and circular lens.",
+      "description": "An original squircle camera with progressively turning body corners, a shallow raised housing and a circular lens.",
       "tags": ["photo", "image"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner-requested rounder unboxed camera with the left/right primary edge pair at exactly 2 native units. Both style exteriors span x=2..22 and y=3.49175127..20.50824873, centered at 12,12. The natural horizontal body proportions are retained (20 by 17.01649746); the shorter vertical axis is not stretched to force 2px top/bottom margins. Outline uses circular tangent fillets and unchanged Regular 1.70 stroke. Filled exterior is the exact 0.85 outward offset of the same lines and arcs, increasing convex radii and reducing concave radii while keeping arc centers fixed. No enclosing box is added. Camera body corner radii are 2.75 at shoulders and 3.25 at the base; the raised housing has softened .8/1.05 transitions. The owner then requested lowering the raised housing by .75 unit relative to the body. The complete drawing is recentered upward by .375 unit, including lens and indicator; circle radii remain unchanged; Filled counters remain their established fixed geometry. Native X/Y=100%, rotation=0. Owner-approved source. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9972677596 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75.",
+      "construction": "Camera-only original squircle trial, 2026-10-28. Semantic brief: a horizontal camera body, low integrated raised housing, circular lens and small indicator. Independently authored from these functional features; no external collection geometry or proportions used. The body uses quintic corner transitions with zero curvature at straight joins, growing toward the diagonal and receding into the next side. Corner control distances are .32 and .64 of their local spans; body shoulder spans3 and lower spans4.5. This is a Camera trial, not a universal approved grammar. Roof uses a separate monotone quintic shallow rise, y7.25 to4.5, with zero end curvature. All parts are symmetric about x12; outer visible bounds x2..22/y3.625..20.375 at Regular1.75, native100/100 and0deg. Lens remains a meaningful circle at12,13/r3.35; indicator18,10.15. Outline uses1.75, Thin1.25/Bold2.50 remain available. Filled exterior is a .875 analytical outward normal offset of the same body, fitted with piecewise cubic Hermite curves with maximum position error .0001 unit. Filled intentionally keeps a circular lens counter at the shared lens centerline radius3.35 for solid-style readability and a .875 indicator counter. No frame added. Stable body/lens/indicator Outline part names preserved; Filled remains one evenodd body with holes. Camera is not a current morph endpoint. Both styles await owner visual review; all other drawings stay approved.",
       "review": {
-        "status": "approved",
-        "note": "Owner approved every current static icon, style and supported frame on 2026-10-27. Motion approval is separate."
+        "status": "draft",
+        "note": "Original Camera squircle redesign trial requested2026-10-28; implementation checks do not grant visual approval."
       },
       "reviewHistory": [
         {
@@ -991,6 +991,11 @@
             "rotation": 0
           },
           "note": "Owner approved both Outline and Filled after rounder corners, exact 2px left/right primary margins, and the .75-unit lower raised housing. Reviewed at native proportions and Regular 1.70."
+        },
+        {
+          "status": "approved",
+          "note": "Owner approved every current static icon, style and supported frame on 2026-10-27. Motion approval is separate. Superseded only for this Camera redesign trial.",
+          "date": "2026-10-27"
         }
       ],
       "baseIcon": "camera",
@@ -999,7 +1004,7 @@
       "frames": [],
       "defaultStrokeWidth": 1.75,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "approved"
+      "reviewStatus": "draft"
     },
     {
       "name": "check",

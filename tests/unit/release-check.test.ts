@@ -9,8 +9,9 @@ const icons = flattenCoreIcons(
   ),
 );
 
-it('permits the current owner-approved collection and rejects an empty release', () => {
-  expect(() => assertReleaseReady(icons)).not.toThrow();
+it('blocks the Camera trial while permitting accepted artwork and rejecting an empty release', () => {
+  expect(() => assertReleaseReady(icons)).toThrow('camera');
+  expect(() => assertReleaseReady(icons.filter((icon) => icon.name !== 'camera'))).not.toThrow();
   expect(() => assertReleaseReady([])).toThrow('empty icon collection');
 });
 

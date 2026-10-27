@@ -14,14 +14,14 @@ const catalog: { icons: Entry[] } = JSON.parse(
 );
 const manifest = JSON.parse(await readFile(new URL('../../package.json', import.meta.url), 'utf8'));
 
-it('publishes 121 distinct approved static identities from 51 originals and 70 explicit frames', () => {
+it('publishes 121 distinct static identities with Camera reopened for review from 51 originals and 70 explicit frames', () => {
   expect(catalog.icons).toHaveLength(121);
   expect(new Set(catalog.icons.map((icon) => icon.name)).size).toBe(121);
   expect(catalog.icons.filter((icon) => icon.frame === 'none')).toHaveLength(51);
   expect(catalog.icons.filter((icon) => icon.frame === 'square')).toHaveLength(35);
   expect(catalog.icons.filter((icon) => icon.frame === 'circle')).toHaveLength(35);
   for (const icon of catalog.icons) {
-    expect(icon.reviewStatus, icon.name).toBe('approved');
+    expect(icon.reviewStatus, icon.name).toBe(icon.name === 'camera' ? 'draft' : 'approved');
     expect(icon.frames, icon.name).toEqual([]);
     expect(icon.styles, icon.name).toContain('outline');
     expect(icon.styles, icon.name).toContain('filled');

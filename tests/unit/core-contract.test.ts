@@ -18,11 +18,13 @@ it('consumes validated fill-only Folder geometry with a deliberate cutout', () =
   expect(filled?.parts).toEqual(['body']);
 });
 
-it('retains owner approval on all authoring sources and styles', () => {
-  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(51);
+it('reopens only Camera while retaining other owner approvals', () => {
+  expect(icons.filter((icon) => icon.metadata.review?.status === 'approved')).toHaveLength(50);
   for (const icon of icons) {
     expect(icon.filled).toBeDefined();
-    expect(icon.filled?.metadata.review?.status).toBe('approved');
+    const expected = icon.name === 'camera' ? 'draft' : 'approved';
+    expect(icon.metadata.review?.status).toBe(expected);
+    expect(icon.filled?.metadata.review?.status).toBe(expected);
   }
   expect(icons.filter((icon) => icon.frames?.square && icon.frames?.circle)).toHaveLength(35);
 });
