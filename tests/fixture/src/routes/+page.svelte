@@ -269,6 +269,7 @@
   ></label
 >
 <div data-testid="stroke-preset"><Camera strokeWidth={preset} label="Named stroke camera" /></div>
+<div data-testid="filled-stroke-preset"><Camera style="filled" strokeWidth={preset} /></div>
 <div data-testid="gap-preset"><Folder style="filled" strokeWidth={preset} /></div>
 <div data-testid="x-outline-contour"><X size={96} label="Outline X contour" /></div>
 <div data-testid="x-filled-contour">
