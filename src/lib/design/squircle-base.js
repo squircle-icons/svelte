@@ -48,136 +48,161 @@ export function squircleStudy(exponent = DEFAULT_ROUNDNESS) {
     throw new RangeError('Study exponent must be between2 and5');
   return { outline: contour(exponent, STUDY_STROKE / 2), filled: contour(exponent, 0) };
 }
-/** Native upper-edge derivatives for the unmodified shared superellipse body. */
-function upperEdge(body, x) {
-  const n = body.exponent,
-    q = Math.abs(x),
-    a = 1 - (q / 10) ** n,
-    k = 1 / n - 1;
-  return {
-    value: -body.halfHeight * a ** (1 / n),
-    slope: ((body.halfHeight * Math.sign(x) * q ** (n - 1)) / 10 ** n) * a ** k,
-    curvature:
-      body.halfHeight *
-      (n - 1) *
-      ((q ** (n - 2) / 10 ** n) * a ** k + (q ** (2 * n - 2) / 10 ** (2 * n)) * a ** (k - 1)),
-  };
+const plus = (a, b) => [a[0] + b[0], a[1] + b[1]];
+const times = (p, k) => [p[0] * k, p[1] * k];
+const minus = (a, b) => plus(a, times(b, -1));
+function bezier(points, t) {
+  let row = points;
+  while (row.length > 1) row = row.slice(1).map((p, i) => plus(times(row[i], 1 - t), times(p, t)));
+  return row[0];
 }
-/** Quintic endpoint interpolation preserves position, tangent and geometric curvature. */
-function structuralTransition(x, left, right, a, b) {
-  const width = right - left,
-    t = (x - left) / width;
-  const c0 = a.value,
-    c1 = width * a.slope,
-    c2 = (width * width * a.curvature) / 2;
-  const d = b.value - c0 - c1 - c2,
-    e = width * b.slope - c1 - 2 * c2,
-    f = width * width * b.curvature - 2 * c2;
-  const c3 = 10 * d - 4 * e + f / 2,
-    c4 = -15 * d + 7 * e - f,
-    c5 = 6 * d - 3 * e + f / 2;
-  return {
-    value: c0 + t * (c1 + t * (c2 + t * (c3 + t * (c4 + t * c5)))),
-    slope: (c1 + t * (2 * c2 + t * (3 * c3 + t * (4 * c4 + t * 5 * c5)))) / width,
-  };
+const derivative = (points) =>
+  points.slice(1).map((p, i) => times(minus(p, points[i]), points.length - 1));
+function profilePoint(profile, t, offset) {
+  const p = bezier(profile, t),
+    d = bezier(derivative(profile), t),
+    dd = profile.length > 2 ? bezier(derivative(derivative(profile)), t) : [0, 0];
+  const speed = Math.hypot(...d),
+    normal = [d[1] / speed, -d[0] / speed];
+  const dot = (d[0] * dd[0] + d[1] * dd[1]) / speed ** 2;
+  const dn = [dd[1] / speed - normal[0] * dot, -dd[0] / speed - normal[1] * dot];
+  return { point: plus(p, times(normal, offset)), tangent: plus(d, times(dn, offset)) };
 }
-/** Restrained level housing/tab roofs; only the semantic upper sections are replaced. */
-function semanticTop(body, x) {
-  const supportLeft = body.tab ? -8.5 : -4.2,
-    supportRight = body.tab ? 1 : 4.2;
-  const roofLeft = body.tab ? -5.5 : -2,
-    roofRight = body.tab ? -1 : 2;
-  if (x <= supportLeft || x >= supportRight) return null;
-  const roof = { value: -body.halfHeight - body.bump, slope: 0, curvature: 0 };
-  if (x >= roofLeft && x <= roofRight) return roof;
-  return x < roofLeft
-    ? structuralTransition(x, supportLeft, roofLeft, upperEdge(body, supportLeft), roof)
-    : structuralTransition(x, roofRight, supportRight, roof, upperEdge(body, supportRight));
+/** Only the large main-body corners receive the progressive family treatment. */
+function bodyCorner(a, b, c, exponent) {
+  const k = 0.26 + 0.035 * (exponent - 2);
+  return [
+    a,
+    plus(a, times(minus(b, a), k)),
+    plus(a, times(minus(b, a), 2 * k)),
+    plus(c, times(minus(b, c), 2 * k)),
+    plus(c, times(minus(b, c), k)),
+    c,
+  ];
 }
-/** The shared whole-body profile is anisotropic before its native-coordinate offset is made. */
-function bodySample(body, angle) {
-  const c = Math.cos(angle),
-    s = Math.sin(angle),
-    n = body.exponent;
-  const ac = Math.abs(c),
-    as = Math.abs(s),
-    f = ac ** n + as ** n;
-  const df = n * (-(ac ** (n - 2)) * c * s + as ** (n - 2) * s * c);
-  const r = f ** (-1 / n),
-    dr = (-r * df) / (n * f);
-  const x = 10 * r * c,
-    dx = 10 * (dr * c - r * s);
-  let y = body.halfHeight * r * s,
-    dy = body.halfHeight * (dr * s + r * c);
-  if (s < 0) {
-    const top = semanticTop(body, x);
-    if (top) {
-      y = top.value;
-      dy = top.slope * dx;
+function originalProfiles(subject, exponent) {
+  if (subject === 'camera')
+    return [
+      bodyCorner([2.75, 9.38217258], [2.75, 6.63968611], [5.61748648, 6.63968611], exponent),
+      [
+        [5.61748648, 6.63968611],
+        [8.2758646, 6.63968611],
+      ],
+      [
+        [8.2758646, 6.63968611],
+        [8.66486359, 6.63968611],
+        [9.0218029, 6.42404699],
+        [9.20277691, 6.07970858],
+      ],
+      [
+        [9.20277691, 6.07970858],
+        [9.88095856, 4.78932476],
+      ],
+      [
+        [9.88095856, 4.78932476],
+        [10.0188427, 4.52697182],
+        [10.29079723, 4.36267519],
+        [10.58717728, 4.36267519],
+      ],
+      [
+        [10.58717728, 4.36267519],
+        [13.41282368, 4.36267519],
+      ],
+      [
+        [13.41282368, 4.36267519],
+        [13.70920467, 4.36267519],
+        [13.98115826, 4.52697182],
+        [14.1190424, 4.78932476],
+      ],
+      [
+        [14.1190424, 4.78932476],
+        [14.797225, 6.07970858],
+      ],
+      [
+        [14.797225, 6.07970858],
+        [14.97819805, 6.42404699],
+        [15.33513832, 6.63968611],
+        [15.72413635, 6.63968611],
+      ],
+      [
+        [15.72413635, 6.63968611],
+        [18.38251495, 6.63968611],
+      ],
+      bodyCorner([18.38251495, 6.63968611], [21.25, 6.63968611], [21.25, 9.38217258], exponent),
+      [
+        [21.25, 9.38217258],
+        [21.25, 16.3962059],
+      ],
+      bodyCorner([21.25, 16.3962059], [21.25, 19.63732529], [17.88388062, 19.63732529], exponent),
+      [
+        [17.88388062, 19.63732529],
+        [6.11612034, 19.63732529],
+      ],
+      bodyCorner([6.11612034, 19.63732529], [2.75, 19.63732529], [2.75, 16.3962059], exponent),
+      [
+        [2.75, 16.3962059],
+        [2.75, 9.38217258],
+      ],
+    ];
+  return [
+    bodyCorner([2.75, 6.98354101], [2.75, 4.1911912], [5.66734982, 4.1911912], exponent),
+    [
+      [5.66734982, 4.1911912],
+      [8.07275391, 4.1911912],
+    ],
+    [
+      [8.07275391, 4.1911912],
+      [8.28825283, 4.1911912],
+      [8.49458694, 4.27836895],
+      [8.64480209, 4.4328866],
+    ],
+    [
+      [8.64480209, 4.4328866],
+      [10.89379501, 6.74629974],
+    ],
+    [
+      [10.89379501, 6.74629974],
+      [11.09095097, 6.94910383],
+      [11.36176491, 7.06352472],
+      [11.6446085, 7.06352472],
+    ],
+    [
+      [11.6446085, 7.06352472],
+      [18.13319778, 7.06352472],
+    ],
+    bodyCorner([18.13319778, 7.06352472], [21.25, 7.06352472], [21.25, 10.05532837], exponent),
+    [
+      [21.25, 10.05532837],
+      [21.25, 16.56768799],
+    ],
+    bodyCorner([21.25, 16.56768799], [21.25, 19.80880928], [17.88388062, 19.80880928], exponent),
+    [
+      [17.88388062, 19.80880928],
+      [6.11612034, 19.80880928],
+    ],
+    bodyCorner([6.11612034, 19.80880928], [2.75, 19.80880928], [2.75, 16.56768799], exponent),
+    [
+      [2.75, 16.56768799],
+      [2.75, 6.98354101],
+    ],
+  ];
+}
+function originalBody(profiles, offset) {
+  let d = `M${xy(profilePoint(profiles[0], 0, offset).point)}`;
+  for (const profile of profiles) {
+    if (profile.length === 2) {
+      d += `L${xy(profilePoint(profile, 1, offset).point)}`;
+      continue;
     }
-  }
-  return { point: [12 + x, body.centerY + y], tangent: [dx, dy] };
-}
-function bodyOffset(body, angle, inset) {
-  const sample = bodySample(body, angle),
-    [dx, dy] = sample.tangent;
-  const speed = Math.hypot(dx, dy),
-    normal = [dy / speed, -dx / speed];
-  if (!inset) return sample;
-  const h = 0.00001,
-    a = bodySample(body, angle - h).tangent,
-    b = bodySample(body, angle + h).tangent;
-  const ddx = (b[0] - a[0]) / (2 * h),
-    ddy = (b[1] - a[1]) / (2 * h);
-  const dot = (dx * ddx + dy * ddy) / speed ** 2;
-  const dn = [ddy / speed - normal[0] * dot, -ddx / speed - normal[1] * dot];
-  return {
-    point: [sample.point[0] - inset * normal[0], sample.point[1] - inset * normal[1]],
-    tangent: [dx - inset * dn[0], dy - inset * dn[1]],
-  };
-}
-function bodyContour(body, inset) {
-  const count = 512,
-    step = (2 * Math.PI) / count;
-  let d = `M${xy(bodyOffset(body, 0, inset).point)}`;
-  for (let i = 0; i < count; i++) {
-    const a = bodyOffset(body, i * step, inset),
-      b = bodyOffset(body, (i + 1) * step, inset);
-    d += `C${xy([a.point[0] + (a.tangent[0] * step) / 3, a.point[1] + (a.tangent[1] * step) / 3])} ${xy([b.point[0] - (b.tangent[0] * step) / 3, b.point[1] - (b.tangent[1] * step) / 3])} ${xy(b.point)}`;
+    const count = 32,
+      step = 1 / count;
+    for (let i = 0; i < count; i++) {
+      const a = profilePoint(profile, i * step, offset),
+        b = profilePoint(profile, (i + 1) * step, offset);
+      d += `C${xy(plus(a.point, times(a.tangent, step / 3)))} ${xy(minus(b.point, times(b.tangent, step / 3)))} ${xy(b.point)}`;
+    }
   }
   return d + 'Z';
-}
-function studyBody(subject, exponent) {
-  const body = {
-    exponent,
-    halfHeight: subject === 'camera' ? 6.9 : 7,
-    bump: subject === 'camera' ? 0.65 : 0.6,
-    tab: subject === 'folder',
-    centerY: 0,
-  };
-  // Locate the upper extreme first, then center visible bounds rather than the tab's mass.
-  let angle = Math.PI,
-    minimum = Infinity;
-  const step = Math.PI / 512;
-  for (let i = 0; i <= 512; i++) {
-    const candidate = Math.PI + i * step,
-      y = bodySample(body, candidate).point[1];
-    if (y < minimum) {
-      minimum = y;
-      angle = candidate;
-    }
-  }
-  let lo = angle - step,
-    hi = angle + step;
-  for (let i = 0; i < 36; i++) {
-    const a = lo + (hi - lo) / 3,
-      b = hi - (hi - lo) / 3;
-    if (bodySample(body, a).point[1] < bodySample(body, b).point[1]) hi = b;
-    else lo = a;
-  }
-  minimum = bodySample(body, (lo + hi) / 2).point[1];
-  body.centerY = 12 - (minimum + body.halfHeight) / 2;
-  return body;
 }
 const circlePath = (x, y, r) =>
   `M${round(x - r)} ${round(y)}a${round(r)} ${round(r)} 0 1 0 ${round(2 * r)} 0a${round(r)} ${round(r)} 0 1 0 ${round(-2 * r)} 0Z`;
@@ -187,29 +212,30 @@ export function prototypeStudy(subject, exponent = DEFAULT_ROUNDNESS) {
   if (subject !== 'camera' && subject !== 'folder') throw new RangeError('Unknown study subject');
   if (!Number.isFinite(exponent) || exponent < 2 || exponent > 5)
     throw new RangeError('Study exponent must be between2 and5');
-  const body = studyBody(subject, exponent),
+  const profiles = originalProfiles(subject, exponent),
     half = STUDY_STROKE / 2;
-  const exterior = bodyContour(body, 0),
-    centerline = bodyContour(body, half);
+  const centerline = originalBody(profiles, 0),
+    exterior = originalBody(profiles, half);
   if (subject === 'camera') {
-    const lensY = body.centerY + 0.55,
-      indicatorY = body.centerY - 2.25;
+    const lensY = 12.8227459,
+      indicatorY = 9.13285542,
+      lensRadius = 3.24112022;
     return {
       outline:
         centerline +
-        circlePath(12, lensY, 3.1) +
-        `M17.55 ${round(indicatorY)}L17.55 ${round(indicatorY)}`,
-      filled: exterior + circlePath(12, lensY, 3.1 - half) + circlePath(17.55, indicatorY, half),
+        circlePath(12, lensY, lensRadius) +
+        `M17.88388062 ${indicatorY}L17.88388062 ${indicatorY}`,
+      filled:
+        exterior +
+        circlePath(12, lensY, lensRadius - half) +
+        circlePath(17.88388062, indicatorY, half),
     };
   }
-  const dividerY = body.centerY - 2.05,
-    left = 4.6,
-    right = 19.4;
-  const capsule = `M${left} ${round(dividerY - half)}H${right}a${half} ${half} 0 0 1 0 ${STUDY_STROKE}H${left}a${half} ${half} 0 0 1 0 ${-STUDY_STROKE}Z`;
-  return {
-    outline: centerline + `M${left} ${round(dividerY)}H${right}`,
-    filled: exterior + capsule,
-  };
+  const y = 10.9030056,
+    left = 4.76980874 + half,
+    right = 19.23019126 - half;
+  const slot = `M${round(left)} ${round(y - half)}H${round(right)}a${half} ${half} 0 0 1 0 ${STUDY_STROKE}H${round(left)}a${half} ${half} 0 0 1 0 ${-STUDY_STROKE}Z`;
+  return { outline: centerline + `M2.75 ${y}H21.25`, filled: exterior + slot };
 }
 /** Explicit comparison references, not additional production icons. */
 export function studyReference(kind) {
