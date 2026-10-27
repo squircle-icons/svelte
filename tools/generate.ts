@@ -135,46 +135,38 @@ files.set(
   ) + '\n',
 );
 exports['./catalog.json'] = './dist/catalog.json';
-// Opt-in experiment: no static icon or barrel imports the morph implementation.
-exports['./morph/sun-moon'] = {
-  types: './dist/morph/SunMoonMorph.svelte.d.ts',
-  svelte: './dist/morph/SunMoonMorph.svelte',
-  default: './dist/morph/SunMoonMorph.svelte',
-};
-files.set(
-  'src/lib/morph/sun-moon-geometry.js',
-  header +
-    (await readFile(
-      fileURLToPath(import.meta.resolve('@squircle-icons/core/morph/sun-moon')),
-      'utf8',
-    )),
-);
-files.set(
-  'src/lib/morph/sun-moon-data.js',
-  header +
-    'export default ' +
-    (await readFile(
-      fileURLToPath(import.meta.resolve('@squircle-icons/core/morph/sun-moon.json')),
-      'utf8',
-    )) +
-    ';\n',
-);
-files.set(
-  'src/lib/morph/sun-moon-geometry.d.ts',
-  header +
-    (await readFile(
-      fileURLToPath(import.meta.resolve('@squircle-icons/core/morph/sun-moon')).replace(
-        /\.js$/,
-        '.d.ts',
-      ),
-      'utf8',
-    )),
-);
-files.set(
-  'src/lib/morph/sun-moon-data.d.ts',
-  header +
-    "import type { SunMoonGeometry } from './sun-moon-geometry.js';\ndeclare const geometry: SunMoonGeometry;\nexport default geometry;\n",
-);
+// Pair implementations stay opt-in; static imports never traverse these modules.
+for (const [pair, component, type] of [
+  ['sun-moon', 'SunMoonMorph', 'SunMoonGeometry'],
+  ['plus-x', 'PlusXMorph', 'PlusXGeometry'],
+]) {
+  exports[`./morph/${pair}`] = {
+    types: `./dist/morph/${component}.svelte.d.ts`,
+    svelte: `./dist/morph/${component}.svelte`,
+    default: `./dist/morph/${component}.svelte`,
+  };
+  const implementation = fileURLToPath(import.meta.resolve(`@squircle-icons/core/morph/${pair}`));
+  files.set(`src/lib/morph/${pair}-geometry.js`, header + (await readFile(implementation, 'utf8')));
+  files.set(
+    `src/lib/morph/${pair}-geometry.d.ts`,
+    header + (await readFile(implementation.replace(/\.js$/, '.d.ts'), 'utf8')),
+  );
+  files.set(
+    `src/lib/morph/${pair}-data.js`,
+    header +
+      'export default ' +
+      (await readFile(
+        fileURLToPath(import.meta.resolve(`@squircle-icons/core/morph/${pair}.json`)),
+        'utf8',
+      )) +
+      ';\n',
+  );
+  files.set(
+    `src/lib/morph/${pair}-data.d.ts`,
+    header +
+      `import type { ${type} } from './${pair}-geometry.js';\ndeclare const geometry: ${type};\nexport default geometry;\n`,
+  );
+}
 const packagePath = 'package.json';
 const manifest = JSON.parse(await readFile(resolve(root, packagePath), 'utf8'));
 manifest.exports = exports;

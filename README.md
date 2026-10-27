@@ -101,3 +101,10 @@ Pass `moon={true}` to morph toward Moon and `moon={false}` to reverse toward Sun
 The separate component retains velocity when redirected, pauses while hidden,
 cleans up on unmount and respects the system reduced-motion preference.
 The morph is experimental and has not received owner approval.
+
+The second experimental pair is `@squircle-icons/svelte/morph/plus-x`.
+Use `x={true}` to move toward X and `x={false}` to return to Plus, with the
+same optional `progress`, `speed`, `style`, `onprogress` and `onsettle` props.
+It retains fixed Regular 1.70 and the approved 2px outer box margin; the upright
+Filled box cuts out exactly the same moving glyph as Outline. Both pairs share
+one reversible progress controller. No stroke-width control is provided.

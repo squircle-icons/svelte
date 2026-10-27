@@ -1,5 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import PlusXMorph from '@squircle-icons/svelte/morph/plus-x';
+  let plusXTarget = $state(false);
+  let plusXProgress = $state<number | undefined>(undefined);
+  let plusXStyle = $state<'outline' | 'filled'>('outline');
   import SunMoonMorph from '@squircle-icons/svelte/morph/sun-moon';
   let morphMoon = $state(false);
   let morphProgress = $state<number | undefined>(undefined);
@@ -326,6 +330,46 @@
     size={96}
     label="Experimental morph"
   />
+</section>
+
+<section data-testid="plus-x-morph-fixture">
+  <button
+    onclick={() => {
+      plusXProgress = undefined;
+      plusXTarget = true;
+    }}>Morph x</button
+  >
+  <button
+    onclick={() => {
+      plusXProgress = undefined;
+      plusXTarget = false;
+    }}>Morph plus</button
+  >
+  <button onclick={() => (plusXStyle = plusXStyle === 'outline' ? 'filled' : 'outline')}
+    >Plus X style</button
+  >
+  <input
+    aria-label="Fixture Plus X progress"
+    type="range"
+    min="0"
+    max="1"
+    step="0.001"
+    value={plusXProgress ?? 0}
+    oninput={(e) => (plusXProgress = Number(e.currentTarget.value))}
+  />
+  <PlusXMorph
+    x={plusXTarget}
+    progress={plusXProgress}
+    style={plusXStyle}
+    size={96}
+    label="Experimental Plus X morph"
+  />
+  <div data-testid="plus-x-intermediate-outline">
+    <PlusXMorph progress={plusXProgress ?? 0} size={96} />
+  </div>
+  <div data-testid="plus-x-intermediate-filled">
+    <PlusXMorph progress={plusXProgress ?? 0} style="filled" size={96} />
+  </div>
 </section>
 
 <style>
