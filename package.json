@@ -396,6 +396,16 @@
       "svelte": "./dist/filled/Menu.svelte",
       "default": "./dist/filled/Menu.svelte"
     },
+    "./minimize": {
+      "types": "./dist/Minimize.svelte.d.ts",
+      "svelte": "./dist/Minimize.svelte",
+      "default": "./dist/Minimize.svelte"
+    },
+    "./filled/minimize": {
+      "types": "./dist/filled/Minimize.svelte.d.ts",
+      "svelte": "./dist/filled/Minimize.svelte",
+      "default": "./dist/filled/Minimize.svelte"
+    },
     "./minus": {
       "types": "./dist/Minus.svelte.d.ts",
       "svelte": "./dist/Minus.svelte",
@@ -541,6 +551,11 @@
       "types": "./dist/morph/PlusMinusMorph.svelte.d.ts",
       "svelte": "./dist/morph/PlusMinusMorph.svelte",
       "default": "./dist/morph/PlusMinusMorph.svelte"
+    },
+    "./morph/maximize-minimize": {
+      "types": "./dist/morph/MaximizeMinimizeMorph.svelte.d.ts",
+      "svelte": "./dist/morph/MaximizeMinimizeMorph.svelte",
+      "default": "./dist/morph/MaximizeMinimizeMorph.svelte"
     }
   },
   "peerDependencies": {
@@ -585,7 +600,7 @@
     "vitest": "5.0.5",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
-    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-d1df3e4b2ea1.tgz"
+    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-a349e313e304.tgz"
   },
   "description": "Original Outline and Filled icons as native Svelte 5 components.",
   "repository": {

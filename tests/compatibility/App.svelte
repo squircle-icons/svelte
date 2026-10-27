@@ -1,4 +1,5 @@
 <script>
+  import MaximizeMinimizeMorph from '@squircle-icons/svelte/morph/maximize-minimize';
   import { onMount } from 'svelte';
   import Camera from '@squircle-icons/svelte/camera';
   import Folder from '@squircle-icons/svelte/folder';
@@ -46,3 +47,5 @@
 <MenuXMorph progress={0.5} label="Compatible Menu X morph" />
 
 <PlusMinusMorph progress={0.5} label="Compatible Plus Minus morph" />
+
+<MaximizeMinimizeMorph progress={0.5} label="Compatible Maximize Minimize morph" />

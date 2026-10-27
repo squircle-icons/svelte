@@ -38,6 +38,7 @@ export { default as LogIn } from './LogIn.svelte';
 export { default as LogOut } from './LogOut.svelte';
 export { default as Maximize } from './Maximize.svelte';
 export { default as Menu } from './Menu.svelte';
+export { default as Minimize } from './Minimize.svelte';
 export { default as Minus } from './Minus.svelte';
 export { default as Moon } from './Moon.svelte';
 export { default as MoreHorizontal } from './MoreHorizontal.svelte';

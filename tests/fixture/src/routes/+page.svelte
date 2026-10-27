@@ -1,4 +1,9 @@
 <script lang="ts">
+  import MaximizeMinimizeMorph from '@squircle-icons/svelte/morph/maximize-minimize';
+  import Minimize from '@squircle-icons/svelte/minimize';
+  let maximizeMinimizeTarget = $state(false);
+  let maximizeMinimizeProgress = $state<number | undefined>(undefined);
+  let maximizeMinimizeStyle = $state<'outline' | 'filled'>('outline');
   import Maximize from '@squircle-icons/svelte/maximize';
   import ExternalLink from '@squircle-icons/svelte/external-link';
 
@@ -829,7 +834,7 @@
 </section>
 
 <section data-testid="unframed-only-proof">
-  {#each [{ name: 'maximize', Icon: Maximize }, { name: 'external-link', Icon: ExternalLink }] as item}
+  {#each [{ name: 'maximize', Icon: Maximize }, { name: 'minimize', Icon: Minimize }, { name: 'external-link', Icon: ExternalLink }] as item}
     {#each ['outline', 'filled'] as style}
       {#each ['none', 'square', 'circle'] as frame}
         <div data-testid={'unframed-' + item.name + '-' + style + '-' + frame}>
@@ -843,6 +848,52 @@
     {/each}
   {/each}
 </section>
+
+<section data-testid="maximize-minimize-morph-fixture">
+  <button
+    onclick={() => {
+      maximizeMinimizeProgress = undefined;
+      maximizeMinimizeTarget = true;
+    }}>Morph minimize</button
+  >
+  <button
+    onclick={() => {
+      maximizeMinimizeProgress = undefined;
+      maximizeMinimizeTarget = false;
+    }}>Morph maximize</button
+  >
+  <button
+    onclick={() =>
+      (maximizeMinimizeStyle = maximizeMinimizeStyle === 'outline' ? 'filled' : 'outline')}
+    >Maximize Minimize style</button
+  >
+  <input
+    aria-label="Fixture Maximize Minimize progress"
+    type="range"
+    min="0"
+    max="1"
+    step="0.0001"
+    value={maximizeMinimizeProgress ?? 0}
+    oninput={(e) => (maximizeMinimizeProgress = Number(e.currentTarget.value))}
+  />
+  {#if movingMorphsMounted}<MaximizeMinimizeMorph
+      minimize={maximizeMinimizeTarget}
+      progress={maximizeMinimizeProgress}
+      style={maximizeMinimizeStyle}
+      size={96}
+      label="Maximize Minimize fixture"
+    />{/if}
+  <div data-testid="maximize-minimize-intermediate-outline">
+    <MaximizeMinimizeMorph progress={maximizeMinimizeProgress ?? 0} size={96} />
+  </div>
+  <div data-testid="maximize-minimize-intermediate-filled">
+    <MaximizeMinimizeMorph progress={maximizeMinimizeProgress ?? 0} style="filled" size={96} />
+  </div>
+</section>
+{#each [{ name: 'maximize', Icon: Maximize }, { name: 'minimize', Icon: Minimize }] as item}
+  <div data-testid={item.name + '-outline-contour'}><item.Icon size={96} strokeWidth={1.75} /></div>
+  <div data-testid={item.name + '-filled-contour'}><item.Icon style="filled" size={96} /></div>
+{/each}
 
 <style>
   .chevron-controls-proof {

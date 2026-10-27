@@ -5,8 +5,8 @@ import type { CoreIcon } from '@squircle-icons/core/catalog-types';
 const icons: CoreIcon[] = JSON.parse(
   await readFile(fileURLToPath(import.meta.resolve('@squircle-icons/core/catalog.json')), 'utf8'),
 );
-it('consumes fifty validated icons from the pinned core artifact', () => {
-  expect(icons).toHaveLength(50);
+it('consumes fifty-one validated icons from the pinned core artifact', () => {
+  expect(icons).toHaveLength(51);
 });
 it('consumes validated fill-only Folder geometry with a deliberate cutout', () => {
   const filled = icons.find((icon) => icon.name === 'folder')?.filled;
@@ -56,6 +56,7 @@ it('retains prior approvals while reopening Menu and Trash revisions', () => {
     'log-out',
     'maximize',
     'menu',
+    'minimize',
     'minus',
     'more-horizontal',
     'more-vertical',
@@ -71,7 +72,7 @@ it('retains prior approvals while reopening Menu and Trash revisions', () => {
 });
 
 it('advertises no frame variants for icons without explicit owner frame approval', () => {
-  for (const name of ['maximize', 'external-link']) {
+  for (const name of ['maximize', 'minimize', 'external-link']) {
     const icon = icons.find((icon) => icon.name === name);
     expect(icon, name).toBeDefined();
     expect(icon!.frames, name).toBeUndefined();

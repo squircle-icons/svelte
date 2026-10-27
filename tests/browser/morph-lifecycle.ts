@@ -73,7 +73,7 @@ export function registerMorphLifecycle(label: string, openButton: string, finalS
     await page.getByRole('button', { name: 'Unmount moving morphs', exact: true }).click();
     await expect(svg).toHaveCount(0);
     await expect.poll(() => page.evaluate(() => window.motionProbe.pending.size)).toBe(0);
-    expect(await page.evaluate(() => window.motionProbe.listeners.size)).toBe(listeners - 2);
+    expect(await page.evaluate(() => window.motionProbe.listeners.size)).toBe(listeners - 3);
     await page.getByRole('button', { name: 'Remount moving morphs', exact: true }).click();
     await expect(svg).toHaveAttribute('data-state', finalState);
     expect(await page.evaluate(() => window.motionProbe.listeners.size)).toBe(listeners);

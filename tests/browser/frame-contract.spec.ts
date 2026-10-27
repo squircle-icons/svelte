@@ -42,7 +42,7 @@ test('unapproved frame props do not add frames to Maximize or External Link', as
   await page.goto('/');
   await expect(page.getByTestId('ready')).toHaveText('hydrated');
   const results = await page.evaluate(() =>
-    ['maximize', 'external-link'].flatMap((name) =>
+    ['maximize', 'minimize', 'external-link'].flatMap((name) =>
       ['outline', 'filled'].map((style) => {
         const svg = (frame: string) =>
           document.querySelector(`[data-testid="unframed-${name}-${style}-${frame}"] svg`)!;

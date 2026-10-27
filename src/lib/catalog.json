@@ -718,19 +718,23 @@
     },
     {
       "name": "maximize",
-      "description": "Four outward corners for maximizing a view.",
+      "description": "Four outward rounded corners for maximizing a view.",
       "tags": ["window", "maximize", "expand", "fullscreen"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner explicitly requested larger native Frame None artwork, independent of the unchanged smaller Square/Circle glyphs. None centerlines uniformlyscale about12,12 by2.1875000000, with Regular1.75 stroke and roundcaps/joins unchanged. None Filled is the exact Bold2.50 union at radius1.25, using analytical arcs and a single union contour at intersections; it is not scaled oldstrokegeometry and has no enclosingbox. Fit None BoldFilled visibleprimaryextent20, leaving2px on its mainopposingpair; RegularOutline has2.375px there. Otherpairs preserve naturalproportions and balancedmargins. Four cornerLcenterlines use bounds3.25..20.75 andarms5.46875, uniformlyscaledabout12,12. All frameSVG/JSON files retain their prior smaller frame-fitting geometry; do not enlarge the frame glyphs or restore same-None-and-frame sizing. Source-nativeX/Y100/100 androtation0. This ownerexception supersedes prior shared-size wording; frame-specific metadata remains the record of the smaller variant. Existingapprovalhistory is preserved. RevisedNoneglyph awaits ownerreview. CURRENT NO-FRAME POLICY: the owner explicitly removed Square and Circle variants for this identity. Only Frame None is supported; prior notes about framed glyphs and frame clearance are historical. Preserve the enlarged standalone size and fixed Regular1.75 stroke. Standalone geometry is unchanged by this frame removal. ",
+      "construction": "The Maximize/Minimize pair uses four separately rounded L marks, in stable TL/TR/BR/BL subpath order under data-part body. Only Frame None is supported; no enclosing box or frame source is added. Each local elbow square has center (5.984375,5.984375), (18.015625,5.984375), (18.015625,18.015625) or (5.984375,18.015625), respectively. Maximize reference TL centerline is M3.25 8.71875 L3.25 6.5 A3.25 3.25 0 0 1 6.5 3.25 L8.71875 3.25. Other Maximize corners are rigid quarter-turns about12,12. The old endpoint stations and 5.46875 arm extent are retained, while the actual tangent elbow radius becomes3.25. Minimize rotates each complete Maximize corner180degrees about its own local elbow-square center; shape, stroke and corner radius are unchanged. Both endpoints contain four matching M L A L Outline subpaths. Outline defaults to Regular1.75 with round caps/joins; Thin1.25 and Bold2.50 retain the same centerlines. Filled is the exact fixed Bold2.50 normal expansion, with outer elbow radius4.5, inner elbow radius2 and cap radius1.25. Each Filled corner is one closed analytical contour; do not combine overlapping evenodd capsules. Outline centerline bounds are3.25..20.75, Regular visible bounds2.375..21.625 and Bold/Filled visible bounds2..22 on both axes. The native baseline remains X/Y100/100 and rotation0. Original project geometry with no SVG transforms or copied third-party paths. This supersedes the previous sharp centerline elbow; all revised/new static endpoints remain drafts pending owner review. Motion approval is a separate owner decision.",
       "review": {
         "status": "draft",
-        "note": "Owner requested no frame variants. Standalone result awaits visual review."
+        "note": "Owner requested tangent rounded Maximize elbows and matching inward Minimize endpoints. Static geometry awaits owner visual review; motion review is separate."
       },
       "filledTreatment": "bold-stroke",
       "reviewHistory": [
         {
           "status": "draft",
           "note": "Owner requested larger native unframed glyph; frame drawings remain unchanged. Revised None size awaits review."
+        },
+        {
+          "status": "draft",
+          "note": "Owner requested no frame variants. Standalone result awaits visual review."
         }
       ],
       "styles": ["outline", "filled"],
@@ -767,6 +771,23 @@
       ],
       "styles": ["outline", "filled"],
       "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "minimize",
+      "tags": ["window", "minimize", "collapse", "fullscreen"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "description": "Four inward rounded corners for minimizing a view.",
+      "construction": "The Maximize/Minimize pair uses four separately rounded L marks, in stable TL/TR/BR/BL subpath order under data-part body. Only Frame None is supported; no enclosing box or frame source is added. Each local elbow square has center (5.984375,5.984375), (18.015625,5.984375), (18.015625,18.015625) or (5.984375,18.015625), respectively. Maximize reference TL centerline is M3.25 8.71875 L3.25 6.5 A3.25 3.25 0 0 1 6.5 3.25 L8.71875 3.25. Other Maximize corners are rigid quarter-turns about12,12. The old endpoint stations and 5.46875 arm extent are retained, while the actual tangent elbow radius becomes3.25. Minimize rotates each complete Maximize corner180degrees about its own local elbow-square center; shape, stroke and corner radius are unchanged. Both endpoints contain four matching M L A L Outline subpaths. Outline defaults to Regular1.75 with round caps/joins; Thin1.25 and Bold2.50 retain the same centerlines. Filled is the exact fixed Bold2.50 normal expansion, with outer elbow radius4.5, inner elbow radius2 and cap radius1.25. Each Filled corner is one closed analytical contour; do not combine overlapping evenodd capsules. Outline centerline bounds are3.25..20.75, Regular visible bounds2.375..21.625 and Bold/Filled visible bounds2..22 on both axes. The native baseline remains X/Y100/100 and rotation0. Original project geometry with no SVG transforms or copied third-party paths. This supersedes the previous sharp centerline elbow; all revised/new static endpoints remain drafts pending owner review. Motion approval is a separate owner decision.",
+      "filledTreatment": "bold-stroke",
+      "review": {
+        "status": "draft",
+        "note": "Owner requested tangent rounded Maximize elbows and matching inward Minimize endpoints. Static geometry awaits owner visual review; motion review is separate."
+      },
+      "styles": ["outline", "filled"],
+      "frames": [],
       "defaultStrokeWidth": 1.75,
       "filledDefaultStrokeWidth": null,
       "reviewStatus": "draft"
