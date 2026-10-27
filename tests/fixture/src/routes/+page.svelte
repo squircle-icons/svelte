@@ -54,6 +54,46 @@
     { name: 'upload', label: 'Upload', Outline: Upload, Filled: FilledUpload },
     { name: 'trash', label: 'Trash', Outline: Trash, Filled: FilledTrash },
   ];
+  import ArrowUp from '@squircle-icons/svelte/arrow-up';
+  import FilledArrowUp from '@squircle-icons/svelte/filled/arrow-up';
+  import ArrowDown from '@squircle-icons/svelte/arrow-down';
+  import FilledArrowDown from '@squircle-icons/svelte/filled/arrow-down';
+  import ArrowUpLeft from '@squircle-icons/svelte/arrow-up-left';
+  import FilledArrowUpLeft from '@squircle-icons/svelte/filled/arrow-up-left';
+  import ArrowUpRight from '@squircle-icons/svelte/arrow-up-right';
+  import FilledArrowUpRight from '@squircle-icons/svelte/filled/arrow-up-right';
+  import ArrowDownLeft from '@squircle-icons/svelte/arrow-down-left';
+  import FilledArrowDownLeft from '@squircle-icons/svelte/filled/arrow-down-left';
+  import ArrowDownRight from '@squircle-icons/svelte/arrow-down-right';
+  import FilledArrowDownRight from '@squircle-icons/svelte/filled/arrow-down-right';
+  const roundFive = [
+    { name: 'arrow-up', label: 'Arrow Up', Outline: ArrowUp, Filled: FilledArrowUp },
+    { name: 'arrow-down', label: 'Arrow Down', Outline: ArrowDown, Filled: FilledArrowDown },
+    {
+      name: 'arrow-up-left',
+      label: 'Arrow Up Left',
+      Outline: ArrowUpLeft,
+      Filled: FilledArrowUpLeft,
+    },
+    {
+      name: 'arrow-up-right',
+      label: 'Arrow Up Right',
+      Outline: ArrowUpRight,
+      Filled: FilledArrowUpRight,
+    },
+    {
+      name: 'arrow-down-left',
+      label: 'Arrow Down Left',
+      Outline: ArrowDownLeft,
+      Filled: FilledArrowDownLeft,
+    },
+    {
+      name: 'arrow-down-right',
+      label: 'Arrow Down Right',
+      Outline: ArrowDownRight,
+      Filled: FilledArrowDownRight,
+    },
+  ];
   let hovered = $state(false);
   let focused = $state(false);
   let preset = $state<'thin' | 'regular' | 'bold'>('regular');
@@ -154,7 +194,7 @@
   <header>
     <span>BOLD FILLED / SEARCH</span>
     <h2>Search</h2>
-    <p>Shared centerlines · Outline 1.70 / Filled Bold 2.25 · 2px Filled margins</p>
+    <p>Shared centerlines · Outline 1.75 / Filled Bold 2.5 · 2px Filled margins</p>
   </header>
   <div class="rotation-grid">
     {#each ['outline', 'filled'] as style}<article>
@@ -196,7 +236,7 @@
     <header>
       <span>ROUND 3 / 6 ICONS</span>
       <h2>Everyday actions.</h2>
-      <p>Outline & Filled · Regular 1.70</p>
+      <p>Outline & Filled · Regular 1.75</p>
     </header>
     <div class="round-grid">
       {#each [{ name: 'X', Outline: X, Filled: FilledX }, { name: 'Copy', Outline: Copy, Filled: FilledCopy }, { name: 'Chevron Down', Outline: ChevronDown, Filled: FilledChevronDown }, { name: 'Plus', Outline: Plus, Filled: FilledPlus }, { name: 'Check', Outline: Check, Filled: FilledCheck }, { name: 'Chevron Up', Outline: ChevronUp, Filled: FilledChevronUp }] as item}
@@ -218,7 +258,7 @@
   <header>
     <span>ROUND 3 / COPY REVISION</span>
     <h2>Copy</h2>
-    <p>Two separated junctions · Standard corners · Regular 1.70</p>
+    <p>Two separated junctions · Standard corners · Regular 1.75</p>
   </header>
   <div class="rotation-grid">
     {#each ['outline', 'filled'] as style}<article>
@@ -236,7 +276,7 @@
   <header>
     <span>ROUND 3 / FILLED REVISION</span>
     <h2>Plus & X</h2>
-    <p>Rounder box corners · Same glyph in both styles · Regular 1.70</p>
+    <p>Rounder box corners · Same glyph in both styles · Regular 1.75</p>
   </header>
   <div class="rotation-grid">
     <h3>Plus</h3>
@@ -267,7 +307,7 @@
     <header>
       <span>ROUND 4 / 6 DRAFT ICONS</span>
       <h2>Navigation and files.</h2>
-      <p>Outline & Filled · Regular 1.70</p>
+      <p>Outline & Filled · Regular 1.75</p>
     </header>
     <div class="round-grid">
       {#each roundFour as item}<article>
@@ -371,6 +411,41 @@
     <PlusXMorph progress={plusXProgress ?? 0} style="filled" size={96} />
   </div>
 </section>
+
+{#each roundFive as item}
+  <div data-testid={item.name + '-outline-contour'}>
+    <item.Outline size={96} label={'Outline ' + item.label + ' contour'} />
+  </div>
+  <div data-testid={item.name + '-filled-contour'}>
+    <item.Filled size={96} label={'Filled ' + item.label + ' contour'} />
+  </div>
+{/each}
+{#each ['light', 'dark'] as surface}
+  <section
+    class="round-three"
+    class:dark={surface === 'dark'}
+    data-testid={'round-five-' + surface}
+  >
+    <header>
+      <span>ROUND 5 / COMPASS ARROWS</span>
+      <h2>Six new directions</h2>
+      <p>Regular 1.75 · Open V / solid head · 2px primary margins</p>
+    </header>
+    <div class="round-grid">
+      {#each roundFive as item}
+        <article>
+          <h3>{item.label}</h3>
+          <div class="round-main"><item.Outline size={64} /><item.Filled size={64} /></div>
+          <div class="round-sizes">
+            {#each [16, 20, 24, 48] as size}<div>
+                <item.Outline {size} /><item.Filled {size} /><small>{size}px</small>
+              </div>{/each}
+          </div>
+        </article>
+      {/each}
+    </div>
+  </section>
+{/each}
 
 <style>
   .rotation-sheet {

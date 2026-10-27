@@ -82,12 +82,12 @@ try {
   await page.locator('#ready').filter({ hasText: 'hydrated' }).waitFor();
   const camera = page.locator('#camera svg');
   assert.equal(await camera.getAttribute('aria-label'), 'Compatible camera');
-  assert.equal(await camera.getAttribute('stroke-width'), '1.7');
+  assert.equal(await camera.getAttribute('stroke-width'), '1.75');
   await page.locator('#preset').click();
   await page.waitForFunction(
-    () => document.querySelector('#camera svg').getAttribute('stroke-width') === '2.25',
+    () => document.querySelector('#camera svg').getAttribute('stroke-width') === '2.5',
   );
-  assert.equal(await page.locator('#folder svg').getAttribute('data-cutout-width'), '2.25');
+  assert.equal(await page.locator('#folder svg').getAttribute('data-cutout-width'), '2.5');
   await page.locator('#number').click();
   await page.waitForFunction(
     () => document.querySelector('#camera svg').getAttribute('stroke-width') === '1.5',

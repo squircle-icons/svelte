@@ -132,7 +132,7 @@ test('Filled Heart head matches the visible Regular Outline exterior', async ({ 
       // Filling the reference joins its interior and stroke into its exterior silhouette.
       svg.setAttribute('fill', '#000');
       svg.setAttribute('stroke', outline ? '#000' : 'none');
-      if (outline) svg.setAttribute('stroke-width', '1.7');
+      if (outline) svg.setAttribute('stroke-width', '1.75');
       const url = URL.createObjectURL(
         new Blob([new XMLSerializer().serializeToString(svg)], { type: 'image/svg+xml' }),
       );
@@ -192,6 +192,12 @@ for (const icon of [
   'chevron-up',
   'arrow-left',
   'arrow-right',
+  'arrow-up',
+  'arrow-down',
+  'arrow-up-left',
+  'arrow-up-right',
+  'arrow-down-left',
+  'arrow-down-right',
   'menu',
   'download',
   'upload',
@@ -229,7 +235,7 @@ for (const icon of [
           }
         }
         if (outline) {
-          svg.setAttribute('stroke-width', ['menu', 'search'].includes(icon) ? '2.25' : '1.7');
+          svg.setAttribute('stroke-width', ['menu', 'search'].includes(icon) ? '2.5' : '1.75');
           // Line marks keep an open interior; Filled Copy paints only its front page solid.
           if (
             [
@@ -241,6 +247,12 @@ for (const icon of [
               'chevron-up',
               'arrow-left',
               'arrow-right',
+              'arrow-up',
+              'arrow-down',
+              'arrow-up-left',
+              'arrow-up-right',
+              'arrow-down-left',
+              'arrow-down-right',
               'menu',
               'download',
               'upload',
@@ -252,6 +264,12 @@ for (const icon of [
             [
               'arrow-left',
               'arrow-right',
+              'arrow-up',
+              'arrow-down',
+              'arrow-up-left',
+              'arrow-up-right',
+              'arrow-down-left',
+              'arrow-down-right',
               'chevron-down',
               'chevron-up',
               'download',
@@ -366,11 +384,11 @@ test('one icon switches styles for hover and keyboard focus without replacing it
 
 test('named stroke presets update Outline strokes and the Filled Folder gap', async ({ page }) => {
   const svg = page.getByTestId('stroke-preset').locator('svg');
-  await expect(svg).toHaveAttribute('stroke-width', '1.7');
+  await expect(svg).toHaveAttribute('stroke-width', '1.75');
   for (const [preset, width] of [
     ['thin', '1.25'],
-    ['bold', '2.25'],
-    ['regular', '1.7'],
+    ['bold', '2.5'],
+    ['regular', '1.75'],
   ]) {
     await page.getByRole('combobox', { name: 'Stroke preset' }).selectOption(preset);
     await expect(svg).toHaveAttribute('stroke-width', width);
@@ -420,7 +438,7 @@ test('X shares identical Outline and Filled glyphs inside a box with 2px outer m
       svg.setAttribute('height', String(size));
       svg.setAttribute('fill', outline ? 'none' : '#000');
       svg.setAttribute('stroke', outline ? '#000' : 'none');
-      if (outline) svg.setAttribute('stroke-width', String(1.7 / armScale));
+      if (outline) svg.setAttribute('stroke-width', String(1.75 / armScale));
       else {
         const path = svg.querySelector('path')!;
         const parts = path.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
@@ -491,9 +509,9 @@ test('X shares identical Outline and Filled glyphs inside a box with 2px outer m
         .getAttribute('stroke-width'),
     };
   });
-  expect(result.lengths[0]).toBeCloseTo(28.6, 4);
-  expect(result.lengths[1]).toBeCloseTo(28.6 * Math.SQRT2, 4);
-  expect(result.xStroke).toBe('1.7');
+  expect(result.lengths[0]).toBeCloseTo(28.5, 4);
+  expect(result.lengths[1]).toBeCloseTo(28.5 * Math.SQRT2, 4);
+  expect(result.xStroke).toBe('1.75');
   for (const pose of result.poses) {
     expect(pose.distantMismatches, JSON.stringify(pose)).toBe(0);
     expect(pose.mismatches, JSON.stringify(pose)).toBeLessThan(960 * 960 * 0.002);
@@ -553,9 +571,9 @@ for (const icon of ['plus', 'x', 'check'])
       };
     }, icon);
     // Chromium and WebKit approximate circular-arc bounds by up to 0.0003 native units.
-    // The rotated contour tests independently check the unchanged 1.70 glyph weight.
+    // The rotated contour tests independently check the unchanged 1.75 glyph weight.
     for (const [index, padding] of result.padding.entries())
-      expect(padding).toBeCloseTo(icon === 'check' && index >= 2 ? 4.2 : 2, 3);
+      expect(padding).toBeCloseTo(icon === 'check' && index >= 2 ? 4.19230769 : 2, 3);
     if (['x', 'plus'].includes(icon)) {
       for (const margin of result.outerMargins) expect(margin).toBeCloseTo(2, 5);
       for (const margin of result.glyphMargins) expect(margin).toBeCloseTo(4, 3);
@@ -588,7 +606,7 @@ test('X Outline matches the inner Filled glyph with unchanged stroke and 4px art
         cap: svg.getAttribute('stroke-linecap'),
       };
     });
-  expect(result.stroke).toBe(1.7);
+  expect(result.stroke).toBe(1.75);
   expect(result.cap).toBe('round');
   for (const margin of result.margins) expect(margin).toBeCloseTo(4, 5);
 });
@@ -604,7 +622,7 @@ test('unboxed Camera and Folder retain horizontal proportions with a 2px primary
         .evaluate((el, style) => {
           const path = el.querySelector('[data-part="body"] path') as SVGPathElement;
           const b = path.getBBox();
-          const half = style === 'outline' ? 0.85 : 0;
+          const half = style === 'outline' ? 0.875 : 0;
           return {
             left: b.x - half,
             right: 24 - b.x - b.width - half,
@@ -653,7 +671,7 @@ test('Copy has 1px junction breaks, 4px inter-page spacing and standard corners'
   for (const gap of result.gaps) expect(gap).toBeCloseTo(4, 4);
   for (const gap of result.junctionGaps) expect(gap).toBeCloseTo(1, 4);
   for (const margin of result.margins) expect(margin).toBeCloseTo(2, 4);
-  expect(result.stroke).toBe(1.7);
+  expect(result.stroke).toBe(1.75);
   expect(result.roundedCorner).toBe(true);
   expect(result.solidFront).toBe(true);
   if (info.project.name === 'chromium')
@@ -716,14 +734,20 @@ test('Trash bakes the accepted 105 by 95 proportions into native geometry with f
   });
   expect(values.verticalSides).toBe(true);
   expect(values.roundedBase).toBe(true);
-  for (const margin of values.margins.slice(0, 2)) expect(margin).toBeCloseTo(2.4575, 4);
-  for (const margin of values.margins.slice(2)) expect(margin).toBeCloseTo(2.75, 4);
-  expect(values.stroke).toBe('1.7');
+  for (const margin of values.margins.slice(0, 2)) expect(margin).toBeCloseTo(2.4325, 4);
+  for (const margin of values.margins.slice(2)) expect(margin).toBeCloseTo(2.725, 4);
+  expect(values.stroke).toBe('1.75');
 });
 
 for (const [icon, point] of [
   ['arrow-left', [9, 10]],
   ['arrow-right', [15, 10]],
+  ['arrow-up', [9.7125, 8.56875]],
+  ['arrow-down', [14.2875, 15.43125]],
+  ['arrow-up-left', [6.28125, 10.85625]],
+  ['arrow-up-right', [13.14375, 6.28125]],
+  ['arrow-down-left', [10.85625, 17.71875]],
+  ['arrow-down-right', [17.71875, 13.14375]],
   ['chevron-down', [12, 10.5]],
   ['chevron-up', [12, 13.5]],
   ['download', [10.5, 11]],
@@ -772,7 +796,7 @@ for (const icon of ['download', 'upload'])
     expect(result.oldSquareCornerClear).toBe(true);
     expect(result.curvedBand).toBe(true);
     for (const [index, value] of result.bounds.entries())
-      expect(value).toBeCloseTo([3.15, 15.15, 17.7, 6.2][index], 4);
+      expect(value).toBeCloseTo([3.125, 15.125, 17.75, 6.25][index], 4);
   });
 
 test('Moon bakes the owner-approved minus thirty degree pose as native zero', async ({ page }) => {
@@ -820,5 +844,50 @@ test('Moon bakes the owner-approved minus thirty degree pose as native zero', as
   expect(values.bodySolid).toBe(true);
   expect(values.innerRadius).toBeCloseTo(6.56918946, 2);
   for (const [index, margin] of values.margins.entries())
-    expect(margin).toBeCloseTo([3.15675074, 3.28437209, 3.15675074, 3.28437209][index], 4);
+    expect(margin).toBeCloseTo([3.13175074, 3.25937209, 3.13175074, 3.25937209][index], 4);
+});
+
+for (const icon of [
+  'arrow-up',
+  'arrow-down',
+  'arrow-up-left',
+  'arrow-up-right',
+  'arrow-down-left',
+  'arrow-down-right',
+])
+  test(`${icon} has 2px primary margins and fixed Regular stroke`, async ({ page }) => {
+    const result = await page.evaluate((icon) => {
+      const outline = document.querySelector(
+        `[data-testid="${icon}-outline-contour"] svg`,
+      ) as SVGSVGElement;
+      const filled = document.querySelector(
+        `[data-testid="${icon}-filled-contour"] svg`,
+      ) as SVGSVGElement;
+      const bounds = filled.getBBox();
+      return {
+        margins: [bounds.x, 24 - bounds.x - bounds.width, bounds.y, 24 - bounds.y - bounds.height],
+        stroke: outline.getAttribute('stroke-width'),
+      };
+    }, icon);
+    expect(result.stroke).toBe('1.75');
+    for (const value of result.margins.slice(2)) expect(value).toBeCloseTo(2, 4);
+    if (icon.includes('left') || icon.includes('right'))
+      for (const value of result.margins.slice(0, 2)) expect(value).toBeCloseTo(2, 4);
+    else expect(result.margins[0]).toBeCloseTo(result.margins[1], 4);
+  });
+
+test('Round 5 exposes six dual-style directions at actual sizes on light and dark', async ({
+  page,
+}, info) => {
+  for (const surface of ['light', 'dark']) {
+    const sheet = page.getByTestId('round-five-' + surface);
+    await expect(sheet.locator('article')).toHaveCount(6);
+    await expect(sheet.locator('.round-main svg')).toHaveCount(12);
+    for (const size of [16, 20, 24, 48])
+      await expect(sheet.locator(`.round-sizes svg[width="${size}"]`)).toHaveCount(12);
+    if (info.project.name === 'chromium') {
+      await mkdir('.artifacts/previews', { recursive: true });
+      await sheet.screenshot({ path: `.artifacts/previews/round5-arrows-${surface}.png` });
+    }
+  }
 });

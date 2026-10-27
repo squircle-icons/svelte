@@ -34,9 +34,9 @@ The package ships JavaScript inside its native `.svelte` components and separate
 <Camera strokeWidth="bold" />
 ```
 
-Use the same import for both styles. `style="outline"` is the default; `style="filled"` selects the separately authored solid drawing. Menu and Search provide fixed Bold 2.25 Filled geometry without an enclosing box, following their Outline centerlines. Dedicated imports such as `@squircle-icons/svelte/filled/camera` and the Filled barrel remain supported.
+Use the same import for both styles. `style="outline"` is the default; `style="filled"` selects the separately authored solid drawing. Menu and Search provide fixed Bold 2.50 Filled geometry without an enclosing box, following their Outline centerlines. Dedicated imports such as `@squircle-icons/svelte/filled/camera` and the Filled barrel remain supported.
 
-Common props are `size=24`, `color="currentColor"`, `style="outline"`, `strokeWidth="regular"`, optional `label` and `class`. Decorative icons omit `label`; meaningful icons receive one accessible name. Components add no tab stop or duplicate SVG title. Stroke presets are `thin` (1.25), `regular` (1.70), and `bold` (2.25); numbers remain supported for fine adjustments. Filled Folder uses `strokeWidth` for its bounded 0.25–6-unit divider gap; other Filled drawings have fixed geometry.
+Common props are `size=24`, `color="currentColor"`, `style="outline"`, `strokeWidth="regular"`, optional `label` and `class`. Decorative icons omit `label`; meaningful icons receive one accessible name. Components add no tab stop or duplicate SVG title. Stroke presets are `thin` (1.25), `regular` (1.75), and `bold` (2.50); numbers remain supported for fine adjustments. Filled Folder uses `strokeWidth` for its bounded 0.25–6-unit divider gap; other Filled drawings have fixed geometry.
 
 Animation components, runtime, recipes and exports have been removed from the current source. The API has no `animate`, `hover`, `open`, or `reducedMotion` props and no playback methods.
 
@@ -105,10 +105,12 @@ The morph is experimental and has not received owner approval.
 The second experimental pair is `@squircle-icons/svelte/morph/plus-x`.
 Use `x={true}` to move toward X and `x={false}` to return to Plus, with the
 same optional `progress`, `speed`, `style`, `onprogress` and `onsettle` props.
-It retains fixed Regular 1.70 and the approved 2px outer box margin; the upright
+It retains fixed Regular 1.75 and the approved 2px outer box margin; the upright
 Filled box cuts out exactly the same moving glyph as Outline. Both pairs share
 one reversible progress controller. No stroke-width control is provided.
 
 The Plus ↔ X sequence folds into a single horizontal stroke and immediately opens into X with no pause; reversing follows the same sequence. The Filled box remains upright during the single-line phase. Default1× uses40% of the shared spring rate to make both folds legible; the speed prop scales this slower pair pace.
 
 The owner approved the current Plus ↔ X motion on2026-10-27: continuous horizontal merge with no midpoint hold, the slower default pace and smooth reversal in both styles. Preserve the implementation accepted in adapter commit `190b84b49ea2e058fc99d358298a392c0271eaee`; see the core approved motion reference for construction details.
+
+Owner global weight update (2026-10-27): all default Outline, Filled construction and morph endpoint weights now use Regular1.75; Thin1.25, Bold2.50 and Lab step.25. Menu/Search Filled uses2.50. The accepted morph timing is unchanged.
