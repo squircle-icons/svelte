@@ -330,12 +330,18 @@
       "description": "A rounded chevron pointing down toward a separate stop line.",
       "tags": ["chevron", "caret", "navigation", "line", "down"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner explicitly requested larger native None glyphs while retaining the existing smaller Square/Circle glyphs unchanged. Chevron Line None uniformly scales its original centerlines by73/32 about12,12. Its20px primary extent includes round caps at Regular1.75; the other opposing pair retains the natural aspect ratio. All directions are rigid rotations; head and stop line stay separate. None geometry is authored separately from frames, with no runtime style/frame scaling and no scaling of stroke width. Rebuild all Filled contours at the fixed source stroke expansion; never scale a previous Filled path. Square/Circle SVG and metadata files retain their previous exact artwork and dimensions. This supersedes the older requirement that None and framed glyphs have identical size. Native X/Y100/100 and rotation0 remain the new None baseline. Revised None glyph awaits owner review; existing frame review status is unchanged.",
+      "construction": "Owner requested the Chevron V and its separate stop line to sit closer together in every frame and cardinal direction. For Line Up, larger None keeps its head x2.875..21.125 and unchanged4sqrt(2)*73/32 arm length, but moves the V and bar equally toward each other: head vertices (2.875,18.0625),(12,8.9375),(21.125,18.0625), bar (2.875,5.9375) to (21.125,5.9375). Its centerline tip-to-bar separation is3, giving1.25px visible clearance at Regular1.75 and.5px at Bold2.50. Visible bounds x2..22/y5.0625..18.9375 remain centered at12,12, with unchanged20px primary extent. Compact Square/Circle head vertices are (8,15.25),(12,11.25),(16,15.25), bar (8,8.75) to (16,8.75), preserving the existing head size and width. Compact centerline separation is2.5: visible gap.75px at Regular; Bold has intentional tangency at (12,10), without overlap. Compact Regular visible glyph size is9.75 by8.25, centered at12,12. Other directions are rigid quarter-turns about12,12. Outline stroke remains1.75 with round caps/joins. Filled is rebuilt with fixed.875 triangle expansion and a separate.875-radius capsule; no scaled stroke or runtime transform. None remains larger than compact framed glyphs. Square exterior radius6/Outline radius5.125 and all outer frame geometry are unchanged by this spacing revision; Circle remains radius10/Outline9.125. All revisions remain draft pending owner review.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
-        "note": "Larger native None glyph requested by owner; smaller Square/Circle variants are preserved unchanged. Awaiting owner visual review."
+        "note": "Head and stop line moved closer together, with fixed weight and head dimensions. Revised spacing awaits owner visual review."
       },
+      "reviewHistory": [
+        {
+          "status": "draft",
+          "note": "Larger native None glyph requested by owner; smaller Square/Circle variants are preserved unchanged. Awaiting owner visual review."
+        }
+      ],
       "styles": ["outline", "filled"],
       "frames": ["square", "circle"],
       "defaultStrokeWidth": 1.75,
@@ -347,12 +353,18 @@
       "description": "A rounded chevron pointing left toward a separate stop line.",
       "tags": ["chevron", "caret", "navigation", "line", "left"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner explicitly requested larger native None glyphs while retaining the existing smaller Square/Circle glyphs unchanged. Chevron Line None uniformly scales its original centerlines by73/32 about12,12. Its20px primary extent includes round caps at Regular1.75; the other opposing pair retains the natural aspect ratio. All directions are rigid rotations; head and stop line stay separate. None geometry is authored separately from frames, with no runtime style/frame scaling and no scaling of stroke width. Rebuild all Filled contours at the fixed source stroke expansion; never scale a previous Filled path. Square/Circle SVG and metadata files retain their previous exact artwork and dimensions. This supersedes the older requirement that None and framed glyphs have identical size. Native X/Y100/100 and rotation0 remain the new None baseline. Revised None glyph awaits owner review; existing frame review status is unchanged.",
+      "construction": "Owner requested the Chevron V and its separate stop line to sit closer together in every frame and cardinal direction. For Line Up, larger None keeps its head x2.875..21.125 and unchanged4sqrt(2)*73/32 arm length, but moves the V and bar equally toward each other: head vertices (2.875,18.0625),(12,8.9375),(21.125,18.0625), bar (2.875,5.9375) to (21.125,5.9375). Its centerline tip-to-bar separation is3, giving1.25px visible clearance at Regular1.75 and.5px at Bold2.50. Visible bounds x2..22/y5.0625..18.9375 remain centered at12,12, with unchanged20px primary extent. Compact Square/Circle head vertices are (8,15.25),(12,11.25),(16,15.25), bar (8,8.75) to (16,8.75), preserving the existing head size and width. Compact centerline separation is2.5: visible gap.75px at Regular; Bold has intentional tangency at (12,10), without overlap. Compact Regular visible glyph size is9.75 by8.25, centered at12,12. Other directions are rigid quarter-turns about12,12. Outline stroke remains1.75 with round caps/joins. Filled is rebuilt with fixed.875 triangle expansion and a separate.875-radius capsule; no scaled stroke or runtime transform. None remains larger than compact framed glyphs. Square exterior radius6/Outline radius5.125 and all outer frame geometry are unchanged by this spacing revision; Circle remains radius10/Outline9.125. All revisions remain draft pending owner review.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
-        "note": "Larger native None glyph requested by owner; smaller Square/Circle variants are preserved unchanged. Awaiting owner visual review."
+        "note": "Head and stop line moved closer together, with fixed weight and head dimensions. Revised spacing awaits owner visual review."
       },
+      "reviewHistory": [
+        {
+          "status": "draft",
+          "note": "Larger native None glyph requested by owner; smaller Square/Circle variants are preserved unchanged. Awaiting owner visual review."
+        }
+      ],
       "styles": ["outline", "filled"],
       "frames": ["square", "circle"],
       "defaultStrokeWidth": 1.75,
@@ -364,12 +376,18 @@
       "description": "A rounded chevron pointing right toward a separate stop line.",
       "tags": ["chevron", "caret", "navigation", "line", "right"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner explicitly requested larger native None glyphs while retaining the existing smaller Square/Circle glyphs unchanged. Chevron Line None uniformly scales its original centerlines by73/32 about12,12. Its20px primary extent includes round caps at Regular1.75; the other opposing pair retains the natural aspect ratio. All directions are rigid rotations; head and stop line stay separate. None geometry is authored separately from frames, with no runtime style/frame scaling and no scaling of stroke width. Rebuild all Filled contours at the fixed source stroke expansion; never scale a previous Filled path. Square/Circle SVG and metadata files retain their previous exact artwork and dimensions. This supersedes the older requirement that None and framed glyphs have identical size. Native X/Y100/100 and rotation0 remain the new None baseline. Revised None glyph awaits owner review; existing frame review status is unchanged.",
+      "construction": "Owner requested the Chevron V and its separate stop line to sit closer together in every frame and cardinal direction. For Line Up, larger None keeps its head x2.875..21.125 and unchanged4sqrt(2)*73/32 arm length, but moves the V and bar equally toward each other: head vertices (2.875,18.0625),(12,8.9375),(21.125,18.0625), bar (2.875,5.9375) to (21.125,5.9375). Its centerline tip-to-bar separation is3, giving1.25px visible clearance at Regular1.75 and.5px at Bold2.50. Visible bounds x2..22/y5.0625..18.9375 remain centered at12,12, with unchanged20px primary extent. Compact Square/Circle head vertices are (8,15.25),(12,11.25),(16,15.25), bar (8,8.75) to (16,8.75), preserving the existing head size and width. Compact centerline separation is2.5: visible gap.75px at Regular; Bold has intentional tangency at (12,10), without overlap. Compact Regular visible glyph size is9.75 by8.25, centered at12,12. Other directions are rigid quarter-turns about12,12. Outline stroke remains1.75 with round caps/joins. Filled is rebuilt with fixed.875 triangle expansion and a separate.875-radius capsule; no scaled stroke or runtime transform. None remains larger than compact framed glyphs. Square exterior radius6/Outline radius5.125 and all outer frame geometry are unchanged by this spacing revision; Circle remains radius10/Outline9.125. All revisions remain draft pending owner review.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
-        "note": "Larger native None glyph requested by owner; smaller Square/Circle variants are preserved unchanged. Awaiting owner visual review."
+        "note": "Head and stop line moved closer together, with fixed weight and head dimensions. Revised spacing awaits owner visual review."
       },
+      "reviewHistory": [
+        {
+          "status": "draft",
+          "note": "Larger native None glyph requested by owner; smaller Square/Circle variants are preserved unchanged. Awaiting owner visual review."
+        }
+      ],
       "styles": ["outline", "filled"],
       "frames": ["square", "circle"],
       "defaultStrokeWidth": 1.75,
@@ -381,12 +399,18 @@
       "description": "A rounded chevron pointing up toward a separate stop line.",
       "tags": ["chevron", "caret", "navigation", "line", "up"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner explicitly requested larger native None glyphs while retaining the existing smaller Square/Circle glyphs unchanged. Chevron Line None uniformly scales its original centerlines by73/32 about12,12. Its20px primary extent includes round caps at Regular1.75; the other opposing pair retains the natural aspect ratio. All directions are rigid rotations; head and stop line stay separate. None geometry is authored separately from frames, with no runtime style/frame scaling and no scaling of stroke width. Rebuild all Filled contours at the fixed source stroke expansion; never scale a previous Filled path. Square/Circle SVG and metadata files retain their previous exact artwork and dimensions. This supersedes the older requirement that None and framed glyphs have identical size. Native X/Y100/100 and rotation0 remain the new None baseline. Revised None glyph awaits owner review; existing frame review status is unchanged.",
+      "construction": "Owner requested the Chevron V and its separate stop line to sit closer together in every frame and cardinal direction. For Line Up, larger None keeps its head x2.875..21.125 and unchanged4sqrt(2)*73/32 arm length, but moves the V and bar equally toward each other: head vertices (2.875,18.0625),(12,8.9375),(21.125,18.0625), bar (2.875,5.9375) to (21.125,5.9375). Its centerline tip-to-bar separation is3, giving1.25px visible clearance at Regular1.75 and.5px at Bold2.50. Visible bounds x2..22/y5.0625..18.9375 remain centered at12,12, with unchanged20px primary extent. Compact Square/Circle head vertices are (8,15.25),(12,11.25),(16,15.25), bar (8,8.75) to (16,8.75), preserving the existing head size and width. Compact centerline separation is2.5: visible gap.75px at Regular; Bold has intentional tangency at (12,10), without overlap. Compact Regular visible glyph size is9.75 by8.25, centered at12,12. Other directions are rigid quarter-turns about12,12. Outline stroke remains1.75 with round caps/joins. Filled is rebuilt with fixed.875 triangle expansion and a separate.875-radius capsule; no scaled stroke or runtime transform. None remains larger than compact framed glyphs. Square exterior radius6/Outline radius5.125 and all outer frame geometry are unchanged by this spacing revision; Circle remains radius10/Outline9.125. All revisions remain draft pending owner review.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
-        "note": "Larger native None glyph requested by owner; smaller Square/Circle variants are preserved unchanged. Awaiting owner visual review."
+        "note": "Head and stop line moved closer together, with fixed weight and head dimensions. Revised spacing awaits owner visual review."
       },
+      "reviewHistory": [
+        {
+          "status": "draft",
+          "note": "Larger native None glyph requested by owner; smaller Square/Circle variants are preserved unchanged. Awaiting owner visual review."
+        }
+      ],
       "styles": ["outline", "filled"],
       "frames": ["square", "circle"],
       "defaultStrokeWidth": 1.75,
@@ -591,14 +615,20 @@
       "description": "An arrow leaving a rounded open window toward the upper right.",
       "tags": ["window", "link", "external", "open", "up", "right"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Open window centerline bounds 7.5..16.5, radius 1.5. Upper arm stops at (10,7.5), right arm at (16.5,14), leaving clear space for a separate outbound arrow. Arrow runs (11.5,12.5) to (16.5,7.5); head arms are (13,7.5) to the tip to (16.5,11). Filled uses exact radius-.875 window expansion (corner radii 2.375/.625), and an analytically unioned shaft and solid triangular head rotated -45 degrees. The default visible bounds are 6.625..17.375, centered on both axes. Window-to-head gaps are 1.25px at Regular and .5px at Bold. Conservative Circle clearance exceeds .26px at Bold. All None/Square/Circle forms use the identical native glyph position and size, without per-frame transforms. Outline defaults to Regular 1.75 with round caps/joins, Thin 1.25 and Bold 2.50. Standard frame exteriors span 2..22, with Square radius 4 and Circle radius 10; Outline frame centerlines span 2.875..21.125 with corner radius 3.125 / Circle radius 9.125. Framed Filled subtracts the exact standalone Filled silhouette as transparent negative space. Original project geometry; no third-party SVG paths used. All forms remain drafts pending owner review. CURRENT FRAME NONE ENLARGEMENT: the owner requested larger standalone icons while preserving the existing framed glyphs. The preceding shared None/frame size rule is superseded for this identity. Scale native Outline geometry uniformly about12,12 by 2.0277777778 but keep Regular1.75 and round-cap radius.875 fixed. Rebuild Filled from the enlarged centerlines with fixed.875 expansion; do not scale Filled thickness or apply an SVG transform. Visible Regular exterior bounds are2..22 on both axes, centered at12,12. Square/Circle source SVGs and metadata are intentionally unchanged and retain the earlier smaller native framed glyph. All revised standalone drawings remain drafts pending owner review.",
+      "construction": "Open window centerline bounds 7.5..16.5, radius 1.5. Upper arm stops at (10,7.5), right arm at (16.5,14), leaving clear space for a separate outbound arrow. Arrow runs (11.5,12.5) to (16.5,7.5); head arms are (13,7.5) to the tip to (16.5,11). Filled uses exact radius-.875 window expansion (corner radii 2.375/.625), and an analytically unioned shaft and solid triangular head rotated -45 degrees. The default visible bounds are 6.625..17.375, centered on both axes. Window-to-head gaps are 1.25px at Regular and .5px at Bold. Conservative Circle clearance exceeds .26px at Bold. All None/Square/Circle forms use the identical native glyph position and size, without per-frame transforms. Outline defaults to Regular 1.75 with round caps/joins, Thin 1.25 and Bold 2.50. Standard frame exteriors span 2..22, with Square radius 4 and Circle radius 10; Outline frame centerlines span 2.875..21.125 with corner radius 3.125 / Circle radius 9.125. Framed Filled subtracts the exact standalone Filled silhouette as transparent negative space. Original project geometry; no third-party SVG paths used. All forms remain drafts pending owner review. CURRENT FRAME NONE ENLARGEMENT: the owner requested larger standalone icons while preserving the existing framed glyphs. The preceding shared None/frame size rule is superseded for this identity. Scale native Outline geometry uniformly about12,12 by 2.0277777778 but keep Regular1.75 and round-cap radius.875 fixed. Rebuild Filled from the enlarged centerlines with fixed.875 expansion; do not scale Filled thickness or apply an SVG transform. Visible Regular exterior bounds are2..22 on both axes, centered at12,12. Square/Circle source SVGs and metadata are intentionally unchanged and retain the earlier smaller native framed glyph. All revised standalone drawings remain drafts pending owner review. CURRENT NO-FRAME POLICY: the owner explicitly removed Square and Circle variants for this identity. Only Frame None is supported; prior notes about framed glyphs and frame clearance are historical. Preserve the enlarged standalone size and fixed Regular1.75 stroke. Window rounding is revised to exterior radius6 and Outline centerline radius5.125, with unchanged visible bounds2..22. Its three window corner centers are(8,8),(8,16),(16,16); upper endpoint is(8,2.875) and right endpoint is(21.125,16), at their tangent stations with round radius.875 caps. Filled uses exact analytical exterior radius6 / interior radius4.25; the diagonal arrow shaft and solid-head compound paths are byte-identical to the preceding implementation draft. No runtime transforms or stroke scaling are used. ",
       "review": {
         "status": "draft",
-        "note": "New window action icon and frame variants; awaits owner review. Standalone None geometry enlarged at fixed Regular1.75; framed variants unchanged."
+        "note": "Owner requested no frame variants and softer natural window corners. Standalone result awaits visual review."
       },
       "filledTreatment": "solid-head",
+      "reviewHistory": [
+        {
+          "status": "draft",
+          "note": "New window action icon and frame variants; awaits owner review. Standalone None geometry enlarged at fixed Regular1.75; framed variants unchanged."
+        }
+      ],
       "styles": ["outline", "filled"],
-      "frames": ["square", "circle"],
+      "frames": [],
       "defaultStrokeWidth": 1.75,
       "filledDefaultStrokeWidth": null,
       "reviewStatus": "draft"
@@ -691,14 +721,20 @@
       "description": "Four outward corners for maximizing a view.",
       "tags": ["window", "maximize", "expand", "fullscreen"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner explicitly requested larger native Frame None artwork, independent of the unchanged smaller Square/Circle glyphs. None centerlines uniformlyscale about12,12 by2.1875000000, with Regular1.75 stroke and roundcaps/joins unchanged. None Filled is the exact Bold2.50 union at radius1.25, using analytical arcs and a single union contour at intersections; it is not scaled oldstrokegeometry and has no enclosingbox. Fit None BoldFilled visibleprimaryextent20, leaving2px on its mainopposingpair; RegularOutline has2.375px there. Otherpairs preserve naturalproportions and balancedmargins. Four cornerLcenterlines use bounds3.25..20.75 andarms5.46875, uniformlyscaledabout12,12. All frameSVG/JSON files retain their prior smaller frame-fitting geometry; do not enlarge the frame glyphs or restore same-None-and-frame sizing. Source-nativeX/Y100/100 androtation0. This ownerexception supersedes prior shared-size wording; frame-specific metadata remains the record of the smaller variant. Existingapprovalhistory is preserved. RevisedNoneglyph awaits ownerreview.",
+      "construction": "Owner explicitly requested larger native Frame None artwork, independent of the unchanged smaller Square/Circle glyphs. None centerlines uniformlyscale about12,12 by2.1875000000, with Regular1.75 stroke and roundcaps/joins unchanged. None Filled is the exact Bold2.50 union at radius1.25, using analytical arcs and a single union contour at intersections; it is not scaled oldstrokegeometry and has no enclosingbox. Fit None BoldFilled visibleprimaryextent20, leaving2px on its mainopposingpair; RegularOutline has2.375px there. Otherpairs preserve naturalproportions and balancedmargins. Four cornerLcenterlines use bounds3.25..20.75 andarms5.46875, uniformlyscaledabout12,12. All frameSVG/JSON files retain their prior smaller frame-fitting geometry; do not enlarge the frame glyphs or restore same-None-and-frame sizing. Source-nativeX/Y100/100 androtation0. This ownerexception supersedes prior shared-size wording; frame-specific metadata remains the record of the smaller variant. Existingapprovalhistory is preserved. RevisedNoneglyph awaits ownerreview. CURRENT NO-FRAME POLICY: the owner explicitly removed Square and Circle variants for this identity. Only Frame None is supported; prior notes about framed glyphs and frame clearance are historical. Preserve the enlarged standalone size and fixed Regular1.75 stroke. Standalone geometry is unchanged by this frame removal. ",
       "review": {
         "status": "draft",
-        "note": "Owner requested larger native unframed glyph; frame drawings remain unchanged. Revised None size awaits review."
+        "note": "Owner requested no frame variants. Standalone result awaits visual review."
       },
       "filledTreatment": "bold-stroke",
+      "reviewHistory": [
+        {
+          "status": "draft",
+          "note": "Owner requested larger native unframed glyph; frame drawings remain unchanged. Revised None size awaits review."
+        }
+      ],
       "styles": ["outline", "filled"],
-      "frames": ["square", "circle"],
+      "frames": [],
       "defaultStrokeWidth": 1.75,
       "filledDefaultStrokeWidth": null,
       "reviewStatus": "draft"
@@ -811,22 +847,6 @@
       "reviewStatus": "draft"
     },
     {
-      "name": "new-tab",
-      "description": "A rounded window with a centered plus for opening a new tab.",
-      "tags": ["window", "tab", "new", "add", "plus"],
-      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Window centerline bounds 7..17 on both axes with corner radius 2.25. The plus uses centered half-extent 1.75 at Regular 1.75. Natural Filled uses the matching window exterior bounds 6.125..17.875 / radius 3.125 and the exact Regular plus as a transparent counter. No top divider crowds the small native drawing. Even at Bold, the plus and inner window border remain separated by .75px. The rounded window retains more than .48px Circle clearance at Bold. All None/Square/Circle forms use the identical native glyph position and size, without per-frame transforms. Outline defaults to Regular 1.75 with round caps/joins, Thin 1.25 and Bold 2.50. Standard frame exteriors span 2..22, with Square radius 4 and Circle radius 10; Outline frame centerlines span 2.875..21.125 with corner radius 3.125 / Circle radius 9.125. Framed Filled subtracts the exact standalone Filled silhouette as transparent negative space. Original project geometry; no third-party SVG paths used. All forms remain drafts pending owner review. CURRENT FRAME NONE ENLARGEMENT: the owner requested larger standalone icons while preserving the existing framed glyphs. The preceding shared None/frame size rule is superseded for this identity. Scale native Outline geometry uniformly about12,12 by 1.825 but keep Regular1.75 and round-cap radius.875 fixed. Rebuild Filled from the enlarged centerlines with fixed.875 expansion; do not scale Filled thickness or apply an SVG transform. Visible Regular exterior bounds are2..22 on both axes, centered at12,12. Square/Circle source SVGs and metadata are intentionally unchanged and retain the earlier smaller native framed glyph. All revised standalone drawings remain drafts pending owner review.",
-      "review": {
-        "status": "draft",
-        "note": "New window action icon and frame variants; awaits owner review. Standalone None geometry enlarged at fixed Regular1.75; framed variants unchanged."
-      },
-      "styles": ["outline", "filled"],
-      "frames": ["square", "circle"],
-      "defaultStrokeWidth": 1.75,
-      "filledDefaultStrokeWidth": null,
-      "reviewStatus": "draft"
-    },
-    {
       "name": "new-window",
       "description": "Two overlapping rounded windows with the foreground window at bottom right.",
       "tags": ["window", "new", "open", "overlap"],
@@ -845,9 +865,9 @@
     {
       "name": "plus",
       "description": "A rounded plus symbol with unboxed and framed styles.",
-      "tags": ["math", "symbol", "plus"],
+      "tags": ["math", "symbol", "plus", "new-tab", "newtab"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner explicitly requested larger native Frame None artwork, independent of the unchanged smaller Square/Circle glyphs. None centerlines uniformlyscale about12,12 by1.9444444444, with Regular1.75 stroke and roundcaps/joins unchanged. None Filled is the exact Bold2.50 union at radius1.25, using analytical arcs and a single union contour at intersections; it is not scaled oldstrokegeometry and has no enclosingbox. Fit None BoldFilled visibleprimaryextent20, leaving2px on its mainopposingpair; RegularOutline has2.375px there. Otherpairs preserve naturalproportions and balancedmargins. Plus centerline M3.25 12 H20.75 M12 3.25 V20.75. All frameSVG/JSON files retain their prior smaller frame-fitting geometry; do not enlarge the frame glyphs or restore same-None-and-frame sizing. Source-nativeX/Y100/100 androtation0. This ownerexception supersedes prior shared-size wording; frame-specific metadata remains the record of the smaller variant. Existingapprovalhistory is preserved. RevisedNoneglyph awaits ownerreview.",
+      "construction": "Owner explicitly requested larger native Frame None artwork, independent of the unchanged smaller Square/Circle glyphs. None centerlines uniformlyscale about12,12 by1.9444444444, with Regular1.75 stroke and roundcaps/joins unchanged. None Filled is the exact Bold2.50 union at radius1.25, using analytical arcs and a single union contour at intersections; it is not scaled oldstrokegeometry and has no enclosingbox. Fit None BoldFilled visibleprimaryextent20, leaving2px on its mainopposingpair; RegularOutline has2.375px there. Otherpairs preserve naturalproportions and balancedmargins. Plus centerline M3.25 12 H20.75 M12 3.25 V20.75. All frameSVG/JSON files retain their prior smaller frame-fitting geometry; do not enlarge the frame glyphs or restore same-None-and-frame sizing. Source-nativeX/Y100/100 androtation0. This ownerexception supersedes prior shared-size wording; frame-specific metadata remains the record of the smaller variant. Existingapprovalhistory is preserved. RevisedNoneglyph awaits ownerreview. Semantic reuse: the New Tab action is the existing Plus icon with frame=square, in either supported style. The new-tab/newtab discovery tags do not create a separate icon identity, source drawing or alias export.",
       "filledTreatment": "bold-stroke",
       "supportsBold": true,
       "review": {

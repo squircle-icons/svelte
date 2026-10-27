@@ -11,9 +11,9 @@ test('opposed and line Chevron directions are rigid rotations with fixed physica
   const results = await page.evaluate(() => {
     const cases: [string, string, number, number, number][] = [
       ['chevron-up-down', 'chevron-left-right', 90, 20, 15.02272727],
-      ['chevron-line-up', 'chevron-line-right', 90, 17.71875, 20],
-      ['chevron-line-up', 'chevron-line-down', 180, 20, 17.71875],
-      ['chevron-line-up', 'chevron-line-left', 270, 17.71875, 20],
+      ['chevron-line-up', 'chevron-line-right', 90, 13.875, 20],
+      ['chevron-line-up', 'chevron-line-down', 180, 20, 13.875],
+      ['chevron-line-up', 'chevron-line-left', 270, 13.875, 20],
     ];
     return cases.flatMap(([reference, name, degrees, width, height]) =>
       ['outline', 'filled'].map((style) => {
@@ -73,10 +73,10 @@ test('solid heads retain a distinct stop-line gap and opposed heads retain their
       outline = shape('chevron-line-up', 'outline'),
       pair = shape('chevron-up-down', 'filled');
     return {
-      stop: line.isPointInFill(point(12, 4.015625)),
+      stop: line.isPointInFill(point(12, 5.9375)),
       head: line.isPointInFill(point(12, 13)),
       openOutline: !outline.isPointInStroke(point(12, 13)),
-      regularGap: [6, 7, 8].every(
+      regularGap: [7, 7.4375, 7.8].every(
         (y) => !line.isPointInFill(point(12, y)) && !outline.isPointInStroke(point(12, y)),
       ),
       opposedHeads: [9, 15].every((y) => pair.isPointInFill(point(12, y))),
@@ -93,7 +93,7 @@ test('solid heads retain a distinct stop-line gap and opposed heads retain their
       '[data-testid="chevron-up-down-outline-contour"] path',
     )! as SVGPathElement;
     return (
-      !line.isPointInStroke(new DOMPoint(12, 8)) &&
+      !line.isPointInStroke(new DOMPoint(12, 7.4375)) &&
       [8, 12, 16].every((x) => !pair.isPointInStroke(new DOMPoint(x, 12)))
     );
   });
@@ -115,5 +115,106 @@ test('the six new identities render both styles at 16 20 24 and 48 pixels on lig
       (node as HTMLElement).style.color = '#fafafa';
     });
     await proof.screenshot({ path: '.artifacts/previews/chevron-controls-dark.png' });
+  }
+});
+
+test('Chevron Line keeps the closer stop gap in every direction and frame without overlap', async ({
+  page,
+}) => {
+  const results = [];
+  for (const frame of ['none', 'square', 'circle']) {
+    await page.getByLabel('Fixture arrow frame').selectOption(frame);
+    for (const weight of ['1.75', '2.5']) {
+      await page.getByLabel('Fixture arrow weight').selectOption(weight);
+      results.push(
+        ...(await page.evaluate(
+          ({ frame, weight }) =>
+            ['up', 'right', 'down', 'left'].map((direction) => {
+              const name = 'chevron-line-' + direction;
+              const outlineSvg = document.querySelector(
+                `[data-testid="${name}-outline-contour"] svg`,
+              )!;
+              const outline = [...outlineSvg.querySelectorAll('path')].at(-1)!;
+              const filledSvg = document.querySelector(
+                `[data-testid="${name}-filled-contour"] svg`,
+              )!;
+              const full = filledSvg.querySelector('path')!;
+              const mark =
+                frame === 'none'
+                  ? full
+                  : document.createElementNS('http://www.w3.org/2000/svg', 'path');
+              if (frame !== 'none') {
+                mark.setAttribute(
+                  'd',
+                  full
+                    .getAttribute('d')!
+                    .match(/[Mm][^Mm]*/g)!
+                    .slice(1)
+                    .join(' '),
+                );
+                mark.setAttribute('visibility', 'hidden');
+                filledSvg.append(mark);
+              }
+              const values = outline
+                .getAttribute('d')!
+                .match(/-?\d*\.?\d+/g)!
+                .map(Number);
+              const points = Array.from(
+                { length: 5 },
+                (_, i) => new DOMPoint(values[2 * i], values[2 * i + 1]),
+              );
+              const [a, tip, b, start, end] = points;
+              const stop = new DOMPoint((start.x + end.x) / 2, (start.y + end.y) / 2);
+              const gap = Math.hypot(stop.x - tip.x, stop.y - tip.y);
+              const ux = (stop.x - tip.x) / gap,
+                uy = (stop.y - tip.y) / gap;
+              const middle = new DOMPoint((tip.x + stop.x) / 2, (tip.y + stop.y) / 2);
+              const headInside = new DOMPoint((a.x + tip.x + b.x) / 3, (a.y + tip.y + b.y) / 3);
+              const desired = frame === 'none' ? 3 : 2.5;
+              const half = Number(weight) / 2;
+              // Sample just outside the true cap boundary in the gap. At compact
+              // Bold the two boundaries are tangent, so the shared point can be ink.
+              const barGapPoint = new DOMPoint(
+                stop.x - ux * (half + 0.01),
+                stop.y - uy * (half + 0.01),
+              );
+              const tipGapPoint = new DOMPoint(
+                tip.x + ux * (half + 0.01),
+                tip.y + uy * (half + 0.01),
+              );
+              const out = {
+                name,
+                frame,
+                weight,
+                gap,
+                desired,
+                filledGapClear: !mark.isPointInFill(middle),
+                filledStop: mark.isPointInFill(stop),
+                filledHead: mark.isPointInFill(headInside),
+                outlineGapClear: !outline.isPointInStroke(middle),
+                separateBoundary:
+                  frame === 'none' || weight === '1.75'
+                    ? !outline.isPointInStroke(barGapPoint) && !outline.isPointInStroke(tipGapPoint)
+                    : true,
+                tangentWithoutOverlap: desired - Number(weight) >= -1e-8,
+              };
+              if (frame !== 'none') mark.remove();
+              return out;
+            }),
+          { frame, weight },
+        )),
+      );
+    }
+  }
+  for (const value of results) {
+    const label = `${value.name}/${value.frame}/${value.weight}`;
+    expect(value.gap, label).toBeCloseTo(value.desired, 6);
+    expect(value.filledGapClear, label).toBe(true);
+    expect(value.filledStop, label).toBe(true);
+    expect(value.filledHead, label).toBe(true);
+    if (value.frame === 'none' || value.weight === '1.75')
+      expect(value.outlineGapClear, label).toBe(true);
+    expect(value.separateBoundary, label).toBe(true);
+    expect(value.tangentWithoutOverlap, label).toBe(true);
   }
 });

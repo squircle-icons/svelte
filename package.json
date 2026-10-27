@@ -436,16 +436,6 @@
       "svelte": "./dist/filled/MoreVertical.svelte",
       "default": "./dist/filled/MoreVertical.svelte"
     },
-    "./new-tab": {
-      "types": "./dist/NewTab.svelte.d.ts",
-      "svelte": "./dist/NewTab.svelte",
-      "default": "./dist/NewTab.svelte"
-    },
-    "./filled/new-tab": {
-      "types": "./dist/filled/NewTab.svelte.d.ts",
-      "svelte": "./dist/filled/NewTab.svelte",
-      "default": "./dist/filled/NewTab.svelte"
-    },
     "./new-window": {
       "types": "./dist/NewWindow.svelte.d.ts",
       "svelte": "./dist/NewWindow.svelte",
@@ -595,7 +585,7 @@
     "vitest": "5.0.5",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
-    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-3cb57e5052c5.tgz"
+    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-a0568f7081d2.tgz"
   },
   "description": "Original Outline and Filled icons as native Svelte 5 components.",
   "repository": {

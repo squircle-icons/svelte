@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Maximize from '@squircle-icons/svelte/maximize';
+  import ExternalLink from '@squircle-icons/svelte/external-link';
+
   import { onMount } from 'svelte';
   import MenuXMorph from '@squircle-icons/svelte/morph/menu-x';
   let morphFrame = $state<'none' | 'square' | 'circle'>('square');
@@ -823,6 +826,22 @@
       {/each}
     {/each}
   </div>
+</section>
+
+<section data-testid="unframed-only-proof">
+  {#each [{ name: 'maximize', Icon: Maximize }, { name: 'external-link', Icon: ExternalLink }] as item}
+    {#each ['outline', 'filled'] as style}
+      {#each ['none', 'square', 'circle'] as frame}
+        <div data-testid={'unframed-' + item.name + '-' + style + '-' + frame}>
+          <item.Icon
+            size={48}
+            style={style as 'outline' | 'filled'}
+            frame={frame as 'none' | 'square' | 'circle'}
+          />
+        </div>
+      {/each}
+    {/each}
+  {/each}
 </section>
 
 <style>

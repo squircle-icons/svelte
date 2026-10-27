@@ -185,7 +185,7 @@ test('even Bold leaves clearance between the arrow and either frame in every dir
           const halfStroke = Number(svg.getAttribute('stroke-width')) / 2;
           const frameShape = svg.querySelector<SVGGeometryElement>('path,circle')!;
           const innerHalf = frameShape.getBBox().width / 2 - halfStroke;
-          const innerCorner = 3.125 - halfStroke;
+          const innerCorner = 5.125 - halfStroke;
           return values.every((_, index) => {
             if (index % 2) return true;
             const dx = Math.abs(values[index] - 12),

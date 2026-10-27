@@ -42,7 +42,6 @@ export { default as Minus } from './Minus.svelte';
 export { default as Moon } from './Moon.svelte';
 export { default as MoreHorizontal } from './MoreHorizontal.svelte';
 export { default as MoreVertical } from './MoreVertical.svelte';
-export { default as NewTab } from './NewTab.svelte';
 export { default as NewWindow } from './NewWindow.svelte';
 export { default as Plus } from './Plus.svelte';
 export { default as Search } from './Search.svelte';
