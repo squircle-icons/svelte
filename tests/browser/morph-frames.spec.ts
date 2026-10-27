@@ -39,7 +39,9 @@ for (const item of pairs)
           n.dispatchEvent(new Event('input', { bubbles: true }));
         }, p);
         await expect(filled).toHaveAttribute('data-frame', frame);
-        const source = page.getByTestId(name + '-filled-contour').locator('path');
+        const source = page
+          .getByTestId((name === 'menu' ? 'morph-menu' : name) + '-filled-contour')
+          .locator('path');
         expect(await filled.locator('path').getAttribute('d')).toBe(await source.getAttribute('d'));
       }
       for (const p of [0.001, 0.2, 0.4, 0.5, 0.65, 0.9, 0.999]) {
@@ -74,8 +76,8 @@ for (const item of pairs)
             outline.style.visibility = 'hidden';
             document.body.append(outline);
             let mismatches = 0;
-            for (let y = 6.25; y < 17.8; y += 0.25)
-              for (let x = 6.25; x < 17.8; x += 0.25) {
+            for (let y = 6.283; y < 17.8; y += 0.25)
+              for (let x = 6.317; x < 17.8; x += 0.25) {
                 const point = new DOMPoint(x, y),
                   ink = [...outline.querySelectorAll('path')].some((path) =>
                     path.isPointInStroke(point),

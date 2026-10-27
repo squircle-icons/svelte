@@ -95,7 +95,11 @@ for (const style of ['outline', 'filled'])
                 ? '[data-testid="menu-x-morph-fixture"] svg:last-child'
                 : '[aria-label="Menu X fixture"]',
             ),
-            render(`[data-testid="${name}-${style}-contour"] svg`),
+            render(
+              name === 'menu' && style === 'filled'
+                ? '[data-testid="morph-menu-filled-contour"] svg'
+                : `[data-testid="${name}-${style}-contour"] svg`,
+            ),
           ]);
           let mismatch = 0,
             union = 0;
