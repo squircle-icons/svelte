@@ -47,7 +47,8 @@ for (const [index, icon] of icons.entries()) {
   };
   const frameProp = icon.frames ? ", frame = 'none'" : '';
   const frameAttrs = icon.frames ? ' data-frame={frame}' : '';
-  const body = withFrame('outline', icon.root.children.map((child) => render(child)).join('\n  '));
+  const plainBody = icon.root.children.map((child) => render(child)).join('\n  ');
+  const body = withFrame('outline', plainBody);
   staticIndex += `export { default as ${component} } from './${component}.svelte';\n`;
   exports[`./${icon.name}`] = {
     types: `./dist/${component}.svelte.d.ts`,
@@ -103,10 +104,10 @@ for (const [index, icon] of icons.entries()) {
   import { resolveStrokeWidth } from './stroke-width.js';
   let { ${baseProps}${frameProp}, style: iconStyle = 'outline' }: ${icon.filled ? 'IconProps' : "Omit<IconProps, 'style'> & { style?: 'outline' }"} = $props();
   const accessibleLabel = $derived(label?.trim());
-  const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));${gapScript}
+  const resolvedStrokeWidth = $derived(iconStyle === 'bold' ? ${STROKE_WEIGHTS.bold} : resolveStrokeWidth(strokeWidth));${gapScript}
 </script>
-<svg ${variantAttrs}${frameAttrs}${cutout ? " data-cutout-width={iconStyle === 'filled' ? gapWidth : undefined}" : ''}>
-  ${icon.filled ? `{#if iconStyle === 'filled'}\n${filledBody}\n{:else}\n${body}\n{/if}` : body}
+<svg ${variantAttrs}${icon.frames ? " data-frame={iconStyle === 'bold' ? 'none' : frame}" : ''}${cutout ? " data-cutout-width={iconStyle === 'filled' ? gapWidth : undefined}" : ''}>
+  ${icon.filled ? `{#if iconStyle === 'filled'}\n${filledBody}\n{:else if iconStyle === 'bold'}\n${plainBody}\n{:else}\n${body}\n{/if}` : body}
 </svg>
 `,
   );
@@ -137,7 +138,11 @@ files.set(
       strokeWeights: STROKE_WEIGHTS,
       icons: icons.map((icon) => ({
         ...icon.metadata,
-        styles: icon.filled ? ['outline', 'filled'] : ['outline'],
+        styles: icon.metadata.supportsBold
+          ? ['outline', 'bold', 'filled']
+          : icon.filled
+            ? ['outline', 'filled']
+            : ['outline'],
         frames: icon.frames ? Object.keys(icon.frames) : [],
         defaultStrokeWidth: Number(icon.root.attrs['stroke-width']),
         filledDefaultStrokeWidth: icon.filled?.cutout?.defaultWidth ?? null,
@@ -153,6 +158,7 @@ exports['./catalog.json'] = './dist/catalog.json';
 for (const [pair, component, type] of [
   ['sun-moon', 'SunMoonMorph', 'SunMoonGeometry'],
   ['plus-x', 'PlusXMorph', 'PlusXGeometry'],
+  ['menu-x', 'MenuXMorph', 'MenuXGeometry'],
 ]) {
   exports[`./morph/${pair}`] = {
     types: `./dist/morph/${component}.svelte.d.ts`,

@@ -126,26 +126,6 @@
       "svelte": "./dist/filled/Check.svelte",
       "default": "./dist/filled/Check.svelte"
     },
-    "./chevron-down-left": {
-      "types": "./dist/ChevronDownLeft.svelte.d.ts",
-      "svelte": "./dist/ChevronDownLeft.svelte",
-      "default": "./dist/ChevronDownLeft.svelte"
-    },
-    "./filled/chevron-down-left": {
-      "types": "./dist/filled/ChevronDownLeft.svelte.d.ts",
-      "svelte": "./dist/filled/ChevronDownLeft.svelte",
-      "default": "./dist/filled/ChevronDownLeft.svelte"
-    },
-    "./chevron-down-right": {
-      "types": "./dist/ChevronDownRight.svelte.d.ts",
-      "svelte": "./dist/ChevronDownRight.svelte",
-      "default": "./dist/ChevronDownRight.svelte"
-    },
-    "./filled/chevron-down-right": {
-      "types": "./dist/filled/ChevronDownRight.svelte.d.ts",
-      "svelte": "./dist/filled/ChevronDownRight.svelte",
-      "default": "./dist/filled/ChevronDownRight.svelte"
-    },
     "./chevron-down": {
       "types": "./dist/ChevronDown.svelte.d.ts",
       "svelte": "./dist/ChevronDown.svelte",
@@ -176,26 +156,6 @@
       "svelte": "./dist/filled/ChevronRight.svelte",
       "default": "./dist/filled/ChevronRight.svelte"
     },
-    "./chevron-up-left": {
-      "types": "./dist/ChevronUpLeft.svelte.d.ts",
-      "svelte": "./dist/ChevronUpLeft.svelte",
-      "default": "./dist/ChevronUpLeft.svelte"
-    },
-    "./filled/chevron-up-left": {
-      "types": "./dist/filled/ChevronUpLeft.svelte.d.ts",
-      "svelte": "./dist/filled/ChevronUpLeft.svelte",
-      "default": "./dist/filled/ChevronUpLeft.svelte"
-    },
-    "./chevron-up-right": {
-      "types": "./dist/ChevronUpRight.svelte.d.ts",
-      "svelte": "./dist/ChevronUpRight.svelte",
-      "default": "./dist/ChevronUpRight.svelte"
-    },
-    "./filled/chevron-up-right": {
-      "types": "./dist/filled/ChevronUpRight.svelte.d.ts",
-      "svelte": "./dist/filled/ChevronUpRight.svelte",
-      "default": "./dist/filled/ChevronUpRight.svelte"
-    },
     "./chevron-up": {
       "types": "./dist/ChevronUp.svelte.d.ts",
       "svelte": "./dist/ChevronUp.svelte",
@@ -205,6 +165,46 @@
       "types": "./dist/filled/ChevronUp.svelte.d.ts",
       "svelte": "./dist/filled/ChevronUp.svelte",
       "default": "./dist/filled/ChevronUp.svelte"
+    },
+    "./chevrons-down": {
+      "types": "./dist/ChevronsDown.svelte.d.ts",
+      "svelte": "./dist/ChevronsDown.svelte",
+      "default": "./dist/ChevronsDown.svelte"
+    },
+    "./filled/chevrons-down": {
+      "types": "./dist/filled/ChevronsDown.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronsDown.svelte",
+      "default": "./dist/filled/ChevronsDown.svelte"
+    },
+    "./chevrons-left": {
+      "types": "./dist/ChevronsLeft.svelte.d.ts",
+      "svelte": "./dist/ChevronsLeft.svelte",
+      "default": "./dist/ChevronsLeft.svelte"
+    },
+    "./filled/chevrons-left": {
+      "types": "./dist/filled/ChevronsLeft.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronsLeft.svelte",
+      "default": "./dist/filled/ChevronsLeft.svelte"
+    },
+    "./chevrons-right": {
+      "types": "./dist/ChevronsRight.svelte.d.ts",
+      "svelte": "./dist/ChevronsRight.svelte",
+      "default": "./dist/ChevronsRight.svelte"
+    },
+    "./filled/chevrons-right": {
+      "types": "./dist/filled/ChevronsRight.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronsRight.svelte",
+      "default": "./dist/filled/ChevronsRight.svelte"
+    },
+    "./chevrons-up": {
+      "types": "./dist/ChevronsUp.svelte.d.ts",
+      "svelte": "./dist/ChevronsUp.svelte",
+      "default": "./dist/ChevronsUp.svelte"
+    },
+    "./filled/chevrons-up": {
+      "types": "./dist/filled/ChevronsUp.svelte.d.ts",
+      "svelte": "./dist/filled/ChevronsUp.svelte",
+      "default": "./dist/filled/ChevronsUp.svelte"
     },
     "./copy": {
       "types": "./dist/Copy.svelte.d.ts",
@@ -255,6 +255,16 @@
       "types": "./dist/filled/Menu.svelte.d.ts",
       "svelte": "./dist/filled/Menu.svelte",
       "default": "./dist/filled/Menu.svelte"
+    },
+    "./minus": {
+      "types": "./dist/Minus.svelte.d.ts",
+      "svelte": "./dist/Minus.svelte",
+      "default": "./dist/Minus.svelte"
+    },
+    "./filled/minus": {
+      "types": "./dist/filled/Minus.svelte.d.ts",
+      "svelte": "./dist/filled/Minus.svelte",
+      "default": "./dist/filled/Minus.svelte"
     },
     "./moon": {
       "types": "./dist/Moon.svelte.d.ts",
@@ -351,6 +361,11 @@
       "types": "./dist/morph/PlusXMorph.svelte.d.ts",
       "svelte": "./dist/morph/PlusXMorph.svelte",
       "default": "./dist/morph/PlusXMorph.svelte"
+    },
+    "./morph/menu-x": {
+      "types": "./dist/morph/MenuXMorph.svelte.d.ts",
+      "svelte": "./dist/morph/MenuXMorph.svelte",
+      "default": "./dist/morph/MenuXMorph.svelte"
     }
   },
   "peerDependencies": {
@@ -395,7 +410,7 @@
     "vitest": "5.0.5",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
-    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-d37d92fb478b.tgz"
+    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-321cfe7de3d6.tgz"
   },
   "description": "Original Outline and Filled icons as native Svelte 5 components.",
   "repository": {

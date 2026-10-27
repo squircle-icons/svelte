@@ -218,45 +218,11 @@
       "reviewStatus": "approved"
     },
     {
-      "name": "chevron-down-left",
-      "description": "A chevron down left with an open V and round ends.",
-      "tags": ["chevron", "caret", "navigation", "down", "left"],
-      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-      "filledTreatment": "solid-head",
-      "review": {
-        "status": "draft",
-        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-      },
-      "styles": ["outline", "filled"],
-      "frames": ["square", "circle"],
-      "defaultStrokeWidth": 1.75,
-      "filledDefaultStrokeWidth": null,
-      "reviewStatus": "draft"
-    },
-    {
-      "name": "chevron-down-right",
-      "description": "A chevron down right with an open V and round ends.",
-      "tags": ["chevron", "caret", "navigation", "down", "right"],
-      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-      "filledTreatment": "solid-head",
-      "review": {
-        "status": "draft",
-        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-      },
-      "styles": ["outline", "filled"],
-      "frames": ["square", "circle"],
-      "defaultStrokeWidth": 1.75,
-      "filledDefaultStrokeWidth": null,
-      "reviewStatus": "draft"
-    },
-    {
       "name": "chevron-down",
       "description": "A chevron down with an open V and round ends.",
       "tags": ["chevron", "caret", "navigation", "down"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -2.875/+2.875. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles touch exactly with zero gap at the shared center. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
@@ -273,7 +239,7 @@
       "description": "A chevron left with an open V and round ends.",
       "tags": ["chevron", "caret", "navigation", "left"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -2.875/+2.875. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles touch exactly with zero gap at the shared center. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
@@ -290,41 +256,7 @@
       "description": "A chevron right with an open V and round ends.",
       "tags": ["chevron", "caret", "navigation", "right"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-      "filledTreatment": "solid-head",
-      "review": {
-        "status": "draft",
-        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-      },
-      "styles": ["outline", "filled"],
-      "frames": ["square", "circle"],
-      "defaultStrokeWidth": 1.75,
-      "filledDefaultStrokeWidth": null,
-      "reviewStatus": "draft"
-    },
-    {
-      "name": "chevron-up-left",
-      "description": "A chevron up left with an open V and round ends.",
-      "tags": ["chevron", "caret", "navigation", "up", "left"],
-      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
-      "filledTreatment": "solid-head",
-      "review": {
-        "status": "draft",
-        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
-      },
-      "styles": ["outline", "filled"],
-      "frames": ["square", "circle"],
-      "defaultStrokeWidth": 1.75,
-      "filledDefaultStrokeWidth": null,
-      "reviewStatus": "draft"
-    },
-    {
-      "name": "chevron-up-right",
-      "description": "A chevron up right with an open V and round ends.",
-      "tags": ["chevron", "caret", "navigation", "up", "right"],
-      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -2.875/+2.875. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles touch exactly with zero gap at the shared center. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
@@ -341,7 +273,75 @@
       "description": "A chevron up with an open V and round ends.",
       "tags": ["chevron", "caret", "navigation", "up"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner requested the same24-variant construction as Arrow:8 directions times None/Square/Circle, each in Outline/Filled. Start from one90-degree V with endpoints(-5.5,2.75),(0,-2.75),(5.5,2.75) relative to its bounding center. Rotate by the requested direction and translate its bounding center to12,12 without scaling. Each arm has length5.5*sqrt(2) and Regular1.75 round caps/joins; the same exact glyph is used standalone and inside both upright frames. Filled is the closed solid triangle expanded by.875 around the same three vertices, preserving the existing solid-head semantic treatment. Square/Circle frames reuse the Arrow geometry:2px outer margins, exterior square radius4/circle radius10, Outline frame centerline radius3.125/9.125. Filled frames subtract the same standalone Filled triangle as negative space. The circular border retains at least.4758px clearance at Bold2.50. Frame/glyph size never depends on direction. These eight Chevron pairs and frame variants await owner review; previous Up/Down approvals covered earlier artwork.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -2.875/+2.875. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles touch exactly with zero gap at the shared center. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "chevrons-down",
+      "description": "A chevrons down with an open V and round ends.",
+      "tags": ["chevron", "caret", "navigation", "down"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -2.875/+2.875. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles touch exactly with zero gap at the shared center. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "chevrons-left",
+      "description": "A chevrons left with an open V and round ends.",
+      "tags": ["chevron", "caret", "navigation", "left"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -2.875/+2.875. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles touch exactly with zero gap at the shared center. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "chevrons-right",
+      "description": "A chevrons right with an open V and round ends.",
+      "tags": ["chevron", "caret", "navigation", "right"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -2.875/+2.875. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles touch exactly with zero gap at the shared center. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
+      "filledTreatment": "solid-head",
+      "review": {
+        "status": "draft",
+        "note": "New shared glyph and frame-ready Chevron family; awaits owner review."
+      },
+      "styles": ["outline", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
+      "name": "chevrons-up",
+      "description": "A chevrons up with an open V and round ends.",
+      "tags": ["chevron", "caret", "navigation", "up"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Owner clarified Chevron has four cardinal directions only, with four Double Chevron identities (chevrons-up/down/left/right), each in None/Square/Circle and Outline/Filled:8 identities times3 forms=24 variants. Single uses V vertices(-5.5,2.75),(0,-2.75),(5.5,2.75). Double uses two V marks with vertices(-4,2),(0,-2),(4,2), shifted vertically by -2.875/+2.875. Rotate by cardinal direction and recenter at12,12, with no directional scaling. Reuse the exact same glyph standalone and inside upright Arrow frames. Regular1.75 round caps/joins; Filled closes each triangle and expands by.875. Double solid triangles touch exactly with zero gap at the shared center. Frame exteriors have2px margins, square radius4 or circle radius10. Filled frames subtract the identical standalone solid silhouette. Circle clearance at Bold is at least.2218px for Double and.4758px for Single. All await owner review; no diagonal Chevron icons.",
       "filledTreatment": "solid-head",
       "review": {
         "status": "draft",
@@ -480,6 +480,24 @@
       "reviewStatus": "approved"
     },
     {
+      "name": "minus",
+      "description": "A rounded minus symbol with unboxed and framed styles.",
+      "tags": ["math", "symbol", "minus"],
+      "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
+      "construction": "Owner requested Plus/Minus/X to follow the frame family with three explicit styles: Outline Regular1.75, unboxed Bold2.50, and Filled. Frame None Filled equals the unboxed Bold2.50 expansion, as Menu/Search. Square/Circle Filled uses a solid upright frame and the exact Regular1.75 glyph cutout. Use shared centerlines centered at12,12, extent4.5 on both axes; Plus and X retain identical optical bounds10.75 square at Regular and11.50 at Bold; Minus shares their horizontal extent. Smaller source glyphs reserve actual Circle clearance at every weight without independent per-frame scaling. Frame exteriors span2..22, Square radius4 and Circle radius10, same as Arrow/Chevron. Outline centerlines are2.875..21.125 with corner radius3.125, circle9.125. Bold is explicitly unboxed; selecting it ignores a frame. At Bold the Circle border clears the X by at least.261px. Filled standalone is the exact union of the shared centerlines expanded at2.50; frame holes use1.75. This supersedes the previous standalone boxed Plus/X Filled semantics. Morph timing remains approved, while its boxed endpoints derive from the new Square frame sources. Family extension adds Minus only; it is not a six unrelated-icon batch. All three revised identities await owner review.",
+      "filledTreatment": "bold-stroke",
+      "supportsBold": true,
+      "review": {
+        "status": "draft",
+        "note": "New three-style frame construction; awaits owner review."
+      },
+      "styles": ["outline", "bold", "filled"],
+      "frames": ["square", "circle"],
+      "defaultStrokeWidth": 1.75,
+      "filledDefaultStrokeWidth": null,
+      "reviewStatus": "draft"
+    },
+    {
       "name": "moon",
       "description": "A balanced crescent moon with a clean circular concavity.",
       "tags": ["night", "dark", "weather"],
@@ -506,29 +524,21 @@
     },
     {
       "name": "plus",
-      "description": "A centered plus mark with four equally sized arms.",
-      "tags": ["add", "new", "create"],
+      "description": "A rounded plus symbol with unboxed and framed styles.",
+      "tags": ["math", "symbol", "plus"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner clarified that Plus and X use all four sides as their primary margin pairs. Plus Filled box now spans 2..22 with radius-4 corners, exactly like X. Both Plus glyphs share perpendicular centerlines M4.85 12 H19.15 M12 4.85 V19.15, visible bounds 4..20, unchanged Regular 1.70 stroke and .85 round caps. This leaves 2px from the box to the artboard and another 2px from the shared glyph to each box side. Outline is exactly the mark inside Filled, with no style-specific scaling or translation. Native X/Y=100%, rotation=0. Owner-approved source. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9965034965 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75.",
-      "filledTreatment": "boxed-cutout",
+      "construction": "Owner requested Plus/Minus/X to follow the frame family with three explicit styles: Outline Regular1.75, unboxed Bold2.50, and Filled. Frame None Filled equals the unboxed Bold2.50 expansion, as Menu/Search. Square/Circle Filled uses a solid upright frame and the exact Regular1.75 glyph cutout. Use shared centerlines centered at12,12, extent4.5 on both axes; Plus and X retain identical optical bounds10.75 square at Regular and11.50 at Bold; Minus shares their horizontal extent. Smaller source glyphs reserve actual Circle clearance at every weight without independent per-frame scaling. Frame exteriors span2..22, Square radius4 and Circle radius10, same as Arrow/Chevron. Outline centerlines are2.875..21.125 with corner radius3.125, circle9.125. Bold is explicitly unboxed; selecting it ignores a frame. At Bold the Circle border clears the X by at least.261px. Filled standalone is the exact union of the shared centerlines expanded at2.50; frame holes use1.75. This supersedes the previous standalone boxed Plus/X Filled semantics. Morph timing remains approved, while its boxed endpoints derive from the new Square frame sources. Family extension adds Minus only; it is not a six unrelated-icon batch. All three revised identities await owner review.",
+      "filledTreatment": "bold-stroke",
+      "supportsBold": true,
       "review": {
-        "status": "approved",
-        "reviewedBy": "palamto",
-        "date": "2026-10-27",
-        "style": "outline",
-        "preview": {
-          "x": 100,
-          "y": 100,
-          "strokeWidth": 1.75,
-          "rotation": 0
-        },
-        "note": "Owner approved both Outline and Filled with radius-4 box corners, 2px around the Filled box, 2px between the box and shared glyph, and identical Outline/cutout position and weight. Reviewed at native proportions and Regular 1.70."
+        "status": "draft",
+        "note": "New three-style frame construction; awaits owner review."
       },
-      "styles": ["outline", "filled"],
-      "frames": [],
+      "styles": ["outline", "bold", "filled"],
+      "frames": ["square", "circle"],
       "defaultStrokeWidth": 1.75,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "approved"
+      "reviewStatus": "draft"
     },
     {
       "name": "search",
@@ -659,29 +669,21 @@
     },
     {
       "name": "x",
-      "description": "A centered close mark with two balanced diagonal strokes.",
-      "tags": ["close", "dismiss", "cancel"],
+      "description": "A rounded x symbol with unboxed and framed styles.",
+      "tags": ["math", "symbol", "x"],
       "authorship": "Original geometry constructed for this project; no third-party icon paths used.",
-      "construction": "Owner clarified that the Filled box must keep 2px outside clearance and Outline is exactly the X inside that Filled box, following Plus. The upright rounded box spans 2..22 on the native 24 by 24 grid, with radius-4 corners. Its negative-space X and the standalone Outline share diagonal centerline endpoints 4.85..19.15 on each axis, giving visible glyph bounds 4..20. The shared glyph retains Regular-equivalent width 1.70 and .85 round caps. This leaves exactly 2 units between the glyph and each box side, plus 2 units between the box and each artboard side. The cutout is the exact analytical union of the Outline stroke exterior. Both glyphs are centered at 12,12 with identical position, size and contours; no style-specific scaling or translation. Native X/Y=100%, rotation=0. Owner-approved source. The owner subsequently requested rounder Filled box corners: radius is 4, with box bounds, glyph contour, stroke weight and the measured 2-unit side clearances retained. Global weight update requested by owner on2026-10-27: default Regular1.75 (half-width .875), Thin1.25 and Bold2.50, adjustable in .25 increments. Filled is rebuilt from these same Outline centerlines using rounded normal expansion, with solid-head/boxed/object semantics preserved. Menu/Search Filled follows Bold2.50. Centerlines uniformly refitted about12,12 by 0.9965034965 to retain the existing2px primary margins and shared boxed glyph clearance. Earlier1.70/2.25 construction measurements are historical; the current default reference is1.75.",
-      "filledTreatment": "boxed-cutout",
+      "construction": "Owner requested Plus/Minus/X to follow the frame family with three explicit styles: Outline Regular1.75, unboxed Bold2.50, and Filled. Frame None Filled equals the unboxed Bold2.50 expansion, as Menu/Search. Square/Circle Filled uses a solid upright frame and the exact Regular1.75 glyph cutout. Use shared centerlines centered at12,12, extent4.5 on both axes; Plus and X retain identical optical bounds10.75 square at Regular and11.50 at Bold; Minus shares their horizontal extent. Smaller source glyphs reserve actual Circle clearance at every weight without independent per-frame scaling. Frame exteriors span2..22, Square radius4 and Circle radius10, same as Arrow/Chevron. Outline centerlines are2.875..21.125 with corner radius3.125, circle9.125. Bold is explicitly unboxed; selecting it ignores a frame. At Bold the Circle border clears the X by at least.261px. Filled standalone is the exact union of the shared centerlines expanded at2.50; frame holes use1.75. This supersedes the previous standalone boxed Plus/X Filled semantics. Morph timing remains approved, while its boxed endpoints derive from the new Square frame sources. Family extension adds Minus only; it is not a six unrelated-icon batch. All three revised identities await owner review.",
+      "filledTreatment": "bold-stroke",
+      "supportsBold": true,
       "review": {
-        "status": "approved",
-        "reviewedBy": "palamto",
-        "date": "2026-10-27",
-        "style": "outline",
-        "preview": {
-          "x": 100,
-          "y": 100,
-          "strokeWidth": 1.75,
-          "rotation": 0
-        },
-        "note": "Owner approved both Outline and Filled with radius-4 box corners, 2px around the Filled box, 2px between the box and shared glyph, and identical Outline/cutout position and weight. Reviewed at native proportions and Regular 1.70."
+        "status": "draft",
+        "note": "New three-style frame construction; awaits owner review."
       },
-      "styles": ["outline", "filled"],
-      "frames": [],
+      "styles": ["outline", "bold", "filled"],
+      "frames": ["square", "circle"],
       "defaultStrokeWidth": 1.75,
       "filledDefaultStrokeWidth": null,
-      "reviewStatus": "approved"
+      "reviewStatus": "draft"
     }
   ]
 }

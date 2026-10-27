@@ -11,7 +11,9 @@
     style: iconStyle = 'outline',
   }: IconProps = $props();
   const accessibleLabel = $derived(label?.trim());
-  const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));
+  const resolvedStrokeWidth = $derived(
+    iconStyle === 'bold' ? 2.5 : resolveStrokeWidth(strokeWidth),
+  );
   const gapWidth = $derived(
     Number.isFinite(resolvedStrokeWidth) ? Math.min(6, Math.max(0.25, resolvedStrokeWidth)) : 1.75,
   );
@@ -45,6 +47,13 @@
 >
   {#if iconStyle === 'filled'}
     <g data-part="body"><path d={cutoutPath}></path></g>
+  {:else if iconStyle === 'bold'}
+    <g data-part="body"
+      ><path
+        d="M2.875 6.98354101C2.875 5.44136858 4.12517786 4.1911912 5.66734982 4.1911912H8.07275391C8.28825283 4.1911912 8.49458694 4.27836895 8.64480209 4.4328866L10.89379501 6.74629974C11.09095097 6.94910383 11.36176491 7.06352472 11.6446085 7.06352472H18.13319778C19.78552437 7.06352472 21.125 8.40300083 21.125 10.05532837V16.56768799C21.125 18.35770988 19.67390251 19.80880928 17.88388062 19.80880928H6.11612034C4.32609892 19.80880928 2.875 18.35770988 2.875 16.56768799V6.98354101Z"
+      ></path></g
+    >
+    <g data-part="lid"><path d="M2.875 10.9030056H21.125"></path></g>
   {:else}
     <g data-part="body"
       ><path

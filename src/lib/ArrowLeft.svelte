@@ -12,7 +12,9 @@
     style: iconStyle = 'outline',
   }: IconProps = $props();
   const accessibleLabel = $derived(label?.trim());
-  const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));
+  const resolvedStrokeWidth = $derived(
+    iconStyle === 'bold' ? 2.5 : resolveStrokeWidth(strokeWidth),
+  );
 </script>
 
 <svg
@@ -31,7 +33,7 @@
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
-  data-frame={frame}
+  data-frame={iconStyle === 'bold' ? 'none' : frame}
 >
   {#if iconStyle === 'filled'}
     {#if frame === 'square'}<g data-part="body"
@@ -49,6 +51,10 @@
           d="M11.34375 16.59375 A.875 .875 0 0 1 10.46875 17.46875 A.875 .875 0 0 1 9.85003157 17.21246843 L5.25628157 12.61871843 A.875 .875 0 0 1 5 12 A.875 .875 0 0 1 5.25628157 11.38128157 L9.85003157 6.78753157 A.875 .875 0 0 1 10.46875 6.53125 A.875 .875 0 0 1 11.34375 7.40625 L11.34375 16.59375 Z"
         ></path></g
       >{/if}
+  {:else if iconStyle === 'bold'}
+    <g data-part="body"
+      ><path d="M18.125 12 L5.875 12 M10.46875 16.59375 L5.875 12 L10.46875 7.40625"></path></g
+    >
   {:else}
     {#if frame === 'square'}<g data-part="body"
         ><path

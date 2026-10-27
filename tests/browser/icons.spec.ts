@@ -190,12 +190,12 @@ for (const icon of [
   'plus',
   'check',
   'chevron-up',
-  'chevron-up-right',
+  'chevrons-up',
   'chevron-right',
-  'chevron-down-right',
-  'chevron-down-left',
+  'chevrons-down',
+  'chevrons-left',
   'chevron-left',
-  'chevron-up-left',
+  'chevrons-right',
   'arrow-left',
   'arrow-right',
   'arrow-up',
@@ -251,12 +251,12 @@ for (const icon of [
               'check',
               'chevron-down',
               'chevron-up',
-              'chevron-up-right',
+              'chevrons-up',
               'chevron-right',
-              'chevron-down-right',
-              'chevron-down-left',
+              'chevrons-down',
+              'chevrons-left',
               'chevron-left',
-              'chevron-up-left',
+              'chevrons-right',
               'arrow-left',
               'arrow-right',
               'arrow-up',
@@ -284,19 +284,28 @@ for (const icon of [
               'arrow-down-right',
               'chevron-down',
               'chevron-up',
-              'chevron-up-right',
+              'chevrons-up',
               'chevron-right',
-              'chevron-down-right',
-              'chevron-down-left',
+              'chevrons-down',
+              'chevrons-left',
               'chevron-left',
-              'chevron-up-left',
+              'chevrons-right',
               'download',
               'upload',
             ].includes(icon)
           ) {
             const group = ['download', 'upload'].includes(icon) ? 'arrow' : 'body';
             const head = svg.querySelector(`[data-part="${group}"] path`)!;
-            head.setAttribute('d', head.getAttribute('d') + ' Z');
+            head.setAttribute(
+              'd',
+              icon.startsWith('chevrons-')
+                ? head
+                    .getAttribute('d')!
+                    .match(/[Mm][^Mm]*/g)!
+                    .map((part) => part + ' Z')
+                    .join(' ')
+                : head.getAttribute('d') + ' Z',
+            );
             head.setAttribute('fill', '#000');
           }
           if (icon === 'trash') {
@@ -527,8 +536,8 @@ test('X shares identical Outline and Filled glyphs inside a box with 2px outer m
         .getAttribute('stroke-width'),
     };
   });
-  expect(result.lengths[0]).toBeCloseTo(28.5, 4);
-  expect(result.lengths[1]).toBeCloseTo(28.5 * Math.SQRT2, 4);
+  expect(result.lengths[0]).toBeCloseTo(18, 4);
+  expect(result.lengths[1]).toBeCloseTo(18 * Math.SQRT2, 4);
   expect(result.xStroke).toBe('1.75');
   for (const pose of result.poses) {
     expect(pose.distantMismatches, JSON.stringify(pose)).toBe(0);
@@ -591,10 +600,10 @@ for (const icon of ['plus', 'x', 'check'])
     // Chromium and WebKit approximate circular-arc bounds by up to 0.0003 native units.
     // The rotated contour tests independently check the unchanged 1.75 glyph weight.
     for (const [index, padding] of result.padding.entries())
-      expect(padding).toBeCloseTo(icon === 'check' && index >= 2 ? 4.19230769 : 2, 3);
+      expect(padding).toBeCloseTo(icon === 'check' ? (index >= 2 ? 4.19230769 : 2) : 4.625, 3);
     if (['x', 'plus'].includes(icon)) {
       for (const margin of result.outerMargins) expect(margin).toBeCloseTo(2, 5);
-      for (const margin of result.glyphMargins) expect(margin).toBeCloseTo(4, 3);
+      for (const margin of result.glyphMargins) expect(margin).toBeCloseTo(6.625, 3);
     }
     expect(result.emptyCenter).toBe(true);
     expect(result.solidBorder).toBe(true);
@@ -626,7 +635,7 @@ test('X Outline matches the inner Filled glyph with unchanged stroke and 4px art
     });
   expect(result.stroke).toBe(1.75);
   expect(result.cap).toBe('round');
-  for (const margin of result.margins) expect(margin).toBeCloseTo(4, 5);
+  for (const margin of result.margins) expect(margin).toBeCloseTo(6.625, 5);
 });
 
 test('unboxed Camera and Folder retain horizontal proportions with a 2px primary pair', async ({

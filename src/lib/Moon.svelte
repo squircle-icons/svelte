@@ -11,7 +11,9 @@
     style: iconStyle = 'outline',
   }: IconProps = $props();
   const accessibleLabel = $derived(label?.trim());
-  const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));
+  const resolvedStrokeWidth = $derived(
+    iconStyle === 'bold' ? 2.5 : resolveStrokeWidth(strokeWidth),
+  );
 </script>
 
 <svg
@@ -35,6 +37,12 @@
     <g data-part="body"
       ><path
         d="M9.72572802 3.28876599 A8.875 8.875 0 0 0 3.13175073 11.8656279 A8.875 8.875 0 0 0 12.00675073 20.7406279 A8.875 8.875 0 0 0 20.86677254 12.38102938 A0.875 0.875 0 0 0 20.86824926 12.33021515 A0.875 0.875 0 0 0 19.99324926 11.45521515 A0.875 0.875 0 0 0 19.41464395 11.67383043 A5.69418946 5.69418946 0 0 1 15.64928595 13.09650111 A5.69418946 5.69418946 0 0 1 9.95509649 7.40231165 A5.69418946 5.69418946 0 0 1 10.7096663 4.56965366 A0.875 0.875 0 0 0 10.82561758 4.13437209 A0.875 0.875 0 0 0 9.95061758 3.25937209 A0.875 0.875 0 0 0 9.72572802 3.28876599 Z"
+      ></path></g
+    >
+  {:else if iconStyle === 'bold'}
+    <g data-part="body"
+      ><path
+        d="M9.95061758 4.13437209 A8 8 0 1 0 19.99324926 12.33021515 A6.56918946 6.56918946 0 0 1 9.95061758 4.13437209 Z"
       ></path></g
     >
   {:else}
