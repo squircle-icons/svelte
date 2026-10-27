@@ -1,3 +1,4 @@
+import { registerMorphLifecycle } from './morph-lifecycle.js';
 import { expect, test } from '@playwright/test';
 test('packed Menu X retains its SVG on reversal and supports manual Filled inspection', async ({
   page,
@@ -46,7 +47,7 @@ test('Menu X switches instantly with reduced motion', async ({ page }) => {
 });
 
 for (const style of ['outline', 'filled'])
-  test(`Menu X morph ${style} endpoints match the actual packed Plus and X artwork`, async ({
+  test(`Menu X morph ${style} endpoints match the actual packed Menu and X artwork`, async ({
     page,
   }) => {
     await page.goto('/');
@@ -111,3 +112,5 @@ for (const style of ['outline', 'filled'])
       expect(difference).toBeLessThan(0.006);
     }
   });
+
+registerMorphLifecycle('Menu X fixture', 'Menu X open', 'x');

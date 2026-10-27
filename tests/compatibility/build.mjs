@@ -22,7 +22,7 @@ ${entries
   .map((entry, i) =>
     entry === '.' || entry === './filled'
       ? `import * as Barrel${i} from '@squircle-icons/svelte${entry.slice(1)}';`
-      : `import Icon${i} from '@squircle-icons/svelte${entry.slice(1)}';\nconst props${i}: ComponentProps<typeof Icon${i}> = ${entry === './morph/plus-x' || entry === './morph/menu-x' ? "{ x: true, style: 'filled', progress: 0.5 }" : entry.startsWith('./morph/') ? "{ moon: true, style: 'filled', progress: 0.5 }" : '{ strokeWidth: 1.5 }'};`,
+      : `import Icon${i} from '@squircle-icons/svelte${entry.slice(1)}';\nconst props${i}: ComponentProps<typeof Icon${i}> = ${entry === './morph/plus-minus' ? "{ minus: true, style: 'filled', progress: 0.5 }" : entry === './morph/plus-x' || entry === './morph/menu-x' ? "{ x: true, style: 'filled', progress: 0.5 }" : entry.startsWith('./morph/') ? "{ moon: true, style: 'filled', progress: 0.5 }" : '{ strokeWidth: 1.5 }'};`,
   )
   .join('\n')}
 import Camera from '@squircle-icons/svelte/camera';

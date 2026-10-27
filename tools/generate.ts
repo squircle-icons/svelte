@@ -154,11 +154,19 @@ files.set(
   ) + '\n',
 );
 exports['./catalog.json'] = './dist/catalog.json';
+// Preserve relative imports for shared pure geometry used by opt-in morphs.
+const strokes = fileURLToPath(import.meta.resolve('@squircle-icons/core/morph/round-strokes'));
+files.set('src/lib/morph/round-strokes.js', header + (await readFile(strokes, 'utf8')));
+files.set(
+  'src/lib/morph/round-strokes.d.ts',
+  header + (await readFile(strokes.replace(/\.js$/, '.d.ts'), 'utf8')),
+);
 // Pair implementations stay opt-in; static imports never traverse these modules.
 for (const [pair, component, type] of [
   ['sun-moon', 'SunMoonMorph', 'SunMoonGeometry'],
   ['plus-x', 'PlusXMorph', 'PlusXGeometry'],
   ['menu-x', 'MenuXMorph', 'MenuXGeometry'],
+  ['plus-minus', 'PlusMinusMorph', 'PlusMinusGeometry'],
 ]) {
   exports[`./morph/${pair}`] = {
     types: `./dist/morph/${component}.svelte.d.ts`,

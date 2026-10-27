@@ -3,6 +3,11 @@
   import MenuXMorph from '@squircle-icons/svelte/morph/menu-x';
   let menuXTarget = $state(false);
   let menuXProgress = $state<number | undefined>(undefined);
+  import PlusMinusMorph from '@squircle-icons/svelte/morph/plus-minus';
+  let movingMorphsMounted = $state(true);
+  let plusMinusTarget = $state(false);
+  let plusMinusProgress = $state<number | undefined>(undefined);
+  let plusMinusStyle = $state<'outline' | 'filled'>('outline');
   import PlusXMorph from '@squircle-icons/svelte/morph/plus-x';
   let plusXTarget = $state(false);
   let plusXProgress = $state<number | undefined>(undefined);
@@ -637,7 +642,12 @@
     value={menuXProgress ?? 0}
     oninput={(e) => (menuXProgress = Number(e.currentTarget.value))}
   />
-  <MenuXMorph x={menuXTarget} progress={menuXProgress} size={96} label="Menu X fixture" />
+  {#if movingMorphsMounted}<MenuXMorph
+      x={menuXTarget}
+      progress={menuXProgress}
+      size={96}
+      label="Menu X fixture"
+    />{/if}
   <MenuXMorph progress={menuXProgress ?? 0} style="filled" size={96} />
 </section>
 
@@ -661,6 +671,50 @@
               {size}
             />{/each}
         </div>{/each}{/each}
+  </div>
+</section>
+
+<div data-testid="minus-outline-contour"><Minus size={96} /></div>
+<div data-testid="minus-filled-contour"><Minus size={96} style="filled" frame="square" /></div>
+<section data-testid="plus-minus-morph-fixture">
+  <button onclick={() => (movingMorphsMounted = false)}>Unmount moving morphs</button>
+  <button onclick={() => (movingMorphsMounted = true)}>Remount moving morphs</button>
+  <button
+    onclick={() => {
+      plusMinusProgress = undefined;
+      plusMinusTarget = true;
+    }}>Morph minus</button
+  >
+  <button
+    onclick={() => {
+      plusMinusProgress = undefined;
+      plusMinusTarget = false;
+    }}>Morph plus from minus</button
+  >
+  <button onclick={() => (plusMinusStyle = plusMinusStyle === 'outline' ? 'filled' : 'outline')}
+    >Plus Minus style</button
+  >
+  <input
+    aria-label="Fixture Plus Minus progress"
+    type="range"
+    min="0"
+    max="1"
+    step="0.001"
+    value={plusMinusProgress ?? 0}
+    oninput={(e) => (plusMinusProgress = Number(e.currentTarget.value))}
+  />
+  {#if movingMorphsMounted}<PlusMinusMorph
+      minus={plusMinusTarget}
+      progress={plusMinusProgress}
+      style={plusMinusStyle}
+      size={96}
+      label="Experimental Plus Minus morph"
+    />{/if}
+  <div data-testid="plus-minus-intermediate-outline">
+    <PlusMinusMorph progress={plusMinusProgress ?? 0} size={96} />
+  </div>
+  <div data-testid="plus-minus-intermediate-filled">
+    <PlusMinusMorph progress={plusMinusProgress ?? 0} style="filled" size={96} />
   </div>
 </section>
 

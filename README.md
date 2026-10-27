@@ -106,6 +106,11 @@ Import each authored pair directly:
 </button>
 ```
 
+The Plus ↔ Minus proposal is `morph/plus-minus`; use `minus={true}` for Minus
+and `minus={false}` for Plus. It folds the vertical arm onto a fixed horizontal
+arm at0.6× of the shared spring rate. Filled uses the Square frame endpoints and
+cuts out exactly the same moving mark. The new motion awaits owner review.
+
 Other pairs are `morph/sun-moon` (`moon` destination prop) and `morph/plus-x`
 (`x` destination prop). All support `style="outline" | "filled"`, `size`, `color`,
 `class`, `label`, `speed`, controlled `progress`, `onprogress` and `onsettle`.
