@@ -487,7 +487,8 @@
     value={plusXProgress ?? 0}
     oninput={(e) => (plusXProgress = Number(e.currentTarget.value))}
   />
-  <PlusXMorph frame={plusXStyle === 'filled' ? morphFrame : 'none'}
+  <PlusXMorph
+    frame={plusXStyle === 'filled' ? morphFrame : 'none'}
     x={plusXTarget}
     progress={plusXProgress}
     style={plusXStyle}
@@ -620,9 +621,13 @@
 </section>
 
 <div data-testid="menu-outline-contour"><Menu size={96} /></div>
-<div data-testid="menu-filled-contour"><FilledMenu frame={morphFrame} size={96} /></div>
+<div data-testid="morph-menu-filled-contour"><FilledMenu frame={morphFrame} size={96} /></div>
 <section data-testid="menu-x-morph-fixture">
-<div aria-label="Fixture morph frames">{#each ['none','square','circle'] as choice}<button onclick={() => (morphFrame=choice as typeof morphFrame)}>Frame {choice}</button>{/each}</div>
+  <div aria-label="Fixture morph frames">
+    {#each ['none', 'square', 'circle'] as choice}<button
+        onclick={() => (morphFrame = choice as typeof morphFrame)}>Frame {choice}</button
+      >{/each}
+  </div>
   <button
     onclick={() => {
       menuXProgress = undefined;
@@ -644,13 +649,16 @@
     value={menuXProgress ?? 0}
     oninput={(e) => (menuXProgress = Number(e.currentTarget.value))}
   />
-  {#if movingMorphsMounted}<MenuXMorph frame={'none'}
+  {#if movingMorphsMounted}<MenuXMorph
+      frame={'none'}
       x={menuXTarget}
       progress={menuXProgress}
       size={96}
       label="Menu X fixture"
     />{/if}
-  <div data-testid="menu-x-intermediate-filled"><MenuXMorph frame={morphFrame} progress={menuXProgress ?? 0} style="filled" size={96} /></div>
+  <div data-testid="menu-x-intermediate-filled">
+    <MenuXMorph frame={morphFrame} progress={menuXProgress ?? 0} style="filled" size={96} />
+  </div>
 </section>
 
 <section class="math-proof" data-testid="math-proof">
@@ -705,7 +713,8 @@
     value={plusMinusProgress ?? 0}
     oninput={(e) => (plusMinusProgress = Number(e.currentTarget.value))}
   />
-  {#if movingMorphsMounted}<PlusMinusMorph frame={plusMinusStyle === 'filled' ? morphFrame : 'none'}
+  {#if movingMorphsMounted}<PlusMinusMorph
+      frame={plusMinusStyle === 'filled' ? morphFrame : 'none'}
       minus={plusMinusTarget}
       progress={plusMinusProgress}
       style={plusMinusStyle}
