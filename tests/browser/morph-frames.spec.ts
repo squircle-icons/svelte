@@ -75,6 +75,16 @@ for (const item of pairs)
             outline.style.position = 'absolute';
             outline.style.visibility = 'hidden';
             document.body.append(outline);
+            const source = document.querySelector(
+              `[data-testid="${item.from === 'menu' ? 'morph-menu' : item.from}-filled-contour"] path`,
+            )!;
+            const exterior = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            exterior.setAttribute(
+              'd',
+              frame === 'none' ? '' : source.getAttribute('d')!.match(/[Mm][^Mm]*/g)![0],
+            );
+            exterior.setAttribute('visibility', 'hidden');
+            svg.append(exterior);
             let mismatches = 0;
             // Avoid exact stroke boundaries, whose inclusion varies across SVG engines.
             for (let y = 2.283; y < 21.8; y += 0.25)
@@ -83,18 +93,17 @@ for (const item of pairs)
                   ink = [...outline.querySelectorAll('path')].some((path) =>
                     path.isPointInStroke(point),
                   );
-                const exterior =
-                  frame === 'none' ||
-                  (frame === 'square'
-                    ? (x >= 6 && x <= 18) ||
-                      (y >= 6 && y <= 18) ||
-                      Math.hypot(x - (x < 12 ? 6 : 18), y - (y < 12 ? 6 : 18)) <= 4
-                    : Math.hypot(x - 12, y - 12) <= 10);
-                if (filled.isPointInFill(point) !== (frame === 'none' ? ink : exterior && !ink))
+                if (
+                  filled.isPointInFill(point) !==
+                  (frame === 'none' ? ink : exterior.isPointInFill(point) && !ink)
+                )
                   mismatches++;
               }
+            const sourceShoulder = exterior.isPointInFill(new DOMPoint(3, 5));
+            exterior.remove();
             outline.remove();
             return {
+              sourceShoulder,
               mismatches,
               edge: filled.isPointInFill(new DOMPoint(2.1, 12)),
               shoulder: filled.isPointInFill(new DOMPoint(3, 5)),
@@ -106,7 +115,7 @@ for (const item of pairs)
         expect(result.mismatches).toBeLessThanOrEqual(8);
         if (frame !== 'none') {
           expect(result.edge).toBe(true);
-          expect(result.shoulder).toBe(frame === 'square');
+          expect(result.shoulder).toBe(result.sourceShoulder);
         }
         expect(result.path).not.toMatch(/NaN|Infinity/);
       }

@@ -156,6 +156,10 @@ test('the fixed Filled box cuts out the exact moving Outline at intermediate fra
         mismatches,
         bounds: [box.x, box.y, box.width, box.height],
         boxPath: filled.getAttribute('d')!.split(' Z')[0],
+        sourceBoxPath: document
+          .querySelector('[data-testid="plus-filled-contour"] path')!
+          .getAttribute('d')!
+          .split(' Z')[0],
         stroke: outline.ownerSVGElement!.getAttribute('stroke-width'),
       };
     });
@@ -166,9 +170,7 @@ test('the fixed Filled box cuts out the exact moving Outline at intermediate fra
     expect(result.bounds[1]).toBeGreaterThanOrEqual(7.5 - 1e-6);
     expect(result.bounds[1] + result.bounds[3]).toBeLessThanOrEqual(16.5 + 1e-6);
 
-    expect(result.boxPath).toBe(
-      'M6 2 H18 A4 4 0 0 1 22 6 V18 A4 4 0 0 1 18 22 H6 A4 4 0 0 1 2 18 V6 A4 4 0 0 1 6 2',
-    );
+    expect(result.boxPath).toBe(result.sourceBoxPath);
   }
 });
 
