@@ -14,7 +14,7 @@ export type PlusXGeometry = {
     filled: string;
   };
 };
-/** Plus folds to one horizontal line, holds briefly, then opens into the approved X. */
+/** Plus flows through one horizontal line into X without a hold or zero angular velocity. */
 export declare function plusXFrame(
   progress: number,
   geometry: PlusXGeometry,

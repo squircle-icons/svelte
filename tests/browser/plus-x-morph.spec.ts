@@ -134,7 +134,7 @@ test('reduced motion switches directly and respects a later preference change', 
 test('the fixed Filled box cuts out the exact moving Outline at intermediate frames', async ({
   page,
 }) => {
-  for (const progress of [0.1, 0.25, 0.33, 0.36, 0.379, 0.5, 0.621, 0.65, 0.75, 0.9]) {
+  for (const progress of [0.1, 0.25, 0.4, 0.49, 0.499, 0.5, 0.501, 0.51, 0.6, 0.75, 0.9]) {
     await scrub(page, progress);
     await expect(morph(page)).toHaveAttribute('data-progress', progress.toFixed(5));
     const result = await page.evaluate(() => {
