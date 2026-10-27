@@ -6,6 +6,7 @@
     x = false,
     progress,
     speed = 1,
+    frame,
     size = 24,
     color = 'currentColor',
     style: iconStyle = 'outline',
@@ -17,6 +18,7 @@
     x?: boolean;
     progress?: number;
     speed?: number;
+    frame?: 'none' | 'square' | 'circle';
     size?: number | string;
     color?: string;
     style?: 'outline' | 'filled';
@@ -26,13 +28,14 @@
     onsettle?: (x: boolean) => void;
   } = $props();
 
+  const activeFrame = $derived(frame ?? (iconStyle === 'filled' ? 'square' : 'none'));
   const accessibleLabel = $derived(label?.trim());
 </script>
 
 <!-- Deliberately paced, with the shared reversible progress controller. -->
 <MorphProgress end={x} {progress} speed={speed * 0.6} {onprogress} {onsettle}>
   {#snippet children(visual)}
-    {@const frame = menuXFrame(visual, geometry)}
+    {@const drawing = menuXFrame(visual, geometry, activeFrame)}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -40,7 +43,7 @@
       height={size}
       class={className}
       fill={iconStyle === 'filled' ? color : 'none'}
-      fill-rule={iconStyle === 'filled' && visual === 1 ? 'evenodd' : 'nonzero'}
+      fill-rule={iconStyle === 'filled' ? 'evenodd' : undefined}
       stroke={iconStyle === 'filled' ? 'none' : color}
       stroke-width={iconStyle === 'filled' ? undefined : geometry.strokeWidth}
       stroke-linecap="round"
@@ -49,13 +52,18 @@
       aria-label={accessibleLabel || undefined}
       aria-hidden={accessibleLabel ? undefined : true}
       focusable="false"
+      data-frame={activeFrame}
+      data-glyph-width={drawing.filledWidth}
       data-morph="menu-x"
       data-progress={visual.toFixed(5)}
       data-state={visual === 0 ? 'menu' : visual === 1 ? 'x' : 'morph'}
     >
-      <path data-part="body" d={iconStyle === 'filled' ? frame.filled : frame.outline} />
-      {#if iconStyle === 'outline' && frame.middle}
-        <path data-part="middle" d={frame.middle} stroke-width={frame.middleWidth} />
+      {#if iconStyle === 'outline' && activeFrame !== 'none'}
+        <path data-part="frame" d={geometry.frames[activeFrame].outline} />
+      {/if}
+      <path data-part="body" d={iconStyle === 'filled' ? drawing.filled : drawing.outline} />
+      {#if iconStyle === 'outline' && drawing.middle}
+        <path data-part="middle" d={drawing.middle} stroke-width={drawing.middleWidth} />
       {/if}
     </svg>
   {/snippet}

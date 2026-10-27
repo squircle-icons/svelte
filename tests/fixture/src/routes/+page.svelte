@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import MenuXMorph from '@squircle-icons/svelte/morph/menu-x';
+  let morphFrame = $state<'none' | 'square' | 'circle'>('square');
   let menuXTarget = $state(false);
   let menuXProgress = $state<number | undefined>(undefined);
   import PlusMinusMorph from '@squircle-icons/svelte/morph/plus-minus';
@@ -240,7 +241,7 @@
 <div data-testid="gap-preset"><Folder style="filled" strokeWidth={preset} /></div>
 <div data-testid="x-outline-contour"><X size={96} label="Outline X contour" /></div>
 <div data-testid="x-filled-contour">
-  <FilledX frame="square" size={96} label="Filled X contour" />
+  <FilledX frame={morphFrame} size={96} label="Filled X contour" />
 </div>
 <div data-testid="search-outline-contour"><Search size={96} label="Outline Search contour" /></div>
 <div data-testid="search-filled-contour">
@@ -279,7 +280,7 @@
 </div>
 <div data-testid="plus-outline-contour"><Plus size={96} label="Outline Plus contour" /></div>
 <div data-testid="plus-filled-contour">
-  <FilledPlus frame="square" size={96} label="Filled Plus contour" />
+  <FilledPlus frame={morphFrame} size={96} label="Filled Plus contour" />
 </div>
 <div data-testid="check-outline-contour"><Check size={96} label="Outline Check contour" /></div>
 <div data-testid="check-filled-contour"><FilledCheck size={96} label="Filled Check contour" /></div>
@@ -486,7 +487,7 @@
     value={plusXProgress ?? 0}
     oninput={(e) => (plusXProgress = Number(e.currentTarget.value))}
   />
-  <PlusXMorph
+  <PlusXMorph frame={plusXStyle === 'filled' ? morphFrame : 'none'}
     x={plusXTarget}
     progress={plusXProgress}
     style={plusXStyle}
@@ -494,10 +495,10 @@
     label="Experimental Plus X morph"
   />
   <div data-testid="plus-x-intermediate-outline">
-    <PlusXMorph progress={plusXProgress ?? 0} size={96} />
+    <PlusXMorph frame={'none'} progress={plusXProgress ?? 0} size={96} />
   </div>
   <div data-testid="plus-x-intermediate-filled">
-    <PlusXMorph progress={plusXProgress ?? 0} style="filled" size={96} />
+    <PlusXMorph frame={morphFrame} progress={plusXProgress ?? 0} style="filled" size={96} />
   </div>
 </section>
 
@@ -619,8 +620,9 @@
 </section>
 
 <div data-testid="menu-outline-contour"><Menu size={96} /></div>
-<div data-testid="menu-filled-contour"><FilledMenu size={96} /></div>
+<div data-testid="menu-filled-contour"><FilledMenu frame={morphFrame} size={96} /></div>
 <section data-testid="menu-x-morph-fixture">
+<div aria-label="Fixture morph frames">{#each ['none','square','circle'] as choice}<button onclick={() => (morphFrame=choice as typeof morphFrame)}>Frame {choice}</button>{/each}</div>
   <button
     onclick={() => {
       menuXProgress = undefined;
@@ -642,13 +644,13 @@
     value={menuXProgress ?? 0}
     oninput={(e) => (menuXProgress = Number(e.currentTarget.value))}
   />
-  {#if movingMorphsMounted}<MenuXMorph
+  {#if movingMorphsMounted}<MenuXMorph frame={'none'}
       x={menuXTarget}
       progress={menuXProgress}
       size={96}
       label="Menu X fixture"
     />{/if}
-  <MenuXMorph progress={menuXProgress ?? 0} style="filled" size={96} />
+  <div data-testid="menu-x-intermediate-filled"><MenuXMorph frame={morphFrame} progress={menuXProgress ?? 0} style="filled" size={96} /></div>
 </section>
 
 <section class="math-proof" data-testid="math-proof">
@@ -675,7 +677,7 @@
 </section>
 
 <div data-testid="minus-outline-contour"><Minus size={96} /></div>
-<div data-testid="minus-filled-contour"><Minus size={96} style="filled" frame="square" /></div>
+<div data-testid="minus-filled-contour"><Minus size={96} style="filled" frame={morphFrame} /></div>
 <section data-testid="plus-minus-morph-fixture">
   <button onclick={() => (movingMorphsMounted = false)}>Unmount moving morphs</button>
   <button onclick={() => (movingMorphsMounted = true)}>Remount moving morphs</button>
@@ -703,7 +705,7 @@
     value={plusMinusProgress ?? 0}
     oninput={(e) => (plusMinusProgress = Number(e.currentTarget.value))}
   />
-  {#if movingMorphsMounted}<PlusMinusMorph
+  {#if movingMorphsMounted}<PlusMinusMorph frame={plusMinusStyle === 'filled' ? morphFrame : 'none'}
       minus={plusMinusTarget}
       progress={plusMinusProgress}
       style={plusMinusStyle}
@@ -711,10 +713,10 @@
       label="Experimental Plus Minus morph"
     />{/if}
   <div data-testid="plus-minus-intermediate-outline">
-    <PlusMinusMorph progress={plusMinusProgress ?? 0} size={96} />
+    <PlusMinusMorph frame={'none'} progress={plusMinusProgress ?? 0} size={96} />
   </div>
   <div data-testid="plus-minus-intermediate-filled">
-    <PlusMinusMorph progress={plusMinusProgress ?? 0} style="filled" size={96} />
+    <PlusMinusMorph frame={morphFrame} progress={plusMinusProgress ?? 0} style="filled" size={96} />
   </div>
 </section>
 
