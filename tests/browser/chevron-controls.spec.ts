@@ -10,10 +10,10 @@ test('opposed and line Chevron directions are rigid rotations with fixed physica
 }) => {
   const results = await page.evaluate(() => {
     const cases: [string, string, number, number, number][] = [
-      ['chevron-up-down', 'chevron-left-right', 90, 12.75, 9.75],
-      ['chevron-line-up', 'chevron-line-right', 90, 8.75, 9.75],
-      ['chevron-line-up', 'chevron-line-down', 180, 9.75, 8.75],
-      ['chevron-line-up', 'chevron-line-left', 270, 8.75, 9.75],
+      ['chevron-up-down', 'chevron-left-right', 90, 20, 15.02272727],
+      ['chevron-line-up', 'chevron-line-right', 90, 17.71875, 20],
+      ['chevron-line-up', 'chevron-line-down', 180, 20, 17.71875],
+      ['chevron-line-up', 'chevron-line-left', 270, 17.71875, 20],
     ];
     return cases.flatMap(([reference, name, degrees, width, height]) =>
       ['outline', 'filled'].map((style) => {
@@ -27,8 +27,8 @@ test('opposed and line Chevron directions are rigid rotations with fixed physica
           );
         let mismatches = 0;
         const angle = (degrees * Math.PI) / 180;
-        for (let x = 4.137; x < 20; x += 0.237)
-          for (let y = 4.193; y < 20; y += 0.237) {
+        for (let x = 1.937; x < 22; x += 0.237)
+          for (let y = 1.993; y < 22; y += 0.237) {
             const point = new DOMPoint(
               12 + (x - 12) * Math.cos(angle) - (y - 12) * Math.sin(angle),
               12 + (x - 12) * Math.sin(angle) + (y - 12) * Math.cos(angle),
@@ -73,10 +73,10 @@ test('solid heads retain a distinct stop-line gap and opposed heads retain their
       outline = shape('chevron-line-up', 'outline'),
       pair = shape('chevron-up-down', 'filled');
     return {
-      stop: line.isPointInFill(point(12, 8.5)),
+      stop: line.isPointInFill(point(12, 4.015625)),
       head: line.isPointInFill(point(12, 13)),
       openOutline: !outline.isPointInStroke(point(12, 13)),
-      regularGap: [9.5, 10, 10.5].every(
+      regularGap: [6, 7, 8].every(
         (y) => !line.isPointInFill(point(12, y)) && !outline.isPointInStroke(point(12, y)),
       ),
       opposedHeads: [9, 15].every((y) => pair.isPointInFill(point(12, y))),
@@ -93,7 +93,7 @@ test('solid heads retain a distinct stop-line gap and opposed heads retain their
       '[data-testid="chevron-up-down-outline-contour"] path',
     )! as SVGPathElement;
     return (
-      !line.isPointInStroke(new DOMPoint(12, 10)) &&
+      !line.isPointInStroke(new DOMPoint(12, 8)) &&
       [8, 12, 16].every((x) => !pair.isPointInStroke(new DOMPoint(x, 12)))
     );
   });

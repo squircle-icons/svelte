@@ -18,17 +18,18 @@ function interpolate(from, to, startVelocity, endVelocity, t) {
 }
 /** Plus flows through one horizontal line into X without a hold or zero angular velocity. */
 export function plusXFrame(progress, geometry, frame = 'square') {
+  const mark = geometry.variants?.[frame] ?? geometry;
   const p = clamp(Number.isFinite(progress) ? progress : 0);
-  if (p === 0) return { ...geometry.plus, filled: geometry.frames[frame].from };
-  if (p === 1) return { ...geometry.x, filled: geometry.frames[frame].to };
+  if (p === 0) return { ...mark.plus, filled: geometry.frames[frame].from };
+  if (p === 1) return { ...mark.x, filled: geometry.frames[frame].to };
   const turn = Math.PI / 4;
   const t = p < 0.5 ? p * 2 : (p - 0.5) * 2;
   const a = p < 0.5 ? interpolate(0, 0, 0, turn, t) : interpolate(0, turn, turn, 0, t);
   const b = p < 0.5 ? interpolate(Math.PI / 2, 0, 0, -turn, t) : -a;
   const opening = Math.abs(a) / turn;
-  const extent = geometry.plusExtent + (geometry.xExtent - geometry.plusExtent) * opening;
+  const extent = mark.plusExtent + (mark.xExtent - mark.plusExtent) * opening;
   const length = extent / Math.max(Math.abs(Math.cos(a)), Math.abs(Math.cos(b)));
-  const center = { x: geometry.center[0], y: geometry.center[1] };
+  const center = { x: mark.center[0], y: mark.center[1] };
   const end = (angle, direction) =>
     pointString(
       add(center, {
@@ -43,6 +44,6 @@ export function plusXFrame(progress, geometry, frame = 'square') {
     filled:
       geometry.frames[frame].box +
       ' ' +
-      mergedStrokes(a, b, length, (frame === 'none' ? 2.5 : geometry.strokeWidth) / 2, center),
+      mergedStrokes(a, b, length, (frame === 'none' ? 2.5 : mark.strokeWidth) / 2, center),
   };
 }

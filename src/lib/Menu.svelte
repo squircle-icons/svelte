@@ -46,11 +46,11 @@
         ></path></g
       >{:else}<g data-part="body"
         ><path
-          d="M7 6.75 H17 A1.25 1.25 0 0 1 17 9.25 H7 A1.25 1.25 0 0 1 7 6.75 Z M7 10.75 H17 A1.25 1.25 0 0 1 17 13.25 H7 A1.25 1.25 0 0 1 7 10.75 Z M7 14.75 H17 A1.25 1.25 0 0 1 17 17.25 H7 A1.25 1.25 0 0 1 7 14.75 Z"
+          d="M3.25 6.25 L20.75 6.25 A1.25 1.25 0 0 0 20.75 3.75 L3.25 3.75 A1.25 1.25 0 0 0 3.25 6.25 Z M3.25 13.25 L20.75 13.25 A1.25 1.25 0 0 0 20.75 10.75 L3.25 10.75 A1.25 1.25 0 0 0 3.25 13.25 Z M3.25 20.25 L20.75 20.25 A1.25 1.25 0 0 0 20.75 17.75 L3.25 17.75 A1.25 1.25 0 0 0 3.25 20.25 Z"
         ></path></g
       >{/if}
   {:else if iconStyle === 'bold'}
-    <g data-part="body"><path d="M7 8 H17 M7 12 H17 M7 16 H17"></path></g>
+    <g data-part="body"><path d="M3.25 5 H20.75 M3.25 12 H20.75 M3.25 19 H20.75"></path></g>
   {:else}
     {#if frame === 'square'}<g data-part="body"
         ><path
@@ -59,6 +59,8 @@
       >{:else if frame === 'circle'}<g data-part="body"
         ><circle cx="12" cy="12" r="9.125"></circle><path d="M7 8 H17 M7 12 H17 M7 16 H17"
         ></path></g
-      >{:else}<g data-part="body"><path d="M7 8 H17 M7 12 H17 M7 16 H17"></path></g>{/if}
+      >{:else}<g data-part="body"
+        ><path d="M3.25 5 H20.75 M3.25 12 H20.75 M3.25 19 H20.75"></path></g
+      >{/if}
   {/if}
 </svg>

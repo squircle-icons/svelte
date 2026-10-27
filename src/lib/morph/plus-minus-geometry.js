@@ -3,13 +3,14 @@ import { mergedStrokes } from './round-strokes.js';
 const format = (n) => String(Math.round(n * 1e8) / 1e8);
 /** Fold the vertical arm onto a fixed horizontal arm, using the same union in Filled. */
 export function plusMinusFrame(progress, geometry, frame = 'square') {
+  const mark = geometry.variants?.[frame] ?? geometry;
   const p = Math.max(0, Math.min(1, Number.isFinite(progress) ? progress : 0));
-  if (p === 0) return { ...geometry.plus, filled: geometry.frames[frame].from };
-  if (p === 1) return { ...geometry.minus, filled: geometry.frames[frame].to };
+  if (p === 0) return { ...mark.plus, filled: geometry.frames[frame].from };
+  if (p === 1) return { ...mark.minus, filled: geometry.frames[frame].to };
   const eased = p ** 3 * (10 + p * (-15 + 6 * p));
   const angle = (Math.PI / 2) * (1 - eased);
-  const [x, y] = geometry.center,
-    length = geometry.extent;
+  const [x, y] = mark.center,
+    length = mark.extent;
   const line = (a) => {
     const dx = length * Math.cos(a),
       dy = length * Math.sin(a);
@@ -20,7 +21,7 @@ export function plusMinusFrame(progress, geometry, frame = 'square') {
     filled:
       geometry.frames[frame].box +
       ' ' +
-      mergedStrokes(0, angle, length, (frame === 'none' ? 2.5 : geometry.strokeWidth) / 2, {
+      mergedStrokes(0, angle, length, (frame === 'none' ? 2.5 : mark.strokeWidth) / 2, {
         x,
         y,
       }),

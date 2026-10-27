@@ -27,9 +27,23 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
   await expect(page.getByTestId('ready')).toHaveText('hydrated');
 });
-test('Square and Circle use the identical standalone glyph, fixed frames and matching Filled cutouts', async ({
+test('Square and Circle retain the compact shared glyph while None is larger', async ({
   page,
 }, info) => {
+  const standalone = await page.evaluate(
+    (names) =>
+      Object.fromEntries(
+        names.map((name) => {
+          const glyph = document.querySelector(
+            `[data-testid="${name}-outline-contour"] path`,
+          )! as SVGPathElement;
+          const b = glyph.getBBox();
+          return [name, { d: glyph.getAttribute('d'), extent: Math.max(b.width, b.height) }];
+        }),
+      ),
+    arrows,
+  );
+  await page.getByLabel('Fixture arrow frame').selectOption('square');
   const originals = await page.evaluate(
     (names) =>
       Object.fromEntries(
@@ -37,16 +51,34 @@ test('Square and Circle use the identical standalone glyph, fixed frames and mat
           name,
           {
             outline: document
-              .querySelector(`[data-testid="${name}-outline-contour"] path`)!
+              .querySelectorAll(`[data-testid="${name}-outline-contour"] path`)
+              .item(1)
               .getAttribute('d'),
+            extent: (() => {
+              const glyph = document
+                .querySelectorAll(`[data-testid="${name}-outline-contour"] path`)
+                .item(1) as SVGPathElement;
+              const b = glyph.getBBox();
+              return Math.max(b.width, b.height);
+            })(),
             filled: [
               ...document.querySelectorAll(`[data-testid="${name}-filled-contour"] path`),
-            ].map((path) => path.getAttribute('d')!),
+            ].map((path) =>
+              path
+                .getAttribute('d')!
+                .match(/[Mm][^Mm]*/g)!
+                .slice(1)
+                .join(' '),
+            ),
           },
         ]),
       ),
     arrows,
   );
+  for (const name of arrows) {
+    expect(originals[name].outline).not.toBe(standalone[name].d);
+    expect(standalone[name].extent).toBeGreaterThan(originals[name].extent);
+  }
   for (const frame of ['square', 'circle']) {
     await page.getByLabel('Fixture arrow frame').selectOption(frame);
     for (const icon of arrows) {
@@ -109,6 +141,25 @@ test('Square and Circle use the identical standalone glyph, fixed frames and mat
       await page
         .getByTestId('round-five-light')
         .screenshot({ path: `.artifacts/previews/arrow-frames-${frame}.png` });
+  }
+  await page.getByLabel('Fixture arrow frame').selectOption('none');
+  const native = await page.evaluate(
+    (names) =>
+      names.map((name) => {
+        const glyph = document.querySelector(
+          `[data-testid="${name}-outline-contour"] path`,
+        )! as SVGPathElement;
+        return {
+          name,
+          d: glyph.getAttribute('d'),
+          stroke: glyph.ownerSVGElement!.getAttribute('stroke-width'),
+        };
+      }),
+    arrows,
+  );
+  for (const item of native) {
+    expect(item.d).toBe(standalone[item.name].d);
+    expect(item.stroke).toBe('1.75');
   }
 });
 test('even Bold leaves clearance between the arrow and either frame in every direction', async ({
@@ -199,7 +250,8 @@ test('Single and Double Chevron provide 24 forms with shared cardinal geometry',
   expect(geometry).toHaveLength(8);
   for (const item of geometry) {
     expect(item.arms).toHaveLength(item.double ? 4 : 2);
-    for (const arm of item.arms) expect(arm).toBeCloseTo((item.double ? 4 : 5.5) * Math.SQRT2, 5);
+    for (const arm of item.arms)
+      expect(arm).toBeCloseTo((item.double ? 8.25 : 9.125) * Math.SQRT2, 5);
     for (const center of item.center) expect(center).toBeCloseTo(12, 5);
   }
   if (info.project.name === 'chromium')

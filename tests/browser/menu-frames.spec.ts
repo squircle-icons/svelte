@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('Menu frames retain the shared bars, true Bold cutouts and 2px exterior margins', async ({
+test('Menu enlarges None while preserving smaller framed bars and true Bold cutouts', async ({
   page,
 }) => {
   await page.goto('/');
@@ -10,6 +10,7 @@ test('Menu frames retain the shared bars, true Bold cutouts and 2px exterior mar
       document.querySelector(`[data-testid="menu-frame-${frame}-${style}"] svg`)! as SVGSVGElement;
     const original = svg('none', 'outline').querySelector('path')!.getAttribute('d');
     const filled = svg('none', 'filled').querySelector('path')!;
+    const standaloneWidth = filled.getBBox().width;
     return ['square', 'circle'].map((frame) => {
       const outline = svg(frame, 'outline');
       const boxed = svg(frame, 'filled');
@@ -18,19 +19,27 @@ test('Menu frames retain the shared bars, true Bold cutouts and 2px exterior mar
       const hole = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       hole.setAttribute('d', parts.slice(1).join(' '));
       boxed.append(hole);
+      const smallGlyph = [...outline.querySelectorAll('path')].at(-1)!;
+      const reference = smallGlyph.cloneNode() as SVGPathElement;
+      reference.setAttribute('stroke-width', '2.5');
+      reference.setAttribute('visibility', 'hidden');
+      outline.append(reference);
       let mismatches = 0;
-      for (let x = 4.13; x < 20; x += 0.17)
-        for (let y = 4.19; y < 20; y += 0.17) {
+      // Sample away from exact capsule boundaries, whose inclusion varies by engine.
+      for (let x = 4.137; x < 20; x += 0.157)
+        for (let y = 4.193; y < 20; y += 0.157) {
           const point = new DOMPoint(x, y);
-          if (hole.isPointInFill(point) !== filled.isPointInFill(point)) mismatches++;
+          if (hole.isPointInFill(point) !== reference.isPointInStroke(point)) mismatches++;
         }
       hole.remove();
+      reference.remove();
       const b = shape.getBBox();
       // At Bold, the border's nearest radial inner edge is 7.875 units from center.
       const circleBoldClearance = 7.875 - Math.hypot(5, 4) - 1.25;
       return {
         glyph: [...outline.querySelectorAll('path')].at(-1)!.getAttribute('d'),
         original,
+        standaloneWidth,
         mismatches,
         margins: [b.x, b.y, 24 - b.x - b.width, 24 - b.y - b.height],
         circleBoldClearance,
@@ -42,7 +51,9 @@ test('Menu frames retain the shared bars, true Bold cutouts and 2px exterior mar
     });
   });
   for (const result of results) {
-    expect(result.glyph).toBe(result.original);
+    expect(result.glyph).not.toBe(result.original);
+    expect(result.glyph).toBe(results[0].glyph);
+    expect(result.standaloneWidth).toBeCloseTo(20, 4);
     expect(result.mismatches).toBe(0);
     result.margins.forEach((margin) => expect(margin).toBeCloseTo(2, 5));
     expect(result.circleBoldClearance).toBeGreaterThan(0.2);

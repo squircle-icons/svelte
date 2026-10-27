@@ -92,7 +92,7 @@ for (const style of ['outline', 'filled'])
           const [a, b] = await Promise.all([
             render(
               style === 'filled'
-                ? '[data-testid="menu-x-morph-fixture"] svg:last-child'
+                ? '[data-testid="menu-x-intermediate-filled"] svg'
                 : '[aria-label="Menu X fixture"]',
             ),
             render(

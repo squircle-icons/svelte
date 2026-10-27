@@ -15,12 +15,13 @@ for (const icon of ['plus', 'minus', 'x']) {
       const bold = svg('bold', 'none'),
         filled = svg('filled', 'none'),
         outline = svg('outline', 'none');
-      const compare = (reference: SVGSVGElement, shape: SVGPathElement) => {
+      const compare = (reference: SVGSVGElement, shape: SVGPathElement, glyphOnly = false) => {
         let mismatch = 0,
           total = 0;
-        const paths = [...reference.querySelectorAll('path')];
-        for (let x = 5.13; x < 19; x += 0.19)
-          for (let y = 5.17; y < 19; y += 0.19) {
+        const allPaths = [...reference.querySelectorAll('path')];
+        const paths = glyphOnly ? allPaths.slice(-1) : allPaths;
+        for (let x = 1.137; x < 23; x += 0.19)
+          for (let y = 1.193; y < 23; y += 0.19) {
             const p = new DOMPoint(x, y);
             if (paths.some((path) => path.isPointInStroke(p)) !== shape.isPointInFill(p))
               mismatch++;
@@ -37,7 +38,7 @@ for (const icon of ['plus', 'minus', 'x']) {
         hole.setAttribute('d', parts.slice(1).join(' '));
         hole.setAttribute('visibility', 'hidden');
         boxed.append(hole);
-        const difference = compare(outline, hole);
+        const difference = compare(svg('outline', frame), hole, true);
         hole.remove();
         const b = path.getBBox();
         return {
@@ -61,7 +62,8 @@ for (const icon of ['plus', 'minus', 'x']) {
     expect(result.boldDifference).toBeLessThan(0.002);
     for (const frame of result.frames) {
       expect(frame.difference).toBeLessThan(0.002);
-      expect(frame.glyph).toBe(result.glyph);
+      expect(frame.glyph).not.toBe(result.glyph);
+      expect(frame.glyph).toBe(result.frames[0].glyph);
       for (const margin of frame.margins) expect(margin).toBeCloseTo(2, 4);
     }
   });
@@ -75,7 +77,7 @@ test('Plus and X keep equal optical dimensions; Minus shares their width', async
     }),
   );
   for (const box of boxes) {
-    expect(box[0]).toBeCloseTo(10.75, 5);
+    expect(box[0]).toBeCloseTo(19.25, 5);
     expect(box[2]).toBe(12);
     expect(box[3]).toBe(12);
   }

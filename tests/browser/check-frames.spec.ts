@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('Check None Filled follows Bold and both frames retain that exact transparent mark', async ({
+test('Check None is larger while frames keep their own smaller Bold transparent mark', async ({
   page,
 }) => {
   await page.goto('/');
@@ -20,16 +20,50 @@ test('Check None Filled follows Bold and both frames retain that exact transpare
       const hole = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       hole.setAttribute('d', parts.slice(1).join(' '));
       boxed.append(hole);
+      const smallGlyph = [...svg(frame, 'outline').querySelectorAll('path')].at(-1)!;
+      const reference = smallGlyph.cloneNode() as SVGPathElement;
+      reference.setAttribute('stroke-width', '2.5');
+      reference.setAttribute('visibility', 'hidden');
+      svg(frame, 'outline').append(reference);
+      const coordinates = smallGlyph
+        .getAttribute('d')!
+        .match(/-?\d*\.?\d+/g)!
+        .map(Number);
+      const vertices = Array.from({ length: coordinates.length / 2 }, (_, i) =>
+        coordinates.slice(i * 2, i * 2 + 2),
+      );
+      const distanceToMark = (x: number, y: number) =>
+        Math.min(
+          ...vertices.slice(1).map((b, i) => {
+            const a = vertices[i],
+              dx = b[0] - a[0],
+              dy = b[1] - a[1];
+            const t = Math.max(
+              0,
+              Math.min(1, ((x - a[0]) * dx + (y - a[1]) * dy) / (dx * dx + dy * dy)),
+            );
+            return Math.hypot(x - a[0] - t * dx, y - a[1] - t * dy);
+          }),
+        );
       let mismatches = 0;
+      const mismatchPoints: number[][] = [];
       for (let x = 3.137; x < 21; x += 0.157)
         for (let y = 3.193; y < 21; y += 0.157) {
+          // SVG engines flatten round stroke caps differently within .001 native pixels.
+          // Keep exact source/cap checks in Core; compare rendered interiors outside that band.
+          if (Math.abs(distanceToMark(x, y) - 1.25) < 0.001) continue;
           const point = new DOMPoint(x, y);
-          if (hole.isPointInFill(point) !== ink(point)) mismatches++;
+          if (hole.isPointInFill(point) !== reference.isPointInStroke(point)) {
+            mismatches++;
+            mismatchPoints.push([x, y]);
+          }
         }
       hole.remove();
+      reference.remove();
       const b = path.getBBox();
       return {
         mismatches,
+        mismatchPoints,
         glyph: [...svg(frame, 'outline').querySelectorAll('path')].at(-1)!.getAttribute('d'),
         original,
         margins: [b.x, b.y, 24 - b.x - b.width, 24 - b.y - b.height],
@@ -42,15 +76,19 @@ test('Check None Filled follows Bold and both frames retain that exact transpare
       framed,
       standaloneWeight: outline.getAttribute('stroke-width'),
       standaloneStroke: filled.getAttribute('stroke'),
-      noStandaloneBox: !ink(new DOMPoint(3, 12)),
+      noStandaloneBox: !ink(new DOMPoint(3, 3)),
+      standaloneWidth: filled.getBBox().width,
     };
   });
   expect(results.standaloneWeight).toBe('1.75');
   expect(results.standaloneStroke).toBe('none');
   expect(results.noStandaloneBox).toBe(true);
+  // Browser arc extrema use an approximation; source contours have exact Core checks.
+  expect(results.standaloneWidth).toBeCloseTo(20, 2);
   for (const frame of results.framed) {
-    expect(frame.mismatches).toBe(0);
-    expect(frame.glyph).toBe(frame.original);
+    expect(frame.mismatches, JSON.stringify(frame.mismatchPoints)).toBe(0);
+    expect(frame.glyph).not.toBe(frame.original);
+    expect(frame.glyph).toBe(results.framed[0].glyph);
     frame.margins.forEach((margin) => expect(margin).toBeCloseTo(2, 4));
     expect(frame.border).toBe(true);
     expect(frame.stroke).toBe('none');

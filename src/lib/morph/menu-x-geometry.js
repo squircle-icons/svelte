@@ -9,27 +9,25 @@ const mix = (a, b, p) => a + (b - a) * p;
 const fmt = (n) => String(Math.round(n * 1e8) / 1e8);
 const point = (p) => p.map(fmt).join(' ');
 export function menuXFrame(progress, geometry, frame = 'square') {
+  const mark = geometry.variants?.[frame] ?? geometry;
   const p = clamp(Number.isFinite(progress) ? progress : 0);
   if (p === 0)
-    return { ...geometry.menu, filled: geometry.frames[frame].from, middle: '', middleWidth: 0 };
-  if (p === 1)
-    return { ...geometry.x, filled: geometry.frames[frame].to, middle: '', middleWidth: 0 };
+    return { ...mark.menu, filled: geometry.frames[frame].from, middle: '', middleWidth: 0 };
+  if (p === 1) return { ...mark.x, filled: geometry.frames[frame].to, middle: '', middleWidth: 0 };
   const q = smooth(p),
-    center = geometry.center;
-  const offset = geometry.menuOffset * (1 - smooth(p / 0.7));
+    center = mark.center;
+  const offset = mark.menuOffset * (1 - smooth(p / 0.7));
   const angle = (Math.PI / 4) * smooth((p - 0.15) / 0.85);
-  const extent = mix(geometry.menuExtent, geometry.xExtent * Math.SQRT2, q);
+  const extent = mix(mark.menuExtent, mark.xExtent * Math.SQRT2, q);
   const line = (cy, a) => {
     const dx = Math.cos(a) * extent,
       dy = Math.sin(a) * extent;
     return `M${point([center[0] - dx, cy - dy])} L${point([center[0] + dx, cy + dy])}`;
   };
   const remaining = 1 - smooth(p / 0.65);
-  const middleExtent = geometry.menuExtent * remaining;
+  const middleExtent = mark.menuExtent * remaining;
   const width =
-    frame === 'none'
-      ? geometry.filledStrokeWidth
-      : mix(geometry.filledStrokeWidth, geometry.strokeWidth, q);
+    frame === 'none' ? mark.filledStrokeWidth : mix(mark.filledStrokeWidth, mark.strokeWidth, q);
   const glyph = movingStrokeUnion([
     { center: { x: center[0], y: center[1] - offset }, angle, length: extent, radius: width / 2 },
     {
@@ -51,7 +49,7 @@ export function menuXFrame(progress, geometry, frame = 'square') {
       remaining > 1e-7
         ? `M${point([center[0] - middleExtent, center[1]])} H${fmt(center[0] + middleExtent)}`
         : '',
-    middleWidth: geometry.strokeWidth * remaining,
+    middleWidth: mark.strokeWidth * remaining,
     filledWidth: width,
     filled: geometry.frames[frame].box + ' ' + glyph,
   };

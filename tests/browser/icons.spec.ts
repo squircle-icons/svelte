@@ -209,28 +209,22 @@ for (const icon of [
   'upload',
   'trash',
 ])
-  test(`Filled ${icon} preserves ${['menu', 'search', 'check'].includes(icon) ? 'Bold' : 'Regular'} Outline reference contours and openings at native and rotated poses`, async ({
+  test(`Filled ${icon} preserves ${['menu', 'search', 'check', 'plus', 'x'].includes(icon) ? 'Bold' : 'Regular'} Outline reference contours and openings at native and rotated poses`, async ({
     page,
   }) => {
     const results = await page.evaluate(async (icon) => {
       const size = 960;
       const paint = async (outline: boolean, rotation: number) => {
         const original = document.querySelector(
-          `[data-testid="${icon}-${outline ? 'outline' : 'filled'}-contour"] svg`,
+          ['plus', 'x'].includes(icon)
+            ? `[data-testid="math-${icon}-${outline ? 'outline' : 'filled'}-none"] svg`
+            : `[data-testid="${icon}-${outline ? 'outline' : 'filled'}-contour"] svg`,
         ) as SVGSVGElement;
         const svg = original.cloneNode(true) as SVGSVGElement;
         svg.setAttribute('width', String(size));
         svg.setAttribute('height', String(size));
         svg.setAttribute('fill', '#000');
         svg.setAttribute('stroke', outline ? '#000' : 'none');
-        if (!outline && ['plus', 'x'].includes(icon)) {
-          // Owner-requested Filled boxes are a deliberate exterior exception.
-          // The negative-space glyph matches the unchanged Outline exterior for both marks.
-          const path = svg.querySelector('path')!;
-          const parts = path.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
-          if (parts.length !== 2) throw new Error('Expected a box and glyph cutout subpaths');
-          path.setAttribute('d', parts.slice(1).join(' '));
-        }
 
         if (['camera', 'folder'].includes(icon)) {
           for (const group of svg.querySelectorAll(':scope > g'))
@@ -243,7 +237,7 @@ for (const icon of [
         if (outline) {
           svg.setAttribute(
             'stroke-width',
-            ['menu', 'search', 'check'].includes(icon) ? '2.5' : '1.75',
+            ['menu', 'search', 'check', 'plus', 'x'].includes(icon) ? '2.5' : '1.75',
           );
           // Line marks keep an open interior; Filled Copy paints only its front page solid.
           if (
@@ -451,7 +445,7 @@ test('Round 3 exposes six packed Outline/Filled pairs on light and dark surfaces
   }
 });
 
-test('X shares identical Outline and Filled glyphs inside a box with 2px outer margins', async ({
+test('X None preserves the Plus-derived construction at larger native optical dimensions', async ({
   page,
 }, info) => {
   const result = await page.evaluate(async () => {
@@ -461,20 +455,15 @@ test('X shares identical Outline and Filled glyphs inside a box with 2px outer m
       const outline = sourceStyle === 'outline';
       const armScale = name === 'plus' ? Math.SQRT2 : 1;
       const original = document.querySelector(
-        `[data-testid="${name}-${sourceStyle}-contour"] svg`,
+        `[data-testid="math-${name}-${sourceStyle}-none"] svg`,
       ) as SVGSVGElement;
       const svg = original.cloneNode(true) as SVGSVGElement;
       svg.setAttribute('width', String(size));
       svg.setAttribute('height', String(size));
       svg.setAttribute('fill', outline ? 'none' : '#000');
       svg.setAttribute('stroke', outline ? '#000' : 'none');
-      if (outline) svg.setAttribute('stroke-width', String(1.75 / armScale));
-      else {
-        const path = svg.querySelector('path')!;
-        const parts = path.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
-        if (parts.length !== 2) throw new Error('Expected a box and a glyph cutout');
-        path.setAttribute('d', parts[1]);
-      }
+      if (outline)
+        svg.setAttribute('stroke-width', String((style === 'filled' ? 2.5 : 1.75) / armScale));
 
       for (const group of svg.querySelectorAll(':scope > g'))
         group.setAttribute(
@@ -539,8 +528,8 @@ test('X shares identical Outline and Filled glyphs inside a box with 2px outer m
         .getAttribute('stroke-width'),
     };
   });
-  expect(result.lengths[0]).toBeCloseTo(18, 4);
-  expect(result.lengths[1]).toBeCloseTo(18 * Math.SQRT2, 4);
+  expect(result.lengths[0]).toBeCloseTo(35, 4);
+  expect(result.lengths[1]).toBeCloseTo(35 * Math.SQRT2, 4);
   expect(result.xStroke).toBe('1.75');
   for (const pose of result.poses) {
     expect(pose.distantMismatches, JSON.stringify(pose)).toBe(0);
@@ -572,7 +561,7 @@ for (const icon of ['plus', 'x'])
   }) => {
     const result = await page.evaluate((icon) => {
       const filled = document.querySelector(
-        `[data-testid="${icon}-filled-contour"] path`,
+        `[data-testid="math-${icon}-filled-square"] path`,
       ) as SVGPathElement;
       const cutout = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       const parts = filled.getAttribute('d')!.match(/[Mm][^Mm]*/g)!;
@@ -612,12 +601,11 @@ for (const icon of ['plus', 'x'])
     expect(result.rounderCorner).toBe(true);
   });
 
-test('X Outline matches the inner Filled glyph with unchanged stroke and 4px artboard spacing', async ({
-  page,
-}) => {
+test('X None keeps fixed Regular stroke and 2.375px native outline margins', async ({ page }) => {
   const result = await page
-    .getByTestId('x-outline-contour')
+    .getByTestId('math-x-outline-none')
     .locator('svg')
+    .first()
     .evaluate((element) => {
       const svg = element as SVGSVGElement;
       const box = (svg.querySelector('path') as SVGPathElement).getBBox();
@@ -635,7 +623,7 @@ test('X Outline matches the inner Filled glyph with unchanged stroke and 4px art
     });
   expect(result.stroke).toBe(1.75);
   expect(result.cap).toBe('round');
-  for (const margin of result.margins) expect(margin).toBeCloseTo(6.625, 5);
+  for (const margin of result.margins) expect(margin).toBeCloseTo(2.375, 5);
 });
 
 test('unboxed Camera and Folder retain horizontal proportions with a 2px primary pair', async ({
@@ -733,12 +721,15 @@ for (const icon of ['menu', 'search'])
       return {
         margins: [box.x, 24 - box.x - box.width, box.y, 24 - box.y - box.height],
         emptyCorner: !ink(3, 3),
-        emptyCenter: !ink(icon === 'search' ? 9.95977012 : 12, icon === 'search' ? 9.95977012 : 10),
-        boldInk: icon === 'menu' ? ink(12, 8) : ink(3.125, 9.95977012),
+        emptyCenter: !ink(
+          icon === 'search' ? 9.95977012 : 12,
+          icon === 'search' ? 9.95977012 : 8.5,
+        ),
+        boldInk: icon === 'menu' ? ink(12, 5) : ink(3.125, 9.95977012),
       };
     }, icon);
     for (const margin of values.margins.slice(0, icon === 'search' ? 4 : 2))
-      expect(margin).toBeCloseTo(icon === 'menu' ? 5.75 : 2, 3);
+      expect(margin).toBeCloseTo(2, 3);
     expect(values.emptyCorner).toBe(true);
     expect(values.emptyCenter).toBe(true);
     expect(values.boldInk).toBe(true);
@@ -918,16 +909,16 @@ for (const icon of [
       };
     }, icon);
     expect(result.stroke).toBe('1.75');
-    expect(result.shaft).toBeCloseTo(12.25, 5);
-    expect(result.arm).toBeCloseTo(4.59375 * Math.SQRT2, 5);
+    expect(result.shaft).toBeCloseTo(18.25, 5);
+    expect(result.arm).toBeCloseTo(6.84375 * Math.SQRT2, 5);
     const diagonal = icon.split('-').length === 3;
-    if (diagonal) for (const margin of result.margins) expect(margin).toBeCloseTo(6.79397097, 4);
+    if (diagonal) for (const margin of result.margins) expect(margin).toBeCloseTo(4.67265062, 2);
     else
       for (const margin of result.margins.slice(
         icon === 'arrow-left' || icon === 'arrow-right' ? 0 : 2,
         icon === 'arrow-left' || icon === 'arrow-right' ? 2 : 4,
       ))
-        expect(margin).toBeCloseTo(5, 4);
+        expect(margin).toBeCloseTo(2, 4);
   });
 
 test('Round 5 exposes six dual-style directions at actual sizes on light and dark', async ({
