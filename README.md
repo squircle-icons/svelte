@@ -110,3 +110,5 @@ Filled box cuts out exactly the same moving glyph as Outline. Both pairs share
 one reversible progress controller. No stroke-width control is provided.
 
 The Plus ↔ X sequence folds into a single horizontal stroke and immediately opens into X with no pause; reversing follows the same sequence. The Filled box remains upright during the single-line phase. Default1× uses40% of the shared spring rate to make both folds legible; the speed prop scales this slower pair pace.
+
+The owner approved the current Plus ↔ X motion on2026-10-27: continuous horizontal merge with no midpoint hold, the slower default pace and smooth reversal in both styles. Preserve the implementation accepted in adapter commit `190b84b49ea2e058fc99d358298a392c0271eaee`; see the core approved motion reference for construction details.
