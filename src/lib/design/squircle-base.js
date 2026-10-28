@@ -277,49 +277,35 @@ function layeredFolder(exponent) {
     ...squarePortion(exponent, 0, 0, Math.PI / 2),
     ...squarePortion(exponent, 1, 0, Math.PI / 2),
   ];
-  // A shared vertical-tangent transition replaces the rear form's hidden lower-left
-  // return. Its monotone X avoids the pinched notch made by two intersecting edges.
-  const left = rear.cx - rear.rx,
-    drop = front.cy - rear.cy;
-  const connector = Array.from({ length: 6 }, (_, i) => [
-    i < 3 ? front.cx - front.rx : left,
-    front.cy - (drop * i) / 5,
-  ]);
-  const upperRight = layerCurves(exponent, angleB, 2 * Math.PI, front);
-  const behind = layerCurves(exponent, Math.PI, rearEnd, rear);
-  // Resolve the open front boundary against the actual inset connector, rather
-  // than stopping it at the old exterior intersection and overlaying round caps.
-  const half = STUDY_STROKE / 2;
-  const intersection = (t) => {
-    const p = profilePoint(connector, t, -half).point;
-    let lo = Math.PI,
-      hi = angleB;
-    for (let j = 0; j < 48; j++) {
-      const mid = (lo + hi) / 2;
-      if (layerPoint(exponent, mid, front, -half).point[0] < p[0]) lo = mid;
-      else hi = mid;
-    }
-    const angle = (lo + hi) / 2;
-    return { angle, delta: p[1] - layerPoint(exponent, angle, front, -half).point[1] };
+  // Both layers share this actual Square side. It is drawn once: there is no
+  // rear lower-left return or connector that turns back inward toward a tab stem.
+  const shoulderAngle = 0.4,
+    seamAngle = 0;
+  const sharedLeft = squarePortion(exponent, 2, 0, shoulderAngle);
+  const squareAt = (angle) => {
+    const p = studyPoint(exponent, angle);
+    return { point: [12 - p.point[0], 12 - p.point[1]], tangent: times(p.tangent, -1) };
   };
-  let lo = 1 / 128,
-    hi = lo,
-    previousDelta = intersection(lo).delta;
-  for (let i = 2; i <= 128; i++) {
-    hi = i / 128;
-    const delta = intersection(hi).delta;
-    if (delta * previousDelta <= 0) break;
-    lo = hi;
-    previousDelta = delta;
-  }
-  const sharedEndpoint = hi === lo;
-  for (let i = 0; !sharedEndpoint && i < 48; i++) {
-    const mid = (lo + hi) / 2;
-    if (intersection(lo).delta * intersection(mid).delta <= 0) hi = mid;
-    else lo = mid;
-  }
-  // Rounder profiles meet at the common left endpoint instead of crossing again.
-  const connectionAngle = sharedEndpoint ? Math.PI : intersection((lo + hi) / 2).angle;
+  const join = (p, d, q, e) => {
+    const delta = minus(q, p),
+      det = d[0] * e[1] - d[1] * e[0];
+    const t = (delta[0] * e[1] - delta[1] * e[0]) / det;
+    const intersection = plus(p, times(d, t));
+    return [
+      p,
+      plus(p, times(minus(intersection, p), 0.55)),
+      plus(q, times(minus(intersection, q), 0.55)),
+      q,
+    ];
+  };
+  const shoulder = squareAt(shoulderAngle),
+    rearTop = layerPoint(exponent, 1.5 * Math.PI, rear);
+  const roof = join(shoulder.point, shoulder.tangent, rearTop.point, rearTop.tangent);
+  const upperRight = layerCurves(exponent, angleB, 2 * Math.PI, front);
+  const behind = layerCurves(exponent, 1.5 * Math.PI, rearEnd, rear);
+  const seamStart = squareAt(seamAngle),
+    seamEnd = layerPoint(exponent, 4.2, front);
+  const frontShoulder = join(seamStart.point, seamStart.tangent, seamEnd.point, seamEnd.tangent);
   // Uniform recentering preserves the accepted lower curve vectors and fixed native weight.
   const shift = 12 - (rear.cy - rear.ry + 22) / 2;
   const move = (profiles) =>
@@ -328,8 +314,8 @@ function layeredFolder(exponent) {
       p.fitSteps = profile.fitSteps;
       return p;
     });
-  const union = move([...lower, connector, ...behind, ...upperRight]);
-  const frontEdge = move(layerCurves(exponent, connectionAngle, angleB, front));
+  const union = move([...lower, ...sharedLeft, roof, ...behind, ...upperRight]);
+  const frontEdge = move([frontShoulder, ...layerCurves(exponent, 4.2, angleB, front)]);
   const outline =
     curveRun(union, -STUDY_STROKE / 2, true, true) + curveRun(frontEdge, -STUDY_STROKE / 2, false);
   const startX = a[0] + 1.8,

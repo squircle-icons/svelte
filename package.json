@@ -1305,7 +1305,7 @@
     "vitest": "5.0.5",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
-    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-e0a282df4e06.tgz"
+    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-4a120b313c69.tgz"
   },
   "description": "Original Outline and Filled icons as native Svelte 5 components.",
   "repository": {
