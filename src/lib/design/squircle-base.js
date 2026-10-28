@@ -272,15 +272,54 @@ function layeredFolder(exponent) {
     b = layerPoint(exponent, rearEnd, rear).point;
   const frontAngle = (x) =>
     Math.atan2(-(front.cy - frontY(x)) / front.ry, (x - front.cx) / front.rx) + 2 * Math.PI;
-  const angleA = frontAngle(a[0]),
-    angleB = frontAngle(b[0]);
+  const angleB = frontAngle(b[0]);
   const lower = [
     ...squarePortion(exponent, 0, 0, Math.PI / 2),
     ...squarePortion(exponent, 1, 0, Math.PI / 2),
   ];
-  const upperLeft = layerCurves(exponent, Math.PI, angleA, front),
-    upperRight = layerCurves(exponent, angleB, 2 * Math.PI, front);
-  const behind = layerCurves(exponent, rearStart, rearEnd, rear);
+  // A shared vertical-tangent transition replaces the rear form's hidden lower-left
+  // return. Its monotone X avoids the pinched notch made by two intersecting edges.
+  const left = rear.cx - rear.rx,
+    drop = front.cy - rear.cy;
+  const connector = Array.from({ length: 6 }, (_, i) => [
+    i < 3 ? front.cx - front.rx : left,
+    front.cy - (drop * i) / 5,
+  ]);
+  const upperRight = layerCurves(exponent, angleB, 2 * Math.PI, front);
+  const behind = layerCurves(exponent, Math.PI, rearEnd, rear);
+  // Resolve the open front boundary against the actual inset connector, rather
+  // than stopping it at the old exterior intersection and overlaying round caps.
+  const half = STUDY_STROKE / 2;
+  const intersection = (t) => {
+    const p = profilePoint(connector, t, -half).point;
+    let lo = Math.PI,
+      hi = angleB;
+    for (let j = 0; j < 48; j++) {
+      const mid = (lo + hi) / 2;
+      if (layerPoint(exponent, mid, front, -half).point[0] < p[0]) lo = mid;
+      else hi = mid;
+    }
+    const angle = (lo + hi) / 2;
+    return { angle, delta: p[1] - layerPoint(exponent, angle, front, -half).point[1] };
+  };
+  let lo = 1 / 128,
+    hi = lo,
+    previousDelta = intersection(lo).delta;
+  for (let i = 2; i <= 128; i++) {
+    hi = i / 128;
+    const delta = intersection(hi).delta;
+    if (delta * previousDelta <= 0) break;
+    lo = hi;
+    previousDelta = delta;
+  }
+  const sharedEndpoint = hi === lo;
+  for (let i = 0; !sharedEndpoint && i < 48; i++) {
+    const mid = (lo + hi) / 2;
+    if (intersection(lo).delta * intersection(mid).delta <= 0) hi = mid;
+    else lo = mid;
+  }
+  // Rounder profiles meet at the common left endpoint instead of crossing again.
+  const connectionAngle = sharedEndpoint ? Math.PI : intersection((lo + hi) / 2).angle;
   // Uniform recentering preserves the accepted lower curve vectors and fixed native weight.
   const shift = 12 - (rear.cy - rear.ry + 22) / 2;
   const move = (profiles) =>
@@ -289,8 +328,8 @@ function layeredFolder(exponent) {
       p.fitSteps = profile.fitSteps;
       return p;
     });
-  const union = move([...lower, ...upperLeft, ...behind, ...upperRight]);
-  const frontEdge = move(layerCurves(exponent, angleA, angleB, front));
+  const union = move([...lower, connector, ...behind, ...upperRight]);
+  const frontEdge = move(layerCurves(exponent, connectionAngle, angleB, front));
   const outline =
     curveRun(union, -STUDY_STROKE / 2, true, true) + curveRun(frontEdge, -STUDY_STROKE / 2, false);
   const startX = a[0] + 1.8,
