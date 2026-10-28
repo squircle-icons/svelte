@@ -144,7 +144,7 @@ function originalProfiles(subject, exponent) {
         [2.75, 9.38217258],
       ],
     ];
-  return cutSquareFolder(exponent);
+  throw new Error('Folder uses its two layered study forms');
 }
 /** Keep the actual Square curve segments, then replace only its removed upper band. */
 function squarePortion(exponent, quarter, start, end) {
@@ -177,82 +177,142 @@ function squarePortion(exponent, quarter, start, end) {
     return profile;
   });
 }
-function direction(p) {
-  return times(p, 1 / Math.hypot(...p));
+function layerPoint(exponent, angle, layer, offset = 0) {
+  const c = Math.cos(angle),
+    ss = Math.sin(angle),
+    f = Math.abs(c) ** exponent + Math.abs(ss) ** exponent;
+  const df =
+    exponent *
+    (-(Math.abs(c) ** (exponent - 2)) * c * ss + Math.abs(ss) ** (exponent - 2) * ss * c);
+  const r = f ** (-1 / exponent),
+    dr = (-r * df) / (exponent * f);
+  const p = [layer.cx + layer.rx * r * c, layer.cy + layer.ry * r * ss];
+  const d = [layer.rx * (dr * c - r * ss), layer.ry * (dr * ss + r * c)];
+  const len = Math.hypot(...d),
+    normal = [d[1] / len, -d[0] / len];
+  return { point: plus(p, times(normal, offset)), tangent: d };
 }
-function cutJoin(a, b, u, v) {
-  const distance = Math.hypot(...minus(b, a));
-  const handle = (d) =>
-    Math.min(
-      distance * 0.28,
-      ...[0, 1]
-        .filter((axis) => Math.abs(d[axis]) > 0.001)
-        .map((axis) => (Math.abs(b[axis] - a[axis]) * 0.45) / Math.abs(d[axis])),
-    );
-  const ha = handle(u),
-    hb = handle(v);
-  return [
-    a,
-    plus(a, times(u, ha)),
-    plus(a, times(u, 2 * ha)),
-    minus(b, times(v, 2 * hb)),
-    minus(b, times(v, hb)),
-    b,
-  ];
+function layerCurves(exponent, start, end, layer) {
+  const step = Math.PI / 64,
+    cuts = [start];
+  for (let k = Math.floor(start / step) + 1; k * step < end - 1e-10; k++) cuts.push(k * step);
+  cuts.push(end);
+  return cuts.slice(1).map((a, i) => {
+    const p = layerPoint(exponent, cuts[i], layer),
+      q = layerPoint(exponent, a, layer),
+      h = a - cuts[i];
+    const curve = [
+      p.point,
+      plus(p.point, times(p.tangent, h / 3)),
+      minus(q.point, times(q.tangent, h / 3)),
+      q.point,
+    ];
+    curve.fitSteps = 1;
+    return curve;
+  });
 }
-function cutSquareFolder(exponent) {
-  const tabY = 5.8,
-    shelfY = 8.67233352,
-    leftCutY = 7.2,
-    rightCutY = 10.8;
-  const squareX = (y) => 10 * (1 - (Math.abs(y - 12) / 10) ** exponent) ** (1 / exponent);
-  const leftAngle = Math.atan2(12 - leftCutY, squareX(leftCutY));
-  const rightAngle = Math.atan2(squareX(rightCutY), 12 - rightCutY);
-  const left = squarePortion(exponent, 2, 0, leftAngle),
-    right = squarePortion(exponent, 3, rightAngle, Math.PI / 2);
-  const leftEnd = left.at(-1),
-    rightStart = right[0];
-  const a = leftEnd.at(-1),
-    b = rightStart[0];
-  const profiles = [
+function curveRun(profiles, offset, closed, roundedJoins = false) {
+  let d = `M${xy(profilePoint(profiles[0], 0, offset).point)}`;
+  for (let k = 0; k < profiles.length; k++) {
+    const profile = profiles[k];
+    if (k && roundedJoins) {
+      const previous = profilePoint(profiles[k - 1], 1, offset).point,
+        next = profilePoint(profile, 0, offset).point;
+      if (Math.hypot(...minus(previous, next)) > 0.00001) {
+        const center = profile[0],
+          a = minus(previous, center),
+          b = minus(next, center);
+        const sweep = a[0] * b[1] - a[1] * b[0] > 0 ? 1 : 0;
+        d += `A${Math.abs(offset)} ${Math.abs(offset)} 0 0 ${sweep} ${xy(next)}`;
+      }
+    }
+    const count = profile.fitSteps ?? 32,
+      step = 1 / count;
+    for (let i = 0; i < count; i++) {
+      const a = profilePoint(profile, i * step, offset),
+        b = profilePoint(profile, (i + 1) * step, offset);
+      d += `C${xy(plus(a.point, times(a.tangent, step / 3)))} ${xy(minus(b.point, times(b.tangent, step / 3)))} ${xy(b.point)}`;
+    }
+  }
+  return d + (closed ? 'Z' : '');
+}
+/** Two own native squircle forms: front panel occludes a smaller rear form. */
+function layeredFolder(exponent) {
+  const front = { cx: 12, cy: 12, rx: 10, ry: 3.5 };
+  const rear = { cx: 7.5, cy: 8.1, rx: 4.4, ry: 3.2 };
+  const frontY = (x) =>
+    front.cy - front.ry * (1 - (Math.abs(x - front.cx) / front.rx) ** exponent) ** (1 / exponent);
+  const difference = (angle) => {
+    const p = layerPoint(exponent, angle, rear).point;
+    return p[1] - frontY(p[0]);
+  };
+  const roots = [];
+  let previous = 0,
+    previousValue = difference(0);
+  for (let i = 1; i <= 512; i++) {
+    const angle = (i * 2 * Math.PI) / 512,
+      value = difference(angle);
+    if (value * previousValue < 0) {
+      let lo = previous,
+        hi = angle;
+      for (let j = 0; j < 48; j++) {
+        const mid = (lo + hi) / 2;
+        if (difference(lo) * difference(mid) <= 0) hi = mid;
+        else lo = mid;
+      }
+      roots.push((lo + hi) / 2);
+    }
+    previous = angle;
+    previousValue = value;
+  }
+  if (roots.length !== 2) throw Error('Folder layers require two clean intersections');
+  const rearStart = roots[1],
+    rearEnd = roots[0] + 2 * Math.PI;
+  const a = layerPoint(exponent, rearStart, rear).point,
+    b = layerPoint(exponent, rearEnd, rear).point;
+  const frontAngle = (x) =>
+    Math.atan2(-(front.cy - frontY(x)) / front.ry, (x - front.cx) / front.rx) + 2 * Math.PI;
+  const angleA = frontAngle(a[0]),
+    angleB = frontAngle(b[0]);
+  const lower = [
     ...squarePortion(exponent, 0, 0, Math.PI / 2),
     ...squarePortion(exponent, 1, 0, Math.PI / 2),
-    ...left,
-    cutJoin(a, [5.4, tabY], direction(minus(a, leftEnd.at(-2))), [1, 0]),
-    [
-      [5.4, tabY],
-      [8.2, tabY],
-    ],
-    [
-      [8.2, tabY],
-      [8.41549892, tabY],
-      [8.62183303, 5.88717775],
-      [8.77204818, 6.0416954],
-    ],
-    [
-      [8.77204818, 6.0416954],
-      [11.0210411, 8.35510854],
-    ],
-    [
-      [11.0210411, 8.35510854],
-      [11.21819706, 8.55791263],
-      [11.489011, 8.67233352],
-      [11.77185459, 8.67233352],
-    ],
-    [
-      [11.77185459, shelfY],
-      [18.3, shelfY],
-    ],
-    cutJoin([18.3, shelfY], b, [1, 0], direction(minus(rightStart[1], b))),
-    ...right,
   ];
-  // The lower curve retains its Square geometry; only a uniform recenter follows the cut.
-  const shift = 12 - (22 + tabY) / 2;
-  return profiles.map((profile) => {
-    const moved = profile.map(([x, y]) => [x, y + shift]);
-    moved.fitSteps = profile.fitSteps;
-    return moved;
-  });
+  const upperLeft = layerCurves(exponent, Math.PI, angleA, front),
+    upperRight = layerCurves(exponent, angleB, 2 * Math.PI, front);
+  const behind = layerCurves(exponent, rearStart, rearEnd, rear);
+  // Uniform recentering preserves the accepted lower curve vectors and fixed native weight.
+  const shift = 12 - (rear.cy - rear.ry + 22) / 2;
+  const move = (profiles) =>
+    profiles.map((profile) => {
+      const p = profile.map(([x, y]) => [x, y + shift]);
+      p.fitSteps = profile.fitSteps;
+      return p;
+    });
+  const union = move([...lower, ...upperLeft, ...behind, ...upperRight]);
+  const frontEdge = move(layerCurves(exponent, angleA, angleB, front));
+  const outline =
+    curveRun(union, -STUDY_STROKE / 2, true, true) + curveRun(frontEdge, -STUDY_STROKE / 2, false);
+  const startX = a[0] + 1.8,
+    endX = b[0] - 1.5;
+  const counter = move(layerCurves(exponent, frontAngle(startX), frontAngle(endX), front));
+  const first = profilePoint(counter[0], 0, 0).point;
+  const innerLast = profilePoint(counter.at(-1), 1, -STUDY_STROKE).point;
+  const reverse = counter
+    .slice()
+    .reverse()
+    .map((profile) => {
+      const p = profile.slice().reverse();
+      p.fitSteps = profile.fitSteps;
+      return p;
+    });
+  const backwards = curveRun(reverse, STUDY_STROKE, false).replace(/^M[^C]+/, '');
+  const hole =
+    curveRun(counter, 0, false) +
+    `A.75 .75 0 0 1 ${xy(innerLast)}` +
+    backwards +
+    `A.75 .75 0 0 1 ${xy(first)}Z`;
+  return { outline, filled: curveRun(union, 0, true) + hole };
 }
 function originalBody(profiles, offset) {
   let d = `M${xy(profilePoint(profiles[0], 0, offset).point)}`;
@@ -279,10 +339,11 @@ export function prototypeStudy(subject, exponent = DEFAULT_ROUNDNESS) {
   if (subject !== 'camera' && subject !== 'folder') throw new RangeError('Unknown study subject');
   if (!Number.isFinite(exponent) || exponent < 2 || exponent > 5)
     throw new RangeError('Study exponent must be between2 and5');
+  if (subject === 'folder') return layeredFolder(exponent);
   const profiles = originalProfiles(subject, exponent),
     half = STUDY_STROKE / 2;
-  const centerline = originalBody(profiles, subject === 'folder' ? -half : 0),
-    exterior = originalBody(profiles, subject === 'folder' ? 0 : half);
+  const centerline = originalBody(profiles, 0),
+    exterior = originalBody(profiles, half);
   if (subject === 'camera') {
     const lensY = 12.8227459,
       indicatorY = 9.13285542,
@@ -298,11 +359,7 @@ export function prototypeStudy(subject, exponent = DEFAULT_ROUNDNESS) {
         circlePath(17.88388062, indicatorY, half),
     };
   }
-  const y = 12.2 + (12 - (22 + 5.8) / 2),
-    left = 4.76980874 + half,
-    right = 19.23019126 - half;
-  const slot = `M${round(left)} ${round(y - half)}H${round(right)}a${half} ${half} 0 0 1 0 ${STUDY_STROKE}H${round(left)}a${half} ${half} 0 0 1 0 ${-STUDY_STROKE}Z`;
-  return { outline: centerline + `M2.75 ${y}H21.25`, filled: exterior + slot };
+  throw new Error('Unreachable study subject');
 }
 /** Explicit comparison references, not additional production icons. */
 export function studyReference(kind) {
