@@ -144,48 +144,115 @@ function originalProfiles(subject, exponent) {
         [2.75, 9.38217258],
       ],
     ];
+  return cutSquareFolder(exponent);
+}
+/** Keep the actual Square curve segments, then replace only its removed upper band. */
+function squarePortion(exponent, quarter, start, end) {
+  const rotate = ([x, y]) =>
+    quarter === 0
+      ? [12 + x, 12 + y]
+      : quarter === 1
+        ? [12 - y, 12 + x]
+        : quarter === 2
+          ? [12 - x, 12 - y]
+          : [12 + y, 12 - x];
+  const vector = ([x, y]) =>
+    quarter === 0 ? [x, y] : quarter === 1 ? [-y, x] : quarter === 2 ? [-x, -y] : [y, -x];
+  const cuts = [start];
+  for (let i = 1; i < 32; i++) {
+    const angle = (i * Math.PI) / 64;
+    if (angle > start && angle < end) cuts.push(angle);
+  }
+  cuts.push(end);
+  return cuts.slice(1).map((angle, i) => {
+    const a = studyPoint(exponent, cuts[i]),
+      b = studyPoint(exponent, angle),
+      step = angle - cuts[i];
+    const p0 = rotate(a.point),
+      p1 = rotate(b.point),
+      d0 = vector(a.tangent),
+      d1 = vector(b.tangent);
+    const profile = [p0, plus(p0, times(d0, step / 3)), minus(p1, times(d1, step / 3)), p1];
+    profile.fitSteps = 1;
+    return profile;
+  });
+}
+function direction(p) {
+  return times(p, 1 / Math.hypot(...p));
+}
+function cutJoin(a, b, u, v) {
+  const distance = Math.hypot(...minus(b, a));
+  const handle = (d) =>
+    Math.min(
+      distance * 0.28,
+      ...[0, 1]
+        .filter((axis) => Math.abs(d[axis]) > 0.001)
+        .map((axis) => (Math.abs(b[axis] - a[axis]) * 0.45) / Math.abs(d[axis])),
+    );
+  const ha = handle(u),
+    hb = handle(v);
   return [
-    bodyCorner([2.75, 6.98354101], [2.75, 4.1911912], [5.66734982, 4.1911912], exponent),
-    [
-      [5.66734982, 4.1911912],
-      [8.07275391, 4.1911912],
-    ],
-    [
-      [8.07275391, 4.1911912],
-      [8.28825283, 4.1911912],
-      [8.49458694, 4.27836895],
-      [8.64480209, 4.4328866],
-    ],
-    [
-      [8.64480209, 4.4328866],
-      [10.89379501, 6.74629974],
-    ],
-    [
-      [10.89379501, 6.74629974],
-      [11.09095097, 6.94910383],
-      [11.36176491, 7.06352472],
-      [11.6446085, 7.06352472],
-    ],
-    [
-      [11.6446085, 7.06352472],
-      [18.13319778, 7.06352472],
-    ],
-    bodyCorner([18.13319778, 7.06352472], [21.25, 7.06352472], [21.25, 10.05532837], exponent),
-    [
-      [21.25, 10.05532837],
-      [21.25, 16.56768799],
-    ],
-    bodyCorner([21.25, 16.56768799], [21.25, 19.80880928], [17.88388062, 19.80880928], exponent),
-    [
-      [17.88388062, 19.80880928],
-      [6.11612034, 19.80880928],
-    ],
-    bodyCorner([6.11612034, 19.80880928], [2.75, 19.80880928], [2.75, 16.56768799], exponent),
-    [
-      [2.75, 16.56768799],
-      [2.75, 6.98354101],
-    ],
+    a,
+    plus(a, times(u, ha)),
+    plus(a, times(u, 2 * ha)),
+    minus(b, times(v, 2 * hb)),
+    minus(b, times(v, hb)),
+    b,
   ];
+}
+function cutSquareFolder(exponent) {
+  const tabY = 5.8,
+    shelfY = 8.67233352,
+    leftCutY = 7.2,
+    rightCutY = 10.8;
+  const squareX = (y) => 10 * (1 - (Math.abs(y - 12) / 10) ** exponent) ** (1 / exponent);
+  const leftAngle = Math.atan2(12 - leftCutY, squareX(leftCutY));
+  const rightAngle = Math.atan2(squareX(rightCutY), 12 - rightCutY);
+  const left = squarePortion(exponent, 2, 0, leftAngle),
+    right = squarePortion(exponent, 3, rightAngle, Math.PI / 2);
+  const leftEnd = left.at(-1),
+    rightStart = right[0];
+  const a = leftEnd.at(-1),
+    b = rightStart[0];
+  const profiles = [
+    ...squarePortion(exponent, 0, 0, Math.PI / 2),
+    ...squarePortion(exponent, 1, 0, Math.PI / 2),
+    ...left,
+    cutJoin(a, [5.4, tabY], direction(minus(a, leftEnd.at(-2))), [1, 0]),
+    [
+      [5.4, tabY],
+      [8.2, tabY],
+    ],
+    [
+      [8.2, tabY],
+      [8.41549892, tabY],
+      [8.62183303, 5.88717775],
+      [8.77204818, 6.0416954],
+    ],
+    [
+      [8.77204818, 6.0416954],
+      [11.0210411, 8.35510854],
+    ],
+    [
+      [11.0210411, 8.35510854],
+      [11.21819706, 8.55791263],
+      [11.489011, 8.67233352],
+      [11.77185459, 8.67233352],
+    ],
+    [
+      [11.77185459, shelfY],
+      [18.3, shelfY],
+    ],
+    cutJoin([18.3, shelfY], b, [1, 0], direction(minus(rightStart[1], b))),
+    ...right,
+  ];
+  // The lower curve retains its Square geometry; only a uniform recenter follows the cut.
+  const shift = 12 - (22 + tabY) / 2;
+  return profiles.map((profile) => {
+    const moved = profile.map(([x, y]) => [x, y + shift]);
+    moved.fitSteps = profile.fitSteps;
+    return moved;
+  });
 }
 function originalBody(profiles, offset) {
   let d = `M${xy(profilePoint(profiles[0], 0, offset).point)}`;
@@ -194,7 +261,7 @@ function originalBody(profiles, offset) {
       d += `L${xy(profilePoint(profile, 1, offset).point)}`;
       continue;
     }
-    const count = 32,
+    const count = profile.fitSteps ?? 32,
       step = 1 / count;
     for (let i = 0; i < count; i++) {
       const a = profilePoint(profile, i * step, offset),
@@ -214,8 +281,8 @@ export function prototypeStudy(subject, exponent = DEFAULT_ROUNDNESS) {
     throw new RangeError('Study exponent must be between2 and5');
   const profiles = originalProfiles(subject, exponent),
     half = STUDY_STROKE / 2;
-  const centerline = originalBody(profiles, 0),
-    exterior = originalBody(profiles, half);
+  const centerline = originalBody(profiles, subject === 'folder' ? -half : 0),
+    exterior = originalBody(profiles, subject === 'folder' ? 0 : half);
   if (subject === 'camera') {
     const lensY = 12.8227459,
       indicatorY = 9.13285542,
@@ -231,7 +298,7 @@ export function prototypeStudy(subject, exponent = DEFAULT_ROUNDNESS) {
         circlePath(17.88388062, indicatorY, half),
     };
   }
-  const y = 10.9030056,
+  const y = 12.2 + (12 - (22 + 5.8) / 2),
     left = 4.76980874 + half,
     right = 19.23019126 - half;
   const slot = `M${round(left)} ${round(y - half)}H${round(right)}a${half} ${half} 0 0 1 0 ${STUDY_STROKE}H${round(left)}a${half} ${half} 0 0 1 0 ${-STUDY_STROKE}Z`;
