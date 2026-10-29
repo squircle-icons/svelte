@@ -17,6 +17,10 @@ Import the normal component and pass its style explicitly:
 
 Outline is still the default. Existing sizes, colors, labels, stroke-width presets/numbers and authored Filled geometry are preserved. Root named imports remain supported. Morph pairs keep their independent opt-in subpaths.
 
+## Trash motion on the existing component
+
+Use `import Trash from '@squircle-icons/svelte/trash'` and `<Trash animate open={open} />` for authored lid motion. Existing `<Trash />` calls preserve their static appearance. Keep `animate` true and update `open` to reverse; switching `animate` changes rendering mode. The animated mode uses current Figma artwork at its authored fixed weight, so do not pass `strokeWidth` with `animate`. It also adds the shared motion runtime to the Trash import. Other icon imports are unaffected, and the earlier `motion/trash` entry remains available.
+
 ## Original repository split
 
 This alpha repository was split from `palamto/squircle-icons` at commit `21cdd88b90f93f13d0ed628cd7a163b866881bd9` on 2026-10-26. The original repository is retained privately with its original history as the pre-split record.

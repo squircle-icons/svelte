@@ -38,7 +38,7 @@ Use the same import for both styles. `style="outline"` is the default; `style="f
 
 Common props are `size=24`, `color="currentColor"`, `style="outline"`, `strokeWidth="regular"`, optional `label` and `class`. Decorative icons omit `label`; meaningful icons receive one accessible name. Components add no tab stop or duplicate SVG title. Stroke presets are `thin` (1.25), `regular` (1.75), and `bold` (2.50); numbers remain supported for fine adjustments. Filled Folder uses `strokeWidth` for its bounded 0.25–6-unit divider gap; other Filled drawings have fixed geometry.
 
-The old animated Folder/Bell API remains removed. Static icons have no `animate`, `hover`, `open`, or playback methods. Authored morph pairs use separate opt-in imports described below.
+The old animated Folder/Bell API remains removed. Ordinary static icons have no playback props. Trash additionally supports the authored motion through `animate` and `open`, described below. Authored morph pairs keep separate opt-in imports.
 
 ## Keep application builds small
 
@@ -53,7 +53,7 @@ Use one direct import per icon and choose its style through props:
 <Camera style={active ? 'filled' : 'outline'} strokeWidth="regular" />
 ```
 
-The component contains only that icon's available styles. It bypasses other icons, collection barrels and the catalog. It keeps one root SVG while the style changes. Let the parent button manage hover and keyboard focus; no special hover prop or animation runtime is needed. The same unified API is used for Filled previews and consumer examples.
+Ordinary static components contain only that icon's available styles. Trash also includes its explicitly supported motion. Direct imports bypass other icons, collection barrels and the catalog. It keeps one root SVG while the style changes. Let the parent button manage hover and keyboard focus; no special hover prop or animation runtime is needed. The same unified API is used for Filled previews and consumer examples.
 
 Root named imports such as `import { Camera } from '@squircle-icons/svelte'` remain supported. Production tree shaking removes unused components, although a build tool may compile them first. Copying an unchanged component into your app produces the same executable JavaScript as its direct package import. `pnpm test:imports` checks this, confirms one compiled icon, and records repeated build timings and gzip/Brotli sizes in `.artifacts/import-benchmark/report.json`. Timing is informational.
 
@@ -142,10 +142,24 @@ All five morphs use the current Figma Squircle endpoints at Outline1.5, with eac
 Motion animates one icon. It has its own `/motion` page, separate from Morph’s
 icon-to-icon pairs at `/morph`.
 
-`TrashMotion` from `motion/trash` moves the current Trash lid and handle together,
-keeping its body and slots fixed. Set `open={true}` to lift the lid and `false` to
-close; use the same shared props and reversible progress behavior above. Its
-closed contour matches the current Figma Trash in both styles. The local preview
-is `/motion/trash`; motion approval is pending owner review.
+Use the regular Trash component for both static and animated rendering:
+
+```svelte
+<script>
+  import Trash from '@squircle-icons/svelte/trash';
+  let open = $state(false);
+</script>
+
+<Trash />
+<button onclick={() => (open = !open)} aria-label="Toggle trash lid" aria-pressed={open}>
+  <Trash animate {open} size={24} style="filled" />
+</button>
+```
+
+`animate` defaults to `false`. Keep it enabled and change `open` to lift/close the lid with smooth mid-flight reversal; do not toggle `animate` to play it. Motion supports `speed`, controlled `progress`, `onprogress` and `onsettle`, plus the shared size/color/style/class/label props. Its authored thickness is fixed, so `strokeWidth` is supported only when `animate` is omitted or false. Other icons do not accept `animate` until they have an authored motion.
+
+Plain Trash retains its existing production artwork. Animated Trash uses the current Figma Trash source, as does the existing `motion/trash` export; enabling/disabling `animate` changes the renderer and artwork generation. Both Outline and Filled are supported. The body/slots stay fixed while the lid and handle move together. Motion approval is pending owner review. Preview it at `/motion/trash` in the local Lab.
+
+The unified Trash import includes its motion geometry and shared controller in the bundle, even if `animate` is false; it renders on the server and can animate immediately without an asynchronous download. No motion listeners or animation frames start in static mode. Other per-icon imports retain their static isolation. The explicit `motion/trash` entry remains available for compatibility. This API does not combine the Motion and Morph Lab pages or change the five opt-in morph pairs.
 
 Public releases run `pnpm release:check` after verification to reject unapproved static artwork in any style or frame. Local `pnpm pack` remains available for draft review without publishing.

@@ -4,11 +4,11 @@
 
 Change original artwork in core, commit them there, then run `pnpm sync:core ../core`. Never edit generated components, the generated metadata catalog by hand.
 
-The Svelte adapter owns presentation props and accessibility attributes. Static components stay static; morphs use separate opt-in subpaths. Generate one component per static identity, preserve per-icon exports and select Outline/Filled through the style prop. Do not generate a separate Filled component tree, barrel, namespace or props type.
+The Svelte adapter owns presentation props and accessibility attributes. Ordinary components stay static; Trash also exposes its authored motion via `animate`/`open`, while morphs use separate opt-in subpaths. Generate one component per static identity, preserve per-icon exports and select Outline/Filled through the style prop. Do not generate a separate Filled component tree, barrel, namespace or props type.
 
 Follow the [core contour-matching rule](https://github.com/squircle-icons/core/blob/main/DESIGN_RULES.md#outline-and-filled-styles). For new or revised dual-style artwork, compare the actual packed Outline exterior at Regular 1.75 with the Filled exterior and corresponding openings at native proportions, including a rotated pose. Maintain a contour regression check alongside browser-specific visual baselines.
 
-Preserve independent per-icon exports. Direct paths must bypass barrels/catalogs and transform only their selected `.svelte` component. Icon paths must traverse no animation runtime or other icon geometry. `test:bundle` checks the transform graph before tree shaking as well as retained production code. A small final bundle alone does not prove a small compilation graph.
+Preserve independent per-icon exports. Direct paths must bypass barrels/catalogs and transform only their selected `.svelte` component. Ordinary icon paths must traverse no animation runtime or other icon geometry. Unified Trash is the explicit exception: it may traverse only its own motion renderer/data and the shared controller; static mode must mount none of their lifecycle work. `test:bundle` checks the transform graph before tree shaking as well as retained production code. A small final bundle alone does not prove a small compilation graph.
 
 Run `pnpm verify` and inspect browser captures before accepting changes. Visual baselines represent the alpha implementation, not approval of the final style. Contributions to original code and artwork are submitted under the project’s [MIT license](LICENSE).
 

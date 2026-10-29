@@ -9,6 +9,7 @@ const reports = [];
 for (const [name, statement, expectedIcon] of [
   ['bell-static', "import Icon from '@squircle-icons/svelte/bell';", 'Bell.svelte'],
   ['individual', "import Icon from '@squircle-icons/svelte/camera';", 'Camera.svelte'],
+  ['trash', "import Icon from '@squircle-icons/svelte/trash';", 'Trash.svelte'],
   ['folder', "import Icon from '@squircle-icons/svelte/folder';", 'Folder.svelte'],
   ['math', "import Icon from '@squircle-icons/svelte/plus';", 'Plus.svelte'],
   ['square', "import Icon from '@squircle-icons/svelte/plus-square';", 'PlusSquare.svelte'],
@@ -55,7 +56,7 @@ for (const [name, statement, expectedIcon] of [
   const transformedIconModules = [...transformedPackageModules]
     .filter((file) => file.endsWith('.svelte'))
     .sort();
-  if (name !== 'barrel') {
+  if (name !== 'barrel' && name !== 'trash') {
     assert.deepEqual(
       transformedIconModules,
       [expectedIcon],
@@ -74,7 +75,25 @@ for (const [name, statement, expectedIcon] of [
       'Icons must not transform animation runtime',
     );
   }
-  {
+  if (name === 'trash') {
+    const expected = [
+      'Trash.svelte',
+      'motion/TrashMotion.svelte',
+      'morph/MorphProgress.svelte',
+    ].sort();
+    assert.deepEqual(
+      transformedIconModules,
+      expected,
+      'Unified Trash must compile only its own renderer and shared controller',
+    );
+    assert.deepEqual(iconModules.map((id) => id.slice(id.indexOf('/dist/') + 6)).sort(), expected);
+    assert(
+      ![...transformedPackageModules].some((file) =>
+        /sun-moon|plus-x|plus-minus|menu-x|maximize-minimize|catalog\.json|index\.js/.test(file),
+      ),
+      'Unified Trash pulled unrelated icons or morphs',
+    );
+  } else {
     assert(
       iconModules.length === 1 && iconModules[0].endsWith('/' + expectedIcon),
       'Unused icon code was retained',
@@ -95,7 +114,7 @@ for (const [name, statement, expectedIcon] of [
     transformedIconModules,
     transformedPackageModules: [...transformedPackageModules].sort(),
     iconModules: iconModules.map((id) => id.split('/dist/')[1]),
-    motionRuntime: modules.some((id) => id.includes('/controller.js')),
+    motionRuntime: modules.some((id) => /controller\.js|MorphProgress\.svelte/.test(id)),
     modules,
   });
 }

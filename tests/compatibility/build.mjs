@@ -39,7 +39,14 @@ ${entries
       : `import Icon${i} from '@squircle-icons/svelte${entry.slice(1)}';\nconst props${i}: ComponentProps<typeof Icon${i}> = ${entry.startsWith('./morph/maximize-minimize') ? "{ minimize: true, style: 'filled', progress: 0.5 }" : entry === './motion/trash' ? "{ open: true, style: 'filled', progress: 0.5 }" : entry === './morph/plus-minus' ? "{ minus: true, style: 'filled', progress: 0.5 }" : entry === './morph/plus-x' || entry === './morph/menu-x' ? "{ x: true, style: 'filled', progress: 0.5 }" : entry.startsWith('./morph/') ? "{ moon: true, style: 'filled', progress: 0.5 }" : '{ strokeWidth: 1.5 }'};`,
   )
   .join('\n')}
+import Trash from '@squircle-icons/svelte/trash';
+const animatedTrash: ComponentProps<typeof Trash> = { animate: true, open: true, style: 'filled', speed: 0.5 };
+const staticTrash: ComponentProps<typeof Trash> = { strokeWidth: 'bold' };
+// @ts-expect-error Motion uses authored thickness; static weights must not be silently accepted.
+const invalidMotionWeight: ComponentProps<typeof Trash> = { animate: true, strokeWidth: 'bold' };
 import Camera from '@squircle-icons/svelte/camera';
+// @ts-expect-error Only icons with authored motion support animate.
+const invalidCameraMotion: ComponentProps<typeof Camera> = { animate: true };
 const named: ComponentProps<typeof Camera> = { style: 'filled', strokeWidth: 'bold' };
 // @ts-expect-error Invalid preset must stay rejected on older Svelte types.
 const invalid: ComponentProps<typeof Camera> = { strokeWidth: 'heavy' };

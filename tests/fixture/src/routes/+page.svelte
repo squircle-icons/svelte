@@ -1,6 +1,9 @@
 <script lang="ts">
-  import TrashMotion from '@squircle-icons/svelte/motion/trash';
   let trashProgress = $state(0);
+  let trashOpen = $state(false);
+  let trashAnimate = $state(true);
+  let trashMounted = $state(true);
+  let trashSettled = $state(false);
   let trashStyle = $state<'outline' | 'filled'>('outline');
   import { FIGMA_STUDY_ICONS } from '@squircle-icons/svelte/design/figma-catalog';
   import FrameFixtureIcon from '../lib/FrameFixtureIcon.svelte';
@@ -972,8 +975,30 @@
   {/each}
 {/each}
 
+<section data-testid="unified-trash-live">
+  <button onclick={() => (trashOpen = !trashOpen)}>Toggle Trash lid</button>
+  <button onclick={() => (trashAnimate = !trashAnimate)}>Toggle Trash animation</button>
+  <button onclick={() => (trashMounted = !trashMounted)}>Mount Trash</button>
+  <output data-testid="trash-settled">{String(trashSettled)}</output>
+  {#if trashMounted}
+    <Trash
+      animate={trashAnimate}
+      open={trashOpen}
+      style={trashStyle}
+      size={32}
+      color="#3155aa"
+      class="unified-trash"
+      label="Interactive Trash"
+      onsettle={(open) => (trashSettled = open)}
+    />
+  {/if}
+</section>
+<div data-testid="unified-trash-static">
+  <Trash size={20} strokeWidth="bold" label="Static Trash" />
+</div>
+
 <section data-testid="trash-motion-fixture">
-  <TrashMotion progress={trashProgress} style={trashStyle} label="Trash motion" />
+  <Trash animate progress={trashProgress} style={trashStyle} label="Trash motion" />
   <input
     aria-label="Trash progress"
     type="range"

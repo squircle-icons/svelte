@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Add `<Trash animate open={open} />` to the existing Trash import, reusing the authored motion. Plain Trash keeps its static artwork and stroke widths; animated thickness is fixed. The Trash bundle includes its motion renderer/controller, while other direct icon imports stay isolated.
+
 - Breaking: remove the separate Filled import namespace and Filled-only component tree. Use the regular per-icon import with `style="filled"` instead.
 - Keep both authored styles, numeric/preset stroke widths and independent per-icon compilation in the unified components.
 
