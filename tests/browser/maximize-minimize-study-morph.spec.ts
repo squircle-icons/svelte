@@ -198,7 +198,9 @@ test('corners pull inward with anchored tips and straighten instead of rotating'
       const svg = element as SVGSVGElement;
       const pieces = (d: string) => d.match(/[Mm][^Mm]*/g)!;
       const original = pieces(
-        document.querySelector('[data-testid="maximize-outline-contour"] path')!.getAttribute('d')!,
+        Array.from(document.querySelectorAll('[data-testid="maximize-outline-contour"] path'))
+          .map((path) => path.getAttribute('d'))
+          .join(' '),
       );
       const moving = pieces(svg.querySelector('path')!.getAttribute('d')!);
       const endpoints = (d: string) => {
