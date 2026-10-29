@@ -44,6 +44,7 @@ jobs:
         if: always()
         with:
           name: validation-reports
+          include-hidden-files: true
           path: |
             playwright-report/
             test-results/
@@ -82,6 +83,7 @@ jobs:
         if: always()
         with:
           name: compatibility-${{ matrix.svelte }}-node-${{ matrix.node }}
+          include-hidden-files: true
           path: .artifacts/compatibility-*.json
   publish:
     name: Publish verified npm package
@@ -96,6 +98,8 @@ jobs:
     permissions:
       contents: read
       id-token: write
+    outputs:
+      verified_version: ${{ steps.verified.outputs.version }}
     env:
       RELEASE_VERSION: ${{ needs.quality.outputs.release_version }}
       RELEASE_ARCHIVE: ${{ needs.quality.outputs.release_archive }}
@@ -149,6 +153,7 @@ jobs:
         if: steps.current.outputs.allowed == 'true'
         run: node tools/release-status.mjs --wait
       - name: Align alpha and latest through OIDC
+        id: verified
         if: steps.current.outputs.allowed == 'true'
         run: |
           npm dist-tag add "@squircle-icons/svelte@$RELEASE_VERSION" alpha
@@ -162,4 +167,30 @@ jobs:
           assert.equal(tags.latest, process.env.RELEASE_VERSION);
           console.log(tags);
           JS
+          echo "version=$RELEASE_VERSION" >> "$GITHUB_OUTPUT"
           echo "Published @squircle-icons/svelte@$RELEASE_VERSION after all quality and compatibility checks passed." >> "$GITHUB_STEP_SUMMARY"
+  github-release:
+    name: Create GitHub Release
+    needs: [quality, publish]
+    if: needs.publish.outputs.verified_version != '' && github.ref == 'refs/heads/main' && github.repository == 'squircle-icons/svelte'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    concurrency:
+      group: github-release
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+      - name: Create versioned release from published npm provenance
+        run: node tools/github-release.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_VERSION: ${{ needs.publish.outputs.verified_version }}
+          RELEASE_INTEGRITY: ${{ needs.quality.outputs.release_integrity }}

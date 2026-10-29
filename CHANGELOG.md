@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.0-alpha.6
+
+- Create a version-named GitHub Release and source tag automatically after verified npm publication and distribution tags succeed.
+- Derive the tag's source commit from npm provenance and preserve existing release notes on retries.
+- Keep icon artwork, runtime, exports and consumer requirements identical to alpha.5.
+
 ## 0.1.0-alpha.5
 
 - Publish from GitHub Actions through npm Trusted Publishing after the full quality and compatibility jobs pass.
