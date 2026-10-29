@@ -1,6 +1,6 @@
 {
   "name": "@squircle-icons/svelte",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.5",
   "type": "module",
   "license": "MIT",
   "sideEffects": false,
@@ -1271,14 +1271,15 @@
     "test:pack": "node --import tsx tools/pack-test.ts",
     "test:browser": "playwright test",
     "sync:core": "node tools/sync-core.mjs",
-    "verify": "pnpm format:check && pnpm dependency:check && pnpm generate:check && pnpm check && pnpm test && pnpm test:bundle && pnpm test:imports && pnpm test:pack && pnpm test:compat && pnpm test:browser",
+    "verify": "pnpm format:check && pnpm dependency:check && pnpm generate:check && pnpm check && pnpm test && pnpm test:release && pnpm test:bundle && pnpm test:imports && pnpm test:pack && pnpm test:compat && pnpm test:browser",
     "dependency:check": "node tools/dependency-check.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepublishOnly": "pnpm verify && pnpm release:check",
     "test:imports": "node --import tsx tools/import-benchmark.ts",
     "test:compat": "node tools/compatibility-test.mjs",
-    "release:check": "node --import tsx tools/release-check.ts"
+    "release:check": "node --import tsx tools/release-check.ts",
+    "test:release": "node --test tests/unit/release-status.test.mjs"
   },
   "packageManager": "pnpm@10.10.0",
   "engines": {

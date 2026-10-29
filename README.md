@@ -10,7 +10,7 @@ Native Svelte 5 components generated from the versioned [core](https://github.co
 npm install @squircle-icons/svelte@alpha
 ```
 
-Release `0.1.0-alpha.4` contains 121 owner-reviewed static icons from 51 authoring families, including 35 Square and 35 Circle drawings. Every static icon has Outline and Filled styles. It includes the latest approved artwork and the compatibility requirements below. Earlier published versions retain their original contents and requirements.
+Release `0.1.0-alpha.5` contains 121 owner-reviewed static icons from 51 authoring families, including 35 Square and 35 Circle drawings. Every static icon has Outline and Filled styles. It includes the latest approved artwork and the compatibility requirements below. Earlier published versions retain their original contents and requirements.
 
 ### Recommended
 
@@ -138,3 +138,21 @@ All pairs support `style="outline|filled"`, `size`, `color`, `class`, `label`, `
 Plus X, Menu X and Plus Minus also accept their own `frame="none|square|circle"` option, selecting matching authored geometry at both ends. Outline defaults to None and Filled to Square. Sun Moon and Maximize Minimize are unframed. Static endpoint approval is separate from motion approval; experimental morphs remain subject to change.
 
 Public releases run `pnpm release:check` after verification to reject unapproved static artwork in any style or frame. Local `pnpm pack` remains available for draft review without publishing.
+
+## Automatic npm releases
+
+GitHub Actions publishes a new package version after a push to `main` passes the complete quality job and both consumer compatibility jobs. Change `package.json` to a new version and update this README and CHANGELOG in the release commit. A code or documentation update that keeps an already-published version does not republish it.
+
+The quality job runs `pnpm verify` and `pnpm release:check`, then uploads the exact tarball installed by the packed-consumer checks. The publish job downloads that artifact, checks its integrity and confirms the commit is still the current `main`. It publishes that tarball with lifecycle scripts disabled because its full checks and artwork approval gate have already run. Manual source publication keeps the existing `prepublishOnly` checks.
+
+Publication uses npm Trusted Publishing (OIDC) and automatically records provenance. No long-lived npm token or per-release interactive login is needed. Both `alpha` and `latest` are aligned to the successful release. A rerun can finish the tags without republishing only when the registry archive integrity exactly matches the tested artifact. Registry failures stop the release; they are not treated as missing versions.
+
+One-time administration setup:
+
+1. In this GitHub repository, create the `npm` environment. Allow deployment only from the `main` branch. Leave required reviewers and wait timers unset for the requested automatic release flow.
+2. In npm package settings, add a GitHub Actions trusted publisher with organization `squircle-icons`, repository `svelte`, workflow filename `quality.yml`, and environment `npm`. Enable direct `npm publish` and `npm dist-tag` access.
+3. The workflow uses npm 12.2.1 for OIDC publication and tag support. Do not add an `NPM_TOKEN` secret. The new trusted publisher must complete its first publication within npm's setup validity period; see the [official setup instructions](https://docs.npmjs.com/trusted-publishers/).
+
+Pull requests and other branches run checks with read-only repository permissions; they cannot enter the release job. Only the publish job requests an OIDC identity. Releases are serialized. If newer work reaches `main` while an older run is checking, the newer successful run owns publication. To retry a failed release, rerun the workflow on the same current `main`; `workflow_dispatch` is also available on `main`.
+
+Homepage and the private local Lab retain separate dependency updates. This workflow publishes the Svelte npm package; it does not change either application's source or installed pin.
