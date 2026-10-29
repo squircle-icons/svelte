@@ -164,6 +164,19 @@ exports['./design/squircle-base'] = {
   types: './dist/design/squircle-base.d.ts',
   default: './dist/design/squircle-base.js',
 };
+// Original Figma endpoints are opt-in study data, outside the production catalog.
+const windowTransfer = fileURLToPath(
+  import.meta.resolve('@squircle-icons/core/design/window-transfer'),
+);
+files.set('src/lib/design/window-transfer.js', header + (await readFile(windowTransfer, 'utf8')));
+files.set(
+  'src/lib/design/window-transfer.d.ts',
+  header + (await readFile(windowTransfer.replace(/\.js$/, '.d.ts'), 'utf8')),
+);
+exports['./design/window-transfer'] = {
+  types: './dist/design/window-transfer.d.ts',
+  default: './dist/design/window-transfer.js',
+};
 // Preserve relative imports for shared pure geometry used by opt-in morphs.
 const strokes = fileURLToPath(import.meta.resolve('@squircle-icons/core/morph/round-strokes'));
 files.set('src/lib/morph/round-strokes.js', header + (await readFile(strokes, 'utf8')));
@@ -178,6 +191,7 @@ for (const [pair, component, type] of [
   ['menu-x', 'MenuXMorph', 'MenuXGeometry'],
   ['plus-minus', 'PlusMinusMorph', 'PlusMinusGeometry'],
   ['maximize-minimize', 'MaximizeMinimizeMorph', 'MaximizeMinimizeGeometry'],
+  ['maximize-minimize-study', 'MaximizeMinimizeStudyMorph', 'MaximizeMinimizeStudyGeometry'],
 ]) {
   exports[`./morph/${pair}`] = {
     types: `./dist/morph/${component}.svelte.d.ts`,
