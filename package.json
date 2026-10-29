@@ -1,6 +1,6 @@
 {
   "name": "@squircle-icons/svelte",
-  "version": "0.1.0-alpha.5",
+  "version": "0.1.0-alpha.6",
   "type": "module",
   "license": "MIT",
   "sideEffects": false,
@@ -1279,7 +1279,7 @@
     "test:imports": "node --import tsx tools/import-benchmark.ts",
     "test:compat": "node tools/compatibility-test.mjs",
     "release:check": "node --import tsx tools/release-check.ts",
-    "test:release": "node --test tests/unit/release-status.test.mjs"
+    "test:release": "node --test tests/unit/*release*.test.mjs"
   },
   "packageManager": "pnpm@10.10.0",
   "engines": {

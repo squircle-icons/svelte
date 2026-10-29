@@ -10,7 +10,7 @@ Native Svelte 5 components generated from the versioned [core](https://github.co
 npm install @squircle-icons/svelte@alpha
 ```
 
-Release `0.1.0-alpha.5` contains 121 owner-reviewed static icons from 51 authoring families, including 35 Square and 35 Circle drawings. Every static icon has Outline and Filled styles. It includes the latest approved artwork and the compatibility requirements below. Earlier published versions retain their original contents and requirements.
+Release `0.1.0-alpha.6` contains 121 owner-reviewed static icons from 51 authoring families, including 35 Square and 35 Circle drawings. Every static icon has Outline and Filled styles. It includes the latest approved artwork and the compatibility requirements below. Earlier published versions retain their original contents and requirements.
 
 ### Recommended
 
@@ -146,6 +146,8 @@ GitHub Actions publishes a new package version after a push to `main` passes the
 The quality job runs `pnpm verify` and `pnpm release:check`, then uploads the exact tarball installed by the packed-consumer checks. The publish job downloads that artifact, checks its integrity and confirms the commit is still the current `main`. It publishes that tarball with lifecycle scripts disabled because its full checks and artwork approval gate have already run. Manual source publication keeps the existing `prepublishOnly` checks.
 
 Publication uses npm Trusted Publishing (OIDC) and automatically records provenance. No long-lived npm token or per-release interactive login is needed. Both `alpha` and `latest` are aligned to the successful release. A rerun can finish the tags without republishing only when the registry archive integrity exactly matches the tested artifact. Registry failures stop the release; they are not treated as missing versions.
+
+After npm publication, integrity and tag checks succeed, a separate job creates a GitHub Release titled with the exact package version (for example `0.1.0-alpha.6`) and Git tag `v0.1.0-alpha.6`. The tag points to the original publishing commit recorded by npm provenance, including on a retry from a newer workflow revision. Alpha versions are marked as prereleases. Existing releases and notes are preserved; conflicting tags or release metadata stop the job. Only this final job has repository write permission, using GitHub's short-lived workflow token.
 
 One-time administration setup:
 

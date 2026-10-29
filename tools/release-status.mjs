@@ -4,7 +4,7 @@ import { appendFile, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-function validateManifest(manifest) {
+export function validateManifest(manifest) {
   assert.equal(manifest.name, '@squircle-icons/svelte', 'Unexpected release package');
   assert(!manifest.private, 'Cannot release a private package');
   assert(
