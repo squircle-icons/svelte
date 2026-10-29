@@ -1,29 +1,24 @@
-# Release audit — 0.1.0-alpha.6
+# Release audit — 0.2.0-alpha.0
 
-What this repo does: Core provides artwork and Svelte packages it as native components. This release adds a GitHub Release after the existing automatic npm publication. Expected load is one repository releasing occasional package versions.
+What this repo does: generates native Svelte components from the current 94 source pairs, plus Trash animation and five reversible morphs. Expected use is applications importing a small subset; direct import graphs must stay independent as the collection grows.
 
-## Scope
+## Resolved findings
 
-Work starts from GitHub main commit 77849b3ff10b432335bee0ba9f8efc642a6e6296 in an isolated checkout. Core, Homepage, the private local Lab and concurrent local artwork/morph work are excluded. All 528 runtime, declaration, catalog and LICENSE files match published alpha.5 byte for byte. Public payload changes are package metadata and README only.
-
-## Release controls
-
-- The GitHub Release job depends on a successful npm job and its verified-version output. Failed publication, integrity or distribution-tag checks cannot trigger a release.
-- Only the final GitHub Release job has contents write permission. It uses GitHub's temporary workflow token, without npm OIDC permission or a new permanent secret.
-- The helper checks published package identity and integrity against the tested archive. It obtains the original publishing commit from npm provenance and validates the package subject, digest, repository, main ref and workflow path.
-- It reserves the exact source tag before creating a release. Existing lightweight or annotated tags must resolve to the published commit; conflicting tags are never moved. Recursive tag reads are bounded.
-- Release titles equal package versions; Git tags have a v prefix. Alpha versions are prereleases. Existing releases and maintainer-written notes are retained; conflicting titles, drafts or release types fail explicitly.
-- Public distribution-tag verification waits for npm replication before exposing the verified-version output.
-- Releases are serialized. Reruns recover both a created tag without a release and a created release whose response was lost. HTTP errors and network failures are not treated as missing resources.
-- Optional report uploads now include the explicitly listed files under the hidden .artifacts directory, correcting the earlier compatibility-report warnings.
+1. **Production exports still used legacy artwork.** The old 121/frame collection and superseded prototype datasets were separate from the current Lab source. Core now builds from the same 94 source pairs; Svelte generates exactly those identities. Removed exports/files are checked in an installed tarball.
+2. **Old static Trash differed from its animation endpoint.** Both now read the same current source, preserving the authored motion geometry/timing. Plain mode mounts no motion lifecycle; animated thickness stays fixed and declarations reject unsupported weights.
+3. **Obsolete clipping IDs would be duplicated across instances.** Source validation accepts only the actual full-viewport clip rectangles, verifies references and replaces these redundant clips with root viewport clipping. Path coordinates, paint, transforms and counters remain unchanged; every pair is raster-compared against literal source.
+4. **Legacy approval and documentation rules disagreed with the requested alpha.** Draft statuses are preserved. Alpha release validation accepts known approved/draft statuses and complete unique pairs; stable releases reject drafts. This records the owner's explicit publication request without inventing visual approval.
+5. **File casing differed between the working tree and Git.** Login replaces LogIn; exact directory-entry checks validate packed casing, two-step Git renames fix the tracked names, and generate:check now catches tracked casing mismatches locally before CI. Removed export resolution remains rejected.
 
 ## Verification
 
-- Full application verification passed: formatting, source provenance, deterministic generation, types, build, 41 existing unit/fault cases, bundle/import isolation, packed consumer, compatibility consumer and all 411 Chromium/Firefox/WebKit cases.
-- Twenty-two release-control tests pass, including new-release creation, prerelease/stable classification, exact original source tags, annotated tags, retries after lost responses, conflicting tags/drafts/titles and fail-closed registry/API errors.
-- The static release approval gate passes for all 121 icons and their styles. Consumer requirements and public exports are unchanged.
-- Official actionlint 1.7.12 reports no workflow errors.
+- Core full checks passed: source hashes, safe SVG/XML, finite geometry, 101 unit cases, types, deterministic catalog and clean build. No current source SVG path or visual review status was edited.
+- Svelte full checks passed: formatting, artifact provenance, deterministic generation, types, 29 unit cases, npm/GitHub release regression checks, seven bundle cases, repeated Camera import benchmark, installed-tarball SSR consumer and Svelte 5.0.0 compatibility. All 100 component exports compile for client/server; fixed Outline and animated-weight declarations are checked.
+- Chromium/Firefox/WebKit: 165 cases passed. All 94 pairs match literal source paint in both styles; 188 components render at 16/20/24/48px. Coverage includes accessibility, style/width changes, exact morph endpoints, approved merge timing, reversal, reduced motion, pause/resume, unmount cleanup and Trash static lifecycle isolation. Removed geometry/frame tests were replaced with current-source parity tests; no old screenshot baseline was relabeled as new approval.
+- Ordinary per-icon imports compile only their selected icon and no animation runtime. Trash includes only its own renderer/data and the shared controller. Barrel imports retain only the requested component after tree shaking.
+- The GitHub npm release workflow and its archive-integrity/provenance/tag checks are retained. Publication and GitHub Release are permitted only after quality and compatibility jobs pass.
+- The private Lab's retired archives, old prototype routes/data and stale screenshots were removed at the owner's request. The active 94-pair Lab and Animate/Morph pages remain the preview surface; the updated private Lab passed its full checks, including 8 unit and 120 browser cases. Registry results follow publication handoff.
 
-Verdict: Local validation passes. The final delivery must also confirm real npm publication, the generated GitHub Release and its tag against npm provenance after GitHub main CI succeeds.
+Verdict: local source and package checks pass. The private Lab passed all checks; remaining gates are GitHub quality/compatibility checks before npm publication. Stable design approval remains separate.
 
-Not checked at this preflight stage: Real GitHub Release creation before the workflow runs, historical backfills with changed workflow permissions, real mobile hardware or unrelated local design work.
+Not checked: hardware performance, synthetic thousand-icon load, Svelte 4/6, every third-party bundler or a new public Homepage deployment. Public npm contents/tags/GitHub Release must be verified after publication; successful local tests do not imply publication.

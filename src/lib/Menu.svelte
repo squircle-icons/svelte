@@ -9,7 +9,7 @@
     label,
     class: className,
     style: iconStyle = 'outline',
-  }: Omit<IconProps, 'style'> & { style?: 'outline' | 'filled' } = $props();
+  }: IconProps = $props();
   const accessibleLabel = $derived(label?.trim());
   const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));
 </script>
@@ -19,26 +19,52 @@
   viewBox="0 0 24 24"
   width={size}
   height={size}
-  fill={iconStyle === 'filled' ? color : 'none'}
-  stroke={iconStyle === 'filled' ? 'none' : color}
-  stroke-width={iconStyle === 'filled' ? undefined : resolvedStrokeWidth}
-  fill-rule={iconStyle === 'filled' ? 'evenodd' : undefined}
-  stroke-linecap="round"
-  stroke-linejoin="round"
+  {color}
+  fill="none"
+  stroke="none"
+  overflow="hidden"
   class={className}
   role={accessibleLabel ? 'img' : undefined}
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
   data-frame="none"
+  data-source="figma-current"
+  stroke-width={iconStyle === 'outline' ? resolvedStrokeWidth : undefined}
 >
   {#if iconStyle === 'filled'}
     <g data-part="body"
-      ><path
-        d="M3.25 6.25 L20.75 6.25 A1.25 1.25 0 0 0 20.75 3.75 L3.25 3.75 A1.25 1.25 0 0 0 3.25 6.25 Z M3.25 13.25 L20.75 13.25 A1.25 1.25 0 0 0 20.75 10.75 L3.25 10.75 A1.25 1.25 0 0 0 3.25 13.25 Z M3.25 20.25 L20.75 20.25 A1.25 1.25 0 0 0 20.75 17.75 L3.25 17.75 A1.25 1.25 0 0 0 3.25 20.25 Z"
+      ><path d="M3.25 6.5H20.75" stroke-width="2.5" stroke-linecap="round" stroke="currentColor"
+      ></path><path
+        d="M3.25 12H20.75"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke="currentColor"
+      ></path><path
+        d="M3.25 17.5H20.75"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke="currentColor"
       ></path></g
     >
   {:else}
-    <g data-part="body"><path d="M3.25 5 H20.75 M3.25 12 H20.75 M3.25 19 H20.75"></path></g>
+    <g data-part="body"
+      ><path
+        d="M3.25 6.5H20.75"
+        stroke-width={resolvedStrokeWidth}
+        stroke-linecap="round"
+        stroke="currentColor"
+      ></path><path
+        d="M3.25 12H20.75"
+        stroke-width={resolvedStrokeWidth}
+        stroke-linecap="round"
+        stroke="currentColor"
+      ></path><path
+        d="M3.25 17.5H20.75"
+        stroke-width={resolvedStrokeWidth}
+        stroke-linecap="round"
+        stroke="currentColor"
+      ></path></g
+    >
   {/if}
 </svg>

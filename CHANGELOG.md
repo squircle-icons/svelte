@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0-alpha.0
+
+- Breaking: replace the legacy 121 collection with the current 94 source pairs. Remove old frame variants, Filled namespaces and superseded study exports.
+- Use one Outline/Filled component per icon, with Regular 1.5 and configurable real stroke geometry; Heart/Pen retain fixed expanded Outlines.
+- Keep `<Trash animate open={open} />`, its matching static source, five reversible morph pairs and the separate Motion/Morph previews.
+- Preserve source draft status while publishing the explicitly authorized alpha. Refresh documentation and remove retired Lab data.
+
 ## 0.1.0-alpha.6
 
 - Create a version-named GitHub Release and source tag automatically after verified npm publication and distribution tags succeed.

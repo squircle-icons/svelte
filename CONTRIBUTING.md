@@ -1,35 +1,13 @@
 # Contributing to the Svelte adapter
 
-## Run the release workflow
+Read Core's [ICON_RULES.md](../core/ICON_RULES.md) and [MORPH.md](../core/MORPH.md). Change original artwork in Core, verify/commit it, then run `pnpm sync:core ../core`. Do not edit generated component geometry or catalogs manually.
 
-In the repository's **Actions** tab, select **npm release**. **Run workflow** provides GitHub's branch selector; there is no environment input because the package has one production destination. Choose `main` to publish; selecting another branch runs checks only. Publication uses the restricted GitHub environment named `npm`, matching the trusted publisher already configured on npm.
+Generate one component per current identity with Outline/Filled, independent direct imports and no legacy frame variants, Filled namespace or prototype datasets. Preserve exact source paint, path coordinates, transforms and draft status. Default Outline uses1.5; only real stroked geometry supports configurable widths. Heart/Pen retain expanded Outlines. Animation thickness stays fixed.
 
-After the npm job verifies publication and both distribution tags, the GitHub Release job creates a release named after the package version and a `v`-prefixed source tag. npm provenance supplies the original publishing revision, so retries cannot silently tag a newer commit. The job has `contents: write` but no npm OIDC permission. It preserves existing published notes and rejects conflicting tags, titles and drafts instead of overwriting them. No new secret or manual npm approval is needed.
+Keep direct imports independent of barrels, catalogs and unrelated geometry. Ordinary icons load no animation runtime. Unified Trash may load only its authored renderer/data and the shared controller; static mode mounts no animation lifecycle. Keep the current motion geometry/timing and five opt-in morphs. Preserve Animate/Morph page separation in the local Lab.
 
-Registry tag reads may lag behind successful writes. The publisher waits for both public tags to propagate before exposing its verified-version output; a stale response cannot create a premature GitHub Release. If the final job fails after npm succeeds, rerun failed jobs to finish the same release without republishing the package.
+Run `pnpm verify` and inspect actual packed browser output. New logic needs meaningful checks; removing old APIs requires replacing their obsolete checks with current source parity and removed-export assertions. Never update visual baselines to conceal a defect. Svelte 5.0.0 through version 5 and the package's declared Node/npm minimums must remain tested in CI. Packed components contain JavaScript plus separate declarations, with no Core runtime dependency.
 
-Public post-publication integrity checks read the registry directly, without npm CLI publishing credentials, its metadata cache or presentation format (`npm view --json` in npm 12 returns an array for a single field). A missing version is polled for up to ten minutes while npm processes it; other registry failures are reported immediately. A retry may finish tags for the exact archive already published, without creating another package version.
+Sync requires a committed clean source and exclusive destination ownership. After verifying/committing Svelte, run `pnpm sync:svelte ../svelte` in the private Lab and verify it. Keep Homepage on its separately verified published npm pin; do not replace it with a local artifact.
 
-**Current icon contract:** in this workspace, start with [ICON_RULES.md](../core/ICON_RULES.md). It is the canonical agent playbook for Goal, Rules, Design, Verification, Tests and delivery. Older numerical examples or dated trials below are historical where superseded by that guide; use its current family-specific construction rules.
-
-Change original artwork in core, commit them there, then run `pnpm sync:core ../core`. Never edit generated components, the generated metadata catalog by hand.
-
-The Svelte adapter owns presentation props and accessibility attributes. Static components stay static; morphs use separate opt-in subpaths. Preserve per-icon exports and the unified Outline/Filled style prop.
-
-Follow the [core contour-matching rule](https://github.com/squircle-icons/core/blob/main/DESIGN_RULES.md#outline-and-filled-styles). For new or revised dual-style artwork, compare the actual packed Outline exterior at Regular 1.75 with the Filled exterior and corresponding openings at native proportions, including a rotated pose. Maintain a contour regression check alongside browser-specific visual baselines.
-
-Preserve independent per-icon exports. Direct paths must bypass barrels/catalogs and transform only their selected `.svelte` component. Icon paths must traverse no animation runtime or other icon geometry. `test:bundle` checks the transform graph before tree shaking as well as retained production code. A small final bundle alone does not prove a small compilation graph.
-
-Run `pnpm verify` and inspect browser captures before accepting changes. Visual baselines represent the alpha implementation, not approval of the final style. Contributions to original code and artwork are submitted under the project’s [MIT license](LICENSE).
-
-For the owner-requested Menu/Search Bold Filled treatment, compare packed geometry against Outline at Bold 2.50; these two icons deliberately differ from Regular 1.75 and use no surrounding box.
-
-Preserve compatibility with Svelte 5.0.0 through version 5, Node.js 18.0.0 or later, and npm 8.6.0 or later when npm is used. Packed components must contain JavaScript scripts and separate declarations so older Svelte compilers need no TypeScript preprocessing. Run `pnpm test:compat` after changing generation, public props, package preprocessing or exports. Repository development uses Node 24.19.0; consumer compatibility is checked separately on older Node versions.
-
-## Morph contributions
-
-Before creating or revising a morph, read the [shared agent playbook](../core/MORPH.md)
-for Goal, Design, implementation order, Verification, Tests and delivery criteria.
-It is the canonical specification; this repository must not maintain a divergent
-copy. A named pair request means implement through to a working Lab preview, and
-the owner permits questions whenever a material decision is unclear.
+The npm release workflow verifies main, installs the tested archive in compatibility consumers, and publishes through OIDC only after all required jobs pass. It verifies registry contents/tags before creating the version-named GitHub Release. Never overwrite a published version. Alpha may preserve explicitly authorized draft artwork; stable requires approved source. See [README.md](README.md) for usage and [MIGRATION.md](MIGRATION.md) for removed APIs.

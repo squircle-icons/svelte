@@ -1,4 +1,4 @@
-export type IconStyle = 'outline' | 'bold' | 'filled';
+export type IconStyle = 'outline' | 'filled';
 export type IconStrokeWidth = number | 'thin' | 'regular' | 'bold';
 
 export type IconProps = {
@@ -9,6 +9,3 @@ export type IconProps = {
   class?: string;
   style?: IconStyle;
 };
-
-/** Direct Filled imports have a fixed style. */
-export type FilledIconProps = Omit<IconProps, 'style'>;

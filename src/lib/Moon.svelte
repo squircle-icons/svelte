@@ -9,7 +9,7 @@
     label,
     class: className,
     style: iconStyle = 'outline',
-  }: Omit<IconProps, 'style'> & { style?: 'outline' | 'filled' } = $props();
+  }: IconProps = $props();
   const accessibleLabel = $derived(label?.trim());
   const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));
 </script>
@@ -19,29 +19,34 @@
   viewBox="0 0 24 24"
   width={size}
   height={size}
-  fill={iconStyle === 'filled' ? color : 'none'}
-  stroke={iconStyle === 'filled' ? 'none' : color}
-  stroke-width={iconStyle === 'filled' ? undefined : resolvedStrokeWidth}
-  fill-rule={iconStyle === 'filled' ? 'evenodd' : undefined}
-  stroke-linecap="round"
-  stroke-linejoin="round"
+  {color}
+  fill="none"
+  stroke="none"
+  overflow="hidden"
   class={className}
   role={accessibleLabel ? 'img' : undefined}
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
   data-frame="none"
+  data-source="figma-current"
+  stroke-width={iconStyle === 'outline' ? resolvedStrokeWidth : undefined}
 >
   {#if iconStyle === 'filled'}
     <g data-part="body"
       ><path
-        d="M9.72572802 3.28876599 A8.875 8.875 0 0 0 3.13175073 11.8656279 A8.875 8.875 0 0 0 12.00675073 20.7406279 A8.875 8.875 0 0 0 20.86677254 12.38102938 A0.875 0.875 0 0 0 20.86824926 12.33021515 A0.875 0.875 0 0 0 19.99324926 11.45521515 A0.875 0.875 0 0 0 19.41464395 11.67383043 A5.69418946 5.69418946 0 0 1 15.64928595 13.09650111 A5.69418946 5.69418946 0 0 1 9.95509649 7.40231165 A5.69418946 5.69418946 0 0 1 10.7096663 4.56965366 A0.875 0.875 0 0 0 10.82561758 4.13437209 A0.875 0.875 0 0 0 9.95061758 3.25937209 A0.875 0.875 0 0 0 9.72572802 3.28876599 Z"
+        d="M9.75781 3.4093C10.0502 3.33159 10.3615 3.43707 10.5459 3.67688C10.7301 3.91676 10.7518 4.2445 10.6016 4.50696C9.91572 5.70294 9.67622 7.10437 9.92676 8.46008C10.1774 9.81568 10.9018 11.0385 11.9697 11.9103C13.0379 12.782 14.3813 13.246 15.7598 13.2198C17.1383 13.1936 18.4627 12.6785 19.4971 11.7667C19.724 11.5669 20.0494 11.5232 20.3213 11.6554C20.5932 11.7878 20.7595 12.0712 20.7422 12.3732C20.6486 13.9826 20.1114 15.5357 19.1914 16.8595C18.2713 18.1831 17.0031 19.2265 15.5273 19.8751C14.0514 20.5238 12.4247 20.7526 10.8271 20.5353C9.22991 20.3179 7.72352 19.6638 6.47461 18.6447C5.22572 17.6254 4.28214 16.2803 3.74902 14.7589C3.21602 13.2375 3.11348 11.5975 3.45312 10.0216C3.79284 8.44579 4.56146 6.994 5.67383 5.82727C6.7863 4.66056 8.19989 3.82367 9.75781 3.4093Z"
+        fill="currentColor"
       ></path></g
     >
   {:else}
     <g data-part="body"
       ><path
-        d="M9.95061758 4.13437209 A8 8 0 1 0 19.99324926 12.33021515 A6.56918946 6.56918946 0 0 1 9.95061758 4.13437209 Z"
+        d="M9.95058 4.13437C8.52604 4.51323 7.23387 5.27831 6.21668 6.34516C5.19949 7.41202 4.49684 8.73917 4.18628 10.1801C3.87572 11.6211 3.96932 13.1199 4.45676 14.511C4.94419 15.9022 5.80651 17.1316 6.94853 18.0636C8.09055 18.9956 9.46787 19.594 10.9285 19.7926C12.3891 19.9913 13.8762 19.7826 15.2257 19.1894C16.5751 18.5963 17.7345 17.6419 18.5758 16.4315C19.4171 15.2211 19.9076 13.8018 19.9932 12.3302C18.8256 13.3595 17.3304 13.9407 15.7741 13.9703C14.2179 13.9999 12.7016 13.4759 11.4957 12.4918C10.2898 11.5076 9.47252 10.1272 9.18954 8.5966C8.90655 7.066 9.17626 5.48464 9.95058 4.13437Z"
+        stroke-width={resolvedStrokeWidth}
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="currentColor"
       ></path></g
     >
   {/if}

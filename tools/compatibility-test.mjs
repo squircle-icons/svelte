@@ -82,37 +82,40 @@ try {
   await page.locator('#ready').filter({ hasText: 'hydrated' }).waitFor();
   const camera = page.locator('#camera svg');
   assert.equal(await camera.getAttribute('aria-label'), 'Compatible camera');
-  assert.equal(await camera.getAttribute('stroke-width'), '1.75');
+  assert.equal(await camera.getAttribute('stroke-width'), '1.5');
   await page.locator('#preset').click();
   await page.waitForFunction(
     () => document.querySelector('#camera svg').getAttribute('stroke-width') === '2.5',
   );
-  assert.equal(await page.locator('#folder svg').getAttribute('data-cutout-width'), '2.5');
+  assert.equal(await page.locator('#folder svg').getAttribute('stroke-width'), '2.5');
   await page.locator('#number').click();
   await page.waitForFunction(
     () => document.querySelector('#camera svg').getAttribute('stroke-width') === '1.5',
   );
-  assert.equal(await page.locator('#folder svg').getAttribute('data-cutout-width'), '1.5');
+  assert.equal(await page.locator('#folder svg').getAttribute('stroke-width'), '1.5');
+  const outlinePaths = await page
+    .locator('#camera path')
+    .evaluateAll((paths) => paths.map((p) => p.getAttribute('d')));
   await camera.evaluate((svg) => {
     window.originalCamera = svg;
   });
   await page.locator('#style').click();
   await page.waitForFunction(
-    () => document.querySelector('#camera svg').getAttribute('stroke') === 'none',
+    () => document.querySelector('#camera svg').getAttribute('stroke-width') === null,
   );
   assert(
     await camera.evaluate((svg) => window.originalCamera === svg),
     'Style switch replaced the SVG',
   );
-  assert.deepEqual(
+  assert.notDeepEqual(
     await page
       .locator('#camera path')
       .evaluateAll((paths) => paths.map((p) => p.getAttribute('d'))),
-    await page
-      .locator('#dedicated path')
-      .evaluateAll((paths) => paths.map((p) => p.getAttribute('d'))),
+    outlinePaths,
+    'Style switch did not select Filled geometry',
   );
-  assert.equal(await page.locator('#dedicated svg').getAttribute('aria-hidden'), 'true');
+  assert.equal(await page.locator('#decorative-filled svg').getAttribute('aria-hidden'), 'true');
+  assert.equal(await page.locator('#decorative-filled svg').getAttribute('stroke'), 'none');
   for (const states of [
     {
       'sun-moon': 'moon',

@@ -7,8 +7,13 @@ import { compile } from 'svelte/compiler';
 const manifest = JSON.parse(
   await readFile('node_modules/@squircle-icons/svelte/package.json', 'utf8'),
 );
-const entries = Object.keys(manifest.exports).filter((path) => path !== './catalog.json');
-const components = entries.filter((path) => path !== '.' && path !== './filled');
+const components = Object.entries(manifest.exports)
+  .filter(([, target]) => {
+    const resolved = typeof target === 'string' ? target : (target.svelte ?? target.default);
+    return typeof resolved === 'string' && resolved.endsWith('.svelte');
+  })
+  .map(([entry]) => entry);
+const entries = ['.', ...components];
 const require = createRequire(import.meta.url);
 for (const entry of components) {
   const filename = require.resolve('@squircle-icons/svelte' + entry.slice(1));
@@ -20,22 +25,27 @@ await writeFile(
   `import type { ComponentProps } from 'svelte';
 ${entries
   .map((entry, i) =>
-    entry === '.' || entry === './filled'
+    entry === '.'
       ? `import * as Barrel${i} from '@squircle-icons/svelte${entry.slice(1)}';`
-      : `import Icon${i} from '@squircle-icons/svelte${entry.slice(1)}';\nconst props${i}: ComponentProps<typeof Icon${i}> = ${entry === './morph/maximize-minimize' ? "{ minimize: true, style: 'filled', progress: 0.5 }" : entry === './morph/plus-minus' ? "{ minus: true, style: 'filled', progress: 0.5 }" : entry === './morph/plus-x' || entry === './morph/menu-x' ? "{ x: true, style: 'filled', progress: 0.5 }" : entry.startsWith('./morph/') ? "{ moon: true, style: 'filled', progress: 0.5 }" : '{ strokeWidth: 1.5 }'};`,
+      : `import Icon${i} from '@squircle-icons/svelte${entry.slice(1)}';\nconst props${i}: ComponentProps<typeof Icon${i}> = ${entry.startsWith('./morph/maximize-minimize') ? "{ minimize: true, style: 'filled', progress: 0.5 }" : entry === './motion/trash' ? "{ open: true, style: 'filled', progress: 0.5 }" : entry === './morph/plus-minus' ? "{ minus: true, style: 'filled', progress: 0.5 }" : entry === './morph/plus-x' || entry === './morph/menu-x' ? "{ x: true, style: 'filled', progress: 0.5 }" : entry.startsWith('./morph/') ? "{ moon: true, style: 'filled', progress: 0.5 }" : entry === './heart' || entry === './pen' ? "{ style: 'filled' }" : '{ strokeWidth: 1.5 }'};`,
   )
   .join('\n')}
+import Trash from '@squircle-icons/svelte/trash';
+const animatedTrash: ComponentProps<typeof Trash> = { animate: true, open: true, style: 'filled', speed: 0.5 };
+const staticTrash: ComponentProps<typeof Trash> = { strokeWidth: 'bold' };
+// @ts-expect-error Motion uses authored thickness; static weights must not be silently accepted.
+const invalidMotionWeight: ComponentProps<typeof Trash> = { animate: true, strokeWidth: 'bold' };
 import Camera from '@squircle-icons/svelte/camera';
+// @ts-expect-error Only icons with authored motion support animate.
+const invalidCameraMotion: ComponentProps<typeof Camera> = { animate: true };
 const named: ComponentProps<typeof Camera> = { style: 'filled', strokeWidth: 'bold' };
 // @ts-expect-error Invalid preset must stay rejected on older Svelte types.
 const invalid: ComponentProps<typeof Camera> = { strokeWidth: 'heavy' };
 // @ts-expect-error Named Bold style belongs to the unframed math symbols.
 const invalidStyle: ComponentProps<typeof Camera> = { style: 'bold' };
-import Plus from '@squircle-icons/svelte/plus';
-const boldPlus: ComponentProps<typeof Plus> = { style: 'bold' };
-import PlusSquare from '@squircle-icons/svelte/plus-square';
-// @ts-expect-error A frame is a separate static drawing with Outline/Filled styles.
-const invalidFrameStyle: ComponentProps<typeof PlusSquare> = { style: 'bold' };
+import Heart from '@squircle-icons/svelte/heart';
+// @ts-expect-error Authored expanded Outline has no editable centerline.
+const invalidHeartWidth: ComponentProps<typeof Heart> = { strokeWidth: 2 };
 `,
 );
 

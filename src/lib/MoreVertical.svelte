@@ -9,7 +9,7 @@
     label,
     class: className,
     style: iconStyle = 'outline',
-  }: Omit<IconProps, 'style'> & { style?: 'outline' | 'filled' } = $props();
+  }: IconProps = $props();
   const accessibleLabel = $derived(label?.trim());
   const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));
 </script>
@@ -19,32 +19,47 @@
   viewBox="0 0 24 24"
   width={size}
   height={size}
-  fill={iconStyle === 'filled' ? color : 'none'}
-  stroke={iconStyle === 'filled' ? 'none' : color}
-  stroke-width={iconStyle === 'filled' ? undefined : resolvedStrokeWidth}
-  fill-rule={iconStyle === 'filled' ? 'evenodd' : undefined}
-  stroke-linecap="round"
-  stroke-linejoin="round"
+  {color}
+  fill="none"
+  stroke="none"
+  overflow="hidden"
   class={className}
   role={accessibleLabel ? 'img' : undefined}
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
   data-frame="none"
+  data-source="figma-current"
+  stroke-width={iconStyle === 'outline' ? resolvedStrokeWidth : undefined}
 >
   {#if iconStyle === 'filled'}
     <g data-part="body"
       ><path
-        d="M9.4659090909 4.5340909091 A2.5340909091 2.5340909091 0 1 0 14.5340909091 4.5340909091 A2.5340909091 2.5340909091 0 1 0 9.4659090909 4.5340909091 Z M9.4659090909 12 A2.5340909091 2.5340909091 0 1 0 14.5340909091 12 A2.5340909091 2.5340909091 0 1 0 9.4659090909 12 Z M9.4659090909 19.4659090909 A2.5340909091 2.5340909091 0 1 0 14.5340909091 19.4659090909 A2.5340909091 2.5340909091 0 1 0 9.4659090909 19.4659090909 Z"
+        d="M12 6C13.1046 6 14 5.10457 14 4C14 2.89543 13.1046 2 12 2C10.8954 2 10 2.89543 10 4C10 5.10457 10.8954 6 12 6Z"
+        fill="currentColor"
+      ></path><path
+        d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z"
+        fill="currentColor"
+      ></path><path
+        d="M12 22C13.1046 22 14 21.1046 14 20C14 18.8954 13.1046 18 12 18C10.8954 18 10 18.8954 10 20C10 21.1046 10.8954 22 12 22Z"
+        fill="currentColor"
       ></path></g
     >
   {:else}
     <g data-part="body"
-      ><circle cx="12" cy="4.5340909091" r="1.6590909091"></circle><circle
-        cx="12"
-        cy="12"
-        r="1.6590909091"
-      ></circle><circle cx="12" cy="19.4659090909" r="1.6590909091"></circle></g
+      ><path
+        d="M13.25 4C13.25 4.69036 12.6904 5.25 12 5.25C11.3096 5.25 10.75 4.69036 10.75 4C10.75 3.30964 11.3096 2.75 12 2.75C12.6904 2.75 13.25 3.30964 13.25 4Z"
+        stroke-width={resolvedStrokeWidth}
+        stroke="currentColor"
+      ></path><path
+        d="M13.25 12C13.25 12.6904 12.6904 13.25 12 13.25C11.3096 13.25 10.75 12.6904 10.75 12C10.75 11.3096 11.3096 10.75 12 10.75C12.6904 10.75 13.25 11.3096 13.25 12Z"
+        stroke-width={resolvedStrokeWidth}
+        stroke="currentColor"
+      ></path><path
+        d="M13.25 20C13.25 20.6904 12.6904 21.25 12 21.25C11.3096 21.25 10.75 20.6904 10.75 20C10.75 19.3096 11.3096 18.75 12 18.75C12.6904 18.75 13.25 19.3096 13.25 20Z"
+        stroke-width={resolvedStrokeWidth}
+        stroke="currentColor"
+      ></path></g
     >
   {/if}
 </svg>

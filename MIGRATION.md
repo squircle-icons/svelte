@@ -1,5 +1,15 @@
-# Repository split provenance
+# Migrate to0.2.0-alpha.0
 
-This alpha repository was split from `palamto/squircle-icons` at commit `21cdd88b90f93f13d0ed628cd7a163b866881bd9` on 2026-10-26. The original repository is retained privately with its original history as the pre-split record.
+This release replaces the old121 collection with 94 current source pairs. It is a breaking alpha update. Published older npm versions remain immutable; current source/package outputs contain no legacy icons, frame variants or prototype datasets.
 
-The active repositories are [core](https://github.com/squircle-icons/core), [svelte](https://github.com/squircle-icons/svelte), and [homepage](https://github.com/squircle-icons/homepage). This is the **svelte** repository. No other framework adapter is implemented yet. The temporary name `squircle-icons-svelte` was replaced by `@squircle-icons/svelte` for the first alpha release. Original artwork and code are licensed under [MIT](LICENSE).
+- Keep normal imports such as `@squircle-icons/svelte/camera`; they now render current artwork. Select `style="outline"` (default) or `style="filled"` on the same component.
+- Replace `/filled/<icon>` or the `/filled` barrel with the normal import and `style="filled"`.
+- Remove old `-square`/`-circle` enclosing-frame imports. The new source has independent identities such as `square`; no automatic old-frame aliases are retained.
+- Rename `/log-in`→`/login` and `/log-out`→`/logout`. Removed identities have no silent replacement; use the current catalog.
+- Default Regular stroke is now1.5. Numbers and Thin/Bold presets remain supported for real stroked Outlines. Heart/Pen retain fixed expanded geometry; Filled is fixed source paint.
+- `style="bold"` is removed. Use `strokeWidth="bold"` for supported Outline components, or the authored Filled style.
+- Use `<Trash animate open={open} />` with the normal Trash import. Animated thickness is fixed; static and animated Trash now use the same current source. The direct `motion/trash` export remains available.
+- The five morph imports and destination props remain available. They keep current endpoints and existing motion timing.
+- Remove old `design/squircle-base` and `design/window-transfer` helper imports. They were superseded prototypes. The current opt-in `design/figma-catalog` provides source/review data for the private Lab; ordinary icon imports do not load it.
+
+The repository originated from a private workspace split. Core owns original source, Svelte owns components and the independent private Lab owns review UI. Original artwork and code are MIT licensed. Draft/approved metadata reflects visual review; publication alone does not change it.

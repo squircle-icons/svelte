@@ -1,9 +1,9 @@
 <script>
+  import Trash from '@squircle-icons/svelte/trash';
   import MaximizeMinimizeMorph from '@squircle-icons/svelte/morph/maximize-minimize';
   import { onMount } from 'svelte';
   import Camera from '@squircle-icons/svelte/camera';
   import Folder from '@squircle-icons/svelte/folder';
-  import FilledCamera from '@squircle-icons/svelte/filled/camera';
   import MenuXMorph from '@squircle-icons/svelte/morph/menu-x';
   import PlusMinusMorph from '@squircle-icons/svelte/morph/plus-minus';
   import PlusXMorph from '@squircle-icons/svelte/morph/plus-x';
@@ -39,8 +39,8 @@
 <div id="camera">
   <Camera label="Compatible camera" style={filled ? 'filled' : 'outline'} strokeWidth={width} />
 </div>
-<div id="folder"><Folder style="filled" strokeWidth={width} /></div>
-<div id="dedicated"><FilledCamera /></div>
+<div id="folder"><Folder strokeWidth={width} /></div>
+<div id="decorative-filled"><Camera style="filled" /></div>
 <button id="morph-target" onclick={() => (active = !active)}>Toggle morph destinations</button>
 <div id="morph"><SunMoonMorph moon={active} label="Compatible morph" /></div>
 
@@ -51,3 +51,5 @@
 <PlusMinusMorph minus={active} label="Compatible Plus Minus morph" />
 
 <MaximizeMinimizeMorph minimize={active} label="Compatible Maximize Minimize morph" />
+
+<Trash animate progress={0.5} label="Compatible trash motion" />

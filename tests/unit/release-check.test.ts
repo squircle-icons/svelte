@@ -1,32 +1,25 @@
 import { readFile } from 'node:fs/promises';
 import { expect, it } from 'vitest';
 import { assertReleaseReady } from '../../tools/release-check.js';
-import { flattenCoreIcons } from '../../tools/static-icons.js';
-
-const icons = flattenCoreIcons(
-  JSON.parse(
-    await readFile(new URL(import.meta.resolve('@squircle-icons/core/catalog.json')), 'utf8'),
-  ),
+const icons = JSON.parse(
+  await readFile(new URL(import.meta.resolve('@squircle-icons/core/catalog.json')), 'utf8'),
 );
-
-it('permits the current owner-approved collection and rejects an empty release', () => {
-  expect(() => assertReleaseReady(icons)).not.toThrow();
-  expect(() => assertReleaseReady([])).toThrow('empty icon collection');
+it('allows the authorized alpha without changing source review status, but blocks stable drafts', () => {
+  const before = JSON.stringify(icons);
+  expect(() => assertReleaseReady(icons, '0.2.0-alpha.0')).not.toThrow();
+  expect(() => assertReleaseReady(icons, '0.2.0')).toThrow('Unapproved');
+  expect(JSON.stringify(icons)).toBe(before);
 });
-
-it.each(['none', 'square', 'circle'] as const)(
-  'blocks a draft %s drawing in either style without changing the source',
-  (frame) => {
-    const icon = icons.find((icon) => icon.frame === frame)!;
-    const review = { ...icon.metadata.review!, status: 'draft' as const };
-    expect(() => assertReleaseReady([{ ...icon, metadata: { ...icon.metadata, review } }])).toThrow(
-      icon.name,
-    );
-    expect(() =>
-      assertReleaseReady([
-        { ...icon, filled: { ...icon.filled!, metadata: { ...icon.filled!.metadata, review } } },
-      ]),
-    ).toThrow(icon.name);
-    expect(() => assertReleaseReady([icon])).not.toThrow();
-  },
-);
+it('rejects empty, duplicate, incomplete and missing-review source data', () => {
+  expect(() => assertReleaseReady([], '0.2.0-alpha.0')).toThrow('empty');
+  expect(() => assertReleaseReady([icons[0], icons[0]], '0.2.0-alpha.0')).toThrow('Duplicate');
+  expect(() => assertReleaseReady([{ ...icons[0], filled: undefined }], '0.2.0-alpha.0')).toThrow(
+    'Incomplete',
+  );
+  expect(() =>
+    assertReleaseReady(
+      [{ ...icons[0], metadata: { ...icons[0].metadata, review: undefined } }],
+      '0.2.0-alpha.0',
+    ),
+  ).toThrow('review');
+});

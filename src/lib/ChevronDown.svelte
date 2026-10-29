@@ -9,7 +9,7 @@
     label,
     class: className,
     style: iconStyle = 'outline',
-  }: Omit<IconProps, 'style'> & { style?: 'outline' | 'filled' } = $props();
+  }: IconProps = $props();
   const accessibleLabel = $derived(label?.trim());
   const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));
 </script>
@@ -19,26 +19,35 @@
   viewBox="0 0 24 24"
   width={size}
   height={size}
-  fill={iconStyle === 'filled' ? color : 'none'}
-  stroke={iconStyle === 'filled' ? 'none' : color}
-  stroke-width={iconStyle === 'filled' ? undefined : resolvedStrokeWidth}
-  fill-rule={iconStyle === 'filled' ? 'evenodd' : undefined}
-  stroke-linecap="round"
-  stroke-linejoin="round"
+  {color}
+  fill="none"
+  stroke="none"
+  overflow="hidden"
   class={className}
   role={accessibleLabel ? 'img' : undefined}
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
   data-frame="none"
+  data-source="figma-current"
+  stroke-width={iconStyle === 'outline' ? resolvedStrokeWidth : undefined}
 >
   {#if iconStyle === 'filled'}
     <g data-part="body"
       ><path
-        d="M21.125 6.5625 A0.875 0.875 0 0 1 21.74371843 8.05621843 L12.61871843 17.18121843 A0.875 0.875 0 0 1 11.38128157 17.18121843 L2.25628157 8.05621843 A0.875 0.875 0 0 1 2.875 6.5625 L21.125 6.5625 Z"
+        d="M20 7.25C20.1483 7.25 20.2933 7.29399 20.4167 7.3764C20.54 7.45881 20.6361 7.57594 20.6929 7.71299C20.7497 7.85003 20.7645 8.00083 20.7356 8.14632C20.7066 8.2918 20.6352 8.42544 20.5303 8.53033L12.5303 16.5303C12.4607 16.6 12.378 16.6552 12.287 16.6929C12.196 16.7306 12.0985 16.75 12 16.75C11.9015 16.75 11.804 16.7306 11.713 16.6929C11.622 16.6552 11.5393 16.6 11.4697 16.5303L3.46967 8.53033C3.36478 8.42544 3.29335 8.2918 3.26441 8.14632C3.23547 8.00083 3.25032 7.85003 3.30709 7.71299C3.36386 7.57594 3.45999 7.45881 3.58332 7.3764C3.70666 7.29399 3.85166 7.25 4 7.25L20 7.25Z"
+        fill="currentColor"
       ></path></g
     >
   {:else}
-    <g data-part="body"><path d="M21.125 7.4375 L12 16.5625 L2.875 7.4375"></path></g>
+    <g data-part="body"
+      ><path
+        d="M20 8L12 16L4 8"
+        stroke-width={resolvedStrokeWidth}
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="currentColor"
+      ></path></g
+    >
   {/if}
 </svg>

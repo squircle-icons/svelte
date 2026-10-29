@@ -9,7 +9,7 @@
     label,
     class: className,
     style: iconStyle = 'outline',
-  }: Omit<IconProps, 'style'> & { style?: 'outline' | 'filled' } = $props();
+  }: IconProps = $props();
   const accessibleLabel = $derived(label?.trim());
   const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));
 </script>
@@ -19,28 +19,35 @@
   viewBox="0 0 24 24"
   width={size}
   height={size}
-  fill={iconStyle === 'filled' ? color : 'none'}
-  stroke={iconStyle === 'filled' ? 'none' : color}
-  stroke-width={iconStyle === 'filled' ? undefined : resolvedStrokeWidth}
-  fill-rule={iconStyle === 'filled' ? 'evenodd' : undefined}
-  stroke-linecap="round"
-  stroke-linejoin="round"
+  {color}
+  fill="none"
+  stroke="none"
+  overflow="hidden"
   class={className}
   role={accessibleLabel ? 'img' : undefined}
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
   data-frame="none"
+  data-source="figma-current"
+  stroke-width={iconStyle === 'outline' ? resolvedStrokeWidth : undefined}
 >
   {#if iconStyle === 'filled'}
     <g data-part="body"
       ><path
-        d="M12.875 2.875 L12.875 13.40625 L18.84375 13.40625 A0.875 0.875 0 0 1 19.46246843 14.89996843 L12.61871843 21.74371843 A0.875 0.875 0 0 1 11.38128157 21.74371843 L4.53753157 14.89996843 A0.875 0.875 0 0 1 5.15625 13.40625 L11.125 13.40625 L11.125 2.875 A0.875 0.875 0 0 1 12.875 2.875 Z"
+        d="M12.75 3.25V13.0625H18.9375C19.0858 13.0625 19.2308 13.1065 19.3542 13.1889C19.4775 13.2713 19.5736 13.3884 19.6304 13.5255C19.6872 13.6625 19.702 13.8133 19.6731 13.9588C19.6441 14.1043 19.5727 14.2379 19.4678 14.3428L12.5303 21.2803C12.4607 21.35 12.378 21.4052 12.287 21.4429C12.196 21.4806 12.0985 21.5 12 21.5C11.9015 21.5 11.804 21.4806 11.713 21.4429C11.622 21.4052 11.5393 21.35 11.4697 21.2803L4.53217 14.3428C4.42728 14.2379 4.35585 14.1043 4.32691 13.9588C4.29797 13.8133 4.31283 13.6625 4.36959 13.5255C4.42636 13.3884 4.52249 13.2713 4.64582 13.1889C4.76916 13.1065 4.91416 13.0625 5.0625 13.0625L11.25 13.0625V3.25C11.25 3.05109 11.329 2.86032 11.4697 2.71967C11.6103 2.57902 11.8011 2.5 12 2.5C12.1989 2.5 12.3897 2.57902 12.5303 2.71967C12.671 2.86032 12.75 3.05109 12.75 3.25Z"
+        fill="currentColor"
       ></path></g
     >
   {:else}
     <g data-part="body"
-      ><path d="M12 2.875 L12 21.125 M18.84375 14.28125 L12 21.125 L5.15625 14.28125"></path></g
+      ><path
+        d="M12 3.25V20.75M5.0625 13.8125L12 20.75L18.9375 13.8125"
+        stroke-width={resolvedStrokeWidth}
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="currentColor"
+      ></path></g
     >
   {/if}
 </svg>

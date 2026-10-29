@@ -6,7 +6,6 @@
     x = false,
     progress,
     speed = 1,
-    frame,
     size = 24,
     color = 'currentColor',
     style: iconStyle = 'outline',
@@ -18,7 +17,6 @@
     x?: boolean;
     progress?: number;
     speed?: number;
-    frame?: 'none' | 'square' | 'circle';
     size?: number | string;
     color?: string;
     style?: 'outline' | 'filled';
@@ -28,14 +26,13 @@
     onsettle?: (x: boolean) => void;
   } = $props();
 
-  const activeFrame = $derived(frame ?? (iconStyle === 'filled' ? 'square' : 'none'));
   const accessibleLabel = $derived(label?.trim());
 </script>
 
 <!-- Keep this two-stage fold legible at default speed; Sun Moon retains its own pace. -->
 <MorphProgress end={x} {progress} speed={speed * 0.4} {onprogress} {onsettle}>
   {#snippet children(visual)}
-    {@const drawing = plusXFrame(visual, geometry, activeFrame)}
+    {@const drawing = plusXFrame(visual, geometry)}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -52,14 +49,12 @@
       aria-label={accessibleLabel || undefined}
       aria-hidden={accessibleLabel ? undefined : true}
       focusable="false"
-      data-frame={activeFrame}
+      data-frame="none"
+      data-source="figma-current"
       data-morph="plus-x"
       data-progress={visual.toFixed(5)}
       data-state={visual === 0 ? 'plus' : visual === 1 ? 'x' : 'morph'}
     >
-      {#if iconStyle === 'outline' && activeFrame !== 'none'}
-        <path data-part="frame" d={geometry.frames[activeFrame].outline} />
-      {/if}
       <path data-part="body" d={iconStyle === 'filled' ? drawing.filled : drawing.outline} />
     </svg>
   {/snippet}
