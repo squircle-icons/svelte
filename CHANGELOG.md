@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.0-alpha.5
+
+- Publish from GitHub Actions through npm Trusted Publishing after the full quality and compatibility jobs pass.
+- Publish the tested tarball, verify registry integrity, and align alpha/latest through OIDC with idempotent tag recovery.
+- Keep icon artwork, component runtime, public exports and consumer requirements identical to alpha.4.
+
 ## 0.1.0-alpha.4
 
 - Include all 121 approved static icons from 51 authoring families, with independent Square/Circle imports and no static frame prop.
