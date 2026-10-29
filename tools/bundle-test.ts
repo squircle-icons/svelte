@@ -12,12 +12,7 @@ for (const [name, statement, expectedIcon] of [
   ['trash', "import Icon from '@squircle-icons/svelte/trash';", 'Trash.svelte'],
   ['folder', "import Icon from '@squircle-icons/svelte/folder';", 'Folder.svelte'],
   ['math', "import Icon from '@squircle-icons/svelte/plus';", 'Plus.svelte'],
-  ['square', "import Icon from '@squircle-icons/svelte/plus-square';", 'PlusSquare.svelte'],
-  [
-    'circle',
-    "import Icon from '@squircle-icons/svelte/arrow-left-circle';",
-    'ArrowLeftCircle.svelte',
-  ],
+  ['square', "import Icon from '@squircle-icons/svelte/square';", 'Square.svelte'],
   ['barrel', "import { Camera as Icon } from '@squircle-icons/svelte';", 'Camera.svelte'],
 ] as const) {
   const transformedPackageModules = new Set<string>();

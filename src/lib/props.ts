@@ -1,4 +1,4 @@
-export type IconStyle = 'outline' | 'bold' | 'filled';
+export type IconStyle = 'outline' | 'filled';
 export type IconStrokeWidth = number | 'thin' | 'regular' | 'bold';
 
 export type IconProps = {

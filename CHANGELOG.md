@@ -1,11 +1,23 @@
 # Changelog
 
-## Unreleased
+## 0.2.0-alpha.0
 
-- Add `<Trash animate open={open} />` to the existing Trash import, reusing the authored motion. Plain Trash keeps its static artwork and stroke widths; animated thickness is fixed. The Trash bundle includes its motion renderer/controller, while other direct icon imports stay isolated.
+- Breaking: replace the legacy 121 collection with the current 94 source pairs. Remove old frame variants, Filled namespaces and superseded study exports.
+- Use one Outline/Filled component per icon, with Regular 1.5 and configurable real stroke geometry; Heart/Pen retain fixed expanded Outlines.
+- Keep `<Trash animate open={open} />`, its matching static source, five reversible morph pairs and the separate Motion/Morph previews.
+- Preserve source draft status while publishing the explicitly authorized alpha. Refresh documentation and remove retired Lab data.
 
-- Breaking: remove the separate Filled import namespace and Filled-only component tree. Use the regular per-icon import with `style="filled"` instead.
-- Keep both authored styles, numeric/preset stroke widths and independent per-icon compilation in the unified components.
+## 0.1.0-alpha.6
+
+- Create a version-named GitHub Release and source tag automatically after verified npm publication and distribution tags succeed.
+- Derive the tag's source commit from npm provenance and preserve existing release notes on retries.
+- Keep icon artwork, runtime, exports and consumer requirements identical to alpha.5.
+
+## 0.1.0-alpha.5
+
+- Publish from GitHub Actions through npm Trusted Publishing after the full quality and compatibility jobs pass.
+- Publish the tested tarball, verify registry integrity, and align alpha/latest through OIDC with idempotent tag recovery.
+- Keep icon artwork, component runtime, public exports and consumer requirements identical to alpha.4.
 
 ## 0.1.0-alpha.4
 

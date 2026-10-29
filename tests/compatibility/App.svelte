@@ -39,7 +39,7 @@
 <div id="camera">
   <Camera label="Compatible camera" style={filled ? 'filled' : 'outline'} strokeWidth={width} />
 </div>
-<div id="folder"><Folder style="filled" strokeWidth={width} /></div>
+<div id="folder"><Folder strokeWidth={width} /></div>
 <div id="decorative-filled"><Camera style="filled" /></div>
 <button id="morph-target" onclick={() => (active = !active)}>Toggle morph destinations</button>
 <div id="morph"><SunMoonMorph moon={active} label="Compatible morph" /></div>

@@ -9,7 +9,7 @@
     label,
     class: className,
     style: iconStyle = 'outline',
-  }: Omit<IconProps, 'style'> & { style?: 'outline' | 'filled' } = $props();
+  }: IconProps = $props();
   const accessibleLabel = $derived(label?.trim());
   const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));
 </script>
@@ -19,32 +19,47 @@
   viewBox="0 0 24 24"
   width={size}
   height={size}
-  fill={iconStyle === 'filled' ? color : 'none'}
-  stroke={iconStyle === 'filled' ? 'none' : color}
-  stroke-width={iconStyle === 'filled' ? undefined : resolvedStrokeWidth}
-  fill-rule={iconStyle === 'filled' ? 'evenodd' : undefined}
-  stroke-linecap="round"
-  stroke-linejoin="round"
+  {color}
+  fill="none"
+  stroke="none"
+  overflow="hidden"
   class={className}
   role={accessibleLabel ? 'img' : undefined}
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
   data-frame="none"
+  data-source="figma-current"
+  stroke-width={iconStyle === 'outline' ? resolvedStrokeWidth : undefined}
 >
   {#if iconStyle === 'filled'}
     <g data-part="body"
       ><path
-        d="M2 12 A2.5340909091 2.5340909091 0 1 0 7.0681818182 12 A2.5340909091 2.5340909091 0 1 0 2 12 Z M9.4659090909 12 A2.5340909091 2.5340909091 0 1 0 14.5340909091 12 A2.5340909091 2.5340909091 0 1 0 9.4659090909 12 Z M16.9318181818 12 A2.5340909091 2.5340909091 0 1 0 22 12 A2.5340909091 2.5340909091 0 1 0 16.9318181818 12 Z"
+        d="M4 14C5.10457 14 6 13.1046 6 12C6 10.8954 5.10457 10 4 10C2.89543 10 2 10.8954 2 12C2 13.1046 2.89543 14 4 14Z"
+        fill="currentColor"
+      ></path><path
+        d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z"
+        fill="currentColor"
+      ></path><path
+        d="M20 14C21.1046 14 22 13.1046 22 12C22 10.8954 21.1046 10 20 10C18.8954 10 18 10.8954 18 12C18 13.1046 18.8954 14 20 14Z"
+        fill="currentColor"
       ></path></g
     >
   {:else}
     <g data-part="body"
-      ><circle cx="4.5340909091" cy="12" r="1.6590909091"></circle><circle
-        cx="12"
-        cy="12"
-        r="1.6590909091"
-      ></circle><circle cx="19.4659090909" cy="12" r="1.6590909091"></circle></g
+      ><path
+        d="M5.25 12C5.25 12.6904 4.69036 13.25 4 13.25C3.30964 13.25 2.75 12.6904 2.75 12C2.75 11.3096 3.30964 10.75 4 10.75C4.69036 10.75 5.25 11.3096 5.25 12Z"
+        stroke-width={resolvedStrokeWidth}
+        stroke="currentColor"
+      ></path><path
+        d="M13.25 12C13.25 12.6904 12.6904 13.25 12 13.25C11.3096 13.25 10.75 12.6904 10.75 12C10.75 11.3096 11.3096 10.75 12 10.75C12.6904 10.75 13.25 11.3096 13.25 12Z"
+        stroke-width={resolvedStrokeWidth}
+        stroke="currentColor"
+      ></path><path
+        d="M21.25 12C21.25 12.6904 20.6904 13.25 20 13.25C19.3096 13.25 18.75 12.6904 18.75 12C18.75 11.3096 19.3096 10.75 20 10.75C20.6904 10.75 21.25 11.3096 21.25 12Z"
+        stroke-width={resolvedStrokeWidth}
+        stroke="currentColor"
+      ></path></g
     >
   {/if}
 </svg>

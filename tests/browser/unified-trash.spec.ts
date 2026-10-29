@@ -50,7 +50,7 @@ test('animate can be disabled or unmounted during playback without errors', asyn
   await host.getByRole('button', { name: 'Toggle Trash lid', exact: true }).click();
   await host.getByRole('button', { name: 'Toggle Trash animation', exact: true }).click();
   await expect(host.locator('svg')).not.toHaveAttribute('data-motion');
-  await expect(host.locator('svg')).toHaveAttribute('stroke-width', '1.75');
+  await expect(host.locator('svg')).toHaveAttribute('stroke-width', '1.5');
   await host.getByRole('button', { name: 'Toggle Trash animation', exact: true }).click();
   await expect(host.locator('svg')).toHaveAttribute('data-state', 'open');
   await host.getByRole('button', { name: 'Toggle Trash lid', exact: true }).click();

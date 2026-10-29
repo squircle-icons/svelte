@@ -9,7 +9,7 @@
     label,
     class: className,
     style: iconStyle = 'outline',
-  }: Omit<IconProps, 'style'> & { style?: 'outline' | 'filled' } = $props();
+  }: IconProps = $props();
   const accessibleLabel = $derived(label?.trim());
   const resolvedStrokeWidth = $derived(resolveStrokeWidth(strokeWidth));
 </script>
@@ -19,29 +19,36 @@
   viewBox="0 0 24 24"
   width={size}
   height={size}
-  fill={iconStyle === 'filled' ? color : 'none'}
-  stroke={iconStyle === 'filled' ? 'none' : color}
-  stroke-width={iconStyle === 'filled' ? undefined : resolvedStrokeWidth}
-  fill-rule={iconStyle === 'filled' ? 'evenodd' : undefined}
-  stroke-linecap="round"
-  stroke-linejoin="round"
+  {color}
+  fill="none"
+  stroke="none"
+  overflow="hidden"
   class={className}
   role={accessibleLabel ? 'img' : undefined}
   aria-label={accessibleLabel || undefined}
   aria-hidden={accessibleLabel ? undefined : true}
   focusable="false"
   data-frame="none"
+  data-source="figma-current"
+  stroke-width={iconStyle === 'outline' ? resolvedStrokeWidth : undefined}
 >
   {#if iconStyle === 'filled'}
     <g data-part="body"
-      ><path
-        d="M6.16636906 4.92893219 L13.61308734 12.37565048 L17.83363094 8.15510688 A0.875 0.875 0 0 1 19.32734938 8.77382531 L19.32734938 18.45234938 A0.875 0.875 0 0 1 18.45234938 19.32734938 L8.77382531 19.32734938 A0.875 0.875 0 0 1 8.15510688 17.83363094 L12.37565048 13.61308734 L4.92893219 6.16636906 A0.875 0.875 0 0 1 6.16636906 4.92893219 Z"
-      ></path></g
+      ><g
+        ><path
+          d="M6.34316 5.28247L13.2816 12.221L17.6569 7.84573C17.7618 7.74084 17.8954 7.66941 18.0409 7.64048C18.1864 7.61154 18.3372 7.62639 18.4742 7.68315C18.6113 7.73992 18.7284 7.83605 18.8108 7.95939C18.8932 8.08272 18.9372 8.22773 18.9372 8.37606L18.9372 18.1872C18.9372 18.2857 18.9178 18.3832 18.8801 18.4742C18.8424 18.5652 18.7872 18.6479 18.7175 18.7175C18.6479 18.7871 18.5652 18.8424 18.4742 18.8801C18.3832 18.9178 18.2857 18.9372 18.1872 18.9372H8.37609C8.22776 18.9372 8.08275 18.8932 7.95942 18.8108C7.83608 18.7284 7.73995 18.6112 7.68318 18.4742C7.62642 18.3371 7.61156 18.1863 7.6405 18.0409C7.66944 17.8954 7.74087 17.7617 7.84576 17.6568L12.221 13.2816L5.2825 6.34313C5.14185 6.20248 5.06283 6.01171 5.06283 5.8128C5.06283 5.61389 5.14185 5.42312 5.2825 5.28247C5.42315 5.14182 5.61392 5.0628 5.81283 5.0628C6.01174 5.0628 6.20251 5.14182 6.34316 5.28247Z"
+          fill="currentColor"
+        ></path></g
+      ></g
     >
   {:else}
     <g data-part="body"
       ><path
-        d="M5.54765062 5.54765062 L18.45234938 18.45234938 M18.45234938 8.77382531 L18.45234938 18.45234938 L8.77382531 18.45234938"
+        d="M5.81287 5.81281L18.1872 18.1872M8.37613 18.1872H18.1872V8.37607"
+        stroke-width={resolvedStrokeWidth}
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="currentColor"
       ></path></g
     >
   {/if}

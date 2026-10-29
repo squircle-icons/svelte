@@ -1,148 +1,43 @@
 # Squircle Icons · Svelte
 
-**Alpha stage · Open source · MIT license**
+**Alpha · Open source · MIT**
 
-Native Svelte 5 components generated from the versioned [core](https://github.com/squircle-icons/core) artwork. This repository owns component generation, props, package exports, and consumer/bundle/browser tests.
+Native Svelte 5 components for the current **94 icons**, each with Outline and Filled. Version **0.2.0-alpha.0** replaces the legacy 121 collection and enclosing-frame variants. It includes Trash animation and five reversible morph pairs. Draft visual statuses remain drafts; an alpha release does not grant design approval.
 
-## Install in a Svelte 5 application
+## Install
 
 ```sh
 npm install @squircle-icons/svelte@alpha
 ```
 
-Release `0.1.0-alpha.4` contains 121 owner-reviewed static icons from 51 authoring families, including 35 Square and 35 Circle drawings. Every static icon has Outline and Filled styles. It includes the latest approved artwork and the compatibility requirements below. Earlier published versions retain their original contents and requirements.
-
-### Recommended
-
-- Svelte 5.0.0+ within version 5 (`>=5.0.0 <6`).
-- Node.js 22+ from a maintained LTS release line.
-- npm 10+, including newer major releases when their Node.js requirements are met. A compatible pnpm version is an alternative.
-
-Use an up-to-date patch and the [official Node.js LTS download](https://nodejs.org/en/download). Your Node.js version must meet the requirements of the npm release you choose. The recommendation does not require an exact patch or the newest Current release.
-
-The package ships JavaScript inside its native `.svelte` components and separate TypeScript declarations. Consumers do not need a TypeScript preprocessor for the icons. Building this repository itself uses the newer development tools listed below.
+Recommended: **Svelte 5.0.0+ within version 5, Node 22+ LTS and npm 10+** (or compatible pnpm). Use maintained patches; npm's own Node requirements also apply. Package declarations support Svelte 5.0.0, Node 18.0.0 and npm 8.6.0 consumers; development uses Node 24.19.0 and pnpm 10.10.0.
 
 ```svelte
-<script lang="ts">
+<script>
   import Camera from '@squircle-icons/svelte/camera';
 </script>
 
 <Camera size={24} label="Camera" />
-<Camera size={24} label="Camera" style="filled" />
-<Camera strokeWidth="thin" />
-<Camera strokeWidth="regular" />
+<Camera style="filled" />
 <Camera strokeWidth="bold" />
+<Camera strokeWidth={1.75} color="rebeccapurple" />
 ```
 
-Use the same import for both styles. `style="outline"` is the default; `style="filled"` selects the separately authored solid drawing. Menu and Search provide fixed Bold 2.50 Filled geometry without an enclosing box, following their Outline centerlines. Static icons expose one unified component per identity; the separate Filled import namespace has been removed. See [migration instructions](MIGRATION.md#unified-static-imports).
+One component contains both authored styles. Outline is the default. Props: `size`, `color`, `style="outline|filled"`, `label`, `class`, and `strokeWidth` on real stroked Outlines. Presets are Thin 1.25, Regular 1.5 (default) and Bold 2.5; finite nonnegative numbers are supported. Filled keeps its authored paint/counters and fixed weight. Heart/Pen use expanded Outline geometry and do not expose an adjustable stroke. Labels name meaningful images; omitted/blank labels make icons decorative.
 
-Common props are `size=24`, `color="currentColor"`, `style="outline"`, `strokeWidth="regular"`, optional `label` and `class`. Decorative icons omit `label`; meaningful icons receive one accessible name. Components add no tab stop or duplicate SVG title. Stroke presets are `thin` (1.25), `regular` (1.75), and `bold` (2.50); numbers remain supported for fine adjustments. Filled Folder uses `strokeWidth` for its bounded 0.25–6-unit divider gap; other Filled drawings have fixed geometry.
+## Small imports
 
-The old animated Folder/Bell API remains removed. Ordinary static icons have no playback props. Trash additionally supports the authored motion through `animate` and `open`, described below. Authored morph pairs keep separate opt-in imports.
+Prefer direct paths such as `@squircle-icons/svelte/camera`. They compile only that icon; other icons and the full metadata/catalog do not enter their graph. `import { Camera } from '@squircle-icons/svelte'` also works, but a bundler may compile the barrel before removing unused exports. Installing the collection on disk is different from bundling it into your app.
 
-## Keep application builds small
+Ordinary per-icon imports contain no animation runtime. Trash explicitly includes its own renderer/controller so the same component supports SSR and immediate animation. Static Trash mounts no animation listeners or frames. No asynchronous loading placeholder is required. Bundle checks inspect transformed and retained modules, not only the final byte count.
 
-Use one direct import per icon and choose its style through props:
+Choose style from your own hover/focus/selection state:
 
 ```svelte
-<script lang="ts">
-  import Camera from '@squircle-icons/svelte/camera';
-  let active = $state(false);
-</script>
-
-<Camera style={active ? 'filled' : 'outline'} strokeWidth="regular" />
+<Camera style={active ? 'filled' : 'outline'} />
 ```
 
-Ordinary static components contain only that icon's available styles. Trash also includes its explicitly supported motion. Direct imports bypass other icons, collection barrels and the catalog. It keeps one root SVG while the style changes. Let the parent button manage hover and keyboard focus; no special hover prop or animation runtime is needed. The same unified API is used for Filled previews and consumer examples.
-
-Root named imports such as `import { Camera } from '@squircle-icons/svelte'` remain supported. Production tree shaking removes unused components, although a build tool may compile them first. Copying an unchanged component into your app produces the same executable JavaScript as its direct package import. `pnpm test:imports` checks this, confirms one compiled icon, and records repeated build timings and gzip/Brotli sizes in `.artifacts/import-benchmark/report.json`. Timing is informational.
-
-Native `.svelte` files are compiled by the consuming application for its client/server targets. `pnpm test:bundle` records transformed and retained modules in `.artifacts/bundle-report.json`; these checks describe the tested Vite toolchain.
-
-## Develop and verify
-
-Requires Node.js 24.19.0 and pnpm 10.10.0. The reviewed core artifact in `vendor/` makes builds independent of sibling checkouts.
-
-```sh
-pnpm install --frozen-lockfile
-pnpm verify
-pnpm pack --pack-destination .artifacts
-```
-
-Install browser engines once with `pnpm exec playwright install chromium firefox webkit`. Verification checks artifact provenance, deterministic generation, types, build, source contracts, bundle isolation, an isolated tarball consumer, SSR/hydration, style switching, and browser geometry baselines.
-
-Generated components in `src/lib/` must be changed through `tools/generate.ts`. Public component props live in `src/lib/props.ts`. Consumers need no core runtime dependency.
-
-`pnpm test:compat` installs the packed artifact with Svelte 5.0.0 in a separate consumer. It compiles every component export for client/server, checks the public declarations with TypeScript 5.6, and tests SSR, browser hydration, style switching, numeric/preset widths, Filled geometry and accessibility. `SVELTE_COMPAT_VERSION` selects another exact Svelte version; `COMPAT_NODE` selects the Node executable used for compilation, SSR and type checking, plus its bundled npm when available. The test runner and package build still use the development Node version.
-
-The compatibility CI matrix checks the minimum versions declared in package metadata and a recommended Node 22 LTS consumer. The full development suite checks Svelte 5.57.2 on Node 24.19.0 in Chromium, Firefox and WebKit.
-
-## Update core and local review app
-
-```sh
-# After committing core:
-pnpm sync:core ../core
-
-# After committing this repository, run from repos/lab:
-pnpm sync:svelte ../svelte
-```
-
-Sync requires a committed, clean upstream checkout and exclusive use of the downstream checkout while it runs. It builds and packs the source, records its full commit and SHA-256 in `dependency-lock.json`, refreshes the installed dependency and lockfile, and regenerates components/catalogs. Artifacts use content-addressed filenames so updates do not require a destructive reinstall. Failed installation, generation or provenance checks restore downstream files and the previously installed dependency. If automatic recovery also fails, the error prints the preserved backup location. Review the artifact, provenance and generated output together.
-
-The public package is `@squircle-icons/svelte`. Keep both `alpha` and `latest` distribution tags on the current release so the default npm page, default install and documented `@alpha` command stay in sync. Update the public homepage from the exact published npm version and its registry provenance; the independent local app keeps its separate development artifact. Original artwork and code are licensed under [MIT](LICENSE). See [migration provenance](MIGRATION.md).
-
-## Static frames and Bold
-
-Frames are separate icons with independent imports. Static components have no `frame` prop:
-
-```svelte
-<script>
-  import Plus from '@squircle-icons/svelte/plus';
-  import PlusSquare from '@squircle-icons/svelte/plus-square';
-  import PlusCircle from '@squircle-icons/svelte/plus-circle';
-</script>
-
-<Plus />
-<Plus style="bold" />
-<PlusSquare style="filled" />
-<PlusCircle style="outline" />
-```
-
-Only unframed Plus, Minus and X expose `style="bold"`, fixed at 2.50. Other icons select Outline or Filled; Outline thickness still supports presets and numbers. Unframed math Filled equals its solid Bold mark. Its Square/Circle Filled drawings use a Regular 1.75 cutout. Frames are available only where separately authored; Maximize, Minimize and External Link have no framed variants. New Tab uses `plus-square` rather than a duplicate export.
-
-## Opt-in morph pairs
-
-```svelte
-<script>
-  import SunMoonMorph from '@squircle-icons/svelte/morph/sun-moon';
-  let dark = $state(false);
-</script>
-
-<button onclick={() => (dark = !dark)} aria-pressed={dark} aria-label="Dark mode">
-  <SunMoonMorph moon={dark} size={24} />
-</button>
-```
-
-Bind the destination prop to the state your application already uses. The host application owns theme changes, persistence and interaction. Keep the same component mounted to reverse smoothly in flight.
-
-| Import suffix             | Destination prop | Motion status                               |
-| ------------------------- | ---------------- | ------------------------------------------- |
-| `morph/sun-moon`          | `moon`           | Owner-preferred reference; experimental     |
-| `morph/plus-x`            | `x`              | Approved horizontal-merge motion; 0.4× pace |
-| `morph/menu-x`            | `x`              | Experimental horizontal merge; 0.6× pace    |
-| `morph/plus-minus`        | `minus`          | Experimental single fold; 0.6× pace         |
-| `morph/maximize-minimize` | `minimize`       | Experimental inward corner fold; 0.6× pace  |
-
-All pairs support `style="outline|filled"`, `size`, `color`, `class`, `label`, `speed`, `progress`, `onprogress` and `onsettle`. Omit `progress` for animation; a supplied 0–1 value controls manual inspection instead. Morph weights follow their authored endpoints and have no `strokeWidth` prop. Reversal preserves progress and velocity, hidden documents pause playback, and reduced motion switches immediately. Static imports never load this runtime.
-
-All five morphs use the current Figma Squircle endpoints at Outline1.5, with each source's authored Filled treatment. They are unframed and have no `frame` or `strokeWidth` prop. Maximize Minimize uses the inward cubic fold; the temporary separate study export is removed. Static endpoint approval is separate from motion approval; experimental morphs remain subject to change.
-
-## Opt-in icon Motion
-
-Motion animates one icon. It has its own `/motion` page, separate from Morph’s
-icon-to-icon pairs at `/morph`.
-
-Use the regular Trash component for both static and animated rendering:
+## Animate on the same component
 
 ```svelte
 <script>
@@ -150,16 +45,52 @@ Use the regular Trash component for both static and animated rendering:
   let open = $state(false);
 </script>
 
-<Trash />
 <button onclick={() => (open = !open)} aria-label="Toggle trash lid" aria-pressed={open}>
-  <Trash animate {open} size={24} style="filled" />
+  <Trash animate {open} style="filled" size={24} />
 </button>
 ```
 
-`animate` defaults to `false`. Keep it enabled and change `open` to lift/close the lid with smooth mid-flight reversal; do not toggle `animate` to play it. Motion supports `speed`, controlled `progress`, `onprogress` and `onsettle`, plus the shared size/color/style/class/label props. Its authored thickness is fixed, so `strokeWidth` is supported only when `animate` is omitted or false. Other icons do not accept `animate` until they have an authored motion.
+`animate` defaults to false. Keep it enabled and change `open` to reverse smoothly in flight. Static and animated Trash use the same current source; the body/slots remain fixed while lid/handle move together. Animated thickness is authored and fixed, so do not pass `strokeWidth` with `animate`. Only Trash currently has authored animation. The explicit `motion/trash` entry also remains available.
 
-Plain Trash retains its existing production artwork. Animated Trash uses the current Figma Trash source, as does the existing `motion/trash` export; enabling/disabling `animate` changes the renderer and artwork generation. Both Outline and Filled are supported. The body/slots stay fixed while the lid and handle move together. Motion approval is pending owner review. Preview it at `/motion/trash` in the local Lab.
+Motion props include `speed`, controlled `progress` (0..1), `onprogress` and `onsettle`, plus common visual/accessibility props. Reduced motion selects endpoints directly; hidden tabs pause and unmounting cleans up. Animation remains experimental pending owner review.
 
-The unified Trash import includes its motion geometry and shared controller in the bundle, even if `animate` is false; it renders on the server and can animate immediately without an asynchronous download. No motion listeners or animation frames start in static mode. Other per-icon imports retain their static isolation. The explicit `motion/trash` entry remains available for compatibility. This API does not combine the Motion and Morph Lab pages or change the five opt-in morph pairs.
+## Morph between icons
 
-Public releases run `pnpm release:check` after verification to reject unapproved static artwork in any style or frame. Local `pnpm pack` remains available for draft review without publishing.
+```svelte
+<script>
+  import SunMoonMorph from '@squircle-icons/svelte/morph/sun-moon';
+  let dark = $state(false);
+</script>
+
+<button onclick={() => (dark = !dark)} aria-label="Dark theme" aria-pressed={dark}>
+  <SunMoonMorph moon={dark} style="outline" />
+</button>
+```
+
+Your app owns the theme change and persistence. Keep the component mounted for smooth reversal.
+
+| Import                    | Destination prop |
+| ------------------------- | ---------------- |
+| `morph/sun-moon`          | `moon`           |
+| `morph/plus-x`            | `x`              |
+| `morph/menu-x`            | `x`              |
+| `morph/plus-minus`        | `minus`          |
+| `morph/maximize-minimize` | `minimize`       |
+
+All five use current source endpoints, support Outline/Filled and the common motion props, and have fixed authored thickness. Plus↔X retains its approved horizontal merge at0.4× pace; other experimental motion statuses are documented in Core's [playbook](https://github.com/squircle-icons/core/blob/main/MORPH.md). Animate and Morph remain separate features/pages in the private local Lab.
+
+## Develop, verify and release
+
+```sh
+pnpm install --frozen-lockfile
+pnpm verify
+pnpm release:check
+```
+
+Install browser engines once with `pnpm exec playwright install chromium firefox webkit`. Verification covers source provenance, deterministic generation, types, safe geometry, real tarball installation, every source pair, SSR/hydration, accessibility, reversals, lifecycle, reduced motion, import isolation and Svelte 5.0.0 compatibility. Tests grant no visual approval.
+
+Edit artwork in Core, commit and verify it, then run `pnpm sync:core ../core`. Generated components must change through `tools/generate.ts`. Commit the adapter before syncing the independent private Lab with `pnpm sync:svelte ../svelte`. Preserve exclusive pipeline ownership during sync.
+
+GitHub's **npm release** workflow verifies main and compatibility consumers, publishes the tested archive through npm Trusted Publishing/OIDC, verifies registry integrity, aligns `alpha`/`latest`, then creates a GitHub Release named after the version. Publication uses no stored npm token and no repeated local OTP flow. A new version is required for changed published contents. Stable releases require approved artwork; this explicitly authorized alpha preserves draft statuses.
+
+See [migration](MIGRATION.md), [changelog](CHANGELOG.md) and [MIT license](LICENSE). Core is a build-time artifact, not a runtime dependency.
