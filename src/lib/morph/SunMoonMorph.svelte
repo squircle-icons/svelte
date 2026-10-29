@@ -47,11 +47,20 @@
       aria-label={accessibleLabel || undefined}
       aria-hidden={accessibleLabel ? undefined : true}
       focusable="false"
+      data-source="figma-current"
       data-morph="sun-moon"
       data-progress={visual.toFixed(5)}
       data-state={visual === 0 ? 'sun' : visual === 1 ? 'moon' : 'morph'}
     >
-      <path data-part="body" d={frame.body} />
+      <path
+        data-part="body"
+        d={iconStyle === 'filled' && visual === 0
+          ? geometry.sun.filledPath
+          : iconStyle === 'filled' && visual === 1
+            ? geometry.moon.filledPath
+            : frame.body}
+        stroke={iconStyle === 'filled' && (visual === 0 || visual === 1) ? 'none' : undefined}
+      />
       <g data-part="rays" fill="none" opacity={frame.rayOpacity}>
         {#each frame.rays as ray}<path d={ray} />{/each}
       </g>

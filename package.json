@@ -1240,6 +1240,10 @@
       "types": "./dist/design/window-transfer.d.ts",
       "default": "./dist/design/window-transfer.js"
     },
+    "./design/figma-catalog": {
+      "types": "./dist/design/figma-catalog.d.ts",
+      "default": "./dist/design/figma-catalog.js"
+    },
     "./morph/sun-moon": {
       "types": "./dist/morph/SunMoonMorph.svelte.d.ts",
       "svelte": "./dist/morph/SunMoonMorph.svelte",
@@ -1264,11 +1268,6 @@
       "types": "./dist/morph/MaximizeMinimizeMorph.svelte.d.ts",
       "svelte": "./dist/morph/MaximizeMinimizeMorph.svelte",
       "default": "./dist/morph/MaximizeMinimizeMorph.svelte"
-    },
-    "./morph/maximize-minimize-study": {
-      "types": "./dist/morph/MaximizeMinimizeStudyMorph.svelte.d.ts",
-      "svelte": "./dist/morph/MaximizeMinimizeStudyMorph.svelte",
-      "default": "./dist/morph/MaximizeMinimizeStudyMorph.svelte"
     }
   },
   "peerDependencies": {
@@ -1314,7 +1313,7 @@
     "vitest": "5.0.5",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
-    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-a8e45c42baac.tgz"
+    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-2d802a031d9f.tgz"
   },
   "description": "Original Outline and Filled icons as native Svelte 5 components.",
   "repository": {

@@ -1,5 +1,4 @@
 <script>
-  import MaximizeMinimizeStudyMorph from '@squircle-icons/svelte/morph/maximize-minimize-study';
   import MaximizeMinimizeMorph from '@squircle-icons/svelte/morph/maximize-minimize';
   import { onMount } from 'svelte';
   import Camera from '@squircle-icons/svelte/camera';
@@ -52,5 +51,3 @@
 <PlusMinusMorph minus={active} label="Compatible Plus Minus morph" />
 
 <MaximizeMinimizeMorph minimize={active} label="Compatible Maximize Minimize morph" />
-
-<MaximizeMinimizeStudyMorph minimize={active} label="Compatible squircle Maximize Minimize study" />

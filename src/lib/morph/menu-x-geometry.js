@@ -8,14 +8,12 @@ const smooth = (p) => {
 const mix = (a, b, p) => a + (b - a) * p;
 const fmt = (n) => String(Math.round(n * 1e8) / 1e8);
 const point = (p) => p.map(fmt).join(' ');
-export function menuXFrame(progress, geometry, frame = 'square') {
-  const mark = geometry.variants?.[frame] ?? geometry;
+export function menuXFrame(progress, geometry) {
+  const mark = geometry;
   const p = clamp(Number.isFinite(progress) ? progress : 0);
-  if (p === 0)
-    return { ...mark.menu, filled: geometry.frames[frame].from, middle: '', middleWidth: 0 };
-  if (p === 1) return { ...mark.x, filled: geometry.frames[frame].to, middle: '', middleWidth: 0 };
-  const q = smooth(p),
-    center = mark.center;
+  if (p === 0) return { ...mark.menu, filled: mark.menu.filled, middle: '', middleWidth: 0 };
+  if (p === 1) return { ...mark.x, filled: mark.x.filled, middle: '', middleWidth: 0 };
+  const center = mark.center;
   // Finish the horizontal merge before either outer bar starts opening into X.
   const collapse = smooth(p * 2);
   const opening = smooth(p * 2 - 1);
@@ -29,8 +27,7 @@ export function menuXFrame(progress, geometry, frame = 'square') {
   };
   const remaining = 1 - collapse;
   const middleExtent = mark.menuExtent * remaining;
-  const width =
-    frame === 'none' ? mark.filledStrokeWidth : mix(mark.filledStrokeWidth, mark.strokeWidth, q);
+  const width = mark.filledStrokeWidth;
   const glyph =
     offset < 1e-6 && remaining < 1e-6
       ? mergedStrokes(angle, -angle, extent, width / 2, { x: center[0], y: center[1] })
@@ -65,6 +62,6 @@ export function menuXFrame(progress, geometry, frame = 'square') {
         : '',
     middleWidth: mark.strokeWidth * remaining,
     filledWidth: width,
-    filled: geometry.frames[frame].box + ' ' + glyph,
+    filled: glyph,
   };
 }

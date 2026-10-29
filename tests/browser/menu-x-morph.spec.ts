@@ -98,7 +98,7 @@ for (const style of ['outline', 'filled'])
             render(
               name === 'menu' && style === 'filled'
                 ? '[data-testid="morph-menu-filled-contour"] svg'
-                : `[data-testid="${name}-${style}-contour"] svg`,
+                : `[data-testid="morph-${name}-${style}-contour"] svg`,
             ),
           ]);
           let mismatch = 0,
@@ -119,10 +119,9 @@ for (const style of ['outline', 'filled'])
 
 registerMorphLifecycle('Menu X fixture', 'Menu X open', 'x');
 
-for (const frame of ['none', 'square', 'circle'])
+for (const frame of ['none'])
   test(`Menu X ${frame} merges horizontally before opening the diagonals`, async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('button', { name: `Frame ${frame}`, exact: true }).click();
     const svg = page.getByTestId('menu-x-intermediate-outline').locator('svg');
     const body = svg.locator('[data-part="body"]');
     const scrub = (p: number) =>

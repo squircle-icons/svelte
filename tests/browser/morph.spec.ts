@@ -52,7 +52,7 @@ for (const style of ['outline', 'filled'])
           };
           const [a, b] = await Promise.all([
             render('[data-testid="morph-fixture"] svg'),
-            render(`[data-testid="${name}-${style}-contour"] svg`),
+            render(`[data-testid="morph-${name}-${style}-contour"] svg`),
           ]);
           let mismatch = 0,
             union = 0;

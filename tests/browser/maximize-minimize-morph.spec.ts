@@ -1,5 +1,4 @@
 import { expect, test, type Page } from '@playwright/test';
-import { registerMorphLifecycle } from './morph-lifecycle.js';
 
 const morph = (page: Page) =>
   page.getByRole('img', { name: 'Maximize Minimize fixture', exact: true });
@@ -70,7 +69,7 @@ for (const style of ['outline', 'filled'])
         new XMLSerializer().serializeToString(node),
       );
       const source = await page
-        .getByTestId(`${name}-${style}-contour`)
+        .getByTestId(`morph-${name}-${style}-contour`)
         .locator('svg')
         .evaluate((node) => new XMLSerializer().serializeToString(node));
       expect(await difference(page, [actual, source])).toBeLessThan(0.006);
@@ -83,7 +82,7 @@ test('four rounded corners keep their fixed Bold silhouette while folding', asyn
   const initialPath = await svg.locator('path').elementHandle();
   for (const p of [0.0001, 0.25, 0.49, 0.5, 0.51, 0.75, 0.9999]) {
     await scrub(page, p);
-    await expect(svg).toHaveAttribute('stroke-width', '1.75');
+    await expect(svg).toHaveAttribute('stroke-width', '1.5');
     const outline = await svg.evaluate((node) => {
       const copy = node.cloneNode(true) as SVGSVGElement;
       copy.setAttribute('stroke-width', '2.5');
@@ -190,8 +189,6 @@ test('default pace leaves time to read the corner fold and reduced motion switch
   await expect(morph(page)).toHaveAttribute('data-state', 'maximize');
 });
 
-registerMorphLifecycle('Maximize Minimize fixture', 'Morph minimize', 'minimize');
-
 test('corners pull inward with anchored tips and straighten instead of rotating', async ({
   page,
 }) => {
@@ -201,7 +198,9 @@ test('corners pull inward with anchored tips and straighten instead of rotating'
       const svg = element as SVGSVGElement;
       const pieces = (d: string) => d.match(/[Mm][^Mm]*/g)!;
       const original = pieces(
-        document.querySelector('[data-testid="maximize-outline-contour"] path')!.getAttribute('d')!,
+        Array.from(document.querySelectorAll('[data-testid="morph-maximize-outline-contour"] path'))
+          .map((path) => path.getAttribute('d'))
+          .join(' '),
       );
       const moving = pieces(svg.querySelector('path')!.getAttribute('d')!);
       const endpoints = (d: string) => {
@@ -217,7 +216,20 @@ test('corners pull inward with anchored tips and straighten instead of rotating'
       return {
         original: original.map(endpoints),
         moving: moving.map(endpoints),
-        straight: moving.every((d) => !/A/i.test(d)),
+        straight: moving.every((d) => {
+          const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path.setAttribute('d', d);
+          svg.append(path);
+          const length = path.getTotalLength(),
+            a = path.getPointAtLength(0),
+            b = path.getPointAtLength(length);
+          const straight = [0.2, 0.4, 0.6, 0.8].every((t) => {
+            const p = path.getPointAtLength(length * t);
+            return Math.abs((p.x - a.x) * (b.y - a.y) - (p.y - a.y) * (b.x - a.x)) < 0.0001;
+          });
+          path.remove();
+          return straight;
+        }),
       };
     });
     result.moving.forEach((points, index) =>
@@ -225,4 +237,30 @@ test('corners pull inward with anchored tips and straighten instead of rotating'
     );
     expect(result.straight).toBe(p === 0.5);
   }
+});
+
+test('study pauses while hidden and resumes the same inward fold', async ({ page }) => {
+  const svg = morph(page);
+  await page.getByRole('button', { name: 'Morph minimize', exact: true }).click();
+  await expect
+    .poll(async () => Number(await svg.getAttribute('data-progress')))
+    .toBeGreaterThan(0.1);
+  const paused = await page.evaluate(() => {
+    Object.defineProperty(document, 'hidden', { configurable: true, value: true });
+    document.dispatchEvent(new Event('visibilitychange'));
+    return document
+      .querySelector('[aria-label="Maximize Minimize fixture"]')!
+      .getAttribute('data-progress');
+  });
+  await page.waitForTimeout(200);
+  expect(await svg.getAttribute('data-progress')).toBe(paused);
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'hidden', { configurable: true, value: false });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await expect(svg).toHaveAttribute('data-state', 'minimize');
+  await page.getByRole('button', { name: 'Unmount moving morphs', exact: true }).click();
+  await expect(svg).toHaveCount(0);
+  await page.getByRole('button', { name: 'Remount moving morphs', exact: true }).click();
+  await expect(svg).toHaveAttribute('data-state', 'minimize');
 });

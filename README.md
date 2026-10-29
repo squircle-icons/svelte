@@ -135,6 +135,6 @@ Bind the destination prop to the state your application already uses. The host a
 
 All pairs support `style="outline|filled"`, `size`, `color`, `class`, `label`, `speed`, `progress`, `onprogress` and `onsettle`. Omit `progress` for animation; a supplied 0–1 value controls manual inspection instead. Morph weights follow their authored endpoints and have no `strokeWidth` prop. Reversal preserves progress and velocity, hidden documents pause playback, and reduced motion switches immediately. Static imports never load this runtime.
 
-Plus X, Menu X and Plus Minus also accept their own `frame="none|square|circle"` option, selecting matching authored geometry at both ends. Outline defaults to None and Filled to Square. Sun Moon and Maximize Minimize are unframed. Static endpoint approval is separate from motion approval; experimental morphs remain subject to change.
+All five morphs use the current Figma Squircle endpoints at Outline1.5, with each source's authored Filled treatment. They are unframed and have no `frame` or `strokeWidth` prop. Maximize Minimize uses the inward cubic fold; the temporary separate study export is removed. Static endpoint approval is separate from motion approval; experimental morphs remain subject to change.
 
 Public releases run `pnpm release:check` after verification to reject unapproved static artwork in any style or frame. Local `pnpm pack` remains available for draft review without publishing.

@@ -177,6 +177,18 @@ exports['./design/window-transfer'] = {
   types: './dist/design/window-transfer.d.ts',
   default: './dist/design/window-transfer.js',
 };
+const figmaCatalog = fileURLToPath(
+  import.meta.resolve('@squircle-icons/core/design/figma-catalog'),
+);
+files.set('src/lib/design/figma-catalog.js', header + (await readFile(figmaCatalog, 'utf8')));
+files.set(
+  'src/lib/design/figma-catalog.d.ts',
+  header + (await readFile(figmaCatalog.replace(/\.js$/, '.d.ts'), 'utf8')),
+);
+exports['./design/figma-catalog'] = {
+  types: './dist/design/figma-catalog.d.ts',
+  default: './dist/design/figma-catalog.js',
+};
 // Preserve relative imports for shared pure geometry used by opt-in morphs.
 const strokes = fileURLToPath(import.meta.resolve('@squircle-icons/core/morph/round-strokes'));
 files.set('src/lib/morph/round-strokes.js', header + (await readFile(strokes, 'utf8')));
@@ -191,7 +203,6 @@ for (const [pair, component, type] of [
   ['menu-x', 'MenuXMorph', 'MenuXGeometry'],
   ['plus-minus', 'PlusMinusMorph', 'PlusMinusGeometry'],
   ['maximize-minimize', 'MaximizeMinimizeMorph', 'MaximizeMinimizeGeometry'],
-  ['maximize-minimize-study', 'MaximizeMinimizeStudyMorph', 'MaximizeMinimizeStudyGeometry'],
 ]) {
   exports[`./morph/${pair}`] = {
     types: `./dist/morph/${component}.svelte.d.ts`,

@@ -38,7 +38,7 @@
       height={size}
       class={className}
       fill={iconStyle === 'filled' ? color : 'none'}
-      fill-rule={iconStyle === 'filled' ? 'evenodd' : undefined}
+      fill-rule={iconStyle === 'filled' ? 'nonzero' : undefined}
       stroke={iconStyle === 'filled' ? 'none' : color}
       stroke-width={iconStyle === 'filled' ? undefined : geometry.strokeWidth}
       stroke-linecap="round"
@@ -49,6 +49,7 @@
       focusable="false"
       data-frame="none"
       data-morph="maximize-minimize"
+      data-source="figma-current"
       data-progress={visual.toFixed(5)}
       data-state={visual === 0 ? 'maximize' : visual === 1 ? 'minimize' : 'morph'}
     >

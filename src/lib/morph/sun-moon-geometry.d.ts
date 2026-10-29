@@ -8,11 +8,14 @@ export type Circle = {
 export type SunMoonGeometry = {
   sun: Circle & {
     rays: number[][];
+    path: string;
+    filledPath: string;
   };
   moon: {
     outer: Circle;
     inner: Circle;
     path: string;
+    filledPath: string;
   };
   strokeWidth: number;
 };

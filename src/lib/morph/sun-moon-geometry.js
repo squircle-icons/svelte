@@ -20,7 +20,9 @@ export function sunMoonFrame(progress, geometry) {
   const overlap = (moon.outer.radius + innerRadius - finalDistance) * bodyProgress ** 2;
   const distance = radius + innerRadius - overlap;
   let body;
-  if (p === 1) {
+  if (p === 0) {
+    body = sun.path;
+  } else if (p === 1) {
     body = moon.path;
   } else if (overlap < 1e-7) {
     body = `M${point(x + radius, y)} A${number(radius)} ${number(radius)} 0 1 0 ${point(x - radius, y)} A${number(radius)} ${number(radius)} 0 1 0 ${point(x + radius, y)} Z`;

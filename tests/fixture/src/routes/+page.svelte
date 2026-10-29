@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { FIGMA_STUDY_ICONS } from '@squircle-icons/svelte/design/figma-catalog';
   import FrameFixtureIcon from '../lib/FrameFixtureIcon.svelte';
   import MaximizeMinimizeMorph from '@squircle-icons/svelte/morph/maximize-minimize';
   import Minimize from '@squircle-icons/svelte/minimize';
@@ -583,7 +584,6 @@
     oninput={(e) => (plusXProgress = Number(e.currentTarget.value))}
   />
   <PlusXMorph
-    frame={plusXStyle === 'filled' ? morphFrame : 'none'}
     x={plusXTarget}
     progress={plusXProgress}
     style={plusXStyle}
@@ -591,10 +591,10 @@
     label="Experimental Plus X morph"
   />
   <div data-testid="plus-x-intermediate-outline">
-    <PlusXMorph frame={morphFrame} progress={plusXProgress ?? 0} size={96} />
+    <PlusXMorph progress={plusXProgress ?? 0} size={96} />
   </div>
   <div data-testid="plus-x-intermediate-filled">
-    <PlusXMorph frame={morphFrame} progress={plusXProgress ?? 0} style="filled" size={96} />
+    <PlusXMorph progress={plusXProgress ?? 0} style="filled" size={96} />
   </div>
 </section>
 
@@ -738,9 +738,7 @@
 </section>
 
 <div data-testid="menu-outline-contour"><Menu size={96} /></div>
-<div data-testid="morph-menu-filled-contour">
-  <FrameFixtureIcon name="menu" style="filled" frame={morphFrame} size={96} />
-</div>
+
 <section data-testid="menu-x-morph-fixture">
   <div aria-label="Fixture morph frames">
     {#each ['none', 'square', 'circle'] as choice}<button
@@ -769,17 +767,16 @@
     oninput={(e) => (menuXProgress = Number(e.currentTarget.value))}
   />
   {#if movingMorphsMounted}<MenuXMorph
-      frame="none"
       x={menuXTarget}
       progress={menuXProgress}
       size={96}
       label="Menu X fixture"
     />{/if}
   <div data-testid="menu-x-intermediate-outline">
-    <MenuXMorph frame={morphFrame} progress={menuXProgress ?? 0} size={96} />
+    <MenuXMorph progress={menuXProgress ?? 0} size={96} />
   </div>
   <div data-testid="menu-x-intermediate-filled">
-    <MenuXMorph frame={morphFrame} progress={menuXProgress ?? 0} style="filled" size={96} />
+    <MenuXMorph progress={menuXProgress ?? 0} style="filled" size={96} />
   </div>
 </section>
 
@@ -840,7 +837,6 @@
     oninput={(e) => (plusMinusProgress = Number(e.currentTarget.value))}
   />
   {#if movingMorphsMounted}<PlusMinusMorph
-      frame={plusMinusStyle === 'filled' ? morphFrame : 'none'}
       minus={plusMinusTarget}
       progress={plusMinusProgress}
       style={plusMinusStyle}
@@ -848,10 +844,10 @@
       label="Experimental Plus Minus morph"
     />{/if}
   <div data-testid="plus-minus-intermediate-outline">
-    <PlusMinusMorph frame={morphFrame} progress={plusMinusProgress ?? 0} size={96} />
+    <PlusMinusMorph progress={plusMinusProgress ?? 0} size={96} />
   </div>
   <div data-testid="plus-minus-intermediate-filled">
-    <PlusMinusMorph frame={morphFrame} progress={plusMinusProgress ?? 0} style="filled" size={96} />
+    <PlusMinusMorph progress={plusMinusProgress ?? 0} style="filled" size={96} />
   </div>
 </section>
 
@@ -1000,6 +996,14 @@
 {#each [{ name: 'maximize', Icon: Maximize }, { name: 'minimize', Icon: Minimize }] as item}
   <div data-testid={item.name + '-outline-contour'}><item.Icon size={96} strokeWidth={1.75} /></div>
   <div data-testid={item.name + '-filled-contour'}><item.Icon style="filled" size={96} /></div>
+{/each}
+
+{#each FIGMA_STUDY_ICONS.filter( (icon) => ['sun', 'moon', 'plus', 'minus', 'x', 'menu', 'maximize', 'minimize'].includes(icon.id) ) as icon}
+  {#each ['outline', 'filled'] as kind}
+    <div data-testid={`morph-${icon.id}-${kind}-contour`}>
+      {@html icon[kind as 'outline' | 'filled']}
+    </div>
+  {/each}
 {/each}
 
 <style>

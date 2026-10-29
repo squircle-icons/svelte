@@ -53,7 +53,7 @@ for (const style of ['outline', 'filled'])
           };
           const [a, b] = await Promise.all([
             render('[data-testid="plus-minus-morph-fixture"] svg'),
-            render(`[data-testid="${name}-${style}-contour"] svg`),
+            render(`[data-testid="morph-${name}-${style}-contour"] svg`),
           ]);
           let mismatch = 0,
             union = 0;
@@ -132,45 +132,33 @@ test('reduced motion switches directly and respects a later preference change', 
   await expect(morph(page)).toHaveAttribute('data-state', 'plus');
 });
 
-test('the fixed Filled box cuts out the exact moving Outline at intermediate frames', async ({
-  page,
-}) => {
-  for (const progress of [0.1, 0.25, 0.4, 0.49, 0.499, 0.5, 0.501, 0.51, 0.6, 0.75, 0.9]) {
+test('current Filled matches the same moving centerlines at Bold2.5', async ({ page }) => {
+  for (const progress of [0.001, 0.1, 0.25, 0.49, 0.5, 0.51, 0.75, 0.9, 0.999]) {
     await scrub(page, progress);
-    await expect(morph(page)).toHaveAttribute('data-progress', progress.toFixed(5));
-    const result = await page.evaluate(() => {
-      const outline = document.querySelector(
-        '[data-testid="plus-minus-intermediate-outline"] path[data-part="body"]',
-      ) as SVGPathElement;
+    const mismatches = await page.evaluate(() => {
+      const original = document.querySelector(
+        '[data-testid="plus-minus-intermediate-outline"] svg',
+      )!;
+      const svg = original.cloneNode(true) as SVGSVGElement;
+      svg.setAttribute('stroke-width', '2.5');
+      svg.style.visibility = 'hidden';
+      document.body.append(svg);
+      const outline = svg.querySelector('path[data-part="body"]') as SVGPathElement;
       const filled = document.querySelector(
         '[data-testid="plus-minus-intermediate-filled"] path',
       ) as SVGPathElement;
       let mismatches = 0;
-      for (let y = 4.1; y < 20; y += 0.2)
-        for (let x = 4.1; x < 20; x += 0.2) {
-          const point = new DOMPoint(x, y);
-          if (outline.isPointInStroke(point) === filled.isPointInFill(point)) mismatches++;
+      for (let y = 2.13; y < 22; y += 0.2)
+        for (let x = 2.11; x < 22; x += 0.2) {
+          const p = new DOMPoint(x, y);
+          if (outline.isPointInStroke(p) !== filled.isPointInFill(p)) mismatches++;
         }
-      const box = outline.getBBox();
-      return {
-        mismatches,
-        bounds: [box.x, box.y, box.width, box.height],
-        boxPath: filled.getAttribute('d')!.split(' Z')[0],
-        sourceBoxPath: document
-          .querySelector('[data-testid="plus-filled-contour"] path')!
-          .getAttribute('d')!
-          .split(' Z')[0],
-        stroke: outline.ownerSVGElement!.getAttribute('stroke-width'),
-      };
+      svg.remove();
+      return mismatches;
     });
-    expect(result.mismatches).toBeLessThanOrEqual(4);
-    expect(result.stroke).toBe('1.75');
-    expect(result.bounds[0]).toBeCloseTo(7.5, 5);
-    expect(result.bounds[2]).toBeCloseTo(9, 5);
-    expect(result.bounds[1]).toBeGreaterThanOrEqual(7.5 - 1e-6);
-    expect(result.bounds[1] + result.bounds[3]).toBeLessThanOrEqual(16.5 + 1e-6);
-
-    expect(result.boxPath).toBe(result.sourceBoxPath);
+    expect(mismatches).toBeLessThanOrEqual(8);
+    await expect(morph(page)).toHaveAttribute('stroke-width', '1.5');
+    await expect(morph(page)).toHaveAttribute('data-frame', 'none');
   }
 });
 
