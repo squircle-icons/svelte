@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { test } from 'node:test';
-import { releaseStatus, waitForPublication } from '../../tools/release-status.mjs';
+import { releaseStatus, waitForPublication, waitForTags } from '../../tools/release-status.mjs';
 
 const manifest = {
   name: '@squircle-icons/svelte',
@@ -13,6 +13,65 @@ const archive = Buffer.from('the archive already tested by the quality job');
 const integrity = 'sha512-' + createHash('sha512').update(archive).digest('base64');
 const published = (value) =>
   new Response(JSON.stringify({ ...manifest, dist: { integrity: value } }));
+
+test('tag verification waits until both independently propagated tags match', async () => {
+  let reads = 0;
+  const delays = [];
+  const tags = await waitForTags(manifest, {
+    request: async (url, options) => {
+      assert.equal(url, 'https://registry.npmjs.org/-/package/@squircle-icons%2fsvelte/dist-tags');
+      assert.equal(options.cache, 'no-store');
+      assert.equal(options.headers, undefined);
+      reads++;
+      return new Response(
+        JSON.stringify({
+          alpha: reads < 2 ? '0.1.0-alpha.4' : manifest.version,
+          latest: reads < 3 ? '0.1.0-alpha.4' : manifest.version,
+        }),
+      );
+    },
+    pause: async (ms) => delays.push(ms),
+    interval: 23,
+  });
+  assert.deepEqual(tags, { alpha: manifest.version, latest: manifest.version });
+  assert.equal(reads, 3);
+  assert.deepEqual(delays, [23, 23]);
+});
+
+test('tag propagation polling stops at a bounded deadline without claiming success', async () => {
+  let pauses = 0;
+  await assert.rejects(
+    waitForTags(manifest, {
+      request: async () => new Response(JSON.stringify({ alpha: manifest.version, latest: 'old' })),
+      pause: async () => {
+        pauses++;
+      },
+      attempts: 3,
+    }),
+    /deadline/,
+  );
+  assert.equal(pauses, 2);
+});
+
+test('tag verification exposes registry, network and malformed data failures', async () => {
+  for (const status of [401, 403, 429, 500])
+    await assert.rejects(
+      waitForTags(manifest, {
+        request: async () => new Response('', { status }),
+      }),
+      new RegExp(`HTTP ${status}`),
+    );
+  for (const value of ['not json', 'null', '[]'])
+    await assert.rejects(waitForTags(manifest, { request: async () => new Response(value) }));
+  await assert.rejects(
+    waitForTags(manifest, {
+      request: async () => {
+        throw new Error('Network unavailable');
+      },
+    }),
+    /Network unavailable/,
+  );
+});
 
 test('only a missing registry version permits a new publication', async () => {
   const status = await releaseStatus(manifest, archive, async (url, options) => {

@@ -6,6 +6,8 @@ In the repository's **Actions** tab, select **npm release**. **Run workflow** pr
 
 After the npm job verifies publication and both distribution tags, the GitHub Release job creates a release named after the package version and a `v`-prefixed source tag. npm provenance supplies the original publishing revision, so retries cannot silently tag a newer commit. The job has `contents: write` but no npm OIDC permission. It preserves existing published notes and rejects conflicting tags, titles and drafts instead of overwriting them. No new secret or manual npm approval is needed.
 
+Registry tag reads may lag behind successful writes. The publisher waits for both public tags to propagate before exposing its verified-version output; a stale response cannot create a premature GitHub Release. If the final job fails after npm succeeds, rerun failed jobs to finish the same release without republishing the package.
+
 Public post-publication integrity checks read the registry directly, without npm CLI publishing credentials, its metadata cache or presentation format (`npm view --json` in npm 12 returns an array for a single field). A missing version is polled for up to ten minutes while npm processes it; other registry failures are reported immediately. A retry may finish tags for the exact archive already published, without creating another package version.
 
 **Current icon contract:** in this workspace, start with [ICON_RULES.md](../core/ICON_RULES.md). It is the canonical agent playbook for Goal, Rules, Design, Verification, Tests and delivery. Older numerical examples or dated trials below are historical where superseded by that guide; use its current family-specific construction rules.

@@ -76,10 +76,43 @@ export async function waitForPublication(
   throw new Error('npm processing did not finish before the release verification deadline');
 }
 
+export async function waitForTags(
+  manifest,
+  {
+    request = fetch,
+    pause = (ms) => new Promise((done) => setTimeout(done, ms)),
+    attempts = 60,
+    interval = 5000,
+  } = {},
+) {
+  validateManifest(manifest);
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    const response = await request(
+      'https://registry.npmjs.org/-/package/@squircle-icons%2fsvelte/dist-tags',
+      {
+        signal: AbortSignal.timeout(15000),
+        cache: 'no-store',
+      },
+    );
+    assert(response.ok, `npm tags returned HTTP ${response.status}`);
+    const tags = await response.json();
+    assert(tags && typeof tags === 'object' && !Array.isArray(tags), 'Malformed npm tags');
+    if (tags.alpha === manifest.version && tags.latest === manifest.version) return tags;
+    if (attempt < attempts) await pause(interval);
+  }
+  throw new Error(
+    'npm distribution tags did not propagate before the release verification deadline',
+  );
+}
+
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const root = new URL('../', import.meta.url);
   const manifest = JSON.parse(await readFile(new URL('package.json', root), 'utf8'));
   validateManifest(manifest);
+  if (process.argv.includes('--tags')) {
+    console.log(await waitForTags(manifest));
+    process.exit(0);
+  }
   const archive = await readFile(
     new URL(`.artifacts/squircle-icons-svelte-${manifest.version}.tgz`, root),
   );
