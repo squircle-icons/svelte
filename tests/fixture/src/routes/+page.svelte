@@ -1,4 +1,7 @@
 <script lang="ts">
+  import TrashMotion from '@squircle-icons/svelte/morph/trash';
+  let trashProgress = $state(0);
+  let trashStyle = $state<'outline' | 'filled'>('outline');
   import { FIGMA_STUDY_ICONS } from '@squircle-icons/svelte/design/figma-catalog';
   import FrameFixtureIcon from '../lib/FrameFixtureIcon.svelte';
   import MaximizeMinimizeMorph from '@squircle-icons/svelte/morph/maximize-minimize';
@@ -968,6 +971,24 @@
     </div>
   {/each}
 {/each}
+
+<section data-testid="trash-motion-fixture">
+  <TrashMotion progress={trashProgress} style={trashStyle} label="Trash motion" />
+  <input
+    aria-label="Trash progress"
+    type="range"
+    min="0"
+    max="1"
+    step="0.001"
+    bind:value={trashProgress}
+  />
+  <button onclick={() => (trashStyle = trashStyle === 'outline' ? 'filled' : 'outline')}
+    >Trash style</button
+  >
+  <span data-testid="trash-static-contour"
+    >{@html FIGMA_STUDY_ICONS.find((i) => i.id === 'trash')![trashStyle]}</span
+  >
+</section>
 
 <style>
   .chevron-controls-proof {

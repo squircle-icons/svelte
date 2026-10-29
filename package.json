@@ -654,6 +654,11 @@
       "svelte": "./dist/morph/PlusMinusMorph.svelte",
       "default": "./dist/morph/PlusMinusMorph.svelte"
     },
+    "./morph/trash": {
+      "types": "./dist/morph/TrashMotion.svelte.d.ts",
+      "svelte": "./dist/morph/TrashMotion.svelte",
+      "default": "./dist/morph/TrashMotion.svelte"
+    },
     "./morph/maximize-minimize": {
       "types": "./dist/morph/MaximizeMinimizeMorph.svelte.d.ts",
       "svelte": "./dist/morph/MaximizeMinimizeMorph.svelte",
@@ -703,7 +708,7 @@
     "vitest": "5.0.5",
     "prettier": "3.9.10",
     "prettier-plugin-svelte": "4.1.1",
-    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-d19a2ae4559a.tgz"
+    "@squircle-icons/core": "file:vendor/squircle-icons-core-0.0.0-7c532e4212d4.tgz"
   },
   "description": "Original Outline and Filled icons as native Svelte 5 components.",
   "repository": {

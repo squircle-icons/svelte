@@ -171,6 +171,7 @@ for (const [pair, component, type] of [
   ['plus-x', 'PlusXMorph', 'PlusXGeometry'],
   ['menu-x', 'MenuXMorph', 'MenuXGeometry'],
   ['plus-minus', 'PlusMinusMorph', 'PlusMinusGeometry'],
+  ['trash', 'TrashMotion', 'TrashGeometry'],
   ['maximize-minimize', 'MaximizeMinimizeMorph', 'MaximizeMinimizeGeometry'],
 ]) {
   exports[`./morph/${pair}`] = {

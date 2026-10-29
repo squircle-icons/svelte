@@ -1,4 +1,5 @@
 <script>
+  import TrashMotion from '@squircle-icons/svelte/morph/trash';
   import MaximizeMinimizeMorph from '@squircle-icons/svelte/morph/maximize-minimize';
   import { onMount } from 'svelte';
   import Camera from '@squircle-icons/svelte/camera';
@@ -50,3 +51,5 @@
 <PlusMinusMorph minus={active} label="Compatible Plus Minus morph" />
 
 <MaximizeMinimizeMorph minimize={active} label="Compatible Maximize Minimize morph" />
+
+<TrashMotion progress={0.5} label="Compatible trash motion" />
