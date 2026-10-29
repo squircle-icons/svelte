@@ -2,7 +2,7 @@
 
 ## Run the release workflow
 
-In the repository's **Actions** tab, select **npm release**. **Run workflow** provides GitHub's branch selector and a release environment dropdown containing only `prod`. Choose `main` to publish; selecting another branch runs checks only. The production target uses the restricted GitHub environment named `npm`, matching the trusted publisher already configured on npm.
+In the repository's **Actions** tab, select **npm release**. **Run workflow** provides GitHub's branch selector; there is no environment input because the package has one production destination. Choose `main` to publish; selecting another branch runs checks only. Publication uses the restricted GitHub environment named `npm`, matching the trusted publisher already configured on npm.
 
 Public post-publication integrity checks read the registry directly, without npm CLI publishing credentials, its metadata cache or presentation format (`npm view --json` in npm 12 returns an array for a single field). A missing version is polled for up to ten minutes while npm processes it; other registry failures are reported immediately. A retry may finish tags for the exact archive already published, without creating another package version.
 
