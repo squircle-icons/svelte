@@ -11,7 +11,6 @@ const directory = resolve(root, '.artifacts/import-benchmark');
 const cases = [
   ['package', "import Icon from '@squircle-icons/svelte/camera';"],
   ['local', "import Icon from './Camera.svelte';"],
-  ['filled', "import Icon from '@squircle-icons/svelte/filled/camera';"],
 ] as const;
 const samples = 8;
 const warmups = 2;

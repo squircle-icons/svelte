@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Breaking: remove the separate Filled import namespace and Filled-only component tree. Use the regular per-icon import with `style="filled"` instead.
+- Keep both authored styles, numeric/preset stroke widths and independent per-icon compilation in the unified components.
+
 ## 0.1.0-alpha.4
 
 - Include all 121 approved static icons from 51 authoring families, with independent Square/Circle imports and no static frame prop.

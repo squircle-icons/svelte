@@ -1,4 +1,6 @@
-# Main integration and release audit — 0.1.0-alpha.4
+# Historical main integration and release audit — 0.1.0-alpha.4
+
+This report records the alpha.4 release audit. Its export counts and measurements describe that published version. Current development removes the dedicated Filled namespace; see CHANGELOG.md and MIGRATION.md. This historical verdict does not approve new development artwork or a new publication.
 
 What this repo does: Core validates original SVG artwork and builds framework-independent geometry. Svelte generates distributable components. The homepage shows the released collection and documentation. This audit assumes a growing collection, applications importing a small subset, and a public static website with no server database or user accounts. The current measured collection has 121 static icons from 51 authoring families; no claim is made that a 1,000-icon gallery was load-tested.
 

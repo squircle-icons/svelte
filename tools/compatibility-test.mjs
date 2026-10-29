@@ -93,6 +93,9 @@ try {
     () => document.querySelector('#camera svg').getAttribute('stroke-width') === '1.5',
   );
   assert.equal(await page.locator('#folder svg').getAttribute('data-cutout-width'), '1.5');
+  const outlinePaths = await page
+    .locator('#camera path')
+    .evaluateAll((paths) => paths.map((p) => p.getAttribute('d')));
   await camera.evaluate((svg) => {
     window.originalCamera = svg;
   });
@@ -104,15 +107,15 @@ try {
     await camera.evaluate((svg) => window.originalCamera === svg),
     'Style switch replaced the SVG',
   );
-  assert.deepEqual(
+  assert.notDeepEqual(
     await page
       .locator('#camera path')
       .evaluateAll((paths) => paths.map((p) => p.getAttribute('d'))),
-    await page
-      .locator('#dedicated path')
-      .evaluateAll((paths) => paths.map((p) => p.getAttribute('d'))),
+    outlinePaths,
+    'Style switch did not select Filled geometry',
   );
-  assert.equal(await page.locator('#dedicated svg').getAttribute('aria-hidden'), 'true');
+  assert.equal(await page.locator('#decorative-filled svg').getAttribute('aria-hidden'), 'true');
+  assert.equal(await page.locator('#decorative-filled svg').getAttribute('stroke'), 'none');
   for (const states of [
     {
       'sun-moon': 'moon',

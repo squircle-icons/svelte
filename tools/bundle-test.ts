@@ -9,7 +9,7 @@ const reports = [];
 for (const [name, statement, expectedIcon] of [
   ['bell-static', "import Icon from '@squircle-icons/svelte/bell';", 'Bell.svelte'],
   ['individual', "import Icon from '@squircle-icons/svelte/camera';", 'Camera.svelte'],
-  ['filled', "import Icon from '@squircle-icons/svelte/filled/folder';", 'filled/Folder.svelte'],
+  ['folder', "import Icon from '@squircle-icons/svelte/folder';", 'Folder.svelte'],
   ['math', "import Icon from '@squircle-icons/svelte/plus';", 'Plus.svelte'],
   ['square', "import Icon from '@squircle-icons/svelte/plus-square';", 'PlusSquare.svelte'],
   [

@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { expect, expectTypeOf, it } from 'vitest';
 import type { CoreIcon } from '@squircle-icons/core/catalog-types';
-import type { FilledIconProps, IconProps } from '../../src/lib/props.js';
+import type { IconProps } from '../../src/lib/props.js';
 import { componentNames } from '../../tools/icon-names.js';
 import { flattenCoreIcons } from '../../tools/static-icons.js';
 
@@ -65,5 +65,4 @@ it('rejects collisions between standalone names and explicit frame identities', 
 
 it('does not expose a frame-selection prop on static icon APIs', () => {
   expectTypeOf<IconProps>().not.toHaveProperty('frame');
-  expectTypeOf<FilledIconProps>().not.toHaveProperty('frame');
 });

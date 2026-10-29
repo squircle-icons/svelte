@@ -28,155 +28,106 @@
   let morphProgress = $state<number | undefined>(undefined);
   let morphStyle = $state<'outline' | 'filled'>('outline');
   import X from '@squircle-icons/svelte/x';
-  import FilledX from '@squircle-icons/svelte/filled/x';
   import Copy from '@squircle-icons/svelte/copy';
   import NewWindow from '@squircle-icons/svelte/new-window';
-  import FilledNewWindow from '@squircle-icons/svelte/filled/new-window';
-  import FilledCopy from '@squircle-icons/svelte/filled/copy';
-  import FilledSearch from '@squircle-icons/svelte/filled/search';
   import ChevronDown from '@squircle-icons/svelte/chevron-down';
-  import FilledChevronDown from '@squircle-icons/svelte/filled/chevron-down';
   import Minus from '@squircle-icons/svelte/minus';
-  import FilledMinus from '@squircle-icons/svelte/filled/minus';
   const mathIcons = [
     { name: 'plus', label: 'Plus', Icon: Plus },
     { name: 'minus', label: 'Minus', Icon: Minus },
     { name: 'x', label: 'X', Icon: X },
   ];
   import Plus from '@squircle-icons/svelte/plus';
-  import FilledPlus from '@squircle-icons/svelte/filled/plus';
   import Check from '@squircle-icons/svelte/check';
-  import FilledCheck from '@squircle-icons/svelte/filled/check';
   import ChevronUp from '@squircle-icons/svelte/chevron-up';
-  import FilledChevronUp from '@squircle-icons/svelte/filled/chevron-up';
   import ArrowLeft from '@squircle-icons/svelte/arrow-left';
-  import FilledArrowLeft from '@squircle-icons/svelte/filled/arrow-left';
   import ArrowRight from '@squircle-icons/svelte/arrow-right';
-  import FilledArrowRight from '@squircle-icons/svelte/filled/arrow-right';
   import Menu from '@squircle-icons/svelte/menu';
-  import FilledMenu from '@squircle-icons/svelte/filled/menu';
   import Download from '@squircle-icons/svelte/download';
-  import FilledDownload from '@squircle-icons/svelte/filled/download';
   import Upload from '@squircle-icons/svelte/upload';
-  import FilledUpload from '@squircle-icons/svelte/filled/upload';
   import Trash from '@squircle-icons/svelte/trash';
-  import FilledTrash from '@squircle-icons/svelte/filled/trash';
   import Camera from '@squircle-icons/svelte/camera';
   import Sun from '@squircle-icons/svelte/sun';
   import Moon from '@squircle-icons/svelte/moon';
-  import FilledSun from '@squircle-icons/svelte/filled/sun';
-  import FilledMoon from '@squircle-icons/svelte/filled/moon';
-  import FilledFolder from '@squircle-icons/svelte/filled/folder';
-  import {
-    Camera as FilledCamera,
-    Bell as FilledBell,
-    Heart as FilledHeart,
-    Settings as FilledSettings,
-  } from '@squircle-icons/svelte/filled';
   import { Heart, Search, Settings, Bell, Folder } from '@squircle-icons/svelte';
   const roundFour = [
-    { name: 'arrow-left', label: 'Arrow Left', Outline: ArrowLeft, Filled: FilledArrowLeft },
-    { name: 'arrow-right', label: 'Arrow Right', Outline: ArrowRight, Filled: FilledArrowRight },
-    { name: 'menu', label: 'Menu', Outline: Menu, Filled: FilledMenu },
-    { name: 'download', label: 'Download', Outline: Download, Filled: FilledDownload },
-    { name: 'upload', label: 'Upload', Outline: Upload, Filled: FilledUpload },
-    { name: 'trash', label: 'Trash', Outline: Trash, Filled: FilledTrash },
+    { name: 'arrow-left', label: 'Arrow Left', Icon: ArrowLeft },
+    { name: 'arrow-right', label: 'Arrow Right', Icon: ArrowRight },
+    { name: 'menu', label: 'Menu', Icon: Menu },
+    { name: 'download', label: 'Download', Icon: Download },
+    { name: 'upload', label: 'Upload', Icon: Upload },
+    { name: 'trash', label: 'Trash', Icon: Trash },
   ];
   import ArrowUp from '@squircle-icons/svelte/arrow-up';
-  import FilledArrowUp from '@squircle-icons/svelte/filled/arrow-up';
   import ArrowDown from '@squircle-icons/svelte/arrow-down';
-  import FilledArrowDown from '@squircle-icons/svelte/filled/arrow-down';
   import ArrowUpLeft from '@squircle-icons/svelte/arrow-up-left';
-  import FilledArrowUpLeft from '@squircle-icons/svelte/filled/arrow-up-left';
   import ArrowUpRight from '@squircle-icons/svelte/arrow-up-right';
-  import FilledArrowUpRight from '@squircle-icons/svelte/filled/arrow-up-right';
   import ArrowDownLeft from '@squircle-icons/svelte/arrow-down-left';
-  import FilledArrowDownLeft from '@squircle-icons/svelte/filled/arrow-down-left';
   import ArrowDownRight from '@squircle-icons/svelte/arrow-down-right';
-  import FilledArrowDownRight from '@squircle-icons/svelte/filled/arrow-down-right';
   const roundFive = [
-    { name: 'arrow-up', label: 'Arrow Up', Outline: ArrowUp, Filled: FilledArrowUp },
-    { name: 'arrow-down', label: 'Arrow Down', Outline: ArrowDown, Filled: FilledArrowDown },
+    { name: 'arrow-up', label: 'Arrow Up', Icon: ArrowUp },
+    { name: 'arrow-down', label: 'Arrow Down', Icon: ArrowDown },
     {
       name: 'arrow-up-left',
       label: 'Arrow Up Left',
-      Outline: ArrowUpLeft,
-      Filled: FilledArrowUpLeft,
+      Icon: ArrowUpLeft,
     },
     {
       name: 'arrow-up-right',
       label: 'Arrow Up Right',
-      Outline: ArrowUpRight,
-      Filled: FilledArrowUpRight,
+      Icon: ArrowUpRight,
     },
     {
       name: 'arrow-down-left',
       label: 'Arrow Down Left',
-      Outline: ArrowDownLeft,
-      Filled: FilledArrowDownLeft,
+      Icon: ArrowDownLeft,
     },
     {
       name: 'arrow-down-right',
       label: 'Arrow Down Right',
-      Outline: ArrowDownRight,
-      Filled: FilledArrowDownRight,
+      Icon: ArrowDownRight,
     },
   ];
   import ChevronsUp from '@squircle-icons/svelte/chevrons-up';
-  import FilledChevronsUp from '@squircle-icons/svelte/filled/chevrons-up';
   import ChevronRight from '@squircle-icons/svelte/chevron-right';
-  import FilledChevronRight from '@squircle-icons/svelte/filled/chevron-right';
   import ChevronsDown from '@squircle-icons/svelte/chevrons-down';
-  import FilledChevronsDown from '@squircle-icons/svelte/filled/chevrons-down';
   import ChevronsLeft from '@squircle-icons/svelte/chevrons-left';
-  import FilledChevronsLeft from '@squircle-icons/svelte/filled/chevrons-left';
   import ChevronLeft from '@squircle-icons/svelte/chevron-left';
-  import FilledChevronLeft from '@squircle-icons/svelte/filled/chevron-left';
   import ChevronsRight from '@squircle-icons/svelte/chevrons-right';
-  import FilledChevronsRight from '@squircle-icons/svelte/filled/chevrons-right';
   import ChevronUpDown from '@squircle-icons/svelte/chevron-up-down';
-  import FilledChevronUpDown from '@squircle-icons/svelte/filled/chevron-up-down';
   import ChevronLeftRight from '@squircle-icons/svelte/chevron-left-right';
-  import FilledChevronLeftRight from '@squircle-icons/svelte/filled/chevron-left-right';
   import ChevronLineUp from '@squircle-icons/svelte/chevron-line-up';
-  import FilledChevronLineUp from '@squircle-icons/svelte/filled/chevron-line-up';
   import ChevronLineDown from '@squircle-icons/svelte/chevron-line-down';
-  import FilledChevronLineDown from '@squircle-icons/svelte/filled/chevron-line-down';
   import ChevronLineLeft from '@squircle-icons/svelte/chevron-line-left';
-  import FilledChevronLineLeft from '@squircle-icons/svelte/filled/chevron-line-left';
   import ChevronLineRight from '@squircle-icons/svelte/chevron-line-right';
-  import FilledChevronLineRight from '@squircle-icons/svelte/filled/chevron-line-right';
   const chevronControls = [
-    { name: 'chevron-up-down', Outline: ChevronUpDown, Filled: FilledChevronUpDown },
-    { name: 'chevron-left-right', Outline: ChevronLeftRight, Filled: FilledChevronLeftRight },
-    { name: 'chevron-line-up', Outline: ChevronLineUp, Filled: FilledChevronLineUp },
-    { name: 'chevron-line-down', Outline: ChevronLineDown, Filled: FilledChevronLineDown },
-    { name: 'chevron-line-left', Outline: ChevronLineLeft, Filled: FilledChevronLineLeft },
-    { name: 'chevron-line-right', Outline: ChevronLineRight, Filled: FilledChevronLineRight },
+    { name: 'chevron-up-down', Icon: ChevronUpDown },
+    { name: 'chevron-left-right', Icon: ChevronLeftRight },
+    { name: 'chevron-line-up', Icon: ChevronLineUp },
+    { name: 'chevron-line-down', Icon: ChevronLineDown },
+    { name: 'chevron-line-left', Icon: ChevronLineLeft },
+    { name: 'chevron-line-right', Icon: ChevronLineRight },
   ];
   const chevrons = [
-    { name: 'chevron-up', label: 'Up', Outline: ChevronUp, Filled: FilledChevronUp },
-    { name: 'chevron-down', label: 'Down', Outline: ChevronDown, Filled: FilledChevronDown },
-    { name: 'chevron-left', label: 'Left', Outline: ChevronLeft, Filled: FilledChevronLeft },
-    { name: 'chevron-right', label: 'Right', Outline: ChevronRight, Filled: FilledChevronRight },
-    { name: 'chevrons-up', label: 'Double Up', Outline: ChevronsUp, Filled: FilledChevronsUp },
+    { name: 'chevron-up', label: 'Up', Icon: ChevronUp },
+    { name: 'chevron-down', label: 'Down', Icon: ChevronDown },
+    { name: 'chevron-left', label: 'Left', Icon: ChevronLeft },
+    { name: 'chevron-right', label: 'Right', Icon: ChevronRight },
+    { name: 'chevrons-up', label: 'Double Up', Icon: ChevronsUp },
     {
       name: 'chevrons-down',
       label: 'Double Down',
-      Outline: ChevronsDown,
-      Filled: FilledChevronsDown,
+      Icon: ChevronsDown,
     },
     {
       name: 'chevrons-left',
       label: 'Double Left',
-      Outline: ChevronsLeft,
-      Filled: FilledChevronsLeft,
+      Icon: ChevronsLeft,
     },
     {
       name: 'chevrons-right',
       label: 'Double Right',
-      Outline: ChevronsRight,
-      Filled: FilledChevronsRight,
+      Icon: ChevronsRight,
     },
   ];
   let arrowFrame = $state<'none' | 'square' | 'circle'>('none');
@@ -198,24 +149,24 @@
 <div data-testid="instances">
   <Camera label="Camera one" /><Camera label="Camera two" /><Camera /><Folder /><Bell />
 </div>
-<div data-testid="blank-labels"><Camera label="   " /><FilledCamera label="   " /></div>
+<div data-testid="blank-labels"><Camera label="   " /><Camera style="filled" label="   " /></div>
 <div class="contact" data-testid="contact-sheet">
   {#each [Camera, Folder, Bell, Heart, Search, Settings] as Icon}<div>
       {#each [16, 20, 24, 48] as n}<Icon size={n} />{/each}
     </div>{/each}
 </div>
 <div class="contact" data-testid="filled-contact-sheet">
-  {#each [FilledCamera, FilledFolder, FilledBell, FilledHeart, FilledSettings] as Icon}<div>
-      {#each [16, 20, 24, 48] as n}<Icon size={n} />{/each}
+  {#each [Camera, Folder, Bell, Heart, Settings] as Icon}<div>
+      {#each [16, 20, 24, 48] as n}<Icon style="filled" size={n} />{/each}
     </div>{/each}
 </div>
-<div data-testid="filled-camera"><FilledCamera label="Filled camera review" /></div>
-<div data-testid="filled-settings"><FilledSettings label="Filled settings review" /></div>
-<div data-testid="filled-folder"><FilledFolder {strokeWidth} label="Filled folder" /></div>
+<div data-testid="filled-camera"><Camera style="filled" label="Filled camera review" /></div>
+<div data-testid="filled-settings"><Settings style="filled" label="Filled settings review" /></div>
+<div data-testid="filled-folder"><Folder style="filled" {strokeWidth} label="Filled folder" /></div>
 <div data-testid="camera-outline-contour"><Camera size={96} /></div>
-<div data-testid="camera-filled-contour"><FilledCamera size={96} /></div>
+<div data-testid="camera-filled-contour"><Camera style="filled" size={96} /></div>
 <div data-testid="folder-outline-contour"><Folder size={96} /></div>
-<div data-testid="folder-filled-contour"><FilledFolder size={96} /></div>
+<div data-testid="folder-filled-contour"><Folder style="filled" size={96} /></div>
 <section class="rotation-sheet" data-testid="primary-rounded-sheet">
   <header>
     <span>PRIMARY PAIR / ROUNDER CORNERS</span>
@@ -242,19 +193,27 @@
   </div>
 </section>
 <div data-testid="bell-outline-contour"><Bell size={96} label="Outline Bell contour" /></div>
-<div data-testid="bell-filled-contour"><FilledBell size={96} label="Filled Bell contour" /></div>
+<div data-testid="bell-filled-contour">
+  <Bell style="filled" size={96} label="Filled Bell contour" />
+</div>
 <div data-testid="settings-outline-contour">
   <Settings size={96} label="Outline Settings contour" />
 </div>
 <div data-testid="settings-filled-contour">
-  <FilledSettings size={96} label="Filled Settings contour" />
+  <Settings style="filled" size={96} label="Filled Settings contour" />
 </div>
 <div data-testid="heart-outline-contour"><Heart size={96} label="Outline Heart contour" /></div>
-<div data-testid="heart-filled-contour"><FilledHeart size={96} label="Filled Heart contour" /></div>
+<div data-testid="heart-filled-contour">
+  <Heart style="filled" size={96} label="Filled Heart contour" />
+</div>
 <div data-testid="sun-outline-contour"><Sun size={96} label="Outline Sun contour" /></div>
-<div data-testid="sun-filled-contour"><FilledSun size={96} label="Filled Sun contour" /></div>
+<div data-testid="sun-filled-contour">
+  <Sun style="filled" size={96} label="Filled Sun contour" />
+</div>
 <div data-testid="moon-outline-contour"><Moon size={96} label="Outline Moon contour" /></div>
-<div data-testid="moon-filled-contour"><FilledMoon size={96} label="Filled Moon contour" /></div>
+<div data-testid="moon-filled-contour">
+  <Moon style="filled" size={96} label="Filled Moon contour" />
+</div>
 <button
   aria-label="Preview camera styles"
   onpointerenter={() => (hovered = true)}
@@ -278,7 +237,7 @@
 </div>
 <div data-testid="search-outline-contour"><Search size={96} label="Outline Search contour" /></div>
 <div data-testid="search-filled-contour">
-  <FilledSearch size={96} label="Filled Search contour" />
+  <Search style="filled" size={96} label="Filled Search contour" />
 </div>
 <section class="rotation-sheet" data-testid="search-bold-sheet">
   <header>
@@ -299,7 +258,9 @@
   </div>
 </section>
 <div data-testid="copy-outline-contour"><Copy size={96} label="Outline Copy contour" /></div>
-<div data-testid="copy-filled-contour"><FilledCopy size={96} label="Filled Copy contour" /></div>
+<div data-testid="copy-filled-contour">
+  <Copy style="filled" size={96} label="Filled Copy contour" />
+</div>
 <div data-testid="chevron-down-outline-contour">
   <FrameFixtureIcon
     name="chevron-down"
@@ -329,7 +290,9 @@
   />
 </div>
 <div data-testid="check-outline-contour"><Check size={96} label="Outline Check contour" /></div>
-<div data-testid="check-filled-contour"><FilledCheck size={96} label="Filled Check contour" /></div>
+<div data-testid="check-filled-contour">
+  <Check style="filled" size={96} label="Filled Check contour" />
+</div>
 <div data-testid="chevron-up-outline-contour">
   <FrameFixtureIcon
     name="chevron-up"
@@ -361,7 +324,7 @@
       <p>Outline & Filled · Regular 1.75</p>
     </header>
     <div class="round-grid">
-      {#each [{ name: 'X', Outline: X, Filled: FilledX }, { name: 'Copy', Outline: Copy, Filled: FilledCopy }, { name: 'Chevron Down', Outline: ChevronDown, Filled: FilledChevronDown }, { name: 'Plus', Outline: Plus, Filled: FilledPlus }, { name: 'Check', Outline: Check, Filled: FilledCheck }, { name: 'Chevron Up', Outline: ChevronUp, Filled: FilledChevronUp }] as item}
+      {#each [{ name: 'X', Icon: X }, { name: 'Copy', Icon: Copy }, { name: 'Chevron Down', Icon: ChevronDown }, { name: 'Plus', Icon: Plus }, { name: 'Check', Icon: Check }, { name: 'Chevron Up', Icon: ChevronUp }] as item}
         <article>
           <h3>{item.name}</h3>
           <div class="round-main">
@@ -885,7 +848,7 @@
           <FrameFixtureIcon name={item.name} style="filled" size={96} frame={arrowFrame} />
         </div>
         {#each [16, 20, 24, 48] as size}
-          <item.Outline {size} /><item.Filled {size} />
+          <item.Icon {size} /><item.Icon style="filled" {size} />
         {/each}
       </article>
     {/each}
@@ -917,7 +880,7 @@
   <NewWindow size={96} label="Outline New Window contour" />
 </div>
 <div data-testid="new-window-filled-contour">
-  <FilledNewWindow size={96} label="Filled New Window contour" />
+  <NewWindow style="filled" size={96} label="Filled New Window contour" />
 </div>
 <section class="rotation-sheet" data-testid="copy-window-proof">
   <header>

@@ -34,7 +34,7 @@ The package ships JavaScript inside its native `.svelte` components and separate
 <Camera strokeWidth="bold" />
 ```
 
-Use the same import for both styles. `style="outline"` is the default; `style="filled"` selects the separately authored solid drawing. Menu and Search provide fixed Bold 2.50 Filled geometry without an enclosing box, following their Outline centerlines. Dedicated imports such as `@squircle-icons/svelte/filled/camera` and the Filled barrel remain supported.
+Use the same import for both styles. `style="outline"` is the default; `style="filled"` selects the separately authored solid drawing. Menu and Search provide fixed Bold 2.50 Filled geometry without an enclosing box, following their Outline centerlines. Static icons expose one unified component per identity; the separate Filled import namespace has been removed. See [migration instructions](MIGRATION.md#unified-static-imports).
 
 Common props are `size=24`, `color="currentColor"`, `style="outline"`, `strokeWidth="regular"`, optional `label` and `class`. Decorative icons omit `label`; meaningful icons receive one accessible name. Components add no tab stop or duplicate SVG title. Stroke presets are `thin` (1.25), `regular` (1.75), and `bold` (2.50); numbers remain supported for fine adjustments. Filled Folder uses `strokeWidth` for its bounded 0.25–6-unit divider gap; other Filled drawings have fixed geometry.
 
@@ -53,7 +53,7 @@ Use one direct import per icon and choose its style through props:
 <Camera style={active ? 'filled' : 'outline'} strokeWidth="regular" />
 ```
 
-The component contains only that icon's available styles. It bypasses other icons, collection barrels and the catalog. It keeps one root SVG while the style changes. Let the parent button manage hover and keyboard focus; no special hover prop or animation runtime is needed. Legacy `/filled/<icon>` paths remain compatible, while documentation and website previews use the unified API.
+The component contains only that icon's available styles. It bypasses other icons, collection barrels and the catalog. It keeps one root SVG while the style changes. Let the parent button manage hover and keyboard focus; no special hover prop or animation runtime is needed. The same unified API is used for Filled previews and consumer examples.
 
 Root named imports such as `import { Camera } from '@squircle-icons/svelte'` remain supported. Production tree shaking removes unused components, although a build tool may compile them first. Copying an unchanged component into your app produces the same executable JavaScript as its direct package import. `pnpm test:imports` checks this, confirms one compiled icon, and records repeated build timings and gzip/Brotli sizes in `.artifacts/import-benchmark/report.json`. Timing is informational.
 

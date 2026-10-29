@@ -1,4 +1,4 @@
-import { cp, mkdir, mkdtemp, readFile, realpath, writeFile } from 'node:fs/promises';
+import { cp, mkdir, mkdtemp, readFile, realpath, stat, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -51,9 +51,8 @@ assert(!installed.startsWith(root), 'Fixture resolved a workspace link instead o
 const installedPackage = JSON.parse(await readFile(resolve(installed, 'package.json'), 'utf8'));
 assert.equal(installedPackage.name, '@squircle-icons/svelte');
 assert.equal(installedPackage.version, rootPackage.version);
-const studyFilename = createRequire(resolve(fixture, 'package.json')).resolve(
-  '@squircle-icons/svelte/design/squircle-base',
-);
+const consumerRequire = createRequire(resolve(fixture, 'package.json'));
+const studyFilename = consumerRequire.resolve('@squircle-icons/svelte/design/squircle-base');
 assert(
   studyFilename.startsWith(installed),
   'Design helper did not resolve from the installed tarball',
@@ -87,16 +86,15 @@ assert.equal(installedPackage.publishConfig.access, 'public');
 assert.equal(installedPackage.publishConfig.tag, 'alpha');
 assert.equal(installedPackage.license, 'MIT', 'Packed manifest must declare MIT');
 assert(
-  installedPackage.exports['./filled/search'],
-  'Search must expose its owner-requested Filled entry point',
+  !Object.keys(installedPackage.exports).some((path) => /^\.\/filled(?:\/|$)/.test(path)),
+  'Removed Filled-only exports must not survive packing',
 );
+for (const path of ['@squircle-icons/svelte/filled', '@squircle-icons/svelte/filled/search'])
+  assert.throws(() => consumerRequire.resolve(path), { code: 'ERR_PACKAGE_PATH_NOT_EXPORTED' });
+await assert.rejects(stat(resolve(installed, 'dist/filled')), { code: 'ENOENT' });
 assert(
-  (await readFile(resolve(installed, 'dist/filled/Search.svelte'), 'utf8')).includes('evenodd'),
-  'Packed Filled Search is missing its compound cutout',
-);
-assert(
-  (await readFile(resolve(installed, 'dist/filled/index.js'), 'utf8')).includes('Search.svelte'),
-  'Filled barrel must export Search',
+  (await readFile(resolve(installed, 'dist/Search.svelte'), 'utf8')).includes('evenodd'),
+  'Unified Search must retain its Filled compound cutout',
 );
 assert(
   !Object.keys(installedPackage.exports).some((path) => path.includes('animated')),
@@ -117,11 +115,11 @@ run(['exec', 'vite', 'build'], fixture);
 const html = await readFile(resolve(fixture, 'build/index.html'), 'utf8');
 assert(
   html.includes('Filled folder') && html.includes('fill-rule="evenodd"'),
-  'Filled component import or SSR cutout missing',
+  'Unified Filled rendering or SSR cutout missing',
 );
 assert(
   html.includes('Filled camera review') && html.includes('Filled settings review'),
-  'New filled exports or declarations did not survive packing',
+  'Unified Filled components or declarations did not survive packing',
 );
 assert(
   [

@@ -9,6 +9,3 @@ export type IconProps = {
   class?: string;
   style?: IconStyle;
 };
-
-/** Direct Filled imports have a fixed style. */
-export type FilledIconProps = Omit<IconProps, 'style'>;

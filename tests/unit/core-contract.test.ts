@@ -45,6 +45,5 @@ it('represents New Tab through Plus Square without a duplicate package identity'
   const manifest = JSON.parse(
     await readFile(new URL('../../package.json', import.meta.url), 'utf8'),
   );
-  for (const key of ['./new-tab', './filled/new-tab'])
-    expect(manifest.exports[key]).toBeUndefined();
+  expect(manifest.exports['./new-tab']).toBeUndefined();
 });

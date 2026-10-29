@@ -1,15 +1,10 @@
 import { expect, it } from 'vitest';
 import { componentNames } from '../../tools/icon-names.js';
 
-it.each([
-  'camera-',
-  'camera--lens',
-  'filled',
-  'icon-props',
-  'icon-style',
-  'icon-stroke-width',
-  'filled-icon-props',
-])('rejects invalid or reserved name %s', (name) => expect(() => componentNames([name])).toThrow());
+it.each(['camera-', 'camera--lens', 'filled', 'icon-props', 'icon-style', 'icon-stroke-width'])(
+  'rejects invalid or reserved name %s',
+  (name) => expect(() => componentNames([name])).toThrow(),
+);
 it('rejects names that would overwrite the same component', () => {
   expect(() => componentNames(['camera2', 'camera-2'])).toThrow('Duplicate');
 });

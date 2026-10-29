@@ -13,7 +13,7 @@ const components = Object.entries(manifest.exports)
     return typeof resolved === 'string' && resolved.endsWith('.svelte');
   })
   .map(([entry]) => entry);
-const entries = ['.', './filled', ...components];
+const entries = ['.', ...components];
 const require = createRequire(import.meta.url);
 for (const entry of components) {
   const filename = require.resolve('@squircle-icons/svelte' + entry.slice(1));
@@ -34,7 +34,7 @@ await writeFile(
   `import type { ComponentProps } from 'svelte';
 ${entries
   .map((entry, i) =>
-    entry === '.' || entry === './filled'
+    entry === '.'
       ? `import * as Barrel${i} from '@squircle-icons/svelte${entry.slice(1)}';`
       : `import Icon${i} from '@squircle-icons/svelte${entry.slice(1)}';\nconst props${i}: ComponentProps<typeof Icon${i}> = ${entry.startsWith('./morph/maximize-minimize') ? "{ minimize: true, style: 'filled', progress: 0.5 }" : entry === './morph/plus-minus' ? "{ minus: true, style: 'filled', progress: 0.5 }" : entry === './morph/plus-x' || entry === './morph/menu-x' ? "{ x: true, style: 'filled', progress: 0.5 }" : entry.startsWith('./morph/') ? "{ moon: true, style: 'filled', progress: 0.5 }" : '{ strokeWidth: 1.5 }'};`,
   )

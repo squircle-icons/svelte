@@ -4,7 +4,7 @@
 
 Change original artwork in core, commit them there, then run `pnpm sync:core ../core`. Never edit generated components, the generated metadata catalog by hand.
 
-The Svelte adapter owns presentation props and accessibility attributes. Static components stay static; morphs use separate opt-in subpaths. Preserve per-icon exports and the unified Outline/Filled style prop.
+The Svelte adapter owns presentation props and accessibility attributes. Static components stay static; morphs use separate opt-in subpaths. Generate one component per static identity, preserve per-icon exports and select Outline/Filled through the style prop. Do not generate a separate Filled component tree, barrel, namespace or props type.
 
 Follow the [core contour-matching rule](https://github.com/squircle-icons/core/blob/main/DESIGN_RULES.md#outline-and-filled-styles). For new or revised dual-style artwork, compare the actual packed Outline exterior at Regular 1.75 with the Filled exterior and corresponding openings at native proportions, including a rotated pose. Maintain a contour regression check alongside browser-specific visual baselines.
 

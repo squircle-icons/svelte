@@ -43,23 +43,6 @@ test('unified style preserves filled artwork, defaults and accessible names', as
   await expect(camera).toHaveAttribute('fill-rule', 'evenodd');
   await expect(camera).toHaveAttribute('width', '24');
   await expect(camera).toHaveClass(/custom-camera/);
-  for (let index = 0; index < 5; index++) {
-    const unified = await page
-      .getByTestId('unified-filled-sheet')
-      .locator('svg')
-      .nth(index)
-      .locator('path')
-      .evaluateAll((paths) => paths.map((path) => path.getAttribute('d')));
-    const dedicated = await page
-      .getByTestId('filled-contact-sheet')
-      .locator(':scope > div')
-      .nth(index)
-      .locator('svg')
-      .first()
-      .locator('path')
-      .evaluateAll((paths) => paths.map((path) => path.getAttribute('d')));
-    expect(unified).toEqual(dedicated);
-  }
   await page.getByRole('button', { name: 'Toggle icon style' }).click();
   await expect(camera).toHaveAttribute('fill', 'none');
   await expect(camera).toHaveAttribute('stroke', 'currentColor');

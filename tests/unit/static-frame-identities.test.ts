@@ -29,11 +29,13 @@ it('publishes 121 distinct static identities with Camera reopened for review fro
   }
 });
 
-it('provides an independent direct and Filled export for every explicit static identity', () => {
+it('provides one unified direct export per static identity and no Filled-only namespace', () => {
   for (const icon of catalog.icons) {
     expect(manifest.exports[`./${icon.name}`], icon.name).toBeDefined();
-    expect(manifest.exports[`./filled/${icon.name}`], icon.name).toBeDefined();
   }
+  expect(Object.keys(manifest.exports).filter((key) => /^\.\/filled(?:\/|$)/.test(key))).toEqual(
+    [],
+  );
   for (const name of ['maximize', 'minimize', 'external-link'])
     for (const frame of ['square', 'circle'])
       expect(manifest.exports[`./${name}-${frame}`]).toBeUndefined();
