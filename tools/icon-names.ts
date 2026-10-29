@@ -18,3 +18,15 @@ export function componentNames(names: string[]): string[] {
     return component;
   });
 }
+
+/** Git paths must match generated casing even on case-insensitive disks. */
+export function assertGeneratedPathCase(tracked: string[], generated: Iterable<string>): void {
+  const expected = new Map([...generated].map((path) => [path.toLowerCase(), path]));
+  for (const path of tracked) {
+    const target = expected.get(path.toLowerCase());
+    if (target && target !== path)
+      throw new Error(
+        `Git tracks ${path}, but generation requires ${target}. Rename it through a temporary filename with git mv.`,
+      );
+  }
+}

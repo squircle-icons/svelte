@@ -3,7 +3,8 @@ import { mkdir, readFile, writeFile, readdir } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { format, resolveConfig } from 'prettier';
 import { root } from './paths.js';
-import { componentNames } from './icon-names.js';
+import { componentNames, assertGeneratedPathCase } from './icon-names.js';
+import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import type { CoreIcon } from '@squircle-icons/core/catalog-types';
 type SvgNode = CoreIcon['root'];
@@ -171,6 +172,14 @@ const packagePath = 'package.json';
 const manifest = JSON.parse(await readFile(resolve(root, packagePath), 'utf8'));
 manifest.exports = exports;
 files.set(packagePath, JSON.stringify(manifest, null, 2) + '\n');
+if (check) {
+  const tracked = spawnSync('git', ['ls-files', '-z', '--', 'src/lib'], {
+    cwd: root,
+    encoding: 'utf8',
+  });
+  if (tracked.status === 0)
+    assertGeneratedPathCase(tracked.stdout.split('\0').filter(Boolean), files.keys());
+}
 const formatting = await resolveConfig(resolve(root, '.prettierrc.json'));
 for (const [path, source] of files) {
   const destination = resolve(root, path);
