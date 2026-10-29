@@ -1,9 +1,16 @@
-name: Quality checks
+name: npm release
 on:
   push:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      target:
+        description: Release environment
+        type: choice
+        required: true
+        default: prod
+        options: [prod]
 permissions:
   contents: read
 jobs:
@@ -88,7 +95,7 @@ jobs:
     needs: [quality, compatibility]
     if: needs.quality.outputs.release_mode == 'publish' || needs.quality.outputs.release_mode == 'tags'
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 15
     environment: npm
     concurrency:
       group: npm-release
@@ -147,16 +154,7 @@ jobs:
           exit 1
       - name: Wait for npm processing and verify the published archive
         if: steps.current.outputs.allowed == 'true'
-        run: |
-          for release_attempt in $(seq 1 30); do
-            release_integrity=$(npm view "@squircle-icons/svelte@$RELEASE_VERSION" dist.integrity --json 2>/dev/null || true)
-            if [ "$release_integrity" = "\"$RELEASE_INTEGRITY\"" ]; then
-              exit 0
-            fi
-            sleep 10
-          done
-          echo 'Published npm integrity did not match the tested archive.' >&2
-          exit 1
+        run: node tools/release-status.mjs --wait
       - name: Align alpha and latest through OIDC
         if: steps.current.outputs.allowed == 'true'
         run: |

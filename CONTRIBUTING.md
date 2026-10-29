@@ -1,5 +1,11 @@
 # Contributing to the Svelte adapter
 
+## Run the release workflow
+
+In the repository's **Actions** tab, select **npm release**. **Run workflow** provides GitHub's branch selector and a release environment dropdown containing only `prod`. Choose `main` to publish; selecting another branch runs checks only. The production target uses the restricted GitHub environment named `npm`, matching the trusted publisher already configured on npm.
+
+Public post-publication integrity checks read the registry directly, without npm CLI publishing credentials, its metadata cache or presentation format (`npm view --json` in npm 12 returns an array for a single field). A missing version is polled for up to ten minutes while npm processes it; other registry failures are reported immediately. A retry may finish tags for the exact archive already published, without creating another package version.
+
 **Current icon contract:** in this workspace, start with [ICON_RULES.md](../core/ICON_RULES.md). It is the canonical agent playbook for Goal, Rules, Design, Verification, Tests and delivery. Older numerical examples or dated trials below are historical where superseded by that guide; use its current family-specific construction rules.
 
 Change original artwork in core, commit them there, then run `pnpm sync:core ../core`. Never edit generated components, the generated metadata catalog by hand.
