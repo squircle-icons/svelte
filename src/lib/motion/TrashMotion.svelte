@@ -1,5 +1,5 @@
 <script lang="ts">
-  import MorphProgress from './MorphProgress.svelte';
+  import MorphProgress from '../morph/MorphProgress.svelte';
   import { trashFrame } from './trash-geometry.js';
   import geometry from './trash-data.js';
   let {
@@ -50,7 +50,7 @@
       focusable="false"
       data-frame="none"
       data-source="figma-current"
-      data-morph="trash"
+      data-motion="trash"
       data-progress={visual.toFixed(5)}
       data-state={visual === 0 ? 'closed' : visual === 1 ? 'open' : 'motion'}
     >

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import TrashMotion from '@squircle-icons/svelte/morph/trash';
+  import TrashMotion from '@squircle-icons/svelte/motion/trash';
   let trashProgress = $state(0);
   let trashStyle = $state<'outline' | 'filled'>('outline');
   import { FIGMA_STUDY_ICONS } from '@squircle-icons/svelte/design/figma-catalog';

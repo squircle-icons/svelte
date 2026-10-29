@@ -166,37 +166,42 @@ files.set(
   header + (await readFile(strokes.replace(/\.js$/, '.d.ts'), 'utf8')),
 );
 // Pair implementations stay opt-in; static imports never traverse these modules.
-for (const [pair, component, type] of [
-  ['sun-moon', 'SunMoonMorph', 'SunMoonGeometry'],
-  ['plus-x', 'PlusXMorph', 'PlusXGeometry'],
-  ['menu-x', 'MenuXMorph', 'MenuXGeometry'],
-  ['plus-minus', 'PlusMinusMorph', 'PlusMinusGeometry'],
-  ['trash', 'TrashMotion', 'TrashGeometry'],
-  ['maximize-minimize', 'MaximizeMinimizeMorph', 'MaximizeMinimizeGeometry'],
+for (const [family, pair, component, type] of [
+  ['morph', 'sun-moon', 'SunMoonMorph', 'SunMoonGeometry'],
+  ['morph', 'plus-x', 'PlusXMorph', 'PlusXGeometry'],
+  ['morph', 'menu-x', 'MenuXMorph', 'MenuXGeometry'],
+  ['morph', 'plus-minus', 'PlusMinusMorph', 'PlusMinusGeometry'],
+  ['motion', 'trash', 'TrashMotion', 'TrashGeometry'],
+  ['morph', 'maximize-minimize', 'MaximizeMinimizeMorph', 'MaximizeMinimizeGeometry'],
 ]) {
-  exports[`./morph/${pair}`] = {
-    types: `./dist/morph/${component}.svelte.d.ts`,
-    svelte: `./dist/morph/${component}.svelte`,
-    default: `./dist/morph/${component}.svelte`,
+  exports[`./${family}/${pair}`] = {
+    types: `./dist/${family}/${component}.svelte.d.ts`,
+    svelte: `./dist/${family}/${component}.svelte`,
+    default: `./dist/${family}/${component}.svelte`,
   };
-  const implementation = fileURLToPath(import.meta.resolve(`@squircle-icons/core/morph/${pair}`));
-  files.set(`src/lib/morph/${pair}-geometry.js`, header + (await readFile(implementation, 'utf8')));
+  const implementation = fileURLToPath(
+    import.meta.resolve(`@squircle-icons/core/${family}/${pair}`),
+  );
   files.set(
-    `src/lib/morph/${pair}-geometry.d.ts`,
+    `src/lib/${family}/${pair}-geometry.js`,
+    header + (await readFile(implementation, 'utf8')),
+  );
+  files.set(
+    `src/lib/${family}/${pair}-geometry.d.ts`,
     header + (await readFile(implementation.replace(/\.js$/, '.d.ts'), 'utf8')),
   );
   files.set(
-    `src/lib/morph/${pair}-data.js`,
+    `src/lib/${family}/${pair}-data.js`,
     header +
       'export default ' +
       (await readFile(
-        fileURLToPath(import.meta.resolve(`@squircle-icons/core/morph/${pair}.json`)),
+        fileURLToPath(import.meta.resolve(`@squircle-icons/core/${family}/${pair}.json`)),
         'utf8',
       )) +
       ';\n',
   );
   files.set(
-    `src/lib/morph/${pair}-data.d.ts`,
+    `src/lib/${family}/${pair}-data.d.ts`,
     header +
       `import type { ${type} } from './${pair}-geometry.js';\ndeclare const geometry: ${type};\nexport default geometry;\n`,
   );

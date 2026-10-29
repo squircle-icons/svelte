@@ -1,5 +1,5 @@
 <script>
-  import TrashMotion from '@squircle-icons/svelte/morph/trash';
+  import TrashMotion from '@squircle-icons/svelte/motion/trash';
   import MaximizeMinimizeMorph from '@squircle-icons/svelte/morph/maximize-minimize';
   import { onMount } from 'svelte';
   import Camera from '@squircle-icons/svelte/camera';
